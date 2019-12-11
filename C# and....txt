@@ -1,0 +1,18 @@
+﻿NoSQL
+Nosql nedir
+İlişkisiz veritabanıdır. NoSQL is not a relational database.
+Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
+NoSQL (ilişkisel olmayan) Veritabanları Nasıl Çalışır?
+NoSQL veritabanları, verilere erişmek ve verileri yönetmek için belge, grafik, anahtar-değer, bellek içi ve arama dahil olmak üzere çeşitli veri modelleri kullanır. Bu tür veritabanları, özellikle büyük veri hacmi, düşük gecikme süresi ve esnek veri modelleri gerektiren uygulamalar için optimize edilmiştir. Bu gereksinimler, diğer veritabanlarının veri tutarlılığı kısıtlamalarının bir kısmı esnetilerek karşılanır.
+NoSQL is a whole new way of thinking about a database. NoSQL is not a relational database. The reality is that a relational database model may not be the best solution for all situations. The easiest way to think of NoSQL, is that of a database which does not adhering to the traditional relational database management system (RDMS) structure. Sometimes you will also see it revered to as 'not only SQL'.
+
+Basit bir kitap veritabanının şemasını modelleme örneğini ele alalım:
+•	İlişkisel bir veritabanında genellikle bir kitap kaydı gizlenerek (veya “normalleştirilerek”) ayrı tablolarda depolanırken, ilişkiler birincil ve yabancı anahtar kısıtlamaları tarafından tanımlanır. Bu örnekte Books (Kitaplar) tablosu ISBN, Book Title (Kitap Başlığı) ve Edition Number (Baskı Sayısı) sütunlarına; Authors (Yazarlar) tablosu AuthorID (Yazar Kimliği) ve Author Name (Yazar Adı) sütunlarına; Author-ISBN (Yazar-ISBN) tablosu ise AuthorID (Yazar Kimliği) ve ISBN sütunlarına sahiptir. İlişkisel model, veritabanının yedekliliği azaltacak şekilde normalleştirilmiş ve genel olarak depolama için optimize edilmiş tablolar arasında başvurusal bütünlük uygulamasına imkan tanıyacak şekilde tasarlanmıştır.
+•	Bir NoSQL veritabanında, kitap kaydı genellikle bir JSON belgesi olarak saklanır. Her kitap için öğe, ISBN, Book Title (Kitap Başlığı), Edition Number (Baskı Sayısı), Author Name (Yazar Adı) ve AuthorID (Yazar Kimliği) bilgileri tek bir belgede öznitelikler olarak depolanır. Bu modelde, veriler sezgisel yazılım geliştirme ve yatay ölçeklenebilirlik için optimize edilir.
+
+Neden NoSQL veritabanı kullanmalısınız?
+NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek, ölçeklenebilir, yüksek performanslı ve yüksek oranda işlevsel veritabanları gerektiren mobil, web ve oyun gibi birçok modern uygulama için idealdir.
+•	Esneklik: NoSQL genellikle daha hızlı ve daha fazla yinelemeli yazılım geliştirmeyi mümkün kılan esnek şemalar sağlar. Esnek veri modeli sayesinde NoSQL veritabanları yarı yapılandırılmış ve yapılandırılmamış veriler için idealdir.
+•	Ölçeklenebilirlik: NoSQL veritabanları genellikle pahalı ve kalıcı sunucular eklenerek ölçeği artırılabilecek şekilde değil, dağıtılmış donanım kümeleri kullanılarak ölçeği genişletilebilecek şekilde tasarlanır. Bazı bulut sağlayıcıları bu işlemleri arka planda, tam olarak yönetilen bir hizmet olarak gerçekleştirir.
+•	Yüksek performans: NoSQL veritabanları, benzer işlevlerin ilişkisel veritabanlarıyla gerçekleştirilmesi ile karşılaştırıldığında daha yüksek performansı mümkün kılan belirli veri modelleri (belge, anahtar-değer, grafik gibi) ve erişim desenleri için optimize edilmiştir.
+•	Yüksek oranda işlevsel: NoSQL veritabanları, her biri ilgili veri modeli için özel olarak tasarlanmış yüksek oranda işlevsel API'ler ve veri türleri sağlar.

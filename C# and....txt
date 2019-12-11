@@ -1,4 +1,4 @@
-﻿NoSQL
+﻿NoSQL	(GITHUB)
 Nosql nedir
 İlişkisiz veritabanıdır. NoSQL is not a relational database.
 Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
@@ -22,6 +22,9 @@ NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek,
 •	Ölçeklenebilirlik: NoSQL veritabanları genellikle pahalı ve kalıcı sunucular eklenerek ölçeği artırılabilecek şekilde değil, dağıtılmış donanım kümeleri kullanılarak ölçeği genişletilebilecek şekilde tasarlanır. Bazı bulut sağlayıcıları bu işlemleri arka planda, tam olarak yönetilen bir hizmet olarak gerçekleştirir.
 •	Yüksek performans: NoSQL veritabanları, benzer işlevlerin ilişkisel veritabanlarıyla gerçekleştirilmesi ile karşılaştırıldığında daha yüksek performansı mümkün kılan belirli veri modelleri (belge, anahtar-değer, grafik gibi) ve erişim desenleri için optimize edilmiştir.
 •	Yüksek oranda işlevsel: NoSQL veritabanları, her biri ilgili veri modeli için özel olarak tasarlanmış yüksek oranda işlevsel API'ler ve veri türleri sağlar.
+-
+-
+-
 -
 -
 -

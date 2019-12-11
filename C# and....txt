@@ -40,5 +40,23 @@ MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman t
 •	Web içerik yönetim sistemleri
 •	Web yorum/etiket saklama ve yönetme
 İkililer, Windows, Mac OS X, Linux ve Solaris için mevcuttur.
+-
+-
+-
+-
+-
+-
+Difference between scaling horizontally and vertically for databases		(GITHUB)
+
+Horizontal scaling nedir, vertical scaling nedir
+
+Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
+An easy way to remember this is to think of a machine on a server rack, we add more machines across the horizontal direction and add more resources to a machine in the vertical direction.
+                   
+In a database world horizontal-scaling is often based on the partitioning of the data i.e. each node contains only part of the data, in vertical-scaling the data resides on a single node and scaling is done through multi-core i.e. spreading the load between the CPU and RAM resources of that machine.
+With horizontal-scaling it is often easier to scale dynamically by adding more machines into the existing pool - Vertical-scaling is often limited to the capacity of a single machine, scaling beyond that capacity often involves downtime and comes with an upper limit.
+Good examples of horizontal scaling are Cassandra, MongoDB, Google Cloud Spanner .. and a good example of vertical scaling is MySQL - Amazon RDS (The cloud version of MySQL). It provides an easy way to scale vertically by switching from small to bigger machines. This process often involves downtime.
+In-Memory Data Grids such as GigaSpaces XAP, Coherence etc.. are often optimized for both horizontal and vertical scaling simply because they're not bound to disk. Horizontal-scaling through partitioning and vertical-scaling through multi-core support.
+You can read more on this subject in my earlier posts: Scale-out vs Scale-up and The Common Principles Behind the NOSQL Alternatives
 
 

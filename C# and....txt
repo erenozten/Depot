@@ -2,9 +2,15 @@
 Nosql nedir
 İlişkisiz veritabanıdır. NoSQL is not a relational database.
 Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
+Why NoSQL? It's high performance with high availability, and offers rich query language and easy scalability.
+
 NoSQL (ilişkisel olmayan) Veritabanları Nasıl Çalışır?
 NoSQL veritabanları, verilere erişmek ve verileri yönetmek için belge, grafik, anahtar-değer, bellek içi ve arama dahil olmak üzere çeşitli veri modelleri kullanır. Bu tür veritabanları, özellikle büyük veri hacmi, düşük gecikme süresi ve esnek veri modelleri gerektiren uygulamalar için optimize edilmiştir. Bu gereksinimler, diğer veritabanlarının veri tutarlılığı kısıtlamalarının bir kısmı esnetilerek karşılanır.
 NoSQL is a whole new way of thinking about a database. NoSQL is not a relational database. The reality is that a relational database model may not be the best solution for all situations. The easiest way to think of NoSQL, is that of a database which does not adhering to the traditional relational database management system (RDMS) structure. Sometimes you will also see it revered to as 'not only SQL'.
+
+Imagine that you have coupons that you wanted to push to mobile customers that purchase a specific item. This is a customer facing system of engagement requires location data, purchase data, wallet data, and so on. You want to engage the mobile customer in real-time.
+
+What you require is a very agile delivery system that is easily able to processes unstructured data. The system of engagement would need to be extremely dynamic. 
 
 Basit bir kitap veritabanının şemasını modelleme örneğini ele alalım:
 •	İlişkisel bir veritabanında genellikle bir kitap kaydı gizlenerek (veya “normalleştirilerek”) ayrı tablolarda depolanırken, ilişkiler birincil ve yabancı anahtar kısıtlamaları tarafından tanımlanır. Bu örnekte Books (Kitaplar) tablosu ISBN, Book Title (Kitap Başlığı) ve Edition Number (Baskı Sayısı) sütunlarına; Authors (Yazarlar) tablosu AuthorID (Yazar Kimliği) ve Author Name (Yazar Adı) sütunlarına; Author-ISBN (Yazar-ISBN) tablosu ise AuthorID (Yazar Kimliği) ve ISBN sütunlarına sahiptir. İlişkisel model, veritabanının yedekliliği azaltacak şekilde normalleştirilmiş ve genel olarak depolama için optimize edilmiş tablolar arasında başvurusal bütünlük uygulamasına imkan tanıyacak şekilde tasarlanmıştır.

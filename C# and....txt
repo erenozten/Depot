@@ -72,6 +72,8 @@ Distributed databases are capable of modular development, meaning that systems c
 When failures occur in centralized databases, the system comes to a complete stop. When a component fails in distributed database systems, however, the system will continue to function at reduced performance until the error is fixed.
 Admins can achieve lower communication costs for distributed database systems if the data is located close to where it is used the most. This is not possible in centralized systems.
 -not bitiş
+Kısa açıklama:
+A distributed database is a database in which not all storage devices are attached to a common processor.[1] It may be stored in multiple computers, located in the same physical location; or may be dispersed over a network of interconnected computers. Unlike parallel systems, in which the processors are tightly coupled and constitute a single database system, a distributed database system consists of loosely coupled sites that share no physical components.
 
 A centralized distributed database management system (DDBMS) integrates data logically so it can be managed as if it were all stored in the same location. The DDBMS synchronizes all the data periodically and ensures that data updates and deletes performed at one location will be automatically reflected in the data stored elsewhere.
 By contrast, a centralized database consists of a single database file located at one site using a single network.

@@ -188,3 +188,11 @@ private protected
 
 The type or member can be accessed only within its declaring assembly, by code in the same class or in a type that is derived from that class.
 
+The following examples demonstrate how to specify access modifiers on a type and member:
+public class Bicycle
+{
+    public void Pedal() { }
+}
+Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+
+

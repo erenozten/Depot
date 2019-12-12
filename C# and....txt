@@ -194,5 +194,12 @@ public class Bicycle
     public void Pedal() { }
 }
 Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+Nested Classes
+Nested class nedir, nested classes nedir
+When one class is entirely dependent upon another, you may decide to implement it using a nested class. Nested classes are declared within the scope of an existing class and receive special benefits when they access their parent class's members.
+
+
+What are Nested Classes?
+A nested class is a special type of class that can be created using C#. Normally classes are declared within a namespace, or in the default namespace if one is not specified. A nested class is defined within the code block of another class, which itself may be a nested class to permit multiple nesting levels.
 
 

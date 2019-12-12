@@ -94,4 +94,7 @@ In a homogenous distributed database system, all the physical locations have the
 Features of a distributed database
 In a heterogeneous distributed database, the hardware, operating systems or database applications may be different at each location. Different sites may use different schemas and software, although a difference in schema can make query and transaction processing difficult.
 Different nodes may have different hardware, software and data structure, or they may be in locations that are not compatible. Users at one location may be able to read data at another location but not upload or alter it. Heterogeneous distributed databases are often difficult to use, making them economically infeasible for many businesses.
+Types of distributed databases
+Replicated data is used to create instances of data in different parts of the database. By using replicated data, distributed databases can access identical data locally, thus avoiding traffic. Replicated data can be divided into two categories: read-only and writable data.
+Read-only versions of replicated data allow revisions only to the first instance; subsequent enterprise data replications are then adjusted. Writable data can be altered, but the first instance is immediately changed.
 

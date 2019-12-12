@@ -84,3 +84,8 @@ Distributed database architecture
 (homogenous distributed database system nedir, heterogeneous distributed database nedir)
 Distributed databases can be homogenous or heterogeneous.
 In a homogenous distributed database system, all the physical locations have the same underlying hardware and run the same operating systems and database applications. Homogenous distributed database systems appear to the user as a single system, and they can be much easier to design and manage. For a distributed database system to be homogenous, the data structures at each location must be either identical or compatible. The database application used at each location must also be either identical or compatible.
+
+Features of a distributed database
+In a heterogeneous distributed database, the hardware, operating systems or database applications may be different at each location. Different sites may use different schemas and software, although a difference in schema can make query and transaction processing difficult.
+Different nodes may have different hardware, software and data structure, or they may be in locations that are not compatible. Users at one location may be able to read data at another location but not upload or alter it. Heterogeneous distributed databases are often difficult to use, making them economically infeasible for many businesses.
+

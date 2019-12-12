@@ -80,3 +80,7 @@ In general, distributed databases include the following features:
 •	Network independent
 •	Transaction transparency
 •	DBMS independent
+Distributed database architecture
+(homogenous distributed database system nedir, heterogeneous distributed database nedir)
+Distributed databases can be homogenous or heterogeneous.
+In a homogenous distributed database system, all the physical locations have the same underlying hardware and run the same operating systems and database applications. Homogenous distributed database systems appear to the user as a single system, and they can be much easier to design and manage. For a distributed database system to be homogenous, the data structures at each location must be either identical or compatible. The database application used at each location must also be either identical or compatible.

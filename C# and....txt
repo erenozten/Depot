@@ -69,4 +69,4 @@ Distributed database nedir? DDBMS nedir (distributed database management system)
 A distributed database is a database that consists of two or more files located in different sites either on the same network or on entirely different networks. Portions of the database are stored in multiple physical locations and processing is distributed among multiple database nodes.
 A centralized distributed database management system (DDBMS) integrates data logically so it can be managed as if it were all stored in the same location. The DDBMS synchronizes all the data periodically and ensures that data updates and deletes performed at one location will be automatically reflected in the data stored elsewhere.
 By contrast, a centralized database consists of a single database file located at one site using a single network.
-
+When in a collection, distributed databases are logically interrelated with each other, and they often represent a single logical database. With distributed databases, data is physically stored across multiple sites and independently managed. The processors on each site are connected by a network, and they don't have any multiprocessing configuration.

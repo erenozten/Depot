@@ -159,4 +159,32 @@ Unauthorized Access: File System may lead to unauthorized access to data. If a s
 No Concurrent Access: The access of same data by multiple users at same time is known as concurrency. File system does not allow concurrency as data can be accessed by only one user at a time.
 No Backup and Recovery: File system does not incorporate any backup and recovery of data if a file is lost or corrupted.
 These are the main reasons which made a shift from file system to DBMS.
+-
+-
+-
+-
+-
+-
+Access Modifiers
+Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir
+All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies. You can use the following access modifiers to specify the accessibility of a type or member when you declare it:
+public
+
+The type or member can be accessed by any other code in the same assembly or another assembly that references it.
+private
+
+The type or member can be accessed only by code in the same class or struct.
+protected
+
+The type or member can be accessed only by code in the same class, or in a class that is derived from that class.
+
+internal
+
+The type or member can be accessed by any code in the same assembly, but not from another assembly.
+protected internal 
+
+The type or member can be accessed by any code in the assembly in which it is declared, or from within a derived class in another assembly.
+private protected 
+
+The type or member can be accessed only within its declaring assembly, by code in the same class or in a type that is derived from that class.
 

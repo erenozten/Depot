@@ -97,4 +97,6 @@ Different nodes may have different hardware, software and data structure, or the
 Types of distributed databases
 Replicated data is used to create instances of data in different parts of the database. By using replicated data, distributed databases can access identical data locally, thus avoiding traffic. Replicated data can be divided into two categories: read-only and writable data.
 Read-only versions of replicated data allow revisions only to the first instance; subsequent enterprise data replications are then adjusted. Writable data can be altered, but the first instance is immediately changed.
+Horizontally fragmented data involves the use of primary keys that refer to one record in the database. Horizontal fragmentation is usually reserved for situations in which business locations only need to access the database pertaining to their specific branch.
+Vertically fragmented data involves using copies of primary keys that are available within each section of the database and are accessible to each branch. Vertically fragmented data is utilized when the branch of a business and the central location interact with the same accounts in different ways.
 

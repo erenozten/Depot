@@ -30,6 +30,7 @@ NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek,
 -
 MongoDb		(GITHUB)
 Mongodb nedir
+Bir veritabanı uygulamasıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
 
 MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman tabanlı, C++ ile geliştirilmiş açık kaynak, NoSQL (ilişkisiz veritabanı) veritabanı uygulamasıdır. MongoDB, verileri JSON tipinde dokümanlarda saklamaktadır, anlamsal alanları dokümandan dokümana değişir ve veri yapısı zaman içinde değiştirilebilir. Belge modeli, uygulamanızın kodundaki nesnelerle eşleştirilir, böylece verilerin kullanımı kolaylaşır. Geçici sorgular, dizin oluşturmak için ve gerçek zamanlı verilerinize erişmek ve analiz etmek için güçlü yollar sağlar. MongoDB, özellikle hız gerektiren ve geleneksel ilişkisel veritabanlarının (RDBMS) hantal ve yavaş kaldığı yapılarda kullanılmaktadır.MongoDB, dağıtılmış bir veritabanı yapısına sahiptir, bu nedenle yüksek erişilebilirlik, yatayda ve dikeyde ölçeklendirme yapılabilmektedir. MongoDB, GNU Affero Genel Kamu Lisansı uyarınca yayınlanan ücretsiz ve açık kaynaktır.
 Örnek kullanım alanları arasında:
@@ -57,6 +58,12 @@ In a database world horizontal-scaling is often based on the partitioning of the
 With horizontal-scaling it is often easier to scale dynamically by adding more machines into the existing pool - Vertical-scaling is often limited to the capacity of a single machine, scaling beyond that capacity often involves downtime and comes with an upper limit.
 Good examples of horizontal scaling are Cassandra, MongoDB, Google Cloud Spanner .. and a good example of vertical scaling is MySQL - Amazon RDS (The cloud version of MySQL). It provides an easy way to scale vertically by switching from small to bigger machines. This process often involves downtime.
 In-Memory Data Grids such as GigaSpaces XAP, Coherence etc.. are often optimized for both horizontal and vertical scaling simply because they're not bound to disk. Horizontal-scaling through partitioning and vertical-scaling through multi-core support.
-You can read more on this subject in my earlier posts: Scale-out vs Scale-up and The Common Principles Behind the NOSQL Alternatives
-
+-
+-
+-
+-
+-
+-
+Distributed database
+Distributed database nedir?
 

@@ -357,5 +357,70 @@ class Order
 }
 
 NB: Although nested classes can access the private members of their parent class, the reverse is not true. Private members of nested classes are invisible to their parent class.
+-
+-
+-
+-
+-
+-
+Class		(GITHUB)
+
+Class nedir
+Class'lar ile ilgili önemli bilgiler:
+
+namespace ConsoleApp6
+{
+    public class PublicClass
+    {
+    }
+ 
+    internal class InternalClass
+    {
+ 
+    }
+ 
+    // access modifier'siz class'lar otomaitik olarak internal olurlar.
+ 
+    class AccessModifiersizClass
+    {
+ 
+    }
+ 
+ 
+    // Aşağıdaki hata verir. Direkt olarak namespace içine yazılmış olan class'lar sadece public veya internal olabilir!
+    // Classes and structs that are declared directly within a namespace (in other words, that are not nested within other classes or structs) can be either public or internal. Internal is the default if no access modifier is specified.
+    /*
+    private class PrivateClass
+    {
+ 
+    }
+    */
+ 
+    // namespace scope'unda direkt olarak tutulamayacağını söyledik private class vb'nin. Aşağıya bakınız:
+    public class BigClass
+    {
+        private class PrivateClass
+        {
+            
+        }
+ 
+        protected class ProtectedClass
+        {
+            
+        }
+ 
+        private protected class PrivProtClass
+        {
+ 
+        }
+ 
+        internal class InternalClass
+        {
+            
+        }
+    }
+ 
+    // görüldüğü gibi bir class'ın scope'u içindeysek, private class vb oluşturabiliriz.
+
 
 

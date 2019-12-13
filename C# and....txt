@@ -194,6 +194,12 @@ public class Bicycle
     public void Pedal() { }
 }
 Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+-
+-
+-
+-
+-
+-
 Nested Classes
 Nested class nedir, nested classes nedir
 When one class is entirely dependent upon another, you may decide to implement it using a nested class. Nested classes are declared within the scope of an existing class and receive special benefits when they access their parent class's members.
@@ -206,5 +212,54 @@ A nested class is a special type of class that can be created using C#. Normally
 A nested class generally behaves is the same way as any other class. It can be instantiated separately to its parent class and is not instantiated automatically by its parent. However, there are some important differences. One key difference concerns the scope of the class. Normally classes can be either public or internal. A nested class may be declared as private, meaning that the class can only be seen by its parent class and other nested classes within that parent. A nested class may also be declared as protected, allowing it to also be accessed by classes that derive from its parent type. This may be extended to protected internal to allow other classes in the same assembly to access it.
 
 Nested classes are given special access to instances of their parent classes. When an object of a parent class is passed to a method of a nested class, the method is permitted to access the private and protected members of the object. This makes nested classes ideal where a special relationship exists with the parent class that requires access to private members, particularly when the nested class is not required anywhere else and is never used in a standalone capability.
+
+Example Nested Classes
+We will start with a simple example of a nested class. In this case, the outer class will describe a sales order in an order-processing system. In this rather contrived design, there is no requirement for an order line to ever be created without an order. Furthermore, there is no need for an order line to be used externally to an order. In this case, it is useful to create an Order class with a nested, private OrderLine class.
+NB: The following code uses .NET 3.0 syntax for brevity. For earlier versions of the .NET framework, you will need to expand the property declarations and possibly remove the use of generics.
+
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+ 
+    public void AddOrderLine(string product, int quantity, double price)
+    {
+        OrderLine line = new OrderLine();
+        line.ProductName = product;
+        line.Quantity = quantity;
+        line.Price = price;
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal();
+        }
+        return total;
+    }
+ 
+    // Nested class
+    private class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal()
+        {
+            return Price * Quantity;
+        }
+    }
+}
+The code above shows the simplified Order and nested OrderLine classes. The Order class has two public members. The first allows an item to be added to a private collection of order lines. The product name, price and quantity are passed to this method, which builds an OrderLine object and adds it to the list. The second method loops through each item in the collection and calculates the total value for the order.
+The nested OrderLine class is used to represent order lines. It includes properties for the product name, quantity and price and a single method that calculates the total price for the order line. As the class is marked as private, it is invisible to all classes except its parent and any other nested classes that we may later create within Order. We could change the access modifier for the nested class to protected if we wished it to be visible to classes that inherit from Order.
+We can test the order mechanism with the following code. This creates an order with two order lines and outputs the total value to the console:
+Order order = new Order();
+order.AddOrderLine("Cheese", 5, 1.99);
+order.AddOrderLine("Oranges", 12, 0.35);
+Console.WriteLine(order.OrderTotal());  // Outputs "14.15"
 
 

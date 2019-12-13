@@ -1,0 +1,26 @@
+﻿Generally used queries
+            -- Tablo oluştur
+
+            CREATE TABLE NewTable2(
+            ID int,
+            Name varchar(255),
+            Surname varchar(255));
+
+            -- Tablo sil
+
+            DROP TABLE NewTable2;
+
+	    -- Tabloya yeni record ekle (yeni veri ekle)
+
+			select * from Products;
+
+			/*
+			-- Bu çalışmaz çünkü explicit olarak Primary Key'e int değer vermeye çalışıyoruz. Hata: Cannot insert explicit value for identity column in table 'Products' when IDENTITY_INSERT is set to OFF.
+            INSERT INTO Products (ProductID)
+            VALUES(32324);
+			*/
+
+            -- Ama aşağıdaki çalışır, no prob.
+
+            INSERT INTO Products (ProductName, UnitsInStock)
+            VALUES('Texttt', 26);

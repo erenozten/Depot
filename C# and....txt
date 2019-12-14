@@ -413,9 +413,14 @@ namespace ConsoleApp6
         }
     }
  
-// görüldüğü gibi bir class'ın scope'u içindeysek, private class vb oluşturabiliriz.
+// görüldüğü gibi, eğer bir class'ın içindeyken bir class oluşturuyorsak, bu class'ları access modifier'ları kullanarak oluşturabiliriz
 //SQL sorguları, stored procedure'ler burada bulunacak
-
+-
+-
+-
+-
+-
+-
 SQL
 SQL nedir
 In 1970's the product called 'SEQUEL', structured English query language, developed by IBM and later SEQUEL was renamed to 'SQL' which stands for Structured Query Language.
@@ -425,6 +430,33 @@ T-SQL stands for Transact Structure Query Language which is a Microsoft product 
 MS SQL Server --> SQL\T-SQL
 ORACLE        --> SQL\PL-SQL
 Data tiplerini bi incele: https://www.tutorialspoint.com/t_sql/t_sql_data_types.htm
+-
+-
+-
+-
+-
+-
+derive, derivation, inherit, inheritance kelimeleri
+Derive nedir, derivation nedir, inherit nedir, inheritance nedir, derive from nedir, inherit from nedir
+Kelimelerin nasıl kullanılabileceğiyle ilgili bilgi içerir:
+	Derive
+A class can be derived from more than one class or interface 
+(derive meaning: obtain something from (a specified source)).
+
+Definition - What does Derived Class mean?
+A derived class is a class created or derived from another existing class. The existing class from which the derived class is created through the process of inheritance is known as a base class or superclass.
+
+class <derived_class> : <base_class> 
+{
+}
+	Inherit
+Definition - What does Inherited Class mean?
+An inherited class is called a subclass of its parent class or super class.
+class B inherits from class A: 
+class B : A {}
+(inherit meaning: derive (a quality, characteristic, or predisposition) genetically from one's parents or ancestors.)
+Örnek cümle: The child classes inherit methods and properties of the parent class
+
 
 
 

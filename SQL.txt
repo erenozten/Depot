@@ -1,26 +1,78 @@
-﻿Generally used queries
-            -- Tablo oluştur
+﻿Tablo oluştur
 
-            CREATE TABLE NewTable2(
-            ID int,
-            Name varchar(255),
-            Surname varchar(255));
+CREATE TABLE NewTable2(
+ID int,
+Name varchar(255),
+Surname varchar(255));
+-
+-
+-
+-
+-
+-
+Tablo sil
 
-            -- Tablo sil
+DROP TABLE NewTable2;
+-
+-
+-
+-
+-
+-
+Tabloya yeni record ekle (yeni veri ekle)
 
-            DROP TABLE NewTable2;
+Önce table'ı seçelim, gözümüzün önünde olsun
 
-	    -- Tabloya yeni record ekle (yeni veri ekle)
+select * from Products;
 
-	    select * from Products;
+INSERT INTO Products (ProductName, UnitsInStock)
+VALUES('Texttt', 26);
 
-	    /*
-            -- Bu çalışmaz çünkü explicit olarak Primary Key'e int değer vermeye çalışıyoruz. Hata: Cannot insert explicit value for identity column in table 'Products' when IDENTITY_INSERT is set to OFF.
-            INSERT INTO Products (ProductID)
-            VALUES(32324);		
-            */
+Fakat aşağıdaki çalışmaz çünkü explicit olarak Primary Key'e int değer vermeye çalışıyoruz. Hata: Cannot insert explicit value for identity column in table 'Products' when IDENTITY_INSERT is set to OFF.
+INSERT INTO Products (ProductID)
+VALUES(32324);		
+-
+-
+-
+-
+-
+-
+Bir tablo oluşturup bu tablonun verilerini başka tablodaki verilerle populate etmek için aşağıdaki kodlar kullanılabilir
+Tabloları ekleyip silip örneği SQL Server'da deneyebiliriz.
 
-            -- Ama aşağıdaki çalışır, no prob.
+Boş tablomuzu oluşturalım:
 
-            INSERT INTO Products (ProductName, UnitsInStock)
-            VALUES('Texttt', 26);
+CREATE TABLE Eren_NewTable3(
+FirstColumn varchar(333),
+SecondColumn varchar(333),
+ThirdColumn varchar(331),
+FourthColumn varchar(331)
+);
+
+Table'ı silmek ve seçmek için aşağıdaki kodları da kullanalım, elimizin altında olsun:
+
+DROP TABLE Eren_NewTable3;
+
+SELECT * FROM Eren_NewTable3
+
+SELECT ContactName,CompanyName FROM Customers
+
+Şimdi boş tabloyu populate edelim, yani dolduralım. Hangi tablodan alacağız verileri? Customers tablosundan:
+
+INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
+SELECT ContactName, CompanyName
+FROM Customers
+[WHERE CompanyName = "birşey"];
+-
+-
+-
+-
+-
+-
+
+
+
+           
+
+
+           

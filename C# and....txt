@@ -376,14 +376,12 @@ namespace ConsoleApp6
  
     internal class InternalClass
     {
- 
     }
  
     // access modifier'siz class'lar otomaitik olarak internal olurlar.
  
     class AccessModifiersizClass
     {
- 
     }
  
  
@@ -392,7 +390,6 @@ namespace ConsoleApp6
     /*
     private class PrivateClass
     {
- 
     }
     */
  
@@ -401,26 +398,34 @@ namespace ConsoleApp6
     {
         private class PrivateClass
         {
-            
         }
  
         protected class ProtectedClass
         {
-            
         }
  
         private protected class PrivProtClass
         {
- 
         }
  
         internal class InternalClass
         {
-            
         }
     }
  
-    // görüldüğü gibi bir class'ın scope'u içindeysek, private class vb oluşturabiliriz.
+// görüldüğü gibi bir class'ın scope'u içindeysek, private class vb oluşturabiliriz.
+//SQL sorguları, stored procedure'ler burada bulunacak
+
+SQL
+SQL nedir
+In 1970's the product called 'SEQUEL', structured English query language, developed by IBM and later SEQUEL was renamed to 'SQL' which stands for Structured Query Language.
+In 1986, SQL was approved by ANSI (American national Standards Institute) and in 1987, it was approved by ISO (International Standards Organization).
+SQL is a structure query language which is a common database language for all RDBMS products. Different RDBMS product vendors have developed their own database language by extending SQL for their own RDBMS products.
+T-SQL stands for Transact Structure Query Language which is a Microsoft product and is an extension of SQL Language. Example:
+MS SQL Server --> SQL\T-SQL
+ORACLE        --> SQL\PL-SQL
+Data tiplerini bi incele: https://www.tutorialspoint.com/t_sql/t_sql_data_types.htm
+
 
 
 

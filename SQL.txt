@@ -12,13 +12,13 @@
 
 	    -- Tabloya yeni record ekle (yeni veri ekle)
 
-			select * from Products;
+	    select * from Products;
 
-			/*
-			-- Bu çalışmaz çünkü explicit olarak Primary Key'e int değer vermeye çalışıyoruz. Hata: Cannot insert explicit value for identity column in table 'Products' when IDENTITY_INSERT is set to OFF.
+	    /*
+            -- Bu çalışmaz çünkü explicit olarak Primary Key'e int değer vermeye çalışıyoruz. Hata: Cannot insert explicit value for identity column in table 'Products' when IDENTITY_INSERT is set to OFF.
             INSERT INTO Products (ProductID)
-            VALUES(32324);
-			*/
+            VALUES(32324);		
+            */
 
             -- Ama aşağıdaki çalışır, no prob.
 

@@ -1,9 +1,26 @@
-﻿MySQL, MsSQL, T-SQL, Oracle, PL-SQL
+﻿MySQL, MsSQL, T-SQL, Oracle, PL-SQL, SQL 	(GITHUB)
 MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
+MsSQL -> T-SQL
+MySQL -> SQL
+Oracle --> PL/SQL
+https://db-engines.com/en/system/Microsoft+SQL+Server%3BMySQL%3BOracle
+
+MySQL is a database itself that uses SQL language.
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Oracle is a Database (RDBMS).
 Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
 MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
 MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
 MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+PL/SQL vs MySQL
+DESCRIPTION- in one sentence we can actually find the major differnce btw them, see plsql is basically a DATABASE PROGRAMMING LANGUAGE that is used in ORACLE DATABASE.
+1.	and MYSQL is itself is database which that uses SQL programming language and SQL is just a ANSI standard, and is used as a base with most Database systems, like Microsoft SQL Server, Oracle, MySQL, IBM DB2 have used this as a base and extended/enhanced in their database systems.
+
+SQL vs MySQL
+KEY DIFFERENCE:
+•	SQL is a language which is used to operate your database whereas MySQL was one of the first open-source database available in the market
+•	SQL is used in the accessing, updating, and manipulation of data in a database while MySQL is an RDBMS that allows keeping the data that exists in a database organized
+•	SQL is a Structured Query Language and MySQL is a RDBMS to store, retrieve, modify and administrate a database.
+•	SQL is a query language while MYSQL is a database software
 
 MS SQL 
 MsSQL Server is a Relational Database Management System (RDBMS) developed by Microsoft Inc. Its primary query languages are − T-SQL, ANSI SQL
@@ -13,8 +30,11 @@ It is a very large multi-user based database management system. Oracle is a rela
 
 Oracle works to efficiently manage its resources, a database of information among the multiple clients requesting and sending data in the network.
 It is an excellent database server choice for client/server computing. Oracle supports all major operating systems for both clients and servers, including MSDOS, NetWare, UnixWare, OS/2 and most UNIX flavors.
+PL/SQL is an Oracle's procedural language extension to SQL. It is a server-side, stored procedural language that is easy-to-use, seamless with SQL, portable, and secure. PL/SQL enables you to mix SQL statements with procedural constructs.
 - - -
 Oracle ile MYSQL arasındaki farklar üzerine:
+SQL is a database language used with Oracle Database.
+MySQL is a database itself that uses SQL language.
 The difference is that MySQL is free, and the world's most popular database, and Oracle isn't free (except with trials and certain products) and makes billions from selling premium database software to large enterprises and SME.
 
 There are many more differences between Oracle and MySQL.We can summarise them as follows-
@@ -47,6 +67,7 @@ PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle
 It combines the data manipulation power of SQL with the processing power of procedural language to create super powerful SQL queries.
 PL/SQL means instructing the compiler 'what to do' through SQL and 'how to do' through its procedural way.
 Similar to other database languages, it gives more control to the programmers by the use of loops, conditions and object-oriented concepts.
+
 -
 -
 -

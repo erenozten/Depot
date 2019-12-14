@@ -165,8 +165,9 @@ These are the main reasons which made a shift from file system to DBMS.
 -
 -
 -
-Access Modifiers
-Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir
+Access Modifier = Access Specifier = Erişim Modifiyeri)                               	 (GITHUB)
+Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir, access specifier nedir, access modifier nedir
+Access specifier de denir, access modifier de denir. Kaynaklar incelendi: https://www.tutorialspoint.com/What-are-the-different-access-specifiers-in-Chash-NET
 All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies. You can use the following access modifiers to specify the accessibility of a type or member when you declare it:
 public
 
@@ -176,7 +177,7 @@ private
 The type or member can be accessed only by code in the same class or struct.
 protected
 
-The type or member can be accessed only by code in the same class, or in a class that is derived from that class.
+The type or member can be accessed only by code in the same class, or in a class that is derived from that class. (class dışından erişemezsin)
 
 internal
 
@@ -187,13 +188,17 @@ The type or member can be accessed by any code in the assembly in which it is de
 private protected 
 
 The type or member can be accessed only within its declaring assembly, by code in the same class or in a type that is derived from that class.
-
 The following examples demonstrate how to specify access modifiers on a type and member:
 public class Bicycle
 {
     public void Pedal() { }
 }
 Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+Class and Struct Accessibility
+Classes and structs that are declared directly within a namespace (in other words, that are not nested within other classes or structs) can be either public or internal. Internal is the default if no access modifier is specified.
+Struct members, including nested classes and structs, can be declared as public, internal, or private. Class members, including nested classes and structs, can be public, protected internal, protected, internal, private protected or private. The access level for class members and struct members, including nested classes and structs, is private by default. Private nested types are not accessible from outside the containing type.
+Derived classes cannot have greater accessibility than their base types. In other words, you cannot have a public class B that derives from an internal class A. If this were allowed, it would have the effect of making A public, because all protected or internal members of A are accessible from the derived class.
+You can enable specific other assemblies to access your internal types by using the InternalsVisibleToAttribute. For more information, see Friend Assemblies.
 -
 -
 -
@@ -456,7 +461,78 @@ class B inherits from class A:
 class B : A {}
 (inherit meaning: derive (a quality, characteristic, or predisposition) genetically from one's parents or ancestors.)
 Örnek cümle: The child classes inherit methods and properties of the parent class
+-
+-
+-
+-
+-
+-
+sealed 
+Sealed nedir
+Sealed bir access modifier değildir! Evet, bir modifier'dir. Ama access modifier değildir. Çünkü access'i yani erişimi değiştirmez, yani erişimi modifiye etmez.
+Peki sealed tanımda ne olarak geçer?
+Sealed bir modifier'dir.
+Sealed daha genel anlamda bakıldığında bir keyword'dür tabi ki: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+Sealed'in neden bir access modifier olmadığına dair güzel bir cevap: Cause if you cannot derive from a class it doesn't mean you cannot access it.
+When applied to a class, the sealed modifier prevents other classes from inheriting from it. In the following example, class B inherits from class A, but no class can inherit from class B.
+class A {}
+sealed class B : A {}
+Önemli: You can also use the sealed modifier on a method or property that overrides a virtual method or property in a base class. This enables you to allow classes to derive from your class and prevent them from overriding specific virtual methods or properties.
+Example (gayet açık)
+In the following example, Z inherits from Y but Z cannot override the virtual function F that is declared in X and sealed in Y.
+C#Copy
+class X
+{
+    protected virtual void F() { Console.WriteLine("X.F"); }
+    protected virtual void F2() { Console.WriteLine("X.F2"); }
+}
 
+class Y : X
+{
+    sealed protected override void F() { Console.WriteLine("Y.F"); }
+    protected override void F2() { Console.WriteLine("Y.F2"); }
+}
+
+class Z : Y
+{
+    // Attempting to override F causes compiler error CS0239.
+    // protected override void F() { Console.WriteLine("Z.F"); }
+
+    // Overriding F2 is allowed.
+    protected override void F2() { Console.WriteLine("Z.F2"); }
+}
+When you define new methods or properties in a class, you can prevent deriving classes from overriding them by not declaring them as virtual.
+It is an error to use the abstract modifier with a sealed class, because an abstract class must be inherited by a class that provides an implementation of the abstract methods or properties.
+When applied to a method or property, the sealed modifier must always be used with override.
+Because structs are implicitly sealed, they cannot be inherited.
+For more information, see Inheritance.
+For more examples, see Abstract and Sealed Classes and Class Members.
+Example
+sealed class SealedClass
+{
+    public int x;
+    public int y;
+}
+
+class SealedTest2
+{
+    static void Main()
+    {
+        var sc = new SealedClass();
+        sc.x = 110;
+        sc.y = 150;
+        Console.WriteLine($"x = {sc.x}, y = {sc.y}");
+    }
+}
+// Output: x = 110, y = 150
+In the previous example, you might try to inherit from the sealed class by using the following statement:
+class MyDerivedC: SealedClass{} // Error
+The result is an error message:
+'MyDerivedC': cannot derive from sealed type 'SealedClass'
+Remarks
+To determine whether to seal a class, method, or property, you should generally consider the following two points:
+•	The potential benefits that deriving classes might gain through the ability to customize your class.
+•	The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.
 
 
 

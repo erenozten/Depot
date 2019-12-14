@@ -34,6 +34,34 @@ SET ProductName = 'Aniseed SyrupAniseed Syrup', QuantityPerUnit = '1 kg pkg.'
 WHERE ProductID = 3;
 
 To update multiple columns use the SET clause to specify additional columns. Just like with the single columns you specify a column and its new value, then another set of column and values. In this case each column is separated with a column.
+
+Farklı bir kullanım:
+
+Örneğin tablodaki tüm X kolonu verilerini Y değeriyle değiştirmek istiyoruz. O halde:
+            
+UPDATE Eren_NewTable3
+SET FirstColumn = 'NEWWW', SecondColumn = 'ASDFF'
+
+Yukarıda gördüğümüz gibi Where'i kullanmamıza gerek yok. Çünkü tüm verileri update ediyoruz. Yapılan şey şu:
+Bütün row'lardaki FirstColumn = "NEWWW",
+Bütün row'lardaki SecondColumn = "ASDFF"
+
+Bir tablo oluşturup bu işlemi tekrar yapalım. Elimiz alışsın.
+
+USE Northwind
+CREATE TABLE ErenTable33(
+Id INT,
+Name varchar(22),
+Surname varchar(22));
+
+USE Northwind
+SELECT * FROM ErenTable33
+
+INSERT INTO ErenTable33(Name, Surname)
+VALUES('eren', 'ox');
+
+UPDATE ErenTable33
+SET Name = 'NEWWW', Surname = 'ASDFF'
 -
 -
 -
@@ -159,8 +187,7 @@ SELECT * FROM Customers;
 -
 -
 -
-
--- Tablo oluştururken primary key belirleme:
+Tablo oluştururken primary key belirleme:
 
 USE Northwind
    CREATE TABLE ErenTable(
@@ -182,4 +209,18 @@ VALUES(33, 'Murat', 'Taş', 'Mahalle2');
 Veya kolon isimlerini yazmadan da veri oluşturabiliriz:
 
 INSERT INTO ErenTable VALUES(99, 'Musa', 'Dağ', 'Dunya');
+-
+-
+-
+-
+-
+-
+
+
+
+
+
+
+
+
            

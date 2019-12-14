@@ -1,4 +1,59 @@
-﻿NoSQL	(GITHUB)
+﻿MySQL, MsSQL, T-SQL, Oracle, PL-SQL
+MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
+Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
+MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
+MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
+MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+
+MS SQL 
+MsSQL Server is a Relational Database Management System (RDBMS) developed by Microsoft Inc. Its primary query languages are − T-SQL, ANSI SQL
+
+Oracle
+It is a very large multi-user based database management system. Oracle is a relational database management system developed by 'Oracle Corporation'.
+
+Oracle works to efficiently manage its resources, a database of information among the multiple clients requesting and sending data in the network.
+It is an excellent database server choice for client/server computing. Oracle supports all major operating systems for both clients and servers, including MSDOS, NetWare, UnixWare, OS/2 and most UNIX flavors.
+- - -
+Oracle ile MYSQL arasındaki farklar üzerine:
+The difference is that MySQL is free, and the world's most popular database, and Oracle isn't free (except with trials and certain products) and makes billions from selling premium database software to large enterprises and SME.
+
+There are many more differences between Oracle and MySQL.We can summarise them as follows-
+1.Oracle is way more powerful than MySQL
+2.Oracle supports distributed databases while MySQL doesn’t
+3.Oracle supports save points while MySQL doesn’t
+4.Oracle allows programs within the database while MySQL doesn’t
+5.Oracle is suited for enterprise deployments while MySQL is suited for small to medium scale
+6.Oracle requires that you pay a licensing fee while MySQL doesn’t
+
+-- Daha anlamlı bir açıklama:
+
+This might be a slightly controversial view ( and this is all in my opinion).
+   
+I have been a Developer for most of my career and I have used an old hierarchical DB, called HP Image 3000, Oracle, MS SQL and MySQL.
+IMO, there is a lot of snobbery around Oracle. Its very good, but very expensive and in my opinion largely unnecessary and over used.
+When you consider how many large companies and applications use MySQL without any issue, it will cope with 90% of demand. Hardware is so powerful now and the original concerns about performance are largely negated by the raw power of the hardware. Oracle should be a niche market and not a large player, as it really isn’t needed.
+I worked for a large American company who used Oracle, I asked why, they said because its the best, I persisted and said what do you mean, they had no answer.
+MySQL will be fine for most things and as its free, why not use that. The advent of cloud computing and the pricing model of many data centers, makes licencing very expensive (virtual CPU’s cores) for both Oracle and MS SQL.
+Facebook, Uber and Google, used/use MySQL, so the idea its not scalable, is a bit ridiculous.
+What is sad and I really mean it, is that the traditional IT Operations and the DBA role in IT, will slowly disappear, as its not really needed unless in some extreme situations.
+-- Diğer açıklama:
+
+Oracle is a Database tool that uses PL/SQL language.
+MySQL is a also a Database tool itself that uses SQL language.
+
+	What is PL/SQL?
+Pl-sql nedir plsql nedir pl/sql nedir
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Unlike SQL, PL/SQL allows the programmer to write code in a procedural format. Full form of PL/SQL is "Procedural Language extensions to SQL".
+It combines the data manipulation power of SQL with the processing power of procedural language to create super powerful SQL queries.
+PL/SQL means instructing the compiler 'what to do' through SQL and 'how to do' through its procedural way.
+Similar to other database languages, it gives more control to the programmers by the use of loops, conditions and object-oriented concepts.
+-
+-
+-
+-
+-
+-
+NoSQL	(GITHUB)
 Nosql nedir
 İlişkisiz veritabanıdır. NoSQL is not a relational database.
 Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.

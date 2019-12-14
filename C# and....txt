@@ -533,6 +533,19 @@ Remarks
 To determine whether to seal a class, method, or property, you should generally consider the following two points:
 •	The potential benefits that deriving classes might gain through the ability to customize your class.
 •	The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.
+-
+-
+-
+-
+-
+-
+Type, member
+Type nedir, member nedir
+The following examples demonstrate how to specify access modifiers on a type and member:
+public class Bicycle
+{
+    public void Pedal() { }
+}
 
 
 

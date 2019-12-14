@@ -113,10 +113,73 @@ FROM Customers
 -
 -
 -
+anlık tarih bilgisini çeker:
 
+SELECT CURRENT_TIMESTAMP;
 
+bu da anlık tarih bilgisi çeker:
 
-           
+SELECT  GETDATE();
+-
+-
+-
+-
+-
+-
+yeni bi database oluşturur:
 
+CREATE DATABASE ERENDB;
+-
+-
+-
+-
+-
+-
+database sil:
 
+DROP DATABASE EreNDb;
+
+Drop create yaparken Case Sensitive'liğin olmadığını da görmüş olduk. (ERENDB / ErenDb)
+-
+-
+-
+-
+-
+-
+USE Northwind
+SELECT * FROM Customers;           
+
+SQL Server'da, Herhangi bir DB'ye girmeyip, mesela NorthWind'e ters tıklamayıp direk "New Query" e basıp sorgu çalıştıracaksak, sorgunun hangi database için geçerli olduğunu da belirtmemiz gerekecektir. Yoksa hata üretir; çünkü hangi database için sorgu çalıştırmak istediğimizi sistem bilemez. Böyle bir durumda USE yi kullanırız:
+
+USE Northwind
+SELECT * FROM Customers;
+-
+-
+-
+-
+-
+-
+
+-- Tablo oluştururken primary key belirleme:
+
+USE Northwind
+   CREATE TABLE ErenTable(
+   ID int,
+   Name varchar(255) NOT NULL,
+   Surname varchar(255) NOT NULL,
+   Address varchar(255),
+   PRIMARY KEY(ID)
+   );
+
+Yukarıda oluşturduğumuz tabloya veriler ekleyelim:
+
+INSERT INTO ErenTable(ID, Name, Surname, Address)
+VALUES(66, 'Ali', 'Selim', 'Mahalle1');
+
+INSERT INTO ErenTable(ID, Name, Surname, Address)
+VALUES(33, 'Murat', 'Taş', 'Mahalle2');
+
+Veya kolon isimlerini yazmadan da veri oluşturabiliriz:
+
+INSERT INTO ErenTable VALUES(99, 'Musa', 'Dağ', 'Dunya');
            

@@ -76,6 +76,7 @@ Similar to other database languages, it gives more control to the programmers by
 -
 NoSQL	(GITHUB)
 Nosql nedir
+https://www.kdnuggets.com/2016/06/top-nosql-database-engines.html
 İlişkisiz veritabanıdır. NoSQL is not a relational database.
 Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
 Why NoSQL? It's high performance with high availability, and offers rich query language and easy scalability.

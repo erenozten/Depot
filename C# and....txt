@@ -152,7 +152,6 @@ MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman t
 •	Web içerik yönetim sistemleri
 •	Web yorum/etiket saklama ve yönetme
 İkililer, Windows, Mac OS X, Linux ve Solaris için mevcuttur.
-
 -
 -
 -
@@ -888,6 +887,58 @@ Suppose if your /Home/Index is implemented as GET but it lets say deletes a row 
 -
 -
 -
+Bundling in MVC / Bundle in MVC 
+Bundling  nedir, bundle nedir
+Detaylı bilgil için link kesinlikle incelenmeli: https://www.tutorialsteacher.com/mvc/bundling-and-minification-in-asp.net-mvc
+Bundle ingilizcede "demet" demektir... Bundling request'lerin daha hızlı gerçekleşmesi için yapılır. (Request load time'ı azaltmak için yapılır). İstenen statik dosyaları farklı farklı http request'lerle yollamaktansa hepsini bir bundle içinde (demette) toplayıp tek bir http request'iyle yollayabiliriz. Dolayısıyla bundling zaman yönünden verimlilik sağlayan bir tekniktir. Aklımıza şunu getirebiliriz: Çiçekleri tek tek vermektense bir demet halinde tek bir hamleyle veriyoruz. Bundling'in faydası sadece bununla sınırlı değildir.
+Bundling, script/style dosyalarımızın gereksiz kısımlarını (gereksiz boşluklar vb) siler. Böylelikle dosyayı minimize etmiş olur (yani boyutunu düşürmüş olur). Bu da sunucu üzerine bindirilen yükü azaltır. Örneğin aşağıdaki kod parçacığını;
+sayHello = function(name){
+    //this is comment
+    var msg = "Hello" + name;
+    alert(msg);
+}
+
+Şu hale getirir:
+sayHello=function(n){var t="Hello"+n;alert(t)}
+
+Görüldüğü gibi comment satırını bile silmiş..
+Not: Bahsedilen statik dosyalar hem script dosyaları, hem de style dosyaları olabilir. Script dosyalarımızı ScriptBundle kullanarak, style dosyalarımızı da StyleBundle kullanılarak gönderiyoruz.
+Bundle'ları nasıl oluşturduğumuz ve View'da nasıl render ettiğimiz yukarıdaki linkte anlatılıyor. 
+
+Script bundle:
+https://www.tutorialsteacher.com/mvc/scriptbundle-mvc
+bundles.Add(new ScriptBundle("~/bundles/myScriptsBundle").Include(
+                "~/Scripts/myScript.js"));
+buradaki  ScriptBundle'yi unutma. Bundle ye script koyacaksak; bunun adı ScriptBundle olmalı, yok eğer style dosyaları koyacaksak (CSS) o zaman adı StyleBundle olur.
+~/bundles
+bu kısmı yazmazsak çalışmıyor.
+myScriptsBundle
+bizim vereceğimiz özel isim, kafaya göre.
+Scripts
+bu ise script'in hangi file içinde olduğunu gösteriyor
+myScript.js
+çalıştırmak istediğimiz script dosyası..
+sonra bu bundle'ı RENDER etmemiz gerekiyor. Yoksa çalışmaz. 
+Scriptleri layoutta render edelim ki her sayfada geçerli olsun:
+    @Scripts.Render("~/bundles/myScriptsBundle")
+
+Not: render ederken diğer jquery vb dosyalarından sonra render et çünkü script'inde kesin jquery falan kullanmışsındır. o yüzden önce JQuery bundle render edilsin, sonra senin scriptin.
+
+Style bundle:
+STYLE'LAR BÖYLE YAPILMALI:
+     bundles.Add(new StyleBundle("~/bundles/VereceginİsimKafayaGöre").Include(
+                "~/Content/site2.css"));
+    @Styles.Render("~/bundles/ VereceginİsimKafayaGöre")
+-
+-
+-
+-
+-
+-
+
+
+
+
 
 
 

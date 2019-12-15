@@ -769,6 +769,66 @@ Every time you take a photo with today's cameras a bunch of metadata is gathered
 -
 -
 -
+HTTPGet vs HTTPPost
+Httpget nedir httppost nedir
+https://www.youtube.com/watch?v=Un2JTC7tFPI
+Videoyu izle…
+Get yapınca veriler url ye yazılır. Post ta ise form yollanır… Url ile yollanmaz veri. Message body içinde yollanır.
+Get metotlara url'ye yazıp enter yaparak ulaşılır. O yüzden tehlikeli olabilir…
+DB'deki değerleri hem Get hem Post ile değiştirebiliriz tabi ki. Ama dediğimiz gibi get ile bunu yapmak tehlikelidir.
+-
+The GET Method
+GET is used to request data from a specified resource. 
+GET is one of the most common HTTP methods. 
+Note that the query string (name/value pairs) is sent in the URL of a GET request: 
+/test/demo_form.php?name1=value1&name2=value2
+Some other notes on GET requests: 
+GET requests can be cached
+GET requests remain in the browser history
+GET requests can be bookmarked
+GET requests should never be used when dealing with sensitive data
+GET requests have length restrictions
+GET requests are only used to request data (not modify)
+The POST Method
+POST is used to send data to a server to create/update a resource. 
+The data sent to the server with POST is stored in the request body of the HTTP request: 
+POST /test/demo_form.php HTTP/1.1
+Host: w3schools.com
+name1=value1&name2=value2
+(yukarıda request body'nin neye benzediğini görmüş olduk. Get request'lerde request body yoktur. Veri url'den gönderilir)
+Some other notes on POST requests:
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
+-
+GET methodu HTTP istekleri arasındaki varsayılan yöntemdir.  GET metodu ile yapılan istekler tarayıcının adres satırında görünür. Sadece belirli boyutta veri gönderileceği zaman kullanılır.
+POST metodu ise URL’ de görünmesini istemediğimiz veriler olduğunda kullanılabilir. POST yönteminde gönderebileceğimiz verinin boyutu ile ilgili bir sınır yoktur. Ayrıca gönderdiğimiz parametrelerin adres satırında görünmemesi dolayısıyla GET yöntemine göre daha güvenlidir. HTML form gönderileceği zaman neredeyse her zaman POST yöntemi tercih edilir.
+Örnek vermek gerekirse Kisilers tablomuzun olduğu bir proje üzerinde kişi bilgilerini düzenlemek isteyebiliriz. Bunun için genellikle iki Action oluştururuz. Bunlardan biri kişinin ID sini parametre olarak alan gelen ID ye göre kişinin bilgilerini Edit formunda açan Action iken diğeri POST olduğunda yani Kaydet butonuna tıklandığında kullanılacak Actiondur.
+ 
+public ActionResult Edit(int? id)
+{
+if (id == null)
+ 
+{  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);  }
+ 
+Kisiler kisiler = db.Kisilers.Find(id);
+ 
+if (kisiler == null) 
+{
+return HttpNotFound();
+}
+ 
+return View(kisiler);
+}
+ 
+Yukarıda ki Action’ da querystring’imiz kisa iken aşağıdakinde Kisilers tablosundaki kolon sayısına göre uzunluğu değişecek bir querystring söz konusu. Ayrıca buradan dönen bilgilerinde adres çubuğunda görünmesini istemediğimiz için POST methodunu kullanırız.
+-
+-
+-
+-
+-
+-
 
 
 

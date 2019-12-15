@@ -823,6 +823,14 @@ return View(kisiler);
 }
  
 Yukarıda ki Action’ da querystring’imiz kisa iken aşağıdakinde Kisilers tablosundaki kolon sayısına göre uzunluğu değişecek bir querystring söz konusu. Ayrıca buradan dönen bilgilerinde adres çubuğunda görünmesini istemediğimiz için POST methodunu kullanırız.
+Önemli:
+Browsers can cache GET requests, generally on static data, like images or scripts. But you can also allow browsers to cache GET requests to controller actions as well, using [OutputCache] or other similar ways, so if caching is turned on for a GET controller action, it's possible that clicking on a link leading to /Home/Index doesn't actually run the Index method on the server, but rather allows the browser to serve up the page from its own cache.
+With this line of thinking, you can safely turn on caching on GET actions in which the data you're serving up doesn't change (or doesn't change often), with the knowledge that your server action won't fire every time.
+POSTs won't be cached by the browser, so any POST is guaranteed to make it to the server.
+-
+Güzel bir açıklama:
+Ignore caching for a moment. Another way of thinking about this is that search engines will store HTTP GET links during their indexing/crawling process, therefore they will show up in search results.
+Suppose if your /Home/Index is implemented as GET but it lets say deletes a row in your Database, every time this link shows up on a search engine and somebody clicks it, you will have a delete row, and soon you have a lot deleted rows.
 -
 -
 -

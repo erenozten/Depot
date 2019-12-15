@@ -138,7 +138,10 @@ NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek,
 -
 MongoDb		(GITHUB)
 Mongodb nedir
-Bir veritabanı uygulamasıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
+
+Bir veritabanıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
+
+(Distributed database'yi bi sonraki çalışmada inceleyelim..)
 
 MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman tabanlı, C++ ile geliştirilmiş açık kaynak, NoSQL (ilişkisiz veritabanı) veritabanı uygulamasıdır. MongoDB, verileri JSON tipinde dokümanlarda saklamaktadır, anlamsal alanları dokümandan dokümana değişir ve veri yapısı zaman içinde değiştirilebilir. Belge modeli, uygulamanızın kodundaki nesnelerle eşleştirilir, böylece verilerin kullanımı kolaylaşır. Geçici sorgular, dizin oluşturmak için ve gerçek zamanlı verilerinize erişmek ve analiz etmek için güçlü yollar sağlar. MongoDB, özellikle hız gerektiren ve geleneksel ilişkisel veritabanlarının (RDBMS) hantal ve yavaş kaldığı yapılarda kullanılmaktadır.MongoDB, dağıtılmış bir veritabanı yapısına sahiptir, bu nedenle yüksek erişilebilirlik, yatayda ve dikeyde ölçeklendirme yapılabilmektedir. MongoDB, GNU Affero Genel Kamu Lisansı uyarınca yayınlanan ücretsiz ve açık kaynaktır.
 Örnek kullanım alanları arasında:
@@ -149,6 +152,7 @@ MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman t
 •	Web içerik yönetim sistemleri
 •	Web yorum/etiket saklama ve yönetme
 İkililer, Windows, Mac OS X, Linux ve Solaris için mevcuttur.
+
 -
 -
 -

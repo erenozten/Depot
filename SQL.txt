@@ -209,17 +209,49 @@ VALUES(33, 'Murat', 'Taş', 'Mahalle2');
 Veya kolon isimlerini yazmadan da veri oluşturabiliriz:
 
 INSERT INTO ErenTable VALUES(99, 'Musa', 'Dağ', 'Dunya');
--
--
--
--
--
--
 
+--oluşturduğumuz verileri görelim:
 
+SELECT * FROM ErenTable;
+-
+-
+-
+-
+-
+-
+Tüm kayıtları sil: (If you want to DELETE all the records from the CUSTOMERS table, you do not need to use the WHERE clause and the DELETE query would be as follows:)
 
+DELETE FROM CUSTOMERS;
 
+condition ekleyelim:
 
+DELETE FROM CUSTOMERS 
+WHERE ID = 6;
+-
+-
+-
+-
+-
+-
+LIKE '20%' --> Finds any values that start with 20:
+
+SELECT TOP (1000) [OrderID]
+,[ProductID]
+,[UnitPrice]
+,[Quantity]
+,[Discount]
+FROM [Northwind].[dbo].[Order Details]
+WHERE UnitPrice LIKE '20%' 
+
+LIKE '%20' --> Finds any values that have 20 in any position
+
+SELECT TOP (1000) [OrderID]
+,[ProductID]
+,[UnitPrice]
+,[Quantity]
+,[Discount]
+FROM [Northwind].[dbo].[Order Details]
+WHERE UnitPrice LIKE '%20%' 
 
 
 

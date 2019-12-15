@@ -425,6 +425,32 @@ DROP ROLE role_name;
 For example: To drop a role called developer, you can write:
 
 DROP ROLE testing;
+-
+-
+-
+-
+-
+-
+Stored Procedure
 
+CREATE PROCEDURE Eren_SelectAllCustomers
+AS
+BEGIN
+SELECT * FROM Customers
+END
+GO
+
+-- BEGIN ve END ikilisini yazmasak da oluyor.
+
+CREATE PROCEDURE Eren_SelectAllCustomers2
+AS
+SELECT * FROM Customers
+GO
+
+-- AS yazmazsak çalışmıyor. Bu sorgu hata üretir.
+
+CREATE PROCEDURE Eren_SelectAllCustomers3
+SELECT * FROM Customers
+GO
 
            

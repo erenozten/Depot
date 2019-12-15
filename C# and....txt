@@ -743,6 +743,32 @@ View kısmı:
  
             //return View(dataSet);
         }
+-
+-
+-
+-
+-
+-
+metadata
+metadata nedir
+Metadata is simply data about data. It means it is a description and context of the data. It helps to organize, find and understand data. Here are a few real world examples of metadata:
+Those are some typical metadata elements:
+1.	Title and description,
+2.	Tags and categories,
+3.	Who created and when,
+4.	Who last modified and when,
+5.	Who can access or update.
+Every time you take a photo with today's cameras a bunch of metadata is gathered and saved with it:
+•	date and time,
+•	filename,
+•	camera settings,
+•	geolocation.
+-
+-
+-
+-
+-
+-
 
 
 

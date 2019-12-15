@@ -139,6 +139,36 @@ NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek,
 MongoDb		(GITHUB)
 Mongodb nedir
 
+MongoDB is the most well known among NoSQL Databases. It is an Open-Source database which is Document-oriented. MongoDB is a scalable and accessible database. It is in C++. MongoDB can likewise be utilized as the file system. In MongoDB, JavaScript can be utilized as the query language. By utilizing sharding MongoDB scales horizontally. It is very useful in Popular JavaScript Frameworks. People really enjoying sharding, advanced text searching, gridFS, map-reduce features for the 2019 year. Amazing performance and new features promoted this NoSQL database to 1st place in our list.
+•	
+Latest version: 4.0.8
+•	Blog: MongoDB
+•	Developed by: MongoDB Inc. in 2007
+•	Download: MongoDB
+FEATURES
+•	Provides high performance
+•	Auto-sharding
+•	Run over multiple servers
+•	Supports Master-Slave replication
+•	Data is stored in the form of JSON style documents
+•	index any field in a document
+•	It has an automatic load balancing configuration because of data placed in shards
+•	Supports regular expression searches
+•	Easy to administer in the case of failures
+PROS OF MONGODB
+•	Easy to setup MongoDB
+•	MongoDB Inc. provides professional support to its clients
+•	Support ad-hoc query
+•	High-Speed Database
+•	Schema-less database
+•	Horizontally scalable database
+•	Performance is very high
+CONS OF MONGODB
+•	Doesn’t support joins
+•	Data Size is High
+•	Nesting of documents is limited
+•	Increase unnecessary usage of memory
+
 Bir veritabanıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
 
 (Distributed database'yi bi sonraki çalışmada inceleyelim..)
@@ -969,7 +999,36 @@ Several different types of software frameworks exist. Popular examples include A
 -
 -
 -
-
+Cassandra	(GITHUB)
+cassandra nedir
+ 
+Cassandra NoSQL database in top 10
+Cassandra was developed at Facebook for inbox search. Cassandra is a distributed data storage system for handling very large amounts of structured data. Generally, these data are spread out across many commodity servers. You can also add storage capacity of your data keeping your service online and you can do this task easily. As all the nodes in a cluster are same, there is no complex configuration to deal with. Cassandra is written in Java. (CQL nedir) Cassandra Query Language (CQL) is a SQL-like language for querying Cassandra Database. As a result, Cassandra stands 2nd in best open source databases. Cassandra is being used by some of the biggest companies such as Facebook, Twitter, Cisco, Rackspace, eBay, Twitter, Netflix, and more.
+•	Developed by: Apache Software Foundation
+FEATURES
+•	Linearly scalable
+•	Maintains a quick response time
+•	Supports properties like Atomicity, Consistency, Isolation, and Durability (ACID)
+•	Supports MapReduce with Apache Hadoop
+•	Maximal flexibility to distribute the data
+•	Highly scalable
+•	Peer-to-peer architecture
+PROS OF CASSANDRA
+•	Highly scalable
+•	No single point of failure
+•	Multi-DC Replication
+•	Integrate tightly with other JVM based applications
+•	More suitable for multiple data-center deployments, redundancy, failover and disaster recovery
+CONS OF CASSANDRA
+•	Limited support for aggregations
+•	Unpredictable Performance
+•	Doesn’t Support ad-hoc query
+-
+-
+-
+-
+-
+-
 
 
 

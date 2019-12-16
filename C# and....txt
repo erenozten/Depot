@@ -1029,6 +1029,12 @@ CONS OF CASSANDRA
 -
 -
 -
+Ad Hoc Query
+Ad hoc nedir, ad hoc query nedir, ad-hoc query nedir
+Definition - What does Ad Hoc Query mean?
+In SQL, an ad hoc query is a loosely typed command/query whose value depends upon some variable. Each time the command is executed, the result is different, depending on the value of the variable. It cannot be predetermined and usually comes under dynamic programming SQL query. An ad hoc query is short lived and is created at runtime.
+Techopedia explains Ad Hoc Query
+As the word "ad hoc" suggests, this type of query is designed for a "particular purpose,"which is in contrast to a predefined query, which has the same output value on every execution. An ad hoc query does not reside in the system for a long time and is created dynamically on demand by the user. It is more efficient to use an ad hoc query in programming as it saves system resources, but, at the same time complex, ad hoc queries (have multiple variables) also challenge the processing speed and runtime memory of the system. 
 
 
 

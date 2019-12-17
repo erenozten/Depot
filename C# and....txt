@@ -1,4 +1,10 @@
-﻿Runtime vs Compile time
+﻿-
+-
+-
+-
+-
+-
+Runtime vs Compile time
 Runtime nedir, compile time nedir,  run time nedir, compile nedir
 Runtime and compile time are programming terms that refer to different stages of software program development. Compile-time is the instance where the code you entered is converted to executable while Run-time is the instance where the executable is running. The terms "runtime" and "compile time" are often used by programmers to refer to different types of errors too.
 Compile-time checking occurs during the compile time. Compile time errors are error occurred due to typing mistake, if we do not follow the proper syntax and semantics of any programming language then compile time errors are thrown by the compiler. They wont let your program to execute a single line until you remove all the syntax errors or until you debug the compile time errors. The following are usual compile time errors:
@@ -9,7 +15,22 @@ Run-time type checking happens during run time of programs. Runtime errors are t
 	Division by zero
 	Dereferencing a null pointer
 	Running out of memory
-
+-
+-
+-
+-
+-
+-
+Stateless - Stateful
+stateless nedir, stateful nedir
+Stateful and stateless are adjectives that describe whether a computer or computer program is designed to note and remember one or more preceding events in a given sequence of interactions with a user, another computer or program, a device, or other outside element. 
+Stateful means the computer or program keeps track of the state of interaction, usually by setting values in a storage field designated for that purpose. 
+Stateless means there is no record of previous interactions and each interaction request has to be handled based entirely on information that comes with it. 
+Stateful and stateless are derived from the usage of state as a set of conditions at a moment in time. (Computers are inherently stateful in operation, so these terms are used in the context of a particular set of interactions, not of how computers work in general.)
+The Internet's basic protocol, the Internet Protocol ( IP ), is an example of a stateless interaction. Each packet travels entirely on its own without reference to any other packet. When you request a Web page from a Web site, the request travels in one or more packets, each independent of the other as far as the Internet Protocol program itself is concerned. (The upper layer Transmission Control Protocol - TCP - does relate packets to each other, but uses the information within the packet rather than some external information to do this.) The term connectionless is also used to describe communication in which a connection is made and terminated for each message that is sent. IP is connectionless as well as stateless.
+The Web's Hypertext Transfer Protocol ( HTTP ), an application layer above TCP/IP, is also stateless. Each request from a user for a Web page or URL results in the requested pages being served, but without the Web (HTTP) server remembering the request later. In other words, there is no recorded continuity. Each communication is discrete and unrelated to those that precede or follow. In order to have stateful communication, a site developer must furnish a special program that the server can call that can record and retrieve state information. Web browsers such as Netscape Explorer and Microsoft Internet Explorer provide an area in their subdirectories where state information can be stored and accessed. The area and the information that Web browsers and server applications put in this area is called a cookie .
+In formal protocol specifications, a finite state machine is an abstract desciption of how a stateful system works that describes the action that follows each possible state.
+The Internet (including the World Wide Web) can be thought of as a stateless system or machine. Most computers, human beings, and elephants are stateful.
 -
 -
 -

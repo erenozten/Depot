@@ -1,4 +1,25 @@
-﻿CakePHP 	(GITHUB)
+﻿-
+-
+-
+-
+-
+-
+IIS- Internet Information Services  (GITHUB)
+IIS nedir, iis nedir
+Stands for "Internet Information Services." IIS is a web server software package designed for Windows Server. It is used for hosting websites and other content on the Web.
+Microsoft’s Internet Information Services provides a graphical user interface (GUI) for managing websites and the associated users. It provides a visual means of creating, configuring, and publishing sites on the web. The IIS Manager tool allows web administrators to modify website options, such as default pages, error pages, logging settings, security settings, and performance optimizations.
+IIS can serve both standard HTML webpages and dynamic webpages, such as ASP.NET applications and PHP pages. When a visitor accesses a page on a static website, IIS simply sends the HTML and associated images to the user’s browser. When a page on a dynamic website is accessed, IIS runs any applications and processes any scripts contained in the page, then sends the resulting data to the user’s browser.
+While IIS includes all the features necessary to host a website, it also supports extensions (or “modules”) that add extra functionality to the server. For example, the WinCache Extension enables PHP scripts to run faster by caching PHP processes. The URL Rewrite module allows webmasters to publish pages with friendly URLs that are easier for visitors to type and remember. A streaming extension can be installed to provide streaming media to website visitors.
+IIS is a popular option for commercial websites, since it offers many advanced features and is supported by Microsoft. However, it also requires requires a commercial license and the pricing increases depending on the number of users. Therefore, Apache HTTP Server, which is open source and free for unlimited users, remains the most popular web server software.
+
+Internet Information Service (IIS), Microsoft firmasının Windows işletim sistemlerinde ve sunucularında kullandığı, Web servisini sunan alt yazılımdır.
+-
+-
+-
+-
+-
+-
+CakePHP 	(GITHUB)
 CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License.
 
 CakePHP uses well-known software engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active record, association data mapping, and front controller.

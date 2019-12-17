@@ -17,6 +17,22 @@ The following data types are all of value type:
 •	ulong
 •	ushort
 
+Reference Types:
+Reference types have null value by default, when they are not initialized. For example, a string variable (or any other variable of reference type datatype) without a value assigned to it. In this case, it has a null value, meaning it doesn't point to any other memory location, because it has no value yet.
+A value type variable cannot be null because it holds a value not a memory address. However, value type variables must be assigned some value before use. The compiler will give an error if you try to use a local value type variable without assigning a value to it.
+However, value type field in a class can be declared without initialization (field not a local variable in the function) . (class dışında da declare edebiliyoruz zaten) It will have a default value if not assigned any value, e.g., int will have 0, boolean will have false and so on.
+class myClass
+{
+    public int i;
+}
+
+myClass mcls = new myClass();
+
+Console.WriteLine(mcls.i); 
+ 
+Output: 0
+
+Points to Remember :
 
 -
 -

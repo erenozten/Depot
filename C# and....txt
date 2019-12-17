@@ -1,53 +1,15 @@
-﻿Data Types in C# (Reference Type, Value Type
-Önemli: https://www.tutorialsteacher.com/csharp/csharp-data-types
-The following data types are all of value type:
-•	bool
-•	byte
-•	char
-•	decimal
-•	double
-•	enum
-•	float
-•	int
-•	long
-•	sbyte
-•	short
-•	struct
-•	uint
-•	ulong
-•	ushort
+﻿CakePHP 	(GITHUB)
+CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License.
 
-Reference Types:
-Reference types have null value by default, when they are not initialized. For example, a string variable (or any other variable of reference type datatype) without a value assigned to it. In this case, it has a null value, meaning it doesn't point to any other memory location, because it has no value yet.
-A value type variable cannot be null because it holds a value not a memory address. However, value type variables must be assigned some value before use. The compiler will give an error if you try to use a local value type variable without assigning a value to it.
-However, value type field in a class can be declared without initialization (field not a local variable in the function) . (class dışında da declare edebiliyoruz zaten) It will have a default value if not assigned any value, e.g., int will have 0, boolean will have false and so on.
-class myClass
-{
-    public int i;
-}
+CakePHP uses well-known software engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active record, association data mapping, and front controller.
 
-myClass mcls = new myClass();
+CakePHP started in April 2005, when a Polish programmer Michal Tatarynowicz[3] wrote a minimal version of a rapid application development framework in PHP, dubbing it Cake.[4][5][6] He published the framework under the MIT license, and opened it up to the online community of developers. In December 2005, L. Masters and G. J. Woodworth founded the Cake Software Foundation to promote development related to CakePHP.[6] Version 1.0 was released in May 2006.
 
-Console.WriteLine(mcls.i); 
- 
-Output: 0
-
-Points to Remember :
-
+One of the project's inspirations was Ruby on Rails, using many of its concepts. The community has since grown and spawned several sub-projects.
 -
 -
 -
 -
--
--
--
--
--
--
---
--
--
---
 -
 -
 Android SDK 	 (GITHUB)
@@ -66,7 +28,7 @@ Tutorials for the Android OS
 -
 -
 -
-Android 
+Android 	(GITHUB)
 Android nedir, android operation system nedir, android işletim sistemi nedir
 Android; Google ve Open Handset Alliance tarafından, mobil cihazlar için geliştirilmekte olan, Linux tabanlı özgür ve ücretsiz bir işletim sistemidir.
 Google Android OS is Google’s Linux-based open source operating system for mobile devices. Android has been the world’s most widely used smartphone platform as of 2010, with a worldwide smartphone market share of 75%.

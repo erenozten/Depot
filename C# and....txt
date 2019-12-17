@@ -1,4 +1,50 @@
-﻿Android SDK 	 	(GITHUB)
+﻿Data Types in C# (Reference Type, Value Type
+Önemli: https://www.tutorialsteacher.com/csharp/csharp-data-types
+The following data types are all of value type:
+•	bool
+•	byte
+•	char
+•	decimal
+•	double
+•	enum
+•	float
+•	int
+•	long
+•	sbyte
+•	short
+•	struct
+•	uint
+•	ulong
+•	ushort
+
+C# mainly categorized data types in two types: Value types and Reference types. Value types include simple types (e.g. int, float, bool, and char), enum types, struct types, and Nullable value types. 
+Reference types include class types, interface types, delegate types, and array types. 
+Learn about value types and reference types in detail in the next chapter.
+ 
+Value Type
+A data type is a value type if it holds a data value within its own memory space. It means variables of these data types directly contain their values.
+or example, consider integer variable int i = 100;
+The system stores 100 in the memory space allocated for the variable 'i'. The following image illustrates how 100 is stored at some hypothetical location in the memory (0x239110) for 'i':
+Passing by Value:
+When you pass a value type variable from one method to another method, the system creates a separate copy of a variable in another method, so that if value got changed in the one method won't affect on the variable in another method.
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+--
+-
+-
+--
+-
+-
+Android SDK 	 (GITHUB)
 Sdk nedir, android sdk nedir
 The Android SDK (software development kit) is a set of development tools used to develop applications for Android platform. 
 The Android SDK includes the following:

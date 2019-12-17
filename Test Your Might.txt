@@ -1,6 +1,6 @@
 ﻿//Beginning
 
-interface ile ilgili bir örnek
+interface ile ilgili bir örnek, interface örnek, interface örneği 
 
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace CodeInConsole
 
             public Student GetStudentById(int id)
             {
-                var s1 = StudentList.Cast<Student>().ElementAt(0); // pseudo code
+                var s1 = StudentList.Cast<Student>().ElementAt(0); // pseudo
                 return s1;
             }
 

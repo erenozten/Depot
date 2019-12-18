@@ -1,1 +1,1366 @@
-﻿
+﻿LINQ  (GITHUB)
+Linq nedir
+Language-Integrated Query (LINQ) is the name for a set of technologies based on the integration of query capabilities directly into the C# language. Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. With LINQ, a query is a first-class language construct, just like classes, methods, events. You write queries against strongly typed collections of objects by using language keywords and familiar operators. The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).
+For a developer who writes queries, the most visible "language-integrated" part of LINQ is the query expression. Query expressions are written in a declarative query syntax. By using query syntax, you can perform filtering, ordering, and grouping operations on data sources with a minimum of code. You use the same basic query expression patterns to query and transform data in SQL databases, ADO .NET Datasets, XML documents and streams, and .NET collections.
+You can write LINQ queries in C# for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports IEnumerable or the generic IEnumerable<T> interface. LINQ support is also provided by third parties for many Web services and other database implementations.
+The following example shows the complete query operation. The complete operation includes creating a data source, defining the query expression, and executing the query in a foreach statement.
+C#Copy
+class LINQQueryExpressions
+{
+    static void Main()
+    {
+        
+        // Specify the data source.
+        int[] scores = new int[] { 97, 92, 81, 60 };
+
+        // Define the query expression.
+        IEnumerable<int> scoreQuery =
+            from score in scores
+            where score > 80
+            select score;
+
+        // Execute the query.
+        foreach (int i in scoreQuery)
+        {
+            Console.Write(i + " ");
+        }            
+    }
+}
+// Output: 97 92 81
+The following illustration from Visual Studio shows a partially-completed LINQ query against a SQL Server database in both C# and Visual Basic with full type checking and IntelliSense support:
+ 
+Query expression overview
+•	Query expressions can be used to query and to transform data from any LINQ-enabled data source. For example, a single query can retrieve data from a SQL database, and produce an XML stream as output.
+•	Query expressions are easy to master because they use many familiar C# language constructs.
+•	The variables in a query expression are all strongly typed, although in many cases you do not have to provide the type explicitly because the compiler can infer it. For more information, see Type relationships in LINQ query operations.
+•	A query is not executed until you iterate over the query variable, for example, in a foreach statement. For more information, see Introduction to LINQ queries.
+•	At compile time, query expressions are converted to Standard Query Operator method calls according to the rules set forth in the C# specification. Any query that can be expressed by using query syntax can also be expressed by using method syntax. However, in most cases query syntax is more readable and concise. For more information, see C# language specification and Standard query operators overview.
+•	As a rule when you write LINQ queries, we recommend that you use query syntax whenever possible and method syntax whenever necessary. There is no semantic or performance difference between the two different forms. Query expressions are often more readable than equivalent expressions written in method syntax.
+•	Some query operations, such as Count or Max, have no equivalent query expression clause and must therefore be expressed as a method call. Method syntax can be combined with query syntax in various ways. For more information, see Query syntax and method syntax in LINQ.
+•	Query expressions can be compiled to expression trees or to delegates, depending on the type that the query is applied to. IEnumerable<T> queries are compiled to delegates. IQueryable and IQueryable<T> queries are compiled to expression trees. For more information, see Expression trees.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello World!");
+ 
+        // Specify the data source.
+ 
+        int[] scores = new int[] { 97, 92, 81, 60 };
+ 
+        // Define the query expression.
+        // Burada List<int> yazamayız. listemiz IEnumerable olmalıdır:
+ 
+        IEnumerable<int> scoreQuery =
+            from score in scores
+            where score > 80
+            select score;
+ 
+        // Execute the query:
+ 
+        foreach (int i in scoreQuery)
+        {
+            Console.WriteLine(i + "(scoreQuery");
+        }
+ 
+        // Yukarıda Ienumerable bir değişkenin içinde döndüğümüze dikkat edelim. Yani toList işlemi yapmadan içinde dönmüş olduk.
+ 
+        // Yukarıdaki IEnumerable olan scoreQuery üzerinde ToList işlemi yapabiliriz ve oluşacak yeni değeri bir değişkene atayabiliriz
+        // Aşağıda bunu yapıyoruz:
+ 
+        List<int> toListtenGelenList = scoreQuery.ToList();
+ 
+        // ToList metodunun ne yaptığını okuyalım şunu yapıyor, çok önemli:
+ 
+        // Ienumerable<out T> tipinden List<T> tipine dönüşüm sağlıyor. --> english -->
+        // Creates a List<T> from an IEnumerable<T>.
+ 
+        // şimdi tolist ile listeye dönüştürdüğümüz değişkenin içinde dönelim ve değerleri ekrana yazdıralım:
+ 
+        foreach (var item in toListtenGelenList)
+        {
+            Console.WriteLine(item + "(toListtenGelenList)");
+        }
+ 
+        Console.ReadKey();
+    }
+}
+
+-
+-
+-
+-
+-
+-
+Runtime vs Compile time
+Runtime nedir, compile time nedir,  run time nedir, compile nedir
+Runtime and compile time are programming terms that refer to different stages of software program development. Compile-time is the instance where the code you entered is converted to executable while Run-time is the instance where the executable is running. The terms "runtime" and "compile time" are often used by programmers to refer to different types of errors too.
+Compile-time checking occurs during the compile time. Compile time errors are error occurred due to typing mistake, if we do not follow the proper syntax and semantics of any programming language then compile time errors are thrown by the compiler. They wont let your program to execute a single line until you remove all the syntax errors or until you debug the compile time errors. The following are usual compile time errors:
+	Syntax errors
+	Typechecking errors
+	Compiler crashes (Rarely)
+Run-time type checking happens during run time of programs. Runtime errors are the errors that are generated when the program is in running state. These types of errors will cause your program to behave unexpectedly or may even kill your program. They are often referred as Exceptions . The following are some usual runtime errors:
+	Division by zero
+	Dereferencing a null pointer
+	Running out of memory
+-
+-
+-
+-
+-
+-
+Stateless - Stateful
+stateless nedir, stateful nedir
+Stateful and stateless are adjectives that describe whether a computer or computer program is designed to note and remember one or more preceding events in a given sequence of interactions with a user, another computer or program, a device, or other outside element. 
+Stateful means the computer or program keeps track of the state of interaction, usually by setting values in a storage field designated for that purpose. 
+Stateless means there is no record of previous interactions and each interaction request has to be handled based entirely on information that comes with it. 
+Stateful and stateless are derived from the usage of state as a set of conditions at a moment in time. (Computers are inherently stateful in operation, so these terms are used in the context of a particular set of interactions, not of how computers work in general.)
+The Internet's basic protocol, the Internet Protocol ( IP ), is an example of a stateless interaction. Each packet travels entirely on its own without reference to any other packet. When you request a Web page from a Web site, the request travels in one or more packets, each independent of the other as far as the Internet Protocol program itself is concerned. (The upper layer Transmission Control Protocol - TCP - does relate packets to each other, but uses the information within the packet rather than some external information to do this.) The term connectionless is also used to describe communication in which a connection is made and terminated for each message that is sent. IP is connectionless as well as stateless.
+The Web's Hypertext Transfer Protocol ( HTTP ), an application layer above TCP/IP, is also stateless. Each request from a user for a Web page or URL results in the requested pages being served, but without the Web (HTTP) server remembering the request later. In other words, there is no recorded continuity. Each communication is discrete and unrelated to those that precede or follow. In order to have stateful communication, a site developer must furnish a special program that the server can call that can record and retrieve state information. Web browsers such as Netscape Explorer and Microsoft Internet Explorer provide an area in their subdirectories where state information can be stored and accessed. The area and the information that Web browsers and server applications put in this area is called a cookie .
+In formal protocol specifications, a finite state machine is an abstract desciption of how a stateful system works that describes the action that follows each possible state.
+The Internet (including the World Wide Web) can be thought of as a stateless system or machine. Most computers, human beings, and elephants are stateful.
+-
+-
+-
+-
+-
+-
+Query String
+Query string nedir, stateless nedir
+ÇOK ÖNEMLİ TEXT:
+A query string is the portion of a URL where data is passed to a web application and/or back-end database. The reason we need query strings is that the HTTP protocol is stateless by design. For a website to be anything more than a brochure, you need to maintain state (store data). 
+There are a number of ways to do this: On most web servers, you can use something like session state server-side. On the client, you can store via cookies. Or in the URL, you can store data via a query string. 
+
+On the world wide web, all URLs can be broken down into the protocol, the location of the file (or program) and the query string. The protocol you see in a browser is almost always HTTP; the location is the typical form of the hostname and filename (for example, www.techopedia.com/somefile.html), and the query string is whatever follows the question mark sign ("?").
+For example, in the URL below, the bolded area is the query string that was generated when the term "database" was searched on the Techopedia website.
+//www.techopedia.com/search.aspx?q=database§ion=all
+-
+-
+-
+-
+-
+-
+IIS- Internet Information Services  (GITHUB)
+IIS nedir, iis nedir
+Stands for "Internet Information Services." IIS is a web server software package designed for Windows Server. It is used for hosting websites and other content on the Web.
+Microsoft’s Internet Information Services provides a graphical user interface (GUI) for managing websites and the associated users. It provides a visual means of creating, configuring, and publishing sites on the web. The IIS Manager tool allows web administrators to modify website options, such as default pages, error pages, logging settings, security settings, and performance optimizations.
+IIS can serve both standard HTML webpages and dynamic webpages, such as ASP.NET applications and PHP pages. When a visitor accesses a page on a static website, IIS simply sends the HTML and associated images to the user’s browser. When a page on a dynamic website is accessed, IIS runs any applications and processes any scripts contained in the page, then sends the resulting data to the user’s browser.
+While IIS includes all the features necessary to host a website, it also supports extensions (or “modules”) that add extra functionality to the server. For example, the WinCache Extension enables PHP scripts to run faster by caching PHP processes. The URL Rewrite module allows webmasters to publish pages with friendly URLs that are easier for visitors to type and remember. A streaming extension can be installed to provide streaming media to website visitors.
+IIS is a popular option for commercial websites, since it offers many advanced features and is supported by Microsoft. However, it also requires requires a commercial license and the pricing increases depending on the number of users. Therefore, Apache HTTP Server, which is open source and free for unlimited users, remains the most popular web server software.
+
+Internet Information Service (IIS), Microsoft firmasının Windows işletim sistemlerinde ve sunucularında kullandığı, Web servisini sunan alt yazılımdır.
+-
+-
+-
+-
+-
+-
+CakePHP 	(GITHUB)
+CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License.
+
+CakePHP uses well-known software engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active record, association data mapping, and front controller.
+
+CakePHP started in April 2005, when a Polish programmer Michal Tatarynowicz[3] wrote a minimal version of a rapid application development framework in PHP, dubbing it Cake.[4][5][6] He published the framework under the MIT license, and opened it up to the online community of developers. In December 2005, L. Masters and G. J. Woodworth founded the Cake Software Foundation to promote development related to CakePHP.[6] Version 1.0 was released in May 2006.
+
+One of the project's inspirations was Ruby on Rails, using many of its concepts. The community has since grown and spawned several sub-projects.
+-
+-
+-
+-
+-
+-
+Android SDK 	 (GITHUB)
+Sdk nedir, android sdk nedir
+The Android SDK (software development kit) is a set of development tools used to develop applications for Android platform. 
+The Android SDK includes the following:
+Required libraries
+Debugger
+An emulator
+Relevant documentation for the Android application program interfaces (APIs)
+Sample source code
+Tutorials for the Android OS
+-
+-
+-
+-
+-
+-
+Android 	(GITHUB)
+Android nedir, android operation system nedir, android işletim sistemi nedir
+Android; Google ve Open Handset Alliance tarafından, mobil cihazlar için geliştirilmekte olan, Linux tabanlı özgür ve ücretsiz bir işletim sistemidir.
+Google Android OS is Google’s Linux-based open source operating system for mobile devices. Android has been the world’s most widely used smartphone platform as of 2010, with a worldwide smartphone market share of 75%.
+Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets. Android is developed by a consortium of developers known as the Open Handset Alliance, with the main contributor and commercial marketer being Google.
+
+Initially developed by Android Inc., which Google bought in 2005, Android was unveiled in 2007, with the first commercial Android device launched in September 2008. The current stable version is Android 10, released on September 3, 2019. The core Android source code is known as Android Open Source Project (AOSP), which is primarily licensed under the Apache License. This has allowed variants of Android to be developed on a range of other electronics, such as game consoles, digital cameras, PCs and others, each with a specialized user interface. Some well known derivatives include Android TV for televisions and Wear OS for wearables, both developed by Google.
+-
+-
+-
+-
+-
+-
+Encapsulation
+encapsulation nedir
+Encapsulation is implemented by using access specifiers. An access specifier defines the scope and visibility of a class member. C# supports the following access specifiers −
+•	Public
+•	Private
+•	Protected
+•	Internal
+•	Protected internal
+
+Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. In a different way, encapsulation is a protective shield that prevents the data from being accessed by the code outside this shield.
+•	Technically in encapsulation, the variables or data of a class are hidden from any other class and can be accessed only through any member function of own class in which they are declared.
+•	As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
+•	Encapsulation can be achieved by: Declaring all the variables in the class as private and using C# Properties in the class to set and get the values of variables.
+ 
+
+using System;
+  
+public class DemoEncap
+{
+    // private variables declared 
+    // these can only be accessed by public methods of class 
+    private String studentName;
+    private int studentAge;
+ 
+    // using accessors to get and set the value of studentName 
+    public String Name
+    {
+        get
+        {
+            return studentName;
+        }
+ 
+        set
+        {
+            studentName = value;
+        }
+    }
+ 
+    // using accessors to get and set the value of studentAge 
+    public int Age
+    {
+        get
+        {
+            return studentAge;
+        }
+ 
+        set
+        {
+            studentAge = value;
+        }
+    }
+}
+ 
+// Driver Class 
+class GFG
+{
+ 
+    // Main Method 
+    static public void Main()
+    {
+ 
+        // creating object 
+        DemoEncap obj = new DemoEncap();
+ 
+        // calls set accessor of the property Name,  
+        // and pass "Ankita" as value of the  
+        // standard field 'value' 
+        obj.Name = "Ankita";
+ 
+        // calls set accessor of the property Age,  
+        // and pass "21" as value of the  
+        // standard field 'value' 
+        obj.Age = 21;
+ 
+        // Displaying values of the variables 
+        Console.WriteLine("Name: " + obj.Name);
+        Console.WriteLine("Age: " + obj.Age);
+    }
+}
+
+ 
+Output:
+Name: Ankita
+Age: 21
+Explanation: In the above program the class DemoEncap is encapsulated as the variables are declared as private. To access these private variables we are using the Name and Age accessors which contains the get and set method to retrieve and set the values of private fields. Accessors are defined as public so that they can access in other class.
+
+Advantages of Encapsulation:
+•	Data Hiding: The user will have no idea about the inner implementation of the class. It will not be visible to the user that how the class is stored values in the variables. He only knows that we are passing the values to accessors and variables are getting initialized to that value.
+•	Increased Flexibility: We can make the variables of the class as read-only or write-only depending on our requirement. If we wish to make the variables as read-only then we have to only use Get Accessor in the code. If we wish to make the variables as write-only then we have to only use Set Accessor.
+•	Reusability: Encapsulation also improves the re-usability and easy to change with new requirements.
+•	Testing code is easy: Encapsulated code is easy to test for unit testing.
+-
+-
+-
+-
+-
+-
+The .NET Core command-line interface (CLI)   (GITHUB)
+cli nedir
+The .NET Core command-line interface (CLI) is a new cross-platform toolchain for developing .NET applications. The CLI is a foundation upon which higher-level tools, such as Integrated Development Environments (IDEs), editors, and build orchestrators, can rest.
+-
+-
+-
+-
+-
+-
+Result set   (GITHUB)
+Result set nedir
+An SQL result set is a set of rows from a database, as well as metadata about the query such as the column names, and the types and sizes of each column. Depending on the database system, the number of rows in the result set may or may not be known. Usually, this number is not known up front because the result set is built on-the-fly.
+
+A result set is effectively a table. The ORDER BY clause can be used in a query to impose a certain sort condition on the rows. Without that clause, there is no guarantee whatsoever on the order in which the rows are returned.
+-
+-
+-
+-
+-
+-
+Microsoft Azure HDInsight
+Microsoft Azure HDInsight nedir
+Azure HDInsight is a cloud-based service from Microsoft for big data analytics that helps organizations process large amounts of streaming or historical data. Microsoft promotes HDInsight for applications in data warehousing and ETL (extract, transform, load) scenarios as well as machine learning and Internet of Things (IoT) environments.
+The fully-managed and open source service is based on the Hortonworks Data Platform (HDP) Hadoop distribution and includes implementations of Apache products, including:
+•	Spark
+•	HBase
+•	Storm
+•	Pig
+•	Hive
+•	Sqoop
+•	Oozie
+•	Ambari
+HDInsight enables integration with business intelligence tools like Power BI, Excel, SQL Server Analysis Services and SQL Server Reporting Services. The service's security measures for data include encryption, monitoring, virtual networks, Active Directory authentication, authorization and role-based access control (RBAC).
+Açık kaynak analize yönelik uygun maliyetli, kurumsal sınıf bir hizmet olan Azure HDInsight’ı kullanarak Apache Hadoop, Spark ve Kafka dahil olmak üzere popüler açık kaynak çerçeveleri kolayca çalıştırın. Azure’ın küresel ölçeği sayesinde çok büyük miktarda veriyi hiç çaba harcamadan işleyin ve geniş açık kaynak ekosisteminin tüm avantajlarına sahip olun.
+
+-
+-
+-
+-
+-
+-
+ANSI C
+Ansi c nedir, ANSI C nedir, ISO c nedi, iso c nedir
+
+ANSI C, ISO C and Standard C are successive standards for the C programming language published by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). Historically, the names referred specifically to the original and best-supported version of the standard (known as C89 or C90). Software developers writing in C are encouraged to conform to the standards, as doing so helps portability between compilers.
+-
+-
+-
+-
+-
+-
+MySQL, MsSQL, T-SQL, Oracle, PL-SQL, SQL 	(GITHUB)
+MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
+MsSQL -> T-SQL
+MySQL -> SQL
+Oracle --> PL/SQL
+https://db-engines.com/en/system/Microsoft+SQL+Server%3BMySQL%3BOracle
+
+MySQL is a database itself that uses SQL language.
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Oracle is a Database (RDBMS).
+Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
+MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
+MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
+MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+PL/SQL vs MySQL
+DESCRIPTION- in one sentence we can actually find the major differnce btw them, see plsql is basically a DATABASE PROGRAMMING LANGUAGE that is used in ORACLE DATABASE.
+1.	and MYSQL is itself is database which that uses SQL programming language and SQL is just a ANSI standard, and is used as a base with most Database systems, like Microsoft SQL Server, Oracle, MySQL, IBM DB2 have used this as a base and extended/enhanced in their database systems.
+
+SQL vs MySQL
+KEY DIFFERENCE:
+•	SQL is a language which is used to operate your database whereas MySQL was one of the first open-source database available in the market
+•	SQL is used in the accessing, updating, and manipulation of data in a database while MySQL is an RDBMS that allows keeping the data that exists in a database organized
+•	SQL is a Structured Query Language and MySQL is a RDBMS to store, retrieve, modify and administrate a database.
+•	SQL is a query language while MYSQL is a database software
+
+MS SQL 
+MsSQL Server is a Relational Database Management System (RDBMS) developed by Microsoft Inc. Its primary query languages are − T-SQL, ANSI SQL
+
+Oracle
+It is a very large multi-user based database management system. Oracle is a relational database management system developed by 'Oracle Corporation'.
+
+Oracle works to efficiently manage its resources, a database of information among the multiple clients requesting and sending data in the network.
+It is an excellent database server choice for client/server computing. Oracle supports all major operating systems for both clients and servers, including MSDOS, NetWare, UnixWare, OS/2 and most UNIX flavors.
+PL/SQL is an Oracle's procedural language extension to SQL. It is a server-side, stored procedural language that is easy-to-use, seamless with SQL, portable, and secure. PL/SQL enables you to mix SQL statements with procedural constructs.
+- - -
+Oracle ile MYSQL arasındaki farklar üzerine:
+SQL is a database language used with Oracle Database.
+MySQL is a database itself that uses SQL language.
+The difference is that MySQL is free, and the world's most popular database, and Oracle isn't free (except with trials and certain products) and makes billions from selling premium database software to large enterprises and SME.
+
+There are many more differences between Oracle and MySQL.We can summarise them as follows-
+1.Oracle is way more powerful than MySQL
+2.Oracle supports distributed databases while MySQL doesn’t
+3.Oracle supports save points while MySQL doesn’t
+4.Oracle allows programs within the database while MySQL doesn’t
+5.Oracle is suited for enterprise deployments while MySQL is suited for small to medium scale
+6.Oracle requires that you pay a licensing fee while MySQL doesn’t
+
+-- Daha anlamlı bir açıklama:
+
+This might be a slightly controversial view ( and this is all in my opinion).
+   
+I have been a Developer for most of my career and I have used an old hierarchical DB, called HP Image 3000, Oracle, MS SQL and MySQL.
+IMO, there is a lot of snobbery around Oracle. Its very good, but very expensive and in my opinion largely unnecessary and over used.
+When you consider how many large companies and applications use MySQL without any issue, it will cope with 90% of demand. Hardware is so powerful now and the original concerns about performance are largely negated by the raw power of the hardware. Oracle should be a niche market and not a large player, as it really isn’t needed.
+I worked for a large American company who used Oracle, I asked why, they said because its the best, I persisted and said what do you mean, they had no answer.
+MySQL will be fine for most things and as its free, why not use that. The advent of cloud computing and the pricing model of many data centers, makes licencing very expensive (virtual CPU’s cores) for both Oracle and MS SQL.
+Facebook, Uber and Google, used/use MySQL, so the idea its not scalable, is a bit ridiculous.
+What is sad and I really mean it, is that the traditional IT Operations and the DBA role in IT, will slowly disappear, as its not really needed unless in some extreme situations.
+-- Diğer açıklama:
+
+Oracle is a Database tool that uses PL/SQL language.
+MySQL is a also a Database tool itself that uses SQL language.
+
+	What is PL/SQL?
+Pl-sql nedir plsql nedir pl/sql nedir
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Unlike SQL, PL/SQL allows the programmer to write code in a procedural format. Full form of PL/SQL is "Procedural Language extensions to SQL".
+It combines the data manipulation power of SQL with the processing power of procedural language to create super powerful SQL queries.
+PL/SQL means instructing the compiler 'what to do' through SQL and 'how to do' through its procedural way.
+Similar to other database languages, it gives more control to the programmers by the use of loops, conditions and object-oriented concepts.
+
+-
+-
+-
+-
+-
+-
+NoSQL	(GITHUB)
+Nosql nedir
+https://www.kdnuggets.com/2016/06/top-nosql-database-engines.html
+İlişkisiz veritabanıdır. NoSQL is not a relational database.
+Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
+Why NoSQL? It's high performance with high availability, and offers rich query language and easy scalability.
+
+NoSQL (ilişkisel olmayan) Veritabanları Nasıl Çalışır?
+NoSQL veritabanları, verilere erişmek ve verileri yönetmek için belge, grafik, anahtar-değer, bellek içi ve arama dahil olmak üzere çeşitli veri modelleri kullanır. Bu tür veritabanları, özellikle büyük veri hacmi, düşük gecikme süresi ve esnek veri modelleri gerektiren uygulamalar için optimize edilmiştir. Bu gereksinimler, diğer veritabanlarının veri tutarlılığı kısıtlamalarının bir kısmı esnetilerek karşılanır.
+NoSQL is a whole new way of thinking about a database. NoSQL is not a relational database. The reality is that a relational database model may not be the best solution for all situations. The easiest way to think of NoSQL, is that of a database which does not adhering to the traditional relational database management system (RDMS) structure. Sometimes you will also see it revered to as 'not only SQL'.
+
+Imagine that you have coupons that you wanted to push to mobile customers that purchase a specific item. This is a customer facing system of engagement requires location data, purchase data, wallet data, and so on. You want to engage the mobile customer in real-time.
+
+What you require is a very agile delivery system that is easily able to processes unstructured data. The system of engagement would need to be extremely dynamic. 
+
+Basit bir kitap veritabanının şemasını modelleme örneğini ele alalım:
+•	İlişkisel bir veritabanında genellikle bir kitap kaydı gizlenerek (veya “normalleştirilerek”) ayrı tablolarda depolanırken, ilişkiler birincil ve yabancı anahtar kısıtlamaları tarafından tanımlanır. Bu örnekte Books (Kitaplar) tablosu ISBN, Book Title (Kitap Başlığı) ve Edition Number (Baskı Sayısı) sütunlarına; Authors (Yazarlar) tablosu AuthorID (Yazar Kimliği) ve Author Name (Yazar Adı) sütunlarına; Author-ISBN (Yazar-ISBN) tablosu ise AuthorID (Yazar Kimliği) ve ISBN sütunlarına sahiptir. İlişkisel model, veritabanının yedekliliği azaltacak şekilde normalleştirilmiş ve genel olarak depolama için optimize edilmiş tablolar arasında başvurusal bütünlük uygulamasına imkan tanıyacak şekilde tasarlanmıştır.
+•	Bir NoSQL veritabanında, kitap kaydı genellikle bir JSON belgesi olarak saklanır. Her kitap için öğe, ISBN, Book Title (Kitap Başlığı), Edition Number (Baskı Sayısı), Author Name (Yazar Adı) ve AuthorID (Yazar Kimliği) bilgileri tek bir belgede öznitelikler olarak depolanır. Bu modelde, veriler sezgisel yazılım geliştirme ve yatay ölçeklenebilirlik için optimize edilir.
+
+Neden NoSQL veritabanı kullanmalısınız?
+NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek, ölçeklenebilir, yüksek performanslı ve yüksek oranda işlevsel veritabanları gerektiren mobil, web ve oyun gibi birçok modern uygulama için idealdir.
+•	Esneklik: NoSQL genellikle daha hızlı ve daha fazla yinelemeli yazılım geliştirmeyi mümkün kılan esnek şemalar sağlar. Esnek veri modeli sayesinde NoSQL veritabanları yarı yapılandırılmış ve yapılandırılmamış veriler için idealdir.
+•	Ölçeklenebilirlik: NoSQL veritabanları genellikle pahalı ve kalıcı sunucular eklenerek ölçeği artırılabilecek şekilde değil, dağıtılmış donanım kümeleri kullanılarak ölçeği genişletilebilecek şekilde tasarlanır. Bazı bulut sağlayıcıları bu işlemleri arka planda, tam olarak yönetilen bir hizmet olarak gerçekleştirir.
+•	Yüksek performans: NoSQL veritabanları, benzer işlevlerin ilişkisel veritabanlarıyla gerçekleştirilmesi ile karşılaştırıldığında daha yüksek performansı mümkün kılan belirli veri modelleri (belge, anahtar-değer, grafik gibi) ve erişim desenleri için optimize edilmiştir.
+•	Yüksek oranda işlevsel: NoSQL veritabanları, her biri ilgili veri modeli için özel olarak tasarlanmış yüksek oranda işlevsel API'ler ve veri türleri sağlar.
+-
+-
+-
+-
+-
+-
+MongoDb		(GITHUB)
+Mongodb nedir
+
+MongoDB is the most well known among NoSQL Databases. It is an Open-Source database which is Document-oriented. MongoDB is a scalable and accessible database. It is in C++. MongoDB can likewise be utilized as the file system. In MongoDB, JavaScript can be utilized as the query language. By utilizing sharding MongoDB scales horizontally. It is very useful in Popular JavaScript Frameworks. People really enjoying sharding, advanced text searching, gridFS, map-reduce features for the 2019 year. Amazing performance and new features promoted this NoSQL database to 1st place in our list.
+•	
+Latest version: 4.0.8
+•	Blog: MongoDB
+•	Developed by: MongoDB Inc. in 2007
+•	Download: MongoDB
+FEATURES
+•	Provides high performance
+•	Auto-sharding
+•	Run over multiple servers
+•	Supports Master-Slave replication
+•	Data is stored in the form of JSON style documents
+•	index any field in a document
+•	It has an automatic load balancing configuration because of data placed in shards
+•	Supports regular expression searches
+•	Easy to administer in the case of failures
+PROS OF MONGODB
+•	Easy to setup MongoDB
+•	MongoDB Inc. provides professional support to its clients
+•	Support ad-hoc query
+•	High-Speed Database
+•	Schema-less database
+•	Horizontally scalable database
+•	Performance is very high
+CONS OF MONGODB
+•	Doesn’t support joins
+•	Data Size is High
+•	Nesting of documents is limited
+•	Increase unnecessary usage of memory
+
+Bir veritabanıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
+
+(Distributed database'yi bi sonraki çalışmada inceleyelim..)
+
+MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman tabanlı, C++ ile geliştirilmiş açık kaynak, NoSQL (ilişkisiz veritabanı) veritabanı uygulamasıdır. MongoDB, verileri JSON tipinde dokümanlarda saklamaktadır, anlamsal alanları dokümandan dokümana değişir ve veri yapısı zaman içinde değiştirilebilir. Belge modeli, uygulamanızın kodundaki nesnelerle eşleştirilir, böylece verilerin kullanımı kolaylaşır. Geçici sorgular, dizin oluşturmak için ve gerçek zamanlı verilerinize erişmek ve analiz etmek için güçlü yollar sağlar. MongoDB, özellikle hız gerektiren ve geleneksel ilişkisel veritabanlarının (RDBMS) hantal ve yavaş kaldığı yapılarda kullanılmaktadır.MongoDB, dağıtılmış bir veritabanı yapısına sahiptir, bu nedenle yüksek erişilebilirlik, yatayda ve dikeyde ölçeklendirme yapılabilmektedir. MongoDB, GNU Affero Genel Kamu Lisansı uyarınca yayınlanan ücretsiz ve açık kaynaktır.
+Örnek kullanım alanları arasında:
+•	Yüksek hacim/içerikli problemler
+•	Analiz için veri saklanması
+•	MMORPG uygulamaları
+•	Caching sistemleri
+•	Web içerik yönetim sistemleri
+•	Web yorum/etiket saklama ve yönetme
+İkililer, Windows, Mac OS X, Linux ve Solaris için mevcuttur.
+-
+-
+-
+-
+-
+-
+Redis (Remote Dictionary Server)	   (GITHUB)
+Redis nedir
+Redis, bir milisaniyenin altında yanıt süreleri sunan, açık kaynak kodlu bir bellek içi veri deposudur. 
+Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+
+Redis (/ˈrɛdɪs/; Remote Dictionary Server) is an in-memory data structure project implementing a distributed, in-memory key-value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indexes. The project is mainly developed by Salvatore Sanfilippo and as of 2019, is sponsored by Redis Labs.[8] It is open-source software released under a BSD 3-clause license.
+
+History
+The name Redis means REmote DIctionary Server.[6] The Redis project began when Salvatore Sanfilippo, nicknamed antirez, the original developer of Redis, was trying to improve the scalability of his Italian startup, developing a real-time web log analyzer. After encountering significant problems in scaling some types of workloads using traditional database systems, Sanfilippo began to prototype a first proof of concept version of Redis in Tcl.[9] Later Sanfilippo translated that prototype to the C language and implemented the first data type, the list. After a few weeks of using the project internally with success, Sanfilippo decided to open source it, announcing the project on Hacker News. The project began to get traction, more so among the Ruby community, with GitHub and Instagram being among the first companies adopting it. 
+
+-
+-
+-
+-
+-
+-
+Difference between scaling horizontally and vertically for databases		(GITHUB)
+
+Horizontal scaling nedir, vertical scaling nedir
+
+Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
+An easy way to remember this is to think of a machine on a server rack, we add more machines across the horizontal direction and add more resources to a machine in the vertical direction.
+                   
+In a database world horizontal-scaling is often based on the partitioning of the data i.e. each node contains only part of the data, in vertical-scaling the data resides on a single node and scaling is done through multi-core i.e. spreading the load between the CPU and RAM resources of that machine.
+With horizontal-scaling it is often easier to scale dynamically by adding more machines into the existing pool - Vertical-scaling is often limited to the capacity of a single machine, scaling beyond that capacity often involves downtime and comes with an upper limit.
+Good examples of horizontal scaling are Cassandra, MongoDB, Google Cloud Spanner .. and a good example of vertical scaling is MySQL - Amazon RDS (The cloud version of MySQL). It provides an easy way to scale vertically by switching from small to bigger machines. This process often involves downtime.
+In-Memory Data Grids such as GigaSpaces XAP, Coherence etc.. are often optimized for both horizontal and vertical scaling simply because they're not bound to disk. Horizontal-scaling through partitioning and vertical-scaling through multi-core support.
+-
+-
+-
+-
+-
+-
+Distributed database / DDBMS
+Distributed database nedir? DDBMS nedir (distributed database management system)
+A distributed database is a database that consists of two or more files located in different sites either on the same network or on entirely different networks. Portions of the database are stored in multiple physical locations and processing is distributed among multiple database nodes.
+Önemli notlar: 
+Distributed databases are capable of modular development, meaning that systems can be expanded by adding new computers and local data to the new site and connecting them to the distributed system without interruption.
+When failures occur in centralized databases, the system comes to a complete stop. When a component fails in distributed database systems, however, the system will continue to function at reduced performance until the error is fixed.
+Admins can achieve lower communication costs for distributed database systems if the data is located close to where it is used the most. This is not possible in centralized systems.
+-not bitiş
+Kısa açıklama:
+A distributed database is a database in which not all storage devices are attached to a common processor.[1] It may be stored in multiple computers, located in the same physical location; or may be dispersed over a network of interconnected computers. Unlike parallel systems, in which the processors are tightly coupled and constitute a single database system, a distributed database system consists of loosely coupled sites that share no physical components.
+
+A centralized distributed database management system (DDBMS) integrates data logically so it can be managed as if it were all stored in the same location. The DDBMS synchronizes all the data periodically and ensures that data updates and deletes performed at one location will be automatically reflected in the data stored elsewhere.
+By contrast, a centralized database consists of a single database file located at one site using a single network.
+When in a collection, distributed databases are logically interrelated with each other, and they often represent a single logical database. With distributed databases, data is physically stored across multiple sites and independently managed. The processors on each site are connected by a network, and they don't have any multiprocessing configuration.
+A common misconception is that a distributed database is a loosely connected file system. In reality, it's much more complicated than that. Distributed databases incorporate transaction processing, but are not synonymous with transaction processing systems.
+In general, distributed databases include the following features:
+•	Location independent
+•	Distributed query processing
+•	Distributed transaction management
+•	Hardware independent
+•	Operating system independent
+•	Network independent
+•	Transaction transparency
+•	DBMS independent
+Distributed database architecture
+(homogenous distributed database system nedir, heterogeneous distributed database nedir)
+Distributed databases can be homogenous or heterogeneous.
+In a homogenous distributed database system, all the physical locations have the same underlying hardware and run the same operating systems and database applications. Homogenous distributed database systems appear to the user as a single system, and they can be much easier to design and manage. For a distributed database system to be homogenous, the data structures at each location must be either identical or compatible. The database application used at each location must also be either identical or compatible.
+
+Features of a distributed database
+In a heterogeneous distributed database, the hardware, operating systems or database applications may be different at each location. Different sites may use different schemas and software, although a difference in schema can make query and transaction processing difficult.
+Different nodes may have different hardware, software and data structure, or they may be in locations that are not compatible. Users at one location may be able to read data at another location but not upload or alter it. Heterogeneous distributed databases are often difficult to use, making them economically infeasible for many businesses.
+Types of distributed databases
+Replicated data is used to create instances of data in different parts of the database. By using replicated data, distributed databases can access identical data locally, thus avoiding traffic. Replicated data can be divided into two categories: read-only and writable data.
+Read-only versions of replicated data allow revisions only to the first instance; subsequent enterprise data replications are then adjusted. Writable data can be altered, but the first instance is immediately changed.
+Horizontally fragmented data involves the use of primary keys that refer to one record in the database. Horizontal fragmentation is usually reserved for situations in which business locations only need to access the database pertaining to their specific branch.
+Vertically fragmented data involves using copies of primary keys that are available within each section of the database and are accessible to each branch. Vertically fragmented data is utilized when the branch of a business and the central location interact with the same accounts in different ways.
+-
+-
+-
+-
+-
+-
+Database Management System - DBMS
+Dbms nedir
+DBMS: The software which is used to manage database is called Database Management System (DBMS). For Example, MySQL, Oracle etc. are popular commercial DBMS used in different applications. DBMS allows users the following tasks:
+Data Definition: It helps in creation, modification and removal of definitions that define the organization of data in database.
+Data Updation: It helps in insertion, modification and deletion of the actual data in the database.
+Data Retrieval: It helps in retrieval of data from the database which can be used by applications for various purposes.
+User Administration: It helps in registering and monitoring users, enforcing data security, monitoring performance, maintaining data integrity, dealing with concurrency control and recovering information corrupted by unexpected failure.
+Introduction of DBMS (Database Management System) | Set 1
+Important Terminology
+
+Database: Database is a collection of inter-related data which helps in efficient retrieval, insertion and deletion of data from database and organizes the data in the form of tables, views, schemas, reports etc. For Example, university database organizes the data about students, faculty, and admin staff etc. which helps in efficient retrieval, insertion and deletion of data from it.
+
+DDL is short name of Data Definition Language, which deals with database schemas and descriptions, of how the data should reside in the database.
+
+CREATE: to create a database and its objects like (table, index, views, store procedure, function, and triggers)
+ALTER: alters the structure of the existing database
+DROP: delete objects from the database
+(truncate nedir)
+TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed
+COMMENT: add comments to the data dictionary
+RENAME: rename an object
+DML is short name of Data Manipulation Language which deals with data manipulation and includes most common SQL statements such SELECT, INSERT, UPDATE, DELETE, etc., and it is used to store, modify, retrieve, delete and update data in a database.
+
+SELECT: retrieve data from a database
+INSERT: insert data into a table
+UPDATE: updates existing data within a table
+DELETE: Delete all records from a database table
+MERGE: UPSERT operation (insert or update)
+CALL: call a PL/SQL or Java subprogram
+EXPLAIN PLAN: interpretation of the data access path
+LOCK TABLE: concurrency Control
+Database Management System: The software which is used to manage database is called Database Management System (DBMS). For Example, MySQL, Oracle etc. are popular commercial DBMS used in different applications. DBMS allows users the following tasks:
+
+Data Definition: It helps in creation, modification and removal of definitions that define the organization of data in database.
+
+Data Updation: It helps in insertion, modification and deletion of the actual data in the database.
+
+Data Retrieval: It helps in retrieval of data from the database which can be used by applications for various purposes.
+
+User Administration: It helps in registering and monitoring users, enforcing data security, monitoring performance, maintaining data integrity, dealing with concurrency control and recovering information corrupted by unexpected failure.
+
+Paradigm Shift from File System to DBMS
+
+ File System manages data using files in hard disk. Users are allowed to create, delete, and update the files according to their requirement. Let us consider the example of file based University Management System. Data of students is available to their respective Departments, Academics Section, Result Section, Accounts Section, Hostel Office etc. Some of the data is common for all sections like Roll No, Name, Father Name, Address and Phone number of students but some data is available to a particular section only like Hostel allotment number which is a part of hostel office. Let us discuss the issues with this system:
+
+Redundancy of data: Data is said to be redundant if same data is copied at many places. If a student wants to change Phone number, he has to get it updated at various sections. Similarly, old records must be deleted from all sections representing that student.
+Inconsistency of Data: Data is said to be inconsistent if multiple copies of same data does not match with each other. If Phone number is different in Accounts Section and Academics Section, it will be inconsistent. Inconsistency may be because of typing errors or not updating all copies of same data.
+Difficult Data Access: A user should know the exact location of file to access data, so the process is very cumbersome and tedious. If user wants to search student hostel allotment number of a student from 10000 unsorted students’ records, how difficult it can be.
+Unauthorized Access: File System may lead to unauthorized access to data. If a student gets access to file having his marks, he can change it in unauthorized way.
+No Concurrent Access: The access of same data by multiple users at same time is known as concurrency. File system does not allow concurrency as data can be accessed by only one user at a time.
+No Backup and Recovery: File system does not incorporate any backup and recovery of data if a file is lost or corrupted.
+These are the main reasons which made a shift from file system to DBMS.
+-
+-
+-
+-
+-
+-
+Access Modifier = Access Specifier = Erişim Modifiyeri)                               	 (GITHUB)
+Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir, access specifier nedir, access modifier nedir
+Access specifier de denir, access modifier de denir. Kaynaklar incelendi: https://www.tutorialspoint.com/What-are-the-different-access-specifiers-in-Chash-NET
+All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies. You can use the following access modifiers to specify the accessibility of a type or member when you declare it:
+public
+
+The type or member can be accessed by any other code in the same assembly or another assembly that references it.
+private
+
+The type or member can be accessed only by code in the same class or struct.
+protected
+
+The type or member can be accessed only by code in the same class, or in a class that is derived from that class. (class dışından erişemezsin)
+
+internal
+
+The type or member can be accessed by any code in the same assembly, but not from another assembly.
+protected internal 
+
+The type or member can be accessed by any code in the assembly in which it is declared, or from within a derived class in another assembly.
+private protected 
+
+The type or member can be accessed only within its declaring assembly, by code in the same class or in a type that is derived from that class.
+The following examples demonstrate how to specify access modifiers on a type and member:
+public class Bicycle
+{
+    public void Pedal() { }
+}
+Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+Class and Struct Accessibility
+Classes and structs that are declared directly within a namespace (in other words, that are not nested within other classes or structs) can be either public or internal. Internal is the default if no access modifier is specified.
+Struct members, including nested classes and structs, can be declared as public, internal, or private. Class members, including nested classes and structs, can be public, protected internal, protected, internal, private protected or private. The access level for class members and struct members, including nested classes and structs, is private by default. Private nested types are not accessible from outside the containing type.
+Derived classes cannot have greater accessibility than their base types. In other words, you cannot have a public class B that derives from an internal class A. If this were allowed, it would have the effect of making A public, because all protected or internal members of A are accessible from the derived class.
+You can enable specific other assemblies to access your internal types by using the InternalsVisibleToAttribute. For more information, see Friend Assemblies.
+-
+-
+-
+-
+-
+-
+Nested Classes
+Nested class nedir, nested classes nedir
+When one class is entirely dependent upon another, you may decide to implement it using a nested class. Nested classes are declared within the scope of an existing class and receive special benefits when they access their parent class's members.
+
+
+What are Nested Classes?
+A nested class is a special type of class that can be created using C#. Normally classes are declared within a namespace, or in the default namespace if one is not specified. A nested class is defined within the code block of another class, which itself may be a nested class to permit multiple nesting levels.
+
+
+A nested class generally behaves is the same way as any other class. It can be instantiated separately to its parent class and is not instantiated automatically by its parent. However, there are some important differences. One key difference concerns the scope of the class. Normally classes can be either public or internal. A nested class may be declared as private, meaning that the class can only be seen by its parent class and other nested classes within that parent. A nested class may also be declared as protected, allowing it to also be accessed by classes that derive from its parent type. This may be extended to protected internal to allow other classes in the same assembly to access it.
+
+Nested classes are given special access to instances of their parent classes. When an object of a parent class is passed to a method of a nested class, the method is permitted to access the private and protected members of the object. This makes nested classes ideal where a special relationship exists with the parent class that requires access to private members, particularly when the nested class is not required anywhere else and is never used in a standalone capability.
+
+Example Nested Classes
+We will start with a simple example of a nested class. In this case, the outer class will describe a sales order in an order-processing system. In this rather contrived design, there is no requirement for an order line to ever be created without an order. Furthermore, there is no need for an order line to be used externally to an order. In this case, it is useful to create an Order class with a nested, private OrderLine class.
+NB: The following code uses .NET 3.0 syntax for brevity. For earlier versions of the .NET framework, you will need to expand the property declarations and possibly remove the use of generics.
+
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+ 
+    public void AddOrderLine(string product, int quantity, double price)
+    {
+        OrderLine line = new OrderLine();
+        line.ProductName = product;
+        line.Quantity = quantity;
+        line.Price = price;
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal();
+        }
+        return total;
+    }
+ 
+    // Nested class
+    private class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal()
+        {
+            return Price * Quantity;
+        }
+    }
+}
+The code above shows the simplified Order and nested OrderLine classes. The Order class has two public members. The first allows an item to be added to a private collection of order lines. The product name, price and quantity are passed to this method, which builds an OrderLine object and adds it to the list. The second method loops through each item in the collection and calculates the total value for the order.
+The nested OrderLine class is used to represent order lines. It includes properties for the product name, quantity and price and a single method that calculates the total price for the order line. As the class is marked as private, it is invisible to all classes except its parent and any other nested classes that we may later create within Order. We could change the access modifier for the nested class to protected if we wished it to be visible to classes that inherit from Order.
+We can test the order mechanism with the following code. This creates an order with two order lines and outputs the total value to the console:
+Order order = new Order();
+order.AddOrderLine("Cheese", 5, 1.99);
+order.AddOrderLine("Oranges", 12, 0.35);
+Console.WriteLine(order.OrderTotal());  // Outputs "14.15"
+Increasing Nested Class Visibility
+As our ordering system evolves, we may decide that it would be useful to permit other classes access to the nested OrderLine class. We could then modify the AddOrderLine method to accept an OrderLine object rather than its constituent parts. We can do this by changing the access modifier of the nested class to internal, protected internal or public, depending upon the requirements. The following code shows a new version of the code:
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+ 
+    public void AddOrderLine(OrderLine line)
+    {
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal();
+        }
+        return total;
+    }
+ 
+    // Nested class
+    internal class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal()
+        {
+            return Price * Quantity;
+        }
+    }
+}
+
+
+With the new versions of the classes, the code that creates an order will also be different. Rather than passing the product details as separate variables, the calling class will instantiate order lines and pass these to the AddOrderLine method. When instantiating a nested class, the name of the class must be qualified by prefixing it with the parent class's name, as in the following, updated example. Note that the order lines are created as Order.OrderLine objects.
+
+Order order = new Order();
+ 
+Order.OrderLine line1 = new Order.OrderLine(); //vaaay olaya gel
+
+line1.ProductName = "Cheese";
+line1.Quantity = 5;
+line1.Price = 1.99;
+order.AddOrderLine(line1);
+ 
+Order.OrderLine line2 = new Order.OrderLine();
+line2.ProductName = "Oranges";
+line2.Quantity = 12;
+line2.Price = 0.35;
+order.AddOrderLine(line2);
+ 
+Console.WriteLine(order.OrderTotal());
+
+
+Accessing Private Members of the Parent Class
+The final example will demonstrate the ability for nested classes to access private members of their parent classes. In this example, we have modified the order to include a discount multiplier. The multiplier is held as a private variable that may have been initialised using a constructor or a property. In this case the value is fixed at 0.85. Every order line value will be multiplied by this amount to give a 15% discount.
+To allow the order lines to access the discount multiplier, the OrderLineTotal method has been updated to include a parameter. This parameter accepts an Order object. The method retrieves the private discount multiplier from the Order and includes it in the calculation, rounding the result to two decimal places on a line-by-line basis. If the OrderLine class was not nested within Order, this would not be possible.
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+    private double DiscountMultiplier = 0.85;
+ 
+    public void AddOrderLine(OrderLine line)
+    {
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal(this);
+        }
+        return total;
+    }
+ 
+    // Nested class
+    internal class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal(Order order)
+        {
+            return Math.Round(Price * Quantity * order.DiscountMultiplier, 2);
+        }
+    }
+}
+
+NB: Although nested classes can access the private members of their parent class, the reverse is not true. Private members of nested classes are invisible to their parent class.
+-
+-
+-
+-
+-
+-
+Class		(GITHUB)
+
+Class nedir
+Class'lar ile ilgili önemli bilgiler:
+
+namespace ConsoleApp6
+{
+    public class PublicClass
+    {
+    }
+ 
+    internal class InternalClass
+    {
+    }
+ 
+    // access modifier'siz class'lar otomaitik olarak internal olurlar.
+ 
+    class AccessModifiersizClass
+    {
+    }
+ 
+ 
+    // Aşağıdaki hata verir. Direkt olarak namespace içine yazılmış olan class'lar sadece public veya internal olabilir!
+    // Classes and structs that are declared directly within a namespace (in other words, that are not nested within other classes or structs) can be either public or internal. Internal is the default if no access modifier is specified.
+    /*
+    private class PrivateClass
+    {
+    }
+    */
+ 
+    // namespace scope'unda direkt olarak tutulamayacağını söyledik private class vb'nin. Aşağıya bakınız:
+    public class BigClass
+    {
+        private class PrivateClass
+        {
+        }
+ 
+        protected class ProtectedClass
+        {
+        }
+ 
+        private protected class PrivProtClass
+        {
+        }
+ 
+        internal class InternalClass
+        {
+        }
+    }
+ 
+// görüldüğü gibi, eğer bir class'ın içindeyken bir class oluşturuyorsak, bu class'ları access modifier'ları kullanarak oluşturabiliriz
+//SQL sorguları, stored procedure'ler burada bulunacak
+-
+-
+-
+-
+-
+-
+SQL
+SQL nedir
+In 1970's the product called 'SEQUEL', structured English query language, developed by IBM and later SEQUEL was renamed to 'SQL' which stands for Structured Query Language.
+In 1986, SQL was approved by ANSI (American national Standards Institute) and in 1987, it was approved by ISO (International Standards Organization).
+SQL is a structure query language which is a common database language for all RDBMS products. Different RDBMS product vendors have developed their own database language by extending SQL for their own RDBMS products.
+T-SQL stands for Transact Structure Query Language which is a Microsoft product and is an extension of SQL Language. Example:
+MS SQL Server --> SQL\T-SQL
+ORACLE        --> SQL\PL-SQL
+Data tiplerini bi incele: https://www.tutorialspoint.com/t_sql/t_sql_data_types.htm
+-
+-
+-
+-
+-
+-
+derive, derivation, inherit, inheritance kelimeleri
+Derive nedir, derivation nedir, inherit nedir, inheritance nedir, derive from nedir, inherit from nedir
+Kelimelerin nasıl kullanılabileceğiyle ilgili bilgi içerir:
+	Derive
+A class can be derived from more than one class or interface 
+(derive meaning: obtain something from (a specified source)).
+
+Definition - What does Derived Class mean?
+A derived class is a class created or derived from another existing class. The existing class from which the derived class is created through the process of inheritance is known as a base class or superclass.
+
+class <derived_class> : <base_class> 
+{
+}
+	Inherit
+Definition - What does Inherited Class mean?
+An inherited class is called a subclass of its parent class or super class.
+class B inherits from class A: 
+class B : A {}
+(inherit meaning: derive (a quality, characteristic, or predisposition) genetically from one's parents or ancestors.)
+Örnek cümle: The child classes inherit methods and properties of the parent class
+-
+-
+-
+-
+-
+-
+sealed 
+Sealed nedir
+Sealed bir access modifier değildir! Evet, bir modifier'dir. Ama access modifier değildir. Çünkü access'i yani erişimi değiştirmez, yani erişimi modifiye etmez.
+Peki sealed tanımda ne olarak geçer?
+Sealed bir modifier'dir.
+Sealed daha genel anlamda bakıldığında bir keyword'dür tabi ki: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+Sealed'in neden bir access modifier olmadığına dair güzel bir cevap: Cause if you cannot derive from a class it doesn't mean you cannot access it.
+When applied to a class, the sealed modifier prevents other classes from inheriting from it. In the following example, class B inherits from class A, but no class can inherit from class B.
+class A {}
+sealed class B : A {}
+Önemli: You can also use the sealed modifier on a method or property that overrides a virtual method or property in a base class. This enables you to allow classes to derive from your class and prevent them from overriding specific virtual methods or properties.
+Example (gayet açık)
+In the following example, Z inherits from Y but Z cannot override the virtual function F that is declared in X and sealed in Y.
+C#Copy
+class X
+{
+    protected virtual void F() { Console.WriteLine("X.F"); }
+    protected virtual void F2() { Console.WriteLine("X.F2"); }
+}
+
+class Y : X
+{
+    sealed protected override void F() { Console.WriteLine("Y.F"); }
+    protected override void F2() { Console.WriteLine("Y.F2"); }
+}
+
+class Z : Y
+{
+    // Attempting to override F causes compiler error CS0239.
+    // protected override void F() { Console.WriteLine("Z.F"); }
+
+    // Overriding F2 is allowed.
+    protected override void F2() { Console.WriteLine("Z.F2"); }
+}
+When you define new methods or properties in a class, you can prevent deriving classes from overriding them by not declaring them as virtual.
+It is an error to use the abstract modifier with a sealed class, because an abstract class must be inherited by a class that provides an implementation of the abstract methods or properties.
+When applied to a method or property, the sealed modifier must always be used with override.
+Because structs are implicitly sealed, they cannot be inherited.
+For more information, see Inheritance.
+For more examples, see Abstract and Sealed Classes and Class Members.
+Example
+sealed class SealedClass
+{
+    public int x;
+    public int y;
+}
+
+class SealedTest2
+{
+    static void Main()
+    {
+        var sc = new SealedClass();
+        sc.x = 110;
+        sc.y = 150;
+        Console.WriteLine($"x = {sc.x}, y = {sc.y}");
+    }
+}
+// Output: x = 110, y = 150
+In the previous example, you might try to inherit from the sealed class by using the following statement:
+class MyDerivedC: SealedClass{} // Error
+The result is an error message:
+'MyDerivedC': cannot derive from sealed type 'SealedClass'
+Remarks
+To determine whether to seal a class, method, or property, you should generally consider the following two points:
+•	The potential benefits that deriving classes might gain through the ability to customize your class.
+•	The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.
+-
+-
+-
+-
+-
+-
+Type, member
+Type nedir, member nedir
+The following examples demonstrate how to specify access modifiers on a type and member:
+public class Bicycle
+{
+    public void Pedal() { }
+}
+-
+-
+-
+-
+-
+-
+Dataset
+DataSet: This is a collection of DataTables. We use the DataSet type to store many DataTables in a single collection. Conceptually, the DataSet acts as a set of DataTable instances. 
+Usage: DataSet simplifies programs that use many DataTables. To effectively use the DataSet, you will need to have some DataTables handy. We begin by creating some. 
+Create: In this program, we create two DataTables. One stores two rows of patient information. And the second stores two rows of medication information. 
+Next: We create a DataSet with the DataSet constructor. Then we add the two DataTables to the DataSet instance. Finally we print the XML. 
+DataSetName: Every DataSet can have a name specified. Usually, it is easiest to specify this inside the DataSet constructor. But you don't always know the name at this time. 
+However: You can also change the name by assigning to the DataSetName property. You can also read the DataSetName property. 
+Copy, Clear: DataSet has a Clear method that clears all the DataTables in the set. It also provides a Copy method that will make a deep copy of all the DataTables in the set. 
+Tip: If you call Copy and the Clear the original, your copied data will still exist unchanged.
+	public ActionResult Index()
+	{
+            // Önce DataSet oluşturuldu
+            // Sonra DataTable oluşturuldu (tablo)
+            // Sonra oluşturulan tabloya kolonlar eklendi
+            // Sonra bu kolonlara örnek veriler eklendi (datarow)
+            // Sonra ilk başta oluşturduğumuz Dataset'in içine, DataTable'ımızı yerleştirdik ve View'a yolladık.
+ 
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable("YeniTablo");
+ 
+            dt.Clear();
+ 
+            dt.Columns.Add("Isim");
+            dt.Columns.Add("SoyIsim");
+ 
+            DataRow dr = dt.NewRow();
+ 
+            // Row'lar farklı şekilde de eklenebilir. 2. örneğe bakılabilir.
+            dr["Isim"] = "Eren";
+            dr["SoyIsim"] = "OZTEN";
+            dt.Rows.Add(dr);
+ 
+            ds.Tables.Add(dt);
+ 
+            return View(ds);
+
+View:
+
+ 
+@model System.Data.DataSet
+ 
+@using System.Data
+ 
+@foreach (DataRow row in Model.Tables["YeniTablo"].Rows)
+{
+    @(row["Isim"] + " " + row["SoyIsim"])
+}
+ 
+@{
+    ViewBag.Title = "Home Page";
+}
+
+Bir örnek daha:
+// GET: DataSet2
+        public ActionResult Index()
+        {
+            // Create two DataTable instances.
+            DataTable dataTable1 = new DataTable("Books");
+            //dataTable1.Clear();
+            dataTable1.Columns.Add("Name");
+            dataTable1.Columns.Add("Id");
+            dataTable1.Rows.Add("Monte Cristo", 1);
+            dataTable1.Rows.Add("Jane Eyre", 2);
+ 
+            DataTable dataTable2 = new DataTable("Medications");
+            dataTable2.Columns.Add("Id");
+            dataTable2.Columns.Add("Medication");
+            dataTable2.Rows.Add(1, "Atenolol");
+            dataTable2.Rows.Add(2, "Amoxicillin");
+ 
+            // Oluşturduğumuz dataTable'ları dataSet içine koyalım.
+ 
+            DataSet dataSet = new DataSet("dataSetNam");
+            dataSet.Tables.Add(dataTable1);
+            dataSet.Tables.Add(dataTable2);
+ 
+            // Visualize DataSet.
+            return View(dataSet);
+ 
+View kısmı:
+
+ <h2>DataSet2 Index 414322</h2>
+<br />
+<br />
+ 
+ 
+@model System.Data.DataSet
+ 
+@using System.Data
+ 
+@foreach (DataRow row in Model.Tables["Books"].Rows)
+{
+    @(row["Name"] + " - " + row["Id"])
+    <br/>
+}
+
+ 
+            //// Aşağıdaki örnek çalışıyor:
+ 
+            //DataSet dataSet = new DataSet();
+            //DataTable dataTable1 = new DataTable("Books");
+ 
+            //dataTable1.Columns.Add("Name");
+            //dataTable1.Columns.Add("Id");
+ 
+            //DataRow dataRow1 = dataTable1.NewRow();
+ 
+            //dataRow1["Name"] = "Monte Kristo";
+            //dataRow1["Id"] = "1";
+            //dataTable1.Rows.Add(dataRow1);
+            //dataSet.Tables.Add(dataTable1);
+ 
+            //return View(dataSet);
+        }
+-
+-
+-
+-
+-
+-
+metadata
+metadata nedir
+Metadata is simply data about data. It means it is a description and context of the data. It helps to organize, find and understand data. Here are a few real world examples of metadata:
+Those are some typical metadata elements:
+1.	Title and description,
+2.	Tags and categories,
+3.	Who created and when,
+4.	Who last modified and when,
+5.	Who can access or update.
+Every time you take a photo with today's cameras a bunch of metadata is gathered and saved with it:
+•	date and time,
+•	filename,
+•	camera settings,
+•	geolocation.
+-
+-
+-
+-
+-
+-
+HTTPGet vs HTTPPost
+Httpget nedir httppost nedir
+https://www.youtube.com/watch?v=Un2JTC7tFPI
+Videoyu izle…
+Get yapınca veriler url ye yazılır. Post ta ise form yollanır… Url ile yollanmaz veri. Message body içinde yollanır.
+Get metotlara url'ye yazıp enter yaparak ulaşılır. O yüzden tehlikeli olabilir…
+DB'deki değerleri hem Get hem Post ile değiştirebiliriz tabi ki. Ama dediğimiz gibi get ile bunu yapmak tehlikelidir.
+-
+The GET Method
+GET is used to request data from a specified resource. 
+GET is one of the most common HTTP methods. 
+Note that the query string (name/value pairs) is sent in the URL of a GET request: 
+/test/demo_form.php?name1=value1&name2=value2
+Some other notes on GET requests: 
+GET requests can be cached
+GET requests remain in the browser history
+GET requests can be bookmarked
+GET requests should never be used when dealing with sensitive data
+GET requests have length restrictions
+GET requests are only used to request data (not modify)
+The POST Method
+POST is used to send data to a server to create/update a resource. 
+The data sent to the server with POST is stored in the request body of the HTTP request: 
+POST /test/demo_form.php HTTP/1.1
+Host: w3schools.com
+name1=value1&name2=value2
+(yukarıda request body'nin neye benzediğini görmüş olduk. Get request'lerde request body yoktur. Veri url'den gönderilir)
+Some other notes on POST requests:
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
+-
+GET methodu HTTP istekleri arasındaki varsayılan yöntemdir.  GET metodu ile yapılan istekler tarayıcının adres satırında görünür. Sadece belirli boyutta veri gönderileceği zaman kullanılır.
+POST metodu ise URL’ de görünmesini istemediğimiz veriler olduğunda kullanılabilir. POST yönteminde gönderebileceğimiz verinin boyutu ile ilgili bir sınır yoktur. Ayrıca gönderdiğimiz parametrelerin adres satırında görünmemesi dolayısıyla GET yöntemine göre daha güvenlidir. HTML form gönderileceği zaman neredeyse her zaman POST yöntemi tercih edilir.
+Örnek vermek gerekirse Kisilers tablomuzun olduğu bir proje üzerinde kişi bilgilerini düzenlemek isteyebiliriz. Bunun için genellikle iki Action oluştururuz. Bunlardan biri kişinin ID sini parametre olarak alan gelen ID ye göre kişinin bilgilerini Edit formunda açan Action iken diğeri POST olduğunda yani Kaydet butonuna tıklandığında kullanılacak Actiondur.
+ 
+public ActionResult Edit(int? id)
+{
+if (id == null)
+ 
+{  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);  }
+ 
+Kisiler kisiler = db.Kisilers.Find(id);
+ 
+if (kisiler == null) 
+{
+return HttpNotFound();
+}
+ 
+return View(kisiler);
+}
+ 
+Yukarıda ki Action’ da querystring’imiz kisa iken aşağıdakinde Kisilers tablosundaki kolon sayısına göre uzunluğu değişecek bir querystring söz konusu. Ayrıca buradan dönen bilgilerinde adres çubuğunda görünmesini istemediğimiz için POST methodunu kullanırız.
+Önemli:
+Browsers can cache GET requests, generally on static data, like images or scripts. But you can also allow browsers to cache GET requests to controller actions as well, using [OutputCache] or other similar ways, so if caching is turned on for a GET controller action, it's possible that clicking on a link leading to /Home/Index doesn't actually run the Index method on the server, but rather allows the browser to serve up the page from its own cache.
+With this line of thinking, you can safely turn on caching on GET actions in which the data you're serving up doesn't change (or doesn't change often), with the knowledge that your server action won't fire every time.
+POSTs won't be cached by the browser, so any POST is guaranteed to make it to the server.
+-
+Güzel bir açıklama:
+Ignore caching for a moment. Another way of thinking about this is that search engines will store HTTP GET links during their indexing/crawling process, therefore they will show up in search results.
+Suppose if your /Home/Index is implemented as GET but it lets say deletes a row in your Database, every time this link shows up on a search engine and somebody clicks it, you will have a delete row, and soon you have a lot deleted rows.
+-
+-
+-
+-
+-
+-
+Bundling in MVC / Bundle in MVC 
+Bundling  nedir, bundle nedir
+Detaylı bilgil için link kesinlikle incelenmeli: https://www.tutorialsteacher.com/mvc/bundling-and-minification-in-asp.net-mvc
+Bundle ingilizcede "demet" demektir... Bundling request'lerin daha hızlı gerçekleşmesi için yapılır. (Request load time'ı azaltmak için yapılır). İstenen statik dosyaları farklı farklı http request'lerle yollamaktansa hepsini bir bundle içinde (demette) toplayıp tek bir http request'iyle yollayabiliriz. Dolayısıyla bundling zaman yönünden verimlilik sağlayan bir tekniktir. Aklımıza şunu getirebiliriz: Çiçekleri tek tek vermektense bir demet halinde tek bir hamleyle veriyoruz. Bundling'in faydası sadece bununla sınırlı değildir.
+Bundling, script/style dosyalarımızın gereksiz kısımlarını (gereksiz boşluklar vb) siler. Böylelikle dosyayı minimize etmiş olur (yani boyutunu düşürmüş olur). Bu da sunucu üzerine bindirilen yükü azaltır. Örneğin aşağıdaki kod parçacığını;
+sayHello = function(name){
+    //this is comment
+    var msg = "Hello" + name;
+    alert(msg);
+}
+
+Şu hale getirir:
+sayHello=function(n){var t="Hello"+n;alert(t)}
+
+Görüldüğü gibi comment satırını bile silmiş..
+Not: Bahsedilen statik dosyalar hem script dosyaları, hem de style dosyaları olabilir. Script dosyalarımızı ScriptBundle kullanarak, style dosyalarımızı da StyleBundle kullanılarak gönderiyoruz.
+Bundle'ları nasıl oluşturduğumuz ve View'da nasıl render ettiğimiz yukarıdaki linkte anlatılıyor. 
+
+Script bundle:
+https://www.tutorialsteacher.com/mvc/scriptbundle-mvc
+bundles.Add(new ScriptBundle("~/bundles/myScriptsBundle").Include(
+                "~/Scripts/myScript.js"));
+buradaki  ScriptBundle'yi unutma. Bundle ye script koyacaksak; bunun adı ScriptBundle olmalı, yok eğer style dosyaları koyacaksak (CSS) o zaman adı StyleBundle olur.
+~/bundles
+bu kısmı yazmazsak çalışmıyor.
+myScriptsBundle
+bizim vereceğimiz özel isim, kafaya göre.
+Scripts
+bu ise script'in hangi file içinde olduğunu gösteriyor
+myScript.js
+çalıştırmak istediğimiz script dosyası..
+sonra bu bundle'ı RENDER etmemiz gerekiyor. Yoksa çalışmaz. 
+Scriptleri layoutta render edelim ki her sayfada geçerli olsun:
+    @Scripts.Render("~/bundles/myScriptsBundle")
+
+Not: render ederken diğer jquery vb dosyalarından sonra render et çünkü script'inde kesin jquery falan kullanmışsındır. o yüzden önce JQuery bundle render edilsin, sonra senin scriptin.
+
+Style bundle:
+STYLE'LAR BÖYLE YAPILMALI:
+     bundles.Add(new StyleBundle("~/bundles/VereceginİsimKafayaGöre").Include(
+                "~/Content/site2.css"));
+    @Styles.Render("~/bundles/ VereceginİsimKafayaGöre")
+-
+-
+-
+-
+-
+-
+Library		(GITHUB)
+Library nedir
+Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
+Bir geliştirici yazılım geliştirirken yazılımını daha işlevsel hale getirmek veya çeşitli fonksiyonlar kazandırmak için yazılım kütüphanelerinden faydalanır. Yazılım kütüphaneleri yazılımcıların iş yükünü hafifletir ve aynı kodu tekrar yazmalarına gerek kalmadan onlara hazır bir kalıp sunar. Basit bir örnekle açıklamamız gerekirse; bir geliştirici matematikle ilgili bir yazılım geliştirdiğinde bu yazılıma karmaşık matematik işlemlerini yaptırması için ayrı ayrı modüller yazmak zorunda kalacaktır. Bu kodları yazmaya uğraşmak yerine yazılım kütüphanesindeki bir matematik modülünü alıp bu modülü doğrudan kendi yazılımına ilave edebilir.
+
+In computer science, a library is a collection of non-volatile resources used by computer programs, often for software development. These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. In IBM's OS/360 and its successors they are referred to as partitioned data sets.
+
+A library is also a collection of implementations of behavior, written in terms of a language, that has a well-defined interface by which the behavior is invoked. For instance, people who want to write a higher level program can use a library to make system calls instead of implementing those system calls over and over again. In addition, the behavior is provided for reuse by multiple independent programs. A program invokes the library-provided behavior via a mechanism of the language. For example, in a simple imperative language such as C, the behavior in a library is invoked by using C's normal function-call. What distinguishes the call as being to a library function, versus being to another function in the same program, is the way that the code is organized in the system.
+Library code is organized in such a way that it can be used by multiple programs that have no connection to each other, while code that is part of a program is organized to be used only within that one program. 
+The value of a library lies in the reuse of the behavior. When a program invokes a library, it gains the behavior implemented inside that library without having to implement that behavior itself. Libraries encourage the sharing of code in a modular fashion, and ease the distribution of the code.
+The behavior implemented by a library can be connected to the invoking program at different program lifecycle phases. If the code of the library is accessed during the build of the invoking program, then the library is called a static library.[1] An alternative is to build the executable of the invoking program and distribute that, independently of the library implementation. The library behavior is connected after the executable has been invoked to be executed, either as part of the process of starting the execution, or in the middle of execution. In this case the library is called a dynamic library (loaded at runtime). A dynamic library can be loaded and linked when preparing a program for execution, by the linker. Alternatively, in the middle of execution, an application may explicitly request that a module be loaded.
+Most compiled languages have a standard library although programmers can also create their own custom libraries. Most modern software systems provide libraries that implement the majority of the system services. Such libraries have commoditized the services which a modern application requires. As such, most code used by modern applications is provided in these system libraries. 
+-
+-
+-
+-
+-
+-
+Framework	   (GITHUB)
+framework nedir
+Önceden hazırlanmış belirli standartlar halinde kütüphanelerin bulunduğu bir iskelettir. İhtiyaca göre projemizi o iskelete dahil edip inşa ederiz.
+Framework, yazılım geliştiricilerin kullandığı önceden hazırlanmış kütüphanelerin bunluduğu ve bunlara yenilerini ekleyebileceği yapıların adıdır. Gelişmiş frameworklerde form kontrolü, veri tabanı bağlantısı, kullanıcı giriş çıkış, mail atma, tema motoru gibi kütüphaneler mevcuttur.
+Frameworkler ayrıca MVC (Model, View, Controller) gibi bölümlerden oluşarak projenizin daha okunabilir düzenlenebilir olmasını sağlamaktadır.
+Yapılan projelerin çoğunda aradan belirli bir zaman geçtikten sonra düzenlemek zorlaşır. Hem kodların artması hem de yazılan kodun unutulması revize sürecini uzatmakta. Bu yapılar Modelde veritabanı işlemlerini, Controllerda genel mekaniği, Viewda ise görünüm kodu içerdiği için müdahale edilmesi gereken yer tam olarak bulanabilmektedir. 
+
+A framework, or software framework, is a platform for developing software applications. It provides a foundation on which software developers can build programs for a specific platform. For example, a framework may include predefined classes and functions that can be used to process input, manage hardware devices, and interact with system software. This streamlines the development process since programmers don't need to reinvent the wheel each time they develop a new application.
+A framework is similar to an application programming interface (API), though technically a framework includes an API. As the name suggests, a framework serves as a foundation for programming, while an API provides access to the elements supported by the framework. A framework may also include code libraries, a compiler, and other programs used in the software development process.
+Several different types of software frameworks exist. Popular examples include ActiveX and .NET for Windows development, Cocoa for Mac OS X, Cocoa Touch for iOS, and the Android Application Framework for Android. Software development kits (SDKs) are available for each of these frameworks and include programming tools designed specifically for the corresponding framework. For example, Apple's Xcode development software includes a Mac OS X SDK designed for writing and compiling applications for the Cocoa framework.
+-
+-
+-
+-
+-
+-
+Cassandra	(GITHUB)
+cassandra nedir
+ 
+Cassandra NoSQL database in top 10
+Cassandra was developed at Facebook for inbox search. Cassandra is a distributed data storage system for handling very large amounts of structured data. Generally, these data are spread out across many commodity servers. You can also add storage capacity of your data keeping your service online and you can do this task easily. As all the nodes in a cluster are same, there is no complex configuration to deal with. Cassandra is written in Java. (CQL nedir) Cassandra Query Language (CQL) is a SQL-like language for querying Cassandra Database. As a result, Cassandra stands 2nd in best open source databases. Cassandra is being used by some of the biggest companies such as Facebook, Twitter, Cisco, Rackspace, eBay, Twitter, Netflix, and more.
+•	Developed by: Apache Software Foundation
+FEATURES
+•	Linearly scalable
+•	Maintains a quick response time
+•	Supports properties like Atomicity, Consistency, Isolation, and Durability (ACID)
+•	Supports MapReduce with Apache Hadoop
+•	Maximal flexibility to distribute the data
+•	Highly scalable
+•	Peer-to-peer architecture
+PROS OF CASSANDRA
+•	Highly scalable
+•	No single point of failure
+•	Multi-DC Replication
+•	Integrate tightly with other JVM based applications
+•	More suitable for multiple data-center deployments, redundancy, failover and disaster recovery
+CONS OF CASSANDRA
+•	Limited support for aggregations
+•	Unpredictable Performance
+•	Doesn’t Support ad-hoc query
+-
+-
+-
+-
+-
+-
+Ad Hoc Query
+Ad hoc nedir, ad hoc query nedir, ad-hoc query nedir
+Definition - What does Ad Hoc Query mean?
+In SQL, an ad hoc query is a loosely typed command/query whose value depends upon some variable. Each time the command is executed, the result is different, depending on the value of the variable. It cannot be predetermined and usually comes under dynamic programming SQL query. An ad hoc query is short lived and is created at runtime.
+Techopedia explains Ad Hoc Query
+As the word "ad hoc" suggests, this type of query is designed for a "particular purpose,"which is in contrast to a predefined query, which has the same output value on every execution. An ad hoc query does not reside in the system for a long time and is created dynamically on demand by the user. It is more efficient to use an ad hoc query in programming as it saves system resources, but, at the same time complex, ad hoc queries (have multiple variables) also challenge the processing speed and runtime memory of the system. 
+
+
+
+
+
+
+

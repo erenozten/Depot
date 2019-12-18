@@ -38,6 +38,59 @@ Query expression overview
 •	As a rule when you write LINQ queries, we recommend that you use query syntax whenever possible and method syntax whenever necessary. There is no semantic or performance difference between the two different forms. Query expressions are often more readable than equivalent expressions written in method syntax.
 •	Some query operations, such as Count or Max, have no equivalent query expression clause and must therefore be expressed as a method call. Method syntax can be combined with query syntax in various ways. For more information, see Query syntax and method syntax in LINQ.
 •	Query expressions can be compiled to expression trees or to delegates, depending on the type that the query is applied to. IEnumerable<T> queries are compiled to delegates. IQueryable and IQueryable<T> queries are compiled to expression trees. For more information, see Expression trees.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello World!");
+ 
+        // Specify the data source.
+ 
+        int[] scores = new int[] { 97, 92, 81, 60 };
+ 
+        // Define the query expression.
+        // Burada List<int> yazamayız. listemiz IEnumerable olmalıdır:
+ 
+        IEnumerable<int> scoreQuery =
+            from score in scores
+            where score > 80
+            select score;
+ 
+        // Execute the query:
+ 
+        foreach (int i in scoreQuery)
+        {
+            Console.WriteLine(i + "(scoreQuery");
+        }
+ 
+        // Yukarıda Ienumerable bir değişkenin içinde döndüğümüze dikkat edelim. Yani toList işlemi yapmadan içinde dönmüş olduk.
+ 
+        // Yukarıdaki IEnumerable olan scoreQuery üzerinde ToList işlemi yapabiliriz ve oluşacak yeni değeri bir değişkene atayabiliriz
+        // Aşağıda bunu yapıyoruz:
+ 
+        List<int> toListtenGelenList = scoreQuery.ToList();
+ 
+        // ToList metodunun ne yaptığını okuyalım şunu yapıyor, çok önemli:
+ 
+        // Ienumerable<out T> tipinden List<T> tipine dönüşüm sağlıyor. --> english -->
+        // Creates a List<T> from an IEnumerable<T>.
+ 
+        // şimdi tolist ile listeye dönüştürdüğümüz değişkenin içinde dönelim ve değerleri ekrana yazdıralım:
+ 
+        foreach (var item in toListtenGelenList)
+        {
+            Console.WriteLine(item + "(toListtenGelenList)");
+        }
+ 
+        Console.ReadKey();
+    }
+}
+
 -
 -
 -

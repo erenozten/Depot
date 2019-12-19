@@ -30,6 +30,61 @@ Declarative Programming devam: Many languages that apply this style attempt to m
 -
 -
 -
+Declarative Query Languages: Definition and Examples (GITHUB)
+
+Some well-known general declarative programming languages include Ruby, R and Haskell. SQL (Structured Query Language) is a declarative query language and is the industry standard for relational databases.
+Declarative query nedir, declarative query language nedir
+The two main paradigms of database query languages are imperative and declarative. Understanding the difference between these two approaches is essential if you’re going to be successful in database development.
+
+If the query languages were human archetypes, imperative languages would be the micromanaging boss who gives instructions down to the final detail.
+
+In the most basic sense, imperative query languages are used to describe how you want something done specifically. This is accomplished with explicit control in a detailed, step-by step manner; the sequence and wording of each line of code plays a critical role.
+
+Some well-known general imperative programming languages include Python, C and Java.
+
+In the world of graph database technology, there aren’t any purely imperative query languages. However, both Gremlin and the Java API (for Neo4j) include imperative features. These two options provide you with more detailed power over the execution of their task. If written correctly, there are no surprises – you will get exactly what you want done.
+
+However, imperative database query languages can also be limiting and not very user-friendly, requiring an extensive knowledge of the language and deep technical understanding of physical implementation details prior to usage. Writing one part incorrectly creates faulty outcomes.
+
+As a result, imperative languages are more prone to human error. Additionally, users must double-check the environment before and after the query and be prepared to deal with any potential erroneous scenarios.
+
+To better illustrate the differences, imagine you have two children: Isabel and Duncan. Isabel represents an imperative query language and Duncan the declarative query language.
+
+To get the two children to make their beds, you take differing approaches. For Duncan, it is easy. Simply instruct Duncan to make his bed and he will do it however he sees fit. Yet, he might make it differently than you had in mind, especially if you’re a picky parent.
+
+Isabel requires an entirely different process. You must first inform her that she needs both sheets and blankets to make her bed, and that those materials are found on top of her bed. Then she requires step-by-step instructions, such as “spread the sheet over the mattress” and “tuck in the edges.”
+
+The final result will be closely similar to Duncan’s (or perhaps, exactly the same). At the end of the process, both children have their beds made.
+
+Declarative Query Languages: Definition and Examples
+
+All too often, declarative query languages are often defined as being any database query language that is not imperative. However, to define it in such a manner is too broad.
+
+Declarative query languages let users express what data to retrieve, letting the engine underneath take care of seamlessly retrieving it. They function in a more general manner and involve giving broad instructions about what task is to be completed, rather than the specifics on how to complete it. They deal with the results rather than the process, focusing less on the finer details of each task.
+
+Some well-known general declarative programming languages include Ruby, R and Haskell. SQL (Structured Query Language) is a declarative query language and is the industry standard for relational databases.
+
+Using a declarative database query language may also result in better code than what can be created manually, and it is usually easier to understand the purpose of the code written in a declarative language. Declarative query languages are also easier to use as they simply focus on what must be retrieved and do so quickly.
+
+However, declarative languages have their own trade-offs. Users have little to no control over how inputs are dealt with; if there is a bug in the language, the user will have to rely on the providers of the language to fix the problem. Likewise, if the user wants to use a function that the query language doesn’t support, they are often at a loss.
+
+In the previous example of the children, Duncan was able to complete his task in a method faster and easier for his parent than Isabel. However, imagine now that you want to them to wash the dishes.
+
+It is the same process for Isabel: You’d need to walk through each step with her so she can learn how the process works.
+
+For Duncan, however, we have hit a snag. Duncan has never learned how to wash the dishes. You will stay in that impasse with Duncan unless his programming engineers decide to teach him how to wash the dishes. (Duncan isn’t like most children.)
+
+Conclusion
+
+You should select the best query language paradigm for your specific use case. Neither paradigm is better than the other; they each have different strengths for software development.
+
+If your project requires finer accuracy and control, imperative query languages do the job well. If the speed and productivity of the development process matter more, declarative languages offer the flexibility of getting results without as much effort. Ultimately, the choice depends on you.
+-
+-
+-
+-
+-
+-
 LINQ  (GITHUB)
 Linq nedir
 Language-Integrated Query (LINQ) is the name for a set of technologies based on the integration of query capabilities directly into the C# language. Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. With LINQ, a query is a first-class language construct, just like classes, methods, events. You write queries against strongly typed collections of objects by using language keywords and familiar operators. The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).

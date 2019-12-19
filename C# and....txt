@@ -44,6 +44,19 @@ ORM (Object relational Mapping)  (GITHUB)
 -
 -
 -
+ADO.NET  (GITHUB)
+Ado nedir ado.net nedir
+Microsoft'un veriye erişme teknolojisinin adıdır. 
+ADO.NET temelde bir teknoloji olarak görülmektedir. Tamamen bir ORM aracı değildir.
+Veritabanı ile C# dilini konuşturmak için kullanılan teknolojilerden bir tanesidir. ADO.NET bir programlama dili değildir.
+
+ActiveX teknolojisi ile geliştirilmiştir. ADO.NET'e temel olan teknoloji ADO'dur. Ortak olan, veriye erişim felsefesidir. ADO.NET, .NET Framework ile geliştirilen veri işlemlerini kolaylaştırır. N katmanlı mimariler geliştirmek için hazırlanmış olup çevrimdışı sistemleri ve XML'e tam destek veren bir sistemdir.
+-
+-
+-
+-
+-
+-
 SOA (Service Oriented Architecture) Principles    (GITHUB)
 Soa nedir, service oriented architecture nedir
 SOA is based on some key principles which are mentioned below

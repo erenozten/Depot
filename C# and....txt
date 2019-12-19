@@ -15,7 +15,51 @@ Imperative programming, anlaşılacağı üzere Emirli.
 Imperative: NASIL yapacağım diye sorar. Kontrol akışı vardır.
 
 Declarative: NE yapacağım diye sorar. Kontrol akışı tanımlamaz, direk computation’a odaklanır.
+Stack      (GITHUB)
+Stack Nedir
+Videoyu izle: https://www.youtube.com/watch?v=HlzAtIHFRk0
+ 
+Resmi incele.
 
+Value type olanlar (örneğin int) ---> Stack içinde saklanır.
+Pointer'lar da Stack içinde saklanır.
+Ama objeler Heap içinde saklanır.
+
+Yani neymiş, örneğin Report report = new Report(); deyince; buradaki report, (YANİ OBJE DEĞİL, POINTER!) -- STACK içinde tutuluyor. AMA report aracılığıyla üretilen yeni OBJE HEAP'TE TUTULUYOR. Güzel bilgi bu… 
+Dikkat et… report dediğin şey bir pointer'dir, objenin kendisi değildir. Inıtialize yapıyorsan bu pointer gidip bir OBJE üretecektir. Ama kendisi, yani report, o yeni üretilen objeye işaret eden bir pointer'dir.
+
+Report report2 = report; deyince görüldüğü üzere yeni bir obje üretmedik. Zaten initialization olmadığı belli… new Report(); deyip constructor çalıştırmadık veya bir property'sine bir değer atamadık. Yani yeni bir obje oluşmamış oldu. Yani aynı referansı tutuyor report ile…..
+-
+-
+-
+-
+-
+-
+Stack
+Stack nedir
+
+Stack bir data tipidir; ama abstract bir data tipidir.
+
+In computer science, a stack is an abstract data type that serves as a collection of elements, with two principal operations:
+•	push, which adds an element to the collection, and
+•	pop, which removes the most recently added element that was not yet removed.
+ 
+Örnek:
+
+Stack myStack = new Stack();
+myStack.Push("Hello!!");
+myStack.Push(null);
+myStack.Push(1);
+myStack.Push(2);
+
+
+https://www.tutorialsteacher.com/csharp/csharp-stack
+-
+-
+-
+-
+-
+-
 In computer science, imperative programming is a programming paradigm that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. 
 
 Imperative programming focuses on describing how a program operates.

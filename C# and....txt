@@ -1,4 +1,36 @@
-﻿LINQ  (GITHUB)
+﻿Declarative Programming / Imperative Programming  (GITHUB)
+
+Declarative nedir, imperative nedir, declarative programming nedir, imperative programming nedir
+
+In computer science, declarative programming is a programming paradigm that expresses the logic of a computation without describing its control flow.
+
+Declarative programming is when you say what you want, and imperative language is when you say how to get what you want.
+
+
+İmperative: Emir verebilirsin
+
+
+Imperative programming, anlaşılacağı üzere Emirli. 
+
+Imperative: NASIL yapacağım diye sorar. Kontrol akışı vardır.
+
+Declarative: NE yapacağım diye sorar. Kontrol akışı tanımlamaz, direk computation’a odaklanır.
+
+In computer science, imperative programming is a programming paradigm that uses statements that change a program's state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program consists of commands for the computer to perform. 
+
+Imperative programming focuses on describing how a program operates.
+The term is often used in contrast to declarative programming, which focuses on what the program should accomplish without specifying how the program should achieve the result.
+
+In computer science, declarative programming is a programming paradigm—a style of building the structure and elements of computer programs—that expresses the logic of a computation without describing its control flow. 
+
+Declarative Programming devam: Many languages that apply this style attempt to minimize or eliminate side effects by describing what the program must accomplish in terms of the problem domain, rather than describe how to accomplish it as a sequence of the programming language primitives[2](the how being left up to the language's implementation). This is in contrast with imperative programming, which implements algorithms in explicit steps.
+-
+-
+-
+-
+-
+-
+LINQ  (GITHUB)
 Linq nedir
 Language-Integrated Query (LINQ) is the name for a set of technologies based on the integration of query capabilities directly into the C# language. Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. With LINQ, a query is a first-class language construct, just like classes, methods, events. You write queries against strongly typed collections of objects by using language keywords and familiar operators. The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).
 For a developer who writes queries, the most visible "language-integrated" part of LINQ is the query expression. Query expressions are written in a declarative query syntax. By using query syntax, you can perform filtering, ordering, and grouping operations on data sources with a minimum of code. You use the same basic query expression patterns to query and transform data in SQL databases, ADO .NET Datasets, XML documents and streams, and .NET collections.

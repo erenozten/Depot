@@ -35,6 +35,15 @@ Report report2 = report; deyince görüldüğü üzere yeni bir obje üretmedik.
 -
 -
 -
+ORM (Object relational Mapping)  (GITHUB)
+
+İlişkisel veritabanı (RDBMS) ile nesneye yönelik programlanın arasında bir tür köprü özelliği gören ve ilişkisel veritabanındaki bilgilerimizi yönetmek için, nesne modellerimizi kullandığımız bir tekniktir”. Basite indirgemek istersek: “Nesnelerimizi ilişkisel veritabanındaki tablomuza bağlayan ve veri alış-verişini bizim için yapan bir tekniktir/metodtur”. ORM tekniği belli bir programlama diline bağlı değildir ve her OO dilinde yazılabilir/kullanılabilir.
+-
+-
+-
+-
+-
+-
 SOA (Service Oriented Architecture) Principles    (GITHUB)
 Soa nedir, service oriented architecture nedir
 SOA is based on some key principles which are mentioned below

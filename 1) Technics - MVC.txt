@@ -270,7 +270,7 @@ Form işlemi -> Delete sayfası için form yollanması
 
 Şu formda entity'nin property'leri boş olarak ActionResult'a ulaşıyor:
 Yani Book bookHere nin property'leri null oluyor. Fakat aynı işlem Edit sayfasında yapıldığında book'un property'leri dolu geliyor. Neden?
-Bunun sebebi olarak şu söylenebilir: Delete sayfasında form doldurmuyoruz. Sadece action'dan gelen verileri Delete View'unda sergiliyoruz. Yani bu sayfada bir form doldurma işlemi yapmıyoruz. Dolayısıyla form yollanmıyor, dolayısıyla da Book book isminde bir parametre oluşturduğumuzda -> property'leri null geliyor. Örneğin aynı Delete View'una input'lar koyduğumuz zaman, bunlara girilen değerleri Book book parametresinde yakalayabiliyoruz:
+Bunun sebebi olarak şu söylenebilir: Delete sayfasında form doldurmuyoruz. Sadece action'dan gelen verileri Delete View'unda sergiliyoruz. Yani bu sayfada bir form doldurma işlemi yapmıyoruz. Dolayısıyla form yollanmıyor, dolayısıyla da Book bookHere isminde bir parametre oluşturduğumuzda -> property'leri null geliyor. Örneğin aynı Delete View'una input'lar koyduğumuz zaman, bunlara girilen değerleri Book book parametresinde yakalayabiliyoruz:
 @*Verilerin ActionResult'taki parametrelere ulaşmasını işte bunlar sağlıyor. Bu textboxlara yazdığımız veriler, actionresult'taki parametrelere düşecek:
 <div class="form-group">
     <input asp-for="Name" class="form-control" />
@@ -278,12 +278,20 @@ Bunun sebebi olarak şu söylenebilir: Delete sayfasında form doldurmuyoruz. Sa
 </div>
 *@
 
+Veya şunlarla de verileri forma doldurabiliriz: Hidden inputlarla:
+
+<input type="hidden" asp-for="Name" />
+<input type="hidden" asp-for="About" />
+
+Görüldüğü üzere yine input'ları kullanmış olduk form verilerini doldurmak için. Hatırlarsak delete view'unda input olmadığı için Action'daki parametrelere veri düşmediğini söylemiştik. Hem Book bookHere parametresi, hem string name, string about parametreleri, hepsi boş geliyordu. Ama input kullandığımız zaman form'a bir veri eklemiş oluyoruz ve bu veri de Action tarafında elimize düşmüş oluyor.
 Book book parametresinde yakalayabildiğimiz gibi, property isimleriyle aynı isimde parametreler üreterek de aynı verileri yakalayabiliriz.
 
 bookHere boş geliyor, 
 ve aynı isimde parametreler kullansak dahi property'leri çekemiyoruz.
  public async Task<IActionResult> DeleteConfirmed(int id, Book bookHere, string Name, string name)
-Ayrıca bu property'nin adını da bu parametrelerde kullanarak aynı veriyi burada yakalayabiliriz. Dikkat; isimler uyuşmalıdır. TextBoxFor hangi property için oluşturulmuştu? Name property'si için:
+
+Örneğin Name property'si için bir textbox oluştursak ve actionresult'ta aynı property (Name) isminde bir parametre oluştursak veriler eşleşecektir. Parametreye veri düşecektir.
+
 @Html.TextBoxFor(p=>p.Name)
 
 Peki ActionResult içinde bu Name property'sini çekmek için hangi isme sahip bir parametre oluşturmalıyız? Tabi ki Name ismine sahip bir parametre oluşturmalıyız. Büyük küçük harf duyarlılığı yoktur. Yani şu parametreler oluşturulabilir:
@@ -415,4 +423,5 @@ public async Task<IActionResult> DeleteConfirmed(int id, Book bookHere)
     await _context.SaveChangesAsync();
     return RedirectToAction(nameof(Index));
         }
+
 

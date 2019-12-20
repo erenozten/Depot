@@ -429,3 +429,9 @@ Bu kod, bütün property'ler için editör oluşturacaktır. Her bir property i�
 
 https://stackoverflow.com/questions/6537220/why-not-use-html-editorformodel
 https://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html
+-
+-
+-
+-
+-
+-

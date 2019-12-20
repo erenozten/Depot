@@ -407,5 +407,25 @@ public async Task<IActionResult> DeleteConfirmed(int id, Book bookHere)
     await _context.SaveChangesAsync();
     return RedirectToAction(nameof(Index));
         }
+-
+-
+-
+-
+-
+-
+EditorForModel
+Editorformodel nedir
+Her bir property için EditorFor oluşturacağımıza; View'a yollanmış olan Model'in tüm property'leri için birer editorfor oluşturmaksızın, bu işlemi tek bir satır kodla halledebiliriz:
+@Html.EditorForModel();
+Bu kod, bütün property'ler için editör oluşturacaktır. Her bir property için EditorFor oluşturmuş gibi...
+@model MyNamespace.Models.Person
 
+/* So, you need an Editor for the Person model? */
+@Html.EditorForModel()
+/*the above is equivalent to @Html.EditorFor(model => model) */
 
+/* you need to specify the Address property that the editor accepts? */
+@Html.EditorFor(model => model.MailingAddress)
+
+https://stackoverflow.com/questions/6537220/why-not-use-html-editorformodel
+https://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html

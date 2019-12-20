@@ -130,9 +130,24 @@ public async Task<IActionResult> Edit(int? id)
      }
  
 
+@Html.TextBoxFor(p=>p.Name)
 
-Şu formda entity'nin property'leri boş geliyor:
-Burada delete işlemi yapılıyor:
+Şu formda entity'nin property'leri boş olarak ActionResult'a ulaşıyor:
+Bunun sebebi olarak şu söylense doğru olabilir: Burada bir form doldurma işlemi yapmıyoruz, görüleceği üzere input element'lerini içermiyor:
+-örneğin bu view'un içine:
+@Html.TextBoxFor(p=>p.Name)
+
+Şeklinde bir textbox eklersek; bu textbox içine yazdığımız değer ActionResult'a ulaşacaktır (Entity'nin property'si kısmında veya aynı isimdeki parametreye ulaşacaktır: public async Task<IActionResult> DeleteConfirmed(int id, Book bookHere, string Name, string name)
+Yukarıda ActionResult'ı görüyoruz. İşte bunun parametreleri olan bookHere'nin Name property'si içinde görebiliriz form içinde yolladığımız Name verisini...
+Ayrıca bu property'nin adını da bu parametrelerde kullanarak aynı veriyi burada yakalayabiliriz. Dikkat; isimler uyuşmalıdır. TextBoxFor hangi property için oluşturulmuştu? Name property'si için:
+@Html.TextBoxFor(p=>p.Name)
+
+Peki ActionResult içinde bu Name property'sini çekmek için hangi isme sahip bir parametre oluşturmalıyız? Tabi ki Name ismine sahip bir parametre oluşturmalıyız. Büyük küçük harf duyarlılığı yoktur. Yani şu parametreler oluşturulabilir:
+String name
+String Name
+İkisi de uygundur. Form'dan gelen veri buraya düşecektir.
+Şimdi delete'nin view ve actionresult'ını görelim:
+
 
 @model KitapAppEncore.Models.Book
  
@@ -244,7 +259,7 @@ public async Task<IActionResult> Delete(int? id)
 //    return View();
 //}
  
-[HttpPost, ActionName("Delete")]
+[HttpPost, ActionName("Delete")] //Delete nin POST işlemi olduğuna DİKKAT. DeleteConfirmed değil...
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> DeleteConfirmed(int id, Book bookHere)
 {

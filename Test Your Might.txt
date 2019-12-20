@@ -204,7 +204,26 @@ class Program
 -
 -
 -
+Aşağıdaki hatalıdır mesela... STORED diye bir şey yazamazsın. Ayrıca GO yazılmamış, bu da hata. Ek olarak BEGIN ve END gereksiz.
 
+CREATE STORED PROCEDURE ASDFG
+AS
+BEGIN
+SELECT * FROM Students
+END
 
+Gereksizleri silip yenisini yazalım:
+
+CREATE PROCEDURE QWERTY
+AS
+SELECT * FROM Products
+GO
+
+stored procedure'leri SQL Server'da bulabilmek için ---> Database'e girdikten sonra --> Programmability --> Stored Procedures
+-
+-
+-
+-
+-
 
 

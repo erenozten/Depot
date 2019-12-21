@@ -1,4 +1,30 @@
-﻿Integration (GITHUB)
+﻿Iteration (GITHUB)
+iteration nedir iterate nedir
+
+Iteration, in the context of computer programming, is a process wherein a set of instructions or structures are repeated in a sequence a specified number of times or until a condition is met. When the first set of instructions is executed again, it is called an iteration. When a sequence of instructions is executed in a repeated manner, it is called a loop.
+
+Iteration is the repetition of a process in a computer program, usually done with the help of loops.
+An example of an iteration programming language is as follows:
+
+Consider a database table containing 1000 student records. Each record contains the following fields:
+•	First name
+•	Last name
+•	Roll no
+If one wants to copy all the student records from the database and print them, the best way to retrieve the record is to iterate or loop through each record. It can be executed using the for loop statement as shown below:
+
+for (int i=0;i<1000;i++)
+{
+\\Print first name and last name from table
+}
+
+In the above example, i is an iterator starting from the first student record to the last student record.
+-
+-
+-
+-
+-
+-
+Integration (GITHUB)
 integration nedir
 Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
 

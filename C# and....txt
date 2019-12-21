@@ -1,4 +1,13 @@
-﻿Declarative Programming / Imperative Programming  (GITHUB)
+﻿Integration (GITHUB)
+integration nedir
+Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
+-
+-
+-
+-
+-
+-
+Declarative Programming / Imperative Programming  (GITHUB)
 
 Declarative nedir, imperative nedir, declarative programming nedir, imperative programming nedir
 

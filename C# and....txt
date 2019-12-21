@@ -1,4 +1,29 @@
-﻿ArrayList Class  (GITHUB)
+﻿Initialization (GITHUB)
+Initialization nedir
+Object'in property'lerini objenin creation time'ında Set etmeye yarar. Yani objeyi üretirken property'lerini set etmeye yarayan bir şeydir (neydir? Bir Special Feature'dir [pluralsight]
+
+        public class Employee
+        {
+
+        }
+
+        public static void Main(string[] args)
+        {
+            Employee emp = new Employee(); // null dönmeyecektir.. initialize ettik. Constructor kullandık. Ne olmuş oldu? emp üretilmiş oldu... Hatırlayalım ki constructor kullanıldığı zaman yeni obje (instance) üretilmiş olur.
+            Employee emp2; // null dönecektir.
+
+            Console.WriteLine(emp); // hata üretmez
+            Console.WriteLine(emp2); // HATA! Might not be initialized before accessing.
+
+            Console.ReadLine();
+	}
+-
+-
+-
+-
+-
+-
+ArrayList Class  (GITHUB)
 arrayList nedir
 Implements the IList interface using an array whose size is dynamically increased as required.
 The following example shows how to create and initialize an ArrayList and how to display its values.

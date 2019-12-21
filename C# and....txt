@@ -1,35 +1,84 @@
-﻿Iteration (GITHUB)
-iteration nedir iterate nedir
+﻿Strongly Typed
+Strongly Typed nedir? Strongly type nedir
+C# is a strongly-typed language. It means we must declare the type of a variable which indicates the kind of values it is going to store such as integer, float, decimal, text, etc.
+The following declares and initialized variables of different data types.
+Example: Variables of Different Data Types
 
-Iteration, in the context of computer programming, is a process wherein a set of instructions or structures are repeated in a sequence a specified number of times or until a condition is met. When the first set of instructions is executed again, it is called an iteration. When a sequence of instructions is executed in a repeated manner, it is called a loop.
-
-Iteration is the repetition of a process in a computer program, usually done with the help of loops.
-An example of an iteration programming language is as follows:
-
-Consider a database table containing 1000 student records. Each record contains the following fields:
-•	First name
-•	Last name
-•	Roll no
-If one wants to copy all the student records from the database and print them, the best way to retrieve the record is to iterate or loop through each record. It can be executed using the for loop statement as shown below:
-
-for (int i=0;i<1000;i++)
+string stringVar = "Hello World!!";
+int intVar = 100;
+float floatVar = 10.2f;
+char charVar = 'A';
+bool boolVar = true;
+ 
+In computer programming, programming languages are often colloquially classified as to whether the language's type system makes it strongly typed or weakly typed (loosely typed). Generally, a strongly typed language has stricter typing rules at compile time, which implies that errors and exceptions are more likely to happen during compilation. However, dynamically typed languages (where type checking happens at run time) can also be strongly typed. Most of these rules affect variable assignment, return values and function calling. On the other hand, a weakly typed language has looser typing rules and may produce unpredictable results or may perform implicit type conversion at runtime.[1] A different but related concept is latent typing.
+-
+-
+-
+-
+-
+-
+Örnek kod
+Static class örnek, static class nedir, list oluşturma, list nedir, static nedir
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Program
 {
-\\Print first name and last name from table
+    public class Student
+    {
+        public int Id;
+        public string Name;
+    }
+ 
+    //static class'ın member'ları da static olmalıdır
+    public static class CreateStudents
+    {
+        //public string SampleProperty { get; set; } //hata verir, static olmalıdır
+        public static string SampleProperty { get; set; }
+ 
+        //public void Create() //hata verir, static olmalıdır
+        public static List<Student> StudentsList { get; set; } = new List<Student>
+        {
+            new Student()
+            {
+                Id = 1,
+                Name = "Ali"
+            },
+            new Student()
+            {
+                Id = 2,
+                Name = "Ahmet"
+            },
+            new Student()
+            {
+                Id = 3,
+                Name = "Veli"
+            }
+        };
+    }
+ 
+    static void Main()
+    {
+        var studentsQuery =
+            from s in CreateStudents.StudentsList
+            where s.Id > 1
+            select s;
+ 
+        foreach (var item in CreateStudents.StudentsList)
+        {
+            Console.WriteLine(item.Name);
+        }
+ 
+        Console.WriteLine("--");
+ 
+        foreach (var item in studentsQuery)
+        {
+            Console.WriteLine(item.Id);
+        }
+    }
 }
-
-In the above example, i is an iterator starting from the first student record to the last student record.
--
--
--
--
--
--
-Integration (GITHUB)
-integration nedir
-Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
-
-Integration is harder to achieve the greater the number of systems that are involved and companies often choose to have external contractors manage some or all phases of the development of the new system. Specific activities having to do with IT system integration include project planning, project management, design and implementation of application programming interfaces, Web services and any process that accounts for the free flow of data or information delivery.
-Challenges to achieving integration mostly have to do with the inherent difficulties in linking a series of diverse existing systems that could be produced by multiple different manufacturers. Other integration challenges have to do with the lack of a coherent or unifying data structure linking all of the different systems, an unwieldy framework of multiple different applications and support systems, the sheer age of the different systems and the actual delivery of the information to key business units that need it. These integration challenges hinder overall process efficiency because poor data exchange between systems prevents quick communication among business units.
 -
 -
 -

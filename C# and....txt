@@ -1,4 +1,27 @@
-﻿Initialization (GITHUB)
+﻿this Keyword	    (GITHUB)
+
+this nedir, this keyword nedir
+The this keyword is used inside the class and refers to the current instance of the class, meaning it refers to the current object.
+One of the common uses of this is to distinguish class members from other data, such as local or formal parameters of a method, as shown in the following example:
+        class Person
+        {
+            private string name;
+            public Person(string name)
+            {
+                this.name = name; // member of the class
+            }
+        }
+
+Here, this.name represents the member of the class, whereas name represents the parameter of the constructor.
+
+Another common use of this is for passing the current instance to a method as parameter: ShowPersonInfo(this);
+-
+-
+-
+-
+-
+-
+Initialization (GITHUB)
 Initialization nedir
 Object'in property'lerini objenin creation time'ında Set etmeye yarar. Yani objeyi üretirken property'lerini set etmeye yarayan bir şeydir (neydir? Bir Special Feature'dir [pluralsight]
 

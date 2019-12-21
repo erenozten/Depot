@@ -1,6 +1,9 @@
 ﻿Integration (GITHUB)
 integration nedir
 Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
+
+Integration is harder to achieve the greater the number of systems that are involved and companies often choose to have external contractors manage some or all phases of the development of the new system. Specific activities having to do with IT system integration include project planning, project management, design and implementation of application programming interfaces, Web services and any process that accounts for the free flow of data or information delivery.
+Challenges to achieving integration mostly have to do with the inherent difficulties in linking a series of diverse existing systems that could be produced by multiple different manufacturers. Other integration challenges have to do with the lack of a coherent or unifying data structure linking all of the different systems, an unwieldy framework of multiple different applications and support systems, the sheer age of the different systems and the actual delivery of the information to key business units that need it. These integration challenges hinder overall process efficiency because poor data exchange between systems prevents quick communication among business units.
 -
 -
 -

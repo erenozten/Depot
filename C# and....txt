@@ -1,4 +1,26 @@
-﻿Difference between readonly and const keyword in C#  	 (GITHUB)
+﻿SharePoint 
+sharepoint nedir
+SharePoint is a web-based collaborative platform that integrates with Microsoft Office. Launched in 2001, SharePoint is primarily sold as a document management and storage system, but the product is highly configurable and usage varies substantially among organizations.
+Microsoft states that SharePoint has 190 million users across 200,000 customer organizations.
+There are the Windows SharePoint Services (WSS), the Microsoft Office SharePoint Server (MOSS) and Microsoft Search Server. Each bring their own functionalities to the table and build upon each other. 
+When looking up what SharePoint is, you get a lot of different answers from the Internet:
+•	Microsoft SharePoint is a browser-based collaboration and document management platform from Microsoft - Wikipedia
+•	Microsoft's content management system. It allows groups to set up a centralized, password protected space for document sharing. Documents can be stored, downloaded and edited, then uploaded for continued sharing. - SAIT Polytechnic Teaching - Glossary
+•	SharePoint is a web-based intranet that can help improve your organization's effectiveness by streamlining the management of and access to data. - Creative SharePoint
+•	SharePoint is an enterprise information portal, from Microsoft, that can be configured to run Intranet, Extranet and Internet sites. - SharePoint HQ
+•	{..} SharePoint is a sort of sharing/blogging/wiki-style server that mainly provides a back end to Microsoft Office - Jack Schofield, Technical Writer Guardian newspaper, UK.
+So what is SharePoint? Let's first look at it from a technical perspective. There are the Windows SharePoint Services (WSS), the Microsoft Office SharePoint Server (MOSS) and Microsoft Search Server. Each bring their own functionality to the table and build upon each other.
+Windows SharePoint Services function the basic functionality that Gartner calls Basic Content Services. It offers the user access to Versioning and Check-in/Checkout functionality. WSS can then be extended through the use of the applets to add additional collaborative functions like email alerts, shared calendars, etc.
+Microsoft Office SharePoint Server (MOSS) sits on top of WSS and adds additional features, both to the underlying WSS layer as well as additional ways for the end-user to interact with the repository. The data resides in a SQL Database. Using Webparts it can then present this information to the user using a wide range of different modules and for interaction in different business scenarios. These include such diverse applications as Collaboration, Document management, Records Management (including DOD 5015.2 certified components), Workflow, Personalization, more complex metadata models as well as Blogs and Wikis from the Web 2.0 side. 
+https://www.youtube.com/watch?time_continue=104&v=s12Jb5Z2xaE&feature=emb_logo
+https://medium.com/@serdalkepil/sharepoint-nedir-neden-kullan%C4%B1l%C4%B1r-79a1e8426599
+-
+-
+-
+-
+-
+-
+Difference between readonly and const keyword in C#  	 (GITHUB)
 const nedir, readonly nedir  
 In C#, a const keyword is used to declare constant fields and constant local. The value of the constant field is the same throughout the program or in other words, once the constant field is assigned the value of this field is not be changed. In C#, constant fields and locals are not variables, a constant is a number, string, null reference, boolean values.
 

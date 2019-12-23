@@ -1,4 +1,17 @@
 ﻿Index sayfasındaki foreach döngüsü içindeki formlar doğru ve sorunsuz bir şekilde nasıl oluşturulur
+neden index'te form oluşturuyoruz? Çünkü dataları delete'ye basıldığında silmemiz gerek. Yani listedeki her bir entity için farklı bir form, hazır olarak beklemeli. Yani button'un ait olduğu entity, delete'ye basınca silinmeli. Yani bir şekilde Id değerini HTTPPost metoduna parametre içine başmamız lazım.
+Bunu yapmak için 2 yol var, ya HTML.Beginform içinde routeValue olarak veririz, ya da form içinde hidden input kullanmamız gerekir. Bir örnek: (%100 doğru denemez, formmethod post yazmasak da çalışıyor:
+https://stackoverflow.com/questions/15358134/asp-net-mvc-3-delete-http-post
+
+Html.BeginForm("action","controller", new { Id = item.ID}, FormMethod.Post);
+OR
+
+@using (Html.BeginForm("Delete", "Member", FormMethod.Post))
+{
+    @Html.Hidden("id", item.ID)
+    <input type="image" src="Content/delete.png" />
+}
+
 
 İndex foreach, index foreach
 

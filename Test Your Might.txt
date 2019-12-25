@@ -225,5 +225,8 @@ stored procedure'leri SQL Server'da bulabilmek için ---> Database'e girdikten s
 -
 -
 -
-
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;
 

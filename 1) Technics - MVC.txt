@@ -1,4 +1,21 @@
-﻿Index sayfasındaki foreach döngüsü içindeki formlar doğru ve sorunsuz bir şekilde nasıl oluşturulur
+﻿-
+-
+-
+-
+-
+-
+Redirecttoaction kullanırken viewbag ve viewdata kullanılmaz, null gider. Tempdata kullan.
+The ViewBag and ViewData only survives the current request. TempData is the thing to use when you use redirects (and only then): http://rachelappel.com/when-to-use-viewbag-viewdata-or-tempdata-in-asp.net-mvc-3-applications states this clearly:
+[...] the TempData object works well in one basic scenario:
+•	Passing data between the current and next HTTP requests
+
+-
+-
+-
+-
+-
+-
+Index sayfasındaki foreach döngüsü içindeki formlar doğru ve sorunsuz bir şekilde nasıl oluşturulur
 neden index'te form oluşturuyoruz? Çünkü dataları delete'ye basıldığında silmemiz gerek. Yani listedeki her bir entity için farklı bir form, hazır olarak beklemeli. Yani button'un ait olduğu entity, delete'ye basınca silinmeli. Yani bir şekilde Id değerini HTTPPost metoduna parametre içine başmamız lazım.
 Bunu yapmak için 2 yol var, ya HTML.Beginform içinde routeValue olarak veririz, ya da form içinde hidden input kullanmamız gerekir. Bir örnek: (%100 doğru denemez, formmethod post yazmasak da çalışıyor:
 https://stackoverflow.com/questions/15358134/asp-net-mvc-3-delete-http-post

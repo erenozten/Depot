@@ -482,5 +482,43 @@ SELECT CustomerID, CompanyName
 FROM Customers
 
 Yani intellisense i kullanmak için FROM Customers'i yazmak gerekiyor. From'dan sonra kolonların adını doğru yazıp yazmadığımızı bu intellisense sayesinde kontrol etmiş oluruz. Zaten yanlış yazmışsak zaten altı kırmızı çizgiyle gösterilecektir.
+-
+-
+-
+-
+-
+-
+büyük küçük harf duyarsız olduğunu şu kodla test edebiliriz:  hata çıkmayacaktır:
+
+CrEaTe ProcEdurE NEWSHIT4
+AS
+BEGIN
+SELECT CustomerID, CoMpAnYNamE
+FrOm Customers
+wHeRe CUSTOMERID = 'ALFKI' OR CusTOMErId = 'ANTON'
+ORDER BY CusToMerId ASC
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
            

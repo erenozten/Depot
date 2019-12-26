@@ -289,11 +289,59 @@ GO
 -
 -
 -
-CREATE PROCEDURE ASDFGH
+CREATE PROCEDURE NEWSHIT
 AS
 BEGIN
-SELECT CompanyName, CustomerID
+SELECT CustomerID, CompanyName
 FROM Customers
-WHERE CustomerID = 'ALFKI' OR CustomerID = 'ANTON'
+WHERE CUSTOMERID = 'ALFKI' OR CUSTOMErId = 'ANTON'
 END
 GO
+-
+-
+-
+-
+-
+-
+CrEaTe ProcEdurE NEWSHIT4
+AS
+BEGIN
+SELECT CustomerID, CoMpAnYNamE
+FrOm Customers
+wHeRe CUSTOMERID = 'ALFKI' OR CusTOMErId = 'ANTON'
+ORDER BY CusToMerId ASC
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

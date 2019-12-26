@@ -159,6 +159,7 @@ FROM Customers
 -
 -
 -
+-
 anlık tarih bilgisini çeker:
 
 SELECT CURRENT_TIMESTAMP;
@@ -260,7 +261,12 @@ SELECT TOP (1000) [OrderID]
 ,[Discount]
 FROM [Northwind].[dbo].[Order Details]
 WHERE UnitPrice LIKE '20%' 
-
+-
+-
+-
+-
+-
+-
 LIKE '%20%' --> Finds any values that have 20 in any position
 
 SELECT TOP (1000) [OrderID]
@@ -499,6 +505,30 @@ wHeRe CUSTOMERID = 'ALFKI' OR CusTOMErId = 'ANTON'
 ORDER BY CusToMerId ASC
 END
 GO
+-
+-
+-
+-
+-
+-
+like örneği
+
+SELECT CustomerID, CoMpAnYNamE
+FrOm Customers
+wHeRe CUSTOMERID LIKE '_AN%'  --(büyük küçük harf yine farketmiyor)
+ORDER BY CusToMerId ASC
+-
+-
+-
+-
+-
+-
+
+
+
+
+
+
 
 
 

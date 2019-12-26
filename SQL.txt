@@ -141,18 +141,19 @@ SELECT ContactName,CompanyName FROM Customers
 
 Şimdi boş tabloyu populate edelim, yani dolduralım. Hangi tablodan alacağız verileri? Customers tablosundan:
 
+Alttaki kod beklendiği gibi çalışıyor: Olan şu: ContactName, CompanyName kolonları, Third ve Fourth kolonlarına yapıştırılıyor tabi Contactname = Maria Anders ise...
+
 INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
 SELECT ContactName, CompanyName
 FROM Customers
 WHERE ContactName = 'Maria Anders'
 
-Üstteki beklendiği gibi çalışıyor: Olan şu: ContactName, CompanyName kolonları, Third ve Fourth kolonlarına yapıştırılıyor tabi Contactname = Maria Anders ise...
+Fakat alttaki kodda, where statement sanki yazılmamış gibi çalışıyor; yani bütün kolonları getiriyor, sanki hiç where statement yazılmamış gibi... O köşeli parantezler buna yol açıyor.
 
 INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
 SELECT ContactName, CompanyName
 FROM Customers
 [WHERE CompanyName = "birşedsdasda"]
-
 -
 -
 -
@@ -260,7 +261,7 @@ SELECT TOP (1000) [OrderID]
 FROM [Northwind].[dbo].[Order Details]
 WHERE UnitPrice LIKE '20%' 
 
-LIKE '%20' --> Finds any values that have 20 in any position
+LIKE '%20%' --> Finds any values that have 20 in any position
 
 SELECT TOP (1000) [OrderID]
 ,[ProductID]

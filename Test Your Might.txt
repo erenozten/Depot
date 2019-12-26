@@ -312,6 +312,12 @@ wHeRe CUSTOMERID = 'ALFKI' OR CusTOMErId = 'ANTON'
 ORDER BY CusToMerId ASC
 END
 GO
+-
+-
+-
+-
+-
+-
 
 
 

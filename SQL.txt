@@ -20,6 +20,7 @@ An SQL result set is a set of rows from a database, as well as metadata about th
 -
 -
 -
+UPDATE
 UPDATE nedir?
 The UPDATE statement is used to modify the existing records in a table.
 
@@ -35,6 +36,12 @@ UPDATE Products
 SET ProductName = 'Aniseed SyrupAniseed Syrup', QuantityPerUnit = '1 kg pkg.'
 WHERE ProductID = 3;
 
+şu hatayı verecektir, çünkü SET yazılmadı: (hata: Incorrect syntax near 'ProductName'.)
+
+UPDATE Products
+ProductName = 'Aniseed SyrupAniseed Syrup'
+WHERE ProductID = 3;
+
 To update multiple columns use the SET clause to specify additional columns. Just like with the single columns you specify a column and its new value, then another set of column and values. In this case each column is separated with a column.
 
 Farklı bir kullanım:
@@ -48,7 +55,7 @@ Yukarıda gördüğümüz gibi Where'i kullanmamıza gerek yok. Çünkü tüm ve
 Bütün row'lardaki FirstColumn = "NEWWW",
 Bütün row'lardaki SecondColumn = "ASDFF"
 
-Bir tablo oluşturup bu işlemi tekrar yapalım. Elimiz alışsın.
+Bir tablo oluşturup bu işlemi tekrar yapalım:
 
 USE Northwind
 CREATE TABLE ErenTable33(
@@ -137,8 +144,15 @@ SELECT ContactName,CompanyName FROM Customers
 INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
 SELECT ContactName, CompanyName
 FROM Customers
-[WHERE CompanyName = "birşey"];
--
+WHERE ContactName = 'Maria Anders'
+
+Üstteki beklendiği gibi çalışıyor: Olan şu: ContactName, CompanyName kolonları, Third ve Fourth kolonlarına yapıştırılıyor tabi Contactname = Maria Anders ise...
+
+INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
+SELECT ContactName, CompanyName
+FROM Customers
+[WHERE CompanyName = "birşedsdasda"]
+
 -
 -
 -

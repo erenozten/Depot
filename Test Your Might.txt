@@ -318,7 +318,15 @@ GO
 -
 -
 -
-
+CREATE PROC GODPROC
+AS
+BEGIN
+SELECT * FROM CUSTOMERS
+WHERE CUSTOMERID LIKE '__L%'
+ORDER BY CUSTOMERID DESC
+END
+GO
+-- LOL.. order by'dan sonra FIELD adını yazmayı nasıl unutuyorsun?
 
 
 

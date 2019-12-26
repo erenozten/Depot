@@ -327,9 +327,18 @@ ORDER BY CUSTOMERID DESC
 END
 GO
 -- LOL.. order by'dan sonra FIELD adını yazmayı nasıl unutuyorsun?
+-
+-
+-
+-
+-
+-
+UPDATE CUSTOMERS
+SET ADDRESS = 'Pune'
+WHERE ID = 6;
 
-
-
+SQL> UPDATE CUSTOMERS
+SET ADDRESS = 'Pune', SALARY = 1000.00;
 
 
 

@@ -1,4 +1,15 @@
-﻿SELECT nedir?
+﻿Field
+field nedir
+The following code is an example, which would fetch the ID, Name and Salary fields of the customers available in CUSTOMERS table.
+
+SQL> SELECT ID, NAME, SALARY FROM CUSTOMERS;
+-
+-
+-
+-
+-
+-
+SELECT nedir?
 select nedir
 SQL Server SELECT statement is used to fetch the data from a database table which returns data in the form of result table. These result tables are called result-sets.
 

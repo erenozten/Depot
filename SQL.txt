@@ -470,5 +470,17 @@ GO
 CREATE PROCEDURE Eren_SelectAllCustomers3
 SELECT * FROM Customers
 GO
+-
+-
+-
+-
+-
+-
+Dikkat! Tablo adı yazıldıktan sonra SELECT kısmındaki kolonlar intellisense kazanmış oluyor. Neden çünkü tablo adı belirlenmiş oldu; dolayısıyla içindeki kolonlar belirlenmiş oldu:
+
+SELECT CustomerID, CompanyName 
+FROM Customers
+
+Yani intellisense i kullanmak için FROM Customers'i yazmak gerekiyor. From'dan sonra kolonların adını doğru yazıp yazmadığımızı bu intellisense sayesinde kontrol etmiş oluruz. Zaten yanlış yazmışsak zaten altı kırmızı çizgiyle gösterilecektir.
 
            

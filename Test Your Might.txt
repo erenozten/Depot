@@ -241,6 +241,10 @@ INNER JOIN table2
 ON table1.column_name = table2.column_name;
 -
 -
+-
+-
+-
+-
 SELECT Orders.OrderID, Customers.CustomerName
 FROM Orders
 INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
@@ -256,8 +260,40 @@ SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName;
-
+-
+-
+-
+-
+-
+-
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
 ORDER BY Customers.CustomerName;
+-
+-
+-
+-
+-
+-
+CREATE PROCEDURE ASDFGH
+AS
+BEGIN
+SELECT CompanyName, CustomerID
+FROM Customers
+WHERE CustomerID = 'ALFKI'
+END
+GO
+-
+-
+-
+-
+-
+CREATE PROCEDURE ASDFGH
+AS
+BEGIN
+SELECT CompanyName, CustomerID
+FROM Customers
+WHERE CustomerID = 'ALFKI' OR CustomerID = 'ANTON'
+END
+GO

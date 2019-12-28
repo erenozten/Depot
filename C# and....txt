@@ -1,4 +1,17 @@
-﻿SharePoint 
+﻿Windows PowerShell 	(GITHUB)
+Windows powershell nedir
+
+To give you a better understanding of PowerShell, we should first define what a shell is. No, we're not talking about a turtle's shell. :) In computer science, a shell is a user interface that gives you access to various services of an operating system. A shell can be command-line based, or it can include a graphical user interface (GUI).
+Windows PowerShell is a shell initially developed by Microsoft for the purposes of task automation and configuration management. PowerShell is now an open source project, and it can be installed on Windows, macOS, and Linux platforms. This shell is based on the .NET framework, and it includes a command-line shell and a scripting language.
+
+Windows PowerShell, Microsoft tarafından Windows komut satırı cmd.exe ve Windows Script Host'a alternatif olarak geliştirilen yeni nesil bir komut satırı uygulamasıdır. Windows PowerShell'in sunduğu yeni komut yapısı Unix sistemindeki komut yapısına benzemektedir. Kullanıcı herhangi bir komutu çalıştırdığında farklı komutlar ile bağ kurabilmektedir. Windows PowerShell 30 Kasım 2006'da ilk olarak Windows Vista işletim sisteminin bir parçası olarak planlanmıştır. Microsoft Exchange Server 2007 ile beraber ilk kez piyasaya sürülmüştür. Windows PowerShell 1.0 sürümü Windows XP, Windows Server 2003 ve Windows Vista için ücretsiz indirilebilmektedir. Windows 7'den itibaren Windows PowerShell 2.0 işletim sistemi ile beraber gelmektedir. Windows PowerShell 2.0 bir önceki sürümünden farklı olarak görsel kullanıcı arayüzüne sahptir.
+-
+-
+-
+-
+-
+-
+SharePoint 
 sharepoint nedir
 SharePoint is a web-based collaborative platform that integrates with Microsoft Office. Launched in 2001, SharePoint is primarily sold as a document management and storage system, but the product is highly configurable and usage varies substantially among organizations.
 Microsoft states that SharePoint has 190 million users across 200,000 customer organizations.

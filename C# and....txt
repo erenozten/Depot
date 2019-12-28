@@ -11,6 +11,19 @@ Windows PowerShell, Microsoft tarafından Windows komut satırı cmd.exe ve Wind
 -
 -
 -
+Variable	(GITHUB)
+Variable nedir, değişken nedir
+
+Creating a variable reserves a memory location, or a space in memory, for storing values. 
+To use a variable, it must first be declared by specifying the name and data type. 
+A variable name, also called an identifier, can contain letters, numbers and the underscore character (_) and must start with a letter or underscore. 
+For example, firstName and lastName are good descriptive variable names.
+-
+-
+-
+-
+-
+-
 SharePoint 
 sharepoint nedir
 SharePoint is a web-based collaborative platform that integrates with Microsoft Office. Launched in 2001, SharePoint is primarily sold as a document management and storage system, but the product is highly configurable and usage varies substantially among organizations.

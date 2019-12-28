@@ -1,4 +1,19 @@
-﻿//Beginning
+﻿AŞağıda köşeli parantezlerle kolonları seçebildiğimizi görebiliyoruz. ayrıca LIKE'ye bak.. ilki A, üçüncü A, beşinçi E ve sonrakiler farketmez şeklinde
+CREATE PROCEDURE NEW2
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [ContactName] LIKE 'A_A_E%'
+END
+GO
+-
+-
+-
+-
+-
+-
+//Beginning
 
 interface ile ilgili bir örnek, interface örnek, interface örneği 
 
@@ -339,9 +354,26 @@ WHERE ID = 6;
 
 SQL> UPDATE CUSTOMERS
 SET ADDRESS = 'Pune', SALARY = 1000.00;
-
-
-
+-
+-
+CREATE PROCEDURE NEW2
+AS
+BEGIN
+SELECT CUSTOMERID, PRODUCTNAME
+WHERE PRODUCTNAME LIKE '_S_S%'
+END
+GO
+-
+-
+-
+CREATE PROCEDURE NEW2
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [ContactName] LIKE 'A_A_E%'
+END
+GO
 
 
 

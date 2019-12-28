@@ -33,6 +33,18 @@ As the name implies, a double has 2x the precision of float. In general a double
 -
 -
 -
+Scalability 	(GITHUB)
+
+Scalability nedir
+
+Türkçesi ölçeklenebilirlik
+Scalability is the property of a system to handle a growing amount of work by adding resources to the system. In an economic context, a scalable business model implies that a company can increase sales given increased resources.
+-
+-
+-
+-
+-
+-
 Json		(GITHUB)
 json nedir
 Json türündeki veriler iki parçadan oluşur: key (anahtar) ve value (değer). Anahtar’da nesnenin hangi özelliğinin olduğu (koddaki değişken ismi gibi düşünülebilir) tanımlanırken değerde ise anahtar özelliğinin değeri (değişkenin değeri) tanımlanır. Nesnelerdeki anahtar ve değerler string türünde tanımlanır. Aşağıda basit bir json nesnesi örneği bulunmaktadır.

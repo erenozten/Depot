@@ -1,4 +1,20 @@
-﻿Windows PowerShell 	(GITHUB)
+﻿Terminal 	(GITHUB)
+Terminal nedir
+
+Terminal, Apple bilgisayarları ve Linux işletim sistemi kullanılan bilgisayarların içerisinde yer alan, kullanıcıların bir klavye ve ekran yardımıyla işletim sistemi yada yazılımları kontrol etmesine yardımcı olan komut ekranıdır. 
+
+A terminal is simply a text-based interface to the computer. In a terminal, you can type commands, manipulate files, execute programs, and open documents. When working in a terminal, the current directory is called your working directory. A terminal will usually start in the top-level directory of your account.
+Directories are separated by a backslash /. The topmost directory is indicated by a single backslash. The total directory tree is all relative to the top level directory.
+On MacOS, there is a Volumes directory at the top that lists all mounted drives (networked or local). So if you have mounted your network directory, the path to it will look like the following if you substitute your username for mine.
+/Volumes/Personal/bmaxwell
+In a terminal, you generally type a command and any modifiers or arguments the command requires, then hit return and the command is executed. For example, to set your current (working) directory to your home directory, type cd and the prompt and hit return. Below is an example of a terminal and some commands.
+-
+-
+-
+-
+-
+-
+Windows PowerShell 	(GITHUB)
 Windows powershell nedir
 
 To give you a better understanding of PowerShell, we should first define what a shell is. No, we're not talking about a turtle's shell. :) In computer science, a shell is a user interface that gives you access to various services of an operating system. A shell can be command-line based, or it can include a graphical user interface (GUI).

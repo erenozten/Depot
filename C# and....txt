@@ -1,4 +1,24 @@
-﻿Terminal 	(GITHUB)
+﻿Web Server	 (GITHUB)
+Web server nedir
+
+Web server ya da ağ sunucusu, internet üzerinde bir web sitesinin yayınından sorumlu olan sunucudur. Web server, Hosting ya da “barındırma” işlemini internet protokolü üzerinden sunan bir sunucudur. 
+A Web server is software or hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web (WWW). Web server software controls how a user accesses hosted files. It is accessed through the domain names of websites and ensures the delivery of the site's content to the requesting user. As hardware, a Web server is a computer that holds web server software and other files related to a website, such as HTML documents, images and JavaScript files. Web server hardware is connected to the internet and allows data to be exchanged with other connected devices.
+The Web server process is an example of the client/server model. All computers that host Web sites must have Web server software. Leading Web servers include Apache, Microsoft's Internet Information Server (IIS) and Nginx -- pronounced engine X. Other Web servers include Novell's NetWare server, Google Web Server (GWS) and IBM's family of Domino servers.
+Web servers often come as part of a larger package of internet- and intranet-related programs that are used for:
+•	Sending and receiving emails.
+•	Downloading requests for File Transfer Protocol (FTP) files.
+•	Building and publishing Web pages.
+Considerations in choosing a Web server include how well it works with the operating system and other servers; its ability to handle server-side programming; security characteristics; and the particular publishing, search engine and site building tools that come with it.
+So basically a web server is the software that receives your request to access a web page. It runs a few security checks on your HTTP request and takes you to the web page. Depending on the page you have requested, the page may ask the server to run a few extra modules while generating the document to serve you. It then serves you the document you requested. Pretty awesome isn’t it.
+
+Web server ya da ağ sunucusu, internet üzerinde bir web sitesinin yayınından sorumlu olan sunucudur. Web server, Hosting ya da “barındırma” işlemini internet protokolü üzerinden sunan bir sunucudur. Barındırma ya da hosting, Web sayfalarını internette yayınlamak için gerekli alanın kiralanmasıdır. Diğer bir ifade ile hosting, bir Web sitesinde yayınlanmak istenen sayfaların, resimlerin veya dokümanların internet kullanıcıları tarafından erişebileceği bir bilgisayarda tutulmasıdır.
+-
+-
+-
+-
+-
+-
+Terminal 	(GITHUB)
 Terminal nedir
 
 Terminal, Apple bilgisayarları ve Linux işletim sistemi kullanılan bilgisayarların içerisinde yer alan, kullanıcıların bir klavye ve ekran yardımıyla işletim sistemi yada yazılımları kontrol etmesine yardımcı olan komut ekranıdır. 

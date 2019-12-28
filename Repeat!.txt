@@ -1,0 +1,14 @@
+CREATE PROCEDURE NEW44
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [ContactName] LIKE 'A_A_E%'
+END
+GO
+-
+-
+-
+-
+-
+-

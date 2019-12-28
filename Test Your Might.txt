@@ -1,12 +1,4 @@
-﻿AŞağıda köşeli parantezlerle kolonları seçebildiğimizi görebiliyoruz. ayrıca LIKE'ye bak.. ilki A, üçüncü A, beşinçi E ve sonrakiler farketmez şeklinde
-CREATE PROCEDURE NEW2
-AS
-BEGIN
-SELECT [CompanyName], [ContactName]
-FROM CUSTOMERS
-WHERE [ContactName] LIKE 'A_A_E%'
-END
-GO
+﻿
 -
 -
 -
@@ -374,8 +366,39 @@ FROM CUSTOMERS
 WHERE [ContactName] LIKE 'A_A_E%'
 END
 GO
-
-
+-
+-
+-
+-
+-
+-
+AŞağıda köşeli parantezlerle kolonları seçebildiğimizi görebiliyoruz. ayrıca LIKE'ye bak.. ilki A, üçüncü A, beşinçi E ve sonrakiler farketmez şeklinde
+CREATE PROCEDURE NEW2
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [ContactName] LIKE 'A_A_E%'
+END
+GO
+-
+-
+-
+-
+-
+-
+SELECT [STUDENTID], [STUDENTnAME] FROM DB
+WHERE STUDENTID LIKE '__%W'
+-
+-
+-
+-
+-
+-
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
 
 
 

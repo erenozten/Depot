@@ -1,4 +1,22 @@
-﻿UNIX
+﻿Linux 
+Linux nedir
+The name “Linux” comes from the Linux kernel. It is the software on a computer that allows applications and users to access the devices on the computer to perform certain specific functions.
+Bilgisayar işletim sistemlerinin en temel parçası olan çekirdek yazılımlarından bir tanesidir.verilmiştir.[1]Günümüzde süper bilgisayarlarda, akıllı cihazların ve internet altyapısında kullanılan cihazların işletim sistemlerinde yaygın olarak kullanılmaktadır. Bunlardan en popüler olanı Google tarafından geliştirilen Android işletim sistemidir.
+
+Android, Linux çekirdeği üzerine inşa edilmiş bir mobil işletim sistemidir.
+Android işletim sistemi beş kısımdan oluşur.
+1.	Çekirdek: Linux kernelidir. Güvenlik, hafıza yönetimi, süreç yönetimi, ağ yığınları ve sürücü modellerini içermektedir.
+2.	Android Runtime: Sanal makinedir. Dalvik Sanal Makinesini de içermektedir. 5.0 ile Dalvik kaldırılmış ve ART'ye geçilmiştir.
+3.	Kütüphaneler: Veritabanı kütüphaneleri, web tarayıcı kütüphaneleri, grafik ve arayüz kütüphanelerini içermektedir.
+4.	Uygulama Çatısı: Uygulama geliştiricilere geniş bir platform sunan kısımdır.
+5.	Uygulama Katmanı: Doğrudan Java (programlama dili) ile geliştirilmiş uygulamaları içermektedir.
+-
+-
+-
+-
+-
+-
+UNIX
 Unix nedir
 Unix (/ˈjuːnɪks/; trademarked as UNIX) is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others.[3]
 -Unix vs linux yazılar var: https://chandigarhinfo.in/unix-vs-linux-whats-the-difference/

@@ -1,4 +1,15 @@
-﻿Big Data
+﻿Quicksort		(GITHUB)
+Quicksort nedir
+
+Derin konu: tekrar dön ve yaz: https://www.geeksforgeeks.org/quick-sort/
+Hızlı sıralama (İngilizcesi: Quicksort) günümüzde yaygın olarak kullanılan bir sıralama algoritmasıdır. Hızlı sıralama algoritması n adet sayıyı, ortalama bir durumda, {\displaystyle {\mathcal {O))(n~log(n))} karmaşıklığıyla, en kötü durumda ise  {\displaystyle {\mathcal {O))(n^{2})} karmaşıklığıyla sıralar. Algoritmanın karmaşıklığı aynı zamanda yapılan karşılaştırma sayısına eşittir.
+-
+-
+-
+-
+-
+-
+Big Data
 Big data nedir, bigdata nedir
 Big Data is also data but with a huge size. Big Data is a term used to describe a collection of data that is huge in size and yet growing exponentially with time. In short such data is so large and complex that none of the traditional data management tools are able to store it or process it efficiently.
 Big Data, sosyal medya paylaşımları, fotoğraf arşivlerimiz, sürekli kayıt aldığımız ‘log’ dosyaları gibi farklı kaynaklardan elde ettiğimiz tüm bu verilerin anlamlı ve işlenebilir hale dönüştürülmüş biçimidir.

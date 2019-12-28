@@ -1,4 +1,36 @@
-﻿Linux 
+﻿Big Data
+Big data nedir, bigdata nedir
+Big Data is also data but with a huge size. Big Data is a term used to describe a collection of data that is huge in size and yet growing exponentially with time. In short such data is so large and complex that none of the traditional data management tools are able to store it or process it efficiently.
+Big Data, sosyal medya paylaşımları, fotoğraf arşivlerimiz, sürekli kayıt aldığımız ‘log’ dosyaları gibi farklı kaynaklardan elde ettiğimiz tüm bu verilerin anlamlı ve işlenebilir hale dönüştürülmüş biçimidir.
+
+Big Data Kullanım Alanları Ile Ilgili Örnekler:
+Firmaların müşterileri, malzeme tedarikçileri, şirket içerisindeki her türlü işlem ve ürünleri ile ilgili trilyonlarca bayt’ lık veri toplamakta ve anlamlı raporlar üretilmektedir.
+
+Sosyal medya paylaşımları sayesinde her gün milyarlarca kilobayt veri elde edilmektedir.
+Günümüzde normal bir tüketicinin günlük yaşamında internette yaptığı haberleşme, arama, satın alma ve paylaşma türü işlemlerin yarattığı verilerin de tümü saklanmaktadır.
+
+Twitter’ da günlük işlenen veri boyutu: 7 terabyte’a yaklaşmakta ve günden güne artmaktadır.
+
+Sağlık Kuruluşları; hastalarına yönelik bireysel ve kişiselleştirilmiş sağlık hizmetleri sağlayabilmek için, bireysel durumdaki verileri kendi sayısal ortamlarında depolamaktadırlar.
+
+Kullanım örnek:
+Nöral Ağlarla Rüzgar Güç Kaynağı Tahmini
+Rüzgar enerjisi üretilen bir alanda bu enerjinin miktarının doğru tahmin edilmesi aşağıdaki özellikleri sağlar:
+►Rüzgar gücünün anlık kullanıma uygun bir enerji kaynağı olarak kullanımı
+►Rüzgar gücü miktarının spot piyasadaki düzeni
+►Rüzgar türbini bakım işlerinin optimum zamanlanması
+►Verimli enerji şebekesi yönetimi
+Gaz Türbinleri İçin Veri Yönetimi ve Gerçek Zamanlı Görüntüleme
+►Gerçek Zamanlı Veri analizleri (1000 nöral model)
+►Veritabanı: input(giriş) verisi ve model sonuçları
+►Bütün veri ve bağımlılık analizleri artı optimizasyon öğrenimi
+-
+-
+-
+-
+-
+-
+Linux 
 Linux nedir
 The name “Linux” comes from the Linux kernel. It is the software on a computer that allows applications and users to access the devices on the computer to perform certain specific functions.
 Bilgisayar işletim sistemlerinin en temel parçası olan çekirdek yazılımlarından bir tanesidir.verilmiştir.[1]Günümüzde süper bilgisayarlarda, akıllı cihazların ve internet altyapısında kullanılan cihazların işletim sistemlerinde yaygın olarak kullanılmaktadır. Bunlardan en popüler olanı Google tarafından geliştirilen Android işletim sistemidir.

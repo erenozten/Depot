@@ -1,4 +1,14 @@
-﻿Web Server	 (GITHUB)
+﻿UNIX
+Unix nedir
+Unix (/ˈjuːnɪks/; trademarked as UNIX) is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others.[3]
+-Unix vs linux yazılar var: https://chandigarhinfo.in/unix-vs-linux-whats-the-difference/
+-
+-
+-
+-
+-
+-
+Web Server	 (GITHUB)
 Web server nedir
 
 Web server ya da ağ sunucusu, internet üzerinde bir web sitesinin yayınından sorumlu olan sunucudur. Web server, Hosting ya da “barındırma” işlemini internet protokolü üzerinden sunan bir sunucudur. 

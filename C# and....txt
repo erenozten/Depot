@@ -2252,6 +2252,27 @@ Definition - What does Ad Hoc Query mean?
 In SQL, an ad hoc query is a loosely typed command/query whose value depends upon some variable. Each time the command is executed, the result is different, depending on the value of the variable. It cannot be predetermined and usually comes under dynamic programming SQL query. An ad hoc query is short lived and is created at runtime.
 Techopedia explains Ad Hoc Query
 As the word "ad hoc" suggests, this type of query is designed for a "particular purpose,"which is in contrast to a predefined query, which has the same output value on every execution. An ad hoc query does not reside in the system for a long time and is created dynamically on demand by the user. It is more efficient to use an ad hoc query in programming as it saves system resources, but, at the same time complex, ad hoc queries (have multiple variables) also challenge the processing speed and runtime memory of the system. 
+-
+-
+-
+-
+-
+-
+Oracle Database (GITHUB)
+Oracle nedir
+Oracle Database (commonly referred to as Oracle RDBMS or simply as Oracle) is a proprietary multi-model database[4] management system produced and marketed by Oracle Corporation.
+It is a database commonly used for running online transaction processing (OLTP), data warehousing (DW) and mixed (OLTP & DW) database workloads. The latest generation, Oracle Database 19c, is available on-prem, on-cloud, or in a hybrid-Cloud environment. 19c may also be deployed on Oracle Engineered Systems (e.g. Exadata) on-prem, on Oracle (public) cloud or (private) cloud at customer.[5] At Openworld 2017 in San Francisco, Executive Chairman of the Board and CTO, Larry Ellison announced the next database generation, Oracle Autonomous Database.[6]
+
+Oracle Database, Oracle firması tarafından geliştirilen ve pazarlaması yapılan,zaman zaman Oracle RDBMS (relational database management system), Oracle ilişkisel veritabanı yönetim sistemi (Oracle İVTYS) veya sadece Oracle olarak anılan, gelişmiş bir ilişkisel veritabanı yönetim sistemidir. Tüm ilişkisel veritabanı sistemleri gibi büyük miktarda verinin çok kullanıcılı ortamda depolanmasını ve güvenli bir şekilde erişimini yönetir.
+
+Oracle veritabanı yazılımları özellikle kurumsal alanda kullanılan yaygın bir veritabanı sistemidir. Oracle çok sayıda araçtan oluşur ve uygulama geliştiricilerinin kolay ve esnek uygulamalar geliştirmesini sağlar. Oracle’de diğer veritabanı yönetim sistemlerinde olduğu gibi, stored procedure’lar, paketler, trigger’ler gibi bileşenler yer alır.
+-
+-
+-
+-
+-
+-
+
 
 
 

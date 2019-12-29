@@ -1,4 +1,10 @@
-﻿Quicksort		(GITHUB)
+﻿-
+-
+-
+-
+-
+-
+Quicksort		(GITHUB)
 Quicksort nedir
 
 Derin konu: tekrar dön ve yaz: https://www.geeksforgeeks.org/quick-sort/

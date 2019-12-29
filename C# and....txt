@@ -2337,9 +2337,36 @@ Close the connection
 -
 -
 UI (User Interface)   (GITHUB)
+The user interface (UI) is the point of human-computer interaction and communication in a device. This can include display screens, keyboards, a mouse and the appearance of a desktop. It is also the way through which a user interacts with an application or a website. The growing dependence of many businesses on web applications and mobile applications has led many companies to place increased priority on UI in an effort to improve the user's overall experience.
+Types of user interfaces
+The various types of user interfaces include:
+•	graphical user interface (GUI)
+•	command line interface (CLI)
+•	menu-driven user interface
+•	touch user interface
+•	voice user interface (VUI)
+•	form-based user interface
+•	natural language user interface
+Examples of user interfaces
+Some examples of user interfaces include:
+•	computer mouse
+•	remote control
+•	virtual reality
+•	ATMs
+•	speedometer
+•	the old iPod click wheel
+Websites such as Airbnb, Dropbox and Virgin America display strong user interface design. Sites like these have created pleasant, easily operable, user-centered designs (UCD) that focus on the user and their needs.
+
 UI ve UX çoğu kez beraber kullanılmalarına rağmen aslında çok farklı iki alandır. UI konusunda olmasa bile UX konusunda çok geride olan ülkemizde, maalesef bu işi profesyonel olarak yapan insanlar bile aralarındaki farkı çok bilmiyorlar. Ülkemizde bir UXD (User Interface Designer) ile tanışmanız çok zor. Türkiye’de bu işle ilgili çoğu insanın özgeçmişinde “UI/UX” yazar. Bunun bir sebebi aralarındaki farkın bilinmemesi, diğer sebebi ise internet sektörünü geriden takip etmemizden dolayı bu işi iki parçaya bölmenin bir lüks olarak görünmesidir.
 
 Kısaca bahsetmek gerekirse; UI, aslında arayüz tasarımıdır. Televizyon kumandasının üstündeki tuşlar, bir arayüz tasarımı örneğidir. Tuşların yerleri, büyüklüğü, renkleri tasarımcının verdiği kararlar sonucu uygulanır. Arayüz tasarımının internet sitelerindeki karşılığı ise butonlar, grid yapısı, mizanpaj, renkler, boşluklar gibi tüm grafik elemanlardan oluşan görsel tasarımdır. Zamanla internet sitelerindeki interaksiyon arttıkça, önceleri çok da önemsenmeyen arayüz tasarımı da gittikçe önemli bir hal aldı. Kullanıcıların sitede rahatça dolaşmaları ve hatta kalmalarını sağlamak için basit ve kullanılabilir bir arayüz artık şart. Kullanıcılar bir sitede dolaşmaya veya terk etmeye saniyeler içerisinde karar veriyorlar. Yoğun uğraşlarla sitenize yönlendirdiğiniz kullanıcıları sitenizde tutamadığınız zaman da maalesef tüm uğraşlarınız boşa gidiyor.
+-
+-
+-
+-
+-
+-
+
 -
 -
 -

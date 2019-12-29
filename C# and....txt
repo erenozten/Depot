@@ -2284,6 +2284,17 @@ ORM, veritabanında oluşturulan her bir nesneye (tabloya) karşılık uygulama 
 -
 -
 -
+ASP.NET   (Active Server Pages)  (GITHUB)
+Asp.net nedir, asp nedir
+ASP.NET is an open source web framework, created by Microsoft, for building modern web apps and services with .NET. 
+
+ASP.NET is cross platform and runs on Windows, Linux, macOS, and Docker.
+-
+-
+-
+-
+-
+-
 
 
 

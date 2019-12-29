@@ -2272,6 +2272,18 @@ Oracle veritabanı yazılımları özellikle kurumsal alanda kullanılan yaygın
 -
 -
 -
+ORM   (Object Relational Mapping) / (Object-relational Mapper)
+(GITHUB)
+Orm nedir?
+ Sql sorgularını yazmıyoruz da csharp tarafında metotlar kullanıyoruz, örneğin: Id si 12 olan datayı çekmek için entity framework'de Find metodunu kullanıyoruz değil mi, ama bu veriyi çekerken hiç sql sorgusu yazmadık. İşte bunu yapmamızı sağlayan şeyler ORM'dir. Bizim örneğimizde ise ORM miz Entity Framework'tür. 
+Entity Framework'ün tanımı şudur: Entity Framework is an Object Relational Mapper (ORM) which is a type of tool that simplifies mapping between objects in your software to the tables and columns of a relational database. Entity Framework (EF) is an open source ORM framework for ADO.NET which is a part of .NET Framework.
+ORM, veritabanında oluşturulan her bir nesneye (tabloya) karşılık uygulama tarafında bir nesne oluşturma işidir. Bu işlem bazı Frameworklerde ara yazılımlar sayesinde (ORM Tools), bazı frameworklerde ise elle gerçekleştirilmektedir.
+-
+-
+-
+-
+-
+-
 
 
 

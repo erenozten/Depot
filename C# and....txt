@@ -2336,6 +2336,16 @@ Close the connection
 -
 -
 -
+UI (User Interface)   (GITHUB)
+UI ve UX çoğu kez beraber kullanılmalarına rağmen aslında çok farklı iki alandır. UI konusunda olmasa bile UX konusunda çok geride olan ülkemizde, maalesef bu işi profesyonel olarak yapan insanlar bile aralarındaki farkı çok bilmiyorlar. Ülkemizde bir UXD (User Interface Designer) ile tanışmanız çok zor. Türkiye’de bu işle ilgili çoğu insanın özgeçmişinde “UI/UX” yazar. Bunun bir sebebi aralarındaki farkın bilinmemesi, diğer sebebi ise internet sektörünü geriden takip etmemizden dolayı bu işi iki parçaya bölmenin bir lüks olarak görünmesidir.
+
+Kısaca bahsetmek gerekirse; UI, aslında arayüz tasarımıdır. Televizyon kumandasının üstündeki tuşlar, bir arayüz tasarımı örneğidir. Tuşların yerleri, büyüklüğü, renkleri tasarımcının verdiği kararlar sonucu uygulanır. Arayüz tasarımının internet sitelerindeki karşılığı ise butonlar, grid yapısı, mizanpaj, renkler, boşluklar gibi tüm grafik elemanlardan oluşan görsel tasarımdır. Zamanla internet sitelerindeki interaksiyon arttıkça, önceleri çok da önemsenmeyen arayüz tasarımı da gittikçe önemli bir hal aldı. Kullanıcıların sitede rahatça dolaşmaları ve hatta kalmalarını sağlamak için basit ve kullanılabilir bir arayüz artık şart. Kullanıcılar bir sitede dolaşmaya veya terk etmeye saniyeler içerisinde karar veriyorlar. Yoğun uğraşlarla sitenize yönlendirdiğiniz kullanıcıları sitenizde tutamadığınız zaman da maalesef tüm uğraşlarınız boşa gidiyor.
+-
+-
+-
+-
+-
+-
 
 
 

@@ -49,6 +49,15 @@ Initialize a string with the Empty constant value to create a new String object 
 -
 -
 -
+Combobox / Combo box / Combination Box (GITHUB)
+Combobox nedir, Combo box nedir, combination box nedir
+The ComboBox control is used to display a drop-down list of various items. It is a combination of a text box in which the user enters an item and a drop-down list from which the user selects an item.
+-
+-
+-
+-
+-
+-
 Quicksort		(GITHUB)
 Quicksort nedir
 

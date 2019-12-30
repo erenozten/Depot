@@ -23,6 +23,21 @@ As mentioned before, certain operators have different meanings based on the data
 When an operator does different things based on the datatype of the operands, it is called operator over loading.
 The following C# code shows the use of the + sign operator on different datatypes:
 
+Example: + Operator
+static void Main(string[] args)
+{
+    string message1 = "Hello";
+
+    string message2 = message1 + " World!!";    
+
+    Console.WriteLine(message2);
+
+    int i = 10, j = 20;
+
+    int sum = i + j;
+
+    Console.WriteLine("{0} + {1} = {2}", i, j, sum);
+
 -
 -
 -

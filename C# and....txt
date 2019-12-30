@@ -1,4 +1,16 @@
-﻿String  	(GITHUB)
+﻿Operator Overloading
+Operator overloading nedir
+
+Most operators in C# can be overloaded, meaning they can be redefined for custom actions.
+For example, you can redefine the action of the plus (+) operator in a custom class.
+
+-
+-
+-
+-
+-
+-
+String  	(GITHUB)
 String nedir
 Note that you do not use the new operator to create a string object except when initializing the string with an array of chars.
 Msdn goes here:

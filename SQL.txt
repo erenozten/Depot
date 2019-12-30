@@ -712,6 +712,15 @@ The NULL operator is used to compare a value with a NULL value.
 11	UNIQUE
 The UNIQUE operator searches every row of a specified table for uniqueness (no duplicates).
 
+SQL Arithmetic Operators
+Assume 'variable a' holds 10 and 'variable b' holds 20, then −
+Show Examples
+Operator	Description	Example
++ (Addition)	Adds values on either side of the operator.	a + b will give 30
+- (Subtraction)	Subtracts right hand operand from left hand operand.	a - b will give -10
+* (Multiplication)	Multiplies values on either side of the operator.	a * b will give 200
+/ (Division)	Divides left hand operand by right hand operand.	b / a will give 2
+% (Modulus)	Divides left hand operand by right hand operand and returns remainder.	b % a will give 0
 
 
 

@@ -1,4 +1,28 @@
-﻿operator
+﻿operand
+operand nedir
+
+int a = 2;
+int b = 3;
+int c = a * b;
+yukarıdaki int c = a * b;  
+işlemindeki a ve b değişkenlerine operand denir. 
+a değişkeni: sol operand
+b değişkeni: sağ operand
+Kaynak: aşağıdaki text
++	Adds two operands
+-	Subtracts the second operand from the first
+*	Multiplies both operands
+/	Divides the numerator by de-numerator
+%	Modulus Operator and a remainder of after an integer division
+++	Increment operator increases integer value by one
+--	Decrement operator decreases integer value by one
+-
+-
+-
+-
+-
+-
+operator
 operator nedir, operatör nedir operators nedir, operatörler nedir
 +  -  *  / << == >> gibi işaretler operatördür.
 Operator in C# is a special symbol that specifies which operations to perform on operands. For example, in mathematics the plus symbol (+) signifies the sum of the left and right numbers. In the same way, C# has many operators that have different meanings based on the data types of the operands. C# operators usually have one or two operands. Operators that have one operand are called Unary operators.

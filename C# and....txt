@@ -40,6 +40,9 @@ const string message4 = "You can't get rid of me!";
 // System.String documentation for details.
 char[] letters = { 'A', 'B', 'C' };
 string alphabet = new string(letters);
+
+Note that you do not use the new operator to create a string object except when initializing the string with an array of chars.
+Initialize a string with the Empty constant value to create a new String object whose string is of zero length. The string literal representation of a zero-length string is "". By initializing strings with the Empty value instead of null, you can reduce the chances of a NullReferenceException occurring. Use the static IsNullOrEmpty(String) method to verify the value of a string before you try to access it.
 -
 -
 -

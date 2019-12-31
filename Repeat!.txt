@@ -19,3 +19,13 @@ SELECT ColumnName, ColumnId FROM DB
 WHERE  ColumnaSDF LIKE '_%2%_'
 END
 GO
+-
+-
+CREATE PROCEDURE NEW44
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [Address] LIKE 'A_A_E%'
+END
+GO

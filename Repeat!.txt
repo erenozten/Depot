@@ -1,4 +1,4 @@
-CREATE PROCEDURE NEW44
+﻿CREATE PROCEDURE NEW44
 AS
 BEGIN
 SELECT [CompanyName], [ContactName]
@@ -15,17 +15,44 @@ GO
 CREATE PROCEDURE QWE
 AS
 BEGIN
-SELECT ColumnName, ColumnId FROM DB
-WHERE  ColumnaSDF LIKE '_%2%_'
+SELECT ColumnName, ColumnId FROM DB 
+WHERE  ColumnaSDF LIKE '_%2%_'   -- where içinde kullanılacak property'i SELECT ile seçmemiz gerekmiyor
 END
 GO
 -
 -
-CREATE PROCEDURE NEW44
-AS
-BEGIN
-SELECT [CompanyName], [ContactName]
-FROM CUSTOMERS
-WHERE [Address] LIKE 'A_A_E%'
-END
-GO
+-
+-
+-
+-
+class Kutu
+  {
+      public int Yukseklik { get; set; }
+      public int Genislik { get; set; }
+ 
+      public Kutu(int yuk, int gen)
+      {
+          Yukseklik = yuk;
+          Genislik = gen;
+      }
+ 
+      public static Kutu operator *(Kutu k1, Kutu k2)  // eksi işareti de kullanılabilirdi. Sonuç değişmez. Operatörle ilgisi yok yani. + - * / hepsi aynı sonuç.
+      {
+          int toplamYukseklik = k1.Yukseklik + k2.Yukseklik;
+          int toplamGenislik = k1.Genislik + k2.Genislik;
+ 
+          Kutu k3 = new Kutu(toplamYukseklik, toplamGenislik);
+          return k3;
+      }
+  }
+ 
+  static void Main(string[] args)
+  {
+      Kutu k1 = new Kutu(7, 3);
+      Kutu k2 = new Kutu(16, 4);
+      Kutu k3 = k1 * k2; // burada, static'te belirttiğimiz operatörü kullanıyoruz: *
+ 
+      Console.WriteLine(k3.Yukseklik); //19
+      Console.WriteLine(k3.Genislik); //10
+      Console.ReadKey();
+  }

@@ -1,7 +1,61 @@
-﻿What is an Interface
-Interface
+﻿Interface
 Interface nedir
 Interface
+BENİM ÖRNEK:
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+ 
+class Program
+{
+    class Student
+    {
+        public string Name { get; set; }
+    }
+ 
+    class Araba: IAraba
+    {
+        // IAraba'nın metotlarını implement etmesi gerek...
+ 
+        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
+        {
+            Console.WriteLine("");
+        }
+ 
+        public void Teker()
+        {
+ 
+        }
+ 
+        public string CamaYaziYazdir()
+        {
+            return "Text";
+        }
+ 
+        public Student OgrenciyiArabayaBindir()
+        {
+            Student student = new Student();
+            return student;
+        }
+    }
+ 
+    //class gibi bir şeydir interface. Parantez açıp kapama yokk. Zaten anlamsız oluyor diğer şekilde.
+    interface IAraba
+    {
+        void Cam(); // köşeli parantez yokk
+        void Teker();
+        string CamaYaziYazdir();
+        Student OgrenciyiArabayaBindir();
+    }
+ 
+    
+ 
+}
+ 
+
+
 An interface is a completely abstract class, which contains only abstract members.
 It is declared using the interface keyword:
 
@@ -14,7 +68,6 @@ All members of the interface are by default abstract, so no need to use the abst
 Also, all members of an interface are always public, and no access modifiers can be applied to them.
 It is common to use the capital letter I as the starting letter for an interface name.
 Interfaces can contain properties, methods, etc. but cannot contain fields (variables).
-
 When a class implements an interface, it must also implement, or define, all of its methods.
 The term implementing an interface is used (opposed to the term "inheriting from") to describe the process of creating a class based on an interface. The interface simply describes what a class should do. The class implementing the interface must define how to accomplish the behaviors.
 The syntax to implement an interface is the same as that to derive a class: 
@@ -43,7 +96,6 @@ But why use interfaces rather than abstract classes?
 A class can inherit from just one base class, but it can implement multiple interfaces!
 Therefore, by using interfaces you can include behavior from multiple sources in a class.
 To implement multiple interfaces, use a comma separated list of interfaces when creating the class: class A: IShape, IAnimal, etc.
-Interface nedir, interface örnek, liskovv nedir, liskov nedir
 
 -
 -

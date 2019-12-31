@@ -2,10 +2,14 @@
 Mutable nedir, immutable nedir:
 Mutable and Immutable ?
 In English Language Mutable means "can change" and immutable means "cannot change". The term Immutable Object means that the state of the Object cannot change after its creation. An immutable type sets the property or state of the object as read only because it cannot be modified after it is assigned during initialization.
-
 Is String in .Net immutable ?
 Yes, the String in .Net is immutable. The System.String class is an immutable type provided in the .NET framework class library. Since a String is an immutable type, it cannot be modified. When you modify a string you are actually creating a new string object with the desired value.
-
+e.g.
+ 
+The above code will create 1000 new string variables in the memory.
+Immutability of strings has positive significance in multithreaded applications because it provides automatic thread safety. Instances of immutable types are inherently thread-safe, because no thread can modify it.
+The main drawback of immutable types is that they require more resources than other object types. Because each time it modified, it creates a new one.
+The above code segment creates 1000 new string variables. In these type of situations you should use the StringBuilder class, which allows you to modify the text without making new String class instances. StringBuilder is a Mutable type, that means when you alter it , it still holding same data.
 -
 -
 -

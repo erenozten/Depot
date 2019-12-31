@@ -1,4 +1,27 @@
-﻿HTTPGet vs HTTPPost	(GITHUB) 
+﻿What is an Interface
+Interface
+Interface nedir
+Interface
+An interface is a completely abstract class, which contains only abstract members.
+It is declared using the interface keyword:
+
+        public interface IShape
+        {
+            void Draw();
+        }
+
+All members of the interface are by default abstract, so no need to use the abstract keyword. 
+Also, all members of an interface are always public, and no access modifiers can be applied to them.
+It is common to use the capital letter I as the starting letter for an interface name.
+Interfaces can contain properties, methods, etc. but cannot contain fields (variables).
+
+-
+-
+-
+-
+-
+-
+HTTPGet vs HTTPPost	(GITHUB) 
 Httpget nedir httppost nedir
 https://www.youtube.com/watch?v=Un2JTC7tFPI
 Videoyu izle…

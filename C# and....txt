@@ -1,4 +1,24 @@
-﻿Semantics 
+﻿-
+-
+-
+-
+-
+-
+Pointer
+Pointer nedir?
+
+C# supports pointers in a limited extent. A C# pointer is nothing but a variable that holds the memory address of another type. 
+
+But in C# pointer can only be declared to hold the memory address of value types and arrays. Unlike reference types, pointer types are not tracked by the default garbage collection mechanism. For the same reason pointers are not allowed to point to a reference type or even to a structure type which contains a reference type. We can say that pointers can point to only unmanaged types which includes all basic data types, enum types, other pointer types and structs which contain only unmanaged types.
+
+
+-
+-
+-
+-
+-
+-
+Semantics 
 semantics nedir, semantic nedir
 In programming language theory, semantics is the field concerned with the rigorous mathematical study of the meaning of programming languages. It does so by evaluating the meaning of syntactically valid strings defined by a specific programming language, showing the computation involved. In such a case that the evaluation would be of syntactically invalid strings, the result would be non-computation. Semantics describes the processes a computer follows when executing a program in that specific language. This can be shown by describing the relationship between the input and output of a program, or an explanation of how the program will be executed on a certain platform, hence creating a model of computation.
 Formal semantics, for instance, helps to write compilers, better understand what a program is doing, and to prove, e.g., that the following if statement

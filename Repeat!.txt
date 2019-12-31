@@ -56,3 +56,58 @@ class Kutu
       Console.WriteLine(k3.Genislik); //10
       Console.ReadKey();
   }
+-
+-
+-
+-
+-
+-
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+class Program
+{
+    class Student
+    {
+        public string Name { get; set; }
+    }
+
+    class Araba: IAraba
+    {
+        // IAraba'nın metotlarını implement etmesi gerek...
+
+        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
+        {
+            Console.WriteLine("");
+        }
+
+        public void Teker()
+        {
+
+        }
+
+        public string CamaYaziYazdir()
+        {
+            return "Text";
+        }
+
+        public Student OgrenciyiArabayaBindir()
+        {
+            Student student = new Student();
+            return student;
+        }
+    }
+
+    //class gibi bir şeydir interface. Parantez açıp kapama yokk. Zaten anlamsız oluyor diğer şekilde.
+    interface IAraba
+    {
+        void Cam(); // köşeli parantez yokk
+        void Teker();
+        string CamaYaziYazdir();
+        Student OgrenciyiArabayaBindir();
+    }
+}
+

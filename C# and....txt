@@ -11,6 +11,9 @@ C# supports pointers in a limited extent. A C# pointer is nothing but a variable
 
 But in C# pointer can only be declared to hold the memory address of value types and arrays. Unlike reference types, pointer types are not tracked by the default garbage collection mechanism. For the same reason pointers are not allowed to point to a reference type or even to a structure type which contains a reference type. We can say that pointers can point to only unmanaged types which includes all basic data types, enum types, other pointer types and structs which contain only unmanaged types.
 
+Stack: static memory allocation, çok hızlı. Allocation compile sırasında olur. Ne kadar memory e ihtiyacın olduğunu kestirebiliyosan Stack kullan.
+
+Heap: Dynamic memory allocation, allocation run time'da olur. Bu memory'e erişim yavaştır. Dependency yoktur sağdaki soldaki elementlere. Yani kolayca silip memory yi boşaltabilirsin. Bu olaylar işi kompleksleştirir ve memorynin neresi boş neresi dolu bilmeyi zorlaştırır. Ne kadar memory e ihtiyacın olduğunu kestiremiyorsan bunu kullan. Üst üste yığma alegorisi. Yığ yığabildiğin kadar. Aynı alegoriden ötürü -> yavaş çalışır --> neyin nerede olduğu belirsiz çünkü üst üste yığıyorsun. Stack ise hızlı çünkü herşey düzgün şeklide üst üste koyuluyor.
 
 -
 -

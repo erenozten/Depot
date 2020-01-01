@@ -405,6 +405,19 @@ FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName;
 -
+-
+CREATE PROC SAFH
+AS
+BEGIN
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '_A%'
+order by Address ASC
+END
+GO
+-
+-
+
 
 
 

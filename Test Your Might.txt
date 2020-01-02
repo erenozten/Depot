@@ -469,6 +469,66 @@ The private protected access modifier is valid in C# version 7.2 and later.
 -
 -
 -
+Example
+A private protected member of a base class is accessible from derived types in its containing assembly only if the static type of the variable is the derived class type. For example, consider the following code segment:
+
+Benim örneği inceleyelim önce:
+class Program
+{
+    public class BaseClass
+    {
+        private protected int hiddenValue = 10;
+ 
+        public void AccessFromBaseClass()
+        {
+            hiddenValue = 25; // çalışır // ama BaseClass'ın instance'ı bu veriye erişemez. 
+ 
+            BaseClass bc = new BaseClass();
+            bc.hiddenValue = 33; //BaseClass'ın scope'u içindeyiz. Burada Baseclass'ın instance'ı üzerinden hiddenValue'ye erişebiliriz: Adı üzerinde "private" protected. Yani "private" in özelliği.. --> Class içinde erişim.
+ 
+            Console.WriteLine(hiddenValue);    // 25
+            Console.WriteLine(bc.hiddenValue); // 33
+        }
+    }
+ 
+    public class DerivedClass : BaseClass
+    {
+        public void AccessFromDerivedClass()
+        {
+            var baseObject = new BaseClass();
+ 
+            //baseObject.hiddenValue = 5; // Error --> hiddenValue can only be accessed by classes derived from BaseClass.
+            // DİKKAT! -> Base class'ın objesi hiddenValue'ye erişemiyor (private özelliği). Aşağıya bak: Sadece derived class instance'I (objesi) değiştirebiliyor. Aşağıyı incele.
+ 
+            hiddenValue = 5; // Bu çalışır... accessed through the current derived class instance. Görüldüğü üzere derivedClass'ın instance'ı hiddenValue ye erişebiliyor. // adı üzerinde private "protected".... Protected özelliğini göstermiş oldu: derived class içinden erişim.
+        }
+    }
+ 
+    // Assembly2.cs  
+    // Varsayalım ki:
+    // Baseclass ve DerivedClass1 --> Assembly1'in içinde bulunuyor.
+    // Yine varsayalım ki:
+    // DerivedClass2 Assembly2 içinde bulunuyor. Bu durumda DerivedClass2'nin instance'ı hiddenValue'yi değiştiremez. Çünkü hiddenValue'yi sadece Assembly1'de bulunan Derived class'lar değiştirebilir --> an attempt to access hiddenValue as an inherited member of DerivedClass2 will produce an error, as it is only accessible by derived types in Assembly1.
+    public class DerivedClass2 : BaseClass
+    {
+        public void Access()
+        {
+            var baseObject = new BaseClass();
+            hiddenValue = 5; // Hata verir // çünkü assembly'ler varsayımımıza göre eşleşmeyecektir.
+        }
+    }
+ 
+    static void Main(string[] args)
+    {
+        DerivedClass derivedClass = new DerivedClass();
+        BaseClass baseClass = new BaseClass();
+ 
+        derivedClass.AccessFromBaseClass();
+ 
+        //baseClass.hiddenValue = 5;  // adı üzerinde "private" protected... Yani class dışından ulaşamayacağımız zaten aşikar.
+        derivedClass.hiddenValue = 6; // adı üzerinde "private" protected... Yani class dışından ulaşamayacağımız zaten aşikar.
+    }
+}
 
 
 

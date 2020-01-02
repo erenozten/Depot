@@ -645,6 +645,34 @@ A static class is declared with the help of static keyword. A static class can o
 -
 Class members (variables, properties, methods) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member.
 
+        public class Cat
+        {
+            public static int Count = 0;
+            public Cat()
+            {
+                Count++;
+            }
+
+            public void ShowCount()
+            {
+                Console.WriteLine(Count);
+            }
+        }
+
+        static void Main()
+        {
+            Cat c1 = new Cat();
+            Cat c2 = new Cat();
+            Cat c3 = new Cat();
+            Cat c4 = new Cat();
+            c1.ShowCount(); // ShowCount metodu üzerinden; herhangi bir objemizi kullanarak (c1) count member'ini yazdırdık. ('count' her obje için aynı değere sahip olduğu için istediğimiz obje üzerinden yazdırabiliriz. Her obje için aynı değere sahip çünkü static olarak tanımlanmış..)
+
+
+            Console.WriteLine(Cat.Count); //Cat class'ı üzerinden direkt olarak count'u yazdırdık. 'count' statik bir member olduğu için Cat class'ına ait bir obje üzerinden değil de direkt Cat class'ı üzerinden çağırabildik.
+            Console.ReadKey();
+        }
+
+
 
 
 

@@ -624,6 +624,18 @@ Destructors have the following attributes:
 - Destructors cannot be called. They are invoked automatically.
 - A destructor does not take modifiers or have parameters. 
 - The name of a destructor is exactly the same as the class prefixed with a tilde (~).
+Static keyword 
+
+
+[member nedir, static nedir, class member nedir]
+static is a modifier in C# which is applicable for the following:
+
+Classes
+Variables
+Methods
+Constructor
+
+It is also applicable to properties, event, and operators. To create a static member(class, variable, methods, constructor), precede its declaration with the keyword static. When a member is declared static, it can be accessed with the name of its class directly.
 
 
 

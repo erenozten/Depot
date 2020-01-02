@@ -458,8 +458,17 @@ SQL de default
 -
 DELETE FROM CUSTOMERSTABLE
 WHERE CUSTOMERID = 2 
-
-
+-
+-
+Private Protected
+Private protected nedir
+The private protected keyword combination is a member access modifier. A private protected member is accessible by types derived from the containing class, but only within its containing assembly. For a comparison of private protected with the other access modifiers, see Accessibility Levels.
+Önemli not: Struct members cannot be private protected because the struct cannot be inherited.
+ Note
+The private protected access modifier is valid in C# version 7.2 and later.
+-
+-
+-
 
 
 

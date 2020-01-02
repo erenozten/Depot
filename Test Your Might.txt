@@ -438,6 +438,11 @@ WHERE AddreSS LIKE '12%%%%%%%s%%%%%%%%%%%%%%%%%%'
 order by Address ASC
 -
 -
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '_2%%%%%%%%%%%%%r%%%%%%%O%%%%%'
+order by Address ASC
+
 
 
 

@@ -442,8 +442,10 @@ SELECT CompanyName, ContactTitle, Address
 FROM Customers
 WHERE AddreSS LIKE '_2%%%%%%%%%%%%%r%%%%%%%O%%%%%'
 order by Address ASC
-
-
+-
+-
+Revoke nedir?
+user a verilmiş ayrıcalıkları geri alır
 
 
 

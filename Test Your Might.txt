@@ -636,6 +636,14 @@ Methods
 Constructor
 
 It is also applicable to properties, event, and operators. To create a static member(class, variable, methods, constructor), precede its declaration with the keyword static. When a member is declared static, it can be accessed with the name of its class directly.
+Static Class
+A static class is declared with the help of static keyword. A static class can only contain static data members, static methods, and a static constructor. It is not allowed to create objects of the static class. Static classes are sealed, means one cannot inherit a static class from another class.
+
+
+-
+-
+-
+Class members (variables, properties, methods) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member.
 
 
 

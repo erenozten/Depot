@@ -564,6 +564,16 @@ class DerivedClass2 : BaseClass
         // myValue = 10;
     }
 }
+FCL: (framework class library)	
+Örneğin Datetime:  FCL’de bulunan bir class’tır.
+
+Constructor:
+Default constructor parameterless contructor'dur. 
+Parametre alan bir constructor oluşturursak, bu parametresiz olanı artık kullanılmaz olur; tabi biz parametresiz bir constructor oluşturmazsak...
+
+
+IDE 
+To create a C# program, you need to install an integrated development environment (IDE) with coding and debugging tools. For example: Visual Studio Community Edition.
 
 
 

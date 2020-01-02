@@ -454,7 +454,10 @@ The UNIQUE operator searches every row of a specified table for uniqueness (no d
 -
 SQL de default 
 •	DEFAULT Constraint − Provides a default value for a column when none is specified.
-
+-
+-
+DELETE FROM CUSTOMERSTABLE
+WHERE CUSTOMERID = 2 
 
 
 

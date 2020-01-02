@@ -446,7 +446,10 @@ order by Address ASC
 -
 Revoke nedir?
 user a verilmiş ayrıcalıkları geri alır
-
+-
+-
+11	UNIQUE
+The UNIQUE operator searches every row of a specified table for uniqueness (no duplicates).
 
 
 

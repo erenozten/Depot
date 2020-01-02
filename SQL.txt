@@ -735,7 +735,27 @@ Operator	Description	Example
 <=	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.	(a <= b) is true.
 !<	Checks if the value of left operand is not less than the value of right operand, if yes then condition becomes true.	(a !< b) is false.
 !>	Checks if the value of left operand is not greater than the value of right operand, if yes then condition becomes true.	(a !> b) is true.
-
+-
+-
+-
+-
+-
+-
+incele -> fazla yüzde işareti konmasına rağmen sorun oluşmuyor.
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '12%%%%%%%s%%%%%%%%%%%%%%%%%%'
+order by Address ASC
+-
+-
+-
+-
+-
+-
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '_2%%%%%%%%%%%%%r%%%%%%%O%%%%%'
+order by Address ASC
 
 
 

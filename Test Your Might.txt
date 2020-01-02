@@ -450,7 +450,10 @@ user a verilmiş ayrıcalıkları geri alır
 -
 11	UNIQUE
 The UNIQUE operator searches every row of a specified table for uniqueness (no duplicates).
-
+-
+-
+SQL de default 
+•	DEFAULT Constraint − Provides a default value for a column when none is specified.
 
 
 

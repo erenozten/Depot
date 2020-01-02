@@ -420,11 +420,15 @@ GO
 
 
 
-
-
-
-
-
+CCREATE PROC qwedQWEASF
+AS
+BEGIN
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '_Aqwe%DASDWR'
+order by Address ASC
+END
+GO
 
 
 

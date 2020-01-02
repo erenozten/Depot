@@ -429,7 +429,15 @@ WHERE AddreSS LIKE '_Aqwe%DASDWR'
 order by Address ASC
 END
 GO
-
+-
+-
+incele
+SELECT CompanyName, ContactTitle, Address
+FROM Customers
+WHERE AddreSS LIKE '12%%%%%%%s%%%%%%%%%%%%%%%%%%'
+order by Address ASC
+-
+-
 
 
 

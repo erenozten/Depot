@@ -813,5 +813,9 @@ Compile-time checking occurs during the compile time. Compile time errors are er
 	Typechecking errors
 	Compiler crashes (Rarely)
 
+Intranet - İntranet
+Intranet nedir, intranet nedir
+Intranet, sadece belirli bir kuruluş içindeki bilgisayarları, yerel ağları (LAN) ve geniş alan ağlarını (WAN) birbirine bağlayan, çoğunlukla TCP/IP tabanlı bir ağdır.
+
 
 

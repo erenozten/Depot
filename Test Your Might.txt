@@ -817,5 +817,8 @@ Intranet - İntranet
 Intranet nedir, intranet nedir
 Intranet, sadece belirli bir kuruluş içindeki bilgisayarları, yerel ağları (LAN) ve geniş alan ağlarını (WAN) birbirine bağlayan, çoğunlukla TCP/IP tabanlı bir ağdır.
 
+HTTP
+http nedir
+ HTTP (İngilizce Hyper-Text Transfer Protocol, Türkçe Hiper-Metin Transfer Protokolü) bir kaynaktan dağıtılan ve ortak kullanıma açık olan hiperortam bilgi sistemleri için uygulama seviyesinde bir iletişim protokolüdür.
 
 

@@ -788,4 +788,9 @@ An SQL result set is a set of rows from a database, as well as metadata about th
 A result set is effectively a table. The ORDER BY clause can be used in a query to impose a certain sort condition on the rows. Without that clause, there is no guarantee whatsoever on the order in which the rows are returned.
 
 
-
+-
+Library	   (GITHUB)
+Library nedir
+Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
+Bir geliştirici yazılım geliştirirken yazılımını daha işlevsel hale getirmek veya çeşitli fonksiyonlar kazandırmak için yazılım kütüphanelerinden faydalanır. Yazılım kütüphaneleri yazılımcıların iş yükünü hafifletir ve aynı kodu tekrar yazmalarına gerek kalmadan onlara hazır bir kalıp sunar. Basit bir örnekle açıklamamız gerekirse; bir geliştirici matematikle ilgili bir yazılım geliştirdiğinde bu yazılıma karmaşık matematik işlemlerini yaptırması için ayrı ayrı modüller yazmak zorunda kalacaktır. Bu kodları yazmaya uğraşmak yerine yazılım kütüphanesindeki bir matematik modülünü alıp bu modülü doğrudan kendi yazılımına ilave edebilir.
+about libraries

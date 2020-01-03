@@ -781,6 +781,11 @@ The .NET Core command-line interface (CLI) is a new cross-platform toolchain for
 
  
 
+-
+Result set   (GITHUB)
+Result set nedir
+An SQL result set is a set of rows from a database, as well as metadata about the query such as the column names, and the types and sizes of each column. Depending on the database system, the number of rows in the result set may or may not be known. Usually, this number is not known up front because the result set is built on-the-fly.
+A result set is effectively a table. The ORDER BY clause can be used in a query to impose a certain sort condition on the rows. Without that clause, there is no guarantee whatsoever on the order in which the rows are returned.
 
 
 

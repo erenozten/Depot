@@ -677,6 +677,11 @@ Class members (variables, properties, methods) can also be declared as static. T
 
 
 
+important on ArrayList
+We don't recommend that you use the ArrayList class for new development. Instead, we recommend that you use the generic List<T> class. The ArrayList class is designed to hold heterogeneous collections of objects. However, it does not always offer the best performance. Instead, we recommend the following:
+•	For a heterogeneous collection of objects, use the List<Object> (in C#) or List(Of Object) (in Visual Basic) type.
+•	For a homogeneous collection of objects, use the List<T> class.
+See Performance Considerations in the List<T> reference topic for a discussion of the relative performance of these classes. See Non-generic collections shouldn't be used on GitHub for general information on the use of generic instead of non-generic collection types.
 
 
 

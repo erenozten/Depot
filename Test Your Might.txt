@@ -715,6 +715,10 @@ for (int i=0; i<1000; i++)
 }
 
 In the above example, i is an iterator starting from the first student record to the last student record.
+-
+Integration (GITHUB)
+integration nedir
+Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
 
 
 

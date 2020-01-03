@@ -803,5 +803,8 @@ framework nedir
 Önceden hazırlanmış belirli standartlar halinde kütüphanelerin bulunduğu bir iskelettir. İhtiyaca göre projemizi o iskelete dahil edip inşa ederiz.
 Framework, yazılım geliştiricilerin kullandığı önceden hazırlanmış kütüphanelerin bunluduğu ve bunlara yenilerini ekleyebileceği yapıların adıdır. Gelişmiş frameworklerde form kontrolü, veri tabanı bağlantısı, kullanıcı giriş çıkış, mail atma, tema motoru gibi kütüphaneler mevcuttur.
 Frameworkler ayrıca MVC (Model, View, Controller) gibi bölümlerden oluşarak projenizin daha okunabilir düzenlenebilir olmasını sağlamaktadır.
+Runtime vs Compile time	 (GITHUB)
+Runtime nedir, compile time nedir,  run time nedir, compile nedir
+Runtime and compile time are programming terms that refer to different stages of software program development. Compile-time is the instance where the code you entered is converted to executable while Run-time is the instance where the executable is running. The terms "runtime" and "compile time" are often used by programmers to refer to different types of errors too.
 
 

@@ -821,4 +821,14 @@ HTTP
 http nedir
  HTTP (İngilizce Hyper-Text Transfer Protocol, Türkçe Hiper-Metin Transfer Protokolü) bir kaynaktan dağıtılan ve ortak kullanıma açık olan hiperortam bilgi sistemleri için uygulama seviyesinde bir iletişim protokolüdür.
 
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+BEGIN
+   PRINT 'It is the weekend.';
+   PRINT 'Get some rest on the weekend!';
+END;
+ELSE
+BEGIN
+   PRINT 'It is a weekday.';
+   PRINT 'Get to work on a weekday!';
+END;
 

@@ -781,38 +781,6 @@ The .NET Core command-line interface (CLI) is a new cross-platform toolchain for
 
  
 
--
-Result set   (GITHUB)
-Result set nedir
-An SQL result set is a set of rows from a database, as well as metadata about the query such as the column names, and the types and sizes of each column. Depending on the database system, the number of rows in the result set may or may not be known. Usually, this number is not known up front because the result set is built on-the-fly.
-A result set is effectively a table. The ORDER BY clause can be used in a query to impose a certain sort condition on the rows. Without that clause, there is no guarantee whatsoever on the order in which the rows are returned.
-
-
--
-Library	   (GITHUB)
-Library nedir
-Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
-Bir geliştirici yazılım geliştirirken yazılımını daha işlevsel hale getirmek veya çeşitli fonksiyonlar kazandırmak için yazılım kütüphanelerinden faydalanır. Yazılım kütüphaneleri yazılımcıların iş yükünü hafifletir ve aynı kodu tekrar yazmalarına gerek kalmadan onlara hazır bir kalıp sunar. Basit bir örnekle açıklamamız gerekirse; bir geliştirici matematikle ilgili bir yazılım geliştirdiğinde bu yazılıma karmaşık matematik işlemlerini yaptırması için ayrı ayrı modüller yazmak zorunda kalacaktır. Bu kodları yazmaya uğraşmak yerine yazılım kütüphanesindeki bir matematik modülünü alıp bu modülü doğrudan kendi yazılımına ilave edebilir.
-about libraries
-
-In computer science, a library is a collection of non-volatile resources used by computer programs, often for software development. These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. In IBM's OS/360 and its successors they are referred to as partitioned data sets.
-A library is also a collection of implementations of behavior, written in terms of a language, that has a well-defined interface by which the behavior is invoked. For instance, people who want to write a higher level program can use a library to make system calls instead of implementing those system calls over and over again. In addition, the behavior is provided for reuse by multiple independent programs. A program invokes the library-provided behavior via a mechanism of the language. For example, in a simple imperative language such as C, the behavior in a library is invoked by using C's normal function-call. What distinguishes the call as being to a library function, versus being to another function in the same program, is the way that the code is organized in the system.
-
-Framework	   (GITHUB)
-framework nedir
-Önceden hazırlanmış belirli standartlar halinde kütüphanelerin bulunduğu bir iskelettir. İhtiyaca göre projemizi o iskelete dahil edip inşa ederiz.
-Framework, yazılım geliştiricilerin kullandığı önceden hazırlanmış kütüphanelerin bunluduğu ve bunlara yenilerini ekleyebileceği yapıların adıdır. Gelişmiş frameworklerde form kontrolü, veri tabanı bağlantısı, kullanıcı giriş çıkış, mail atma, tema motoru gibi kütüphaneler mevcuttur.
-Frameworkler ayrıca MVC (Model, View, Controller) gibi bölümlerden oluşarak projenizin daha okunabilir düzenlenebilir olmasını sağlamaktadır.
-Runtime vs Compile time	 (GITHUB)
-Runtime nedir, compile time nedir,  run time nedir, compile nedir
-Runtime and compile time are programming terms that refer to different stages of software program development. Compile-time is the instance where the code you entered is converted to executable while Run-time is the instance where the executable is running. The terms "runtime" and "compile time" are often used by programmers to refer to different types of errors too.
-
-
-Compile-time checking occurs during the compile time. Compile time errors are error occurred due to typing mistake, if we do not follow the proper syntax and semantics of any programming language then compile time errors are thrown by the compiler. They wont let your program to execute a single line until you remove all the syntax errors or until you debug the compile time errors. The following are usual compile time errors:
-	Syntax errors
-	Typechecking errors
-	Compiler crashes (Rarely)
-
 Intranet - İntranet
 Intranet nedir, intranet nedir
 Intranet, sadece belirli bir kuruluş içindeki bilgisayarları, yerel ağları (LAN) ve geniş alan ağlarını (WAN) birbirine bağlayan, çoğunlukla TCP/IP tabanlı bir ağdır.

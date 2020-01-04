@@ -814,3 +814,14 @@ CREATE TABLE ErenTable33(
 Id INT,
 Name varchar(22),
 Surname varchar(22));
+-
+-
+-
+-
+-
+-
+
+SELECT column_name
+FROM table1sdsd
+INNER JOIN table2ds
+ON table1.column_name = table2.column_name;

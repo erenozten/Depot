@@ -793,9 +793,4 @@ END;
 -
 -
 
-UPDATE Eren_NewTable3dsd
-SET FirstColumn = 'NEWWW', SecondColumn = 'ASDFF'
-
-UPDATE yourTabBleEleE
-SET StudentId = 'QWEIPJ'
-
+INSERT INTO TABLE24(NAME, SURNAME) VALUES ('EE', 'EWE')

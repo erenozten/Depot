@@ -2809,6 +2809,9 @@ The emerging popularity of mobile applications has also affected UI, leading to 
 -
 -
 -
+Implicit
+Implicit nedir, implicit nedir
+dolaylı yoldan, yani direkt olarak DEĞİL / suggested though not directly expressed.
 
 -
 -

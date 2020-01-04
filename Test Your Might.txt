@@ -775,19 +775,6 @@ class Program
         }
     }
 }
- The .NET Core command-line interface (CLI)   (GITHUB)
-cli nedir
-The .NET Core command-line interface (CLI) is a new cross-platform toolchain for developing .NET applications. The CLI is a foundation upon which higher-level tools, such as Integrated Development Environments (IDEs), editors, and build orchestrators, can rest.
-
- 
-
-Intranet - İntranet
-Intranet nedir, intranet nedir
-Intranet, sadece belirli bir kuruluş içindeki bilgisayarları, yerel ağları (LAN) ve geniş alan ağlarını (WAN) birbirine bağlayan, çoğunlukla TCP/IP tabanlı bir ağdır.
-
-HTTP
-http nedir
- HTTP (İngilizce Hyper-Text Transfer Protocol, Türkçe Hiper-Metin Transfer Protokolü) bir kaynaktan dağıtılan ve ortak kullanıma açık olan hiperortam bilgi sistemleri için uygulama seviyesinde bir iletişim protokolüdür.
 
 IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
 BEGIN
@@ -799,15 +786,16 @@ BEGIN
    PRINT 'It is a weekday.';
    PRINT 'Get to work on a weekday!';
 END;
-
-
 -
-UPDATE
-UPDATE nedir?
-The UPDATE statement is used to modify the existing records in a table.
+-
+-
+-
+-
+-
 
-UPDATE Products
-SET ProductName = 'Aniseed SyrupAniseed Syrup'
-WHERE ProductID = 3;
+UPDATE Eren_NewTable3dsd
+SET FirstColumn = 'NEWWW', SecondColumn = 'ASDFF'
 
+UPDATE yourTabBleEleE
+SET StudentId = 'QWEIPJ'
 

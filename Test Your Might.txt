@@ -832,3 +832,14 @@ BEGIN
    PRINT 'Get to work on a weekday!';
 END;
 
+
+-
+UPDATE
+UPDATE nedir?
+The UPDATE statement is used to modify the existing records in a table.
+
+UPDATE Products
+SET ProductName = 'Aniseed SyrupAniseed Syrup'
+WHERE ProductID = 3;
+
+

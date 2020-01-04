@@ -2881,6 +2881,15 @@ Assigning - Assigning to a variable means to provide the variable with a value.
 int a = 0; //we are assigning to a; yes, initializing a variable means you assign it a value, so they do overlap!
 a = 1; //we are assigning to a
 
+Assigning:
+Assigning is simply the storing of one value to a variable. x = 5 assigns the value 5 to the variable  x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;.
+
+Note that the statement object myObject = new object(); combines all four of these.
+
+new object() instantiates a new object object, returning a reference to it.
+object myObject declares a new object reference.
+= initializes the reference variable by assigning the value of the reference to it.
+
 -
 -
 -

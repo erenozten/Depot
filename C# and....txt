@@ -2827,6 +2827,10 @@ stated clearly and in detail, leaving no room for confusion or doubt.
 -
 -
 -
+Declaration	(GITHUB) 
+
+Declaration nedir
+This is when you state to the program that there will be an object of a certain type existing and what the name of that object will be.
 
 
 

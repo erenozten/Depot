@@ -2889,8 +2889,33 @@ Note that the statement object myObject = new object(); combines all four of the
 new object() instantiates a new object object, returning a reference to it.
 object myObject declares a new object reference.
 = initializes the reference variable by assigning the value of the reference to it.
-
 -
+-
+-
+-
+-
+-
+-
+Assigning
+Assign nedir, assigning nedir
+Assigning is simply the storing of one value to a variable. x = 5 assigns the value 5 to the variable  x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;.
+
+Note that the statement object myObject = new object(); combines all four of these.
+
+new object() instantiates a new object object, returning a reference to it.
+object myObject declares a new object reference.
+= initializes the reference variable by assigning the value of the reference to it.
+-
+-
+-
+-
+-
+-
+Int vs int32		(GITHUB)
+
+It means that whether you define a variable of int or Int32, both are same.
+int i = 345;
+Int32 i = 345;// same as above 
 -
 -
 -

@@ -2812,7 +2812,15 @@ The emerging popularity of mobile applications has also affected UI, leading to 
 Implicit
 Implicit nedir, implicit nedir
 dolaylı yoldan, yani direkt olarak DEĞİL / suggested though not directly expressed.
-
+-
+-
+-
+-
+-
+-
+Explicit
+Explicit nedir
+stated clearly and in detail, leaving no room for confusion or doubt.
 -
 -
 -

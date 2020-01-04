@@ -792,5 +792,8 @@ END;
 -
 -
 -
-
 INSERT INTO TABLE24(NAME, SURNAME) VALUES ('EE', 'EWE')
+-
+UPDATE Products
+SET ProductName = 'Aniseed SyrupAniseed Syrup', QuantityPerUnit = '1 kg pkg.'
+WHERE ProductID = 3;

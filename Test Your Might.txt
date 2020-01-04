@@ -797,3 +797,20 @@ INSERT INTO TABLE24(NAME, SURNAME) VALUES ('EE', 'EWE')
 UPDATE Products
 SET ProductName = 'Aniseed SyrupAniseed Syrup', QuantityPerUnit = '1 kg pkg.'
 WHERE ProductID = 3;
+-
+Örneğin tablodaki tüm X kolonu verilerini Y değeriyle değiştirmek istiyoruz. O halde:
+            
+UPDATE Eren_NewTable3
+SET FirstColumn = 'NEWWW', SecondColumn = 'ASDFF'
+
+Yukarıda gördüğümüz gibi Where'i kullanmamıza gerek yok. Çünkü tüm verileri update ediyoruz. Yapılan şey şu:
+Bütün row'lardaki FirstColumn = "NEWWW",
+Bütün row'lardaki SecondColumn = "ASDFF"
+
+Bir tablo oluşturup bu işlemi tekrar yapalım:
+
+USE Northwind
+CREATE TABLE ErenTable33(
+Id INT,
+Name varchar(22),
+Surname varchar(22));

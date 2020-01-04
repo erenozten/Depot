@@ -2869,6 +2869,18 @@ Açıklama 2:
 Instantiate literally means "to create an instance of". In programming, this generally means to create an instance of an object (generally on "the heap"). This is done via the new keyword in most languages. ie: new object();. Most of the time you will also save a reference to the object. ie: object myObject = new object();.
 
 
+Initialize - To initialize a variable means to assign it an initial value.
+Açıklama 2: 
+Initialize means to give an initial value to. In some languages, if you don't initialize a variable it will have arbitrary (dirty/garbage) data in it. In C# it is actually a compile-time error to read from an uninitialized variable.
+
+int a; //a is declared
+int a = 0; //a is declared AND initialized to 0
+MyObject x = new MyObject(); //x is declared and initialized with an instance of MyObject
+Assigning - Assigning to a variable means to provide the variable with a value.
+
+int a = 0; //we are assigning to a; yes, initializing a variable means you assign it a value, so they do overlap!
+a = 1; //we are assigning to a
+
 -
 -
 -

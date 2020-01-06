@@ -825,3 +825,10 @@ SELECT column_name
 FROM table1sdsd
 INNER JOIN table2ds
 ON table1.column_name = table2.column_name;
+
+UPDATE STABLE
+SET NAMECOLUMN = 'QWE'
+-
+aşağıdakileri yazalım:
+INSERT INTO TABLE1(Name, Surname) 
+VALUES('q','ee')

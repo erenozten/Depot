@@ -850,3 +850,11 @@ SET NAMECOLUMN = 'QWE'
 aşağıdakileri yazalım:
 INSERT INTO TABLE1(Name, Surname) 
 VALUES('q','ee')
+
+<div class="form-group">
+    <input asp-for="Name" class="form-control" />
+    <input asp-for="About" class="form-control" />
+</div>
+*@
+    </form>
+</div>

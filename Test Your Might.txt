@@ -4,6 +4,20 @@
 -
 -
 -
+USE Northwind
+CREATE TABLE ErenTable33(
+Id INT,
+Name varchar(22),
+Surname varchar(22));
+
+USE Northwind
+SELECT * FROM ErenTable33
+
+INSERT INTO ErenTable33(Name, Surname)
+VALUES('eren', 'ox');
+
+UPDATE ErenTable33
+SET Name = 'NEWWW', Surname = 'ASDFF'
 -
 //Beginning
 

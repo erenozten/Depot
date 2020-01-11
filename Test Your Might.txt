@@ -13,8 +13,9 @@ Surname varchar(22));
 USE Northwind
 SELECT * FROM ErenTable33
 
-INSERT INTO ErenTable33(Name, Surname)asdad
+INSERT INTO ErenTable33(Name, Surname)
 VALUES('eren', 'ox');
+
 
 UPDATE ErenTable33
 SET Name = 'NEWWW', Surname = 'ASDFF'
@@ -925,4 +926,10 @@ After this call, the struct is considered to be definitely assigned; that is, al
 // not2: An int is a value type. It is really of type Int32. Objects that can be nullable are reference types. At a basic level the difference is that a value type will store the value with the variable where a reference type will store a reference to the value. A reference can be null, meaning that it doesn't point to a value. Where a value type always has a value.
 Nullable wraps a value type to allow you to have the option of being null. Using int? is just a compiler shortcut to declare a nullable type.
 // not3: int is a value type, which can only hold a value...
+INSERT INTO ErenTable33(Name, Surname)
+VALUES('eren', 'ox');
+
+
+UPDATE ErenTable33
+SET Name = 'NEWWW', Surname = 'ASDFF'
 -

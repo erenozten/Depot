@@ -13,7 +13,7 @@ Surname varchar(22));
 USE Northwind
 SELECT * FROM ErenTable33
 
-INSERT INTO ErenTable33(Name, Surname)
+INSERT INTO ErenTable33(Name, Surname)asdad
 VALUES('eren', 'ox');
 
 UPDATE ErenTable33

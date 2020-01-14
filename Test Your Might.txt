@@ -1,4 +1,15 @@
 ﻿
+INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
+SELECT ContactName, CompanyName
+FROM Customers
+WHERE ContactName = 'Maria Anders'
+
+Fakat alttaki kodda, where statement sanki yazılmamış gibi çalışıyor; yani bütün kolonları getiriyor, sanki hiç where statement yazılmamış gibi... O köşeli parantezler buna yol açıyor.
+
+INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
+SELECT ContactName, CompanyName
+FROM Customers
+[WHERE CompanyName = "birşedsdasda"]
 -
 -
 -

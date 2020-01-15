@@ -1088,6 +1088,26 @@ bool boolVar = true;
 In computer programming, programming languages are often colloquially classified as to whether the language's type system makes it strongly typed or weakly typed (loosely typed). Generally, a strongly typed language has stricter typing rules at compile time, which implies that errors and exceptions are more likely to happen during compilation. However, dynamically typed languages (where type checking happens at run time) can also be strongly typed. Most of these rules affect variable assignment, return values and function calling. On the other hand, a weakly typed language has looser typing rules and may produce unpredictable results or may perform implicit type conversion at runtime.[1] A different but related concept is latent typing.
 -
 -
+            // Create two DataTable instances.
+            DataTable dataTable1 = new DataTable("Books");
+            //dataTable1.Clear();
+            dataTable1.Columns.Add("Name");
+            dataTable1.Columns.Add("Id");
+            dataTable1.Rows.Add("Monte Cristo", 1);
+            dataTable1.Rows.Add("Jane Eyre", 2);
+ 
+            DataTable dataTable2 = new DataTable("Medications");
+            dataTable2.Columns.Add("Id");
+            dataTable2.Columns.Add("Medication");
+            dataTable2.Rows.Add(1, "Atenolol");
+            dataTable2.Rows.Add(2, "Amoxicillin");
+ 
+            // Oluşturduğumuz dataTable'ları dataSet içine koyalım.
+ 
+            DataSet dataSet = new DataSet("dataSetNam");
+            dataSet.Tables.Add(dataTable1);
+            dataSet.Tables.Add(dataTable2);
+
 -
 -
 -

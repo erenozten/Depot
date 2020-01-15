@@ -13,6 +13,11 @@ FROM Customers
 -
 -
 -
+Some well-known general imperative programming languages include Python, C and Java.
+
+In the world of graph database technology, there aren’t any purely imperative query languages. However, both Gremlin and the Java API (for Neo4j) include imperative features. These two options provide you with more detailed power over the execution of their task. If written correctly, there are no surprises – you will get exactly what you want done.
+
+However, imperative database query languages can also be limiting and not very user-friendly, requiring an extensive knowledge of the language and deep technical understanding of physical implementation details prior to usage. Writing one part incorrectly creates faulty outcomes.
 -
 -
 Runtime ve compile-time nedir, farklar nelerdir

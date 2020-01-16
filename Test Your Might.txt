@@ -12,6 +12,10 @@ FROM Customers
 [WHERE CompanyName = "birşedsdasda"]
 -
 -
+örneğin Report report = new Report(); deyince; buradaki report, (YANİ OBJE DEĞİL, POINTER!) -- STACK içinde tutuluyor. AMA report aracılığıyla üretilen yeni OBJE HEAP'TE TUTULUYOR. Güzel bilgi bu… 
+Dikkat et… report dediğin şey bir pointer'dir, objenin kendisi değildir. Inıtialize yapıyorsan bu pointer gidip bir OBJE üretecektir. Ama kendisi, yani report, o yeni üretilen objeye işaret eden bir pointer'dir.
+
+Report report2 = report; deyince görüldüğü üzere yeni bir obje üretmedik. Zaten initialization olmadığı belli… new Report(); deyip constructor çalıştırmadık veya bir property'sine bir değer atamadık. Yani yeni bir obje oluşmamış oldu. Yani aynı referansı tutuyor report ile…..
 -
 Some well-known general imperative programming languages include Python, C and Java.
 

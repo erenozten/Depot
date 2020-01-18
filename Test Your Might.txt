@@ -12,6 +12,15 @@ FROM Customers
 [WHERE CompanyName = "birşedsdasda"]
 -
 -
+Variable	(GITHUB)
+Variable nedir, değişken nedir
+
+Creating a variable reserves a memory location, or a space in memory, for storing values. 
+To use a variable, it must first be declared by specifying the name and data type. 
+A variable name, also called an identifier, can contain letters, numbers and the underscore character (_) and must start with a letter or underscore. 
+For example, firstName and lastName are good descriptive variable names.
+-
+
 örneğin Report report = new Report(); deyince; buradaki report, (YANİ OBJE DEĞİL, POINTER!) -- STACK içinde tutuluyor. AMA report aracılığıyla üretilen yeni OBJE HEAP'TE TUTULUYOR. Güzel bilgi bu… 
 Dikkat et… report dediğin şey bir pointer'dir, objenin kendisi değildir. Inıtialize yapıyorsan bu pointer gidip bir OBJE üretecektir. Ama kendisi, yani report, o yeni üretilen objeye işaret eden bir pointer'dir.
 

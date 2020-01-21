@@ -19,6 +19,26 @@ Declarative query nedir, declarative query language nedir
 The two main paradigms of database query languages are imperative and declarative. Understanding the difference between these two approaches is essential if you’re going to be successful in database development.
 -
 -
+        public interface IShape
+        {
+            void Draw();
+        }
+        class Circle : IShape
+        {
+            public void Draw()
+            {
+                Console.WriteLine("Circle Draw");
+            }
+        }
+        static void Main(string[] args)
+        {
+            IShape c = new Circle();
+            c.Draw();
+            //Outputs "Circle Draw"
+        }
+
+-
+-
 
 USE Northwind
 CREATE TABLE ErenTable33(

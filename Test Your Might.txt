@@ -92,7 +92,16 @@ When one class is entirely dependent upon another, you may decide to implement i
 
 -
 -
-
+MySQL is a database itself that uses SQL language.
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Oracle is a Database (RDBMS).
+Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
+MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
+MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
+MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+PL/SQL vs MySQL
+DESCRIPTION- in one sentence we can actually find the major differnce btw them, see plsql is basically a DATABASE PROGRAMMING LANGUAGE that is used in ORACLE DATABASE.
+1.	and MYSQL is itself is database which that uses SQL programming language and SQL is just a ANSI standard, and is used as a base with most Database systems, like Microsoft SQL Server, Oracle, MySQL, IBM DB2 have used this as a base and extended/enhanced in their database systems.
+-
 USE Northwind
 CREATE TABLE ErenTable33(
 Id INT,

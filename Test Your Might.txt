@@ -1,4 +1,7 @@
-﻿
+﻿Redirecttoaction kullanırken viewbag ve viewdata kullanılmaz, null gider. Tempdata kullan.
+The ViewBag and ViewData only survives the current request. TempData is the thing to use when you use redirects (and only then): http://rachelappel.com/when-to-use-viewbag-viewdata-or-tempdata-in-asp.net-mvc-3-applications states this clearly
+-
+
 INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
 SELECT ContactName, CompanyName
 FROM Customers

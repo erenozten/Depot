@@ -62,38 +62,6 @@ class Program
 }
  
 -
-Declarative Query Languages: Definition and Examples (GITHUB)
-
-Some well-known general declarative programming languages include Ruby, R and Haskell. SQL (Structured Query Language) is a declarative query language and is the industry standard for relational databases.
-Declarative query nedir, declarative query language nedir
-The two main paradigms of database query languages are imperative and declarative. Understanding the difference between these two approaches is essential if you’re going to be successful in database development.
--
--
-Nested Classes
-Nested class nedir, nested classes nedir
-When one class is entirely dependent upon another, you may decide to implement it using a nested class. Nested classes are declared within the scope of an existing class and receive special benefits when they access their parent class's members.
--
--
-
-        public interface IShape
-        {
-            void Draw();
-        }
-        class Circle : IShape
-        {
-            public void Draw()
-            {
-                Console.WriteLine("Circle Draw");
-            }
-        }
-        static void Main(string[] args)
-        {
-            IShape c = new Circle();
-            c.Draw();
-            //Outputs "Circle Draw"
-        }
-
--
 -
 MySQL is a database itself that uses SQL language.
 PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Oracle is a Database (RDBMS).

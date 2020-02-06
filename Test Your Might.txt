@@ -13,6 +13,18 @@ INSERT INTO Eren_NewTable3(ThirdColumn, FourthColumn)
 SELECT ContactName, CompanyName
 FROM Customers
 [WHERE CompanyName = "birşedsdasda"]
+
+-
+-
+DISTINCT kullanımı
+
+Önce distinct'siz, sonra distinct'li sorguyu inceleyelim:
+
+SELECT ORDERID FROM [Order Details]
+ORDER BY ORDERID ASC
+
+SELECT DISTINCT ORDERID FROM [ORDER DETAILS]
+ORDER BY ORDERID ASC
 -
 -
 

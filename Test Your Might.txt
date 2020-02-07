@@ -27,7 +27,39 @@ SELECT DISTINCT ORDERID FROM [ORDER DETAILS]
 ORDER BY ORDERID ASC
 -
 -
-
+ 
+class Program
+{
+    class Student
+    {
+        public string Name { get; set; }
+    }
+    class Araba: IAraba
+    {
+        // IAraba'nın metotlarını implement etmesi gerek...
+ 
+        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
+        {
+            Console.WriteLine("");
+        }
+ 
+        public void Teker()
+        {
+ 
+        }
+ 
+        public string CamaYaziYazdir()
+        {
+            return "Text";
+        }
+ 
+        public Student OgrenciyiArabayaBindir()
+        {
+            Student student = new Student();
+            return student;
+        }
+    }
+-
 class Program
 {
     class Student

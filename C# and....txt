@@ -1,6 +1,13 @@
 ﻿-
 ERRORS  (GITHUB)
 404: Links that don’t lead anywhere are known as 'dead links' or 'broken links'. The HTTP status code 404 is often referred to as 'error 404', 'HTTP 404', or '404 code'.
+The typical trigger for an error 404 message is when website content has been removed or moved to another URL. There are also other reasons why an error message could appear. These include:
+
+The URL or its content (such as files or images) was either deleted or moved (without adjusting any internal links accordingly)
+The URL was writtenincorrectly (during the creation process or a redesign), linkedincorrectly, or typed into the browser incorrectly
+The server responsible for the website is not running or the connection is broken
+The requested domain name can’t be converted to an IP by the domain name system (DNS)
+The entered domain name doesn’t exist (anymore)
 -
 
 Interface

@@ -10,6 +10,23 @@ The requested domain name can’t be converted to an IP by the domain name syste
 The entered domain name doesn’t exist (anymore)
 -
 
+public static string trKarakterDuzelt(string duzenlenecek)
+{
+    var sb = new StringBuilder(duzenlenecek);
+    sb.Replace('ü', 'u');
+    sb.Replace('ğ', 'g');
+    sb.Replace('ş', 's');
+    sb.Replace('ç', 'c');
+    sb.Replace('ö', 'o');
+ 
+    sb.Replace('Ü', 'U');
+    sb.Replace('Ğ', 'G');
+    sb.Replace('Ş', 'S');
+    sb.Replace('Ç', 'C');
+    sb.Replace('Ö', 'O');
+    return sb.ToString();
+-
+
 Interface
 Interface nedir
 Interface

@@ -9,6 +9,8 @@ The server responsible for the website is not running or the connection is broke
 The requested domain name can’t be converted to an IP by the domain name system (DNS)
 The entered domain name doesn’t exist (anymore)
 -
+test
+-
 
 public static string trKarakterDuzelt(string duzenlenecek)
 {

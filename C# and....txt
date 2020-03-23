@@ -1,4 +1,28 @@
-﻿Navigation Property
+﻿Entity Framework için constructor (GITHUB)
+Entity Framework için constructor
+
+class User(
+..
+..
+public User(bilmemNe bilmemNe){
+}
+
+protected User(){
+}
+
+)
+
+içine parametre alan bir constructor oluşturmuşsan eğer:
+
+parametresiz bir constructor da oluşturmalısın. Boş kalsın. Neden bunu yapmamız gerekiyor?
+
+Entity framework, User class'ının instance'ını bu parametreli constructor'u kullanarak oluşturamaz da ondan. Bir düşün. Entity framework nasıl instance oluştursun (veya obje initialize etsin) eğer boş bir constructor yoksa?
+
+O yüzden,
+
+Boş ctor oluşturmamız gerekiyor. Bu boş ctor wrong state'e girmemize yol açabilir. Yani boş olan ctor bazı sıkıntılara yol açabilir. O yüzden boş ctor'u protected yapabiliriz. Çok iyi olur.
+-
+Navigation Property (GITHUB)
 Navigation property nedir
 A navigation property is an optional property on an entity type that allows for navigation from one end of an association to the other end. Unlike other properties, navigation properties do not carry data.
 A navigation property definition includes the following:

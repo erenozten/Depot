@@ -111,3 +111,10 @@ class Program
     }
 }
 
+CREATE PROCEDURE QWE
+AS
+BEGIN
+SELECT ColumnName, ColumnId FROM DB 
+WHERE  ColumnaSDF LIKE '_%2%_' 
+END
+

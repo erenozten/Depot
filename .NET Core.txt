@@ -31,6 +31,11 @@ Side-by-side versioning
 New APIs
 Open source
 
+--> We're working hard to close the API gap from .NET Framework to .NET Core. The Windows Compatibility Pack made thousands of Windows-only APIs available in .NET Core. These APIs weren't available in .NET Core 1.x.
+-
+-
+
+
 
 
 

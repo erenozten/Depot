@@ -1,10 +1,26 @@
 Some advantages of .NET Core over .NET Framework include:
-
 •	Cross-platform. Runs on macOS, Linux, and Windows.
+•	Improved performance
 •	Side-by-side versioning
 •	New APIs
 •	Open source
 -
 -
+•	Built-in dependency injection.
+•	A lightweight, high-performance, and modular HTTP request pipeline.
+•	Ability to host on the following:
+o	Kestrel
+o	IIS
+o	HTTP.sys
+o	Nginx
+o	Apache
+o	Docker
 -
+-
+
+
+
+
+
+
 

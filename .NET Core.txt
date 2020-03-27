@@ -17,7 +17,19 @@ o	Apache
 o	Docker
 -
 -
+Önemli:
+Model binding automatically maps data from HTTP requests to action method parameters.
+Model validation automatically performs client-side and server-side validation.
+-
+-
+.NET Framework vs .NET Core
+There are several advantages to targeting .NET Core, and these advantages increase with each release. Some advantages of .NET Core over .NET Framework include:
 
+Cross-platform. Runs on macOS, Linux, and Windows.
+Improved performance
+Side-by-side versioning
+New APIs
+Open source
 
 
 

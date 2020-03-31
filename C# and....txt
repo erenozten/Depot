@@ -2020,6 +2020,17 @@ If you hit a breakpoint on function2(), F10 will advance to the line function3()
 -
 -
 -
+CTRL+F5	(GITHUB)
+Yeni başlayanlar için güzel bir not:
+Press Ctrl+F5 to run without the debugger.
+Ctrl f5 yapınca proje debug olmadığı halde chrome'da kullanılmaya devam ediyor.
+https://stackoverflow.com/questions/4118073/how-to-stop-console-from-closing-on-exit
+-
+-
+-
+-
+-
+-
 Database Management System - DBMS
 Dbms nedir
 DBMS: The software which is used to manage database is called Database Management System (DBMS). For Example, MySQL, Oracle etc. are popular commercial DBMS used in different applications. DBMS allows users the following tasks:

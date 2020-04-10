@@ -287,6 +287,40 @@ It has close links with other areas of computer science such as programming lang
 -
 -
 -
+Extension Methods in C#  (GITHUB)
+Extension methods are static methods, which are called as if they were instance methods on the extended type. With Extension methods, you can add methods to existing types without even creating a new derived type, recompiling, or modifying the original type.
+The following is the extension method we have created.
+public static int myExtensionMethod(this string str) {
+   return Int32.Parse(str);
+}
+Let us see an example wherein we have used extension method.
+Example
+Live Demo
+using System;
+using System.Text;
+namespace Program {
+   public static class Demo {
+      public static int myExtensionMethod(this string str) {
+         return Int32.Parse(str);
+      }
+   }
+   class Program {
+      static void Main(string[] args) {
+         string str1 = "565";
+         int n = str1.myExtensionMethod();
+         Console.WriteLine("Result: {0}", n);
+         Console.ReadLine();
+      }
+   }
+}
+Output
+Result: 565
+-
+-
+-
+-
+-
+-
 Type Safety / Type Safe		(GITHUB)	
 Type safety nedir, type safe nedir type-safe neir
 Type safety means preventing type errors. Type error occurs when data type of one type is assigned to other type UNKNOWINGLY and we get undesirable results.

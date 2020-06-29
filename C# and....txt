@@ -1,4 +1,16 @@
-﻿Entity Framework için constructor (GITHUB)
+﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB)
+
+Programlama dillerinde tip sistemleri, değerleri belirli tiplerde gruplarlar. Aynı değerler,belirlenen tip adı altında gruplanarak yazılım geliştiricilerin veriyi çok daha etkili ve anlamlı kullanmasına olanak sağlar. Verinin işlenip çıktı olarak alınması noktasında verilerin etkili ve hataya yol açmadan işlenmesi çok önemlidir. Birbirinden alakasız veriler üzerinde işlem yapılması tip sistemlerinin getirdiği bu özellik sayesinde önlenir. Örneğin; Bir Integer ile bir Boolean değer aynı ifade içinde kullanılıp anlamsız bir değer çıkması tip sistemleri sayesinde önlenir.
+Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.
+Statik Tipli dillerde her değişkenin değişmez bir tipi olmak zorundadır. Uygulama geliştire ya bu tipi bizzat belirler yada Derleyici tarafından belirlenir. Statik Tipli dillerde yapılan işlemlerden önce Tip Konrolü yapıldığı için, operandların tiplerinin belirlenmesi gerekir. Tip kontrolleri compile (derleme) esnasında yapılır. Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Ada ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
+Dinamik Tipli dillerde değerler değişmez bir tipe sahiptir. Ancak değişkenler ve ifadelerin belirli bir tipe sahip olma zorunlulukları yoktur. Her bir işlem esnasında, operandlar değişik değerler üretebilir. Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python, Ruby, Smalltalk dilleri verilebilir.
+Statik Tipli Diller ile Dinamik Tipli dillerin birbirlerine üstünlükleri konusunda birçok fikir ortaya atılıyor. İkisinin de birbirlerine üstün oldukları noktalar var.
+Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için programın çalışması esnasında ekstra tip kontrolü yapılmaz, bu da uygulamanın çok daha verimli ve hızlı çalışması anlamına gelir. Dinamik Tipli dillerde ise çalışma (run-time) esnasında kontrol yapılması ufak da olsa bir yavaşlamaya sebep olmaktadır. Ayrıca yine bu özellikten dolayı her değişkenin tip bilgisi hafızada saklanmak zorundadır. Bu durum ekstra bir hafıza yükü anlamına gelir. Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için ekstra bir hafızaya gerek duyulmaz.
+Statik Tipli dillerde derleme (compile-time) esnasında herhangi bir hata yakalanmadı ise tip hatası oluşmamış demektir yani Dinamik Tipli dillere nazaran çok daha güvenlidir. Dinamik Tipli dillerde ise böyle bir kesinlik bulunmaz. Öte yandan Dinamik Tipli diller Developer’lara çok büyük esneklik sağlar. Gelen verinin türünün bilinmediği uygulamalarda çok kullanışlıdır. Ayrıca uygulama geliştirenler bir değişkene farklı noktalarda farklı değerler atayabilirler.
+-
+-
+-
+Entity Framework için constructor (GITHUB)
 Entity Framework için constructor
 
 class User(

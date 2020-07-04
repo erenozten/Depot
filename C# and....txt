@@ -1,4 +1,18 @@
-﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB)
+﻿
+microservices (GITHUB)  (Read)
+microservice nedir, monolithic nedir, monolithic software nedir
+Microservice: Bir pattern'dir. Bilgisayar sistemlerini servisler şeklinde verme.
+What are microservices?
+Microservices - also known as the microservice architecture - is an architectural style that structures an application as a collection of services that are
+•	Highly maintainable and testable
+•	Loosely coupled
+•	Independently deployable
+•	Organized around business capabilities
+•	Owned by a small team
+The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
+-
+-
+Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB)
 
 Programlama dillerinde tip sistemleri, değerleri belirli tiplerde gruplarlar. Aynı değerler,belirlenen tip adı altında gruplanarak yazılım geliştiricilerin veriyi çok daha etkili ve anlamlı kullanmasına olanak sağlar. Verinin işlenip çıktı olarak alınması noktasında verilerin etkili ve hataya yol açmadan işlenmesi çok önemlidir. Birbirinden alakasız veriler üzerinde işlem yapılması tip sistemlerinin getirdiği bu özellik sayesinde önlenir. Örneğin; Bir Integer ile bir Boolean değer aynı ifade içinde kullanılıp anlamsız bir değer çıkması tip sistemleri sayesinde önlenir.
 Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.

@@ -1,4 +1,16 @@
-﻿Executable Code (GITHUB)
+﻿Nesne Yönelimli Olmayan Diller (GITHUB)
+Nesne Yönelimli Olmayan Diller nedir
+Temel olarak 
+•	C
+•	FORTRAN
+•	COBOL
+•	PASCAL
+•	BASIC
+Daha pek çok dil sayılabilir. Modern dillerin tamamı OOP'tur. 
+Nesne yönelimli diller  listesi haricindeki tüm diller demek daha kolay.
+-
+-
+Executable Code (GITHUB)
 Executable Code nedir
 Software in a form that can be run in the computer. Executable code generally refers to machine language, which is the set of native instructions the computer carries out in hardware. Executable files in the DOS/Windows world use .EXE and .COM file extensions, while executable files in Mac, Linux and Unix do not require specific extensions. They are identified by their file structure.
 

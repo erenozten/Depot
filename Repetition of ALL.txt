@@ -1,4 +1,4 @@
-﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB) (Tekrar Edildi)
+﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB) (Read)
 
 Programlama dillerinde tip sistemleri, değerleri belirli tiplerde gruplarlar. Aynı değerler,belirlenen tip adı altında gruplanarak yazılım geliştiricilerin veriyi çok daha etkili ve anlamlı kullanmasına olanak sağlar. Verinin işlenip çıktı olarak alınması noktasında verilerin etkili ve hataya yol açmadan işlenmesi çok önemlidir. Birbirinden alakasız veriler üzerinde işlem yapılması tip sistemlerinin getirdiği bu özellik sayesinde önlenir. 
 Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.
@@ -9,4 +9,17 @@ Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldı�
 Statik Tipli dillerde derleme (compile-time) esnasında herhangi bir hata yakalanmadı ise tip hatası oluşmamış demektir yani Dinamik Tipli dillere nazaran çok daha güvenlidir. Dinamik Tipli dillerde ise böyle bir kesinlik bulunmaz. Öte yandan Dinamik Tipli diller Developer’lara çok büyük esneklik sağlar. Gelen verinin türünün bilinmediği uygulamalarda çok kullanışlıdır. Ayrıca uygulama geliştirenler bir değişkene farklı noktalarda farklı değerler atayabilirler.
 -
 -
+microservices (Read)
+microservice nedir, monolithic nedir, monolithic software nedir
+Microservice: Bir pattern'dir. Bilgisayar sistemlerini servisler şeklinde verme.
+What are microservices?
+Microservices - also known as the microservice architecture - is an architectural style that structures an application as a collection of services that are
+•	Highly maintainable and testable
+•	Loosely coupled
+•	Independently deployable
+•	Organized around business capabilities
+•	Owned by a small team
+The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
 -
+-
+

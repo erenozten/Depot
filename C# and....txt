@@ -1,4 +1,13 @@
-﻿CLR	(GITHUB) (not yet)
+﻿On-premises Software  	(GITHUB)
+on premises software nedir, on-premises software nedir, on premise software nedir, on premise nedir
+-Şirket içi yazılımlar, sunucu çiftliği veya bulut gibi uzak bir tesise değil, yazılımı kullanan kişi veya kuruluşun tesislerine yüklenir ve bilgisayarlarda çalışır.
+Bildiğin "yerel" yani.
+On-premises software (commonly misstated as on-premise, and alternatively abbreviated "on-prem")[1] is installed and runs on computers on the premises of the person or organization using the software, rather than at a remote facility such as a server farm or cloud. On-premises software is sometimes referred to as “shrinkwrap” software, and off-premises software is commonly called “software as a service” ("SaaS") or “cloud computing”.
+Grammar
+There is some debate as to the grammatical correctness of the term on-premise as a synonym for on-premises.[2][3][4] In normal English usage, a premise is a proposition or presupposition in a logical argument, while premises (as well as being the plural of premise) means a property and its grounds, and is used only in the plural form.[5] People have mistakenly used what they believe to be the singular form premise, yet such use is incorrect in common or legal contexts.[6] When referring to technology, many companies and news sources commonly misuse the term on-premise such that it has become a common variant of on-premises.[7] [8]
+-
+-
+CLR	(GITHUB) (not yet)
 CLR nedir
 Common Language Runtime.
 The exact meaning depends on the context, but Common Language Runtime usually refers to the runtime of .NET Framework. The CLR handles memory allocation and management. The CLR is also a virtual machine that not only executes apps but also generates and compiles code on-the-fly using a JIT compiler. The current Microsoft CLR implementation is Windows only.

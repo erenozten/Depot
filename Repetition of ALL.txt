@@ -1,4 +1,11 @@
-﻿Iteration (GITHUB)	(read)
+﻿Executable Code (GITHUB)	(read)
+Executable Code nedir
+Software in a form that can be run in the computer. Executable code generally refers to machine language, which is the set of native instructions the computer carries out in hardware. Executable files in the DOS/Windows world use .EXE and .COM file extensions, while executable files in Mac, Linux and Unix do not require specific extensions. They are identified by their file structure.
+
+Executable code may also refer to programs written in interpreted languages that require additional software to actually execute. Some interpreted languages remain in their source code form, such as JavaScript and VBScript, while others are compiled into an intermediate language, such as Java and Visual Basic. Interpreted languages require software "runtime engines" to convert the program into executable instructions for a particular CPU family that the hardware executes. See machine language, runtime engine, linker, compiler, intermediate language, x86 and Java Virtual Machine.
+-
+-
+Iteration (GITHUB)	(read)
 iteration nedir iterate nedir
 
 Iteration, in the context of computer programming, is a process wherein a set of instructions or structures are repeated in a sequence a specified number of times or until a condition is met. When the first set of instructions is executed again, it is called an iteration. When a sequence of instructions is executed in a repeated manner, it is called a loop.

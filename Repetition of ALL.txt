@@ -1,5 +1,61 @@
 ﻿SharePoint 	(GITHUB)    (read)
 sharepoint nedir
+ArrayList Class  (GITHUB)   (read)
+arrayList nedir
+Implements the IList interface using an array whose size is dynamically increased as required.
+The following example shows how to create and initialize an ArrayList and how to display its values.
+using System;
+using System.Collections;
+public class SamplesArrayList  {
+
+   public static void Main()  {
+
+      // Creates and initializes a new ArrayList.
+      ArrayList myAL = new ArrayList();
+      myAL.Add("Hello");
+      myAL.Add("World");
+      myAL.Add("!");
+
+      // Displays the properties and values of the ArrayList.
+      Console.WriteLine( "myAL" );
+      Console.WriteLine( "    Count:    {0}", myAL.Count );
+      Console.WriteLine( "    Capacity: {0}", myAL.Capacity );
+      Console.Write( "    Values:" );
+      PrintValues( myAL );
+   }
+
+   public static void PrintValues( IEnumerable myList )  {
+      foreach ( Object obj in myList )
+         Console.Write( "   {0}", obj );
+      Console.WriteLine();
+   }
+
+}
+
+
+/* 
+This code produces output similar to the following:
+
+myAL
+    Count:    3
+    Capacity: 4
+    Values:   Hello   World   !
+
+*/
+
+ Important
+We don't recommend that you use the ArrayList class for new development. Instead, we recommend that you use the generic List<T> class. The ArrayList class is designed to hold heterogeneous collections of objects. However, it does not always offer the best performance. Instead, we recommend the following:
+•	For a heterogeneous collection of objects, use the List<Object> (in C#) or List(Of Object) (in Visual Basic) type.
+•	For a homogeneous collection of objects, use the List<T> class.
+See Performance Considerations in the List<T> reference topic for a discussion of the relative performance of these classes. See Non-generic collections shouldn't be used on GitHub for general information on the use of generic instead of non-generic collection types.
+The ArrayList is not guaranteed to be sorted. You must sort the ArrayList by calling its Sort method prior to performing operations (such as BinarySearch) that require the ArrayList to be sorted. To maintain a collection that is automatically sorted as new elements are added, you can use the SortedSet<T> class.
+The capacity of an ArrayList is the number of elements the ArrayList can hold. As elements are added to an ArrayList, the capacity is automatically increased as required through reallocation. The capacity can be decreased by calling TrimToSize or by setting the Capacity property explicitly.
+.NET Framework only: For very large ArrayList objects, you can increase the maximum capacity to 2 billion elements on a 64-bit system by setting the enabled attribute of the <gcAllowVeryLargeObjects> configuration element to true in the run-time environment.
+Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.
+The ArrayList collection accepts null as a valid value. It also allows duplicate elements.
+Using multidimensional arrays as elements in an ArrayList collection is not supported.
+-
+-
 SharePoint is a web-based collaborative platform that integrates with Microsoft Office. Launched in 2001, SharePoint is primarily sold as a document management and storage system, but the product is highly configurable and usage varies substantially among organizations.
 Microsoft states that SharePoint has 190 million users across 200,000 customer organizations.
 There are the Windows SharePoint Services (WSS), the Microsoft Office SharePoint Server (MOSS) and Microsoft Search Server. Each bring their own functionalities to the table and build upon each other. 

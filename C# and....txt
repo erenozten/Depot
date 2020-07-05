@@ -1,4 +1,21 @@
-﻿Memory Allocation	(GITHUB) (not yet)
+﻿ByteCode	(GITHUB) (not yet)
+ByteCode nedir
+Bytecode is program code that has been compiled from source code into low-level code designed for a software interpreter. It may be executed by a virtual machine (such as a JVM) or further compiled into machine code, which is recognized by the processor.
+Different types of bytecode use different syntax, which can be read and executed by the corresponding virtual machine. A popular example is Java bytecode, which is compiled from Java source code and can be run on a Java Virtual Machine (JVM). Below are examples of Java bytecode instructions.
+new (create new object)
+aload_0 (load reference)
+istore (store integer value)
+ladd (add long value)
+swap (swap two values)
+areturn (return value from a function)
+While it is possible to write bytecode directly, it is much more difficult than writing code in a high-level language, like Java. Therefore, bytecode files, such as Java .CLASS files, are most often generated from source code using a compiler, like javac.
+
+Bytecode vs Assembly Language
+Bytecode is similar to assembly language in that it is not a high-level language, but it is still somewhat readable, unlike machine language. Both may be considered "intermediate languages" that fall between source code and machine code. The primary difference between the two is that bytecode is generated for a virtual machine (software), while assembly language is created for a CPU (hardware).
+The key of java power "Write once, run everywhere" is bytecode. The way bytecodes get converted to the appropriate native instructions for an application has a huge impact on the speed of an application. These bytecode can be interpreted, compiled to native code or directly executed on a processor whose Instruction Set Architecture is the bytecode specification. Interpreting the bytecode which is the standard implementation of the Java Virtual Machine (JVM) makes execution of programs slow. To improve performance, JIT compilers interact with the JVM at run time and compile appropriate bytecode sequences into native machine code. When using a JIT compiler, the hardware can execute the native code, as opposed to having the JVM interpret the same sequence of bytecode repeatedly and incurring the penalty of a relatively lengthy translation process. This can lead to performance gains in the execution speed, unless methods are executed less frequently. The time that a JIT compiler takes to compile the bytecode is added to the overall execution time, and could lead to a higher execution time than an interpreter for executing the bytecode if the methods that are compiled by the JIT are not invoked frequently. The JIT compiler performs certain optimizations when compiling the bytecode to native code. Since the JIT compiler translates a series of bytecode into native instructions, it can perform some simple optimizations. Some of the common optimizations performed by JIT compilers are data-analysis, translation from stack operations to register operations, reduction of memory accesses by register allocation, elimination of common sub-expressions etc. The higher the degree of optimization done by a JIT compiler, the more time it spends in the execution stage. Therefore a JIT compiler cannot afford to do all the optimizations that is done by a static compiler, both because of the overhead added to the execution time and because it has only a restricted view of the program.
+-
+-
+Memory Allocation	(GITHUB) (not yet)
 Memory Allocation nedir
 What does Memory Allocation mean?
 Memory allocation is a process by which computer programs and services are assigned with physical or virtual memory space.

@@ -1,4 +1,27 @@
-﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB) (Read)
+﻿Type Safety / Type Safe		(GITHUB)	 (read-karışık olay)
+Type safety nedir, type safe nedir type-safe neir
+Type safety means preventing type errors. Type error occurs when data type of one type is assigned to other type UNKNOWINGLY and we get undesirable results.
+Type-safety should not be confused with static / dynamic typing or strong / weak typing.
+A type-safe language is one where the only operations that one can execute on data are the ones that are condoned by the data's type. That is, if your data is of type X and X doesn't support operation y, then the language will not allow you to to execute y(X).
+This definition doesn't set rules on when this is checked. It can be at compile time (static typing) or at runtime (dynamic typing), typically through exceptions. It can be a bit of both: some statically typed languages allow you to cast data from one type to another, and the validity of casts must be checked at runtime (imagine that you're trying to cast an Object to a Consumer - the compiler has no way of knowing whether it's acceptable or not).
+Type-safety does not necessarily mean strongly typed, either - some languages are notoriously weakly typed, but still arguably type safe. Take Javascript, for example: its type system is as weak as they come, but still strictly defined. It allows automatic casting of data (say, strings to ints), but within well defined rules. There is to my knowledge no case where a Javascript program will behave in an undefined fashion, and if you're clever enough (I'm not), you should be able to predict what will happen when reading Javascript code.
+An example of a type-unsafe programming language is C: reading / writing an array value outside of the array's bounds has an undefined behaviour by specification. It's impossible to predict what will happen. C is a language that has a type system, but is not type safe.
+
+In computer science, type safety is the extent to which a programming language discourages or prevents type errors. A type error is erroneous or undesirable program behaviour caused by a discrepancy between differing data types for the program's constants, variables, and methods (functions), e.g., treating an integer (int) as a floating-point number (float). Type safety is sometimes alternatively considered to be a property of a computer program rather than the language in which that program is written; that is, some languages have type-safe facilities that can be circumvented by programmers who adopt practices that exhibit poor type safety. The formal type-theoretic definition of type safety is considerably stronger than what is understood by most programmers.
+-
+-
+F# / F Sharp 		(GITHUB)
+Fsharp nedir f sharp nedir f# nedir
+F# originates from Microsoft Research, Cambridge, UK. The language was originally designed and implemented by Don Syme,[6] according to whom in the fsharp team, they say the F is for "Fun".[24] Andrew Kennedy contributed to the design of units of measure.[6] The Visual F# Tools for Visual Studio are developed by Microsoft.[6] The F# Software Foundation developed the F# open-source compiler and tools, incorporating the open-source compiler implementation provided by the Microsoft Visual F# Tools team.[11]
+
+F# (pronounced F sharp) is a general purpose, strongly typed, multi-paradigm programming language that encompasses functional, imperative, and object-oriented programming methods. F# is most often used as a cross-platform Common Language Infrastructure (CLI) language, but it can also generate JavaScript[9] and graphics processing unit (GPU) code.[10]
+
+Syntax:
+F# da göze çarpan ilk önemli komut "let" dir. Bu komut ile bir değişkene değeri kaydederiz. Örnek: 
+let ahmet = 10 <- 19
+-
+-
+Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB) (Read)
 
 Programlama dillerinde tip sistemleri, değerleri belirli tiplerde gruplarlar. Aynı değerler,belirlenen tip adı altında gruplanarak yazılım geliştiricilerin veriyi çok daha etkili ve anlamlı kullanmasına olanak sağlar. Verinin işlenip çıktı olarak alınması noktasında verilerin etkili ve hataya yol açmadan işlenmesi çok önemlidir. Birbirinden alakasız veriler üzerinde işlem yapılması tip sistemlerinin getirdiği bu özellik sayesinde önlenir. 
 Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.

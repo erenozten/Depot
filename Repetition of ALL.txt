@@ -1,9 +1,14 @@
 ﻿Dataset 	(GITHUB)   (read -ama tekrar)
 DataSet: This is a collection of DataTables. We use the DataSet type to store many DataTables in a single collection. Conceptually, the DataSet acts as a set of DataTable instances. 
 Usage: DataSet simplifies programs that use many DataTables. To effectively use the DataSet, you will need to have some DataTables handy. We begin by creating some. 
-
-
-
+Create: In this program, we create two DataTables. One stores two rows of patient information. And the second stores two rows of medication information. 
+Next: We create a DataSet with the DataSet constructor. Then we add the two DataTables to the DataSet instance. Finally we print the XML. 
+DataSetName: Every DataSet can have a name specified. Usually, it is easiest to specify this inside the DataSet constructor. But you don't always know the name at this time. 
+However: You can also change the name by assigning to the DataSetName property. You can also read the DataSetName property. 
+Copy, Clear: DataSet has a Clear method that clears all the DataTables in the set. It also provides a Copy method that will make a deep copy of all the DataTables in the set. 
+Tip: If you call Copy and the Clear the original, your copied data will still exist unchanged.
+-
+-
 metadata 	(GITHUB)  (read -ama tekrar)
 metadata nedir
 Metadata is simply data about data. It means it is a description and context of the data. It helps to organize, find and understand data. Here are a few real world examples of metadata:

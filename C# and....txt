@@ -1,4 +1,9 @@
-﻿Integration (GITHUB)  (read)
+﻿JIT Compiler (Just-In-Time Compiler)	(GITHUB) (not yet)
+JIT Compiler nedir, jit compiler nedir, jit nedir
+JIT compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Nothing in the JVM affects performance more than the compiler, and choosing a compiler is one of the first decisions made when running a Java application—whether you are a Java developer or an end-user.
+-
+-
+Integration (GITHUB)  (read)
 integration nedir
 Integration is the act of bringing together smaller components into a single system that functions as one. In an IT context, integration refers to the end result of a process that aims to stitch together different, often disparate, subsystems so that the data contained in each becomes part of a larger, more comprehensive system that, ideally, quickly and easily shares data when needed. This often requires that companies build a customized architecture or structure of applications to combine new or existing hardware, software and other communications.
 

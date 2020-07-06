@@ -1,4 +1,10 @@
-﻿Örnek kod (GITHUB)	(read)
+﻿
+The .NET Core command-line interface (CLI)   (GITHUB)  	(read)
+cli nedir, CLI nedir
+The .NET Core command-line interface (CLI) is a new cross-platform toolchain for developing .NET applications. The CLI is a foundation upon which higher-level tools, such as Integrated Development Environments (IDEs), editors, and build orchestrators, can rest.
+-
+-
+Örnek kod (GITHUB)	(read)
 Static class örnek, static class nedir, list oluşturma, list nedir, static nedir
 using System;
 using System.Collections;

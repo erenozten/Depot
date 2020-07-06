@@ -1,4 +1,10 @@
-﻿ Encapsulation   	(GITHUB) 	(read -ama tekrar)
+﻿ANSI C 	(GITHUB)		(read -ama tekrar)
+Ansi c nedir, ANSI C nedir, ISO c nedi, iso c nedir
+
+ANSI C, ISO C and Standard C are successive standards for the C programming language published by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). Historically, the names referred specifically to the original and best-supported version of the standard (known as C89 or C90). Software developers writing in C are encouraged to conform to the standards, as doing so helps portability between compilers.
+-
+-
+Encapsulation   	(GITHUB) 	(read -ama tekrar)
 encapsulation nedir
 Encapsulation is implemented by using access specifiers. An access specifier defines the scope and visibility of a class member. C# supports the following access specifiers −
 •	Public

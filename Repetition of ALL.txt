@@ -1,4 +1,16 @@
 ﻿
+Framework	   (GITHUB)    	(read -ama tekrar)
+framework nedir
+Önceden hazırlanmış belirli standartlar halinde kütüphanelerin bulunduğu bir iskelettir. İhtiyaca göre projemizi o iskelete dahil edip inşa ederiz.
+Framework, yazılım geliştiricilerin kullandığı önceden hazırlanmış kütüphanelerin bunluduğu ve bunlara yenilerini ekleyebileceği yapıların adıdır. Gelişmiş frameworklerde form kontrolü, veri tabanı bağlantısı, kullanıcı giriş çıkış, mail atma, tema motoru gibi kütüphaneler mevcuttur.
+Frameworkler ayrıca MVC (Model, View, Controller) gibi bölümlerden oluşarak projenizin daha okunabilir düzenlenebilir olmasını sağlamaktadır.
+Yapılan projelerin çoğunda aradan belirli bir zaman geçtikten sonra düzenlemek zorlaşır. Hem kodların artması hem de yazılan kodun unutulması revize sürecini uzatmakta. Bu yapılar Modelde veritabanı işlemlerini, Controllerda genel mekaniği, Viewda ise görünüm kodu içerdiği için müdahale edilmesi gereken yer tam olarak bulanabilmektedir. 
+
+A framework, or software framework, is a platform for developing software applications. It provides a foundation on which software developers can build programs for a specific platform. For example, a framework may include predefined classes and functions that can be used to process input, manage hardware devices, and interact with system software. This streamlines the development process since programmers don't need to reinvent the wheel each time they develop a new application.
+A framework is similar to an application programming interface (API), though technically a framework includes an API. As the name suggests, a framework serves as a foundation for programming, while an API provides access to the elements supported by the framework. A framework may also include code libraries, a compiler, and other programs used in the software development process.
+Several different types of software frameworks exist. Popular examples include ActiveX and .NET for Windows development, Cocoa for Mac OS X, Cocoa Touch for iOS, and the Android Application Framework for Android. Software development kits (SDKs) are available for each of these frameworks and include programming tools designed specifically for the corresponding framework. For example, Apple's Xcode development software includes a Mac OS X SDK designed for writing and compiling applications for the Cocoa framework.
+-
+-
 Library	   (GITHUB) 		(read -ama tekrar)
 Library nedir
 Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.

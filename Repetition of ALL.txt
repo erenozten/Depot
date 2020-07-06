@@ -7,6 +7,49 @@ DataSetName: Every DataSet can have a name specified. Usually, it is easiest to 
 However: You can also change the name by assigning to the DataSetName property. You can also read the DataSetName property. 
 Copy, Clear: DataSet has a Clear method that clears all the DataTables in the set. It also provides a Copy method that will make a deep copy of all the DataTables in the set. 
 Tip: If you call Copy and the Clear the original, your copied data will still exist unchanged.
+public ActionResult Index()
+	{
+            // Önce DataSet oluşturuldu
+            // Sonra DataTable oluşturuldu (tablo)
+            // Sonra oluşturulan tabloya kolonlar eklendi
+            // Sonra bu kolonlara örnek veriler eklendi (datarow)
+            // Sonra ilk başta oluşturduğumuz Dataset'in içine, DataTable'ımızı yerleştirdik ve View'a yolladık.
+ 
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable("YeniTablo");
+ 
+            dt.Clear();
+ 
+            dt.Columns.Add("Isim");
+            dt.Columns.Add("SoyIsim");
+ 
+            DataRow dr = dt.NewRow();
+ 
+            // Row'lar farklı şekilde de eklenebilir. 2. örneğe bakılabilir.
+            dr["Isim"] = "Eren";
+            dr["SoyIsim"] = "OZTEN";
+            dt.Rows.Add(dr);
+ 
+            ds.Tables.Add(dt);
+ 
+            return View(ds);
+
+View:
+
+ 
+@model System.Data.DataSet
+ 
+@using System.Data
+ 
+@foreach (DataRow row in Model.Tables["YeniTablo"].Rows)
+{
+    @(row["Isim"] + " " + row["SoyIsim"])
+}
+ 
+@{
+    ViewBag.Title = "Home Page";
+}
+
 -
 -
 metadata 	(GITHUB)  (read -ama tekrar)

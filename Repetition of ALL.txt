@@ -50,6 +50,70 @@ View:
     ViewBag.Title = "Home Page";
 }
 
+Bir örnek daha:
+// GET: DataSet2
+        public ActionResult Index()
+        {
+            // Create two DataTable instances.
+            DataTable dataTable1 = new DataTable("Books");
+            //dataTable1.Clear();
+            dataTable1.Columns.Add("Name");
+            dataTable1.Columns.Add("Id");
+            dataTable1.Rows.Add("Monte Cristo", 1);
+            dataTable1.Rows.Add("Jane Eyre", 2);
+ 
+            DataTable dataTable2 = new DataTable("Medications");
+            dataTable2.Columns.Add("Id");
+            dataTable2.Columns.Add("Medication");
+            dataTable2.Rows.Add(1, "Atenolol");
+            dataTable2.Rows.Add(2, "Amoxicillin");
+ 
+            // Oluşturduğumuz dataTable'ları dataSet içine koyalım.
+ 
+            DataSet dataSet = new DataSet("dataSetNam");
+            dataSet.Tables.Add(dataTable1);
+            dataSet.Tables.Add(dataTable2);
+ 
+            // Visualize DataSet.
+            return View(dataSet);
+ 
+View kısmı:
+
+ <h2>DataSet2 Index 414322</h2>
+<br />
+<br />
+ 
+ 
+@model System.Data.DataSet
+ 
+@using System.Data
+ 
+@foreach (DataRow row in Model.Tables["Books"].Rows)
+{
+    @(row["Name"] + " - " + row["Id"])
+    <br/>
+}
+
+ 
+            //// Aşağıdaki örnek çalışıyor:
+ 
+            //DataSet dataSet = new DataSet();
+            //DataTable dataTable1 = new DataTable("Books");
+ 
+            //dataTable1.Columns.Add("Name");
+            //dataTable1.Columns.Add("Id");
+ 
+            //DataRow dataRow1 = dataTable1.NewRow();
+ 
+            //dataRow1["Name"] = "Monte Kristo";
+            //dataRow1["Id"] = "1";
+            //dataTable1.Rows.Add(dataRow1);
+            //dataSet.Tables.Add(dataTable1);
+ 
+            //return View(dataSet);
+        }
+
+
 -
 -
 metadata 	(GITHUB)  (read -ama tekrar)

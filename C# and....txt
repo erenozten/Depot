@@ -3143,7 +3143,7 @@ STYLE'LAR BÖYLE YAPILMALI:
 -
 Library	   (GITHUB) 		(read)
 Library nedir
-(Dapper,  Automapper vb birer library'dir)
+(Dapper,  Automapper vb birer library'dir, client side validation için kullandığımız  jQuery Unobtrusive Validation Library de bir library'dir)
 Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
 Bir geliştirici yazılım geliştirirken yazılımını daha işlevsel hale getirmek veya çeşitli fonksiyonlar kazandırmak için yazılım kütüphanelerinden faydalanır. Yazılım kütüphaneleri yazılımcıların iş yükünü hafifletir ve aynı kodu tekrar yazmalarına gerek kalmadan onlara hazır bir kalıp sunar. Basit bir örnekle açıklamamız gerekirse; bir geliştirici matematikle ilgili bir yazılım geliştirdiğinde bu yazılıma karmaşık matematik işlemlerini yaptırması için ayrı ayrı modüller yazmak zorunda kalacaktır. Bu kodları yazmaya uğraşmak yerine yazılım kütüphanesindeki bir matematik modülünü alıp bu modülü doğrudan kendi yazılımına ilave edebilir.
 In computer science, a library is a collection of non-volatile resources used by computer programs, often for software development. These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. In IBM's OS/360 and its successors they are referred to as partitioned data sets.

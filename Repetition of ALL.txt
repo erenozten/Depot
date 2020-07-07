@@ -1,4 +1,15 @@
-﻿Dataset 	(GITHUB)   (read -ama tekrar)
+﻿MySQL, MsSQL, T-SQL, Oracle, PL-SQL 	(GITHUB) (read -ama tekrar)
+MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
+SQL is a database language used with Oracle Database.
+MySQL is a database itself that uses SQL language.
+Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
+MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
+MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
+MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+
+
+
+Dataset 	(GITHUB)   (read -ama tekrar)
 DataSet: This is a collection of DataTables. We use the DataSet type to store many DataTables in a single collection. Conceptually, the DataSet acts as a set of DataTable instances. 
 Usage: DataSet simplifies programs that use many DataTables. To effectively use the DataSet, you will need to have some DataTables handy. We begin by creating some. 
 Create: In this program, we create two DataTables. One stores two rows of patient information. And the second stores two rows of medication information. 

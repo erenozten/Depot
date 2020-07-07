@@ -7,6 +7,29 @@ Virtual metodları aslında bir çok yerde kullanabiliriz, ama genel olarak kull
 •	Birden çok Class larımızın, aynı anlama gelen metodları varsa, bu metodu Virtual olarak tanımlarız.
 •	Yazılımda standartlaşmak önemlidir, eğer geliştirilen uygulamamızın farklı modüllerinde, metod isimlerimizin aynı olması isteniyorsa, yine Virtual metod kullanırız.
 
+Örneğimizi İnceleyelim;
+public class Cizim
+{
+   public int sayi { get; set; }
+    public virtual void Draw()
+    {
+        //Draw methodunu virtual olarak yazıyorum ki daha sonra içeriği değiştirilebilsin.
+        Console.WriteLine("Ben cizim nesnesiyim");
+     }
+}
+public class cizgi : Cizim
+{
+    public override void Draw()
+    {
+        //Override etmeden önceki kodu çalıştırç
+        base.Draw();
+        Console.WriteLine("Ben cizim nesnesiyim-----------------");
+     }
+}
+Çıktısı;
+ 
+Örneğimizde Çizim nesnesindeki Draw methodunu override ederek içeriğini değiştiriyoruz.
+
 
 
 -

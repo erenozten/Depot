@@ -41,9 +41,14 @@ What is sad and I really mean it, is that the traditional IT Operations and the 
 
 Oracle is a Database tool that uses PL/SQL language.
 MySQL is a also a Database tool itself that uses SQL language.
-
-
-
+What is PL/SQL?
+Pl-sql nedir plsql nedir pl/sql nedir
+PL/SQL is an extension of Structured Query Language (SQL) that is used in Oracle. Unlike SQL, PL/SQL allows the programmer to write code in a procedural format. Full form of PL/SQL is "Procedural Language extensions to SQL".
+It combines the data manipulation power of SQL with the processing power of procedural language to create super powerful SQL queries.
+PL/SQL means instructing the compiler 'what to do' through SQL and 'how to do' through its procedural way.
+Similar to other database languages, it gives more control to the programmers by the use of loops, conditions and object-oriented concepts.
+-
+-
 Dataset 	(GITHUB)   (read -ama tekrar)
 DataSet: This is a collection of DataTables. We use the DataSet type to store many DataTables in a single collection. Conceptually, the DataSet acts as a set of DataTable instances. 
 Usage: DataSet simplifies programs that use many DataTables. To effectively use the DataSet, you will need to have some DataTables handy. We begin by creating some. 

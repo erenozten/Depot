@@ -6,6 +6,27 @@ Biz T-SQL üzerinden çalışıyoruz (MSSQL'de), peki MySQL nedir?
 MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB. MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
 MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
 MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features. MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+MS SQL 
+MsSQL Server is a Relational Database Management System (RDBMS) developed by Microsoft Inc. Its primary query languages are − T-SQL, ANSI SQL
+
+Oracle
+It is a very large multi-user based database management system. Oracle is a relational database management system developed by 'Oracle Corporation'.
+
+Oracle works to efficiently manage its resources, a database of information among the multiple clients requesting and sending data in the network.
+It is an excellent database server choice for client/server computing. Oracle supports all major operating systems for both clients and servers, including MSDOS, NetWare, UnixWare, OS/2 and most UNIX flavors.
+- - -
+Oracle ile MYSQL arasındaki farklar üzerine:
+SQL is a database language used with Oracle Database.
+MySQL is a database itself that uses SQL language.
+The difference is that MySQL is free, and the world's most popular database, and Oracle isn't free (except with trials and certain products) and makes billions from selling premium database software to large enterprises and SME.
+
+There are many more differences between Oracle and MySQL.We can summarise them as follows-
+1.Oracle is way more powerful than MySQL
+2.Oracle supports distributed databases while MySQL doesn’t
+3.Oracle supports save points while MySQL doesn’t
+4.Oracle allows programs within the database while MySQL doesn’t
+5.Oracle is suited for enterprise deployments while MySQL is suited for small to medium scale
+6.Oracle requires that you pay a licensing fee while MySQL doesn’t
 
 
 

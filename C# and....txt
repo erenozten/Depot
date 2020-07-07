@@ -2919,7 +2919,42 @@ GitHub: https://github.com/AutoMapper/AutoMapper
 License: MIT
 Stars: 6.9k
 
-
+SaasKit
+Building multitenant applications is quite difficult. But this library makes adding multitenancy as simple as possible. This library uses the concept of adding middleware using the OWIN interface. The author of this library has written many blog posts on how to configure SaasKit. Check the blog out for more details.
+GitHub: https://github.com/saaskit/saaskit
+License: Apache License 2.0
+Stars: 5.6k
+AspNetCore.Diagnostics.HealthChecks
+This project is a BeatPulse liveness checker and UI port for the new feature included in the ASP.NET Core 2.2 version of Microsoft Health Checks. Using this library, we can monitor health checks for all apps, databases, APIs, Azure services, etc. This library can create beautiful UIs to display health checks. 
+GitHub: https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
+License: Apache License 2.0
+Stars: 1.1k
+MailKit
+MailKit is a cross-platform mail client library built on top of MimeKit. The goal of this project is to provide the .NET world with robust, fully featured, and RFC-compliant SMTP, POP3, and IMAP client implementations.
+GitHub: https://github.com/jstedfast/MailKit
+License: MIT
+Stars: 3k
+CacheManager
+CacheManager is an open-source abstraction layer written in C# for. NET. It supports different providers of caches and incorporates other advanced features.
+The CacheManager package’s main objective is to make life easier for developers to handle even very complex caching scenarios.
+GitHub: https://github.com/MichaCo/CacheManager
+License: Apache-2.0
+Stars: 1.6k
+Dapper
+Dapper is a simple object mapper for .NET. This high-performance micro-ORM supports SQL Server, MySQL, Sqlite, SqlCE, Firebird, and so on. It can be used by simply installing the NuGet package, which extends the IDbConnection interface functionality. The familiar Stack Overflow site is using this library.
+GitHub: https://github.com/StackExchange/Dapper
+License: Apache-2.0
+Stars: 11.8k
+Ocelot
+Ocelot is a. NET platform API gateway. This project is intended for people who use .NET or Core to run a microservice or service-oriented architecture that requires a unified system entry point. It will work with anything that uses HTTP. It runs on any ASP.NET Core-supported platform.
+GitHub: https://github.com/ThreeMammals/Ocelot
+License: MIT
+Stars: 4.5k
+NLog
+NLog is an open-source logging tool for use in applications for .NET and Xamarin. It’s free, cross-platform, and easy to set up and expand. NLog is a great easy-to-use logging application with excellent log routing and management features, making it a good choice when selecting a high-performance logging system.
+GitHub: https://github.com/NLog/NLog
+License: BSD 3-Clause
+Stars: 4.2k
 
 -
 -

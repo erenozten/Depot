@@ -43,6 +43,81 @@ Virtual Method in C#
 Difference between virtual and non-virtual methods
  
 We have two classes; one is a "Vehicle" class and another is a "Cart" class. The "Vehicle" class is the base class that has two methods; one is a virtual method "Speed()" and another is a non-virtual method "Average()". So the base class virtual method "Speed()" is overriden in the sub class. We have one more class "Program" (the execution class) that has an entry point where we create an instance of sub class "Cart" and that instance is assigned to the base class "Vehicle" type. When we call virtual and non-virtual methods by both class's instance then according to the run type the instance virtual method implementation is invoked; in other words both class's instances invoke the subclass override method and the non-virtual method invoked is determined based on the instance of the class.
+1.	using System;  
+2.	  
+3.	namespace VirtualExample  
+4.	{     
+5.	    class Vehicle  
+6.	    {     
+7.	       public double distance=0.0;  
+8.	       public double hour =0.0;  
+9.	       public double fuel =0.0;   
+10.	  
+11.	       public Vehicle(double distance, double hour, double fuel)  
+12.	       {  
+13.	           this.distance = distance;  
+14.	           this.hour = hour;  
+15.	           this.fuel = fuel;  
+16.	       }  
+17.	  
+18.	       public void Average()  
+19.	       {  
+20.	           double average = 0.0;  
+21.	           average = distance / fuel;  
+22.	           Console.WriteLine("Vehicle Average is {0:0.00}", average);  
+23.	       }  
+24.	  
+25.	       public virtual void Speed()  
+26.	       {  
+27.	           double speed = 0.0;  
+28.	           speed = distance / hour;  
+29.	           Console.WriteLine("Vehicle Speed is {0:0.00}", speed);  
+30.	       }  
+31.	    }   
+32.	  
+33.	    class Car : Vehicle  
+34.	    {  
+35.	        public Car(double distance, double hour, double fuel)  
+36.	            : base(distance, hour, fuel)  
+37.	        {  
+38.	        }  
+39.	      public void Average()  
+40.	        {  
+41.	            double average = 0.0;  
+42.	            average = distance / fuel;  
+43.	            Console.WriteLine("Car Average is {0:0.00}", average);  
+44.	        }  
+45.	  
+46.	        public override void Speed()  
+47.	        {  
+48.	            double speed = 0.0;             
+49.	            speed = distance / hour;  
+50.	            Console.WriteLine("Car Speed is {0:0.00}", speed);  
+51.	        }  
+52.	    }   
+53.	  
+54.	    class Program  
+55.	   {  
+56.	        static void Main(string[] args)  
+57.	        {  
+58.	             double distance,hour,fuel=0.0;  
+59.	             Console.WriteLine("Enter the Distance");  
+60.	             distance = Double.Parse(Console.ReadLine());  
+61.	             Console.WriteLine("Enter the Hours");  
+62.	             hour = Double.Parse(Console.ReadLine());  
+63.	             Console.WriteLine("Enter the Fuel");  
+64.	             fuel = Double.Parse(Console.ReadLine());  
+65.	             Car objCar = new Car(distance,hour,fuel);  
+66.	             Vehicle objVeh = objCar;  
+67.	             objCar.Average();  
+68.	             objVeh.Average();  
+69.	             objCar.Speed();  
+70.	             objVeh.Speed();  
+71.	            Console.Read();  
+72.	        }         
+73.	    }  
+74.	}   
+ 
 
 
 

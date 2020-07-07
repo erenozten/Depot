@@ -2890,6 +2890,37 @@ Library code is organized in such a way that it can be used by multiple programs
 The value of a library lies in the reuse of the behavior. When a program invokes a library, it gains the behavior implemented inside that library without having to implement that behavior itself. Libraries encourage the sharing of code in a modular fashion, and ease the distribution of the code.
 The behavior implemented by a library can be connected to the invoking program at different program lifecycle phases. If the code of the library is accessed during the build of the invoking program, then the library is called a static library.[1] An alternative is to build the executable of the invoking program and distribute that, independently of the library implementation. The library behavior is connected after the executable has been invoked to be executed, either as part of the process of starting the execution, or in the middle of execution. In this case the library is called a dynamic library (loaded at runtime). A dynamic library can be loaded and linked when preparing a program for execution, by the linker. Alternatively, in the middle of execution, an application may explicitly request that a module be loaded.
 Most compiled languages have a standard library although programmers can also create their own custom libraries. Most modern software systems provide libraries that implement the majority of the system services. Such libraries have commoditized the services which a modern application requires. As such, most code used by modern applications is provided in these system libraries. 
+
+Top 10 .NET Core Libraries Every Web Developer Should Know
+
+Open-source libraries significantly reduce developers’ work and allow them to create and manage their applications easily.
+In this article, I’ll describe some of the most useful .NET Core libraries that every developer needs to know:
+•	Swashbuckle
+•	Polly
+•	AutoMapper
+•	SaasKit
+•	Diagnostics.HealthChecks
+•	MailKit
+•	CacheManager
+•	Dapper
+•	Ocelot
+•	NLog
+Swashbuckle
+Swashbuckle is a library that generates beautiful API documentation, including the Swagger UI, to explore and test API operations. This can be configured in your project and it will take only a few minutes to get started. 
+License: MIT
+Stars: 2.8k
+Polly
+Polly , according to its website, “allows developers to express resilience and transient fault-handling policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner.” 
+License: BSD-3-Clause
+Stars: 6.9k
+AutoMapper
+AutoMapper is a popular object-to-object mapper library used to map the properties of two different objects. This will reduce developer work and help us avoid unwanted code when mapping values.
+GitHub: https://github.com/AutoMapper/AutoMapper
+License: MIT
+Stars: 6.9k
+
+
+
 -
 -
 -

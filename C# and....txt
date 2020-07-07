@@ -1,4 +1,17 @@
-﻿JIT Compiler (Just-In-Time Compiler)	(GITHUB) (not yet)
+﻿Command Line Interface / CLI (GITHUB)
+Command Line Interface nedir, cli nedir, CLI nedir
+
+Örneğin windows'taki CLI, şu siyah ekrana sahip olan, içinde sadece kodlar bulunan, içine sadece kodlar yazılan o ekrandır. 
+
+CLI stands for:
+
+Command Line Interface
+Command Line Interpreter
+Command Line Input
+Command Line Input
+
+
+JIT Compiler (Just-In-Time Compiler)	(GITHUB) (not yet)
 JIT Compiler nedir, jit compiler nedir, jit nedir
 JIT compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Nothing in the JVM affects performance more than the compiler, and choosing a compiler is one of the first decisions made when running a Java application—whether you are a Java developer or an end-user.
 -

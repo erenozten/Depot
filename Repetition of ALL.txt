@@ -27,6 +27,20 @@ There are many more differences between Oracle and MySQL.We can summarise them a
 4.Oracle allows programs within the database while MySQL doesn’t
 5.Oracle is suited for enterprise deployments while MySQL is suited for small to medium scale
 6.Oracle requires that you pay a licensing fee while MySQL doesn’t
+-- Daha anlamlı bir açıklama:
+This might be a slightly controversial view ( and this is all in my opinion).
+   
+I have been a Developer for most of my career and I have used an old hierarchical DB, called HP Image 3000, Oracle, MS SQL and MySQL.
+IMO, there is a lot of snobbery around Oracle. Its very good, but very expensive and in my opinion largely unnecessary and over used.
+When you consider how many large companies and applications use MySQL without any issue, it will cope with 90% of demand. Hardware is so powerful now and the original concerns about performance are largely negated by the raw power of the hardware. Oracle should be a niche market and not a large player, as it really isn’t needed.
+I worked for a large American company who used Oracle, I asked why, they said because its the best, I persisted and said what do you mean, they had no answer.
+MySQL will be fine for most things and as its free, why not use that. The advent of cloud computing and the pricing model of many data centers, makes licencing very expensive (virtual CPU’s cores) for both Oracle and MS SQL.
+Facebook, Uber and Google, used/use MySQL, so the idea its not scalable, is a bit ridiculous.
+What is sad and I really mean it, is that the traditional IT Operations and the DBA role in IT, will slowly disappear, as its not really needed unless in some extreme situations.
+-- Diğer açıklama:
+
+Oracle is a Database tool that uses PL/SQL language.
+MySQL is a also a Database tool itself that uses SQL language.
 
 
 

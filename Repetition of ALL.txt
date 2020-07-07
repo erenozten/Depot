@@ -26,12 +26,14 @@ public class Bicycle
 {
     public void Pedal() { }
 }
-
-
-
-
-
-
+Not all access modifiers can be used by all types or members in all contexts, and in some cases the accessibility of a type member is constrained by the accessibility of its containing type. The following sections provide more details about accessibility.
+Class and Struct Accessibility
+Classes and structs that are declared directly within a namespace (in other words, that are not nested within other classes or structs) can be either public or internal. Internal is the default if no access modifier is specified.
+Struct members, including nested classes and structs, can be declared as public, internal, or private. Class members, including nested classes and structs, can be public, protected internal, protected, internal, private protected or private. The access level for class members and struct members, including nested classes and structs, is private by default. Private nested types are not accessible from outside the containing type.
+Derived classes cannot have greater accessibility than their base types. In other words, you cannot have a public class B that derives from an internal class A. If this were allowed, it would have the effect of making A public, because all protected or internal members of A are accessible from the derived class.
+You can enable specific other assemblies to access your internal types by using the InternalsVisibleToAttribute. For more information, see Friend Assemblies.
+-
+-
 MySQL, MsSQL, T-SQL, Oracle, PL-SQL 	(GITHUB) (read -ama tekrar)
 MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
 SQL is a database language used with Oracle Database.

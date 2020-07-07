@@ -1,4 +1,25 @@
-﻿Virtual Method 	(GITHUB) (notread)
+﻿AntiForgeryToken (GITHUB)
+AntiForgeryToken nedir
+“ValidateAntiForgeryToken” kısaca .NET platformunun dış saldırılara karşı aldığı, bilgi isteyen kişi gerçekten sen misin diye kontrol eden önlemidir.
+Dizayn ettiğimiz siteye kullanıcılardan gelen isteklere (request), isteklerin doğruluğunu “Token”ler aracılığıyla anlayıp ona göre cevap verir. Sayfa Post edildiğinde Asp.Net Token post gövdesi içerisinde uzun ve karmaşık yapıda “Token” gönderir.
+Bunu alan server tarafındaki controller’ımız kendisinde de bulunan token ile post ile gelen token’i karşılaştırır. Eğer tokenler eşleşiyorsa demektir ki request dışarıdan değil de; bizim uygulamamızdan geliyor   işleme devam edilir. Eğer eşleşme gerçekleşmiyorsa request gönderen karşı tarafa cevap (response) verilmez.
+Kullanımı
+-Controller- bölümümüzün başına
+[ValidateAntiForgeryToken]
+yazmamız gerekir.
+Controller
+[HttpPost]
+[ValidateAntiForgeryToken]
+public IActionResult Control()
+{
+ return View();
+}
+Tabi bununla birlikte View sayfasında form içerisine aşğıdaki kod parçacığını eklmemiz gerekiyor
+@Html.AntiForgeryToken()
+Hepsi bu kadar.
+-
+-
+Virtual Method 	(GITHUB) (notread)
 Virtual Method nedir
 
 Virtual (sanal metod) ‘lar kalıtıldığı sınıflarda içeriği değiştirilebilen metodlardır. Yani temel sınfımız da bir method oluşturuyoruz. Bu methodun içeriğini ileride değiştirme ihtiyacı duyuyoruz bu gibi durumlarda methodumuza virtual anahtar kelimesini ekleyerek override (ezmek) etmeye olanak tanımış oluyoruz. Bir örnek ile anlatırsak daha iyi olabilir.

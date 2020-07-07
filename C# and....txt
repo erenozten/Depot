@@ -120,6 +120,81 @@ We have two classes; one is a "Vehicle" class and another is a "Cart" class. The
  
 
 
+Invoked Virtual Method that override and not override in derived classes
+ 
+We have three classes "Shape","Rectangle" and "Circle". Class "Shape" is a base class. Both "Rectangle" and "Circle" are derived classes from the base class. Base class "Shape" has virtual method "Area()". Virtual method "Area()" is overriden in the derived class "Rectangle" but not overriden in the derived class "Circle". When the virtual methods are overriden in a derived class and that derived class uses an instance then invokes a derived class overriden method. When a virtual method is not overriden in a derived class and uses that derived class instance then invokes base class virtual method.
+1.	using System;  
+2.	  
+3.	namespace VirtualExample  
+4.	{     
+5.	    class Shape  
+6.	    {     
+7.	       public double length=0.0;  
+8.	       public double width =0.0;  
+9.	       public double radius =0.0;   
+10.	  
+11.	       public Shape(double length, double width)  
+12.	       {  
+13.	           this.length = length;  
+14.	           this.width = width;            
+15.	       }  
+16.	  
+17.	       public Shape(double radius)  
+18.	       {  
+19.	           this.radius = radius;  
+20.	       }  
+21.	  
+22.	       public  virtual void Area()  
+23.	       {            
+24.	           double area = 0.0;  
+25.	           area = Math.PI * Math.Pow(radius, 2);  
+26.	           Console.WriteLine("Area of Shape is :{0:0.00} ", area);  
+27.	       }  
+28.	    }   
+29.	  
+30.	    class Rectangle  : Shape  
+31.	    {  
+32.	  
+33.	        public Rectangle(double length, double width): base(length, width)  
+34.	        {  
+35.	        }      
+36.	  
+37.	        public override void Area()  
+38.	        {  
+39.	            double area = 0.0;  
+40.	            area = length * width;  
+41.	            Console.WriteLine("Area of Rectangle is :{0:0.00} ", area);  
+42.	        }  
+43.	    }  
+44.	     class Circle : Shape  
+45.	    {  
+46.	        public Circle(double radius)  
+47.	            : base(radius)  
+48.	        {  
+49.	        }  
+50.	    }    
+51.	  
+52.	    class Program  
+53.	    {  
+54.	        static void Main(string[] args)  
+55.	        {  
+56.	             double length,width,radius=0.0;  
+57.	             Console.WriteLine("Enter the Length");  
+58.	             length = Double.Parse(Console.ReadLine());  
+59.	             Console.WriteLine("Enter the Width");  
+60.	             width = Double.Parse(Console.ReadLine());  
+61.	             Rectangle objRectangle = new Rectangle(length, width);  
+62.	              objRectangle.Area();  
+63.	             Console.WriteLine("Enter the Radius");  
+64.	             radius = Double.Parse(Console.ReadLine());  
+65.	             Circle objCircle = new Circle(radius);  
+66.	             objCircle.Area();  
+67.	            Console.Read();  
+68.	        }         
+69.	    }  
+70.	} 
+ 
+
 
 -
 -

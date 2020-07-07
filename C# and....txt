@@ -1,4 +1,22 @@
-﻿Command Line Interface / CLI (GITHUB)
+﻿Virtual Method 	(GITHUB) (notread)
+Virtual Method nedir
+
+Virtual (sanal metod) ‘lar kalıtıldığı sınıflarda içeriği değiştirilebilen metodlardır. Yani temel sınfımız da bir method oluşturuyoruz. Bu methodun içeriğini ileride değiştirme ihtiyacı duyuyoruz bu gibi durumlarda methodumuza virtual anahtar kelimesini ekleyerek override (ezmek) etmeye olanak tanımış oluyoruz. Bir örnek ile anlatırsak daha iyi olabilir.
+Virtual metodları aslında bir çok yerde kullanabiliriz, ama genel olarak kullanım şekilleri aşağıdaki gibidir.
+•	Sadece metod isimlerini belirteceğimiz bir classımız olsun, metodların ne işlev yapacağını diğer classlarda belirtecek isek Virtual metod kullanırız.
+•	Birden çok Class larımızın, aynı anlama gelen metodları varsa, bu metodu Virtual olarak tanımlarız.
+•	Yazılımda standartlaşmak önemlidir, eğer geliştirilen uygulamamızın farklı modüllerinde, metod isimlerimizin aynı olması isteniyorsa, yine Virtual metod kullanırız.
+
+
+
+-
+-
+
+
+
+
+
+Command Line Interface / CLI (GITHUB)
 Command Line Interface nedir, cli nedir, CLI nedir
 
 Örneğin windows'taki CLI, şu siyah ekrana sahip olan, içinde sadece kodlar bulunan, içine sadece kodlar yazılan o ekrandır. 

@@ -1,4 +1,12 @@
-﻿MySQL, MsSQL, T-SQL, Oracle, PL-SQL 	(GITHUB) (read -ama tekrar)
+﻿Access Modifier = Access Specifier = Erişim Modifiyeri)                               	 (GITHUB)  (read -ama tekrar)
+Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir, access specifier nedir, access modifier nedir
+Access specifier de denir, access modifier de denir. Kaynaklar incelendi: https://www.tutorialspoint.com/What-are-the-different-access-specifiers-in-Chash-NET
+All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies. You can use the following access modifiers to specify the accessibility of a type or member when you declare it
+
+
+
+
+MySQL, MsSQL, T-SQL, Oracle, PL-SQL 	(GITHUB) (read -ama tekrar)
 MySQL nedir, MsSQL nedir, T-SQL nedir, t sql nedir, tsql nedir, oracle nedir, plsql nedir, pl-sql nedir, pl/sql nedir
 SQL is a database language used with Oracle Database.
 MySQL is a database itself that uses SQL language.

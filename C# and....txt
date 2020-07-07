@@ -193,16 +193,8 @@ We have three classes "Shape","Rectangle" and "Circle". Class "Shape" is a base 
 68.	        }         
 69.	    }  
 70.	} 
- 
-
-
 -
 -
-
-
-
-
-
 Command Line Interface / CLI (GITHUB)
 Command Line Interface nedir, cli nedir, CLI nedir
 

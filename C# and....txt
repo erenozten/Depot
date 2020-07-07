@@ -2944,13 +2944,12 @@ STYLE'LAR BÖYLE YAPILMALI:
 -
 -
 -
-Library		(GITHUB)
+Library	   (GITHUB) 		(read)
 Library nedir
+(Dapper,  Automapper vb birer library'dir)
 Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
 Bir geliştirici yazılım geliştirirken yazılımını daha işlevsel hale getirmek veya çeşitli fonksiyonlar kazandırmak için yazılım kütüphanelerinden faydalanır. Yazılım kütüphaneleri yazılımcıların iş yükünü hafifletir ve aynı kodu tekrar yazmalarına gerek kalmadan onlara hazır bir kalıp sunar. Basit bir örnekle açıklamamız gerekirse; bir geliştirici matematikle ilgili bir yazılım geliştirdiğinde bu yazılıma karmaşık matematik işlemlerini yaptırması için ayrı ayrı modüller yazmak zorunda kalacaktır. Bu kodları yazmaya uğraşmak yerine yazılım kütüphanesindeki bir matematik modülünü alıp bu modülü doğrudan kendi yazılımına ilave edebilir.
-
 In computer science, a library is a collection of non-volatile resources used by computer programs, often for software development. These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. In IBM's OS/360 and its successors they are referred to as partitioned data sets.
-
 A library is also a collection of implementations of behavior, written in terms of a language, that has a well-defined interface by which the behavior is invoked. For instance, people who want to write a higher level program can use a library to make system calls instead of implementing those system calls over and over again. In addition, the behavior is provided for reuse by multiple independent programs. A program invokes the library-provided behavior via a mechanism of the language. For example, in a simple imperative language such as C, the behavior in a library is invoked by using C's normal function-call. What distinguishes the call as being to a library function, versus being to another function in the same program, is the way that the code is organized in the system.
 Library code is organized in such a way that it can be used by multiple programs that have no connection to each other, while code that is part of a program is organized to be used only within that one program. 
 The value of a library lies in the reuse of the behavior. When a program invokes a library, it gains the behavior implemented inside that library without having to implement that behavior itself. Libraries encourage the sharing of code in a modular fashion, and ease the distribution of the code.
@@ -2984,7 +2983,6 @@ AutoMapper is a popular object-to-object mapper library used to map the properti
 GitHub: https://github.com/AutoMapper/AutoMapper
 License: MIT
 Stars: 6.9k
-
 SaasKit
 Building multitenant applications is quite difficult. But this library makes adding multitenancy as simple as possible. This library uses the concept of adding middleware using the OWIN interface. The author of this library has written many blog posts on how to configure SaasKit. Check the blog out for more details.
 GitHub: https://github.com/saaskit/saaskit
@@ -3021,7 +3019,6 @@ NLog is an open-source logging tool for use in applications for .NET and Xamarin
 GitHub: https://github.com/NLog/NLog
 License: BSD 3-Clause
 Stars: 4.2k
-
 -
 -
 -

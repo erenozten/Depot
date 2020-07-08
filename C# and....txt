@@ -1,4 +1,26 @@
-﻿Static Method nedir? (GITHUB)
+﻿Instance Method = Non Static Method
+Instance method nedir, instance method nedir, non static method nedir, non-static method nedir
+Instance method bildiğin class'ın instance'ının sahip olduğu, bildiğimiz metodlardır. Static olmayan, bildiğimiz klasik metotlar.
+Static Method	Non Static Method (Instance Method)
+1. Static method is defined with the static keyword.	1. Non Static Method is defined without static keyword.
+2. Static method is called by its class name	2. Non Static Method is called by making the object of a class.
+3. We can’t use this keyword inside the Static Method	3. We can use thiskeyword inside Non Static Method
+4. Static Method uses the memory of Class	4. Non Static Method uses a memory of an object
+
+
+Instance method are methods which require an object of its class to be created before it can be called. To invoke a instance method, we have to create an Object of the class in within which it defined.
+public void geek(String name)
+{
+ // code to be executed....
+}
+// Return type can be int, float String or user defined data type.
+Memory allocation: These methods themselves are stored in Permanent Generation space of heap but the parameters (arguments passed to them) and their local variables and the value to be returned are allocated in stack. They can be called within the same class in which they reside or from the different classes defined either in the same package or other packages depend on the access type provided to the desired instance method.
+
+
+
+-
+-
+Static Method nedir? (GITHUB)
 Static method nedir
 
 A static method in C# is a method that keeps only one copy of the method at the Type level, not the object level. That means, all instances of the class share the same copy of the method and its data. The last updated value of the method is shared among all objects of that Type. 

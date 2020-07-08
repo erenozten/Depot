@@ -34,12 +34,27 @@ Usually we define a set of data members for a class and then every object of tha
 10.	      }  
 11.	  }  
 
-
-
-
-
-
-
+In the above example, myVar is a non-static field so to use this field we first need to create the object of that class. On the other hand, static data is shared among all the objects of that class. That is, for all the objects of a class, there will be only one copy of static data. Let's have an example.
+1.	class Program  
+2.	 {  
+3.	     public static int myVar;  //a static field  
+4.	       static void Main()  
+5.	     {  
+6.	         //Program p1 = new Program();  //a object of class  
+7.	         myVar = 10;  
+8.	         Console.WriteLine(myVar);  
+9.	         Console.ReadKey();  
+10.	     }  
+11.	 }  
+In the above we don't have an object of the class to use that field since the field is static.
+If you create your own class and you think only one copy of the data (method) is needed among all instances of the class, you can create your own static method.  Learn more here: Static Class  and Static Class Members In C#
+Notable Points here are:
+1.	A static method can be invoked directly from the class level
+2.	A static method does not require any class object
+3.	Any main() method is shared through the entire class scope so it always appears with static keyword.
+C# language also has several other types of methods. Read more Types of Methods in C#.
+-
+-
 Static Class (GITHUB)
 Static class nedir
 A static class is a class which can not be instantiated. We do not need to create an object of a static class like we did in non-static classes. Members of static classes can be accessed directly using the class name followed by a (.) and class member name. Class Members can be methods, fields, properties, or events. A static class can contain only the static members while a non-static class can contain static members. Also, Static classes are by-default sealed so they cannot be inherited.

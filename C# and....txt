@@ -1,4 +1,46 @@
-﻿Static Class (GITHUB)
+﻿Static Method nedir? (GITHUB)
+Static method nedir
+
+A static method in C# is a method that keeps only one copy of the method at the Type level, not the object level. That means, all instances of the class share the same copy of the method and its data. The last updated value of the method is shared among all objects of that Type. 
+
+Static methods are called by using the class name, not the instance of the class. 
+ 
+The Console class and its Read and Write methods are an example of static methods. The following code example calls Console.WriteLine and Console.ReadKey methods without creating an instance of the Console class. 
+C# supports two types of class methods, static methods, and non static methods. Any normal method is a non static method. 
+1.	class Program  
+2.	{  
+3.	    public static void withoutObj()  
+4.	    {  
+5.	        Console.WriteLine("Hello");  
+6.	    }  
+7.	     static void Main()  
+8.	    {  
+9.	        Program. withoutObj();  
+10.	        Console.ReadKey();  
+11.	    }  
+12.	}  
+
+Using Static Method
+Usually we define a set of data members for a class and then every object of that class will have a separate copy of each of those data members. Let's have an example.
+1.	class Program  
+2.	  {  
+3.	      public int myVar;  //a non-static field  
+4.	        static void Main()  
+5.	      {  
+6.	          Program p1 = new Program();  //a object of class  
+7.	          p1.myVar = 10;  
+8.	          Console.WriteLine(p1.myVar);  
+9.	          Console.ReadKey();  
+10.	      }  
+11.	  }  
+
+
+
+
+
+
+
+Static Class (GITHUB)
 Static class nedir
 A static class is a class which can not be instantiated. We do not need to create an object of a static class like we did in non-static classes. Members of static classes can be accessed directly using the class name followed by a (.) and class member name. Class Members can be methods, fields, properties, or events. A static class can contain only the static members while a non-static class can contain static members. Also, Static classes are by-default sealed so they cannot be inherited.
 

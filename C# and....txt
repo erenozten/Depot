@@ -1,4 +1,12 @@
-﻿Instance Method = Non Static Method
+﻿Polymorphism
+Polymorphism nedir?
+Polymorphism is often referred to as the third pillar of object-oriented programming, after encapsulation and inheritance. Polymorphism is a Greek word that means "many-shaped" and it has two distinct aspects.
+•	At run time, objects of a derived class may be treated as objects of a base class in places such as method parameters and collections or arrays. When this occurs, the object's declared type is no longer identical to its run-time type.
+•	Base classes may define and implement virtual methods, and derived classes can override them, which means they provide their own definition and implementation. At run-time, when client code calls the method, the CLR looks up the run-time type of the object, and invokes that override of the virtual method. Thus in your source code you can call a method on a base class, and cause a derived class's version of the method to be executed.
+
+
+
+Instance Method = Non Static Method
 Instance method nedir, instance method nedir, non static method nedir, non-static method nedir
 Instance method bildiğin class'ın instance'ının sahip olduğu, bildiğimiz metodlardır. Static olmayan, bildiğimiz klasik metotlar.
 Static Method	Non Static Method (Instance Method)
@@ -36,8 +44,6 @@ References
 •	Stackoverflow
 This article is contributed by Nitsdheerendra. If you like GeeksforGeeks and would like to contribute, you can also write an article using contribute.geeksforgeeks.org or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
 Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above.
-
-
 
 -
 -

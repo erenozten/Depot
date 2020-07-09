@@ -18,8 +18,14 @@ NYP'nin altında yatan birimselliğin ana fikri, her bilgisayar programının (i
 Günümüzde çok çeşitli nesne tabanlı programlama dilleri olmasıyla beraber, en popüler diller sınıflar üzerine kurulmuşlardır (class-based). Bu dillerde nesneler sınıfların birer üyesidir ve nesnelerin tipini de bu sınıflar belirlerler.
 
 En yaygın NYP dillerinden bazıları, Python, C++, Objective-C, Smalltalk, Delphi, Java, Swift, C#, Perl, Ruby ve PHP' dir.
+Nesne yönelimli programlama dilleri yukarıda adı geçen tüm ögelere sahip olurken, Ada, JavaScript, Visual Basic gibi nesne tabanlı programlama dilleri birkaçından yoksundur, bu dillerin başlıca yoksunluğu kalıtıma sahip olmamalarıdır.
 
-
+Nesneler ve sınıflar
+NYP'yi destekleyen programlama dilleri genellikle tekrar kullanım ve genişletilebilirlik açısından, prototipler ve sınıflar şeklinde kod kalıtımına sahiptirler ve NYP deki nesneler kimi zaman gerçek dünyada bulunan şeylere karşılık gelebilir. Mesela bir grafik programı "kare", "üçgen" ve "yuvarlak" gibi nesnelere sahip olabilir. Bazen nesneler daha soyut şeyleri de temsil edebilirler, mesela bir hesap makinesi programı logaritma almanızı ya da metreyi fite çevirmenizi sağlayacak nesnelere sahip olabilir. İşte bu bahsi geçen nesneler belli sınıflar altında bulunurlar, mesela "Kasım" adında bir nesne Aylar sınıfının bir üyesi olabilir ya da "Faktöriyel" olarak isimlendirilmiş bir nesne Fonksiyonlar sınıfında yer alıyor olabilir.
+Dependency inversion nedir
+Clean architecture’ın arkasındaki ana prensip’lerden birisi ise, Dependency Inversion prensibidir. Bu prensip ile mimari içerisindeki modüllerimizi birbirinden ve farklı teknolojilerden daha decoupled bir hale getirebilmek mümkündür. 
+-
+-
 Git		(GITHUB)
 git nedir
 

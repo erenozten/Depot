@@ -1,4 +1,17 @@
-﻿Type Casting	GITHUB)
+﻿TryParse  	(GITHUB)
+tryparse nedir
+
+TryParse(String, Int32)	
+Yukarıda TryParse metodunun parametrelerini görüyoruz. İlk parametresi string alıyormuş, diğeri ise int değer…
+Yapısı ise şöyle:
+public static bool TryParse (string s, out int result);
+
+Yani ilk parametre olan string değerini alıyor, OUT ile bunu int'e çevirmeye çalışıyor.
+Yani tryparse STRING'I INT'E ÇEVİRMEYE ÇALIŞIR.
+Converts the string representation of a number to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded.
+-
+-
+Type Casting	GITHUB)
 Type casting nedir, casting nedir, convert nedir
 Type casting is when you assign a value of one data type to another type.
 Örnek:

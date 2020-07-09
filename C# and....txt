@@ -1,4 +1,26 @@
-﻿nullable bool and others
+﻿ASP.NET CORE  (GITHUB)
+Asp.net core nedir
+
+ASP.NET FRAMEWORK VS ASP.NET CORE 
+ASP.Net Framework: 
+4'e kadar çıktı versiyonu. 4.x te bitti. Sonra .NET Core başladı.
+İlk başta Core'un adı Core değilmiş. ASP.NET 5'miş. Sonra Core'a dönmüş.
+
+ 
+ 
+ASP.Net sadece Windowsta Run edilir. COre ise Wİndows, macOS ve Lİnux'ta run edilir.
+ASP.NET Sadece IIS'te host edilir.
+Core: IIS, Apache, Docker veya Self-host olarak host edilebilir.
+
+ASP.net Core application initially starts as a Console application. (zaten dikkat edersen Main metodu var)
+Main metot, bu console app'I configure eder, böylelikle console app ---> Web application'a dönüşür.
+Das 
+CORE: Built in support for DEPENDENCY INJECTION.
+Wwwroot ta ne var? Css js dosyaları var. yazdığımız style scriptler vb.
+Iisexpress vs iis --> iis deploy ortamında çalışır, gerçek hayatta. Express ise development ortamında.
+-
+-
+nullable bool and others
 You typically use a nullable value type when you need to represent the undefined value of an underlying value type. For example, a Boolean, or bool, variable can only be either true or false. However, in some applications a variable value can be undefined or missing. For example, a database field may contain true or false, or it may contain no value at all, that is, NULL. You can use the bool? type in that scenario.
 The default value of a nullable value type represents null, that is, it's an instance whose Nullable<T>.HasValue property returns false.
 (as we know, represent means: be entitled or appointed to act or speak for (someone), especially in an official capacity.)

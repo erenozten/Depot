@@ -73,10 +73,27 @@ int i = 0;
 // bool to Int32
 bool b = true; (true ise 1 oluyor, false ise 0)
 
+Convert string to int
 
+ int int1 = Convert.ToInt32(Console.ReadLine());
 
+            int int2 = int.Parse(Console.ReadLine());
 
+            //https://www.cambiaresearch.com/articles/68/convert-string-to-int-in-csharp
 
+Önemli örnek::::
+        public static int? ConvertStringToInt(string intString)
+        {
+            int i = 0;
+            return Int32.TryParse(intString, out i) ? i : (int?)null;
+        }
+
+        public static void Main(string[] args)
+        {
+            ConvertStringToInt("1");
+        }
+-
+-
 ASP.NET CORE  (GITHUB)
 Asp.net core nedir
 

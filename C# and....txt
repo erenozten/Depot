@@ -89,6 +89,42 @@ sum of the three integer value : 6
 sum of the three double value : 6
 
 
+Diğer Örnek:
+
+using System; 
+class GFG { 
+  
+    // Method 
+    public void Identity(String name, int id) 
+    { 
+  
+        Console.WriteLine("Name : " + name + ", "
+                          + "Id : " + id); 
+    } 
+      
+    // Method 
+    public void Identity(int id, String name) 
+    { 
+  
+        Console.WriteLine("Name : " + name + ", "
+                          + "Id : " + id); 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        GFG obj = new GFG(); 
+  
+        obj.Identity("Akku", 1); 
+        obj.Identity("Abby", 2); 
+    } 
+} 
+Output:
+Name : Akku, Id : 1
+Name : Abby, Id : 2
+
 
 
 

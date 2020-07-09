@@ -1,4 +1,55 @@
-﻿TryParse  	(GITHUB)
+﻿Integral Types (GITHUB)
+
+integral type nedir, integral types nedir, Integral type nedir, Integral types nedir
+Adına dikkat et zaten ne olduğu belli oluyor etimolojisinden: Integral -> Integer
+The integral numeric types represent integer numbers. All integral numeric types are value types. They are also simple types and can be initialized with literals. All integral numeric types support arithmetic, bitwise logical, comparison, and equality operators.
+Characteristics of the integral types
+C# supports the following predefined integral types:
+CHARACTERISTICS OF THE INTEGRAL TYPES
+C# type/keyword	Range	Size	.NET type
+sbyte	-128 to 127	Signed 8-bit integer	System.SByte
+
+byte	0 to 255	Unsigned 8-bit integer	System.Byte
+
+short	-32,768 to 32,767	Signed 16-bit integer	System.Int16
+
+ushort	0 to 65,535	Unsigned 16-bit integer	System.UInt16
+
+int	-2,147,483,648 to 2,147,483,647	Signed 32-bit integer	System.Int32
+
+uint	0 to 4,294,967,295	Unsigned 32-bit integer	System.UInt32
+
+long	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807	Signed 64-bit integer	System.Int64
+
+ulong	0 to 18,446,744,073,709,551,615	Unsigned 64-bit integer	System.UInt64
+
+In the preceding table, each C# type keyword from the leftmost column is an alias for the corresponding .NET type. They are interchangeable. For example, the following declarations declare variables of the same type:
+int a = 123;
+System.Int32 b = 123;
+The default value of each integral type is zero, 0. Each of the integral types has the MinValue and MaxValue constants that provide the minimum and maximum value of that type.
+Use the System.Numerics.BigInteger structure to represent a signed integer with no upper or lower bounds.
+Integer literals
+Integer literals can be
+•	decimal: without any prefix
+•	hexadecimal: with the 0x or 0X prefix
+•	binary: with the 0b or 0B prefix (available in C# 7.0 and later)
+The following code demonstrates an example of each:
+var decimalLiteral = 42;
+var hexLiteral = 0x2A;
+var binaryLiteral = 0b_0010_1010;
+The preceding example also shows the use of _ as a digit separator, which is supported starting with C# 7.0. You can use the digit separator with all kinds of numeric literals.
+
+
+
+
+
+
+
+
+
+
+
+TryParse  	(GITHUB)
 tryparse nedir
 
 TryParse(String, Int32)	

@@ -125,6 +125,52 @@ Output:
 Name : Akku, Id : 1
 Name : Abby, Id : 2
 
+What happens when method signature is same and the return type is different?
+The compiler will give error as the return value alone is not sufficient for the compiler to figure out which function it has to call. Only if both methods have different parameter types (so, they have the different signature), then Method overloading is possible.
+
+Example:
+
+using System; 
+class GFG { 
+  
+    // adding two integer value. 
+    public int Add(int a, int b) 
+    { 
+  
+        int sum = a + b; 
+        return sum; 
+    } 
+  
+    // adding three integer value. 
+    public double Add(int a, int b) 
+    { 
+        double sum = a + b + 0.0; 
+        return sum; 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        GFG ob = new GFG(); 
+  
+        int sum1 = ob.Add(1, 2); 
+        Console.WriteLine("sum of the two "
+                          + "integer value :" + sum1); 
+  
+        int sum2 = ob.Add(1, 2); 
+        Console.WriteLine("sum of the three "
+                          + "integer value :" + sum2); 
+    } 
+} 
+Compile Time Error:
+prog.cs(15,19): error CS0111: A member `GFG.Add(int, int)’ is already defined. Rename this member or use different parameter types
+prog.cs(7,16): (Location of the symbol related to previous error)
+
+Resimde bir overload örneği görüyoruz:
+ 
+
 
 
 

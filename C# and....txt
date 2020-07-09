@@ -13,9 +13,9 @@ Method overloading can be done by changing:
 2.	The data types of the parameters of methods.
 3.	The Order of the parameters of methods.
 
+
 using System; 
 class GFG { 
-  
     // adding two integer values. 
     public int Add(int a, int b) 
     { 
@@ -33,10 +33,8 @@ class GFG {
     // Main Method 
     public static void Main(String[] args) 
     { 
-  
         // Creating Object 
         GFG ob = new GFG(); 
-  
         int sum1 = ob.Add(1, 2); 
         Console.WriteLine("sum of the two "
                           + "integer value : " + sum1); 
@@ -105,7 +103,6 @@ class GFG {
     // Method 
     public void Identity(int id, String name) 
     { 
-  
         Console.WriteLine("Name : " + name + ", "
                           + "Id : " + id); 
     } 
@@ -113,7 +110,6 @@ class GFG {
     // Main Method 
     public static void Main(String[] args) 
     { 
-  
         // Creating Object 
         GFG obj = new GFG(); 
   
@@ -132,7 +128,6 @@ Example:
 
 using System; 
 class GFG { 
-  
     // adding two integer value. 
     public int Add(int a, int b) 
     { 
@@ -151,7 +146,6 @@ class GFG {
     // Main Method 
     public static void Main(String[] args) 
     { 
-  
         // Creating Object 
         GFG ob = new GFG(); 
   
@@ -169,12 +163,9 @@ prog.cs(15,19): error CS0111: A member `GFG.Add(int, int)’ is already defined.
 prog.cs(7,16): (Location of the symbol related to previous error)
 
 Resimde bir overload örneği görüyoruz:
- 
-
-
-
-
-Integral Types (GITHUB)
+-
+-
+ntegral Types (GITHUB)
 
 integral type nedir, integral types nedir, Integral type nedir, Integral types nedir
 Adına dikkat et zaten ne olduğu belli oluyor etimolojisinden: Integral -> Integer
@@ -4377,10 +4368,23 @@ int i = 345;
 Int32 i = 345;// same as above 
 -
 -
--
--
--
--
+SOLID Principles 	(GITHUB)
+SOLID Principles nedir, solid nedir, SOLID nedir, single responsibility nedir, srp nedir, open closed nedir, open-closed nedir, open/closed nedir, open-closed principle nedir, open/closed principle nedir
+
+S: Single Responsibility Principle (SRP)
+Bir programdaki her class veya modül sadece tek bir görevi yerine getirmelidir, birden fazla görev bir class'a veya modüle atanmamalıdır. SRP bununla da sınırlı değildir olay. Yapılan bu tek görev, ilgili class tarafından enkapsüle edilmelidir, yani yapılan görev, işlemle ilgisi olmayan diğer class'lardan gizlenmelidir.
+The single responsibility principle (SRP) states that every class or module in a program should have responsibility for just a single piece of that program's functionality. Further, the elements of that responsibility should be encapsulated by the responsible class rather than spread out in unrelated classes.
+O: Open/Closed Principle (OCP)
+Nesne genişlemeye (extension'a) açık, değişikliklere kapalı olmalıdır (modification).
+
+L: Liskov ‘s Substitution Principle (LSP) 
+Alt sınıflar, üst sınıflar ile yer değiştirdiğinde herhangi bir problem ortaya çıkmamalıdır, alt sınıf üst sınıf yerine kullanılabilmelidir. Gökhan gökalp açıklaması: Alt sınıftan türetilmiş nesneler, üst sınıftan türetilen nesnelerle yer değiştirdiklerinde yine aynı davranışı -herhangi bir problem çıkmadan- sergilemesi gerektiğini savunur.
+“Aynı temel sınıftan türeyen tüm sınıflar, birbirlerinin yerine kullanılabilir olmalıdır. Bu yer değiştirme durumunda, sınıfa özel bir istisna kesinlikle oluşmamalıdır.”
+I: Interface Segregation Principle (ISP)
+Bir client, kullanmadığı metoda bağlı olmamalıdır. Bu, büyük bir interface'in küçük parçalara ayrılmasıyla ve bu yeni küçük interface'lerin implement edilmesiyle gerçekleştirilir.
+D: Dependency Inversion Principle (DIP)
+Üst sınıflar, alt sınıflara bağlı olmamalıdır. Hem üst, hem alt sınıflar abstraction'lara bağlı olmalıdır.
+
 
 
 

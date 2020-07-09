@@ -13,7 +13,6 @@ Method overloading can be done by changing:
 2.	The data types of the parameters of methods.
 3.	The Order of the parameters of methods.
 
-
 using System; 
 class GFG { 
   
@@ -50,6 +49,46 @@ class GFG {
 Output:
 sum of the two integer value : 3
 sum of the three integer value : 6
+
+Diğer Örnek:
+
+using System; 
+class GFG { 
+    // adding three integer values. 
+    public int Add(int a, int b, int c) 
+    { 
+        int sum = a + b + c; 
+        return sum; 
+    } 
+  
+    // adding three double values. 
+    public double Add(double a, 
+                      double b, double c) 
+    { 
+        double sum = a + b + c; 
+        return sum; 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        GFG ob = new GFG(); 
+  
+        int sum2 = ob.Add(1, 2, 3); 
+        Console.WriteLine("sum of the three "
+                          + "integer value : " + sum2); 
+        double sum3 = ob.Add(1.0, 2.0, 3.0); 
+        Console.WriteLine("sum of the three "
+                          + "double value : " + sum3); 
+    } 
+} 
+Output:
+sum of the three integer value : 6
+sum of the three double value : 6
+
+
 
 
 

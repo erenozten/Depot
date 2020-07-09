@@ -39,6 +39,21 @@ var hexLiteral = 0x2A;
 var binaryLiteral = 0b_0010_1010;
 The preceding example also shows the use of _ as a digit separator, which is supported starting with C# 7.0. You can use the digit separator with all kinds of numeric literals.
 
+The type of an integer literal is determined by its suffix as follows:
+•	If the literal has no suffix, its type is the first of the following types in which its value can be represented: int, uint, long, ulong.
+•	If the literal is suffixed by U or u, its type is the first of the following types in which its value can be represented: uint, ulong.
+•	If the literal is suffixed by L or l, its type is the first of the following types in which its value can be represented: long, ulong.
+ Note
+You can use the lowercase letter l as a suffix. However, this generates a compiler warning because the letter l can be confused with the digit 1. Use L for clarity.
+•	If the literal is suffixed by UL, Ul, uL, ul, LU, Lu, lU, or lu, its type is ulong.
+If the value represented by an integer literal exceeds UInt64.MaxValue, a compiler error CS1021 occurs.
+If the determined type of an integer literal is int and the value represented by the literal is within the range of the destination type, the value can be implicitly converted to sbyte, byte, short, ushort, uint, or ulong:
+byte a = 17;
+byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
+As the preceding example shows, if the literal's value is not within the range of the destination type, a compiler error CS0031 occurs.
+You can also use a cast to convert the value represented by an integer literal to the type other than the determined type of the literal:
+var signedByte = (sbyte)42;
+var longVariable = (long)42;
 
 
 

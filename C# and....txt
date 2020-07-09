@@ -9,6 +9,70 @@ public static bool TryParse (string s, out int result);
 Yani ilk parametre olan string değerini alıyor, OUT ile bunu int'e çevirmeye çalışıyor.
 Yani tryparse STRING'I INT'E ÇEVİRMEYE ÇALIŞIR.
 Converts the string representation of a number to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded.
+
+
+Using TryParse
+The most common and most recommended way of parsing an integer string is to use the TryParse static method on the Int32 type as follows:
+string intString = "234";
+int i = 0;
+if (!Int32.TryParse(intString, out i))
+{
+   i = -1;
+}
+return i;
+Using TryParse with Nullable Integer
+When the above example fails to parse the string as a valid integer, you can see that we just set it to -1. This doesn't work too well if -1 one is a meaningful value in your program. Instead, we could parse the string and return a nullable int where the null value indicates that the input string was not a valid integer.
+private int? ConvertStringToInt(string intString)
+{
+   int i=0;
+   return (Int32.TryParse(intString, out i) ? i : (int?)null);
+}
+Using Convert
+There is yet another way to parse a string to an integer which uses the Convert method, but this is a little less convenient than the previous example because we have to manage exceptions if something goes wrong. Exceptions are also expensive to throw so you don't generally want these to be an expected part of the flow of your program. This is especially true if the exceptions are throwing in a loop where there is the potential for a lot of them. This could really slow down your program. You'd be better in that case to use TryParse or maybe even Regex to validate the string is in the form you desire before trying the conversion.
+int i = 0;
+try
+{
+   i = System.Convert.ToInt32(intString);
+}
+catch (FormatException)
+{
+   // the FormatException is thrown when the string text does 
+   // not represent a valid integer.
+}
+catch (OverflowException)
+{
+   // the OverflowException is thrown when the string is a valid integer, 
+   // but is too large for a 32 bit integer.  Use Convert.ToInt64 in
+   // this case.
+}
+There are benefits to using Convert over TryParse when you need to know why the parsing failed.
+Also unlike the TryParse method, the Convert method has many overloads which allow you to convert almost any type to an integer. Here are just a few examples:
+int i = 0;
+
+// bool to Int32
+bool b = true;
+i = Convert.ToInt32(b);
+
+// byte to Int32
+byte bt = 3;
+i = Convert.ToInt32(bt);
+
+// char to Int32
+char c = 'A';
+i = Convert.ToInt32(c);
+
+// DateTime to Int32
+DateTime dt = DateTime.Now;
+i = Convert.ToInt32(dt);
+
+// Decimal to Int32
+decimal d = 25.678m;
+i = Convert.ToInt32(d);
+
+// double to Int32
+double db = 0.007234;
+i = Convert.ToInt32(db);
+That's just a few of the 19 or so different overloads for the Convert method. For all of them visit the MSDN documentation on Convert.ToInt32.
 -
 -
 Type Casting	GITHUB)

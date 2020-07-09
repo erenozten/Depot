@@ -4384,7 +4384,14 @@ I: Interface Segregation Principle (ISP)
 Bir client, kullanmadığı metoda bağlı olmamalıdır. Bu, büyük bir interface'in küçük parçalara ayrılmasıyla ve bu yeni küçük interface'lerin implement edilmesiyle gerçekleştirilir.
 D: Dependency Inversion Principle (DIP)
 Üst sınıflar, alt sınıflara bağlı olmamalıdır. Hem üst, hem alt sınıflar abstraction'lara bağlı olmalıdır.
-
+-
+-
+Virtual Keyword	(GITHUB)
+virtual keyword nedir, virtual nedir
+Önemli: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual
+Sınıf içerisinde sanallaştırmak istediğimiz yani çakışma durumunda ezilmesini istediğimiz metot türleridir. Metotlar varsayılan olarak non-virtual'dır. Non-virtual metotlar override edilemez. 
+You cannot use the virtual modifier with the static, abstract, private, or override modifiers.
+The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class. Derived class override keyword'ünü kullanarak override işlemi yapar.
 
 
 

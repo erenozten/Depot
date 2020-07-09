@@ -2,6 +2,45 @@
 You typically use a nullable value type when you need to represent the undefined value of an underlying value type. For example, a Boolean, or bool, variable can only be either true or false. However, in some applications a variable value can be undefined or missing. For example, a database field may contain true or false, or it may contain no value at all, that is, NULL. You can use the bool? type in that scenario.
 The default value of a nullable value type represents null, that is, it's an instance whose Nullable<T>.HasValue property returns false.
 (as we know, represent means: be entitled or appointed to act or speak for (someone), especially in an official capacity.)
+Nullable<int> n1 = new Nullable<int>(10);
+private int n2 = new int();
+int? n3 ;
+int? n4 = null;
+
+string s1 = new string("qqq");
+--
+Loop
+
+            int val1 = 0;
+            for (; val1 < 11; val1++)
+            {
+                Console.WriteLine(val1);
+            }
+Değişik bir loop daha:
+
+            int val2 = 0;
+            for (; val2 < 11;)
+            {
+                Console.WriteLine(val2);
+                val2++;
+            }
+
+Değişik 2
+Ayrıca break örneği
+
+            int asd = 0;
+            for (;;)
+            {
+                asd++;
+                Console.WriteLine(asd);
+                if (asd == 8)
+                {
+                    Console.WriteLine("broken!");
+                    break;
+                }
+            }
+
+
 -
 -
 Object Oriented Programming / OOP / NYP

@@ -1,4 +1,52 @@
-﻿ASP.NET CORE  (GITHUB)
+﻿Type Casting	GITHUB)
+Type casting nedir, casting nedir, convert nedir
+Type casting is when you assign a value of one data type to another type.
+Örnek:
+       public static void Main(string[] args)
+        {
+            double x = 1234.7;
+            int a;
+
+            // Cast double to int.
+            a = (int)x;
+
+            Console.WriteLine(a);
+
+            
+            double newDouble;
+            int newInt = 42;
+
+            //newDouble = (double)newInt; //redundant casting.. Gereksiz... Şöyle yazılır kısaca:
+            newDouble = newInt;
+
+            //bool u inte e cast etmeyi deneyelim:
+
+            bool newBool1 = true;
+            int asd;
+
+            //asd = Convert.ToInt32(newBool1); // always true. yani çalıştı
+
+            asd = Convert.ToInt32(newBool1); // always true. çalıştı
+
+            //asd = (int)newBool1; // HATA
+
+            int newInt2 = 20;
+
+           //alttaki ikisi arasında ne fark var?
+            string as3 = Convert.ToString(newInt2);
+
+            string as4 = newInt2.ToString();
+            
+            //The basic difference between them is the Convert function handles NULLS while i.ToString () does not; it will throw a NULL reference exception error. So as good coding practice using convert is always safe.
+
+            Console.ReadLine();
+        }
+
+
+
+
+
+ASP.NET CORE  (GITHUB)
 Asp.net core nedir
 
 ASP.NET FRAMEWORK VS ASP.NET CORE 

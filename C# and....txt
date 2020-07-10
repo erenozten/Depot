@@ -4664,6 +4664,27 @@ In the CLR the signature consists of:
 •	return type including modopts and modreqs
 •	ref/value-ness of each formal parameter
 Note that the CLR does not distinguish between "ref int" and "out int" at all when considering signatures. Note that the CLR does distinguish between modopt/modreq types. (The way that the C# compiler deals with modopt/modreq types is too complex to summarize here.)
+-
+-
+Method Overriding (Override) (GITHUB)
+method overriding nedir, override nedir
+
+Method Overriding
+ 
+Overriding can be defined as: being able to change or augment the behavior of methods in classes, known as overriding their logic; it is one of the most powerful aspects of Object Oriented Programming.
+Explanation
+Suppose you have a Phone, no please don’t suppose everyone has a phone today, although some people even have more than one. Okay leave it, so if you have phone:
+
+Then there must be ring facility in it:
+ 
+Now your phone can be of any type, like it can be cellular, satellite or landline, these all types of phones will also have the same or a different functionality (based on their attribute).
+ 
+Now whenever you receive a call, the caller doesn’t know whether you have a cellular phone, landline phone or anything else, he/she just calls you and according to that call operation your phone rings. In the case of method overriding, your phone works as a class and the ring is the functionality.
+
+Keywords in Method Overriding
+ 
+There are the following 3 types of keywords used in C# for method overriding.
+ 
 
 
 

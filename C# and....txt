@@ -4411,6 +4411,26 @@ Senaryoda Yer Alan Soyutlamalar(Abstractions): İlk soyutlama örneğimiz bileti
 Eğer hala bir şeyler oturmadıysa kafanızda bir de çarpışan arabamızdaki soyutlamaya bakalım. Siz arabayı kullanırken direksiyonu gitmek istediğiniz yöne çeviriyor, gaz pedalına basarak ilerliyorsunuz. Gaz pedalına bastığınızdaki motorda oluşan tetiklenmeleri, direksiyonu çevirdiğinizde lastiklerin dönmesini sağlayan mekanizmayı hiç düşünmeden yalnızca iki pedal bir direksiyonla aslında arka planında onlarca aksiyon yatan bir işlevi gerçekleştirmiş oluyorsunuz. Input (gaz/fren pedalları, direksiyon) ve output (arabanın gitmesi) değerlerini bilmek size yetiyor.
 Object Oriented programlamada sınıfların soyutlanmasını ise Abstract Class ve Interface ikilisi sağlamaktadır. Abstraction kavramı kafamızda biraz olsun şekillendiğine göre şimdi Abstract Class’ları inceleyebiliriz.
 
+Abstract Class
+Abstract sınıflar sınıf hiyerarşisinde genellikle base class (temel sınıf) tanımlamak için kullanılan ve soyutlama yeteneği kazandıran sınıflardır. Bir sınıfı abstract yapmak için abstract keywordünü kullanırız. Abstract sınıflar en az bir tane abstract metod bulundurması bir best practice’tir.
+
+abstract class Yazdir{     public abstract void KonsolaYazdir();}
+Yukarıda Yazdir isimli basitçe bir abstract sınıfı tanımladık ve kendisinden türeyecek metodların override edeceği KonsolaYazdir() abstract metodunu oluşturduk.
+Genel olarak abstract sınıfların özelliklerini bir araya toplarsak;
+•	Abstract sınıfları genel olarak inheritance (kalıtım) uygularken kullanırız.
+•	new anahtar sözcüğü ile nesneleri oluşturulamaz.
+•	İçerisinde değişken ve metod bulundurabilir.
+•	Abstract sınıflardan türetilen sınıfların abstract metodları implement etmesi zorunludur. Diğer metodları override etmeden de kullanabilir.
+•	Constructors (yapıcı metodlar) ve destructors (yıkıcı metodlar) bulundurabilirler.
+•	Static tanımlanamazlar. ( Tanımlanmaya çalışılırsa compiler “an abstract class cannot be sealed or static” hatası verir)
+•	Bir sınıf yalnızca bir abstract sınıfı inheritance yoluyla implement edebilir. Çoklu kalıtım (multiple inheritance) desteklenmez.
+•	Abstract olmayan metodları da bulundurabilir.
+•	Kendisinden inherit alacak sınıflar ile arasında “is-a” ilişkisi vardır. (Burası ilk başlarda çok önemsenmeyen ancak hangi senaryoda Abstract hangi senaryoda Interface kullanacağımızı netleştirmede bize oldukça yardımcı olan bir detaydır, hemen aşağıda açıklamasını bulabilirsiniz)
+Is-a İlişkisi Nedir?
+Senaryomuzdan bir örnekle bunun daha iyi anlaşılabileceğini düşünüyorum. (Şimdiye kadar Türkçe kelimeler üzerinden gittiğim için örneğimde de is-a ilişkisi hariç cümlemi Türkçe kuruyorum)
+
+Çarpışan araba is-a araba.
+Yani en nihayetinde çarpışan araba da bir arabadır ve arabanın sahip olduğu özellikleri bünyesinde barındırır.
 
 
 

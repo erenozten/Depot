@@ -1264,110 +1264,7 @@ public static string trKarakterDuzelt(string duzenlenecek)
     sb.Replace('Ç', 'C');
     sb.Replace('Ö', 'O');
     return sb.ToString();
--
 
-Interface
-Interface nedir
-Interface
-BENİM ÖRNEK:
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
- 
-class Program
-{
-    class Student
-    {
-        public string Name { get; set; }
-    }
-    class Araba: IAraba
-    {
-        // IAraba'nın metotlarını implement etmesi gerek...
- 
-        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
-        {
-            Console.WriteLine("");
-        }
- 
-        public void Teker()
-        {
- 
-        }
- 
-        public string CamaYaziYazdir()
-        {
-            return "Text";
-        }
- 
-        public Student OgrenciyiArabayaBindir()
-        {
-            Student student = new Student();
-            return student;
-        }
-    }
- 
-    //class gibi bir şeydir interface. Parantez açıp kapama yokk. Zaten anlamsız oluyor diğer şekilde.
-    interface IAraba
-    {
-        void Cam(); // köşeli parantez yokk
-        void Teker();
-        string CamaYaziYazdir();
-        Student OgrenciyiArabayaBindir();
-    }
- 
-    
- 
-}
- 
-
-
-An interface is a completely abstract class, which contains only abstract members.
-It is declared using the interface keyword:
-
-        public interface IShape
-        {
-            void Draw();
-        }
-
-All members of the interface are by default abstract, so no need to use the abstract keyword. 
-Also, all members of an interface are always public, and no access modifiers can be applied to them.
-It is common to use the capital letter I as the starting letter for an interface name.
-Interfaces can contain properties, methods, etc. but cannot contain fields (variables).
-When a class implements an interface, it must also implement, or define, all of its methods.
-The term implementing an interface is used (opposed to the term "inheriting from") to describe the process of creating a class based on an interface. The interface simply describes what a class should do. The class implementing the interface must define how to accomplish the behaviors.
-The syntax to implement an interface is the same as that to derive a class: 
-
-        public interface IShape
-        {
-            void Draw();
-        }
-        class Circle : IShape
-        {
-            public void Draw()
-            {
-                Console.WriteLine("Circle Draw");
-            }
-        }
-        static void Main(string[] args)
-        {
-            IShape c = new Circle();
-            c.Draw();
-            //Outputs "Circle Draw"
-        }
-
-Note, that the override keyword is not needed when you implement an interface.
-
-But why use interfaces rather than abstract classes? 
-A class can inherit from just one base class, but it can implement multiple interfaces!
-Therefore, by using interfaces you can include behavior from multiple sources in a class.
-To implement multiple interfaces, use a comma separated list of interfaces when creating the class: class A: IShape, IAnimal, etc.
-
--
--
--
--
 -
 -
 HTTPGet vs HTTPPost	(GITHUB) 
@@ -4847,7 +4744,7 @@ Başka bir açıklama:
 -
 Method Overriding in C# is similar to the virtual function in C++. Method Overriding is a technique that allows the invoking of functions from another class (base class) in the derived class. Creating a method in the derived class with the same signature as a method in the base class is called as method overriding.
 In simple words, Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes. When a method in a subclass has the same name, same parameters or signature and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in the super-class. Method overriding is one of the ways by which C# achieve Run Time Polymorphism(Dynamic Polymorphism).
-The method that is overridden by an override declaration is called the overridden base method. An override method is a new implementation of a member that is inherited from a base class. The overridden base method must be virtual, abstract, or override.
+The method that is overridden by an override declaration is called the overridden base method. An override metho d is a new implementation of a member that is inherited from a base class. The overridden base method must be virtual, abstract, or override.
  
 Example:
 class base_class
@@ -4871,6 +4768,49 @@ class Main_Method
 Here the base class is inherited in the derived class and the method gfg() which has the same signature in both the classes, is overridden.
 -
 -
+Interface 	(GITHUB)
+Interface nedir, interface nedir
+An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface. Beginning with C# 8.0, an interface may define a default implementation for members. It may also define static members in order to provide a single implementation for common functionality.
+In the following example, class ImplementationClass must implement a method named SampleMethod that has no parameters and returns void.
+For more information and examples, see Interfaces.
+Example
+interface ISampleInterface
+{
+    void SampleMethod();
+}
+
+class ImplementationClass : ISampleInterface
+{
+    // Explicit interface member implementation:
+    void ISampleInterface.SampleMethod()
+    {
+        // Method implementation.
+    }
+
+    static void Main()
+    {
+        // Declare an interface instance.
+        ISampleInterface obj = new ImplementationClass();
+
+        // Call the member.
+        obj.SampleMethod();
+    }
+}
+An interface can be a member of a namespace or a class. An interface declaration can contain declarations (signatures without any implementation) of the following members:
+•	Methods
+•	Properties
+•	Indexers
+•	Events
+These preceding member declarations typically do not contain a body. Beginning with C# 8.0, an interface member may declare a body. This is called a default implementation. Members with bodies permit the interface to provide a "default" implementation for classes and structs that don't provide an overriding implementation. In addition, beginning with C# 8.0, an interface may include:
+•	Constants
+•	Operators
+•	Static constructor.
+•	Nested types
+•	Static fields, methods, properties, indexers, and events
+•	Member declarations using the explicit interface implementation syntax.
+•	Explicit access modifiers (the default access is public).
+Interfaces may not contain instance state. While static fields are now permitted, instance fields are not permitted in interfaces. Instance auto-properties are not supported in interfaces, as they would implicitly declare a hidden field. This rule has a subtle effect on property declarations. In an interface declaration, the following code does not declare an auto-implemented property as it does in a class or struct. Instead, it declares a property that doesn't have a default implementation but must be implemented in any type that implements the interface:
+
 
 
 

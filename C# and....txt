@@ -4618,7 +4618,27 @@ A RESTful API is an application program interface (API) that uses HTTP requests 
 A RESTful API -- also referred to as a RESTful web service -- is based on representational state transfer (REST) technology, an architectural style and approach to communications often used in web services development.
 
 REST technology is generally preferred to the more robust Simple Object Access Protocol (SOAP) technology because REST leverages less bandwidth, making it more suitable for internet usage. An API for a website is code that allows two software programs to communicate with each another . The API spells out the proper way for a developer to write a program requesting services from an operating system or other application.
+-
+-
+Method Signature 	(GITHUB)
+Method Signature nedir
 
+the method signature for your method is:
+
+DoSomething(int, int)
+
+(Yani bir method signature şunlardan oluşur: metod adı, parametrelerin tipi)
+
+Return type is not part of the method signature in C#. Only the method name and its parameters types (but not the parameter names) are part of the signature. You cannot, for example, have these two methods:
+
+int DoSomething(int a, int b);
+string DoSomething(int a, int b);
+
+To be clear: Methods cannot be overloaded based on their return type. They must have a unique name, unique parameter types, or pass their arguments differently (e.g. using out or ref).
+
+Edit: To answer your original question, the method signature for your method is:
+DoSomething(int, int)
+Note that this all applies to normal methods. If you're talking about delegates, then you should see keyboardP's answer. (Short version: return type IS part of the signature for a delegate).
 
 
 

@@ -4685,6 +4685,61 @@ Keywords in Method Overriding
  
 There are the following 3 types of keywords used in C# for method overriding.
  
+Override Keyword
+In the subclass, it tells the compiler that this method is overriding the same named method in the base class.
+1.	public override int myValue()  
+2.	{  
+3.	     -  
+4.	     -  
+5.	     -  
+6.	}  
+Base Keyword
+ 
+In the subclass, it calls the base class method for overriding functionality.
+1.	base.myValue();  
+Method Overriding Example
+1.	using System;  
+2.	using System.Collections.Generic;  
+3.	using System.Linq;  
+4.	using System.Text;  
+5.	namespace Hello_Word  
+6.	{  
+7.	    class baseClass  
+8.	    {  
+9.	        public virtual void Greetings()  
+10.	        {  
+11.	            Console.WriteLine("baseClass Saying Hello!");  
+12.	        }  
+13.	    }  
+14.	    class subClass : baseClass  
+15.	    {  
+16.	        public override void Greetings()  
+17.	        {  
+18.	            base.Greetings();  
+19.	            Console.WriteLine("subClass Saying Hello!");  
+20.	        }  
+21.	    }  
+22.	    class Program  
+23.	    {  
+24.	        static void Main(string[] args)  
+25.	        {  
+26.	            baseClass obj1 = new subClass();  
+27.	            obj1.Greetings();  
+28.	            Console.ReadLine();  
+29.	        }  
+30.	    }  
+31.	}  
+  
+ 
+An output window is showing that baseClass will get called first and then subclass. If we make certain changes in this code like:
+1.	base.Greetings();  
+2.	Console.WriteLine("subClass Saying Hello!"); // current scenario  
+After making a few modifications as in the following:
+1.	Console.WriteLine("subClass Saying Hello!");  
+2.	base.Greetings(); // after modifications  
+Now our output will be like this:
+ 
+ 
 
 
 

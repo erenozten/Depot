@@ -4608,6 +4608,16 @@ ASP.NET Web API maps HTTP verbs to method names.
 ASP.NET Web API supports different formats of response data. Built-in support for JSON, XML, BSON format.
 ASP.NET Web API can be hosted in IIS, Self-hosted or other web server that supports .NET 4.0+.
 ASP.NET Web API framework includes new HttpClient to communicate with Web API server. HttpClient can be used in ASP.MVC server side, Windows Form application, Console application or other apps.
+-
+-
+RESTful API  
+(representational state transfer)    (GITHUB)
+Restful api nedir?
+A RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.
+
+A RESTful API -- also referred to as a RESTful web service -- is based on representational state transfer (REST) technology, an architectural style and approach to communications often used in web services development.
+
+REST technology is generally preferred to the more robust Simple Object Access Protocol (SOAP) technology because REST leverages less bandwidth, making it more suitable for internet usage. An API for a website is code that allows two software programs to communicate with each another . The API spells out the proper way for a developer to write a program requesting services from an operating system or other application.
 
 
 

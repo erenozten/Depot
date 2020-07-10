@@ -4432,6 +4432,26 @@ Senaryomuzdan bir örnekle bunun daha iyi anlaşılabileceğini düşünüyorum.
 Çarpışan araba is-a araba.
 Yani en nihayetinde çarpışan araba da bir arabadır ve arabanın sahip olduğu özellikleri bünyesinde barındırır.
 
+Şimdi Araba için abstract bir sınıf oluşturup çarpışan arabayı da bu sınıftan inherit alarak oluşturalım.
+
+abstract class Araba{    
+//Arabalarin ortak ozelliklerini burada tanimliyoruz    
+public string Marka { get; set; }    
+public int MaksimumHiz { get; set; }    
+public string Tur { get; set; }
+//Her araba icin yolculuga baslandi bilgisini farkli bir sekilde
+//ekrana yazdirmak icin override  dilecek abstract metodumuzu yaziyoruz
+public abstract void YolculugaBasla();
+}
+
+class CarpisanAraba : Araba{    
+//Abstract metodumuzu carpisan arabaya ozel bir sekilde override      ediyoruz.    
+public override void YolculugaBasla(){        Console.WriteLine("Carpisan araba ile yolculuga baslandi");    }
+}
+Araba isminde bir abstract sınıf tanımlayarak CarpisanAraba sınıfını bu abstract base sınıftan türettik. 
+Böylece Araba sınıfında yer alan tüm özellikleri tekrardan yazmak zorunda kalmadan kolayca sahip olurken, YolculugaBasla() metodunu sınıfımıza özel override ettik. 
+Abstract sınıfları inherit alan sınıfların abstract metodları override etmesinin zorunlu olduğunu belirtmiştik. Bu sebeple Visual Studio’da CarpisanAraba sınıfını Araba sınıfından inherit ettiğinizde, YolculugaBasla() metodunu override etmezseniz hata alırsınız.
+Abstract sınıfları genel itibariyle mercek altına aldığımıza göre şimdi bir de Interface’leri inceleyelim. Sonrasında ikisi arasındaki farkları tablo halinde gördüğümüzde hangi senaryoda hangi soyutlama mekanizmasını kullanacağımızı çok daha iyi kestirebilir bir hale geleceğiz.
 
 
 

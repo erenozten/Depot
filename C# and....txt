@@ -4783,6 +4783,65 @@ Instead of:
 1.	baseClass obj1 = new subClass();  
 2.	obj1.Greetings();  
 
+Now let’s check the output window, what’s its showing now:
+ 
+  
+ 
+So as you are seeing that now its calling only the baseClass. So now I guess you will be a little closer to the method overriding functionality.
+-
+
+
+Method Overriding is a technique that allows the invoking of functions from another class (base class) in the derived class. Creating a method in the derived class with the same signature as a method in the base class is called as method overriding.
+
+Bi örnek yaptım. Override'siz metot da çalışıyor hata vermiyor. Benim aşağıdaki kodda incelediğim durum şu linkte de inceleniyor: https://www.geeksforgeeks.org/c-sharp-method-overriding/
+    class Program
+    {
+        class BaseClass
+        {
+            public virtual void SampleMethod()
+            {
+                Console.WriteLine("base");
+            }
+
+            public void SecondMethod()
+            {
+                Console.WriteLine("SecondMethod-Base");
+            }
+        }
+
+        class DerivedClass : BaseClass
+        {
+            public override void SampleMethod()
+            {
+                Console.WriteLine("derived");
+            }
+
+            public void SecondMethod()
+            {
+                Console.WriteLine("SecondMethod-DerivedClass");
+            }
+        }
+        class Main_Method
+        {
+            static void Main()
+            {
+                DerivedClass d = new DerivedClass();
+                d.SampleMethod();
+
+                BaseClass b = new DerivedClass();
+                b.SampleMethod();
+
+                BaseClass bc = new BaseClass();
+                bc.SampleMethod();
+
+                Console.WriteLine("-");
+                d.SecondMethod();
+                b.SecondMethod();
+                bc.SecondMethod();
+            }
+        }
+    }
+
 
 
 

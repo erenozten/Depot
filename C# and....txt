@@ -4640,6 +4640,30 @@ Edit: To answer your original question, the method signature for your method is:
 DoSomething(int, int)
 Note that this all applies to normal methods. If you're talking about delegates, then you should see keyboardP's answer. (Short version: return type IS part of the signature for a delegate).
 
+Detay:
+Is the return type is a part of signature or not?
+It depends on why you are asking the question. Why do you care?
+There are two definitions of method signature. The C# language definition does not include the return type, and uses the signature of the method to determine whether two overloads are allowed. Two methods with the same signature are not allowed in a type. Since C# does not consider the return type to be a part of the signature, C# does not allow two methods that differ only in return type to be declared in the same type.
+The CLR, however, does include the return type in the signature. The CLR allows for two methods to be in the same type that differ only in return type.
+To be more specific: in C# the signature consists of the methods:
+•	name
+•	number of type parameters
+•	number of formal parameters
+•	type of each formal parameter
+•	out/ref/value-ness of each formal parameter
+with the following additional notes:
+•	generic type parameter constraints are not part of the signature
+•	return type is not part of the signature
+•	type parameter and formal parameter names are not part of the signature
+•	two methods may not differ only in out/ref
+In the CLR the signature consists of:
+•	name
+•	number of type parameters
+•	number of formal parameters
+•	type of each formal parameter including modopts and modreqs
+•	return type including modopts and modreqs
+•	ref/value-ness of each formal parameter
+Note that the CLR does not distinguish between "ref int" and "out int" at all when considering signatures. Note that the CLR does distinguish between modopt/modreq types. (The way that the C# compiler deals with modopt/modreq types is too complex to summarize here.)
 
 
 

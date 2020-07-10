@@ -4392,6 +4392,20 @@ virtual keyword nedir, virtual nedir
 Sınıf içerisinde sanallaştırmak istediğimiz yani çakışma durumunda ezilmesini istediğimiz metot türleridir. Metotlar varsayılan olarak non-virtual'dır. Non-virtual metotlar override edilemez. 
 You cannot use the virtual modifier with the static, abstract, private, or override modifiers.
 The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class. Derived class override keyword'ünü kullanarak override işlemi yapar.
+-
+-
+Abstract Class ve Interface Arasındaki Farklar Nelerdir?
+Interface nedir, absctract class nedir, abstract nedir, abstraction nedir, abstract keyword nedir
+https://medium.com/software-development-turkey/abstract-class-ve-interface-aras%C4%B1ndaki-farklar-nelerdir-3c0a4f956eba
+https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-c-sharp/
+ 
+Yazılıma yeni başlayan hemen herkesin zaman zaman karıştırdığı, hangisini ne zaman kullanacağına karar veremediği Abstract Class ve Interface ikilisini ele almak istedim. İlk bakışta yazdığımız koda oldukça benzer yetenekler kazandırdıkları görünse de aralarındaki farkların üzerinde durarak hangi senaryolarda hangisine karar vermemiz gerektiğini iyice açığa çıkartacağız 🙂
+ 
+ 
+© agile-code.com
+Abstract sınıflara geçmeden önce C# ve tüm Object Oriented dillerin bize sunduğu bir özellik olan abstraction(soyutlama) kavramını ele alalım. Böylece Abstract sınıflara ve Interface’lere neden ihtiyaç duyduğumuzu daha net bir şekilde anlayabiliriz.
+Abstraction (Soyutlama) Nedir?
+Abstraction, OOP (Object Oriented Programming-Nesne Tabanlı Programlama) içerisindeki önemli kavramlardan birisidir. C#’taki soyutlama; diğer Object Oriented dillerde olduğu gibi iç detayları gizleyerek sadece işlevleri göstermeye denir. Bu durumu gerçek hayatın içerisinden bir senaryo ile örneklendirelim.
 
 
 

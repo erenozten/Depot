@@ -4453,6 +4453,28 @@ Böylece Araba sınıfında yer alan tüm özellikleri tekrardan yazmak zorunda 
 Abstract sınıfları inherit alan sınıfların abstract metodları override etmesinin zorunlu olduğunu belirtmiştik. Bu sebeple Visual Studio’da CarpisanAraba sınıfını Araba sınıfından inherit ettiğinizde, YolculugaBasla() metodunu override etmezseniz hata alırsınız.
 Abstract sınıfları genel itibariyle mercek altına aldığımıza göre şimdi bir de Interface’leri inceleyelim. Sonrasında ikisi arasındaki farkları tablo halinde gördüğümüzde hangi senaryoda hangi soyutlama mekanizmasını kullanacağımızı çok daha iyi kestirebilir bir hale geleceğiz.
 
+Interface
+Interface, içerisinde sadece kendisinden türeyecek olan sınıfların içini dolduracağı metod tanımlarının bulunduğu ve soyutlama yapmamıza olanak sağlayan bir yapıdır. Interface’leri tanımlarken interface keyword'ünü kullanırız. Tanımladığımız yapının interface olduğunu belirtmek için isminin önüne I harfini getirmek bir best-practice olacaktır. Böylece kodlama yaparken inherit aldığımız yapının bir class mı yoksa interface mi olduğunu kolaylıkla ayırt edebiliriz. Bu kadar teorik bilgiden sonra basitçe bir interface tanımlayalım.
+
+interface ILog{    void LogEkle(string kayit);}
+Bu interface’ten türeyen tüm sınıflar LogEkle(string kayit) metodunu implement etmek zorundadır. Interface hakkında internette bir arama yaptığınızda genellikle kendisini inherit alan sınıflar için bir kontrat olduğundan bahsedilir. Kontrat kelimesiyle anlatılmak istenen tam olarak budur. Türeyen sınıflar, interface’in içerisinde yer alan tüm metodları implement edeceğine dair bir söz vermekte, sözleşme yapmaktadır. Aksi halde derleyici hata verecek, kodunuz çalışmayacaktır.
+Genel olarak Interface’lerin özelliklerinden bahsetmemiz gerekirse;
+•	new keywordü ile nesneleri oluşturulamaz.
+•	Bir sınıfın ne yapması gerektiğini belirtir, nasıl yapması gerektiğini değil.
+•	Default olarak tüm Interface üyeleri abstract ve public olarak tanımlanır. Sizin özellikle belirtmeniz gerekmez.
+•	Bir sınıf birden fazla interface’i inherit edebilir, çoklu kalıtım (multiple-inheritance) desteklenir.
+•	İçerisinde yalnızca metodların imzaları yer alır, içi dolu metod bulunduramazlar.
+•	Kendisinden inherit alacak sınıflar ile arasında “can-do” ilişkisi vardır.
+Can-do İlişkisi Nedir?
+Çarpışan araba senaryosundan bir örnekle açıklamak gerekirse,
+Çarpışan araba can-do hızlanmak. 
+Açıklamaya gerek var mı bilemedim açıkçası ama abstract sınıflarda açıklamışken burada boş bırakmak içime sinmezdi. Çarpışan araba hızlanabilir diyoruz. Çarpışan arabanın bir davranışından bahsediyoruz.
+Interfaceleri tam olarak can-do ilişkileri içeren yapılarda kullanmamız isabetli olacaktır. Senaryomuzdaki çarpışan araba hızlanabilir. Bu çarpışan arabanın yapabileceği bir kabiliyetigöstermektedir. Can-do ilişkisi davranışları, kabiliyetleri belirtir. Bu kabiliyetin interface içerisinde tanımlanması çok daha doğru olacaktır.
+ 
+Tablonun orjinaline blog sayfamdan; cozvelioglu.com adresinden ulaşabilirsiniz
+Abstract sınıflar ve Interface’ler arasındaki farkları işlediğimiz bu yazıyla birlikte bir yazının daha sonuna geldik. Dilerim aydınlatıcı olmuştur, anlayamadığınız veya gözümden kaçan herhangi bir şey varsa yorumlarda belirtmeniz beni memnun edecektir. Bir sonraki yazıda görüşmek dileğiyle; keyifli kodlamalar, mutlu günler :)!
+-
+-
 
 
 

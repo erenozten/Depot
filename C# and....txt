@@ -6024,6 +6024,37 @@ enumeration nedir
 
 An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.
 Some sets can be enumerated by means of a natural ordering (such as 1, 2, 3, 4, ... for the set of positive integers), but in other cases it may be necessary to impose a (perhaps arbitrary) ordering. In some contexts, such as enumerative combinatorics, the term enumeration is used more in the sense of counting – with emphasis on determination of the number of elements that a set contains, rather than the production of an explicit listing of those elements.
+-
+-
+Enum 	(GITHUB) (örnek)
+enum nedir, enum keyword nedir
+The enum keyword is used to declare an enumeration: a type that consists of a set of named constants called the enumerator list.
+By default, the first enumerator has the value 0, and the value of each successive enumerator is increased by 1.
+For example, in the following enumeration, Sun is 0, Mon is 1, Tue is 2, and so on:
+
+        enum Days { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+
+You can also assign your own enumerator values:
+
+        enum Days { Sun, Mon, Tue = 4, Wed, Thu, Fri, Sat };
+
+In the example above, the enumeration will start from 0.
+Sun is 0, then Mon is 1, Tue is 4, Wed is 5, and so on. The value of the next item in an Enum is one increment of the previous value.
+Note that the values are comma separated.
+You can refer to the values in the Enum with the dot syntax.
+In order to assign Enum values to int variables, you have to specify the type in parentheses:
+
+        enum Days { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+
+        static void Main(string[] args)
+        {
+            int x = (int)Days.Sat;
+            Console.WriteLine(x);
+            Console.ReadKey();
+            //Outputs 6
+        }
+Basically, Enums define variables that represent members of a fixed set.
+Some sample Enum uses include month names, days of the week, cards in a deck, etc.
 
 
 

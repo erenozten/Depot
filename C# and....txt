@@ -5605,6 +5605,93 @@ Ekran çıktısı aşağıdadır.
  
 2.	Eğer new operatörü kullanmazsak ne olur?
 
+3.	Haliyle classlardaki gibi nesne mecburiyeti yoktur. Yani new operatörü ile struct yapıdan bir nesne üretmeden de o struct’ı kullanabilmekteyiz.
+ 
+Yukarıda da gördüğünüz gibi nesnesiz structları kullanabilmekteyiz kullanmasına ama içerisindeki verilerin ilk değerleri atanmayacağından dolayı hata alınacaktır.
+İşte böyle bir durumda ilk değerleri atayarak kullanmak gerekecektir.
+1
+2
+3
+4
+5	MyStruct ms;
+ms.x = 3;
+ms.y = true;
+ms.z = "abc";
+MessageBox.Show(ms.x + " " + ms.y + " " + ms.z);
+Anlayacağınız class yapıları new keywordü ile belleğe fiziksel olarak çıkabilmekte ve kullanılabilmektedir. Aksi taktirde belleğe çıkamamaktadırlar. Struct’larda ise new ile belleğe çıkma zorunluluğu yoktur lakin içerisindeki elemanların ilk değerleri mecburi verilmek zorundadır.
+	struct yapılar içerilerinde metod, property veya field barındabilirler.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16	struct MyStruct
+{
+    public int x;
+    public bool y;
+    public string z { get; set; }
+ 
+    public double Islem()
+    {
+        if (y)
+        {
+            return x * int.Parse(z);
+        }
+ 
+        return -1;
+    }
+}
+	Haliyle bu elemanlardan metodları kullanabilmek için struct değişkenine new operatörüyle bir nesne bağlama zorunluluğumuz yoktur. Ama property yapılarını kullanabilmek için struct’tan bir nesneye ihtiyacımız vardır.
+1
+2
+3
+4
+5
+6
+7
+8	private void Form1_Load(object sender, EventArgs e)
+{
+    MyStruct ms = new MyStruct();
+    ms.x = 3;
+    ms.y = true;
+    ms.z = "3";
+    MessageBox.Show(ms.x + " " + ms.y + " " + ms.z + " " + ms.Islem());
+}
+	struct yapılar içlerinde static alanlar barındırabilirler.
+1
+2
+3
+4
+5
+6
+7
+8
+9	struct MyStruct
+{
+    public int x;
+ 
+    static public double Islem()
+    {
+        return -1;
+    }
+}
+	ve bu static yapılara normal bildiğiniz yapı ismi üzerinden .(nokta) diyerek ulaşabilmekteyiz.
+1	MyStruct.Islem().ToString();
+	Ve son olarak struct yapılar içerisinde class, class içerisinde de struct yapılar tanımlanabilir.
+ 	 
+Evet, gördüğünüz gibi struct dediğimiz aslen yapısal ve içerik(implicit) olarak bir sealed class‘tır diyebiliriz. Bunun yanında daha hafif(lightweight) bir class yapısı olduğu söylenebilir. İçeriğimizden de anlaşılacağına göre Tip Tanımlama(Type Definition) yaparken kullanabiliriz.
+İçerikte bahsedildiği gibi referans değil, değer tipli bir yapı göstermesinin sebebini aşağıdaki örnekten de anlayabiliriz.
+
 
 
 

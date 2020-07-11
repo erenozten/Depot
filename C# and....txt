@@ -5086,6 +5086,206 @@ Eee peki ne anlatmaya çalışıyoruz. Bir sınıfta bulunan herhangi bir işlev
 Örnek olarak şöyle bir senaryo çizelim.
 Bir ordumuz olsun. Ordumuzdaki uçaklar bir yandan keşife çıkabilsin bir yandan da hedefi vurabilsin.
 
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70	interface IUcak
+{
+    bool KesifYap();
+    bool HedefiVur();
+}
+ 
+class UcakA : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakA Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakA keşfi tamamladı.");
+        return true;
+    }
+}
+class UcakB : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakB Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakB keşfi tamamladı.");
+        return true;
+    }
+}
+class UcakC : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakC Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakC keşfi tamamladı.");
+        return true;
+    }
+}
+ 
+class Savas
+{
+    List<IUcak> Ucaklar;
+    public Savas(List<IUcak> Ucaklar)
+    {
+        this.Ucaklar = Ucaklar;
+    }
+ 
+    public void KesifYap()
+    {
+        Ucaklar.ForEach(u =>
+        {
+            u.KesifYap();
+        });
+    }
+ 
+    public void HedefiVur()
+    {
+        Ucaklar.ForEach(u =>
+        {
+            u.HedefiVur();
+        });
+    }
+}
+Varsayalım ki, ordumuza yeni bir uçak daha geldi ama sadece keşfe çıkabilmektedir.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12	class UcakD : IUcak
+{
+    public bool HedefiVur()
+    {
+        return false;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakD keşfi tamamladı.");
+        return true;
+    }
+}
+Yeni uçağımızın hedefi vurma özelliği yoktur. Lakin IUcak arayüzümüz tüm elemanları zorla uygulatmaktadır. Eee haliyle base class var olan HedefiVur metodunu derived classta kullanmayacağız. İşte yeni uçağımız(UcakD) için burada HedefiVur metodu Dummy Code yapısındadır.
+Peki “HedefiVur” metodunu UcakD’de kullanmayacaksak aşağıdaki gibi önlem almalıyız.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16	class Savas
+{
+    .
+    .
+    .
+    public void HedefiVur(
+    {
+        Ucaklar.ForEach(u =>
+        {
+            if (!(u is UcakD))
+            {
+                u.HedefiVur();
+            }
+        });
+    }
+}
+Yukarıdaki işlem dışında UcakD’de HedefiVur çağrıldığı zaman hata fırlatılıp “Savas” sınıfımızda try catch bloklarıyla kontrol sağlanabilir.
+Tabi bunlar konumuzun dışında kalan konulardır. Asıl mevzu LSP’yi ilgilendiren base classtaki kullanılmayacak kodu derived class’a zorla implement etmektir. Haliyle LSP’ye aykırı olan bu durum OCP‘ye de aykırıdır. Çünkü her yeni gelen ve hedefi vuramayan uçakta “Savas” sınıfı içerisinde yeni if – else bloklarıyla kontrol sağlamız gerekecektir. Buda değişiklik demektir.
+Gelin şimdi bu sorunu Liskov’un Yerine Geçme Prensibini uygulayarak çözelim.
+
 
 
 

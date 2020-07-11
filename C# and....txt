@@ -6264,6 +6264,191 @@ class Parker : IBrandedPen
     //Implement all members of IPen and IBrandedPen
 }
 
+Kendi yaptığım örnek, hata olabilir belki:
+using System;
+ 
+class Program
+{
+    public abstract class AbstractClass
+    {
+        //public abstract int AbstractInt; //hata verir: field can not be abstract.
+ 
+        public int Number; //örnek field'ımızı oluşturmuş olduk.
+        public string Text; //örnek field.
+ 
+        //Aşağıdaki WriteSomething metodu AbstractClass'ı implement eden class'larda kullanılmak zorunda değil. Çünkü abstract değil bu metot. Interface - Abstract class arası farklardan birisi bu.
+        public void WriteSomething()
+        {
+            Console.WriteLine("FullMethod içindeyiz.");
+            //görüldüğü gibi, AbstractMethod'da sadece bir signature metot oluşturabilirken burada içi dolu, yani normal metotlar oluş
+            //turabiliriz. Abstract class'larda bu yapılabilirken interface'lerde yapılamamaktadır.
+        }
+ 
+        //public abstract AbstractMethod(); //hata verir. Bir şey geriye dönmüyorsan void keyword eklemelisin. Aşağıdaki SampleMethod'a bak örneğin.
+ 
+        public abstract NormalClass SampleMethod(); //abstact metot olduğu için override edilmelidir.
+ 
+        public abstract void AbstractMethod(); //abstact metot olduğu için override edilmelidir.
+    }
+ 
+    public class NormalClass : AbstractClass
+    {
+        public string Name { get; set; }
+ 
+        //NormalClass'ı oluşturup içini boş bırakırsak hata verir. Çünkü AbstractClass'taki abstract member'leri implement etmemiz zorunludur (interface'de signature metotların mecburen class'ta kullanılmasının gerektiği gibi). Edelim:
+ 
+        //public void AbstractMethod()
+        //{
+ 
+        //}
+ 
+        //Yukarıdaki hata verir. Çünkü override keyword'ünü kullanmadık (interface'de override kullanmıyoruz, farklardan biri. Kullanarak tekrardan oluşturalım:
+ 
+        //Aşağıdaki AbstractMethod public olmalıdır. Çünkü bu bir Abstract Member'dir. 
+        //Abstract member: implement edilen class'tan gelen, implement edilmesi zorunlu olan abstract member'lar
+        //Zaten public access modifier'ini silersen hatayı görürsün. Bu önemli...
+        //Ayrıca hatanın devamını okumak da faydalı olur:  ...can not change access rights.. Yani erişim haklarını değiştiremezsin! çünkü abstract class içindeki bu metot public'ti ve sen burada onu private olmaya zorluyorsun; yani erişim haklarını değiştirmeye çalışıyorsun.
+         public override void AbstractMethod()
+        {
+            Console.WriteLine("NormalClass içindeyiz.");
+        }
+ 
+        public override NormalClass SampleMethod()
+        {
+            throw new NotImplementedException();
+        }
+    }
+ 
+    public class NormalClass2 : AbstractClass
+    {
+        public override void AbstractMethod()
+        {
+            Console.WriteLine("NormalClass2 içindeyiz.");
+        }
+ 
+        public override NormalClass SampleMethod()
+        {
+            throw new NotImplementedException();
+        }
+    }
+ 
+    interface ISampleInterfaceForMessaging
+    {
+        void KullaniciyaBildirimYolla(string text);
+    }
+ 
+    class SampleClassForSendMessage : ISampleInterfaceForMessaging
+    {
+        public void KullaniciyaBildirimYolla(string yollanacakBildirim)  //bunun public olması gerekiyor. Interface'deki metotlara ulaşabilmesi için public olması gerekiyor. C# da bu uyarıyı zaten veriyor.
+        {
+            Console.WriteLine("Telefona mesaj göndererek bildirim yapıldı. Yollanan bildirim şudur: " + yollanacakBildirim);
+        }
+    }
+ 
+    class SampleClassForSendMail : ISampleInterfaceForMessaging
+    {
+        public void KullaniciyaBildirimYolla(string yollanacakBildirim)
+        {
+            Console.WriteLine("E-mail adresine mail göndererek bildirim yapıldı. Yollanan bildirim şudur: " + yollanacakBildirim);
+        }
+    }
+ 
+ 
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello World!");
+ 
+        NormalClass normalClass = new NormalClass();
+        normalClass.AbstractMethod();
+ 
+        NormalClass2 normalClass2 = new NormalClass2();
+        normalClass2.AbstractMethod();
+ 
+        //--------------
+        SampleClassForSendMessage sampleClassForSendMessage = new SampleClassForSendMessage();
+        sampleClassForSendMessage.KullaniciyaBildirimYolla("messahe");
+ 
+        SampleClassForSendMail sampleClassForSendMail = new SampleClassForSendMail();
+        sampleClassForSendMail.KullaniciyaBildirimYolla("mail");
+    }
+}
+-
+Interface örnek, interface örnek:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using CodeInConsole;
+ 
+namespace CodeInConsole
+{
+    class Program
+    {
+        public class Student
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+        }
+ 
+        interface IWork
+        {
+            Student GetStudentById(int id);
+            void DoSomething();
+            IList<Student> GetStudentList();
+        }
+ 
+        public class StudentWorks : IWork
+        {
+            public IList<Student> StudentList = CreateSampleDataAndPopulateStudentList();
+ 
+            public IList<Student> GetStudentList()
+            {
+                return StudentList;
+            }
+ 
+            public Student GetStudentById(int id)
+            {
+                var s1 = StudentList.Cast<Student>().ElementAt(0); // pseudo
+                return s1;
+            }
+ 
+            public void DoSomething()
+            {
+                Console.WriteLine("");
+            }
+        }
+ 
+        public static IList<Student> CreateSampleDataAndPopulateStudentList()
+        {
+            Student s1 = new Student();
+            s1.Id = 1;
+            s1.Name = "Eren";
+ 
+            Student s2 = new Student();
+            s2.Id = 2;
+            s2.Name = "Ahmet";
+ 
+            var studentList = new List<Student>();
+            studentList.Add(s1);
+            studentList.Add(s2);
+ 
+            return studentList;
+        }
+ 
+        public static void Main(string[] args)
+        {
+            StudentWorks studentWorks = new StudentWorks();
+ 
+            studentWorks.GetStudentById(1);
+            studentWorks.DoSomething();
+            studentWorks.GetStudentList();
+ 
+            Console.ReadKey();
+        }
+    }
+}
+-
+-
 
 
 

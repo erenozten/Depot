@@ -5286,6 +5286,174 @@ Yukarıdaki işlem dışında UcakD’de HedefiVur çağrıldığı zaman hata f
 Tabi bunlar konumuzun dışında kalan konulardır. Asıl mevzu LSP’yi ilgilendiren base classtaki kullanılmayacak kodu derived class’a zorla implement etmektir. Haliyle LSP’ye aykırı olan bu durum OCP‘ye de aykırıdır. Çünkü her yeni gelen ve hedefi vuramayan uçakta “Savas” sınıfı içerisinde yeni if – else bloklarıyla kontrol sağlamız gerekecektir. Buda değişiklik demektir.
 Gelin şimdi bu sorunu Liskov’un Yerine Geçme Prensibini uygulayarak çözelim.
 
+Class Diyagramında görüldüğü gibi herşey açık ve net. Tasarımımızı LSP’ye uygun bir vaziyette şekillendirebilmek için gördüğünüz gibi base classtaki tüm işlevler farklı arayüzlere bölmüş bulunmaktayım. Bu yaptığımız işlem bir sonraki yazımda ele alacağım arayüz ayrım prensibinede uyarlı bir yaklaşımdır.
+“UcakA”, “UcakB” ve “UcakC” hedefi vurma ve keşif yapma özelliklerine sahip oldukları için iki arayüzden de kalıtım almaktadırlar. “UcakD” ise sadece keşif yapabileceği için sadece “IUcakKesif” arayüzünden kalıtım almaktadır. Bu sayede kullanmayacağı bir işlev olan HedefiVur metodunu barındırmak zorunda kalmayacak ve Dummy Code durumunuda ortadan kaldırmış olacağız.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+	interface IUcakKesif
+{
+    bool KesifYap();
+}
+ 
+interface IHedefiVur
+{
+    bool HedefiVur();
+}
+ 
+class UcakA : IUcakKesif, IHedefiVur
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakA Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakA keşfi tamamladı.");
+        return true;
+    }
+}
+class UcakB : IUcakKesif, IHedefiVur
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakB Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakB keşfi tamamladı.");
+        return true;
+    }
+}
+class UcakC : IUcakKesif, IHedefiVur
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakC Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakC keşfi tamamladı.");
+        return true;
+    }
+}
+class UcakD : IUcakKesif
+{
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakD keşfi tamamladı.");
+        return true;
+    }
+}
+ 
+class Savas
+{
+    List<IHedefiVur> HedefVurucular;
+    List<IUcakKesif> KesifYapicilar;
+    public Savas(List<IUcakKesif> KesifYapicilar, List<IHedefiVur> HedefVurucular)
+    {
+        this.KesifYapicilar = KesifYapicilar;
+        this.HedefVurucular = HedefVurucular;
+    }
+ 
+    public void KesifYap()
+    {
+        KesifYapicilar.ForEach(u =>
+        {
+            u.KesifYap();
+        });
+    }
+ 
+    public void HedefiVur()
+    {
+        HedefVurucular.ForEach(u =>
+        {
+            u.HedefiVur();
+        });
+    }
+}
+Gördüğünüz gibi “Savas” sınıfı içerisindeki if – else kontrolüne gerek duymamaktayız. Haliyle bir değişiklik değil gelişimsellik söz konusu olduğu için OCP ve her yapı sade ve sadece kendi işini gördüğü için SRP‘ye uygun bir tasarım gerçekleştirmiş olduk.
+Evet… Liskov’un Yerine Geçme Prensibinde bu şekilde bir tasarım ve bakış açısı sergilememiz gerekmektedir. 2. sayfada bu prensibi pekiştirmek amacıyla farklı bir örnek senaryo bulacaksınız.
+Okuduğunuz için teşekkür ederim…
+Sonraki yazılarımda görüşmek üzere…
+İyi çalışmalar dilerim…
+
 
 
 

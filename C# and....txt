@@ -5050,6 +5050,41 @@ BENİM ÖRNEK:
     }
 
  
+Merhaba,
+Önceki yazılarımda SOLID prensiplerinden S–Tek Sorumluluk Prensibi(Single Responsibility Principle – SRP)‘ni ve O–Açık Kapalı Prensibi(Open Closed Principle – OCP) incelemiştik. Bu yazımızda ise sıradaki L timsaline denk gelen Liskov’un Yerine Geçme Prensibi(Liskov Substitution Principle – LSP) izah edeceğim.
+Liskov’un Yerine Geçme Prensibi, diğerlerine göre anlaşılması en zor prensiptir diyebilirim. Barbara Liskov adlı hanımefendi tarafından 1988 yılında ‘Data Abstraction and Hierarchy’ isimli kitabında bu prensip gündeme getirilmiştir.
+Her zor konuda olduğu gibi haliyle bu konuda “aslınnda anlaşıldığında çook basitt” diyeceğimiz bir konudur. Lakin bu konuyu zorlaştıran Barbara Liskov’un konuyla alakalı yaptığı açıklamadır. Bunun yanında 2. ve 3. kaynakların konuyu daha basit seviyede anlaşılır bir üslupla ele almalarıdır. Ee son olarakda bizim nam-ı diğer Türkler’in üzerine cila çekmesidir.
+Tabi yukarıdaki paragrafta anlattığım durum, kitaplardan ya da makalelerden konuyu okuyarak tek başına öğrenme gayretinde bulunanlar içindir. Eğer alanında uzman bir eğiticiden 1. dereceden eğitim alarak ilgili konuya fakıf olmuşsanız burada yazdıklarıma hak vermemeniz gayet doğal olacaktır.
+Velhasıl, bu zorlu ama anlaşılmayı bekleyen konuyu bu makale sonunda net bir şekilde idrak edeceğinizi umuyorum. Tabi öncelikle kitaplarda ve konuyla ilgili makalelerde kafamızı karıştıran tanımlamalara ve yorumlara yer vererek konuya giriş yapıyorum.
+Nedir Bu Liskov’un Yerine Geçme Prensibi
+LSP’yi orataya atan Barbara Liskov öncülüğünde bir çok kişi ilgili konuyu açıklamaya çalışmış, doğal olarak farklı yaklaşımlardan dolayı farklı izahlar ortaya çıkmıştır. Şimdi bunların bir kısmına göz atalım.
+Barbara Liskov’a göre;
+Aranan yer değiştirme özelliği şöyle tanımlanabilir: T cinsinden parametre alan tüm programlar (fonksiyonlar) P olacak şekilde, S tipinde o1 nesnesi ve T tipinde o2 nesnesi olsun. Eğer o1 ile o2 nesneleri yer değiştirdiğinde P’nin davranışı değişmiyorsa S tipi T tipinin alt tipidir!
+Evet, bende bişey anlamadım.
+Bilimsel olarak matematik ile formülüze bir şekilde LSP’ye açıklama getirmişler. O açıklamaya göreyse;
+q(x) fonksiyonu T tipindeki x nesnesi için kanıtlanabilirdir. O halde T tipinin alt tipi olan S tipindeki y nesnesi için de q(y) fonksiyonu kanıtlanabilir olmalıdır.
+Evet, bundanda bişey anlamadığımız aşikar.
+‘Uncle Bob’ lakaplı Robert Cecil Martin ise LSP’yi daha anlaşılır bir vaziyette aşağıdaki gibi izah etmiştir;
+Temel sınıfın(base class) işaretçisini(pointer) ya da referansını kullanan fonksiyonlar, bu sınıftan türemiş olan sınıfları(derived class) da ekstra bilgiye ihtiyaç duymaksızın kullanabilmelidir.
+Ehhh… Biraz daha yazılımcıya uygun bir açıklama olmuş gibi. En azından base classlar derived classlar derken kafada bişeylerin hayalini kurabiliyoruz. O kadar literatür taradım, kaynak okudum ama şu yukarıdaki açıklamanın bana polimorfizmi anımsattığı kadar kimse gıram bahsetmemiş. Haliyle algıladığımdan şüphelenir oldum. Eğer kaçırdığım bir mana, bir kelime yahut edat bağlaç varsa haber verinde neden yanlış anlamışım farkına varmama yardımcı olun.
+Siz bana Uncle Bob’un sözündeki algı hatamı izah edene kadar benim şu kanaatte olduğumu bilmenizi isterim ki, bu yukarıdaki açıklamaların hiçbirinden bir cacık olmaz! Anlamak için anlaşılır bir açıklama gerek. Koskoca prensibi batı algısıyla özetleyecez derken aman dikkat önemsizleştirmeyelim!
+Şimdi konuya şahsen girmeden önce bizim Türkler’in konuya getirdikleri açıklamalara göz atalım. (Adreslerini verdiğim yerli yazılımcılar konuyla ilgili araştırma yaparken internette tesadüfen denk geldiklerimdir.)
+Ömer İşıker;
+Temel sınıfta aşağıdaki sınıflara ait özel fonksiyon vs bulunmamalıdır. Yani temel sınıfta türemiş sınıflardan hiç biri için özel bir şey yazılmış olmamalıdır.
+Bu açıklama Ömer İşıker tarafından şu adresteki LSP ile ilgili makalede yer almaktadır. Kanaatimce LSP’ye izahatte bulunmamızı sağlayan yeterli bir açıklama değildir.
+Türkay Ürkmez;
+Aynı temel sınıftan türeyen tüm sınıflar, birbirlerinin yerine kullanılabilir olmalıdır. Bu yer değiştirme durumunda, sınıfa özel bir istisna kesinlikle oluşmamalıdır.
+Şahsi kanaatim, konuya en iyi açıklama getiren Türk yazarımız Türkay Ürkmez’dir. Türkay Ürkmez’in konuyla ilgili makalesi için tıklayınız.
+Bir adette ekşi sözlükte konuya izahatte bulunan arkadaşımızın düşüncesini görelim.
+yeni bir istek geldi müşteriden, sen de bunu sağlamak için mevcut olan bir class’ten child class üretiyorsun, veyahut method’ları override ediyorsun. mevcut class yerine child class’i kullandığında bir hata oluşmamalı ya da worst case’de çıkan hata, bütün uygulamayı darmadağın etmemeli. türetilmiş sınıflar (ihtiyaç üzerine method’ları override edilmiş ya da extend edilmiş), türetilikleri class’ler ile değiştirilebilir olmalıdır kısaca.
+Evet, bu arkadaşımız bayağı uçuk bir izahatte bulunmuşlar. Kanımca LSP’yi ya anlamamış ya da “sttir et LPS’yi… bakın ben terminoloji biliyorum” diye duyurma derdinde. Ha konuyla alakasını sorarsanız eksilerde tabi… Entrye buradan ulaşabilirsiniz.
+Daha sürüsüne bereket Türk yazılım geliştirici tarafından ilgili konu ele alınmıştır. Fazla kafa karıştırmak istemediğim için alıntılarda bunlarla yetiniyorum  
+Şimdi LSP’yi kendimiz ele alalım.
+Barbara Liskov’un ortaya attığı bu prensibe göre üst sınıf ile alt sınıf arasında davranış olarak hiçbir fark olmamalıdır. Yani birbirlerinin yerine kullanılabilmelidirler.
+Düşünün ki, arabanıza bir klima düğmesi koydunuz ve onu işlevsiz bıraktınız. Yani görüntüden ibaret ama iş yok. İşte bu durum LSP’ye aykırıdır. LSP, Dummy Code(Sahte kod) dediğimiz bu tarz duruma hayır demektedir. Yani bir düğme varsa işlevide olmalıdır. Buradan yola çıkarsak eğer base classların(kalıtım veren sınıfların), derived classlardaki(kalıtım alan sınıflardaki) işlevselliği tam olarak yerine getirdiğinden emin olmalıyız.
+Eee peki ne anlatmaya çalışıyoruz. Bir sınıfta bulunan herhangi bir işlev, kendisinden kalıtım alan sınıflarda kullanılmayacaksa eğer işte bu durum LSP’ye aykırı bir durumdur.
+Örnek olarak şöyle bir senaryo çizelim.
+Bir ordumuz olsun. Ordumuzdaki uçaklar bir yandan keşife çıkabilsin bir yandan da hedefi vurabilsin.
 
 
 

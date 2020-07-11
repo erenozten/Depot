@@ -6181,6 +6181,90 @@ class Cello : IPen
 } 
 In the above example of explicit implementation, notice that it cannot use access modifier 'public' explicitly. C# will give an error if you use 'public' modifier when implementing interface explicitly.
 
+There can be multiple classes or structs that implements the same interface. Consider the following example.
+class Parker : IPen
+{
+    public string Color { get; set; }
+        
+    private bool canWrite = false;
+        
+    public bool Close()
+    {
+        canWrite = false;
+        Console.WriteLine("Parker is closed now!");
+
+        return canWrite;
+    }
+
+    public bool Open()
+    {
+        canWrite = true;
+        Console.WriteLine("Parker is open now!");
+            
+        return canWrite;
+    }
+
+    public void Write(string text)
+    {
+        //write text if open
+        if(canWrite)
+            Console.WriteLine("Parker: " + text);
+    }
+}
+As you can see, the Parker class implements the IPen class. It implements the same functionalities declared in IPen class but in a different way than Cello class. (prints different messages in Open(), Close() and Write() methods.) Thus, multiple classes or Structs can implement the same interface which performs the same action but differently.
+You can now create objects of the class and assigned to a variable of interface type.
+Example: Interface Type Variable
+IPen pen1 = new Cello();
+
+IPen pen2 = new Parker();
+Try it
+The same variable can be used to instantiate all the classes which implemented IPen interface.
+IPen mypen = new Cello();
+mypen = new Parker(); // assign Parker object to same variable
+Implement Multiple Interfaces
+A class or struct can implement multiple interfaces and must define all the members of all interfaces.
+Example: Implement Multiple Interface
+interface IBrandedPen
+{
+    string GetBrandName();
+}
+
+class Parker : IPen, IBrandedPen
+{
+    //Implement all members of IPen and IBrandedPen
+}
+Now, the Parker class can be instantiated and assigned to either IPen or IBrandedPen interface, as shown below.
+Example: Interface Type Variables
+IPen pen1 = new Parker();
+pen1.Open();// valid 
+pen1.GetBrandName(); //Compile-time error. Cannot call IBrandedPen method on the object of type IPen
+
+IBrandedPen pen2 = new Parker();
+pen2.GetBrandName();// valid 
+pen2.Open();//Compile-time error. Cannot call IPen method on the object of type IBrandedPen
+Try it
+As you can see, an object only supports methods of an interface to which it assigned to, e.g. pen1 assigned to IPen so only supports methods of IPen and not of IBrandedPen.
+An interface can also inherit one or more interface.
+Example: Interface Inheritance
+interface IPen
+{
+    string Color { get; set; }
+    bool Open();
+    bool Close();
+    void Write(string text);
+}
+
+interface IBrandedPen : IPen 
+{
+    string GetBrandName();
+}
+
+class Parker : IBrandedPen
+{
+    //Implement all members of IPen and IBrandedPen
+}
+
+
 
 
 

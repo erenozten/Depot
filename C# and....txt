@@ -6019,6 +6019,12 @@ Summary
 •	struct members cannot be specified as abstract, sealed, virtual, or protected
 -
 -
+Enumeration	(GITHUB) (örnek)
+enumeration nedir
+
+An enumeration is a complete, ordered listing of all the items in a collection. The term is commonly used in mathematics and computer science to refer to a listing of all of the elements of a set. The precise requirements for an enumeration (for example, whether the set must be finite, or whether the list is allowed to contain repetitions) depend on the discipline of study and the context of a given problem.
+Some sets can be enumerated by means of a natural ordering (such as 1, 2, 3, 4, ... for the set of positive integers), but in other cases it may be necessary to impose a (perhaps arbitrary) ordering. In some contexts, such as enumerative combinatorics, the term enumeration is used more in the sense of counting – with emphasis on determination of the number of elements that a set contains, rather than the production of an explicit listing of those elements.
+
 
 
 

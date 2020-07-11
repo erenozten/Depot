@@ -4920,7 +4920,137 @@ But why use interfaces rather than abstract classes?
 A class can inherit from just one base class, but it can implement multiple interfaces!
 Therefore, by using interfaces you can include behavior from multiple sources in a class.
 To implement multiple interfaces, use a comma separated list of interfaces when creating the class: class A: IShape, IAnimal, etc.
-Liskovv
+-
+-
+Liskov Substitution Principle 	(GITHUB) (örnek)
+Liskov Substitution Principle nedir, liskov nedir
+
+Interface nedir, interface örnek, liskovv nedir, liskov nedir
+
+Liskov’un Yerine Geçme Prensibi(Liskov Substitution Principle – LSP)
+BENİM ÖRNEK:
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+ 
+class Program
+{
+    class Student
+    {
+        public string Name { get; set; }
+    }
+ 
+    class Araba: IAraba
+    {
+        // IAraba'nın metotlarını implement etmesi gerek...
+ 
+        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
+        {
+            Console.WriteLine("");
+        }
+ 
+        public void Teker()
+        {
+ 
+        }
+ 
+        public string CamaYaziYazdir()
+        {
+            return "Text";
+        }
+ 
+        public Student OgrenciyiArabayaBindir()
+        {
+            Student student = new Student();
+            return student;
+        }
+    }
+ 
+    //class gibi bir şeydir interface. Parantez açıp kapama yokk. Zaten anlamsız oluyor diğer şekilde.
+    interface IAraba
+    {
+        void Cam(); // köşeli parantez yokk
+        void Teker();
+        string CamaYaziYazdir();
+        Student OgrenciyiArabayaBindir();
+    }
+ 
+    
+ 
+}
+ 
+
+
+
+BENİM ÖRNEK:
+    class Program
+    {
+        interface IOyuncakOrdek
+        {
+            void OrdekSesiCikar();
+            void InsanSesiCikar();
+            void AyaklariniHareketEttir();
+        }
+
+        public class PahaliOrdek : IOyuncakOrdek
+        {
+            public void OrdekSesiCikar()
+            {
+                Console.WriteLine("Basarili. Ordek sesi cikarildi!");
+            }
+
+            public void InsanSesiCikar()
+            {
+                Console.WriteLine("Basarili. Insan sesi cikarildi!");
+            }
+
+            public void AyaklariniHareketEttir()
+            {
+                Console.WriteLine("Basarili. Ayaklar hareket ettirildi!");
+            }
+        }
+
+        public class UcuzOrdek : IOyuncakOrdek
+        {
+            public void OrdekSesiCikar()
+            {
+                Console.WriteLine("Basarili. Insan sesi cikarildi!");
+            }
+
+            public void InsanSesiCikar()
+            {
+                throw new NotImplementedException();
+                //çünkü ucuz ördek bu özelliğe sahip değil!
+            }
+
+            public void AyaklariniHareketEttir()
+            {
+                throw new NotImplementedException();
+                //çünkü ucuz ördek bu özelliğe sahip değil!
+            }
+        }
+
+        // İşte Liskovv prensibine uymayan bir kod. Çünkü içi boş olan, exception üretecek olan bir metodu implement ediyoruz...
+        // Ucuz ördekle pahalı ördek yer değiştirdiğinde sorun oluşmamalı fakat bu örnekte pahalı ordek her metodu başarıyla implement edebilirken ucuz ördek bunu yapamıyor.
+
+        static void Main(string[] args)
+        {
+            PahaliOrdek pahaliOrdek = new PahaliOrdek();
+            pahaliOrdek.OrdekSesiCikar();
+            pahaliOrdek.InsanSesiCikar();
+            pahaliOrdek.AyaklariniHareketEttir();
+
+            UcuzOrdek ucuzOrdek = new UcuzOrdek();
+            ucuzOrdek.OrdekSesiCikar();
+            ucuzOrdek.InsanSesiCikar();
+            ucuzOrdek.AyaklariniHareketEttir();
+        }
+    }
+
+ 
+
 
 
 

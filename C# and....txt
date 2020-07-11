@@ -5499,6 +5499,111 @@ Structs can contain methods, properties, indexers, and so on. Structs cannot con
             Console.WriteLine(p.x);
             // Outputs 10
         }
+-
+-
+Struct vs. Class 	(GITHUB) (örnek)
+struct nedir, class nedir, struct vs class
+
+In general, classes are used to model more complex behavior, or data, that is intended to be modified after a class object is created. Structs are best suited for small data structures that contain primarily data that is not intended to be modified after the struct is created. Consider defining a struct instead of a class if you are trying to represent a simple set of data. 
+
+All standard C# types (int, double, bool, char, etc.) are actually structs.
+
+Merhaba,
+Programlama dillerinde en mühim OOP(Object Oriented Programing) yapılarından olan class yapısına göre daha basit düzeyde işlemler gerçekleştirmemizi sağlayan ve belirli bir takım kısıtlamaları yanında barındıran struct yapısını C# diline özel ele alacağız.
+Şimdi düşünün ki, bir yapı oluşturacaksınız ve bu yapı birbirleriyle ilişkili verileri barındıracaktır. Haliyle bunu bir class olarak belirleyebilir ve o classtan üretilen nesne üzerinde işlemlerimizi icra edebiliriz. Amma velakin bu yapımız class kadar kompleks işlemler için tasarlanmış bir yapı gerektirmiyorsa ve tutulacak verileri enkapsüle etmek yetiyorsa işte bu tarz durumlarda struct yapısını tercih edebiliriz.
+Unutmayınız ki, classlar bir Referans Tipli(Reference Types) özellik gösterirken struct yapıları bir Değer Tipli(Value Types) değişken özelliği göstermektedir.
+Yani anlayacağınız “int” gibi, “bool” gibi değer tipli bir değişken oluşturmak istiyorsanız struct yapısını tercih edebilirsiniz.
+Bu demek oluyor ki, gerçekleştireceğimiz işlevselliğin yapısal olarak bir nesne yahut değer tipli bir değişken yapısında gerçekleştirilmesini tercih edebilir ve birazdan bahsedeceğim olumlu olumsuz yanlarıda hesaba katarak projenizde performansı daha maliyetli bir hale getirebilirsiniz.
+Şimdi struct yapısını C# perspektifinden adım adım değerlendirelim;
+	Yazımızın yukarıdaki satırlarında da bahsettiğimiz gibi struct C#’ta value type yaratabileceğimiz yapıdır.
+	struct yapıları, herhangi bir struct yahut class’tan kalıtım alamazlar.
+ 		 	
+	Benzer şekilde bir class yapısıda struct yapısından miras alamamaktadır.
+	struct yapıları, interface yapılarını uygulayabilmektedirler.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19	struct MyStruct1 : IInterface
+{
+    int x;
+    bool y;
+    public void A()
+    {
+        throw new NotImplementedException();
+    }
+    public void B(bool c)
+    {
+        throw new NotImplementedException();
+    }
+}
+ 
+interface IInterface
+{
+    void A();
+    void B(bool c);
+}
+	struct yapılar new keywordüyle örneklendirilebilmektedir. Burada iki durum söz konusudur.
+1.	Eğer new operatörüyle örneklendirirsek ne olur?
+Bildiğiniz gibi new operatörü classlarda kullanıldığı zaman ilgili classtan bir nesne talep edilmekte ve üretilen nesne belleğin Heap kısmında muhafaza edilmektedir. Ee söz gelimi struct yapısında da new operatörünü kullanırsak eğer evet ilgili yapıdan bir nesne üretilecektir ama struct bir değer tipli değişken yapısında olduğundan dolayı o nesne belleğin Stack kısmında muhafaza edilecektir.
+Bu yapıya kadar oluşturduğumuz tüm nesnelerin Heap kısmında olduğunu söylemiştik. Halbuki Stack kısmında struct yapısında nesneleri tutabilmekteyiz.
+Ayriyetten struct içerisindeki fieldlara default değerleri atanmış olacaktır.
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20	public partial class Form1 : Form
+{
+    public Form1()
+    {
+        InitializeComponent();
+    }
+ 
+    private void Form1_Load(object sender, EventArgs e)
+    {
+        MyStruct ms = new MyStruct();
+        MessageBox.Show(ms.x + " " + ms.y + " " + ms.z);
+    }
+}
+ 
+struct MyStruct
+{
+    public int x;
+    public bool y;
+    public string z;
+}
+Ekran çıktısı aşağıdadır.
+ 
+2.	Eğer new operatörü kullanmazsak ne olur?
 
 
 

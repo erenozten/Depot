@@ -6055,6 +6055,131 @@ In order to assign Enum values to int variables, you have to specify the type in
         }
 Basically, Enums define variables that represent members of a fixed set.
 Some sample Enum uses include month names, days of the week, cards in a deck, etc.
+-
+-
+interface vs. abstract class (GITHUB) (örnek)
+enum nedir, enum keyword nedir
+
+https://medium.com/software-development-turkey/abstract-class-ve-interface-aras%C4%B1ndaki-farklar-nelerdir-3c0a4f956eba
+Total encapsulation sunar, bunu sağlamak isteyen programmer'lar interface kullanmalıdır. Multiple inheritance kullanma amacındaysak bu işi interface ile yapabiliriz. Tüm metotların sadece ne yaptığı belli, nasıl yaptığı belirsizdir çünkü interface içindeki memberlar sadece signature'a sahip olan metotlara sahiplerdir. İçi dolu olan, yani işlemi "nasıl" yaptığı belli olan bir metot barındırmaz. Dolayısıyla tam bir encapsulation sağlar.
+Interface'in avantajları: 
+
+•  It is used to achieve loose coupling.
+•  It is used to achieve total abstraction.
+•  To achieve component-based programming
+•  To achieve multiple inheritance and abstraction.
+•  Interfaces add a plug and play like architecture into applications.
+
+  Points to Remember :
+1.	An interface only contains declarations of method, properties, indexers, and events.
+2.	An interface can be implement implicitly or explicitly by a class or struct.
+3.	A class or struct which implements an interface, must use 'public' access modifier.
+4.	An interface cannot include private, protected, or internal members. All the members are public by default.
+5.	Do not include 'public' in an interface as all the members are public by default. C# will give compile-time error if used 'public'.
+6.	Implement interface explicitly using InterfaceName. with all the members.
+7.	An interface can inherit one or more interfaces.
+
+An interface is like a contract. In the human world, the contract between the two or more humans binds them to act as per the contract. In the same way, the interface includes the declaration of one or more functionalities. Entities that implement the interface must define functionalities declared in the interface. In C#, a class or a struct can implement one or more interfaces.
+In C#, an interface can be defined using the interface keyword. Interfaces can contain methods, properties, indexers, and events as members.
+Consider the following IPen interface that declares some basic functionality for a pen.
+Example: An Interface
+interface IPen
+{
+    string Color { get; set; }
+    bool Open();
+    bool Close();
+    void Write(string text);
+}
+Example: Invalid Interface with Access Modifiers
+interface IPen
+{
+    public string Color { get; set; }  //error
+    protected bool Open(); //error
+    private bool Close();  //error
+    protected internal void Write(string text);//error
+}
+An interface can only contain declarations but not implementations. The following will give a compile-time error.
+Example: Invalid Interface with Implementation
+interface IPen
+{
+    string Color { get; set; }
+    bool Open();
+    bool Close();
+    void Write(string text){
+        Console.Write(text);  //error: cannot implement method
+    }
+}
+Implementing an Interface
+For example, the following class implements IPen interface implicitly.
+Example: Interface Implementation
+class Cello : IPen
+{
+    public string Color { get; set; }
+        
+    private bool isOpen = false;
+        
+    public bool Close()
+    {
+        isOpen = false;
+        Console.WriteLine("Cello closed for writing!");
+
+        return isOpen;
+    }
+
+    public bool Open()
+    {
+        isOpen = true;
+        Console.WriteLine("Cello open for writing!");
+            
+        return isOpen;
+    }
+
+    public void Write(string text)
+    {
+        //write text if open
+        if(isOpen)
+            Console.WriteLine("Cello: " + text);
+    }
+}
+In the above example, the Cello class implements the IPen interface. It defines all the members of the IPen interface with public access modifier. However, other non-interface members of the class can have any access modifiers e.g. isOpen field is a private member of the Cello class.
+ Note:
+All the members of the interface must be implemented with the public modifier in a class or struct. C# will give a compile-time error if any one of the members declared other than public access modifier.
+Explicit Interface Implementation
+Explicit implementation is useful when class is implementing multiple interface thereby it is more readable and eliminates the confusion. It is also useful if interfaces have same method name coincidently.
+ Note:
+Do not use public modifier with an explicit implementation. It will give compile time error.
+You can implement interface explicitly by prefixing interface name with all the members of an interface, as shown below:
+Example: Explicit Implementation
+class Cello : IPen
+{
+    string IPen.Color { get; set; }
+        
+    private bool isOpen = false;
+        
+    bool IPen.Close()
+    {
+        isOpen = false;
+        Console.WriteLine("Cello closed for writing!");
+
+        return isOpen;
+    }
+
+    bool IPen.Open()
+    {
+        isOpen = true;
+        Console.WriteLine("Cello open for writing!");
+            
+        return isOpen;
+    }
+
+    void IPen.Write(string text)
+    {
+        //write text if open
+        if(isOpen)
+            Console.WriteLine("Cello: " + text);
+    }
+} 
+In the above example of explicit implementation, notice that it cannot use access modifier 'public' explicitly. C# will give an error if you use 'public' modifier when implementing interface explicitly.
 
 
 

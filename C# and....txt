@@ -1189,16 +1189,138 @@ Microservices - also known as the microservice architecture - is an architectura
 The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
 -
 -
-Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(GITHUB)
+Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(edited,ekle) (Read)
+Statik tipli dil nedir, statik tipli diller nedir, statik dil nedir
+Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. 
 
-Programlama dillerinde tip sistemleri, değerleri belirli tiplerde gruplarlar. Aynı değerler,belirlenen tip adı altında gruplanarak yazılım geliştiricilerin veriyi çok daha etkili ve anlamlı kullanmasına olanak sağlar. Verinin işlenip çıktı olarak alınması noktasında verilerin etkili ve hataya yol açmadan işlenmesi çok önemlidir. Birbirinden alakasız veriler üzerinde işlem yapılması tip sistemlerinin getirdiği bu özellik sayesinde önlenir. Örneğin; Bir Integer ile bir Boolean değer aynı ifade içinde kullanılıp anlamsız bir değer çıkması tip sistemleri sayesinde önlenir.
-Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.
-Statik Tipli dillerde her değişkenin değişmez bir tipi olmak zorundadır. Uygulama geliştire ya bu tipi bizzat belirler yada Derleyici tarafından belirlenir. Statik Tipli dillerde yapılan işlemlerden önce Tip Konrolü yapıldığı için, operandların tiplerinin belirlenmesi gerekir. Tip kontrolleri compile (derleme) esnasında yapılır. Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Ada ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
-Dinamik Tipli dillerde değerler değişmez bir tipe sahiptir. Ancak değişkenler ve ifadelerin belirli bir tipe sahip olma zorunlulukları yoktur. Her bir işlem esnasında, operandlar değişik değerler üretebilir. Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python, Ruby, Smalltalk dilleri verilebilir.
+İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.
+
+Statik Tipli dillerde her değişkenin değişmez bir tipi olmak zorundadır. Uygulama geliştirenler ya bu tipi bizzat belirler yada Derleyici tarafından belirlenir. 
+
+Statik Tipli dillerde yapılan işlemlerden önce Tip Konrolü yapıldığı için, operandların tiplerinin belirlenmesi gerekir. Tip kontrolleri compile (derleme) esnasında yapılır. 
+Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Ada ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
+
+Dinamik Tipli dillerde değerler değişmez bir tipe sahiptir. Ancak değişkenler ve ifadelerin belirli bir tipe sahip olma zorunlulukları yoktur (what). Her bir işlem esnasında, operandlar değişik değerler üretebilir. Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. 
+
+Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python, Ruby, Smalltalk dilleri verilebilir.
+
 Statik Tipli Diller ile Dinamik Tipli dillerin birbirlerine üstünlükleri konusunda birçok fikir ortaya atılıyor. İkisinin de birbirlerine üstün oldukları noktalar var.
-Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için programın çalışması esnasında ekstra tip kontrolü yapılmaz, bu da uygulamanın çok daha verimli ve hızlı çalışması anlamına gelir. Dinamik Tipli dillerde ise çalışma (run-time) esnasında kontrol yapılması ufak da olsa bir yavaşlamaya sebep olmaktadır. Ayrıca yine bu özellikten dolayı her değişkenin tip bilgisi hafızada saklanmak zorundadır. Bu durum ekstra bir hafıza yükü anlamına gelir. Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için ekstra bir hafızaya gerek duyulmaz.
-Statik Tipli dillerde derleme (compile-time) esnasında herhangi bir hata yakalanmadı ise tip hatası oluşmamış demektir yani Dinamik Tipli dillere nazaran çok daha güvenlidir. Dinamik Tipli dillerde ise böyle bir kesinlik bulunmaz. Öte yandan Dinamik Tipli diller Developer’lara çok büyük esneklik sağlar. Gelen verinin türünün bilinmediği uygulamalarda çok kullanışlıdır. Ayrıca uygulama geliştirenler bir değişkene farklı noktalarda farklı değerler atayabilirler.
--
+
+Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için programın çalışması esnasında ekstra tip kontrolü yapılmaz, bu da uygulamanın çok daha verimli ve hızlı çalışması anlamına gelir. 
+
+Dinamik Tipli dillerde ise çalışma (run-time) esnasında kontrol yapılması ufak da olsa bir yavaşlamaya sebep olmaktadır. Ayrıca yine bu özellikten dolayı her değişkenin tip bilgisi hafızada saklanmak zorundadır. Bu durum ekstra bir hafıza yükü anlamına gelir. Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için ekstra bir hafızaya gerek duyulmaz.
+
+Statik Tipli dillerde derleme (compile-time) esnasında herhangi bir hata yakalanmadı ise tip hatası oluşmamış demektir yani Dinamik Tipli dillere nazaran çok daha güvenlidir. Dinamik Tipli dillerde ise böyle bir kesinlik bulunmaz. 
+
+Öte yandan Dinamik Tipli diller Developer’lara çok büyük esneklik sağlar. Gelen verinin türünün bilinmediği uygulamalarda çok kullanışlıdır. Ayrıca uygulama geliştirenler bir değişkene farklı noktalarda farklı değerler atayabilirler.
+
+Dynamic typing vs. static typing
+This topic is provided for reverence only as it explains the differences between dynamic and static typing. Understanding the differences between dynamic and static typing is key to understanding the way in which transformation script errors are handled, and how it is different from the way Groovy handles errors. This will also help you interpret errors created by your transformation script.
+Note: It is important to know that the Groovy implementation within Big Data Discovery enforces static typing. For information on exception handling in Transform, which uses a static parser overriding Groovy's dynamic typing behavior, see Exception handling and troubleshooting your scripts.
+There are two main differences between dynamic typing and static typing that you should be aware of when writing transformation scripts.
+First, dynamically-typed languages perform type checking at runtime, while statically typed languages perform type checking at compile time. This means that scripts written in dynamically-typed languages (like Groovy) can compile even if they contain errors that will prevent the script from running properly (if at all). If a script written in a statically-typed language (such as Java) contains errors, it will fail to compile until the errors have been fixed.
+Second, statically-typed languages require you to declare the data types of your variables before you use them, while dynamically-typed languages do not. Consider the two following code examples:
+// Java example
+int num;
+num = 5;
+// Groovy example
+num = 5
+Both examples do the same thing: create a variable called num and assign it the value 5. The difference lies in the first line of the Java example, int num;, which defines num's data type as int. Java is statically-typed, so it expects its variables to be declared before they can be assigned values. 
+Groovy is dynamically-typed and determines its variables' data types based on their values, so this line is not required.
+Dynamically-typed languages are more flexible and can save you time and space when writing scripts. However, this can lead to issues at runtime. For example:
+// Groovy example
+number = 5
+numbr = (number + 15) / 2  // note the typo
+The code above should create the variable number with a value of 5, then change its value to 10 by adding 15 to it and dividing it by 2. However, number is misspelled at the beginning of the second line. Because Groovy does not require you to declare your variables, it creates a new variable called numbr and assigns it the value number should have. This code will compile just fine, but may produce an error later on when the script tries to do something with number assuming its value is 10.
+Güzel anlatım:
+What is static typing? And what’s dynamic typing? I’ll answer both questions in this introductory article, and we’ll discuss the debate surrounding the very definition of these concepts.
+You do not have to know any particular programming language to understand the concepts; however, I shall make references to the programming language Perl, PHP and Python, (in the form of codes) in the article. Those who don’t know Python should think of the code as pseudocode, and things will just be fine. Static typing and dynamic typing are the concerns of programming language design; thus a lack of knowledge of any particular type is not going to harm your understanding of these concepts. In all the code fragments within this article, I have explicitly mentioned the programming language in which the code is written, using "/*……*/" (quotes not included).
+To begin with, I should mention that "typing" in terms of static and dynamic typing refers to "type" as in data type — not the process of pressing keys on a keyboard. Though this might have sounded quite obvious, it may not be to some. "Static" and "dynamic" are the types of "typing" that we shall see in the sections that follow. Languages that have static typing or dynamic typing are said to be "static typed" or "dynamic typed".
+Static Typing
+Static typed programming languages are those in which variables need not be defined before they’re used. This implies that static typing has to do with the explicit declaration (or initialization) of variables before they’re employed. Java is an example of a static typed language; C and C++ are also static typed languages. Note that in C (and C++ also), variables can be cast into other types, but they don’t get converted; you just read them assuming they are another type.
+Static typing does not imply that you have to declare all the variables first, before you use them; variables maybe be initialized anywhere, but developers have to do so before they use those variables anywhere. Consider the following example:
+/* C code */ 
+static int num, sum; // explicit declaration 
+num = 5; // now use the variables 
+sum = 10; 
+sum = sum + num;
+The above code fragment is an example of how variable declaration in static typed languages generally appears. Note that in the above code, static has nothing to do with static typing; it has been used along with int only to initialize num and sum to zero.
+Dynamic Typing
+Dynamic typed programming languages are those languages in which variables must necessarily be defined before they are used. This implies that dynamic typed languages do not require the explicit declaration of the variables before they’re used. Python is an example of a dynamic typed programming language, and so is PHP. Consider the following example:
+/* Python code */ 
+num = 10 // directly using the variable
+In the above code fragment, we have directly assigned the variable num the value 10 before initializing it. This is characteristic to dynamic typed programming languages.
+Another Analogy
+A lot of people define static typing and dynamic typing with respect to the point at which the variable types are checked. Using this analogy, static typed languages are those in which type checking is done at compile-time, whereas dynamic typed languages are those in which type checking is done at run-time.
+This analogy leads to the analogy we used above to define static and dynamic typing. I believe it is simpler to understand static and dynamic typing in terms of the need for the explicit declaration of variables, rather than as compile-time and run-time type checking.
+Static Typing and Dynamic Typing versus Strong Typing and Weak Typing
+Static and dynamic typing, and strong and weak typing, are two totally different concepts, which, unfortunately, are very often confused. It is erroneous to say that a language that is static or dynamic typed cannot be strong or weak typed. Static and dynamic typing, and strong and weak typing, are different forms of classification of programming languages, and one of each class necessarily characterizes a given language. It is thus imperative to discuss strong and weak typing vis-a-vis static and dynamic typing.
+Programming languages that exhibit "strong typing" are "strong typed," and those that exhibit "weak typing" are "weak typed".
+Strong Typing
+Programming languages in which variables have specific data types are strong typed. This implies that in strong typed languages, variables are necessarily bound to a particular data type. Python is strong typed, and so is Java. The distinction between strong typing and weak typing is more subtle and thus more difficult to grasp than is the distinction between static typing and dynamic typing. Consider the following example:
+/* Python code */ 
+>>> foo = "x" 
+>>> foo = foo + 2 
+Traceback (most recent call last): 
+  File "<pyshell#3>", line 1, in ? 
+    foo = foo + 2 
+TypeError: cannot concatenate 'str' and 'int' objects 
+>>>
+In the above Python example (run from the Python shell), foo is of str type. In the second line, we’re attempting to add 2 (an int) to a variable of str type. As we can see, a TypeError is returned, indicating that a str object cannot be concatenated with an int object. This is what characterizes strong typed languages: variables are bound to a particular data type.
+Weak Typing
+As opposed to strong typed languages, weak typed languages are those in which variables are not of a specific data type. It should be noted that this does not imply that variables do not have types; it does mean that variables are not "bound" to a specific data type. PHP and C are examples of weak typed languages. Consider the following:
+/* PHP code */ 
+<?php 
+$foo = "x"; 
+$foo = $foo + 2; // not an error 
+echo $foo; 
+?>
+In this example, foo is initially a string type. In the second line, we add this string variable to 2, an integer. This is permitted in PHP, and is characteristic of all weak typed languages.
+Now that we know about the two concepts, we can augment both of them to characterize any given language. Thus, Python is dynamic typed and strong typed; Java is static typed and strong typed; PHP is dynamic typed and weak typed; C is static typed and weak typed (owing to its casting ability).
+Dynamic Typing is Good
+In a dynamic typed language, you don’t have to initialize variables, which is a big bonus for many developers. Programmers like the fact that you can use a variable at will when required (without having to initialize it). Dynamic typing is characteristic of many of the scripting languages: Perl, PHP, Python, etc. Dynamic typing, in fact, does save you from writing a few "extra" lines of code, which, in turn, means less time spent writing code.
+Or Is It?
+  
+
+
+
+ 
+The very characteristic of dynamic typed languages that appeals to many developers is also a pitfall, and a major one at that. Consider the following simple example:
+/* Python code */ 
+my_variable = 10 
+while my_variable > 0: 
+        i = foo(my_variable) 
+        if i < 100: 
+                my_variable++ 
+        else 
+                my_varaible = (my_variable + i) / 10 // spelling error intentional
+As you can see in the above code, my_varaible is a spelling mistake that the programmer could have very well made. The problem here is that, since Python is dynamically typed, it will not return an error, but instead will create a new variable called my_varaible. So, now we have two variables: my_variable and my_varaible. This obviously is a serious problem; some would suggest that forced variable declaration is an important requirement in any programming language.
+Static Typed Behavior in Dynamic Typed Languages
+Perl is a dynamic typed programming language. However, it provides a means to "simulate" static typing by means of a pragma called strict. Consider the following Perl example:
+/* Perl code */ 
+$sum = 10; 
+print $sum;
+The above code will run without any problem, and will print 10 to the console. Note that here, we have not initialized the variable sum; this exemplifies the dynamic typing characteristic of Perl. To enforce variable declaration, we make use of the strict pragma as follows:
+/* Perl code */ 
+use strict; 
+$sum = 10; 
+print $sum;
+The above code fragment will return the following error when you try to run it:
+Global symbol "$num" requires explicit package name at perl.pl line 2. 
+Execution of perl.pl aborted due to compilation errors.
+To rectify the above error, we are forced to declare the variable num as follows:
+/* Perl code */ 
+use strict; 
+my $num; // forced declaration 
+$sum = 10; 
+print $sum;
+The above codes are specific to Perl; not all programming languages have a way to enforce variable declaration: Python, for example doesn’t have a way to enforce variable declaration. However, there is a tool, called "pychecker" (available here), that can be used to "detect" stray variables; this is, of course, far from a desirable solution.
+Static Typed or Dynamic Typed?
+There are advocates of both forms of typing. Asserting that one is better than the other would only lead to a debate of no consequence.
+There are those who advocate dynamic typing for the simplicity and saving in terms of time that it offers; they believe that type checking need not be an integral part of the programming language design per se, but instead, that third-party solutions (like pychecker) could be used to server that purpose.
+On the other hand, there are advocates of static typing, who believe that static typing (leading to forced variable declaration) is an important requirement of programming language design.
+Conclusion
+Static typing and dynamic typing, and strong and weak typing, are topics of programming language design that are not always clearly defined and, as a result, are not very well understood. This article has given you an insight into the concepts of static and dynamic typing as well as strong and weak typing.
 -
 -
 Entity Framework için constructor (GITHUB)

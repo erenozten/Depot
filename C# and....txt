@@ -4415,23 +4415,23 @@ You cannot use the virtual modifier with the static, abstract, private, or overr
 The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class. Derived class override keyword'ünü kullanarak override işlemi yapar.
 -
 -
-Abstract Class ve Interface Arasındaki Farklar Nelerdir?
+Abstract Class ve Interface Arasındaki Farklar Nelerdir?     (GITHUB)  (örnek)
 Interface nedir, absctract class nedir, abstract nedir, abstraction nedir, abstract keyword nedir
 https://medium.com/software-development-turkey/abstract-class-ve-interface-aras%C4%B1ndaki-farklar-nelerdir-3c0a4f956eba
 https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-c-sharp/
  
 Yazılıma yeni başlayan hemen herkesin zaman zaman karıştırdığı, hangisini ne zaman kullanacağına karar veremediği Abstract Class ve Interface ikilisini ele almak istedim. İlk bakışta yazdığımız koda oldukça benzer yetenekler kazandırdıkları görünse de aralarındaki farkların üzerinde durarak hangi senaryolarda hangisine karar vermemiz gerektiğini iyice açığa çıkartacağız 🙂
  
+ 
+© agile-code.com
 Abstract sınıflara geçmeden önce C# ve tüm Object Oriented dillerin bize sunduğu bir özellik olan abstraction(soyutlama) kavramını ele alalım. Böylece Abstract sınıflara ve Interface’lere neden ihtiyaç duyduğumuzu daha net bir şekilde anlayabiliriz.
 Abstraction (Soyutlama) Nedir?
 Abstraction, OOP (Object Oriented Programming-Nesne Tabanlı Programlama) içerisindeki önemli kavramlardan birisidir. C#’taki soyutlama; diğer Object Oriented dillerde olduğu gibi iç detayları gizleyerek sadece işlevleri göstermeye denir. Bu durumu gerçek hayatın içerisinden bir senaryo ile örneklendirelim.
-
 Senaryo: Bir gün canınız sıkıldı ve çocukluğunuzda kalmış tatlı bir aktivite olan lunaparka gidip çarpışan arabaya binmek istediniz. Biletinizi aldınız ve seçtiğiniz arabaya oturup size gelen görevliye bileti teslim ettiniz. Görevli alana baktı ve araçları hareket ettirecek olan elektriği vermek için yeterli sayıda kişinin olduğuna karar verip bir düğmeye bastı. Görevlinin düğmeye basmasıyla çarpışan arabaların hareket etmesi için gerekli olan elektrik akımı verildi ve arabanız çalışır hale geldi. Direksiyonu, gaz pedalını ve freni kullanarak dilediğiniz şekilde aracı kullanmaya başladınız.
 Şimdi gelin bu gerçek hayatın birebir içinden olan senaryodaki soyutlamaları (abstractions) inceleyelim. Böylece yazılım alanında da aslında aynı mantığın kullanıldığını ve soyutlamanın hayatımızı nasıl kolaylaştırdığını daha iyi anlamış olacağız.
 Senaryoda Yer Alan Soyutlamalar(Abstractions): İlk soyutlama örneğimiz biletinizi teslim ettiğiniz görevlinin eğlenceyi başlatmak için bastığı küçük kırmızı düğme 🙂 Görevli o kırmızı düğmeye bastığında bizler sadece eğlencenin başlayacağını biliyoruz, görevli de on dakikalık bir seansa daha start vereceğini biliyor yalnızca. Düğmeye basıldığı anda elektrik devresindeki anahtarın kapanıp akımın başlayacağını ne biz ne de görevli aklının ucundan dahi geçirmiyor. İşte bu tam bir soyutlama örneği. Yalnızca input(düğmeye basmak) ve output(eğlencenin başlaması) değerleriyle ilgileniyoruz. Arka tarafta dönen teknik hadiseleri hiç düşünmeden bize sunulmuş bir düğmeyi kullanarak işimizi görüyoruz.
 Eğer hala bir şeyler oturmadıysa kafanızda bir de çarpışan arabamızdaki soyutlamaya bakalım. Siz arabayı kullanırken direksiyonu gitmek istediğiniz yöne çeviriyor, gaz pedalına basarak ilerliyorsunuz. Gaz pedalına bastığınızdaki motorda oluşan tetiklenmeleri, direksiyonu çevirdiğinizde lastiklerin dönmesini sağlayan mekanizmayı hiç düşünmeden yalnızca iki pedal bir direksiyonla aslında arka planında onlarca aksiyon yatan bir işlevi gerçekleştirmiş oluyorsunuz. Input (gaz/fren pedalları, direksiyon) ve output (arabanın gitmesi) değerlerini bilmek size yetiyor.
 Object Oriented programlamada sınıfların soyutlanmasını ise Abstract Class ve Interface ikilisi sağlamaktadır. Abstraction kavramı kafamızda biraz olsun şekillendiğine göre şimdi Abstract Class’ları inceleyebiliriz.
-
 Abstract Class
 Abstract sınıflar sınıf hiyerarşisinde genellikle base class (temel sınıf) tanımlamak için kullanılan ve soyutlama yeteneği kazandıran sınıflardır. Bir sınıfı abstract yapmak için abstract keywordünü kullanırız. Abstract sınıflar en az bir tane abstract metod bulundurması bir best practice’tir.
 
@@ -4452,7 +4452,6 @@ Senaryomuzdan bir örnekle bunun daha iyi anlaşılabileceğini düşünüyorum.
 
 Çarpışan araba is-a araba.
 Yani en nihayetinde çarpışan araba da bir arabadır ve arabanın sahip olduğu özellikleri bünyesinde barındırır.
-
 Şimdi Araba için abstract bir sınıf oluşturup çarpışan arabayı da bu sınıftan inherit alarak oluşturalım.
 
 abstract class Araba{    
@@ -4473,7 +4472,6 @@ Araba isminde bir abstract sınıf tanımlayarak CarpisanAraba sınıfını bu a
 Böylece Araba sınıfında yer alan tüm özellikleri tekrardan yazmak zorunda kalmadan kolayca sahip olurken, YolculugaBasla() metodunu sınıfımıza özel override ettik. 
 Abstract sınıfları inherit alan sınıfların abstract metodları override etmesinin zorunlu olduğunu belirtmiştik. Bu sebeple Visual Studio’da CarpisanAraba sınıfını Araba sınıfından inherit ettiğinizde, YolculugaBasla() metodunu override etmezseniz hata alırsınız.
 Abstract sınıfları genel itibariyle mercek altına aldığımıza göre şimdi bir de Interface’leri inceleyelim. Sonrasında ikisi arasındaki farkları tablo halinde gördüğümüzde hangi senaryoda hangi soyutlama mekanizmasını kullanacağımızı çok daha iyi kestirebilir bir hale geleceğiz.
-
 Interface
 Interface, içerisinde sadece kendisinden türeyecek olan sınıfların içini dolduracağı metod tanımlarının bulunduğu ve soyutlama yapmamıza olanak sağlayan bir yapıdır. Interface’leri tanımlarken interface keyword'ünü kullanırız. Tanımladığımız yapının interface olduğunu belirtmek için isminin önüne I harfini getirmek bir best-practice olacaktır. Böylece kodlama yaparken inherit aldığımız yapının bir class mı yoksa interface mi olduğunu kolaylıkla ayırt edebiliriz. Bu kadar teorik bilgiden sonra basitçe bir interface tanımlayalım.
 
@@ -4494,6 +4492,7 @@ Interfaceleri tam olarak can-do ilişkileri içeren yapılarda kullanmamız isab
  
 Tablonun orjinaline blog sayfamdan; cozvelioglu.com adresinden ulaşabilirsiniz
 Abstract sınıflar ve Interface’ler arasındaki farkları işlediğimiz bu yazıyla birlikte bir yazının daha sonuna geldik. Dilerim aydınlatıcı olmuştur, anlayamadığınız veya gözümden kaçan herhangi bir şey varsa yorumlarda belirtmeniz beni memnun edecektir. Bir sonraki yazıda görüşmek dileğiyle; keyifli kodlamalar, mutlu günler :)!
+
 -
 BU da iyi açıklama:
 An abstract class is a way to achieve the abstraction in C#. An Abstract class is never intended to be instantiated directly. This class must contain at least one abstract method, which is marked by the keyword or modifier abstract in the class definition. The Abstract classes are typically used to define a base class in the class hierarchy.
@@ -4617,6 +4616,8 @@ A class can only use one abstract class.	A class can use multiple interface.
 If many implementations are of the same kind and use common behavior, then it is superior to use abstract class.	If many implementations only share methods, then it is superior to use Interface.
 Abstract class can contain methods, fields, constants, etc.	Interface can only contain methods .
 It can be fully, partially or not implemented.	It should be fully implemented.
+
+
 -
 -
 Web API  (Application Program Interface)
@@ -6885,82 +6886,6 @@ Abstract classes have the following features:
 •	An abstract class cannot be instantiated.
 •	An abstract class may contain abstract methods and accessors.
 •	It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings. The sealed modifier prevents a class from being inherited and the abstract modifier requires a class to be inherited.
-
-•	A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
-Use the abstract modifier in a method or property declaration to indicate that the method or property does not contain implementation.
-Abstract methods have the following features:
-•	An abstract method is implicitly a virtual method.
-•	Abstract method declarations are only permitted in abstract classes.
-•	Because an abstract method declaration provides no actual implementation, there is no method body; the method declaration simply ends with a semicolon and there are no curly braces ({ }) following the signature. For example:
-C#Copy
-public abstract void MyMethod();  
-The implementation is provided by a method override, which is a member of a non-abstract class.
-•	It is an error to use the static or virtual modifiers in an abstract method declaration.
-Abstract properties behave like abstract methods, except for the differences in declaration and invocation syntax.
-•	It is an error to use the abstract modifier on a static property.
-•	An abstract inherited property can be overridden in a derived class by including a property declaration that uses the override modifier.
-For more information about abstract classes, see Abstract and Sealed Classes and Class Members.
-An abstract class must provide implementation for all interface members.
-An abstract class that implements an interface might map the interface methods onto abstract methods. For example:
-C#Copy
-interface I
-{
-    void M();
-}
-
-abstract class C : I
-{
-    public abstract void M();
-}
-Example
-In this example, the class DerivedClass is derived from an abstract class BaseClass. The abstract class contains an abstract method, AbstractMethod, and two abstract properties, X and Y.
-C#Copy
-abstract class BaseClass   // Abstract class
-{
-    protected int _x = 100;
-    protected int _y = 150;
-    public abstract void AbstractMethod();   // Abstract method
-    public abstract int X    { get; }
-    public abstract int Y    { get; }
-}
-
-class DerivedClass : BaseClass
-{
-    public override void AbstractMethod()
-    {
-        _x++;
-        _y++;
-    }
-
-    public override int X   // overriding property
-    {
-        get
-        {
-            return _x + 10;
-        }
-    }
-
-    public override int Y   // overriding property
-    {
-        get
-        {
-            return _y + 10;
-        }
-    }
-
-    static void Main()
-    {
-        var o = new DerivedClass();
-        o.AbstractMethod();
-        Console.WriteLine($"x = {o.X}, y = {o.Y}");
-    }
-}
-// Output: x = 111, y = 161
-In the preceding example, if you attempt to instantiate the abstract class by using a statement like this:
-C#Copy
-BaseClass bc = new BaseClass();   // Error  
-You will get an error saying that the compiler cannot create an instance of the abstract class 'BaseClass'.
-
 
 
 

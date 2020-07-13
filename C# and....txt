@@ -6754,6 +6754,11 @@ public ActionResult Index()
         }
 -
 -
+Dapper, ADO.NET - EF hız karşılaştırma
+There's no doubt that Entity Framework with LINQ is great (I've certainly written enough articles about it). But Entity Framework comes at a cost. As Matthew Jones points out on his blog, using LINQ+Entity Framework adds time to each data retrieval compared to using ADO.NET's SqlDataAdapter. The cost is small (anywhere from a third of a millisecond to 100 milliseconds) but it's not zero, either.
+If speed is important to you but you don't want to give up object-oriented data access, then you can consider using Dapper. Like Entity Framework, Dapper is an Object Relation Mapper that allows you to issue queries against a relational database and get back objects. What's attractive about Dapper, compared to Entity Framework, is that its response times are equivalent to using pure ADO.NET.
+-
+-
 
 
 

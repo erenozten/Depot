@@ -6612,6 +6612,13 @@ String asdf;
 Bu ise Reference Type olduğu için null değere işaret eder. Yani değeri NULL olur. Çünkü String'ler Reference Type'dır. Bir değeri yoktur. Değeri olmayan bir verinin ADRESİNİ TUTAR. Adresini tuttuğu şeyin değeri yoktur şu anda (String asdf;). Bu yüzden bu string'in şu anki değeri NULL olur.
 -
 -
+HyperText, HyperMedia	(GITHUB) (örnek)
+Hypertext nedir, hypermedia nedir 
+Hypertext is text which contains links to other texts. The term was coined by Ted Nelson around 1965.
+HyperMedia is a term used for hypertext which is not constrained to be text: it can include graphics, video and sound , for example. Apparently Ted Nelson was the first to use this term too.
+Hypertext and HyperMedia are concepts, not products.
+-
+-
 
 
 

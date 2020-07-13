@@ -6591,6 +6591,12 @@ The difference between HTML Helpers and Tag Helpers
 Tag Helpers are attached to HTML elements inside your Razor views and can help you write markup that is both cleaner and easier to read than the traditional HTML Helpers. HTML Helpers, on the other hand, are invoked as methods that are mixed with HTML inside your Razor views.
 -
 -
+Razor 	(GITHUB) (örnek)
+razor nedir, razor view nedir
+Razor bir markup syntax'ıdır. MVC'nin view tarafında kullanılır.
+Razor is a markup syntax that lets you embed server-based code into web pages using C# and cshtml is the extension of razor file Cshtml = cs (C#) + HTML. Components are typically implemented in Razor Component files (.razor) using a combination of C# and HTML markup (.cshtml files are used in Blazor apps).
+-
+-
 
 
 

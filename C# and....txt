@@ -6678,6 +6678,16 @@ StringBuilder	(GITHUB) (örnek)
 StringBuilder nedir
 Detay:
 The String object is immutable. Every time you use one of the methods in the System.String class, you create a new string object in memory, which requires a new allocation of space for that new object. In situations where you need to perform repeated modifications to a string, the overhead associated with creating a new String object can be costly. The System.Text.StringBuilder class can be used when you want to modify a string without creating a new object. For example, using the StringBuilder class can boost performance when concatenating many strings together in a loop.
+-
+-
+Mutable and Immutable ? (GITHUB)  (örnek)
+mutable nedir, immutable nedir
+In English Language Mutable means "can change" and immutable means "cannot change". The term Immutable Object means that the state of the Object cannot change after its creation. An immutable type sets the property or state of the object as read only because it cannot be modified after it is assigned during initialization.
+Is String in .Net immutable ?
+Yes, the String in .Net is immutable. The System.String class is an immutable type provided in the .NET framework class library. Since a String is an immutable type, it cannot be modified. When you modify a string you are actually creating a new string object with the desired value.
+e.g.
+ 
+The above code will create 1000 new string variables in the memory.
 
 
 

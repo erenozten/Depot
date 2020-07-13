@@ -6571,6 +6571,26 @@ namespace CodeInConsole
 }
 -
 -
+Html Helper 	(GITHUB - yetersiz) (örnek)
+html helper nedir
+-
+HtmlHelper class generates html elements. For example, 
+@Html.ActionLink("Create New", "Create") 
+would generate anchor tag:
+ <a href="/Student/Create">Create New</a>.
+Visual Studio also provides minimum IntelliSense support when writing HTML Helpers, as the parameters for the HTML Helper methods are all strings. For example, in the following code, the LabelFor and TextBoxFor HTML Helper methods are used to create a label and textbox for a model property:
+Copy
+<div class="form-group"> 
+    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" }) 
+    <div class="col-md-10"> 
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" }) 
+    </div> 
+</div> 
+Because the class is a reserved word in C#, you will notice in the preceding code how you have to append the @ sign in order to...
+The difference between HTML Helpers and Tag Helpers
+Tag Helpers are attached to HTML elements inside your Razor views and can help you write markup that is both cleaner and easier to read than the traditional HTML Helpers. HTML Helpers, on the other hand, are invoked as methods that are mixed with HTML inside your Razor views.
+-
+-
 
 
 

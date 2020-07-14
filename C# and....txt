@@ -6932,6 +6932,71 @@ A list contains elements of the same type arranged in sequential order and follo
 •	The head node and the data nodes are encapsulated in the ADT. The calling function can only see the pointer to the stack.
 •	The stack head structure also contains a pointer to top and count of number of entries currently in stack.
 
+filter_none
+brightness_4
+//Stack ADT Type Definitions 
+typedef struct node 
+{ 
+ void *DataPtr; 
+ struct node *link; 
+} StackNode; 
+typedef struct
+{ 
+ int count; 
+ StackNode *top; 
+} STACK; 
+A Stack contains elements of the same type arranged in sequential order. All operations take place at a single end that is top of the stack and following operations can be performed:
+•	push() – Insert an element at one end of the stack called top.
+•	pop() – Remove and return the element at the top of the stack, if it is not empty.
+•	peek() – Return the element at the top of the stack without removing it, if the stack is not empty.
+•	size() – Return the number of elements in the stack.
+•	isEmpty() – Return true if the stack is empty, otherwise return false.
+•	isFull() – Return true if the stack is full, otherwise return false.
+3.	Queue ADT
+•	The queue abstract data type (ADT) follows the basic design of the stack abstract data type.
+ 
+•	Each node contains a void pointer to the data and the link pointer to the next element in the queue. The program’s responsibility is to allocate memory for storing the data.
+
+
+//Queue ADT Type Definitions 
+typedef struct node 
+{ 
+ void *DataPtr; 
+ struct node *next; 
+} QueueNode; 
+typedef struct 
+{ 
+ QueueNode *front; 
+ QueueNode *rear; 
+ int count; 
+} QUEUE; 
+A Queue contains elements of the same type arranged in sequential order. Operations take place at both ends, insertion is done at the end and deletion is done at the front. Following operations can be performed:
+•	enqueue() – Insert an element at the end of the queue.
+•	dequeue() – Remove and return the first element of the queue, if the queue is not empty.
+•	peek() – Return the element of the queue without removing it, if the queue is not empty.
+•	size() – Return the number of elements in the queue.
+•	isEmpty() – Return true if the queue is empty, otherwise return false.
+•	isFull() – Return true if the queue is full, otherwise return false.
+From these definitions, we can clearly see that the definitions do not specify how these ADTs will be represented and how the operations will be carried out. There can be different ways to implement an ADT, for example, the List ADT can be implemented using arrays, or singly linked list or doubly linked list. Similarly, stack ADT and Queue ADT can be implemented using arrays or linked lists.
+Reference: https://en.wikipedia.org/wiki/Abstract_data_type
+This article is contributed by Anuj Chauhan. If you like GeeksforGeeks and would like to contribute, you can also write an article using contribute.geeksforgeeks.org or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
+Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above.
+Don’t stop now and take your learning to the next level. Learn all the important concepts of Data Structures and Algorithms with the help of the most trusted course: DSA Self Paced. Become industry ready at a student-friendly price.
+-
+-
+Microsoft Exchange Server  (GITHUB) (örnek)
+
+Microsoft Exchange Server nedir
+Microsoft Exchange Server, Microsoft tarafından üretilen bir haberleşme yazılımıdır. Sunucu ürünlerinden Microsoft Servers'ın bir parçası olup Microsoft altyapısına sahip sistemlerde sıkça kullanılmaktadır. Exchange'in öne çıkan özellikleri e-posta, takvim, kişiler ve işler, bilgiye web tabanlı erişim olanağı ve veri depolama desteğidir.
+
+
+Dependency injection (services) in ASP.NET CORE
+ASP.NET Core has a built-in dependency injection (DI) framework that makes configured services available to an app's classes. One way to get an instance of a service in a class is to create a constructor with a parameter of the required type. The parameter can be the service type or an interface. The DI system provides the service at runtime.
+Here's a class that uses DI to get an Entity Framework Core context object. 
+-
+-
+
+
 
 
 

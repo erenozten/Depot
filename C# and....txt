@@ -7008,6 +7008,21 @@ Açık kaynak topluluğu Subversion'ı yaygın olarak kullanmıştır: örneğin
 Subversion Apache Lisansını kullanmaktadır ve açık kaynak kodludur.
 -
 -
+Single Page Application 
+Single web application nedir
+Ajax yollama json dönme sayfanın tamamen yenilenmeden içeriğinin değişmesi olayının teknik anlatımı.. Bir örnek üzerinden anlatılıyor:
+The app uses a single-page application (SPA) design. "Single-page application" is the general term for a web application that loads a single HTML page and then updates the page dynamically, instead of loading new pages. After the initial page load, the app talks with the server through AJAX requests. The AJAX requests return JSON data, which the app uses to update the UI.
+
+AJAX isn't new, but today there are JavaScript frameworks that make it easier to build and maintain a large sophisticated SPA application. This tutorial uses Knockout.js, but you can use any JavaScript client framework.
+
+Here are the main building blocks for this app:
+
+ASP.NET MVC creates the HTML page.
+ASP.NET Web API handles the AJAX requests and returns JSON data.
+Knockout.js data-binds the HTML elements to the JSON data.
+Entity Framework talks to the database.
+-
+-
 
 
 

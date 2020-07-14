@@ -7175,7 +7175,10 @@ An increasing focus on creating an optimized user experience has led some to car
 
 UI ingilizce User Interface'in (kullanıcı arayüzü) kısaltılmış hali, UX ise ingilizce User Experience'in (kullanıcı deneyimi) kısaltılmış halidir. UX, içinde UI'i de içeren bir çok disiplini de içeren daha büyük bir halkadır, yani UX > UI diyebiliriz. UX, bir kullanıcının ilgili şeyi (ürünü, hizmeti, web sitesini...) kullanırken, tasarım, kolay kullanım, kolay anlama, kullanırken memnun kalma gibi daha geniş bir perspektifte değerlendirir. UI ise bu deneyimin tasarım kısmını ifade eder. 
 UI ve UX arasındaki farkı basit bir örnekle anlatalım. UX bir binanın tasarımını yapan mimar gibidir. Oda yerleşimleri ve büyüklükleri nasıl olacak, hangi malzemeler kullanılacak, ışıklandırma ve renkler nasıl olacak tüm bunları hesaplar, planlar... Tüm planlanan işlerin yapılması ise UI'dir. Görüldüğü gibi UX birden fazla disiplini içinde barındıran, daha çok planlamayı içeren ancak alt disiplinlerle ilgili  yeterli derecede bilgiyi barındıran, daha çok soyut bir çıktı veren bir alandır. UI ise, somut bir çıktı veren bir alandır. UI bir kahveyi içmek için gereken bardağı tasarlamış, UX ise buna ek olarak kahveyi içenin elinin yanmaması için bir bardak daha eklemiş. UX, UI'den farklı olarak kullanıcının ilgili ürünü kullanırken karşılaşabileceği problemleri de düşünür ve bunlarada çözümler bulur.
- 
+-
+-
+MacOS (Macintosh Operating System)	(GITHUB) 	(örnek)
+macOS, (eski adları "Mac OS X" ve "OS X") Macintosh işletim sistemi ailesinin son sürümüdür ve Apple Inc. tarafından Macintosh bilgisayarları için tasarlanmış bir işletim sistemidir.
 -
 -
 

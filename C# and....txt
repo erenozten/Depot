@@ -7230,5 +7230,40 @@ Who uses MySQL
 •	Content Management Systems like WordPress, phpBB, Drupal, Joomla, TYPO3, MODx.
 •	Last but not least, a large number of web developers across the world.
 
+MySQL supported platforms
+MySQL runs on
+•	Linux (RedHat, SUSE, Mandrake, Debian)
+•	Embedded Linux (MontaVista, LynuxWorks BlueCat)
+•	Unix (Solaris, HP-UX, AIX)
+•	BSD (Mac OS X, FreeBSD)
+•	Windows (Windows 2000, Windows NT)
+•	RTOS (QNX)
+MySQL supported third party tools
+Drivers :
+•	ODBC
+•	JDBC
+•	.NET
+•	C++
+Languages :
+•	C
+•	C++
+•	C#
+•	Java
+•	Delphi
+•	Visual Basic
+•	Perl
+•	Python
+•	PHP
+Development Tools :
+•	Microsoft Visual Studio
+•	Borland Delphi and JBuilder
+•	Eclipse
+•	NetBeans
+Some of the widely used MySQL front ends (tools for managing MySQL)
+The MySQL GUI Tools Bundle is a cross-platform open source suite of desktop applications, building and manipulating the data within MySQL databases Development on the GUI Tools bundle has stopped, The GUI Tools bundle has been replaced by MySQL Workbench with the beta releases of MySQL Workbench 5.2. Currently, MySQL Workbench Team are working on Version 6.0. The first public beta, labeled version 6.0.2, was released on June 14, 2013.
+There are a lot of third-party free and proprietary graphical administration applications available that integrate with MySQL and users to work with the database. Here are some third-party tools for managing MySQL :
 
+MySQL was developed by Michael Widenius and David Axmark in 1994. Presently MySQL is maintained by Oracle (formerly Sun, formerly MySQL AB). 
+-
+-
 

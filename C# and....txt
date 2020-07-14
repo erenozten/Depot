@@ -7144,7 +7144,18 @@ How to Convert from HTML to XHTML
 4.	Close all empty elements
 5.	Change all attribute names to lowercase
 6.	Quote all attribute values
+-
+-
+XQuery 	(GITHUB) 	(örnek)
+XQuery is designed to query XML data.
 
+	XQuery Example:
+for $x in doc("books.xml")/bookstore/book
+where $x/price>30
+order by $x/title
+return $x/title
+-
+-
 
 
 

@@ -7121,6 +7121,29 @@ This is wrong:
 This is correct:
 <table width="100%">
 
+Attribute Values Must Be Quoted
+This is wrong:
+<table width=100%>
+This is correct:
+<table width="100%">
+________________________________________
+Attribute Minimization Is Forbidden
+Wrong:
+<input type="checkbox" name="vehicle" value="car" checked />
+Correct:
+<input type="checkbox" name="vehicle" value="car" checked="checked" />
+Wrong:
+<input type="text" name="lastname" disabled />
+Correct:
+<input type="text" name="lastname" disabled="disabled" />
+________________________________________
+How to Convert from HTML to XHTML
+1.	Add an XHTML <!DOCTYPE> to the first line of every page
+2.	Add an xmlns attribute to the html element of every page
+3.	Change all element names to lowercase
+4.	Close all empty elements
+5.	Change all attribute names to lowercase
+6.	Quote all attribute values
 
 
 

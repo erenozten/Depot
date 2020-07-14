@@ -7288,4 +7288,10 @@ Nutch is coded entirely in the Java programming language, but data is written in
 The fetcher ("robot" or "web crawler") has been written from scratch specifically for this project.
 -
 -
+Smalltalk 			(GITHUB) 	(örnek)
+smalltalk nedir
+Xerox PARC'ta (Palo Alto Research Center) geliştirilmiş nesne yönelimli bir programlama dilidir.
+Grafik kullanıcı arabirimleri alanında çok derin çalışmalar yapan Xerox PARC'ta geliştirilmesi sonucu Smalltalk WIMP (Windows, Icons, Menus, Pointers) sistemlerinin prototiplerini üretmede kullanıldı. Bu tip kullanıcı arayüzleri kişisel bilişimi şekillendirmiş ve günümüzde hâlen GNOME, KDE, Mac OS X, Microsoft Windows v.s. sistemlerinde kullanılmaktadır.
+-
+-
 

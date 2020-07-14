@@ -7266,4 +7266,11 @@ There are a lot of third-party free and proprietary graphical administration app
 MySQL was developed by Michael Widenius and David Axmark in 1994. Presently MySQL is maintained by Oracle (formerly Sun, formerly MySQL AB). 
 -
 -
+Web Indexing		(GITHUB) 	(örnek)
+web indexing nedir, web Indexing nedir
+Web indexing, or internet indexing, comprises methods for indexing the contents of a website or of the Internet as a whole. Individual websites or intranets may use a back-of-the-book index, while search engines usually use keywords and metadata to provide a more useful vocabulary for Internet or onsite searching. With the increase in the number of periodicals that have articles online, web indexing is also becoming important for periodical websites.[1]
+Back-of-the-book-style web indexes may be called "web site A-Z indexes".[2] The implication with "A-Z" is that there is an alphabetical browse view or interface. This interface differs from that of a browse through layers of hierarchical categories (also known as a taxonomy) which are not necessarily alphabetical, but are also found on some web sites. Although an A-Z index could be used to index multiple sites, rather than the multiple pages of a single site, this is unusual.
+Metadata web indexing involves assigning keywords or phrases to web pages or web sites within a metadata tag (or "meta-tag") field, so that the web page or web site can be retrieved with a search engine that is customized to search the keywords field.[2] This may or may not involve using keywords restricted to a controlled vocabulary list. This method is commonly used by search engine indexing.
+-
+-
 

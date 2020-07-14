@@ -7023,6 +7023,24 @@ Knockout.js data-binds the HTML elements to the JSON data.
 Entity Framework talks to the database.
 -
 -
+XHTML     (GITHUB) (örnek)
+What Is XHTML?
+XHTML stands for EXtensible HyperText Markup Language
+XHTML is almost identical to HTML
+XHTML is stricter than HTML
+XHTML is HTML defined as an XML application
+XHTML is supported by all major browsers 
+Why XHTML?
+Many pages on the internet contain "bad" HTML.
+This HTML code works fine in most browsers (even if it does not follow the HTML rules):
+<html>
+<head>
+  <title>This is bad HTML</title>
+
+<body>
+  <h1>Bad HTML
+  <p>This is a paragraph
+</body>
 
 
 

@@ -7280,4 +7280,12 @@ Web search engines and some other sites use Web crawling or spidering software t
 Crawlers consume resources on visited systems and often visit sites without approval. Issues of schedule, load, and "politeness" come into play when large collections of pages are accessed. Mechanisms exist for public sites not wishing to be crawled to make this known to the crawling agent. For example, including a robots.txt file can request bots to index only parts of a website, or nothing at all.
 -
 -
+Apache Nutch 		(GITHUB) 	(örnek)
+apache nedir, apache nutch nedir
+Apache Nutch is a highly extensible and scalable open source web crawler software project.
+Nutch is coded entirely in the Java programming language, but data is written in language-independent formats. It has a highly modular architecture, allowing developers to create plug-ins for media-type parsing, data retrieval, querying and clustering.
+
+The fetcher ("robot" or "web crawler") has been written from scratch specifically for this project.
+-
+-
 

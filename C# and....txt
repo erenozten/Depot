@@ -7195,6 +7195,10 @@ ORACLE        --> SQL\PL-SQL
 Data tiplerini bi incele: https://www.tutorialspoint.com/t_sql/t_sql_data_types.htm
 -
 -
+MySQL 	(GITHUB) 	(örnek)
+Mysql nedir
+MySQL is (as of July 2013) the world's most widely used open-source relational database management system (RDBMS), enabling the cost-effective delivery of reliable, high-performance and scalable Web-based and embedded database applications. It is widely-used as the database component of LAMP (Linux, Apache, MySQL, Perl/PHP/Python) web application software stack.
+NOT: Hem MSSQL hem de MySQL satıcılarından ücretsiz ve ücretli olmak üzere destek alırlar. MySQL’in satıcısı ve sahibi Oracle, MS SQL’in satıcısı ve sahibi ise Microsoft’tur. Her iki veritabanı için internet üzerinde de destek alınabilecek binlerce topluluk ve forum sitesi mevcuttur.
 
 
 

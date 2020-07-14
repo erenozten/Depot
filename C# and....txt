@@ -7081,6 +7081,45 @@ This example shows an XHTML document with a minimum of required tags:
 
 </html>
 
+XHTML Elements Must Be Properly Nested
+In HTML, some elements can be improperly nested within each other, like this:
+<b><i>This text is bold and italic</b></i>
+In XHTML, all elements must be properly nested within each other, like this:
+<b><i>This text is bold and italic</i></b>
+________________________________________
+XHTML Elements Must Always Be Closed
+This is wrong:
+<p>This is a paragraph
+<p>This is another paragraph
+This is correct:
+<p>This is a paragraph</p>
+<p>This is another paragraph</p>
+________________________________________
+Empty Elements Must Also Be Closed
+This is wrong:
+A break: <br>
+A horizontal rule: <hr>
+An image: <img src="happy.gif" alt="Happy face">
+This is correct:
+A break: <br />
+A horizontal rule: <hr />
+An image: <img src="happy.gif" alt="Happy face" />
+________________________________________
+XHTML Elements Must Be In Lower Case
+This is wrong:
+<BODY>
+<P>This is a paragraph</P>
+</BODY>
+This is correct:
+<body>
+<p>This is a paragraph</p>
+</body>
+________________________________________
+XHTML Attribute Names Must Be In Lower Case
+This is wrong:
+<table WIDTH="100%">
+This is correct:
+<table width="100%">
 
 
 

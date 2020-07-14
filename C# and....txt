@@ -7169,6 +7169,15 @@ UX (User Experience) 	(GITHUB) 	(örnek)
 UI ve UX çoğu kez beraber kullanılmalarına rağmen aslında çok farklı iki alandır. UI konusunda olmasa bile UX konusunda çok geride olan ülkemizde, maalesef bu işi profesyonel olarak yapan insanlar bile aralarındaki farkı çok bilmiyorlar. Ülkemizde bir UXD (User Interface Designer) ile tanışmanız çok zor. Türkiye’de bu işle ilgili çoğu insanın özgeçmişinde “UI/UX” yazar. Bunun bir sebebi aralarındaki farkın bilinmemesi, diğer sebebi ise internet sektörünü geriden takip etmemizden dolayı bu işi iki parçaya bölmenin bir lüks olarak görünmesidir.
 -
 -
+UI ve UX arasındaki farklar nelerdir ?
+The UI is often talked about in conjunction with user experience (UX), which may include the aesthetic appearance of the device, response time and the content that is presented to the user within the context of the user interface. Both terms fall under the concept of human-computer interaction (HCI), which is the field of study focusing on the creation of computer technology and the interaction between humans and all forms of IT design. Specifically, HCI studies areas such as UCD, UI design and UX design.
+An increasing focus on creating an optimized user experience has led some to carve out careers as UI and UX experts. Certain languages, such as HTML and CSS, have been geared toward making it easier to create a strong user interface and experience.
+
+UI ingilizce User Interface'in (kullanıcı arayüzü) kısaltılmış hali, UX ise ingilizce User Experience'in (kullanıcı deneyimi) kısaltılmış halidir. UX, içinde UI'i de içeren bir çok disiplini de içeren daha büyük bir halkadır, yani UX > UI diyebiliriz. UX, bir kullanıcının ilgili şeyi (ürünü, hizmeti, web sitesini...) kullanırken, tasarım, kolay kullanım, kolay anlama, kullanırken memnun kalma gibi daha geniş bir perspektifte değerlendirir. UI ise bu deneyimin tasarım kısmını ifade eder. 
+UI ve UX arasındaki farkı basit bir örnekle anlatalım. UX bir binanın tasarımını yapan mimar gibidir. Oda yerleşimleri ve büyüklükleri nasıl olacak, hangi malzemeler kullanılacak, ışıklandırma ve renkler nasıl olacak tüm bunları hesaplar, planlar... Tüm planlanan işlerin yapılması ise UI'dir. Görüldüğü gibi UX birden fazla disiplini içinde barındıran, daha çok planlamayı içeren ancak alt disiplinlerle ilgili  yeterli derecede bilgiyi barındıran, daha çok soyut bir çıktı veren bir alandır. UI ise, somut bir çıktı veren bir alandır. UI bir kahveyi içmek için gereken bardağı tasarlamış, UX ise buna ek olarak kahveyi içenin elinin yanmaması için bir bardak daha eklemiş. UX, UI'den farklı olarak kullanıcının ilgili ürünü kullanırken karşılaşabileceği problemleri de düşünür ve bunlarada çözümler bulur.
+ 
+-
+-
 
 
 

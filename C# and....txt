@@ -7342,3 +7342,17 @@ Micro services offers the following advantages to its developers −
 •	Compatible with Containers
 •	Minimum configuration
 •	Lesser production time
+
+What is Spring Boot?
+Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run. You can get started with minimum configurations without the need for an entire Spring configuration setup.
+Advantages
+Spring Boot offers the following advantages to its developers −
+•	Easy to understand and develop spring applications
+•	Increases productivity
+•	Reduces the development time
+Goals
+Spring Boot is designed with the following goals −
+•	To avoid complex XML configuration in Spring
+•	To develop a production ready Spring applications in an easier way
+•	To reduce the development time and run the application independently
+•	Offer an easier way of getting started with the application

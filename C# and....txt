@@ -7410,5 +7410,22 @@ Impala uses the same metadata, SQL syntax (Hive SQL), ODBC driver, and user inte
 Unlike Apache Hive, Impala is not based on MapReduce algorithms. It implements a distributed architecture based on daemon processes that are responsible for all the aspects of query execution that run on the same machines.
 Thus, it reduces the latency of utilizing MapReduce and this makes Impala faster than Apache Hive.
 
+Advantages of Impala
+Here is a list of some noted advantages of Cloudera Impala.
+•	Using impala, you can process data that is stored in HDFS at lightning-fast speed with traditional SQL knowledge.
+•	Since the data processing is carried where the data resides (on Hadoop cluster), data transformation and data movement is not required for data stored on Hadoop, while working with Impala.
+•	Using Impala, you can access the data that is stored in HDFS, HBase, and Amazon s3 without the knowledge of Java (MapReduce jobs). You can access them with a basic idea of SQL queries.
+•	To write queries in business tools, the data has to be gone through a complicated extract-transform-load (ETL) cycle. But, with Impala, this procedure is shortened. The time-consuming stages of loading & reorganizing is overcome with the new techniques such as exploratory data analysis & data discovery making the process faster.
+•	Impala is pioneering the use of the Parquet file format, a columnar storage layout that is optimized for large-scale queries typical in data warehouse scenarios.
+Features of Impala
+Given below are the features of cloudera Impala −
+•	Impala is available freely as open source under the Apache license.
+•	Impala supports in-memory data processing, i.e., it accesses/analyzes data that is stored on Hadoop data nodes without data movement.
+•	You can access data using Impala using SQL-like queries.
+•	Impala provides faster access for the data in HDFS when compared to other SQL engines.
+•	Using Impala, you can store data in storage systems like HDFS, Apache HBase, and Amazon s3.
+•	You can integrate Impala with business intelligence tools like Tableau, Pentaho, Micro strategy, and Zoom data.
+•	Impala supports various file formats such as, LZO, Sequence File, Avro, RCFile, and Parquet.
+•	Impala uses metadata, ODBC driver, and SQL syntax from Apache Hive.
 
 

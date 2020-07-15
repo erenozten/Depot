@@ -7330,3 +7330,15 @@ JSP in Jakarta EE
 Following the release of Java EE 8, Oracle moved stewardship of Java Enterprise Edition (Java EE) to the Eclipse Foundation. Going forward, the Java enterprise platform has been rebranded as Jakarta EE. Along with the Java Servlet and JSF specifications, JSP is one of the Java web technologies included for ongoing support and upgrades in Jakarta EE.
 -
 -
+Spring Boot		(GITHUB) 	(örnek)
+spring boot nedir, springboot nedir
+Spring Boot is an open source Java-based framework used to create a micro Service. It is developed by Pivotal Team and is used to build stand-alone and production ready spring applications. This chapter will give you an introduction to Spring Boot and familiarizes you with its basic concepts.
+What is Micro Service?
+Micro Service is an architecture that allows the developers to develop and deploy services independently. Each service running has its own process and this achieves the lightweight model to support business applications.
+Advantages
+Micro services offers the following advantages to its developers −
+•	Easy deployment
+•	Simple scalability
+•	Compatible with Containers
+•	Minimum configuration
+•	Lesser production time

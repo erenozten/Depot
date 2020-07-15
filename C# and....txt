@@ -7356,3 +7356,16 @@ Spring Boot is designed with the following goals −
 •	To develop a production ready Spring applications in an easier way
 •	To reduce the development time and run the application independently
 •	Offer an easier way of getting started with the application
+
+Why Spring Boot?
+You can choose Spring Boot because of the features and benefits it offers as given here −
+•	It provides a flexible way to configure Java Beans, XML configurations, and Database Transactions.
+•	It provides a powerful batch processing and manages REST endpoints.
+•	In Spring Boot, everything is auto configured; no manual configurations are needed.
+•	It offers annotation-based spring application
+•	Eases dependency management
+•	It includes Embedded Servlet Container
+-
+-
+
+

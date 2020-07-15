@@ -7318,4 +7318,15 @@ JavaServer Faces (JSF) is the Java standard technology for building component-ba
 The key idea to a framework like JSF is to encapsulate (or wrap) client-side technologies like HTML, CSS, and JavaScript, allowing developers to build web interfaces without much interaction with these technologies.
 This article presents a snapshot of JSF's approach to component-based UI development for Java web applications. Simple examples introduce JSF's MVC architecture, event model, and component library. Examples include new features in JSF 2.3, and we'll use PrimeFaces for our component library.
 -
+-JSP / JavaServer Pages 	(GITHUB) 	(örnek)
+jsp nedir java server pages nedir, javaserver pages nedir, javaserverpages nedir
+JavaServer Pages (JSP) is a Java standard technology that enables you to write dynamic, data-driven pages for your Java web applications. JSP is built on top of the Java Servlet specification. The two technologies typically work together, especially in older Java web applications. From a coding perspective, the most obvious difference between them is that with servlets you write Java code and then embed client-side markup (like HTML) into that code, whereas with JSP you start with the client-side script or markup, then embed JSP tags to connect your page to the Java backend.
+JSP is also closely related to JSF (JavaServer Faces), a Java specification for building MVC (model-view-controller) web applications. JSP is a relatively simpler and older technology than JSF, which is the standard for Java web frameworks like Eclipse Mojarra, MyFaces, and PrimeFaces. While it is not uncommon to see JSP used as the frontend for older JSF applications, Facelets is the preferred view technology for modern JSF implementations.
+While JSP may not be your first choice for building dynamic web pages, it is a core Java web technology. JSP pages are relatively quick and easy to build, and they interact seamlessly with Java servlets in a servlet container like Tomcat. You will encounter JSP in older Java web applications, and from time to time you may find it useful for building simple, dynamic Java web pages. As a Java developer, you should at least be familiar with JSP.
+[ Also on InfoWorld: 10 best API management tools ]
+This article will be a quick introduction to JavaServer Pages, including the JSP Standard Tag Library (JSTL). Examples show you how to write a simple HTML page, embed JSP tags to connect to a Java servlet, and run the page in a servlet container.
+See previous articles in this series to learn more about Java servlets and JavaServer Faces.
+JSP in Jakarta EE
+Following the release of Java EE 8, Oracle moved stewardship of Java Enterprise Edition (Java EE) to the Eclipse Foundation. Going forward, the Java enterprise platform has been rebranded as Jakarta EE. Along with the Java Servlet and JSF specifications, JSP is one of the Java web technologies included for ongoing support and upgrades in Jakarta EE.
+-
 -

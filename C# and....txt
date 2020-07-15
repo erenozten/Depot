@@ -7294,4 +7294,12 @@ Xerox PARC'ta (Palo Alto Research Center) geliştirilmiş nesne yönelimli bir p
 Grafik kullanıcı arabirimleri alanında çok derin çalışmalar yapan Xerox PARC'ta geliştirilmesi sonucu Smalltalk WIMP (Windows, Icons, Menus, Pointers) sistemlerinin prototiplerini üretmede kullanıldı. Bu tip kullanıcı arayüzleri kişisel bilişimi şekillendirmiş ve günümüzde hâlen GNOME, KDE, Mac OS X, Microsoft Windows v.s. sistemlerinde kullanılmaktadır.
 -
 -
+JPA / Java Persistence API   	(GITHUB) 	(örnek)
+The Java ORM standard for storing, accessing, and managing Java objects in a relational database.
+As a specification, the Java Persistence API is concerned with persistence, which loosely means any mechanism by which Java objects outlive the application process that created them. Not all Java objects need to be persisted, but most applications persist key business objects. The JPA specification lets you define which objects should be persisted, and how those objects should be persisted in your Java applications.
+By itself, JPA is not a tool or framework; rather, it defines a set of concepts that can be implemented by any tool or framework. While JPA's object-relational mapping (ORM) model was originally based on Hibernate, it has since evolved. Likewise, while JPA was originally intended for use with relational/SQL databases, some JPA implementations have been extended for use with NoSQL datastores. A popular framework that supports JPA with NoSQL is EclipseLink, the reference implementation for JPA 2.2.
+JPA 2.2 in Jakarta EE
+The Java Persistence API was first released as a subset of the EJB 3.0 specification (JSR 220) in Java EE 5. It has since evolved as its own spec, starting with the release of JPA 2.0 in Java EE 6 (JSR 317). As of this writing, JPA 2.2 has been adopted for continuation as part of Jakarta EE.
+JPA and Hibernate
+Because of their intertwined history, Hibernate and JPA are frequently conflated. However, like the Java Servlet specification, JPA has spawned many compatible tools and frameworks; Hibernate is just one of them.
 

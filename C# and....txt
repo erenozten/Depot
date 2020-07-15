@@ -7378,5 +7378,10 @@ A servlet is a Java programming language class that is used to extend the capabi
 Java servlet, Java EE'de Java Servlet API'siyle uyumlu bir Java (programlama) sınıfı olup HTTP istemlerine cevap vermek için kullanılır. Belirli bir istemci-sunucu protokolüne bağlı olmamasına rağmen genelde bu protokolle kullanılır. Servlet kelimesi genelde HTTP servlet yerine bu yüzden kullanılmaktadır.[1] Dolayısıyla bir yazılım uzmanı, Java platformu sayesinde servleti bir Web sunucusuna dinamik içerik eklemek için kullanabilir. Üretilen kod genelde HTML olsa da bazen XML de olabilir. Servletler, CGI ya da ASP.NET gibi Java-dışı Web içerik teknolojilerinin Java'daki karşıt üründür. Servletlerle HTTP çerezleri veya URL yeniden yazımı kullanılarak oturum değişkenlerinin sistem durumunu birçok sunucu hareketleri boyunca koruması sağlanmaktadır.
 -
 -
+Apache Hive    (GITHUB) 	(örnek)
+apache hive nedir, hive nedir
+Apache Hive is a data warehouse software project built on top of Apache Hadoop for providing data query and analysis.[3] Hive gives an SQL-like interface to query data stored in various databases and file systems that integrate with Hadoop. Traditional SQL queries must be implemented in the MapReduce Java API to execute SQL applications and queries over distributed data. Hive provides the necessary SQL abstraction to integrate SQL-like queries (HiveQL) into the underlying Java without the need to implement queries in the low-level Java API. Since most data warehousing applications work with SQL-based querying languages, Hive aids portability of SQL-based applications to Hadoop.[4] While initially developed by Facebook, Apache Hive is used and developed by other companies such as Netflix and the Financial Industry Regulatory Authority (FINRA).[5][6] Amazon maintains a software fork of Apache Hive included in Amazon Elastic MapReduce on Amazon Web Services.[7]
+-
+-
 
 

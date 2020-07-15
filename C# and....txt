@@ -7388,5 +7388,10 @@ pig nedir, apache pig nedir
 Apache Pig[1] is a high-level platform for creating programs that run on Apache Hadoop. The language for this platform is called Pig Latin.[1] Pig can execute its Hadoop jobs in MapReduce, Apache Tez, or Apache Spark.[2] Pig Latin abstracts the programming from the Java MapReduce idiom into a notation which makes MapReduce programming high level, similar to that of SQL for relational database management systems. Pig Latin can be extended using user-defined functions (UDFs) which the user can write in Java, Python, JavaScript, Ruby or Groovy[3] and then call directly from the language.
 -
 -
+Apache Spark	  (GITHUB) 	(örnek)
+apache spark nedir, spark nedir
+Apache Spark is an open-source distributed general-purpose cluster-computing framework. Spark provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Originally developed at the University of California, Berkeley's AMPLab, the Spark codebase was later donated to the Apache Software Foundation, which has maintained it since.
+-
+-
 
 

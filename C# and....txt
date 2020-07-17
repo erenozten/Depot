@@ -7428,4 +7428,15 @@ Given below are the features of cloudera Impala −
 •	Impala supports various file formats such as, LZO, Sequence File, Avro, RCFile, and Parquet.
 •	Impala uses metadata, ODBC driver, and SQL syntax from Apache Hive.
 
+Relational Databases and Impala
+Impala uses a Query language that is similar to SQL and HiveQL. The following table describes some of the key dfferences between SQL and Impala Query language.
+Impala	Relational databases
+Impala uses an SQL like query language that is similar to HiveQL.	Relational databases use SQL language.
+In Impala, you cannot update or delete individual records.	In relational databases, it is possible to update or delete individual records.
+Impala does not support transactions.	Relational databases support transactions.
+Impala does not support indexing.	Relational databases support indexing.
+Impala stores and manages large amounts of data (petabytes).	Relational databases handle smaller amounts of data (terabytes) when compared to Impala.
+-
+-
+
 

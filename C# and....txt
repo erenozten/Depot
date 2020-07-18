@@ -7444,6 +7444,16 @@ internet of things nedir, Internet of things nedir, nesnelerin interneti nedir, 
 The Internet of things (IoT) is a system of interrelated computing devices, mechanical and digital machines provided with unique identifiers (UIDs) and the ability to transfer data over a network without requiring human-to-human or human-to-computer interaction.[1][2][3][4]
 The definition of the Internet of things has evolved due to the convergence of multiple technologies, real-time analytics, machine learning, commodity sensors, and embedded systems.[1] Traditional fields of embedded systems, wireless sensor networks, control systems, automation (including home and building automation), and others all contribute to enabling the Internet of things. In the consumer market, IoT technology is most synonymous with products pertaining to the concept of the "smart home", including devices and appliances (such as lighting fixtures, thermostats, home security systems and cameras, and other home appliances) that support one or more common ecosystems, and can be controlled via devices associated with that ecosystem, such as smartphones and smart speakers.
 There are a number of serious concerns about dangers in the growth of IoT, especially in the areas of privacy and security, and consequently industry and governmental moves to address these concerns have begun.
+-
+-M2M / Machine To Machine / Machine 2 Machine	(GITHUB) 	(örnek)
+M2M nedir, machine to machine nedir, machine 2 machine nedir
+
+Machine to machine (M2M) is direct communication between devices using any communications channel, including wired and wireless.[1][2] Machine to machine communication can include industrial instrumentation, enabling a sensor or meter to communicate the information it records (such as temperature, inventory level, etc.) to application software that can use it (for example, adjusting an industrial process based on temperature or placing orders to replenish inventory).[3] Such communication was originally accomplished by having a remote network of machines relay information back to a central hub for analysis, which would then be rerouted into a system like a personal computer.[4]
+More recent machine to machine communication has changed into a system of networks that transmits data to personal appliances. The expansion of IP networks around the world has made machine to machine communication quicker and easier while using less power.[5] These networks also allow new business opportunities for consumers and suppliers.[6]
+History
+Wired communication machines have been using signaling to exchange information since the early 20th century. Machine to machine has taken more sophisticated forms since the advent of computer networking automation[7] and predates cellular communication. It has been utilized in applications such as telemetry, industrial, automation, and SCADA.
+-
+-
 
 
 

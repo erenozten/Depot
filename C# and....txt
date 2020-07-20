@@ -7454,6 +7454,16 @@ History
 Wired communication machines have been using signaling to exchange information since the early 20th century. Machine to machine has taken more sophisticated forms since the advent of computer networking automation[7] and predates cellular communication. It has been utilized in applications such as telemetry, industrial, automation, and SCADA.
 -
 -
+Full Text Search / Full-text search   	(GITHUB) 	(örnek)
+Full Text Search nedir, Full-text search nedir
+
+A full-text database is a compilation of documents in which the complete text of each referenced document is available for online viewing, printing, or downloading. In addition to text documents, images are often included, such as graphs, maps, photos, and diagrams.
+
+
+
+In text retrieval, full-text search refers to techniques for searching a single computer-stored document or a collection in a full-text database. Full-text search is distinguished from searches based on metadata or on parts of the original texts represented in databases (such as titles, abstracts, selected sections, or bibliographical references).
+In a full-text search, a search engine examines all of the words in every stored document as it tries to match search criteria (for example, text specified by a user). Full-text-searching techniques became common in online bibliographic databases in the 1990s.[verification needed] Many websites and application programs (such as word processing software) provide full-text-search capabilities. Some web search engines, such as AltaVista, employ full-text-search techniques, while others index only a portion of the web pages examined by their indexing systems.[1]
+
 
 
 

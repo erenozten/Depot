@@ -7470,6 +7470,12 @@ However, when the number of documents to search is potentially large, or the qua
 The indexer will make an entry in the index for each term or word found in a document, and possibly note its relative position within the document. Usually the indexer will ignore stop words (such as "the" and "and") that are both common and insufficiently meaningful to be useful in searching. Some indexers also employ language-specific stemming on the words being indexed. For example, the words "drives", "drove", and "driven" will be recorded in the index under the single concept word "drive".
 -
 -
+Full-text database  		(GITHUB) 	(örnek)
+full-text database nedir, full text database nedir, complete-text database nedir, complete text database nedir
+
+A full-text database or a complete-text database is a database that contains the complete text of books, dissertations, journals, magazines, newspapers or other kinds of textual documents. They differ from bibliographic databases (which contain only bibliographical metadata, including abstracts in some cases) and non-bibliographic databases (such as directories and numeric databases).
+One of the earliest systems was IBM STAIRS, introduced in 1973.
+Full-text databases became common about 1990 when computer storage technology made them economic and technologically possible. There are two main classes: an extension of the classical bibliographical databases into full-text databases (e.g. on hosts such as BRS, Dialog, LexisNexis and Westlaw) and Internet-based full-text databases (based on search engines or XML).
 
 
 

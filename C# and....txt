@@ -7476,6 +7476,13 @@ full-text database nedir, full text database nedir, complete-text database nedir
 A full-text database or a complete-text database is a database that contains the complete text of books, dissertations, journals, magazines, newspapers or other kinds of textual documents. They differ from bibliographic databases (which contain only bibliographical metadata, including abstracts in some cases) and non-bibliographic databases (such as directories and numeric databases).
 One of the earliest systems was IBM STAIRS, introduced in 1973.
 Full-text databases became common about 1990 when computer storage technology made them economic and technologically possible. There are two main classes: an extension of the classical bibliographical databases into full-text databases (e.g. on hosts such as BRS, Dialog, LexisNexis and Westlaw) and Internet-based full-text databases (based on search engines or XML).
+-
+-
+Bibliographic database  		(GITHUB) 	(örnek)
+Bibliographic database nedir
+
+A bibliographic database is a database of bibliographic records, an organized digital collection of references to published literature, including journal and newspaper articles, conference proceedings, reports, government and legal publications, patents, books, etc. In contrast to library catalogue entries, a large proportion of the bibliographic records in bibliographic databases describe articles, conference papers, etc., rather than complete monographs, and they generally contain very rich subject descriptions in the form of keywords, subject classification terms, or abstracts.[1]
+A bibliographic database may be general in scope or cover a specific academic discipline like computer science.[2] A significant number of bibliographic databases are proprietary, available by licensing agreement from vendors, or directly from the indexing and abstracting services that create them.[3]
 
 
 

@@ -7484,5 +7484,10 @@ Bibliographic database nedir
 A bibliographic database is a database of bibliographic records, an organized digital collection of references to published literature, including journal and newspaper articles, conference proceedings, reports, government and legal publications, patents, books, etc. In contrast to library catalogue entries, a large proportion of the bibliographic records in bibliographic databases describe articles, conference papers, etc., rather than complete monographs, and they generally contain very rich subject descriptions in the form of keywords, subject classification terms, or abstracts.[1]
 A bibliographic database may be general in scope or cover a specific academic discipline like computer science.[2] A significant number of bibliographic databases are proprietary, available by licensing agreement from vendors, or directly from the indexing and abstracting services that create them.[3]
 Many bibliographic databases have evolved into digital libraries, providing the full text of the indexed contents:[citation needed] for instance CORE also mirrors and indexes the full text of scholarly articles and Our Research develops a search engine for open access content found by Unpaywall.[4] Others converge with non-bibliographic scholarly databases to create more complete disciplinary search engine systems, such as Chemical Abstracts or Entrez.
+-
+-
+Apache Solr	(GITHUB) 	(örnek)
+apache solr nedir, solr nedir
+Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 
 

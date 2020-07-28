@@ -7490,4 +7490,8 @@ Apache Solr	(GITHUB) 	(örnek)
 apache solr nedir, solr nedir
 Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 
+Solr (pronounced "solar") is an open-source enterprise-search platform, written in Java, from the Apache Lucene project. Its major features include full-text search, hit highlighting, faceted search, real-time indexing, dynamic clustering, database integration, NoSQL features[2] and rich document (e.g., Word, PDF) handling. Providing distributed search and index replication, Solr is designed for scalability and fault tolerance.[3] Solr is widely used for enterprise search and analytics use cases and has an active development community and regular releases.
+Solr runs as a standalone full-text search server. It uses the Lucene Java search library at its core for full-text indexing and search, and has REST-like HTTP/XML and JSON APIs that make it usable from most popular programming languages. Solr's external configuration allows it to be tailored to many types of applications without Java coding, and it has a plugin architecture to support more advanced customization.
+Apache Lucene and Apache Solr are both produced by the same Apache Software Foundation development team.
+
 

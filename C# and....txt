@@ -7500,4 +7500,5 @@ Lucene nedir, apache lucene nedir
 Lucene, Doug Cutting tarafından Java kullanılarak yazılmış bir açık kaynak kodlu bilgi toplama kütüphanesidir. Apache Yazılım Derneği'nce desteklenen yazılım Apache Yazılım Lisansı'nı kullanmaktadır.
 Lucene, aralarında Delphi, Perl, C#, C++, Python, Ruby ve PHP'nin de bulunduğu birçok farklı dilde yeniden yazılmıştır.
 
+1
 

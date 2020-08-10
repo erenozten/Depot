@@ -7499,6 +7499,12 @@ Lucene	(GITHUB) 	(örnek)
 Lucene nedir, apache lucene nedir
 Lucene, Doug Cutting tarafından Java kullanılarak yazılmış bir açık kaynak kodlu bilgi toplama kütüphanesidir. Apache Yazılım Derneği'nce desteklenen yazılım Apache Yazılım Lisansı'nı kullanmaktadır.
 Lucene, aralarında Delphi, Perl, C#, C++, Python, Ruby ve PHP'nin de bulunduğu birçok farklı dilde yeniden yazılmıştır.
+-
+-
+Intermediate language	(GITHUB) (örnek)
+Intermediate language nedir
+An intermediate language is an abstract programming language used by a compiler as an in-between step when translating a computer program into machine code. Before compiling the program into code for an actual, physical machine, the compiler first translates it into intermediate code suitable for a theoretical, abstract machine. This code is analyzed, and if any opportunities for optimization are identified, the compiler can perform them when performing the translation into assembly language.
+-
+-
 
-1
 

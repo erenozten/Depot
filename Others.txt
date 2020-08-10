@@ -1,1 +1,17 @@
-﻿
+﻿Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(edited,ekle) (Read)
+Statik tipli dil nedir, statik tipli diller nedir, statik dil nedir
+Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. 
+
+İşte bu farklılık Statik Tipli ve Dinamik Tipli dillerin temel ayrım noktalarından biridir.
+
+Statik Tipli dillerde her değişkenin değişmez bir tipi olmak zorundadır. Uygulama geliştirenler ya bu tipi bizzat belirler yada Derleyici tarafından belirlenir. 
+
+Statik Tipli dillerde yapılan işlemlerden önce Tip Konrolü yapıldığı için, operandların tiplerinin belirlenmesi gerekir. Tip kontrolleri compile (derleme) esnasında yapılır. 
+Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Ada ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
+
+Dinamik Tipli dillerde değerler değişmez bir tipe sahiptir. Ancak değişkenler ve ifadelerin belirli bir tipe sahip olma zorunlulukları yoktur (what). Her bir işlem esnasında, operandlar değişik değerler üretebilir. Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. 
+
+Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python, Ruby, Smalltalk dilleri verilebilir.
+
+
+

@@ -21,5 +21,12 @@ On-premises Software  	(GITHUB)
 on premises software nedir, on-premises software nedir, on premise software nedir, on premise nedir
 -Şirket içi yazılımlar, sunucu çiftliği veya bulut gibi uzak bir tesise değil, yazılımı kullanan kişi veya kuruluşun tesislerine yüklenir ve bilgisayarlarda çalışır.
 Bildiğin "yerel" yani.
+Navigation Property (GITHUB)
+Navigation property nedir
+A navigation property is an optional property on an entity type that allows for navigation from one end of an association to the other end. Unlike other properties, navigation properties do not carry data.
+A navigation property definition includes the following:
+•	A name. (Required)
+•	The association that it navigates. (Required)
+•	The ends of the association that it navigates. (Required)
 
 

@@ -14,8 +14,12 @@ Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python
 Statik Tipli Diller ile Dinamik Tipli dillerin birbirlerine üstünlükleri konusunda birçok fikir ortaya atılıyor. İkisinin de birbirlerine üstün oldukları noktalar var.
 
 Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için programın çalışması esnasında ekstra tip kontrolü yapılmaz, bu da uygulamanın çok daha verimli ve hızlı çalışması anlamına gelir. 
-
+iiiiiii
 Dinamik Tipli dillerde ise çalışma (run-time) esnasında kontrol yapılması ufak da olsa bir yavaşlamaya sebep olmaktadır. Ayrıca yine bu özellikten dolayı her değişkenin tip bilgisi hafızada saklanmak zorundadır. Bu durum ekstra bir hafıza yükü anlamına gelir. Statik Tipli dillerde derleme (compile-time) esnasında tip kontrolü yapıldığı için ekstra bir hafızaya gerek duyulmaz.
 -
+On-premises Software  	(GITHUB)
+on premises software nedir, on-premises software nedir, on premise software nedir, on premise nedir
+-Şirket içi yazılımlar, sunucu çiftliği veya bulut gibi uzak bir tesise değil, yazılımı kullanan kişi veya kuruluşun tesislerine yüklenir ve bilgisayarlarda çalışır.
+Bildiğin "yerel" yani.
 
 

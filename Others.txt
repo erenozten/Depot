@@ -28,5 +28,20 @@ A navigation property definition includes the following:
 •	A name. (Required)
 •	The association that it navigates. (Required)
 •	The ends of the association that it navigates. (Required)
+-
+-
+The difference between compile time and run time is an example of what pointy-headed theorists call the phase distinction. It is one of the hardest concepts to learn, especially for people without much background in programming languages. To approach this problem, I find it helpful to ask
+1.	What invariants does the program satisfy?
+2.	What can go wrong in this phase?
+3.	If the phase succeeds, what are the postconditions (what do we know)?
+4.	What are the inputs and outputs, if any?
+Compile time
+1.	The program need not satisfy any invariants. In fact, it needn't be a well-formed program at all. You could feed this HTML to the compiler and watch it barf...
+2.	What can go wrong at compile time:
+•	Syntax errors
+•	Typechecking errors
+•	(Rarely) compiler crashes
+3.	If the compiler succeeds, what do we know?
+•	The program was well formed---a meaningful program in whatever language.
 
 

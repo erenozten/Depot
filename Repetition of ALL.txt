@@ -681,6 +681,16 @@ Output
 Result: 565
 -
 -
+sealed      (GITHUB)	 (read)
+Sealed nedir
+Sealed bir access modifier değildir! Evet, bir modifier'dir. Ama access modifier değildir. Çünkü access'i yani erişimi değiştirmez, yani erişimi modifiye etmez.
+Peki sealed tanımda ne olarak geçer?
+Sealed bir modifier'dir.
+Sealed daha genel anlamda bakıldığında bir keyword'dür tabi ki: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+
+
+-
+-
 
 
 

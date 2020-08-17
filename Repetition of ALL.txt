@@ -747,10 +747,14 @@ Remarks
 To determine whether to seal a class, method, or property, you should generally consider the following two points:
 •	The potential benefits that deriving classes might gain through the ability to customize your class.
 •	The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.
-
-
 -
 -
+derive, derivation, inherit, inheritance kelimeleri     (GITHUB)	 (read)
+derive nedir, derivation nedir, inherit nedir, inheritance nedir, derive from nedir, inherit from nedir
+Kelimelerin nasıl kullanılabileceğiyle ilgili bilgi içerir:
+A class can be derived from more than one class or interface. 
+(derive meaning: obtain something from (a specified source)).
+
 
 
 

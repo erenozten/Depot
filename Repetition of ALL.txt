@@ -754,6 +754,21 @@ derive nedir, derivation nedir, inherit nedir, inheritance nedir, derive from ne
 Kelimelerin nasıl kullanılabileceğiyle ilgili bilgi içerir:
 A class can be derived from more than one class or interface. 
 (derive meaning: obtain something from (a specified source)).
+A derived class is a class created or derived from another existing class. The existing class from which the derived class is created through the process of inheritance is known as a base class or superclass.
+
+class <derived_class> : <base_class> 
+{
+}
+
+Inherit
+Definition - What does Inherited Class mean?
+An inherited class is called a subclass of its parent class or super class.
+class B inherits from class A: 
+class B : A {}
+(inherit meaning: derive (a quality, characteristic, or predisposition) genetically from one's parents or ancestors.)
+Örnek cümle: The child classes inherit methods and properties of the parent class
+-
+-
 
 
 

@@ -715,6 +715,13 @@ class Z : Y
     protected override void F2() { Console.WriteLine("Z.F2"); }
 }
 
+When you define new methods or properties in a class, you can prevent deriving classes from overriding them by not declaring them as virtual.
+It is an error to use the abstract modifier with a sealed class, because an abstract class must be inherited by a class that provides an implementation of the abstract methods or properties.
+When applied to a method or property, the sealed modifier must always be used with override.
+Because structs are implicitly sealed, they cannot be inherited.
+For more information, see Inheritance.
+For more examples, see Abstract and Sealed Classes and Class Members.
+
 
 -
 -

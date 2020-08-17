@@ -721,6 +721,32 @@ When applied to a method or property, the sealed modifier must always be used wi
 Because structs are implicitly sealed, they cannot be inherited.
 For more information, see Inheritance.
 For more examples, see Abstract and Sealed Classes and Class Members.
+Example
+sealed class SealedClass
+{
+    public int x;
+    public int y;
+}
+
+class SealedTest2
+{
+    static void Main()
+    {
+        var sc = new SealedClass();
+        sc.x = 110;
+        sc.y = 150;
+        Console.WriteLine($"x = {sc.x}, y = {sc.y}");
+    }
+}
+// Output: x = 110, y = 150
+In the previous example, you might try to inherit from the sealed class by using the following statement:
+class MyDerivedC: SealedClass{} // Error
+The result is an error message:
+'MyDerivedC': cannot derive from sealed type 'SealedClass'
+Remarks
+To determine whether to seal a class, method, or property, you should generally consider the following two points:
+•	The potential benefits that deriving classes might gain through the ability to customize your class.
+•	The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.
 
 
 -

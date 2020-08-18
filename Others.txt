@@ -47,5 +47,20 @@ In programming language theory, semantics is the field concerned with the rigoro
 Formal semantics, for instance, helps to write compilers, better understand what a program is doing, and to prove, e.g., that the following if statement
 if 1 == 1 then S1 else S2
 has the same effect as S1 alone.
+-
+-
+-
+-
+-
+Type, Member		(GITHUB)	(read-tekrar et)
+Type nedir, member nedir
+The following examples demonstrate how to specify access modifiers on a type and member:
+public class Bicycle
+{
+    public void Pedal() { }
+}
 
+Yukarıdaki class bir Type'dır anlaşılacağı üzere. Pedal() ise bir member.
+-
+-
 

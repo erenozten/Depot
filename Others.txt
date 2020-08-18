@@ -54,11 +54,21 @@ has the same effect as S1 alone.
 -
 Type, Member		(GITHUB)	(read-tekrar et)
 Type nedir, member nedir
+I always think of a 'type' as an umbrella term for 'classes' and 'primitives'.
+int foo; // Type is int, class is nonexistent.
+MyClass foo; // Type is MyClass, class is MyClass
+
 The following examples demonstrate how to specify access modifiers on a type and member:
 public class Bicycle
 {
     public void Pedal() { }
 }
+
+Yukarıdaki class bir Type'dır anlaşılacağı üzere. Pedal() ise bir member.
+-
+
+-
+
 -
 -
 -

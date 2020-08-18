@@ -59,8 +59,10 @@ public class Bicycle
 {
     public void Pedal() { }
 }
+-
+-
+-
+-
+-
 
-Yukarıdaki class bir Type'dır anlaşılacağı üzere. Pedal() ise bir member.
--
--
 

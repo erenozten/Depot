@@ -803,6 +803,11 @@ J# does not compile Java-language source code to Java bytecode.
 JavaWorld said: "J#'s interface to the .NET framework is solid, but not as seamless as C#. In particular, J# code cannot define new .NET attributes, events, value types, or delegates. J# can make use of these language constructs if they are defined in an assembly written in another language, but its inability to define new ones limits J#'s reach and interoperability compared to other .NET languages."[5]
 -
 -
+Memory Allocation	(GITHUB)   (read)
+Memory Allocation nedir
+What does Memory Allocation mean?
+Memory allocation is a process by which computer programs and services are assigned with physical or virtual memory space.
+Memory allocation is the process of reserving a partial or complete portion of computer memory for the execution of programs and processes. Memory allocation is achieved through a process known as memory management.
 
 
 

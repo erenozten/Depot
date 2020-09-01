@@ -781,6 +781,18 @@ class B : A {}
 Örnek cümle: The child classes inherit methods and properties of the parent class
 -
 -
+Nesne Yönelimli Olmayan Diller   (GITHUB)        (read)
+Nesne Yönelimli Olmayan Diller nedir
+Temel olarak 
+•	C
+•	FORTRAN
+•	COBOL
+•	PASCAL
+•	BASIC
+Daha pek çok dil sayılabilir. Modern dillerin tamamı OOP'tur. 
+Nesne yönelimli diller  listesi haricindeki tüm diller demek daha kolay.
+-
+-
 
 
 

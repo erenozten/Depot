@@ -1198,9 +1198,9 @@ Programlama dillerinde yapılan her işlem öncesi hataları önlemek için veri
 Statik Tipli dillerde her değişkenin değişmez bir tipi olmak zorundadır. Uygulama geliştirenler ya bu tipi bizzat belirler yada Derleyici tarafından belirlenir. 
 
 Statik Tipli dillerde yapılan işlemlerden önce Tip Konrolü yapıldığı için, operandların tiplerinin belirlenmesi gerekir. Tip kontrolleri compile (derleme) esnasında yapılır. 
-Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Ada ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
+Bu tarz dillere örnek olarak Java, C, C++ ,C# ,F# ,Aida ,Fortran ,Haskell ,ML ,Objective-C ,Pascal dilleri verilebilir.
 
-Dinamik Tipli dillerde değerler değişmez bir tipe sahiptir. Ancak değişkenler ve ifadelerin belirli bir tipe sahip olma zorunlulukları yoktur (what). Her bir işlem esnasında, operandlar değişik değerler üretebilir. Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. 
+Değişkenlerin ve ifadelerin tipleri run-time (çalışma) esnasında belirlenir. 
 
 Bu tarz dillere örnek olarak Groovy, Javascript, Lisp, Lua, PHP, Prolog, Python, Ruby, Smalltalk dilleri verilebilir.
 
@@ -1279,8 +1279,7 @@ In this example, foo is initially a string type. In the second line, we add this
 Now that we know about the two concepts, we can augment both of them to characterize any given language. Thus, Python is dynamic typed and strong typed; Java is static typed and strong typed; PHP is dynamic typed and weak typed; C is static typed and weak typed (owing to its casting ability).
 Dynamic Typing is Good
 In a dynamic typed language, you don’t have to initialize variables, which is a big bonus for many developers. Programmers like the fact that you can use a variable at will when required (without having to initialize it). Dynamic typing is characteristic of many of the scripting languages: Perl, PHP, Python, etc. Dynamic typing, in fact, does save you from writing a few "extra" lines of code, which, in turn, means less time spent writing code.
-Or Is It?
-  
+Or Is It?  
 
 
 
@@ -1321,6 +1320,10 @@ There are those who advocate dynamic typing for the simplicity and saving in ter
 On the other hand, there are advocates of static typing, who believe that static typing (leading to forced variable declaration) is an important requirement of programming language design.
 Conclusion
 Static typing and dynamic typing, and strong and weak typing, are topics of programming language design that are not always clearly defined and, as a result, are not very well understood. This article has given you an insight into the concepts of static and dynamic typing as well as strong and weak typing.
+-
+-
+-
+-
 -
 -
 Entity Framework için constructor (GITHUB)

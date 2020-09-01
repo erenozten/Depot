@@ -793,6 +793,21 @@ Daha pek çok dil sayılabilir. Modern dillerin tamamı OOP'tur.
 Nesne yönelimli diller  listesi haricindeki tüm diller demek daha kolay.
 -
 -
+J# 		(GITHUB)	  (read)
+J# nedir, jsharp nedir
+
+Visual J# (pronounced "jay-sharp") is an implementation of the J# programming language that was a transitional language for programmers of Java and Visual J++ languages, so they could use their existing knowledge and applications with the .NET Framework.[1][2] It was introduced in 2002 and discontinued in 2007, with support for the final release of the product continuing until October 2017.
+Fundamental differences between J# and Java
+Java and J# use the same general syntax but there are non-Java conventions in J# to support the .NET environment. For example, to use .NET "properties" with a standard JavaBean class, it is necessary to prefix getter and setter methods with the Javadoc-like annotation:            /** @beanproperty   */ 
+J# does not compile Java-language source code to Java bytecode.
+JavaWorld said: "J#'s interface to the .NET framework is solid, but not as seamless as C#. In particular, J# code cannot define new .NET attributes, events, value types, or delegates. J# can make use of these language constructs if they are defined in an assembly written in another language, but its inability to define new ones limits J#'s reach and interoperability compared to other .NET languages."[5]
+-
+-
+
+
+
+
+
 
 
 

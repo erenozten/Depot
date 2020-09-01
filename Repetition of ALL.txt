@@ -1,4 +1,16 @@
-﻿Access Modifier = Access Specifier = Erişim Modifiyeri)                               	 (GITHUB)  (read -ama tekrar)
+﻿Nesne Yönelimli Olmayan Diller   (GITHUB)
+Nesne Yönelimli Olmayan Diller nedir
+Temel olarak 
+•	C
+•	FORTRAN
+•	COBOL
+•	PASCAL
+•	BASIC
+Daha pek çok dil sayılabilir. Modern dillerin tamamı OOP'tur. 
+Nesne yönelimli diller  listesi haricindeki tüm diller demek daha kolay.
+-
+-
+Access Modifier = Access Specifier = Erişim Modifiyeri)                               	 (GITHUB)  (read -ama tekrar)
 Access modifier nedir, public nedir, private nedir, protected nedir, internal nedir, access specifier nedir, access modifier nedir
 Access specifier de denir, access modifier de denir. Kaynaklar incelendi: https://www.tutorialspoint.com/What-are-the-different-access-specifiers-in-Chash-NET
 All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies. You can use the following access modifiers to specify the accessibility of a type or member when you declare it

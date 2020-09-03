@@ -858,6 +858,14 @@ A diagram of the operation of a typical multi-language, multi-target compiler
 A diagram of the operation of a typical multi-language, multi-target compiler
 Theoretical computing concepts developed by scientists, mathematicians, and engineers formed the basis of digital modern computing development during World War II. Primitive binary languages evolved because digital devices only understand ones and zeros and the circuit patterns in the underlying machine architecture. In the late 1940s, assembly languages were created to offer a more workable abstraction of the computer architectures. Limited memory capacity of early computers led to substantial technical challenges when the first compilers were designed. Therefore, the compilation process needed to be divided into several small programs. The front end programs produce the analysis products used by the back end programs to generate target code. As computer technology provided more resources, compiler designs could align better with the compilation process.
 
+High-level languages are formal languages that are strictly defined by their syntax and semantics which form the high-level language architecture. Elements of these formal languages include:
+Alphabet, any finite set of symbols;
+String, a finite sequence of symbols;
+Language, any set of strings on an alphabet.
+The sentences in a language may be defined by a set of rules called a grammar. 
+ 
+A diagram of the operation of a typical multi-language, multi-target compiler
+
 
 
 

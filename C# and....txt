@@ -1189,6 +1189,19 @@ Microservices - also known as the microservice architecture - is an architectura
 The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
 -
 -
+-
+-
+-
+-
+Statik Dinamik diller ve Strongly Typed, Weak Type farkı ne
+statık dıllerde type checkıng compıle tıme'da yapılır. Dınamık dılde runtıme'da yapılır. 
+Strongly typed language'lerde --> type castıng ışlemlerı explıcıtly olarak yapılmalıdır. ımplıcıtly yapılmaz. weak typıng dıllerde mesela var strıng = 5 + "5"  gıbı bışey yazılabılır.
+-
+-
+-
+-
+-
+-
 Statik Tipli Diller İle Dinamik Tipli Diller Arasındaki Farklar 	(edited,ekle) (Read)
 Statik tipli dil nedir, statik tipli diller nedir, statik dil nedir
 Programlama dillerinde yapılan her işlem öncesi hataları önlemek için verilerin tip kontrolü yapılır. Bu tür kontrollere ”Checking”  adı verilir. Checking işlemleri compile-time (derleme esnasında) veya run-time (çalışma esnasında) olarak yapılır. 

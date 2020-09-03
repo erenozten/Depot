@@ -822,6 +822,26 @@ Dynamic Memory Allocation: The programs are allocated with memory at run time.
 Compiler / Derleyici  (GITHUB) (örnek)
 compiler nedir, derleyici nedir
 Programcılıkta, bir programlama dilinde yazılmış olan kaynak kodunu başka bir dile (genellikle makine koduna) çeviren yazılım. Derleyiciye bunu yaptırmaktaki amaç genellikle çalışabilir bir yazılım elde etmektir. Kullanıcıların programları kullanırken kolaylık sağlamak amaçlı geliştirilmiştir... 
+Örneğin, şu satırı bir programın kaynak kodunda (programın okunabilir hali) düşünelim:
+ 
+Alttaki assembly'de yazılmış satırlar, aynı programın derlenmiş halidir:
+
+LOAD A [0]        ;; belleğin 0 adresindeki veriyi A siciline yükle 
+
+ADD  A BX         ;; A siciline BX sicilindeki adreste bulunan veriyi ekle 
+
+STOR A [100]      ;; sonucu 100 adresine yaz
+
+Bu örnekte çevirinin hedefi, programcının anladığı kaynak kodundan işlemcinin anladığı 0 ile 1 den oluşan makine dili kodunu üretmek (LOAD,ADD ve STOR komutları 0001, 0011 ve 0010 olarak yorumlanır)
+
+ 0001 01 00 00000000
+ 0011 01 10 00000010
+ 0010 01 00 00000100
+ ---- -- -- ---------
+  |   |  |   |_________bellek adresi
+  |   |  |____________işaret   
+  |   |______________sicil
+  |_________________komut
 
 
 

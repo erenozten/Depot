@@ -814,8 +814,14 @@ Static Memory Allocation: The program is allocated memory at compile time.
 Dynamic Memory Allocation: The programs are allocated with memory at run time.
 -
 -
-
-
+-
+-
+-
+-
+-
+Compiler / Derleyici  (GITHUB) (örnek)
+compiler nedir, derleyici nedir
+Programcılıkta, bir programlama dilinde yazılmış olan kaynak kodunu başka bir dile (genellikle makine koduna) çeviren yazılım. Derleyiciye bunu yaptırmaktaki amaç genellikle çalışabilir bir yazılım elde etmektir. Kullanıcıların programları kullanırken kolaylık sağlamak amaçlı geliştirilmiştir... 
 
 
 

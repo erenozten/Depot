@@ -883,6 +883,23 @@ cevap: strongly ve weak ıkılısı olamaz çünkü bu ıkısı type castıngle 
 JIT Compiler (Just-In-Time Compiler)	(GITHUB)        (read)
 JIT Compiler nedir, jit compiler nedir, jit nedir, JIT nedir
 JIT compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Nothing in the JVM affects performance more than the compiler, and choosing a compiler is one of the first decisions made when running a Java application—whether you are a Java developer or an end-user.
+-
+-
+-
+-
+-
+-
+ByteCode	(GITHUB)		 (read)
+ByteCode nedir
+Bytecode is program code that has been compiled from source code into low-level code designed for a software interpreter. It may be executed by a virtual machine (such as a JVM) or further compiled into machine code, which is recognized by the processor.
+Different types of bytecode use different syntax, which can be read and executed by the corresponding virtual machine. A popular example is Java bytecode, which is compiled from Java source code and can be run on a Java Virtual Machine (JVM). Below are examples of Java bytecode instructions.
+new (create new object)
+aload_0 (load reference)
+istore (store integer value)
+ladd (add long value)
+swap (swap two values)
+areturn (return value from a function)
+While it is possible to write bytecode directly, it is much more difficult than writing code in a high-level language, like Java. Therefore, bytecode files, such as Java .CLASS files, are most often generated from source code using a compiler, like javac.
 
 
 

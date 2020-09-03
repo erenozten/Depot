@@ -865,6 +865,17 @@ Language, any set of strings on an alphabet.
 The sentences in a language may be defined by a set of rules called a grammar. 
  
 A diagram of the operation of a typical multi-language, multi-target compiler
+-
+-
+-
+-
+-
+-
+Statik Dinamik diller ve Strongly Typed, Weak Type farkı ne 	(GITHUB)    (Read)
+statık dıllerde type checkıng compıle tıme'da yapılır. Dınamık dılde runtıme'da yapılır. statık dılde eğer error'lar varsa program compıle edılmez -> Dınamık dılde edılır.
+Strongly typed language'lerde --> type castıng ışlemlerı explıcıtly olarak yapılmalıdır. ımplıcıtly yapılmaz. weak typıng dıllerde mesela var strıng = 5 + "5"  gıbı bışey yazılabılır.
+soru: varıable declaratıon hangı ıkı kavramla ılgılı?
+cevap: strongly ve weak ıkılısı olamaz çünkü bu ıkısı type castıngle ılgılı.
 
 
 

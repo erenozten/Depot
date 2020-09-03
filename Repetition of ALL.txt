@@ -937,6 +937,19 @@ https://stackoverflow.com/questions/4118073/how-to-stop-console-from-closing-on-
 -
 -
 -
+F10 vs F11	(GITHUB)		(read)
+F10 vs F11
+https://stackoverflow.com/questions/15584132/what-is-the-difference-between-f10-and-f11-keys-in-visual-studio/39843982
+F10 ("step over") does not descend any further into the call stack. It moves to the next line of the current function.
+F11 ("step into") drills down into the function being called.
+void function1()
+{
+    function2();
+    function3();
+}
+If you hit a breakpoint on function2(), F10 will advance to the line function3(). F11 will advance to the first line inside function2.
+-
+-
 
 
 

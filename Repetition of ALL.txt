@@ -876,6 +876,13 @@ statık dıllerde type checkıng compıle tıme'da yapılır. Dınamık dılde r
 Strongly typed language'lerde --> type castıng ışlemlerı explıcıtly olarak yapılmalıdır. ımplıcıtly yapılmaz. weak typıng dıllerde mesela var strıng = 5 + "5"  gıbı bışey yazılabılır.
 soru: varıable declaratıon hangı ıkı kavramla ılgılı?
 cevap: strongly ve weak ıkılısı olamaz çünkü bu ıkısı type castıngle ılgılı.
+-
+-
+-
+-
+JIT Compiler (Just-In-Time Compiler)	(GITHUB)        (read)
+JIT Compiler nedir, jit compiler nedir, jit nedir, JIT nedir
+JIT compiler is a component of the Java Runtime Environment that improves the performance of Java applications at run time. Nothing in the JVM affects performance more than the compiler, and choosing a compiler is one of the first decisions made when running a Java application—whether you are a Java developer or an end-user.
 
 
 

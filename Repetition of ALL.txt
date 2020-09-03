@@ -925,6 +925,18 @@ The exact meaning depends on the context, but Common Language Runtime usually re
 -
 -
 -
+CTRL+F5	 (GITHUB) 		(read)
+CTRL+F5 nedir, ctrl f5 nedir
+Press Ctrl+F5 to run without the debugger.
+Ctrl f5 yapınca proje debug olmadığı halde chrome'da kullanılmaya devam ediyor.
+https://stackoverflow.com/questions/4118073/how-to-stop-console-from-closing-on-exit
+-
+-
+-
+-
+-
+-
+-
 
 
 

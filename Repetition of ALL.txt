@@ -908,6 +908,27 @@ The key of java power "Write once, run everywhere" is bytecode. The way bytecode
 The time that a JIT compiler takes to compile the bytecode is added to the overall execution time, and could lead to a higher execution time than an interpreter for executing the bytecode if the methods that are compiled by the JIT are not invoked frequently. The JIT compiler performs certain optimizations when compiling the bytecode to native code. Since the JIT compiler translates a series of bytecode into native instructions, it can perform some simple optimizations. Some of the common optimizations performed by JIT compilers are data-analysis, translation from stack operations to register operations, reduction of memory accesses by register allocation, elimination of common sub-expressions etc. The higher the degree of optimization done by a JIT compiler, the more time it spends in the execution stage. Therefore a JIT compiler cannot afford to do all the optimizations that is done by a static compiler, both because of the overhead added to the execution time and because it has only a restricted view of the program.
 -
 -
+-
+-
+-
+-
+-
+CLR / Common Language Runtime		(GITHUB) 		(read)
+clr nedir
+The exact meaning depends on the context, but Common Language Runtime usually refers to the runtime of .NET Framework. The CLR handles memory allocation and management. The CLR is also a virtual machine that not only executes apps but also generates and compiles code on-the-fly using a JIT compiler. The current Microsoft CLR implementation is Windows only.
+.Net Framework ün en alt katmanında CLR (Common Languange Runtime – Ortak Dil Platformu) mevcuttur. 
+.Net platformunda yazılmış olan kodların (c#, J# veya VB) ortak bir alanda işletim sisteminizin algılayacağı dile çevrilmesini sağlamaktadır. Bu işlem sırasında kodlar ilk olarak MSIL (Microsoft Intermediate Languange – Ara Dil) e çevrilir. Bu dönüştürmenin sebebi işletim sisteminin algılayacağı dile dönüştürmeden önce farklı dillerde yazılan kodları ortak noktada buluşturmaktır. Böylelikle MSIL kodu CLR katmanı ile farklı işletim sistemlerinde çalıştırılabilir hale gelir ve gelecekte yeni bir dille yazılan kodlar da MSIL a dönüştürerek işletim sisteminde çalışmasını sağlayacaktır.
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
 
 
 

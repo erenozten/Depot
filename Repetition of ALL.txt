@@ -970,6 +970,36 @@ There is some debate as to the grammatical correctness of the term on-premise as
 -
 -
 -
+Entity Framework için constructor (GITHUB)			(read)
+Entity Framework için constructor
+
+class User(
+..
+..
+public User(bilmemNe bilmemNe){
+}
+
+protected User(){
+}
+
+)
+
+içine parametre alan bir constructor oluşturmuşsan eğer:
+
+parametresiz bir constructor da oluşturmalısın. Boş kalsın. Neden bunu yapmamız gerekiyor?
+
+Entity framework, User class'ının instance'ını bu parametreli constructor'u kullanarak oluşturamaz da ondan. Bir düşün. Entity framework nasıl instance oluştursun (veya obje initialize etsin) eğer boş bir constructor yoksa?
+
+O yüzden,
+
+Boş ctor oluşturmamız gerekiyor. Bu boş ctor wrong state'e girmemize yol açabilir. Yani boş olan ctor bazı sıkıntılara yol açabilir. O yüzden boş ctor'u protected yapabiliriz. 
+Entity Framework, bu protected olan property'I kullanıyor. bu property run-time'da kullanılıyor. 
+-
+-
+-
+-
+-
+-
 
 
 

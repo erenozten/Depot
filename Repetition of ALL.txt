@@ -1000,7 +1000,16 @@ Entity Framework, bu protected olan property'I kullanıyor. bu property run-time
 -
 -
 -
-
+Navigation Property (GITHUB)			(read)
+Navigation property nedir
+A navigation property is an optional property on an entity type that allows for navigation from one end of an association to the other end. Unlike other properties, navigation properties do not carry data.
+A navigation property definition includes the following:
+•	A name. (Required)
+•	The association that it navigates. (Required)
+•	The ends of the association that it navigates. (Required)
+Önemli:
+Navigation properties are optional on both entity types at the ends of an association. If you define a navigation property on one entity type at the end of an association, you do not have to define a navigation property on the entity type at the other end of the association.
+The data type of a navigation property is determined by the multiplicity of its remote association end. For example, suppose a navigation property, OrdersNavProp, exists on a Customer entity type and navigates a one-to-many association between Customer and Order. Because the remote association end for the navigation property has multiplicity of many (*), its data type is a collection (of Order). Similarly, if a navigation property, CustomerNavProp, exists on the Order entity type, its data type would be Customer, because the multiplicity of the remote end is one (1).
 
 
 

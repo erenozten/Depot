@@ -1056,6 +1056,58 @@ Operator	Description
 -
 -
 -
+Operator		(GITHUB)		(read)
+operator nedir, operatör nedir operators nedir, operatörler nedir
++  -  *  / << == >> gibi işaretler operatördür.
+Operator in C# is a special symbol that specifies which operations to perform on operands. For example, in mathematics the plus symbol (+) signifies the sum of the left and right numbers. In the same way, C# has many operators that have different meanings based on the data types of the operands. C# operators usually have one or two operands. Operators that have one operand are called Unary operators.
+The following table list some of the operators available in C#.
+Operator category	Operators
+Primary	x.y
+Unary	+x
+Multiplicative	x * y
+Additive	x + y
+Shift	x << y
+Relational and type testing	x < y
+Equality	x == y
+Logical AND	x & y
+Logical XOR	x ^ y
+Logical OR	x | y
+Conditional AND	x && y
+Conditional OR	x || y
+Null-coalescing	x ?? y
+Conditional	?:
+Assignment and lambda expression	x = y
+
+As mentioned before, certain operators have different meanings based on the datatype of the operand. For example, if the + operator is used with numbers, it will add the numbers but if it is used with strings, it will concatenate the two strings.
+When an operator does different things based on the datatype of the operands, it is called operator over loading.
+The following C# code shows the use of the + sign operator on different datatypes:
+
+static void Main(string[] args)
+{
+    string message1 = "Hello";
+
+    string message2 = message1 + " World!!";    
+
+    Console.WriteLine(message2);
+
+    int i = 10, j = 20;
+
+    int sum = i + j;
+
+    Console.WriteLine("{0} + {1} = {2}", i, j, sum);
+
+}
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
 
 
 

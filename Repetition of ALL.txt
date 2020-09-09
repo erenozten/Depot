@@ -1025,8 +1025,37 @@ The ComboBox control is used to display a drop-down list of various items. It is
 -
 -
 -
-
-
+Operand		(GITHUB) 		(read)
+operand nedir
+int a = 2;
+int b = 3;
+int c = a * b;
+yukarıdaki int c = a * b;    işlemindeki a ve b değişkenlerine operand denir. 
+a değişkeni: sol operand
+b değişkeni: sağ operand
+Kaynak: aşağıdaki text
++	Adds two operands
+-	Subtracts the second operand from the first
+*	Multiplies both operands
+/	Divides the numerator by de-numerator
+%	Modulus Operator and a remainder of after an integer division
+++	Increment operator increases integer value by one
+--	Decrement operator decreases integer value by one
+Relational Operators
+These are operators used for performing Relational operations on numbers. Below is the list of relational operators available in C#.
+Operator	Description
+==	Checks if the values of two operands are equal or not, if yes then condition becomes true.
+!=	Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.
+>	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.
+<	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.
+>=	Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.
+<=	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+-
+-
+-
+-
+-
+-
 
 
 

@@ -1244,7 +1244,8 @@ help command	Shows the manual for a given command.
 -
 -
 -
-
+delete it
+Yazılım kütüphanesi (Software Library), yazılım geliştiricilerinin program geliştirirken kullandıkları bir tür program kodları ve veriler takımıdır. Yazılım kütüphaneleri, yazılımcılar ve programlama dilinin derleyicilerine çalıştırılabilir programlar geliştirme konusunda yardımcı olurlar. Yazılım kütüphaneleri içinde genellikle önceden hazırlanmış kodlar, sınıflar, prosedürler, betikler, konfigürasyon verilerini içerir.
 
 
 

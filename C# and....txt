@@ -7809,6 +7809,40 @@ Accessing Private Members of the Parent Class
 The final example will demonstrate the ability for nested classes to access private members of their parent classes. In this example, we have modified the order to include a discount multiplier. The multiplier is held as a private variable that may have been initialised using a constructor or a property. In this case the value is fixed at 0.85. Every order line value will be multiplied by this amount to give a 15% discount.
 To allow the order lines to access the discount multiplier, the OrderLineTotal method has been updated to include a parameter. This parameter accepts an Order object. The method retrieves the private discount multiplier from the Order and includes it in the calculation, rounding the result to two decimal places on a line-by-line basis. If the OrderLine class was not nested within Order, this would not be possible.
 
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+    private double DiscountMultiplier = 0.85;
+ 
+    public void AddOrderLine(OrderLine line)
+    {
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal(this);
+        }
+        return total;
+    }
+ 
+    // Nested class
+    internal class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal(Order order)
+        {
+            return Math.Round(Price * Quantity * order.DiscountMultiplier, 2);
+        }
+    }
+}
+
 
 
 

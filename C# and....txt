@@ -7785,6 +7785,31 @@ class Order
 }
 
 
+With the new versions of the classes, the code that creates an order will also be different. Rather than passing the product details as separate variables, the calling class will instantiate order lines and pass these to the AddOrderLine method. When instantiating a nested class, the name of the class must be qualified by prefixing it with the parent class's name, as in the following, updated example. Note that the order lines are created as Order.OrderLine objects.
+
+Order order = new Order();
+ 
+Order.OrderLine line1 = new Order.OrderLine(); //vaaay olaya gel
+
+line1.ProductName = "Cheese";
+line1.Quantity = 5;
+line1.Price = 1.99;
+order.AddOrderLine(line1);
+ 
+Order.OrderLine line2 = new Order.OrderLine();
+line2.ProductName = "Oranges";
+line2.Quantity = 12;
+line2.Price = 0.35;
+order.AddOrderLine(line2);
+ 
+Console.WriteLine(order.OrderTotal());
+
+
+Accessing Private Members of the Parent Class
+The final example will demonstrate the ability for nested classes to access private members of their parent classes. In this example, we have modified the order to include a discount multiplier. The multiplier is held as a private variable that may have been initialised using a constructor or a property. In this case the value is fixed at 0.85. Every order line value will be multiplied by this amount to give a 15% discount.
+To allow the order lines to access the discount multiplier, the OrderLineTotal method has been updated to include a parameter. This parameter accepts an Order object. The method retrieves the private discount multiplier from the Order and includes it in the calculation, rounding the result to two decimal places on a line-by-line basis. If the OrderLine class was not nested within Order, this would not be possible.
+
+
 
 
 

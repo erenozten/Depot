@@ -7692,6 +7692,49 @@ A nested class generally behaves is the same way as any other class. It can be i
 
 Nested classes are given special access to instances of their parent classes. When an object of a parent class is passed to a method of a nested class, the method is permitted to access the private and protected members of the object. This makes nested classes ideal where a special relationship exists with the parent class that requires access to private members, particularly when the nested class is not required anywhere else and is never used in a standalone capability.
 
+Example Nested Classes
+
+We will start with a simple example of a nested class. In this case, the outer class will describe a sales order in an order-processing system. In this rather contrived design, there is no requirement for an order line to ever be created without an order. Furthermore, there is no need for an order line to be used externally to an order. In this case, it is useful to create an Order class with a nested, private OrderLine class.
+NB: The following code uses .NET 3.0 syntax for brevity. For earlier versions of the .NET framework, you will need to expand the property declarations and possibly remove the use of generics.
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+ 
+    public void AddOrderLine(string product, int quantity, double price)
+    {
+        OrderLine line = new OrderLine();
+        line.ProductName = product;
+        line.Quantity = quantity;
+        line.Price = price;
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal();
+        }
+        return total;
+    }
+ 
+    // Nested class
+    private class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal()
+        {
+            return Price * Quantity;
+        }
+    }
+}
+
+
 
 
 

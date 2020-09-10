@@ -7843,6 +7843,29 @@ class Order
     }
 }
 
+NB: Although nested classes can access the private members of their parent class, the reverse is not true. Private members of nested classes are invisible to their parent class.
+-
+C# supports nested classes: a class that is a member of another class.
+For example:
+
+        class Car
+        {
+            string name;
+            public Car(string nm)
+            {
+                name = nm;
+                Motor m = new Motor();
+            }
+            public class Motor
+            {
+                // some code
+            }
+        }
+
+The Motor class is nested in the Car class and can be used similar to other members of the class.
+A nested class acts as a member of the class, so it can have the same access modifiers as other members (public, private, protected).
+-
+
 
 
 

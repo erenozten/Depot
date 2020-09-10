@@ -7607,6 +7607,77 @@ public class MyClass
     public int AnotherProperty{get;set;} 
 }
 
+Fields are ordinary member variables or member instances of a class. Properties are an abstraction to get and set their values. Properties are also called accessors because they offer a way to change and retrieve a field if you expose a field in the class as private. Generally, you should declare your member variables private, then declare or define properties for them.
+
+Birisi anlatmış:
+Nesneye yönelik programlamanın üç temel ilkesinden biri olan sarmalamayı (encapsulation) uygularken kullanılıyoruz.
+
+Sarmalama ilkesinde, bir sınıf tanımlaması içindeki değerleri tutan asıl değişkenlere (field) doğrudan erişimi engelleriz. Bu değişkenlere değer atamak için özelliklerden (property) yararlanırız. 
+
+Bu değişkenlere değer atarken veya değerini istediklerinde tanımladığımız özellik bloğu otomatik olarak çalıştırılır. Biz de bu bloğun içinde değerleri test eder ve ondan sonra göndeririz veya değiştiririz.
+
+Sınıfı kullanan kişi özelliklere doğrudan erişebilir. Alanlara doğrudan erişemez, erişmemelidir. Aksi halde istenmeyen değerleri bilerek veya yanlışlıkla atayarak sınıfımızın hatalı çalışmasına neden olabilirler.
+
+1.	public class Deneme
+2.	{
+3.	    // Bu bir alan (field). Asıl genişlik değeri bunda saklanacak. 
+4.	    private int genislik;
+5.	 
+6.	    // Bu (Genislik) bir özellik (property). Sınıfı kullanan bunu değiştirmek istediğinde
+7.	    // set ile tanımlanan blok, bunun değerini istediğinde get ile tanımlanan
+8.	    // blok otomatik çalıştırılır.
+9.		
+10.	    public int Genislik
+11.	    {
+12.		// Genislik özelliğinin değerini istediğinde...
+13.	        get
+14.	        {
+15.		    // ... genislik alanının değerini gönder.
+16.	            return genislik; 
+17.	        }
+18.		// Genislik özelliğinin değerini değiştirmek istediğinde...
+19.	        set
+20.	        {
+21.		    // ... gelen değeri (value ile gelir) genislik alanına ata.
+22.	            genislik = value;
+23.	        }
+24.	    }
+25.	}
+
+Tabi bu örnekte kontrol kısmı (ki asıl önemli konudur) yok. Sade olsun diye eklenmedi. Aşağıdakinde ise kontrol ediyoruz. Genellikle değer gönderirken (get bloğunda) varsa değer göndermeden önce yapılacak işler, testler veya ayarlamalar yapılır. Tabi varsa.
+
+Asıl önemli olan set bölümü. Bu bölümde value ile gelen değeri kontrol ederiz ve eğer değer uygun ise alana atarız. Aksi halde bir hata fırlatırız veya varsayılan bir değeri atarız. Tabi değer atamadan önce veya sonra başka yapılacak işlemler de varsa onları da yapabiliriz.
+
+1.	public class Deneme
+2.	{
+3.	    private int genislik;
+4.	 
+5.	    public int Genislik
+6.	    {
+7.	        get
+8.	        {
+9.	            return genislik; 
+10.	        }
+11.	        set
+12.	        {
+13.	            if (value <= 0)
+14.	                throw new Exception("Deneme'nin genişliği 0'dan büyük bir değer olmalı.");
+15.	            genislik = value;
+16.	        }
+17.	    }
+18.	}
+Örnekte set bölümünde gelen değer (value) 0 veya daha küçük ise bir hata fırlatıyoruz. Tabi varsayılan bir değer le de değiştirilebilir.
+
+Peki kullanırken neler oluyor?
+
+Örnek bir kullanım ve etkileri şöyle:
+
+1.	Deneme d = new Deneme();
+2.	d.Genislik = 10; // set bölümü çalışır ve value'nin değeri 10 olur.
+3.	int gen = d.Genislik; // get bölümü çalıştırılır ve genislik alanının değeri gelir.
+4.	d.Genislik = 0; // set bölümü çalışır, hata verir.
+
+
 
 
 

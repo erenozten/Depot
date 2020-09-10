@@ -7738,6 +7738,55 @@ class Order
 
 
 
+The code above shows the simplified Order and nested OrderLine classes. The Order class has two public members. The first allows an item to be added to a private collection of order lines. The product name, price and quantity are passed to this method, which builds an OrderLine object and adds it to the list. The second method loops through each item in the collection and calculates the total value for the order.
+The nested OrderLine class is used to represent order lines. It includes properties for the product name, quantity and price and a single method that calculates the total price for the order line. As the class is marked as private, it is invisible to all classes except its parent and any other nested classes that we may later create within Order. We could change the access modifier for the nested class to protected if we wished it to be visible to classes that inherit from Order.
+We can test the order mechanism with the following code. This creates an order with two order lines and outputs the total value to the console:
+
+
+Order order = new Order();
+order.AddOrderLine("Cheese", 5, 1.99);
+order.AddOrderLine("Oranges", 12, 0.35);
+Console.WriteLine(order.OrderTotal());  // Outputs "14.15"
+
+Increasing Nested Class Visibility
+As our ordering system evolves, we may decide that it would be useful to permit other classes access to the nested OrderLine class. We could then modify the AddOrderLine method to accept an OrderLine object rather than its constituent parts. We can do this by changing the access modifier of the nested class to internal, protected internal or public, depending upon the requirements. The following code shows a new version of the code:
+
+class Order
+{
+    private List<OrderLine> _orderLines = new List<OrderLine>();
+ 
+    public void AddOrderLine(OrderLine line)
+    {
+        _orderLines.Add(line);
+    }
+ 
+    public double OrderTotal()
+    {
+        double total = 0;
+        foreach (OrderLine line in _orderLines)
+        {
+            total += line.OrderLineTotal();
+        }
+        return total;
+    }
+ 
+    // Nested class
+    internal class OrderLine
+    {
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+ 
+        public double OrderLineTotal()
+        {
+            return Price * Quantity;
+        }
+    }
+}
+
+
+
+
 
 -
 -

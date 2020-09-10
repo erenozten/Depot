@@ -7676,6 +7676,21 @@ Peki kullanırken neler oluyor?
 2.	d.Genislik = 10; // set bölümü çalışır ve value'nin değeri 10 olur.
 3.	int gen = d.Genislik; // get bölümü çalıştırılır ve genislik alanının değeri gelir.
 4.	d.Genislik = 0; // set bölümü çalışır, hata verir.
+-
+-
+-
+-
+-
+Nested Classes  		(GITHUB)	(read)
+Nested class nedir, nested classes nedir, nested nedir
+When one class is entirely dependent upon another, you may decide to implement it using a nested class. Nested classes are declared within the scope of an existing class and receive special benefits when they access their parent class's members.
+
+What are Nested Classes?
+A nested class is a special type of class that can be created using C#. Normally classes are declared within a namespace, or in the default namespace if one is not specified. A nested class is defined within the code block of another class, which itself may be a nested class to permit multiple nesting levels.
+
+A nested class generally behaves is the same way as any other class. It can be instantiated separately to its parent class and is not instantiated automatically by its parent. However, there are some important differences. One key difference concerns the scope of the class. Normally classes can be either public or internal. A nested class may be declared as private, meaning that the class can only be seen by its parent class and other nested classes within that parent. A nested class may also be declared as protected, allowing it to also be accessed by classes that derive from its parent type. This may be extended to protected internal to allow other classes in the same assembly to access it.
+
+Nested classes are given special access to instances of their parent classes. When an object of a parent class is passed to a method of a nested class, the method is permitted to access the private and protected members of the object. This makes nested classes ideal where a special relationship exists with the parent class that requires access to private members, particularly when the nested class is not required anywhere else and is never used in a standalone capability.
 
 
 

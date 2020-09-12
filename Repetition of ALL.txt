@@ -1285,6 +1285,27 @@ For those teams coming from a non-distributed VCS, having a central repository m
 -
 -
 -
+Object Oriented Programming / OOP / NYP  (GITHUB) 	(read)
+oop nedir, object oriented programming nedir, nyp nedir
+
+Object oriented prensipleri nelerdir ? JAVA
+Encapsulation  : Değişkenler private yapı larak get.. ve set.. metodlarıylaerişilir
+Abstraction  : Gereksiz ayrıntı lar kullanıcıya sunulmaz
+Inheritance    :  Bir  sınıfın  özellikleri  extend  anahtar  kelimesiyle  miras alınır.
+Polymorphism  :  Runtime  sırasında  oluşturulan  sını fın  metodununçağrı lmasıdır.[4],[5]
+
+Nesne yönelimli programlama (NYP), (İngilizce: Object - Oriented Programming)(OOP), Her işlevin nesneler olarak soyutlandığı bir programlama yaklaşımıdır. NYP destekleyen programlama dilleri yüksek seviye diller olarak adlandırılır.
+
+1960'lı yılların sonuna doğru ortaya çıkan bu yaklaşım, o dönemin yazılım dünyasında beliren bir bunalımın sonucudur. Yazılımların karmaşıklığı ve boyutları sürekli artıyor, ancak belli bir nitelik düzeyi korumak için gereken bakımın maliyeti zaman ve çaba olarak daha da hızlı artıyordu. NYP'yi bu soruna karşı bir çözüm haline getiren başlıca özelliği, yazılımda birimselliği (modularity) benimsemesidir. NYP ayrıca, bilgi gizleme (information hiding), veri soyutlama (data abstraction), çok biçimlilik (polymorphism) ve kalıtım (inheritance) gibi yazılımın bakımını ve aynı yazılım üzerinde birden fazla kişinin çalışmasını kolaylaştıran kavramları da yazılım literatürüne kazandırmıştır. Sağladığı bu avantajlardan dolayı, NYP günümüzde geniş çaplı yazılım projelerinde yaygın olarak kullanılmaktadır.
+
+NYP'nin altında yatan birimselliğin ana fikri, her bilgisayar programının (izlence), etkileşim içerisinde olan birimler veya nesneler kümesinden oluştuğu varsayımıdır. Bu nesnelerin her biri, kendi içerisinde veri işleyebilir, ve diğer nesneler ile çift yönlü veri alışverişinde bulunabilir. Hâlbuki NYP'den önce var olan tek yaklaşımda (Yordamsal programlama), programlar sadece bir komut dizisi veya birer işlev (fonksiyon) kümesi olarak görülmektedirler.
+
+Günümüzde çok çeşitli nesne tabanlı programlama dilleri olmasıyla beraber, en popüler diller sınıflar üzerine kurulmuşlardır (class-based). Bu dillerde nesneler sınıfların birer üyesidir ve nesnelerin tipini de bu sınıflar belirlerler.
+
+En yaygın NYP dillerinden bazıları, Python, C++, Objective-C, Smalltalk, Delphi, Java, Swift, C#, Perl, Ruby ve PHP' dir.
+
+Nesne yönelimli programlama dilleri yukarıda adı geçen tüm ögelere sahip olurken, Ada, JavaScript, Visual Basic gibi nesne tabanlı programlama dilleri birkaçından yoksundur, bu dillerin başlıca yoksunluğu kalıtıma sahip olmamalarıdır.
+
 
 
 

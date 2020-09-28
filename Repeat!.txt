@@ -1,4 +1,17 @@
-﻿A LANGUAGE IS STRONGLY TYPED if the compiler can guarantee that the accepted programs will execute without type errors. 
+﻿        {
+            int sayi = 942 / 10;
+            string str = sayi.ToString(); // sonuç 94   - Yani sondaki rakamı attı.
+
+            int sayi2 = 8 / 10;
+            string str2 = sayi2.ToString(); // sonuç 0  -  sekizi ona böldü, buradan sonucu sıfır veriyor. Mantıken de böyle olmalı gibi.
+        }
+-
+-
+-
+-
+-
+-
+A LANGUAGE IS STRONGLY TYPED if the compiler can guarantee that the accepted programs will execute without type errors. 
 -
 -
 

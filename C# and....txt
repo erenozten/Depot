@@ -8088,6 +8088,110 @@ public class GFG {
 -
 -
 
+C# | is Operator Keyword	(GITHUB)	      (asd)
+is nedir, is keyword nedir, is operator nedir
+
+In the development of the software, typecasting is an inescapable thing. In many cases, one needs to convert an object(Type) into another object(Type) and sometimes got InvalidCastException. So, to overcome such types of exception C# provides is operator.
+The is operator is used to check if the run-time type of an object is compatible with the given type or not. It returns true if the given object is of the same type otherwise, return false. It also returns false for null objects.
+Syntax:
+expression is type
+Here, the expression will be evaluated to an instance of some type. And type is the name of the type to that the result of the expression is to be converted. If the expression is not null and the object results from evaluating the expression can be converted to the specified type then is operator will return true otherwise it will return false.
+Example 1: In the below code, we have three classes i.e. Author, Work and GFG. GFG is the driver class which contains the Main method. Class ‘Author’ and ‘Work’ have data members and method. In the Main method, objects of class Author and Work created and methods of these classes are called using the instance of the class. After that, a bool value bool result; is taken to store the return value of is operator. The line of code i.e. result = a is Author; is used to check whether a(object of class author) is of type Author. It will return true as a is the instance of Author class. But instance w is not of type Author, that’s why it returns false. After that, we are assigning null to object a which will give result false as comparing to an instance of Author.
+
+static void Main()
+   {
+       int? newInt = 13;
+ 
+       var result1 = newInt is 12;
+       var result2 = newInt is null;
+       var result3 = newInt == null; //böyle bi kullanım var mı bilmiyorum. Ben yazdım.
+       var result4 = newInt is 13;
+ 
+       Console.WriteLine(result1);
+       Console.WriteLine(result2);
+       Console.WriteLine(result3);
+       Console.WriteLine(result4);
+   }
+
+
+
+
+using System;
+ 
+namespace ConsoleApp1
+{
+ 
+    class Program
+    {
+ 
+        // taking a class 
+        public class G1
+        {
+        }
+ 
+        // taking a class  
+        // derived from G1 
+        public class G2 : G1
+        {
+        }
+ 
+        // taking a class 
+        public class G3
+        {
+        }
+ 
+        // Main Method 
+        public static void Main()
+        {
+            // creating an instance  
+            // of class G1 
+            G1 obj1 = new G1();
+ 
+            // creating an instance  
+            // of class G2 
+            G2 obj2 = new G2();
+ 
+            Console.Write("obj1 G1 -> ");
+            Console.WriteLine(obj1 is G1);
+ 
+            // checking whether 'obj1' is 
+            // of type Object class 
+            // (Base class for all classes) 
+            Console.Write("obj1 Object -> ");
+            Console.WriteLine(obj1 is Object);
+ 
+            Console.Write("obj2 G2 -> ");
+            Console.WriteLine(obj2 is G2);
+ 
+            // checking whether 'obj2' is 
+            // of type Object class 
+            // (Base class for all classes) 
+            Console.Write("obj2 Object -> ");
+            Console.WriteLine(obj2 is Object);
+ 
+            // it will return true as G2 
+            // is derived from G1 
+            Console.Write("obj2 G2 -> ");
+            Console.WriteLine(obj2 is G2);
+ 
+            // it will return false 
+            Console.Write("obj1 G3 -> ");
+            Console.WriteLine(obj1 is G3);
+ 
+            // it will return false 
+            Console.Write("obj2 G3 -> ");
+            Console.WriteLine(obj2 is G3);
+ 
+            Console.Write("obj2 G1 -> ");
+            Console.WriteLine(obj2 is G1);
+ 
+            Console.Write("obj1 G2 -> ");
+            Console.WriteLine(obj1 is G2);
+        }
+    }
+}
+
+
 
 
 

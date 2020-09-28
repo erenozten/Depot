@@ -7865,17 +7865,42 @@ For example:
 The Motor class is nested in the Car class and can be used similar to other members of the class.
 A nested class acts as a member of the class, so it can have the same access modifiers as other members (public, private, protected).
 -
+-
+-
+-
+-
+-
+-
+-
+multi tenant nedir, multi tenancy nedir, multitenant nedir, multi-tenant nedir
+What are the advantages of a multi-tenancy SaaS architecture? How does it differ from single tenant instances? We break down the differences and highlight the benefits of implementing a SaaS solution for data protection in this blog.
+MULTI-TENANCY – A CORE BENEFIT OF SAAS
+In the early days of the cloud, organizations were reluctant to adopt cloud strategies. Few organizations considered applying policies, technologies, and controls to protect data across the cloud. The last several years, which has seen the proven effectiveness of cloud deployments in scalability, cost, and security, has changed that however. Now we’re seeing the rapid adoption of cloud platforms by organizations of all shapes and sizes.
+Digital Guardian’s Data Protection Platform leverages software as a service, or SaaS, to provide data protection in a package that results in superior security, better economics, and reduced overhead. One of the ways we do this is through multi-tenant architecture.
+SINGLE TENANT VS MULTI-TENANT – LEARN THE DIFFERENCE
+Single Tenant – A single instance of the software and supporting infrastructure serve a single customer. With single tenancy, each customer has his or her own independent database and instance of the software. Essentially, there is no sharing happening with this option.
 
 
 
 
 
--
--
--
--
--
--
--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

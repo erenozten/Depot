@@ -8271,6 +8271,91 @@ Is a is Author? : True
 Is w is Author? : False
 Is a is Author? : False
 
+Example 2: In the below program, we are checking whether the derived type is of the expression type on the left-hand side of the is operator. If is derived then it will return true otherwise it returns false.
+
+// C# program to illustrate the  
+// use of is operator keyword 
+using System; 
+  
+// taking a class 
+public class G1 { 
+      
+} 
+  
+// taking a class  
+// derived from G1 
+public class G2 : G1 { 
+      
+} 
+  
+// taking a class 
+public class G3 { 
+      
+} 
+  
+  
+// Driver Class 
+public class GFG { 
+      
+    // Main Method 
+    public static void Main() 
+    { 
+        // creating an instance  
+        // of class G1 
+        G1 obj1 = new G1(); 
+          
+        // creating an instance  
+        // of class G2 
+        G2 obj2 = new G2(); 
+          
+        // checking whether 'obj1' 
+        // is of type 'G1' 
+        Console.WriteLine(obj1 is G1); 
+          
+        // checking whether 'obj1' is 
+        // of type Object class 
+        // (Base class for all classes) 
+        Console.WriteLine(obj1 is Object); 
+          
+        // checking whether 'obj2' 
+        // is of type 'G2' 
+        Console.WriteLine(obj2 is G2); 
+          
+        // checking whether 'obj2' is 
+        // of type Object class 
+        // (Base class for all classes) 
+        Console.WriteLine(obj2 is Object); 
+          
+        // checking whether 'obj2' 
+        // is of type 'G1' 
+        // it will return true as G2 
+        // is derived from G1 
+        Console.WriteLine(obj2 is G2); 
+          
+        // checking whether obj1  
+        // is of type G3 
+        // it will return false 
+        Console.WriteLine(obj1 is G3); 
+          
+         // checking whether obj2  
+        // is of type G3 
+        // it will return false 
+        Console.WriteLine(obj2 is G3); 
+          
+          
+    } 
+} 
+Output:
+True
+True
+True
+True
+True
+False
+False
+Note:
+•	Only reference, boxing, and unboxing conversions are considered by the is operator keyword.
+•	User-defined conversions or the conversion which are defined using the implicit and explicit are not considered consider by is operator. For the conversions which are known at the compile-time or handled by an implicit operator, is operator will give warnings for that.
 
 
 

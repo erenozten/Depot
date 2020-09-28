@@ -7899,6 +7899,20 @@ Potential drawbacks of multi-tenant:
 •	Security: Other tenants won’t see your data. However, multiple users (not associated with your organization) are allowed on the same database. This broader access reduces control of security.
 •	Updates/Changes: If you’re reliant on integrations with other SaaS products and one updates their system, it may cause issues with those connecting apps.
 
+BENEFITS OF SAAS MULTI-TENANT ARCHITECTURE
+•	Lower costs through economies of scale: With multi-tenancy, scaling has far fewer infrastructure implications than with a single-tenancy-hosted solution because new users get access to the same basic software.
+•	Shared infrastructure leads to lower costs: SaaS allows companies of all sizes to share infrastructure and data center operational costs. There is no need to add applications and more hardware to their environment. Not having to provision or manage any infrastructure or software above and beyond internal resources enables businesses to focus on everyday tasks.
+•	Ongoing maintenance and updates: Customers don’t need to pay costly maintenance fees to keep their software up to date. Vendors roll out new features and updates. These are often included with a SaaS subscription.
+•	Configuration can be done while leaving the underlying codebase unchanged: Single-tenant-hosted solutions are often customized, requiring changes to an application’s code. This customization can be costly and can make upgrades time-consuming because the upgrade might not be compatible with your environment.
+Multi-tenant solutions are designed to be highly configurable so that businesses can make the application perform the way they want. There is no changing the code or data structure, making the upgrade process easy.
+Multi-tenancy architecture also allows Digital Guardian to efficiently service everyone from small customers, whose scale may not warrant dedicated infrastructure, to large enterprises that need access to the cloud’s virtually unlimited compute resources. Software development and maintenance costs are shared, driving down expenditures, resulting in savings that are passed onto you, the customers.
+ADDITIONAL BENEFITS OF SAAS
+Multi-tenancy is just one of multiple benefits of SaaS. Download this white paper – 7 Reasons to Move to SaaS Data Protection to learn:
+•	The 7 reasons why moving to SaaS data protection enables you to manage risk more effectively
+•	How Digital Guardian’s cloud architecture is built with the latest tools and methodologies
+•	How we can help offset resource constraints with our Managed Security Program
+To learn more about the benefits of SaaS, watch the clip below from our webinar, Benefits of Implementing a SaaS Cybersecurity Solution, which is presented by Andras Cser, VP Principal Analyst at Forrester. You can watch the full webinar here.
+
 
 
 

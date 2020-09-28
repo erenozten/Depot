@@ -8357,6 +8357,45 @@ Note:
 •	Only reference, boxing, and unboxing conversions are considered by the is operator keyword.
 •	User-defined conversions or the conversion which are defined using the implicit and explicit are not considered consider by is operator. For the conversions which are known at the compile-time or handled by an implicit operator, is operator will give warnings for that.
 
+Virtual keyword - Lazy Loading - Eager Loading 	(GITHUB)    (asdf)
+virtual nedir, virtual keyword nedir, lazyloading nedir, lazy loading nedir, eager loading nedir, eagerloading nedir
+
+This virtual keyword is related to the topic of loading data from entity framework (lazy loading, eager loading and explicit loading).
+You should use virtual keyword, when you want to load data with lazy loading.
+lazy loading is the process whereby an entity or collection of entities is automatically loaded from the database the first time it is accessed.
+For example, when using the Blog entity class defined below, the related Posts will be loaded the first time the Posts navigation property is accessed:
+public class Blog 
+{  
+     public int BlogId { get; set; }  
+     public string Name { get; set; }  
+     public string Url { get; set; }  
+     public string Tags { get; set; }  
+     public virtual ICollection<Post> Posts { get; set; }  
+}
+Lazy loading of the Posts collection can be turned off by making the Posts property non-virtual.
+if lazy loading is off, Loading of the Posts collection can still be achieved using eager loading (using Include method) or Explicitly loading related entities (using Load method).
+Eagerly Loading:
+using (var context = new BloggingContext()) 
+{ 
+    // Load all blogs and related posts 
+    var blogs1 = context.Blogs 
+                          .Include(b => b.Posts) 
+                          .ToList(); 
+}
+Explicitly Loading:
+using (var context = new BloggingContext()) 
+{ 
+    var blog = context.Blogs.Find(1); 
+
+    // Load the posts related to a given blog 
+    context.Entry(blog).Collection(p => p.Posts).Load(); 
+}
+
+-
+-
+-
+-
+-
 
 
 

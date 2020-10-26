@@ -8469,6 +8469,29 @@ This means that we can have columns for these properties in our tables, but we w
 -
 -
 -
+Nhibernate vs Entity Framework  (GITHUB) (asasas)
+
+Out of the box, NHibernate supports more than 10 different databases and versions, including:
+•	SQL Server (including Azure)
+•	SQL Server CE
+•	Oracle Database (several editions)
+•	Ingres
+•	PostgreSQL
+•	MySQL
+•	DB2
+•	Sybase
+•	Informix
+•	SQLite
+•	Firebird
+•	Any using ODBC (Open Database Connectivity), or OLE (Object Linking and Embedding) DB
+Microsoft only makes available providers for:
+•	SQL Server (including Azure)
+•	SQLite
+•	In-memory
+-
+-
+-
+-
 
 
 

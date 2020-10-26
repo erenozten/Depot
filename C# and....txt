@@ -8390,8 +8390,31 @@ using (var context = new BloggingContext())
     // Load the posts related to a given blog 
     context.Entry(blog).Collection(p => p.Posts).Load(); 
 }
-
 -
+-
+-
+-
+-
+Keyboard Shortcuts	(GITHUB) (asasas)
+-Home, end (numpad’dakiler) : satırın başına ve sonuna gider. (shift ile de kullanılır, yazıyı seçmek için...)
+
+-Klavyenin üstündeki home end tuşları: sayfanın başına ve sonuna gider.
+
+-Numpad’daki home end tuşları ctrl ile kullanıldığında, tıpkı klavyenin üstündeki home-end tuşları gibi çalışıyor. Yani klavyenin üstündeki home-end tuşlarını kullanmaya gerek yok gibi görünüyor.
+
+-Ctrl – yön tuşları  kelimenin başına sonuna gidiyor atlayarak.
+
+-Next Error (F2)
+
+-Previous error (Shift + F2)
+
+-Expand Selection (Ctrl + W)
+
+-Ctrl + new  create new file
+
+- alt + yukarı aşağı arrows  iki satırın yerini birbiri arasında değiştirme.
+
+-shift + alt -> kare alan seçme (çoklu satır)
 -
 -
 -

@@ -8419,6 +8419,36 @@ Keyboard Shortcuts	(GITHUB) (asasas)
 -
 -
 -
+Attibute nedir	(testset) (testset)
+Attributes provide a powerful method of associating metadata, or declarative information, with code (assemblies, types, methods, properties, and so forth). 
+After an attribute is associated with a program entity, the attribute can be queried at run time by using a technique called reflection. For more information, see Reflection (C#).
+Attributes have the following properties:
+•	Attributes add metadata to your program. Metadata is information about the types defined in a program. All .NET assemblies contain a specified set of metadata that describes the types and type members defined in the assembly. You can add custom attributes to specify any additional information that is required. For more information, see, Creating Custom Attributes (C#).
+•	You can apply one or more attributes to entire assemblies, modules, or smaller program elements such as classes and properties.
+•	Attributes can accept arguments in the same way as methods and properties.
+•	Your program can examine its own metadata or the metadata in other programs by using reflection. For more information, see Accessing Attributes by Using Reflection (C#).
+
+In this example, the SerializableAttribute attribute is used to apply a specific characteristic to a class:
+[Serializable]
+public class SampleClass
+{
+    // Objects of this type can be serialized.
+}
+
+A method with the attribute DllImportAttribute is declared like the following example:
+[System.Runtime.InteropServices.DllImport("user32.dll")]
+extern static void SampleMethod();
+Some attributes can be specified more than once for a given entity. An example of such a multiuse attribute is ConditionalAttribute:
+[Conditional("DEBUG"), Conditional("TEST1")]
+void TraceMethod()
+{
+    // ...
+}
+
+[DllImport("user32.dll")]
+[DllImport("user32.dll", SetLastError=false, ExactSpelling=false)]
+[DllImport("user32.dll", ExactSpelling=false, SetLastError=false)]
+The first parameter, the DLL name, is positional and always comes first; the others are named. In this case, both named parameters default to false, so they can be omitted. Positional parameters correspond to the parameters of the attribute constructor. Named or optional parameters correspond to either properties or fields of the attribute. Refer to the individual attribute's documentation for information on default parameter values.
 
 
 

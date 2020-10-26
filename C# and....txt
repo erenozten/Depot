@@ -8449,6 +8449,14 @@ void TraceMethod()
 [DllImport("user32.dll", SetLastError=false, ExactSpelling=false)]
 [DllImport("user32.dll", ExactSpelling=false, SetLastError=false)]
 The first parameter, the DLL name, is positional and always comes first; the others are named. In this case, both named parameters default to false, so they can be omitted. Positional parameters correspond to the parameters of the attribute constructor. Named or optional parameters correspond to either properties or fields of the attribute. Refer to the individual attribute's documentation for information on default parameter values.
+-
+-
+-
+-
+-
+Object nedir	(GITHUB) (empty)
+Everything in C# is associated with classes and objects, along with its attributes and methods. For example: in real life, a car is an object. The car has attributes, such as weight and color, and methods, such as drive and brake.
+A Class is like an object constructor, or a "blueprint" for creating objects.
 
 
 

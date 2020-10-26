@@ -8457,6 +8457,18 @@ The first parameter, the DLL name, is positional and always comes first; the oth
 Object nedir	(GITHUB) (empty)
 Everything in C# is associated with classes and objects, along with its attributes and methods. For example: in real life, a car is an object. The car has attributes, such as weight and color, and methods, such as drive and brake.
 A Class is like an object constructor, or a "blueprint" for creating objects.
+-
+-
+-
+-
+-
+Shadow property nedir	(GITHUB) (asasas)
+Shadow properties are properties that are not defined in your .NET entity class but are defined for that entity type in the EF Core model. 
+This means that we can have columns for these properties in our tables, but we will not have a corresponding property field in our entity class. This is really helpful while designing our domain models as this helps to avoid unnecessary fields from the domain models which don't add any value to our domain logic but are required in our database.
+-
+-
+-
+-
 
 
 

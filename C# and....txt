@@ -11168,6 +11168,93 @@ static void Main(string[] args)
 -
 -
 -
+driver class		(GITHUB)	      (asd)
+driver class nedir
+Static void Main'i içinde barındıran class'a driver class demiş geeksforgeeks. Örneğe bakınız. Bunun gibi 2 örnek var geeks'te alt alta. MSDN'de veya bir başka sitede görmedim konuyla ilgili bir şey.
+// C# program to illustrate the  
+// use of 'is' operator keyword 
+using System; 
+  
+class Author { 
+  
+    // data members 
+    public string name; 
+    public int rank; 
+  
+    // method of Author class 
+    public void details(string n, int r) 
+    { 
+        name = n; 
+        rank = r; 
+    } 
+} 
+  
+class Work { 
+  
+    // data members 
+    public int articl_no; 
+    public int improv_no; 
+  
+    // method of Work class 
+    public void totalno(int a, int i) 
+    { 
+        articl_no = a; 
+        improv_no = i; 
+    } 
+} 
+  
+// Driver Class 
+public class GFG { 
+  
+    // Main method 
+    static public void Main() 
+    { 
+  
+        // Creating objects of  
+        // Author and Work class 
+        Author a = new Author(); 
+  
+        a.details("Ankita", 5); 
+  
+        Work w = new Work(); 
+  
+        w.totalno(80, 50); 
+  
+        bool result; 
+  
+        // Check 'a' is of Author  
+        // type or not 
+        // Using is operator 
+        result = a is Author; 
+        Console.WriteLine("Is a is Author? : {0}", result); 
+  
+        // Check w is of Author type 
+        // using is operator 
+        result = w is Author; 
+        Console.WriteLine("Is w is Author? : {0}", result); 
+  
+        // Take the value of a is null 
+        a = null; 
+  
+        // Check null object 
+        // Using is operator 
+        result = a is Author; 
+        Console.WriteLine("Is a is Author? : {0}", result); 
+    } 
+} 
+-
+-
+-
+Functional Programming For The Rest of Us (GITHUB)
+Functional programming nedir
+A Walk In The Park
+Fire up the time machine. Our walk in the park took place more than two thousand years ago, on a beautiful sunny day of a long forgotten spring in 380 B.C. Outside the city walls of Athens, under the pleasant shade of olive trees Plato was walking towards the Academy with a beautiful slave boy. The weather was lovely, the dinner was filling, and the conversation turned to philosophy.
+"Look at these two students", said Plato carefully picking words to make the question educational. "Who do you think is taller?" The slave boy looked towards the basin of water where two men were standing. "They're about the same height", he said. "What do you mean 'about the same'?", asked Plato. "Well, they look the same from here but I'm sure if I were to get closer I'd see that there is some difference."
+Plato smiled. He was leading the boy in the right direction. "So you would say that there is nothing perfectly equal in our world?" After some thinking the boy replied: "I don't think so. Everything is at least a little different, even if we can't see it." The point hit home! "Then if nothing is perfectly equal in this world, how do you think you understand the concept of 'perfect' equality?" The slave boy looked puzzled. "I don't know", he replied.
+So was born the first attempt to understand the nature of mathematics. Plato suggested that everything in our world is just an approximation of perfection. He also realized that we understand the concept of perfection even though we never encountered it. He came to conclusion that perfect mathematical forms must live in another world and that we somehow know about them by having a connection to that "alternative" universe. It's fairly clear that there is no perfect circle that we can observe. But we also understand what a perfect circle is and can describe it via equations. What is mathematics, then? Why is the universe described with mathematical laws? Can all of the phenomena of our universe be described by mathematics?2
+Philosophy of mathematics is a very complex subject. Like most philosophical disciplines it is far more adept at posing questions rather than providing answers. Much of the consensus revolves around the fact that mathematics is really a puzzle: we set up a set of basic non-conflicting principles and a set of rules on how to operate with these principles. We can then stack these rules together to come up with more complex rules. Mathematicians call this method a "formal system" or a "calculus". We can effectively write a formal system for Tetris if we wanted to. In fact, a working implementation of Tetris is a formal system, just specified using an unusual representation.
+A civilization of furry creatures on Alpha Centauri would not be able to read our formalisms of Tetris and circles because their only sensory input might be an organ that senses smells. They likely will never find out about the Tetris formalism, but they very well might have a formalism for circles. We probably wouldn't be able to read it because our sense of smell isn't that sophisticated, but once you get past the representation of the formalism (via various sensory instruments and standard code breaking techniques to understand the language), the concepts underneath are understandable to any intelligent civilization.
+Interestingly if no intelligent civilization ever existed in the universe the formalisms for Tetris and circles would still hold water, it's just that nobody would be around to find out about them. If an intelligent civilization popped up, it would likely discover some formalisms that help describe the laws of our universe. They also would be very unlikely to ever find out about Tetris because there is nothing in the universe that resembles it. Tetris is one of countless examples of a formal system, a puzzle, that has nothing to do with the real world. We can't even be sure that natural numbers have full resemblance to the real world, after all one can easily think of a number so big that it cannot describe anything in our universe since it might actually turn out to be finite.
 
 
 

@@ -10822,6 +10822,40 @@ DbModelBuilder is used to map CLR classes to a database schema. It is the main c
 -
 -
 -
+Transient Errors Are Evil – How to Handle them With Exponential Backoff in C#	(BSS)	      (BSS)    
+February 26, 2016//  by Deb Haldar//  0 Comments
+      Transient errors are intermittent errors caused by a short lived outage of a specific resource or service. For example, a network route might be unavailable for a few seconds or milliseconds, a web service may be experiencing high load and sending intermittent HTTP 503-Service unavailable messages or a database you’re trying to access might be in the process of being moved to a different server and hence unavailable for a few seconds.
+ 
+For many transient errors, it makes sense back-off and retry the current operation after waiting a few seconds. The back-off strategy employed could be one of the following:
+•	Retry Immediately: Retry the failed operation immediately without waiting.
+•	Retry at Fixed Intervals: Retry the failed operation after waiting a fixed amount of time. That is, the wait period between subsequent retries is fixed.
+•	Retry with Exponential Back-Off: Exponentially increase the wait time between subsequent retries. Eg. Retry after waiting 2, 4, 8, 16, 32… seconds etc.
+•	
+Why Exponential Backoff ?
+Exponential back-off is super critical when communicating with any web service or any cloud based service like Windows Azure. If the cloud service provider is already experiencing transient issues, immediate retries from multiple client code tends to further worsen the situation. Sometimes this overload of requests leads to a Denial of Service (DoS) type situation for the service. To guard against such situations, many services will throttle clients who makes too many requests within a certain span of time. Using an exponential back-off ensures that each client calling into the service code gives enough breathing room for the service to recover.
+ 
+Some exponential back-off algorithms also adds a randomly calculated delta to the back-off time. This ensures that if many clients are using the same back-off algorithm, their retry times have a lower probability of coinciding. For example, instead of using just the raw exponential backoff time which retries at 2, 4, 8, 16 seconds etc, the formula adds a random +/- 20% delta such that the back-off might happen at 1.7, 4.2, 8.5, 15.4 seconds
+So how do we Implement it Retry with Exponential Backoff ?
+I’m going to show you three ways of incorporating exponential back-off in any code where retries are needed. This post will detail the use of a home grown retry logic with exponential back off that I’ve been using for a while. Subsequent posts will show how to do this via readily available libraries in a more sophisticated way. The benefit of using the home grown recipe is that you do not need to install any additional dependencies. Just copy paste the code snippet below and you’re all set.
+Scenario:
+We’re going to request the homepage of https://microsoft.sharepoint.com . This page requires a valid claims token – so the request I going to throw a HTTP 403 – Forbidden response. This response, while expected in this case is a nice way to simulate errors which we can retry.
+Client code requirements:
+We need to try the operation 3 times. The code should back off exponentially, i.e., the wait time between retries should increase exponentially. Eg. The first retry happens after 2 seconds, the second after 4 seconds, the third after 8 seconds and so on.
+ 
+Client Code
+The following code below creates the HTTP Request:
+    static void ExecuteHTTPGet(string requestUri)
+    {
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestUri);
+        request.KeepAlive = false;
+        request.Method = "GET";
+
+        // This line will throw an exception if the HTTP GET fails
+        HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse();
+        int requestStatus = (int)webResponse.StatusCode;
+        webResponse.Close();
+    }
+Notice that we’re not catching any exception that might be thrown by the client. Catching the exception and retrying the operation will be delegated to our Retry logic.
 
 
 

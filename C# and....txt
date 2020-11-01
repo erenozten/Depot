@@ -10733,6 +10733,96 @@ var query = database.Posts    // your starting point - table in the "from" state
 -
 -
 -
+Context   	(GITHUB)	      (BSS)    
+context nedir
+Defines an environment for the objects that are resident inside it and for which a policy can be enforced.
+-
+Something is typically called a "context" in computer programming when that something encapsulates some kind of state.
+In the example of Linq 2 sql or EF, you have a Data Context, or Object Context.. these encapsulate the state of your data model, including connections and versioning.
+In the case of HttpContext, it's encapsulating the state of an Http connection (which is normally considered stateless, but HttpContext tries to give state to it).
+In english, if we refer to context, we refer to information surrounding something that allows you to understand the entire situation in which that something exists. For example, we may say a statement is "taken out of context". That would mean a statement by itself doesn't necessarily reveal all the information.
+Out of context:
+People are tasty.
+In Context:
+We should never say or think that people are tasty.
+Without the "context", the statement has a different meaning. Programming has taken the term to similarly refer to the data surrounding something that gives it more meaning.
+-
+-
+-
+-
+Fluent API    	(BSS)	      (BSS)    
+Data annotations nedir, fluent api nedir, fluent nedir
+Fluent API is an advanced way of specifying model configuration that covers everything that data annotations can do in addition to some more advanced configuration not possible with data annotations. Data annotations and the fluent API can be used together, but Code First gives precedence to Fluent API > data annotations > default conventions.
+•	Fluent API is another way to configure your domain classes.
+•	The Code First Fluent API is most commonly accessed by overriding the OnModelCreating method on your derived DbContext.
+•	Fluent API provides more functionality for configuration than DataAnnotations. Fluent API supports the following types of mappings.
+In this chapter, we will continue with the simple example which contains Student, Course and Enrollment classes and one context class with MyContext name as shown in the following code.
+using System.Data.Entity; 
+using System.Linq; 
+using System.Text;
+using System.Threading.Tasks;  
+
+namespace EFCodeFirstDemo {
+
+   class Program {
+      static void Main(string[] args) {}
+   }
+   
+   public enum Grade {
+      A, B, C, D, F
+   }
+
+   public class Enrollment {
+      public int EnrollmentID { get; set; }
+      public int CourseID { get; set; }
+      public int StudentID { get; set; }
+      public Grade? Grade { get; set; }
+		
+      public virtual Course Course { get; set; }
+      public virtual Student Student { get; set; }
+   }
+
+   public class Student {
+      public int ID { get; set; }
+      public string LastName { get; set; }
+      public string FirstMidName { get; set; }
+		
+      public DateTime EnrollmentDate { get; set; }
+		
+      public virtual ICollection<Enrollment> Enrollments { get; set; }
+   }
+
+   public class Course {
+      public int CourseID { get; set; }
+      public string Title { get; set; }
+      public int Credits { get; set; }
+		
+      public virtual ICollection<Enrollment> Enrollments { get; set; }
+   }
+
+   public class MyContext : DbContext {
+      public virtual DbSet<Course> Courses { get; set; }
+      public virtual DbSet<Enrollment> Enrollments { get; set; }
+      public virtual DbSet<Student> Students { get; set; }
+   }
+
+}	  
+To access Fluent API you need to override the OnModelCreating method in DbContext. Let’s take a look at a simple example in which we will rename the column name in student table from FirstMidName to FirstName as shown in the following code.
+public class MyContext : DbContext {
+
+   protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+      modelBuilder.Entity<Student>().Property(s ⇒ s.FirstMidName)
+      .HasColumnName("FirstName");}
+
+      public virtual DbSet<Course> Courses { get; set; }
+      public virtual DbSet<Enrollment> Enrollments { get; set; }
+      public virtual DbSet<Student> Students { get; set; }
+}
+DbModelBuilder is used to map CLR classes to a database schema. It is the main class and on which you can configure all your domain classes. This code centric approach to building an Entity Data Model (EDM) is known as Code First.
+-
+-
+-
+
 
 
 

@@ -11070,6 +11070,104 @@ To learn more about the benefits of SaaS, watch the clip below from our webinar,
 -
 -
 -
+gettype	  (GITHUB)	      (asd)
+gettype nedir, value type nedir object nedir
+static void Main(string[] args)
+{
+ 
+    // taking object type 
+    Object objNew = new Object();
+ 
+    // taking integer 
+    int intNew = 10;
+ 
+    //taking string
+    string strNew = "";
+ 
+    // taking Type type and assigning 
+    // the value as type of above 
+    // defined types using GetType 
+    // method 
+    Type obj1 = objNew.GetType();
+    Type int1 = intNew.GetType();
+    Type str1 = strNew.GetType();
+ 
+    // Displaying result 
+ 
+    Console.WriteLine("For Object obj1 = new Object();");
+ 
+    // BaseType is used to display 
+    // the base class of current type 
+    // it will return nothing as Object 
+    // class is on top of hierarchy 
+    // output: boş alan. 
+    Console.WriteLine(obj1.BaseType);
+ 
+    // It will return the name class 
+    // output: Object
+    Console.WriteLine(obj1.Name);
+ 
+    // It will return the 
+    // fully qualified name 
+    // output: System.Object
+    Console.WriteLine(obj1.FullName);
+ 
+    // It will return the Namespace 
+    // By default Namespace is System 
+    // output: System
+    Console.WriteLine(obj1.Namespace);
+ 
+    Console.WriteLine();
+ 
+    Console.WriteLine("      For int i = 10");
+    Console.WriteLine();
+ 
+    // output: system.ValueType
+    Console.WriteLine(int1.BaseType);
+ 
+    // output: Int32
+    Console.WriteLine(int1.Name);
+ 
+    // System.Int32
+    Console.WriteLine(int1.FullName);
+ 
+    // System
+    Console.WriteLine(int1.Namespace);
+ 
+    Console.WriteLine();
+ 
+    Console.WriteLine("      For str strNew = ''");
+    Console.WriteLine();
+ 
+    // output: System.Object
+    Console.WriteLine(str1.BaseType);
+ 
+    // output: String
+    Console.WriteLine(str1.Name);
+ 
+    // output: System.String
+    Console.WriteLine(str1.FullName);
+ 
+    // output: System
+    Console.WriteLine(str1.Namespace);
+ 
+ 
+    // Output:
+ 
+    // For Object obj1 = new Object();
+    // Object
+    // System.Object
+    // System
+       
+    // For String str
+    // System.ValueType
+    // Int32
+    // System.Int32
+    // System
+}
+-
+-
+-
 
 
 

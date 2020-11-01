@@ -8961,6 +8961,252 @@ By creating an instance of Laptop class we can access defined fields, properties
  
 If you observe the above diagram, we are exposing only the necessary properties and methods outside of the class by using public and private access modifiers.
 
+C# Abstraction Example
+Following is the example of implementing an abstraction functionality by allowing only a few properties and methods to access outside of the class in c# programming language.
+ 
+using System;
+using System.Text;
+ 
+namespace Tutlane
+{
+    public class Laptop
+    {
+        private string brand;
+        private string model;
+        public string Brand
+        {
+            get { return brand; }
+            set { brand = value; }
+        }
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+        public void LaptopDetails()
+        {
+            Console.WriteLine("Brand: " + Brand);
+            Console.WriteLine("Model: " + Model);
+        }
+        public void LaptopKeyboard()
+        {
+            Console.WriteLine("Type using Keyword");
+        }
+        private void MotherBoardInfo()
+        {
+            Console.WriteLine("MotheBoard Information");
+        }
+        private void InternalProcessor()
+        {
+            Console.WriteLine("Processor Information");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Laptop l = new Laptop();
+            l.Brand = "Dell";
+            l.Model = "Inspiron 14R";
+            l.LaptopDetails();
+            Console.WriteLine("\nPress Enter Key to Exit..");
+            Console.ReadLine();
+        }
+    }
+}
+If you observe above example, we defined a fields, properties and methods with public, private access modifiers to allow or disallow properties, methods access based on requirements.
+ 
+When you execute the above c# program, you will get the result as shown below.
+ 
+ 
+Difference between Abstraction and Encapsulation
+The following are the differences between abstraction and encapsulation in c# programming language.
+ 
+Abstraction	Encapsulation
+It is used to hide unwanted data and shows only the required properties and methods.	It is used to bind data members and member functions into a single unit to prevent outsiders to access it directly.
+This is how we can use abstraction to hide implementation details and showing only essential features based on our requirements in c# programing language. 
+
+-
+
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces (which you will learn more about in the next chapter).
+The abstract keyword is used for classes and methods:
+•	Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+
+•	Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the derived class (inherited from).
+An abstract class can have both abstract and regular methods:
+
+abstract class Animal 
+{
+  public abstract void animalSound();
+  public void sleep() 
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+ 
+ 
+From the example above, it is not possible to create an object of the Animal class:
+Animal myObj = new Animal(); // Will generate an error (Cannot create an instance of the abstract class or interface 'Animal')
+To access the abstract class, it must be inherited from another class. Let's convert the Animal class we used in the Polymorphism chapter to an abstract class.
+Remember from the Inheritance chapter that we use the : symbol to inherit from a class, and that we use the override keyword to override the base class method.
+Example
+// Abstract class
+abstract class Animal
+{
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  // Regular method
+  public void sleep()
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+
+// Derived class (inherit from Animal)
+class Pig : Animal
+{
+  public override void animalSound()
+  {
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Pig myPig = new Pig(); // Create a Pig object
+    myPig.animalSound();  // Call the abstract method
+    myPig.sleep();  // Call the regular method
+  }
+}
+
+-
+
+In c#, Abstraction is a principle of object-oriented programming language (OOP) and it is used to hide the implementation details and display only essential features of the object.
+ 
+
+In Abstraction, by using access modifiers we can hide the required details of the object and expose only necessary methods and properties through the reference of an object.
+ 
+In real-time, the laptop is a perfect example of abstraction in c#. A laptop that consists of many things such as processor, RAM, motherboard, LCD screen, camera, USB ports, battery, speakers, etc. To use it, we just need to know how to operate the laptop by switching it on, we don’t need to know how internally all the parts are working. Here, the laptop is an object which is designed to expose only required features by hiding its implementation details.
+ 
+In object-oriented programming, a class is the perfect example of abstraction. In c#, we can create a class with required methods, properties and we can expose only necessary methods and properties using access modifiers based on our requirements.
+ 
+Following is the example of defining a class with required methods, properties and exposing it by using access modifiers to achieve abstraction functionality.
+ 
+public class Laptop
+{
+    private string brand;
+    private string model;
+    public string Brand
+    {
+        get { return brand; }
+        set { brand = value; }
+    }
+    public string Model
+    {
+        get { return model; }
+        set { model = value; }
+    }
+    public void LaptopDetails()
+    {
+        Console.WriteLine("Brand: " + Brand);
+        Console.WriteLine("Model: " + Model);
+    }
+    public void LaptopKeyboard()
+    {
+        Console.WriteLine("Type using Keyword");
+    }
+    private void MotherBoardInfo()
+    {
+        Console.WriteLine("MotheBoard Information");
+    }
+    private void InternalProcessor()
+    {
+        Console.WriteLine("Processor Information");
+    }
+}
+If you observe the above code, we defined a Laptop class with required fields, properties and methods with the public, private access modifiers to achieve an abstraction functionality by hiding and exposing some of the methods and properties based on our requirements.
+ 
+Here, the public modifier is used to allow defined fields, properties and methods to access outside of the class and the private modifier is used to hide or restrict access of required fields, properties and methods from the outside of class.
+ 
+By creating an instance of Laptop class we can access defined fields, properties, and methods. Following is the pictorial representation of creating an instance of a class and accessing fields, properties and methods.
+ 
+ 
+ 
+If you observe the above diagram, we are exposing only the necessary properties and methods outside of the class by using public and private access modifiers.
+C# Abstraction Example
+Following is the example of implementing an abstraction functionality by allowing only a few properties and methods to access outside of the class in c# programming language.
+ 
+using System;
+using System.Text;
+ 
+namespace Tutlane
+{
+    public class Laptop
+    {
+        private string brand;
+        private string model;
+        public string Brand
+        {
+            get { return brand; }
+            set { brand = value; }
+        }
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+        public void LaptopDetails()
+        {
+            Console.WriteLine("Brand: " + Brand);
+            Console.WriteLine("Model: " + Model);
+        }
+        public void LaptopKeyboard()
+        {
+            Console.WriteLine("Type using Keyword");
+        }
+        private void MotherBoardInfo()
+        {
+            Console.WriteLine("MotheBoard Information");
+        }
+        private void InternalProcessor()
+        {
+            Console.WriteLine("Processor Information");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Laptop l = new Laptop();
+            l.Brand = "Dell";
+            l.Model = "Inspiron 14R";
+            l.LaptopDetails();
+            Console.WriteLine("\nPress Enter Key to Exit..");
+            Console.ReadLine();
+        }
+    }
+}
+If you observe above example, we defined a fields, properties and methods with public, private access modifiers to allow or disallow properties, methods access based on requirements.
+ 
+When you execute the above c# program, you will get the result as shown below.
+ 
+ 
+Difference between Abstraction and Encapsulation
+The following are the differences between abstraction and encapsulation in c# programming language.
+ 
+Abstraction	Encapsulation
+It is used to hide unwanted data and shows only the required properties and methods.	It is used to bind data members and member functions into a single unit to prevent outsiders to access it directly.
+This is how we can use abstraction to hide implementation details and showing only essential features based on our requirements in c# programing language. 
+
+
+-
+-
+
 
 
 

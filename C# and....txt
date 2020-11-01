@@ -8960,7 +8960,6 @@ By creating an instance of Laptop class we can access defined fields, properties
  
  
 If you observe the above diagram, we are exposing only the necessary properties and methods outside of the class by using public and private access modifiers.
-
 C# Abstraction Example
 Following is the example of implementing an abstraction functionality by allowing only a few properties and methods to access outside of the class in c# programming language.
  
@@ -9027,7 +9026,6 @@ It is used to hide unwanted data and shows only the required properties and meth
 This is how we can use abstraction to hide implementation details and showing only essential features based on our requirements in c# programing language. 
 
 -
-
 Data abstraction is the process of hiding certain details and showing only essential information to the user.
 Abstraction can be achieved with either abstract classes or interfaces (which you will learn more about in the next chapter).
 The abstract keyword is used for classes and methods:
@@ -9202,15 +9200,8 @@ The following are the differences between abstraction and encapsulation in c# pr
 Abstraction	Encapsulation
 It is used to hide unwanted data and shows only the required properties and methods.	It is used to bind data members and member functions into a single unit to prevent outsiders to access it directly.
 This is how we can use abstraction to hide implementation details and showing only essential features based on our requirements in c# programing language. 
-
-
 -
 -
-
-
-
-
-
 
 
 

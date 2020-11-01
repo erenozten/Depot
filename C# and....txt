@@ -10360,6 +10360,35 @@ user-defined operator| none      | public (must be declared public)
 The accessibility of a nested type depends on its accessibility domain, which is determined by both the declared accessibility of the member and the accessibility domain of the immediately containing type. However, the accessibility domain of a nested type cannot exceed that of the containing type.
 Note: CIL also has the provision for protected and internal (as opposed to the existing protected "or" internal), but to my knowledge this is not currently available for use in C#.
 -
+Jon Skeet yazısı:
+The default access for everything in C# is "the most restricted access you could declare for that member".
+So for example:
+namespace MyCompany
+{
+    class Outer
+    {
+        void Foo() {}
+        class Inner {}
+    }
+}
+is equivalent to
+namespace MyCompany
+{
+    internal class Outer
+    {
+        private void Foo() {}
+        private class Inner {}
+    }
+}
+The one sort of exception to this is making one part of a property (usually the setter) more restricted than the declared accessibility of the property itself:
+public string Name
+{
+    get { ... }
+    private set { ... } // This isn't the default, have to do it explicitly
+}
+
+
+
 
 
 

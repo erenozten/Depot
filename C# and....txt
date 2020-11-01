@@ -10386,6 +10386,52 @@ public string Name
     get { ... }
     private set { ... } // This isn't the default, have to do it explicitly
 }
+-
+-
+Recursive Method	(GITHUB)	      (BSS)    
+Recursive method nedir, recursive nedir
+using System;
+
+namespace ConsoleAppErenOzten
+{
+    using System.IO;
+
+    public class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Lütfen folder path'i giriniz");
+            string folderPath = Console.ReadLine();
+
+            // FindFiles() recursive fonksiyon, içine folderpath alarak çalıştırılır. 
+            FindFiles(folderPath);
+        }
+
+        private static void FindFiles(string path)
+        {
+            // şu anki folder path içinde bulunan dosyaları dön
+            // Directory.Getfiles: verilen path içindeki 
+            // dosyaları array olarak döner
+            foreach (string fileName in Directory.GetFiles(path))
+            {
+                Console.WriteLine(fileName);
+            }
+            // Bu noktaya geldiğimizde directory'de bulunan tüm dosyalar
+            // ekrana yazdırılmış oldu.
+            // Şimdi de bulunduğumuz folder'ın içindeki directorylere bakalım:
+
+            // Eğer içinde bulunulan directory içinde sub-directory'ler varsa: 
+            // Her bir sub directory için FindFiles() metodunu recursive olarak çalıştır.
+            foreach (string directory in Directory.GetDirectories(path))
+            {
+                // FindFiles metodu recursive olarak çalışıyor:
+                FindFiles(directory);
+            }
+        }
+    }
+}
+
+
 
 
 

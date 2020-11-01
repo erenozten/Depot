@@ -8496,7 +8496,11 @@ Continuous Integration?	(GITHUB) (testset)
 Continuous Integration (CI) is a development practice where developers integrate code into a shared repository frequently, preferably several times a day. Each integration can then be verified by an automated build and automated tests. While automated testing is not strictly part of CI it is typically implied.
 -
 -
+Extreme programming	(GITHUB) (testset)
 
+Futbolda her karşısına çıkan oyuncuya çalım atan kişi akla geliyo.. Her bir rakip oyuncu: müşteri isteğindeki değişim… Extreme programming ile proje, her bir engele karşı ilerlemeye devam ediyor.
+
+Extreme programming (XP) is a software development methodology which is intended to improve software quality and responsiveness to changing customer requirements. As a type of agile software development,[1][2][3] it advocates frequent "releases" in short development cycles, which is intended to improve productivity and introduce checkpoints at which new customer requirements can be adopted.
 
 
 

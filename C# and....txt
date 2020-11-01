@@ -8501,6 +8501,172 @@ Extreme programming	(GITHUB) (testset)
 Futbolda her karşısına çıkan oyuncuya çalım atan kişi akla geliyo.. Her bir rakip oyuncu: müşteri isteğindeki değişim… Extreme programming ile proje, her bir engele karşı ilerlemeye devam ediyor.
 
 Extreme programming (XP) is a software development methodology which is intended to improve software quality and responsiveness to changing customer requirements. As a type of agile software development,[1][2][3] it advocates frequent "releases" in short development cycles, which is intended to improve productivity and introduce checkpoints at which new customer requirements can be adopted.
+ 
+Other elements of extreme programming include: programming in pairs or doing extensive code review, unit testing of all code, not programming features until they are actually needed, a flat management structure, code simplicity and clarity, expecting changes in the customer's requirements as time passes and the problem is better understood, and frequent communication with the customer and among programmers.[2][3][4] The methodology takes its name from the idea that the beneficial elements of traditional software engineering practices are taken to "extreme" levels. As an example, code reviews are considered a beneficial practice; taken to the extreme, code can be reviewed continuously, i.e. the practice of pair programming.
+-
+-
+Generic / Generics	(GITHUB) (testset)
+Generic nedir, generic class nedir, generics nedir
+Generics allow you to define the specification of the data type of programming elements in a class or a method, until it is actually used in the program. In other words, generics allow you to write a class or method that can work with any data type.
+You write the specifications for the class or the method, with substitute parameters for data types. When the compiler encounters a constructor for the class or a function call for the method, it generates code to handle the specific data type. A simple example would help understanding the concept −
+Live Demo
+using System;
+using System.Collections.Generic;
+
+namespace GenericApplication {
+   public class MyGenericArray<T> {
+      private T[] array;
+      
+      public MyGenericArray(int size) {
+         array = new T[size + 1];
+      }
+      public T getItem(int index) {
+         return array[index];
+      }
+      public void setItem(int index, T value) {
+         array[index] = value;
+      }
+   }
+   class Tester {
+      static void Main(string[] args) {
+         
+         //declaring an int array
+         MyGenericArray<int> intArray = new MyGenericArray<int>(5);
+         
+         //setting values
+         for (int c = 0; c < 5; c++) {
+            intArray.setItem(c, c*5);
+         }
+         
+         //retrieving the values
+         for (int c = 0; c < 5; c++) {
+            Console.Write(intArray.getItem(c) + " ");
+         }
+         
+         Console.WriteLine();
+         
+         //declaring a character array
+         MyGenericArray<char> charArray = new MyGenericArray<char>(5);
+         
+         //setting values
+         for (int c = 0; c < 5; c++) {
+            charArray.setItem(c, (char)(c+97));
+         }
+         
+         //retrieving the values
+         for (int c = 0; c< 5; c++) {
+            Console.Write(charArray.getItem(c) + " ");
+         }
+         Console.WriteLine();
+         
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+0 5 10 15 20
+a b c d e
+Features of Generics
+Generics is a technique that enriches your programs in the following ways −
+•	It helps you to maximize code reuse, type safety, and performance.
+•	You can create generic collection classes. The .NET Framework class library contains several new generic collection classes in the System.Collections.Generic namespace. You may use these generic collection classes instead of the collection classes in the System.Collections namespace.
+•	You can create your own generic interfaces, classes, methods, events, and delegates.
+•	You may create generic classes constrained to enable access to methods on particular data types.
+•	You may get information on the types used in a generic data type at run-time by means of reflection.
+Generic Methods
+In the previous example, we have used a generic class; we can declare a generic method with a type parameter. The following program illustrates the concept −
+Live Demo
+using System;
+using System.Collections.Generic;
+
+namespace GenericMethodAppl {
+   class Program {
+      static void Swap<T>(ref T lhs, ref T rhs) {
+         T temp;
+         temp = lhs;
+         lhs = rhs;
+         rhs = temp;
+      }
+      static void Main(string[] args) {
+         int a, b;
+         char c, d;
+         a = 10;
+         b = 20;
+         c = 'I';
+         d = 'V';
+         
+         //display values before swap:
+         Console.WriteLine("Int values before calling swap:");
+         Console.WriteLine("a = {0}, b = {1}", a, b);
+         Console.WriteLine("Char values before calling swap:");
+         Console.WriteLine("c = {0}, d = {1}", c, d);
+         
+         //call swap
+         Swap<int>(ref a, ref b);
+         Swap<char>(ref c, ref d);
+         
+         //display values after swap:
+         Console.WriteLine("Int values after calling swap:");
+         Console.WriteLine("a = {0}, b = {1}", a, b);
+         Console.WriteLine("Char values after calling swap:");
+         Console.WriteLine("c = {0}, d = {1}", c, d);
+         
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+Int values before calling swap:
+a = 10, b = 20
+Char values before calling swap:
+c = I, d = V
+Int values after calling swap:
+a = 20, b = 10
+Char values after calling swap:
+c = V, d = I
+Generic Delegates
+You can define a generic delegate with type parameters. For example −
+delegate T NumberChanger<T>(T n);
+The following example shows use of this delegate −
+Live Demo
+using System;
+using System.Collections.Generic;
+
+delegate T NumberChanger<T>(T n);
+namespace GenericDelegateAppl {
+   class TestDelegate {
+      static int num = 10;
+      
+      public static int AddNum(int p) {
+         num += p;
+         return num;
+      }
+      public static int MultNum(int q) {
+         num *= q;
+         return num;
+      }
+      public static int getNum() {
+         return num;
+      }
+      static void Main(string[] args) {
+         //create delegate instances
+         NumberChanger<int> nc1 = new NumberChanger<int>(AddNum);
+         NumberChanger<int> nc2 = new NumberChanger<int>(MultNum);
+         
+         //calling the methods using the delegate objects
+         nc1(25);
+         Console.WriteLine("Value of Num: {0}", getNum());
+         
+         nc2(5);
+         Console.WriteLine("Value of Num: {0}", getNum());
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result −
+Value of Num: 35
+Value of Num: 175
+
 
 
 

@@ -8850,6 +8850,63 @@ abstract class C : I
     public abstract void M();
 }
 
+Example
+In this example, the class DerivedClass is derived from an abstract class BaseClass. The abstract class contains an abstract method, AbstractMethod, and two abstract properties, X and Y.
+abstract class BaseClass   // Abstract class
+{
+    protected int _x = 100;
+    protected int _y = 150;
+    public abstract void AbstractMethod();   // Abstract method
+    public abstract int X    { get; }
+    public abstract int Y    { get; }
+}
+
+class DerivedClass : BaseClass
+{
+    public override void AbstractMethod()
+    {
+        _x++;
+        _y++;
+    }
+
+    public override int X   // overriding property
+    {
+        get
+        {
+            return _x + 10;
+        }
+    }
+
+    public override int Y   // overriding property
+    {
+        get
+        {
+            return _y + 10;
+        }
+    }
+
+    static void Main()
+    {
+        var o = new DerivedClass();
+        o.AbstractMethod();
+        Console.WriteLine($"x = {o.X}, y = {o.Y}");
+    }
+}
+// Output: x = 111, y = 161
+In the preceding example, if you attempt to instantiate the abstract class by using a statement like this:
+BaseClass bc = new BaseClass();   // Error  
+You will get an error saying that the compiler cannot create an instance of the abstract class 'BaseClass'.
+-
+-
+www nedir, world wide web nedir
+World Wide Web, Dünya Çapında Ağ (kısaca WWW veya Web), İnternet üzerinde yayınlanan birbirleriyle bağlantılı hiper-metin dokümanlarından oluşan bir bilgi sistemidir. Bu dokümanların her birine Web sayfası adı verilir ve Web sayfalarına İnternet kullanıcısının bilgisayarında çalışan Web tarayıcısı adı verilen bilgisayar programları aracılığıyla erişilir. Web sayfalarında metin, imaj, video ve diğer multimedya ögeleri bulunabilir ve diğer bağlantı ya da link adı verilen hiper-bağlantılar ile başka Web sayfalarına geçiş yapılabilir.
+
+İnternet ve Web terimleri aynı olguyu tanımlamaz. Zira Web sadece İnternet üzerinde çalışan bir servistir. Web kavramı, CERN'de bir bilgisayar programcısı olan Tim Berners-Lee'nin HTML adlı metin işaretleme dilini geliştirmesiyle oluşmuştur. Bugün de kendisinin başkanı olduğu W3C (World Wide Web Consortium) tarafından standartları belirlenmektedir.
+
+Yapısı
+Web’in temeli İnternet'tir. Web İnternet üzerinde kurulmuştur ve İnternet'in sunduğu mekanizmalardan çoğunun kullanılmasını sağlar. İnternet'in fiziksel görünüşleri –bilgisayarlar, ağlar ve servisler– Dünya üzerindeki diğer binlerce bilgisayara bağlanmamıza izin verir. Web, İnternet'in en tepesindeki soyutlanmış genel servisler kümesidir. World Wide Web (W3), insanların fikir ve projelerinin paylaşılmasını sağlayan bir bilgi ve kültür havuzudur. İstemci-sunucu uygulamaları ile yapılan birçok organizasyon üzerinde Web tarayıcıları istemci olarak çalışabilirler. Web yürütümü standart İstemci-sunucu modelini izler. Aşağıdaki şekilde gösterildiği gibi "Web tarayıcısı" adı verilen programı çalıştıran bir istemci bilgisayar ile Web sunucu yazılımı çalıştıran bir sunucu bilgisayar arasındaki etkileşime "istemci-sunucu" etkileşimi adı verilir. İstemci bilgisayar sunucudan HTTP'yi (Hypertext Transfer Protocol) ve İnternet mesaj standardı TCP/IP'yi kullanarak bir doküman ister ve sunucu istemcinin göstereceği dokümanı geri döndürür.-
+-
+
 
 
 

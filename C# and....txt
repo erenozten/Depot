@@ -11024,6 +11024,32 @@ WHERE @@ROWCOUNT > 0 AND [StudentID] = scope_identity()
 -
 -
 -
+MULTI TENANCY - MULTI TENANT   	(GITHUB)	      (asd)    
+multi tenant nedir, multi tenancy nedir, multitenant nedir, multi-tenant nedir
+What are the advantages of a multi-tenancy SaaS architecture? How does it differ from single tenant instances? We break down the differences and highlight the benefits of implementing a SaaS solution for data protection in this blog.
+MULTI-TENANCY – A CORE BENEFIT OF SAAS
+In the early days of the cloud, organizations were reluctant to adopt cloud strategies. Few organizations considered applying policies, technologies, and controls to protect data across the cloud. The last several years, which has seen the proven effectiveness of cloud deployments in scalability, cost, and security, has changed that however. Now we’re seeing the rapid adoption of cloud platforms by organizations of all shapes and sizes.
+Digital Guardian’s Data Protection Platform leverages software as a service, or SaaS, to provide data protection in a package that results in superior security, better economics, and reduced overhead. One of the ways we do this is through multi-tenant architecture.
+
+SINGLE TENANT VS MULTI-TENANT – LEARN THE DIFFERENCE
+Single Tenant – A single instance of the software and supporting infrastructure serve a single customer. With single tenancy, each customer has his or her own independent database and instance of the software. Essentially, there is no sharing happening with this option.
+Potential benefits of single-tenant include:
+•	Security: A single customer and a single server is often contained on secure hardware being used by a limited number of people.
+•	Dependability: With an entire environment dedicated to one client, resources are abundant and available anytime.
+•	Customization: Control over the entire environment allows for customization and added functionality, if desired.
+Potential drawbacks of single-tenant:
+•	Maintenance: Single-tenant typically means more tasks and regular maintenance to keep things running smoothly and efficiently.
+•	Setup/Management: By comparison, SaaS multi-tenant environments are quick to setup and manage.
+•	Cost: Single-tenant typically allows for more resources, but at a premium price given that there is only one customer for the entire environment.
+Multi-Tenant – Multi-tenancy means that a single instance of the software and its supporting infrastructure serves multiple customers. Each customer shares the software application and also shares a single database. Each tenant’s data is isolated and remains invisible to other tenants.
+Potential benefits of multi-tenant:
+•	Affordable Cost: Multiple customers means that the cost for the environment is shared, and those savings (from the SaaS vendor) are typically transferred to the cost of the software.
+•	Integrations: Cloud environments allow for easier integration with other applications through the use of APIs.
+•	“Hands-free” Maintenance: The server technically belongs to the SaaS vendor, meaning that a certain level of database maintenance is handled by the vendor, instead of you maintaining the environment yourself.
+Potential drawbacks of multi-tenant:
+•	Limited Management/Customization: While you do have added integration benefits, custom changes to the database aren’t typically an option.
+•	Security: Other tenants won’t see your data. However, multiple users (not associated with your organization) are allowed on the same database. This broader access reduces control of security.
+•	Updates/Changes: If you’re reliant on integrations with other SaaS products and one updates their system, it may cause issues with those connecting apps.
 
 
 

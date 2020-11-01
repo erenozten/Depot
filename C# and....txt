@@ -10170,6 +10170,135 @@ public class Program
 
 In this example, we have created an array of string arrays. In a similar way, we create an array of integer arrays, an array of decimal arrays etc.
 
+BENİM ÖRNEK:
+using System;
+
+namespace ErenOztenJaggedArray
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            // calisanlar isminde bir string array'ı oluşturduk ve çalışan isimlerini girdik:
+            string[] calisanlar = new string[5];
+            calisanlar[0] = "Murat";
+            calisanlar[1] = "Ali";
+            calisanlar[2] = "Ahmet";
+            calisanlar[3] = "Can";
+            calisanlar[4] = "Kemal";
+
+            // jaggedArray isminde, string tipinde bir 'iç içe array' oluşturduk.
+            // Görüldüğü üzere bu array içine 5 tane array alabiliyor.
+            string[][] jaggedArray = new string[5][];
+
+            //Şimdi sırayla bu beş array'ı oluşturalım:
+
+            // Murat'ın hobileri olarak kullanılacak olan array:
+            // jaggedArray array'ına ait olan birinci array:
+            jaggedArray[0] = new string[3];
+
+            // Ali'nin hobileri olarak kullanılacak olan array:
+            // jaggedArray array'ına ait olan ikinci array:
+            jaggedArray[1] = new string[1];
+
+            // Ahmet'in hobileri olarak kullanılacak olan array:
+            // jaggedArray array'ına ait olan üçüncü array:
+            jaggedArray[2] = new string[2];
+
+            // Can'ın hobileri olarak kullanılacak olan array:
+            // jaggedArray array'ına ait olan dördüncü array:
+            jaggedArray[3] = new string[4];
+
+            // Kemal'in hobileri olarak kullanılacak olan array:
+            // jaggedArray array'ına ait olan beşinci array:
+            jaggedArray[4] = new string[1];
+
+            // Şimdi de oluşturduğumuz bu beş arraya,
+            // hobileri string olarak ekleyelim
+
+            // Murat'ın hobileri olarak kullanılacak olan;
+            // jaggedArray array'ının içinde barınan birinci array --> [0]:
+            // jaggedArray[0][0] --> soldaki sıfır 
+            // oluşturduğumuz ilk array üzerinde çalıştığımızı gösteriyor.
+            // ikinci 0 ise, bu array'ın ilk üyesi olan string değerini
+            // gösteriyor.
+            jaggedArray[0][0] = "Müzik dinlemek";
+            jaggedArray[0][1] = "Kitap okumak";
+            jaggedArray[0][2] = "Gezmek";
+
+            // Ali'nin hobileri olarak kullanılacak olan;
+            // jaggedArray array'ının içinde barınan ikinci array --> [1]:
+            jaggedArray[1][0] = "Şarkı söylemek";
+
+            // Ahmet'in hobileri olarak kullanılacak olan;
+            // jaggedArray array'ının içinde barınan üçüncü array --> [2]:
+            jaggedArray[2][0] = "Oyun oynamak";
+            jaggedArray[2][1] = "Kitap okumak";
+
+            // Can'ın hobileri olarak kullanılacak olan;
+            // jaggedArray array'ının içinde barınan dördüncü array --> [3]:
+            jaggedArray[3][0] = "Müzik dinlemek";
+            jaggedArray[3][1] = "Kitap okumak";
+            jaggedArray[3][2] = "Oyun oynamak";
+            jaggedArray[3][3] = "Şarkı söylemek";
+
+            // Kemal'in hobileri olarak kullanılacak olan;
+            // jaggedArray array'ının içinde barınan beşinci array --> [4]:
+            jaggedArray[4][0] = "Oyun oynamak";
+
+            // her bir jaggedArray içindeki array için döngü içinde dönüyoruz:
+            // (ki bu üyeler 5 adetti 
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                // İlk iterasyon için:
+                // Şu anda jaggedArray'ın birinci array'ının içindeyiz.
+                // Yani Murat'ın hobi listesi olarak kullanacağımız,
+                // içinde 3 hobi bulunduran array'ın içindeyiz. 
+
+                // calisanlar array'ı içindeki birinci çalışanı
+                // WriteLine ile ekrana yazdırıyoruz.
+                // Yani Murat ismini ekrana yazdırıyoruz.
+                Console.WriteLine(calisanlar[i]);
+                Console.WriteLine("---");
+
+                // icerdekiArray isminde bir array oluşturduk.
+                // Bu array'ı --> jaggedArray[0] a eşitlemiş 
+                // olduk ilk iterasyonda (çünkü şu anda i = 0).
+                // Böylece Murat'ın hobilerine aşağıdaki for döngüsünü
+                // kullanarak ulaşabileceğiz ve bu hobileri ekrana yazdırabileceğiz.
+                string[] icerdekiArray = jaggedArray[i];
+
+                // Murat'ın hobileri içinde dönülüyor.
+                // Murat'ın her bir hobisi ekrana yazdırılıyor.
+                for (int j = 0; j < icerdekiArray.Length; j++)
+                {
+                    Console.WriteLine(icerdekiArray[j]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("|             Diğer Yöntem              |");
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("");
+
+            for (int i = 0; i < calisanlar.Length; i++)
+            {
+                Console.WriteLine(calisanlar[i]);
+                Console.WriteLine("---");
+                var length = jaggedArray[i].Length;
+
+                for (int j = 0; j < length; j++)
+                {
+                    Console.WriteLine(jaggedArray[i][j]);
+                }
+                    Console.WriteLine("");
+            }
+        }
+    }
+}
+
+
 
  
 

@@ -10857,6 +10857,93 @@ The following code below creates the HTTP Request:
     }
 Notice that we’re not catching any exception that might be thrown by the client. Catching the exception and retrying the operation will be delegated to our Retry logic.
 
+Custom Retry Logic With Exponential Backoff
+  // Enum representing the back-off strategy to use. Required parameter for DoActionWithRetry()
+  enum BackOffStrategy
+    {
+        Linear = 1,
+        Exponential = 2
+    }
+
+// Retry a specific codeblock wrapped in an Action delegate
+static void DoActionWithRetry(Action action, int maxRetries, int waitBetweenRetrySec, BackOffStrategy retryStrategy)
+    {
+        if (action == null)
+        {
+            throw new ArgumentNullException("No action specified");
+        }
+
+        int retryCount = 1;
+        while(retryCount <= maxRetries)
+        {
+            try
+            {
+                action();
+                break;
+            }
+            catch(Exception ex)
+            {
+                if (maxRetries <= 0)
+                {
+                    throw;
+                }
+                else
+                {
+                    //Maybe Log the number of retries
+                    Console.WriteLine("Encountered exception {0}, retrying operation", ex.ToString());
+                        
+                    TimeSpan sleepTime;
+                    if(retryStrategy == BackOffStrategy.Linear)
+                    {
+                        //Wait time is Fixed
+                        sleepTime = TimeSpan.FromSeconds(waitBetweenRetrySec);
+                    }
+                    else
+                    {
+                        //Wait time increases exponentially
+                        sleepTime = TimeSpan.FromSeconds(Math.Pow(waitBetweenRetrySec, retryCount));
+                    }
+                        
+                    Thread.Sleep(sleepTime);
+
+                    retryCount++;
+                }
+            }
+        } 
+    }
+Here we first define an enum to specify the back-off strategies available. Based on the values in this enum, we’ve structured the code inside the catch() block of DoActionWithRetry() to modify the wait time for each subsequent retry. Notice how the formula uses a combination of retryCount and the base wait time specified to calculate the exponential wait time.
+
+  //Wait time increases exponentially
+  sleepTime = TimeSpan.FromSeconds(Math.Pow(waitBetweenRetrySec, retryCount));
+
+Putting it all together
+So now that we have the operation we want to execute and a generic retry block, let’s use them in our main function:
+ 
+    static void Main(string[] args)
+    {
+        try
+        {
+            DoActionWithRetry(() =>
+                {
+                    ExecuteHTTPGet("https://microsoft.sharepoint.com");
+                }, 3, 5, BackOffStrategy.Exponential);
+        }
+        catch (Exception ex)
+        {
+            //At this point you can either log the error or log the error and rethrow the exception, depending on your requirements
+            Console.WriteLine("Exhausted all retries - exiting program");
+            throw; 
+        }
+
+    }
+The code will retry the HTTP GET request on the url for 3 times and will throw an exception if it encounters a failure the fourth time around. When the number of retries has been exhausted, it’s typically recommended to log the exception and then terminate the thread/ application.
+And that’s it !!!
+Stay tuned for the next post which’ll show how to do this in a fancier way  
+-
+-
+-
+-
+-
 
 
 

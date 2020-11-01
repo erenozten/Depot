@@ -10656,6 +10656,64 @@ public class clsStudentInfo (bir business layer metodu)
 	}
 }
 
+Explanation of code
+The code is using the function of business layer, which will accept the data for the application layer and passed it to the data layer. The Business layer codes act as a mediator between the functions defined in the presentation layer and data layer and calling the functions vice -versa.
+Data Access Layer
+This is the data layer function, which receives the data from the business layer and performs the necessary operation into the database.
+// this is the datalayer function which is receiving the data from the business 
+//layer and performing the required operation into the database
+
+public class clsStudentData // Data layer class 
+{
+	// object of property layer class
+	public DataSet getdata_dtIDUise(clsStudent obj)
+	{
+	 DataSet ds;
+	 string sql;
+	 sql="select * from student where Studentld=" +obj.id+ "order by Studentld;
+	 ds=new DataSet();
+	//this is the datalayer function which accepts the sql query and performs the 
+	//corresponding operation
+		ds=objdt.ExecuteSql(sql); 
+		return ds;
+	}
+}
+Explanation of code
+The code defines in dataset layer above accepts the entire request: requested by the system and performing the required operations into the database.
+2-Tier Architecture:
+It is like Client-Server architecture, where communication takes place between client and server.
+In this type of software architecture, the presentation layer or user interface layer runs on the client side while dataset layer gets executed and stored on server side.
+There is no Business logic layer or immediate layer in between client and server.
+Single Tier or 1-Tier Architecture:
+It is the simplest one as it is equivalent to running the application on the personal computer. All of the required components for an application to run are on a single application or server.
+Presentation layer, Business logic layer, and data layer are all located on a single machine.
+Advantages and Disadvantages of Multi-Tier Architectures
+Advantages	Disadvantages
+•	Scalability	•	Increase in Effort
+•	Data Integrity	•	Increase in Complexity
+•	Reusability	 
+•	Reduced Distribution	 
+•	Improved Security	 
+•	Improved Availability	 
+Hence, it is a part of a program which encrypts real-world business problems and determines how data can be updated, created, stored, or changed to get the complete task done.
+N-Tier Architecture Tips and Development
+Considering the software professionals must have a full control on all the layers of the architecture, tips on n-tier architecture are given as below
+1.	Try to decouple layers from another layer as much as possible by using a technique like soap XML.
+2.	Use some automated tools to generate a mapping between a business logic layer and a relational database layer (data layer). Tools that can help in modeling these mapping techniques are – Entity Framework and Hibernate for .Net etc.
+3.	In client presenter layer, put a common code for all the clients in a separate library as much as possible. This will maximize the code reusability for all types of clients.
+4.	A cache layer can be added into an existing layer to speed up the performance.
+Summary:
+The N-tier architecture helps to manage all the components (business layer, presentation layer, and database layer) of an application under one roof.
+Applications thatuses small numbers of users on a local area network can benefit from n-tier architecture.
+Such architectural design ascertains maintaining, scaling up and deploying an application on the Internet efficiently.
+-
+-
+-
+-
+-
+-
+
+
 
 
 

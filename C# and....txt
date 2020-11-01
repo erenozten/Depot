@@ -10944,6 +10944,87 @@ Stay tuned for the next post which’ll show how to do this in a fancier way
 -
 -
 -
+Intercept Database Command in Entity Framework (GITHUB)
+Here, you will learn how to intercept database commands executed by DbContext in EF 6 database-first, as well as code-first approach.
+EF 6 provides the ability to intercept the context by implementing the IDbCommandInterceptor interface. The IDbCommandInterceptor interface includes methods which intercept an instance of DbContext and allow you to execute your custom logic before or after a context executes commands or queries. The DbContext executes commands and queries using ADO.NET methods such as ExecuteNonQuery, ExecuteScalar, and ExecuteReader, which you can intercept by implementing methods such as NonQueryExecuted and NonQueryExecuting etc.
+To intercept an instance of DbContext, first, create the custom class and implement IDbCommandInterceptor, as shown below:
+class EFCommandInterceptor: IDbCommandInterceptor
+{
+    public void NonQueryExecuted(System.Data.Common.DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
+    {
+        LogInfo("NonQueryExecuted", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync, command.CommandText));
+    }
+
+    public void NonQueryExecuting(System.Data.Common.DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
+    {
+        LogInfo("NonQueryExecuting", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync,  command.CommandText));
+    }
+
+    public void ReaderExecuted(System.Data.Common.DbCommand command, DbCommandInterceptionContext<System.Data.Common.DbDataReader> interceptionContext)
+    {
+        LogInfo("ReaderExecuted", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync, command.CommandText));
+    }
+
+    public void ReaderExecuting(System.Data.Common.DbCommand command, DbCommandInterceptionContext<System.Data.Common.DbDataReader> interceptionContext)
+    {
+        LogInfo("ReaderExecuting", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync, command.CommandText));
+    }
+
+    public void ScalarExecuted(System.Data.Common.DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
+    {
+        LogInfo("ScalarExecuted", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync, command.CommandText));
+    }
+
+    public void ScalarExecuting(System.Data.Common.DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
+    {
+        LogInfo("ScalarExecuting", String.Format(" IsAsync: {0}, Command Text: {1}", interceptionContext.IsAsync, command.CommandText));
+    }
+
+    private void LogInfo(string command, string commandText)
+    {
+        Console.WriteLine("Intercepted on: {0} :- {1} ", command, commandText);
+    }
+}
+As you can see in the above example, IDbCommandInterceptor provides six methods for implementation. It logs the command for demo purposes, but you can write your custom logic here.
+Next, you will need to configure the interceptor either by using a config file or code-based configuration.
+Configure the interceptor in app.config file, as shown below:
+<entityFramework>
+    <interceptors>
+        <interceptor type="EF6DBFirstTutorials.EFCommandInterceptor, EF6DBFirstTutorials">
+        </interceptor>
+    </interceptors>
+</entityFramework>
+If you use code-based configuration, then configure it as shown below.
+public class FE6CodeConfig : DbConfiguration
+{
+    public FE6CodeConfig()
+    {
+        this.AddInterceptor(new EFCommandInterceptor());
+    }
+}
+So now, we can log commands whenever an instance DbContext executes a command or query. Consider the following example.
+var newStudent =  new Student() { FirstName = "Bill" };
+
+using (var context = new SchoolDBEntities())
+{
+    context.Students.Add(newStudent);
+    context.SaveChanges();
+}
+The above example will log the following.
+Output:
+Intercepted on: ReaderExecuting :- IsAsync: False, Command Text: INSERT [dbo].[Student]([FirstName], [StandardId], [LastName])
+VALUES (@0, NULL, NULL)
+SELECT [StudentID], [RowVersion] FROM [dbo].[Student]
+WHERE @@ROWCOUNT > 0 AND [StudentID] = scope_identity()
+Intercepted on: ReaderExecuted :- IsAsync: False, Command Text: INSERT [dbo].[Student]([FirstName], [StandardId], [LastName])
+VALUES (@0, NULL, NULL)
+SELECT [StudentID], [RowVersion] FROM [dbo].[Student]
+WHERE @@ROWCOUNT > 0 AND [StudentID] = scope_identity()
+-
+-
+-
+-
+
 
 
 

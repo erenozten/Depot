@@ -9636,13 +9636,480 @@ Thus, we can register and resolve different types using Unity container.
 -
 -
 -
-Reflection nedir	(testset) (testset)
+Reflection nedir	(GITHUB) (testset)
 
 Reflection in C# is used to retrieve metadata on types at runtime. In other words, you can use reflection to inspect metadata of the types in your program dynamically -- you can retrieve information on the loaded assemblies and the types defined in them. Reflection in C# is similar to RTTI (Runtime Type Information) of C++.
 
 To work with reflection in .Net, you should include the System.Reflection namespace in your program. In using reflection, you get objects of the type "Type" that can be used to represent assemblies, types, or modules. You can use reflection to create an instance of a type dynamically and even invoke methods of the type.
 
 The types defined in the System.Reflection namespace include the following.
+-
+-
+Tutorial: Using Entity Framework Core as an In-Memory Database for ASP.NET Core (GITHUB)
+
+One of the most exciting features in the new version of Entity Framework (Entity Framework Core 1.0) is the addition of an in-memory data provider. This makes it possible to prototype applications and write tests without having to set up a local or external database. When you’re ready to switch to using a real database, you can simply swap in your actual provider.
+In this tutorial, I’ll show you how to set up the Entity Framework Core InMemory provider and use it to prototype a simple ASP.NET Core API. If you’ve never set up ASP.NET Core before, follow my earlier tutorial on creating a new ASP.NET Core project to create a new API application called PrototypeApi.
+Setting up Entity Framework Core
+First, add the Microsoft.EntityFrameworkCore.InMemory package to your project. In Visual Studio, you can use the NuGet Package Manager to do this (right-click on the project and choose Manage NuGet Packages). Alternatively, you can edit the project.json file and add this line to the dependencies section:
+ 
+1
+2	"Microsoft.EntityFrameworkCore.InMemory": "1.0.0"
+Use dotnet restore to install the package if you aren’t using Visual Studio.
+The API I’ll be demonstrating contains a collection of users and a collection of posts. Create some model classes to represent these entities (in a new folder called DbModels):
+DbModels/User.cs
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16	using System.Collections.Generic;
+ 
+namespace PrototypeApi.DbModels
+{
+    public class User
+    {
+        public string Id { get; set; }
+ 
+        public string FirstName { get; set; }
+ 
+        public string LastName { get; set; }
+ 
+        public List<Post> Posts { get; set; }
+    }
+}
+DbModels/Post.cs
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16	using System;
+ 
+namespace PrototypeApi.DbModels
+{
+    public class Post
+    {
+        public string Id { get; set; }
+ 
+        public string UserId { get; set; }
+ 
+        public User User { get; set; }
+ 
+        public string Content { get; set; }
+    }
+}
+These simple classes will represent the data that will be saved and loaded from the database.
+In this data model, there’s a straightforward one-to-many relationship between Users and Posts: a Post is “owned” by a User, and a User may have many Posts. The Posts and User properties will be automatically discovered and populated by Entity Framework Core.
+You’ll also need to create a DbContext that represents the connection to the database:
+ApiContext.cs
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18	using Microsoft.EntityFrameworkCore;
+using PrototypeApi.DbModels;
+ 
+namespace PrototypeApi
+{
+    public class ApiContext : DbContext
+    {
+        public ApiContext(DbContextOptions<ApiContext> options)
+            : base(options)
+        {
+        }
+ 
+        public DbSet<User> Users { get; set; }
+ 
+        public DbSet<Post> Posts { get; set; }
+    }
+}
+You’re all set to connect this database context to your application using the in-memory data provider. In your Startup class’ ConfigureServices method, add a new line:
+ 
+1
+2
+3
+4
+5
+6
+7	public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase());
+ 
+    services.AddMvc();
+}
+At the top of the Startup class, add this line:
+ 
+1
+2	using Microsoft.EntityFrameworkCore;
+Seeding With Test Data on Startup
+To add data to the in-memory database when the application starts up, add some code to the Configure method:
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11	public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+    loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+    loggerFactory.AddDebug();
+ 
+    var context = app.ApplicationServices.GetService<ApiContext>();
+    AddTestData(context);
+ 
+    app.UseMvc();
+}
+The new AddTestData method looks like this:
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23	private static void AddTestData(ApiContext context)
+{
+    var testUser1 = new DbModels.User
+    {
+        Id = "abc123",
+        FirstName = "Luke",
+        LastName = "Skywalker"
+    };
+ 
+    context.Users.Add(testUser1);
+ 
+    var testPost1 = new DbModels.Post
+    {
+        Id = "def234",
+        UserId = testUser1.Id,
+        Content = "What a piece of junk!"
+    };
+ 
+    context.Posts.Add(testPost1);
+ 
+    context.SaveChanges();
+}
+Retrieving the Data
+Querying and retrieving data from an in-memory provider use the same methods as any Entity Framework Core provider. To demonstrate retrieving the Users and Posts stored in the prototype database, create a simple controller:
+Controllers/UsersController.cs
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35	using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+ 
+namespace PrototypeApi.Controllers
+{
+    [Route("api/[controller]")]
+    public class UsersController : Controller
+    {
+        private readonly ApiContext _context;
+ 
+        public UsersController(ApiContext context)
+        {
+            _context = context;
+        }
+ 
+        public async Task<IActionResult> Get()
+        {
+            var users = await _context.Users
+                .Include(u => u.Posts)
+                .ToArrayAsync();
+ 
+            var response = users.Select(u => new
+            {
+                firstName = u.FirstName,
+                lastName = u.LastName,
+                posts = u.Posts.Select(p => p.Content)
+            });
+ 
+            return Ok(response);
+        }
+    }
+}
+This does two things: it requests an ApiContext object from the dependency injection service (using constructor injection) and exposes an HTTP GET route that returns all the users (and their posts) currently stored in the database.
+In the Get method, the Include method explicitly tells Entity Framework Core to load the User’s Posts along with their other details. Entity Framework Core is smart enough to understand that the UserId field on the Post model represents a foreign key relationship between Users and Posts.
+After the users and posts are asynchronously retrieved from the database, the array is projected (using Select) into a response model that includes only the fields you need in the response. This keeps the JSON response minimal.
+
+-
+-
+İs as keyword (GITHUB)
+İs keyword nedir, as keyword nedir, is as nedir, is as keyword nedir, 
+
+Videoyu izle:
+
+https://www.youtube.com/watch?v=PAv_TI26xO8&list=PL6n9fhu94yhWlAv3hnHzOaMSeggILsZFs&index=11&ab_channel=kudvenkat
+
+
+Try-catch-finally nedir
+Try catch nedir
+
+Buradaki “catch” in anlamı hatayı yakalamaktır.
+
+Kendi örneğim:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using CodeInConsole;
+
+namespace CodeInConsole
+{
+    class Program
+    {
+        public static void Main()
+        {
+            var list = new List<string>();
+            Console.WriteLine("Begin");
+
+            try
+            {
+                list.Add("Birinci");
+                var s = list.Where(n => n == "").Single();  // exception
+                list.Add("İkinci");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+
+            finally
+            {
+                if (list.Count == 1)  // yani sadece "Birinci" isimli string listeye eklenmiş ise...
+                {
+                    list.Clear();
+                    Console.WriteLine("HATA! Her iki string'i bir interaction'da " +
+                        "ekleyemediğimiz için tüm işlemler geri alındı " +
+                        "(listedeki veriler sıfırlanarak liste eski haline getirilmiş oldu).");
+                    Console.WriteLine("Listedeki string sayısı: " + list.Count());
+                }
+                if(list.Count == 2)
+                {
+                    Console.WriteLine("BAŞARILI! Her iki string de listeye eklendi.");
+                    Console.WriteLine("Listedeki string sayısı: " + list.Count());
+                }
+            }
+        }
+    }
+}
+
+-
+-
+
+The try..catch..finally block in .NET allows developers to handle runtime exceptions. The syntax has three variations, try..catch, try..finally, and try..catch..finally. Learn more here: Exception Handling in C#
+ 
+The code example shows a try catch finally block syntax. 
+1.	try  
+2.	{  
+3.	//Put suspected code here. When an exception occurs, the control will move to the catch block
+4.	}  
+5.	catch  
+6.	{  
+7.	//Catch the exception  
+8.	}  
+9.	finally  
+10.	{  
+11.	//this block of code will always get executed whether an  
+12.	// exception occurs or not as long as there are no exceptions  
+13.	// within this block itself. If an Exception is thrown here  
+14.	// some outer try block should handle it  
+15.	//Any Clean up code goes here. Especially to release any  
+16.	//system resources such as file handles and network  
+17.	//connections  
+18.	}  
+Let's go through an example so that we can better understand the purpose of the finally block. The following code illustrates the use of the finally block to clean up file states. 
+1.	namespace TestFinally  
+2.	{  
+3.	using System;  
+4.	using System.IO;  
+5.	/// <summary>  
+6.	/// Summary description for TestFinally.  
+7.	/// </summary>  
+8.	public class TestFinally  
+9.	{  
+10.	public TestFinally()  
+11.	{  
+12.	// TODO: Add Constructor Logic here  
+13.	}  
+14.	public static void Main()  
+15.	{  
+16.	StreamReader sr1 = null;  
+17.	StreamWriter sw1 = null;  
+18.	try  
+19.	{  
+20.	System.Console.WriteLine("In try block");  
+21.	//Open files  
+22.	sr1 = new StreamReader(File.Open("Test1.txt",  
+23.	System.IO.FileMode.Open));  
+24.	sw1 = new StreamWriter(File.Open("Test2.txt",  
+25.	System.IO.FileMode.Append,  
+26.	FileAccess.Write));  
+27.	while (sr1.Peek() != -1)  
+28.	{  
+29.	sw1.WriteLine(sr1.ReadLine());  
+30.	}  
+31.	goto MyLabel;  
+32.	}  
+33.	catch (Exception e)  
+34.	{  
+35.	Console.WriteLine(String.Concat(e.Message,  
+36.	e.StackTrace));  
+37.	}  
+38.	finally  
+39.	{  
+40.	//Int32 j ;  
+41.	//j=0;  
+42.	//j=j/5;  
+43.	//If an Exception is thrown here some outer  
+44.	//try block should handle it. The finally block  
+45.	// will not be completely executed  
+46.	Console.WriteLine("In finally block");  
+47.	//we need to make sure that Close method of the  
+48.	//Streamreader sr1 or StreamWriter sw1  
+49.	//is called irrespective of whether an exception  
+50.	// occurs or not  
+51.	//to release any system resources associated with  
+52.	//the reader or writer  
+53.	if (sr1 != null)  
+54.	{  
+55.	sr1.Close();  
+56.	}  
+57.	if (sw1 != null)  
+58.	{  
+59.	sw1.Close();  
+60.	}  
+61.	}  
+62.	MyLabel:  
+63.	Console.WriteLine("In Mylabel");  
+64.	// note: the following statements are not allowed  
+65.	//inside a finally block:  
+66.	//return, goto, break and continue  
+67.	Console.ReadLine();  
+68.	}  
+69.	}  
+70.	}  
+In the above code, inside the Main method, we opened two files. First we opened the Test1.txt using a StreamReader object by passing a FileStream object returned by the File.Open method, and then we opened Test2.txt through a StreamWriter object by passing a FileStream object returned by the File.Open method. The intention here is to copy lines of Test1.txt and append them to Test2.txt. If the code in the try block executes successfully, we want to close StreamReader sr1 and StreamWriter sw1 so that system resources associated with the reader/writer are released.
+ 
+If Test1.txt opens successfully but for some reason there is an exception thrown while opening Test2.txt, we still want to close the stream associated with Test1.txt. So in this example we have added the close methods in the finally code block so that they can be positively executed. We are checking for a null value because if none of the files is opened, we would get a nulldereferencing exception in the finally block.
+ 
+Conclusion
+ 
+Hope this article helped you understand how to use the try..catch..finally block in C#.  
+ 
+Learn more here: Exception Handling in C# 
+ 
+A detailed article on C# Try Catch  
+-
+-
+-
+İs keyword / as keyword (GITHUB)
+İs keyword nedir, as keyword nedir, is as nedir, is as keyword nedir, 
+
+Videoyu izle:
+
+https://www.youtube.com/watch?v=PAv_TI26xO8&list=PL6n9fhu94yhWlAv3hnHzOaMSeggILsZFs&index=11&ab_channel=kudvenkat
+
+-
+-
+
+Is keyword
+Is keyword’ü type casting denemesi yapar… type casting başarılı şekilde yapılabiliyorsa: true, başarısızsa: false.
+-
+-
+
+ 
+
 
 
 

@@ -10509,6 +10509,67 @@ public class Student
 Try it
 In the above example, the C# compiler does not check for the number of parameters, parameters type, or non-existent. It validates these things at run-time, and if it is not valid, then throws a run-time exception. Note that Visual Studio IntelliSense is not supported for the dynamic types. Note that Visual Studio IntelliSense is not supported for the dynamic types.
 The dynamic language runtime (DLR) API provides the infrastructure that supports the dynamic type in C#. For more information about the DLR, visit Dynamic Language Runtime Overview.
+-
+-
+-
+Domain Class,  Domain Object    	(BSS)	      (BSS)    
+Domain class nedir
+
+A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a domain means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional.
+
+A "domain" class is one that models your data. It is typically used to map data from your data store (e.g. a database) to an in-memory object. A business class is one that your application works with. It can be the same as the domain class, and usually performs some sort of business logic or processing.
+
+Persistence refers to the ability of the object state to be saved to some data store (e.g. xml, a text file, or more commonly, a database). So the state of this kind of object "persists" whether the application is running or not.
+(business class ile domain class arasında fark yok diyor->) To me, there is no difference with a business class: a business object doesn't perform more or less business logic than a domain object (a domain model where business logic is implemented outside the domain objects is called an Anemic Domain Model, which is a pejorative term), domain objects and business objects are the same thing.
+
+Using a mapping tool such as AutoMapper will do the mapping of the domain object to the Entity object, or you can code that separately if desired.
+-
+-
+-
+Domain Class,  Domain Object    	(BSS)	      (BSS)    
+Domain class nedir, domain object nedir, business class nedir, business object nedir
+
+A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a domain means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional.
+
+A "domain" class is one that models your data. It is typically used to map data from your data store (e.g. a database) to an in-memory object. A business class is one that your application works with. It can be the same as the domain class, and usually performs some sort of business logic or processing.
+
+Persistence refers to the ability of the object state to be saved to some data store (e.g. xml, a text file, or more commonly, a database). So the state of this kind of object "persists" whether the application is running or not.
+(business class ile domain class arasında fark yok diyor->) To me, there is no difference with a business class: a business object doesn't perform more or less business logic than a domain object (a domain model where business logic is implemented outside the domain objects is called an Anemic Domain Model, which is a pejorative term), domain objects and business objects are the same thing.
+
+Using a mapping tool such as AutoMapper will do the mapping of the domain object to the Entity object, or you can code that separately if desired.
+-
+-
+-
+Object Model   	(GITHUB)	      (BSS)    
+Object model nedir
+
+In LINQ to SQL, an object model in your own programming language is mapped to a relational database.
+An object model is a logical interface, software or system that is modeled through the use of object-oriented techniques. It enables the creation of an architectural software or system model prior to development or programming.
+An object model is part of the object-oriented programming (OOP) lifecycle.
+Techopedia explains Object Model
+An object model helps describe or define a software/system in terms of objects and classes. It defines the interfaces or interactions between different models, inheritance, encapsulation and other object-oriented interfaces and features.
+
+Object model examples include:
+
+•	Document Object Model (DOM): A set of objects that provides a modeled representation of dynamic HTML and XHTML-based Web pages
+•	Component Object Model (COM): A proprietary Microsoft software architecture used to create software components
+-
+-
+-
+Anemic Domain Model, Rich Domain Model (GITHUB)
+
+
+Anemic domain model = database tables mapped to objects (only field values, no real behavior)
+Rich domain model = a collection of objects that expose behavior
+If you want to create a simple CRUD application, maybe an anemic model with a classic MVC framework is enough. But if you want to implement some kind of logic, anemic model means that you will not do object oriented programming.
+*Note that object behavior has nothing to do with persistence. A different layer (Data Mappers, Repositories e.t.c.) is responsible for persisting domain objects.
+
+Anemic domain model is the use of a software domain model where the domain objects contain little or no business logic (validations, calculations, business rules etc.).
+
+-
+-
+-
+
 
 
 

@@ -8904,8 +8904,63 @@ World Wide Web, Dünya Çapında Ağ (kısaca WWW veya Web), İnternet üzerinde
 İnternet ve Web terimleri aynı olguyu tanımlamaz. Zira Web sadece İnternet üzerinde çalışan bir servistir. Web kavramı, CERN'de bir bilgisayar programcısı olan Tim Berners-Lee'nin HTML adlı metin işaretleme dilini geliştirmesiyle oluşmuştur. Bugün de kendisinin başkanı olduğu W3C (World Wide Web Consortium) tarafından standartları belirlenmektedir.
 
 Yapısı
-Web’in temeli İnternet'tir. Web İnternet üzerinde kurulmuştur ve İnternet'in sunduğu mekanizmalardan çoğunun kullanılmasını sağlar. İnternet'in fiziksel görünüşleri –bilgisayarlar, ağlar ve servisler– Dünya üzerindeki diğer binlerce bilgisayara bağlanmamıza izin verir. Web, İnternet'in en tepesindeki soyutlanmış genel servisler kümesidir. World Wide Web (W3), insanların fikir ve projelerinin paylaşılmasını sağlayan bir bilgi ve kültür havuzudur. İstemci-sunucu uygulamaları ile yapılan birçok organizasyon üzerinde Web tarayıcıları istemci olarak çalışabilirler. Web yürütümü standart İstemci-sunucu modelini izler. Aşağıdaki şekilde gösterildiği gibi "Web tarayıcısı" adı verilen programı çalıştıran bir istemci bilgisayar ile Web sunucu yazılımı çalıştıran bir sunucu bilgisayar arasındaki etkileşime "istemci-sunucu" etkileşimi adı verilir. İstemci bilgisayar sunucudan HTTP'yi (Hypertext Transfer Protocol) ve İnternet mesaj standardı TCP/IP'yi kullanarak bir doküman ister ve sunucu istemcinin göstereceği dokümanı geri döndürür.-
+Web’in temeli İnternet'tir. Web İnternet üzerinde kurulmuştur ve İnternet'in sunduğu mekanizmalardan çoğunun kullanılmasını sağlar. İnternet'in fiziksel görünüşleri –bilgisayarlar, ağlar ve servisler– Dünya üzerindeki diğer binlerce bilgisayara bağlanmamıza izin verir. Web, İnternet'in en tepesindeki soyutlanmış genel servisler kümesidir. World Wide Web (W3), insanların fikir ve projelerinin paylaşılmasını sağlayan bir bilgi ve kültür havuzudur. İstemci-sunucu uygulamaları ile yapılan birçok organizasyon üzerinde Web tarayıcıları istemci olarak çalışabilirler. Web yürütümü standart İstemci-sunucu modelini izler. Aşağıdaki şekilde gösterildiği gibi "Web tarayıcısı" adı verilen programı çalıştıran bir istemci bilgisayar ile Web sunucu yazılımı çalıştıran bir sunucu bilgisayar arasındaki etkileşime "istemci-sunucu" etkileşimi adı verilir. İstemci bilgisayar sunucudan HTTP'yi (Hypertext Transfer Protocol) ve İnternet mesaj standardı TCP/IP'yi kullanarak bir doküman ister ve sunucu istemcinin göstereceği dokümanı geri döndürür.
 -
+-
+Abstract Classes and Methods	(testset) (testset)
+Abstraction nedir, abstract class nedir, abstract method nedir
+In c#, Abstraction is a principle of object-oriented programming language (OOP) and it is used to hide the implementation details and display only essential features of the object.
+ 
+In Abstraction, by using access modifiers we can hide the required details of the object and expose only necessary methods and properties through the reference of an object.
+ 
+In real-time, the laptop is a perfect example of abstraction in c#. A laptop that consists of many things such as processor, RAM, motherboard, LCD screen, camera, USB ports, battery, speakers, etc. To use it, we just need to know how to operate the laptop by switching it on, we don’t need to know how internally all the parts are working. Here, the laptop is an object which is designed to expose only required features by hiding its implementation details.
+ 
+In object-oriented programming, a class is the perfect example of abstraction. In c#, we can create a class with required methods, properties and we can expose only necessary methods and properties using access modifiers based on our requirements.
+ 
+Following is the example of defining a class with required methods, properties and exposing it by using access modifiers to achieve abstraction functionality.
+ 
+public class Laptop
+{
+    private string brand;
+    private string model;
+    public string Brand
+    {
+        get { return brand; }
+        set { brand = value; }
+    }
+    public string Model
+    {
+        get { return model; }
+        set { model = value; }
+    }
+    public void LaptopDetails()
+    {
+        Console.WriteLine("Brand: " + Brand);
+        Console.WriteLine("Model: " + Model);
+    }
+    public void LaptopKeyboard()
+    {
+        Console.WriteLine("Type using Keyword");
+    }
+    private void MotherBoardInfo()
+    {
+        Console.WriteLine("MotheBoard Information");
+    }
+    private void InternalProcessor()
+    {
+        Console.WriteLine("Processor Information");
+    }
+}
+If you observe the above code, we defined a Laptop class with required fields, properties and methods with the public, private access modifiers to achieve an abstraction functionality by hiding and exposing some of the methods and properties based on our requirements.
+ 
+Here, the public modifier is used to allow defined fields, properties and methods to access outside of the class and the private modifier is used to hide or restrict access of required fields, properties and methods from the outside of class.
+ 
+By creating an instance of Laptop class we can access defined fields, properties, and methods. Following is the pictorial representation of creating an instance of a class and accessing fields, properties and methods.
+ 
+ 
+ 
+If you observe the above diagram, we are exposing only the necessary properties and methods outside of the class by using public and private access modifiers.
+
 
 
 

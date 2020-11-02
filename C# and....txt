@@ -11361,6 +11361,18 @@ Why Serverless Architecture?
 Hosting a software application on the internet usually involves managing some kind of server infrastructure. Typically this means a virtual or physical server that needs to be managed, as well as the operating system and other web server hosting processes required for your application to run. Using a virtual server from a cloud provider such as Amazon or Microsoft does mean the elimination of the physical hardware concerns, but still requires some level of management of the operating system and the web server software processes.
 With a serverless architecture, you focus purely on the individual functions in your application code. Services such as Twilio Functions, AWS Lambda and Microsoft Azure Functions take care of all the physical hardware, virtual machine operating system, and web server software management. You only need to worry about your code.
 
+How does Serverless or FaaS Differ from PaaS?
+PaaS, or Platform as a Service, products such as Heroku, Azure Web Apps and AWS Elastic Beanstalk offer many of the same benefits as Serverless (sometimes called Function as a Service or FaaS). They do eliminate the need for management of server hardware and software. The primary difference is in the way you compose and deploy your application, and therefore the scalability of your application.
+With PaaS, your application is deployed as a single unit and is developed in the traditional way using some kind of web framework like ASP.NET, Flask, Ruby on Rails, Java Servlets, etc. Scaling is only done at the entire application level. You can decide to run multiple instances of your application to handle additional load.
+With FaaS, you compose your application into individual, autonomous functions. Each function is hosted by the FaaS provider and can be scaled automatically as function call frequency increases or decreases. This turns out to be a very cost effective way of paying for compute resources. You only pay for the times that your functions get called, rather than paying to have your application always on and waiting for requests on so many different instances.
+Who Should Use Serverless?
+You should especially consider using a serverless provider if you have a small number of functions that you need hosted. If your application is more complex, a serverless architecture can still be beneficial, but you will need to architect your application very differently. This may not be feasible if you have an existing application. It may make more sense to migrate small pieces of the application into serverless functions over time.
+Using a product like Twilio Functions is especially helpful for builders and developers wanting to implement a Twilio solution. They are able to select pre-defined templates and deploy common communications use-cases without the need to host a server or use any other providers.
+
+-
+-
+-
+
 
 
 

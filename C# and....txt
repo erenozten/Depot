@@ -11316,6 +11316,41 @@ Web’in temeli İnternet'tir. Web İnternet üzerinde kurulmuştur ve İnternet
 -
 -
 -
+Alias vs .NET Type	(GITHUB) (asasas)
+The predefined data types are alias to their .NET type (CLR class) name. The following table lists alias for predefined data types and related .NET class name.
+
+Byte int falan STRUCT type’mış… Class değilmiş….
+
+ 
+It means that whether you define a variable of int or Int32, both are the same.
+int i = 345;
+Int32 i = 345;// same as above 
+
+Default Values
+Every data type has a default value. Numeric type is 0, boolean has false, and char has '\0' as default value. Use the default(typename) to assign a default value of the data type or C# 7.1 onward, use default literal.
+int i = default(int); // 0
+float f = default(float);// 0
+decimal d = default(decimal);// 0
+bool b = default(bool);// false
+char c = default(char);// '\0'
+
+// C# 7.1 onwards
+int i = default; // 0
+float f = default;// 0
+decimal d = default;// 0
+bool b = default;// false
+char c = default;// '\0'
+
+Conversions
+The values of certain data types are automatically converted to different data types in C#. This is called an implicit conversion.
+Example: Implicit Conversion
+int i = 345;
+float f = i;
+
+Console.WriteLine(f); //output: 345
+-
+-
+-
 
 
 

@@ -11368,10 +11368,19 @@ With FaaS, you compose your application into individual, autonomous functions. E
 Who Should Use Serverless?
 You should especially consider using a serverless provider if you have a small number of functions that you need hosted. If your application is more complex, a serverless architecture can still be beneficial, but you will need to architect your application very differently. This may not be feasible if you have an existing application. It may make more sense to migrate small pieces of the application into serverless functions over time.
 Using a product like Twilio Functions is especially helpful for builders and developers wanting to implement a Twilio solution. They are able to select pre-defined templates and deploy common communications use-cases without the need to host a server or use any other providers.
+-
+-
+-
+Bottleneck	(GITHUB) (testset)
 
+Bottle neck nedir, bottleneck nedir
+Darboğaz demektir. 
+In software engineering, a bottleneck occurs when the capacity of an application or a computer system is limited by a single component, like the neck of a bottle slowing down the overall water flow. The bottleneck has lowest throughput of all parts of the transaction path.
 -
 -
 -
+-
+
 
 
 

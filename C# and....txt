@@ -11702,7 +11702,16 @@ A content management system (CMS) is a computer software used to manage the crea
 -
 -
 -
-
+CLR / Common Language Runtime		(GITHUB) 		(read)
+clr nedir
+The Common Language Runtime (CLR) is the virtual machine component of Microsoft's .NET framework and is responsible for managing the execution of .NET programs. In a process known as just-in-time (JIT) compilation, the CLR compiles the intermediate language code known as CIL into the machine instructions that in turn are executed by the computer's CPU. The CLR provides additional services including memory management, type safety and exception handling. All programs written for the .NET framework, regardless of programming language, are executed by the CLR. It provides exception handling, Garbage collection and thread management.
+The exact meaning depends on the context, but Common Language Runtime usually refers to the runtime of .NET Framework. The CLR handles memory allocation and management. The CLR is also a virtual machine that not only executes apps but also generates and compiles code on-the-fly using a JIT compiler. The current Microsoft CLR implementation is Windows only.
+.Net Framework ün en alt katmanında CLR (Common Languange Runtime – Ortak Dil Platformu) mevcuttur. 
+.Net platformunda yazılmış olan kodların (c#, J# veya VB) ortak bir alanda işletim sisteminizin algılayacağı dile çevrilmesini sağlamaktadır. Bu işlem sırasında kodlar ilk olarak MSIL (Microsoft Intermediate Languange – Ara Dil) e çevrilir. Bu dönüştürmenin sebebi işletim sisteminin algılayacağı dile dönüştürmeden önce farklı dillerde yazılan kodları ortak noktada buluşturmaktır. Böylelikle MSIL kodu CLR katmanı ile farklı işletim sistemlerinde çalıştırılabilir hale gelir ve gelecekte yeni bir dille yazılan kodlar da MSIL a dönüştürerek işletim sisteminde çalışmasını sağlayacaktır.
+ 
+ 
+-
+-
 
 
 

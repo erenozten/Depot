@@ -11850,9 +11850,17 @@ dotnet run
 This will start the app with Kestrel webserver and server will start listening to port 5000 by default. Refer the below image.
  
 Visiting http://localhost:5000 will bring the application like below,
- 
 -
 -
+-
+
+Race Condition	(GITHUB) (testset)
+Race condition nedir
+It is also called race hazard. It is a behavior of software or system where output is based on the sequence or timing of other uncontrolled events. It becomes painful or bug when events do not happen in the order in which functionality is required.
+
+Race condition occurs when two threads access a shared variable at the same time. The first thread reads the variable, and the second thread writes to the same variable at the same time.
+ Symptoms of Race Condition
+The most common symptom of a race condition is unexpected values of variable that are shared between multiple threads. In this case, sometimes one thread wins, and sometimes the other thread wins. At the other times, the result of execution may be correct. Also, if each thread executes separately, the result of variable comes expected.
 
 
 

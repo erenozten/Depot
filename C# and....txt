@@ -11592,6 +11592,57 @@ In software engineering, a bottleneck occurs when the capacity of an application
 -
 -
 -
+serialize and deserialize (marshal and unmarshal)  	(GITHUB) (testset)
+marshal nedir, unmarshal nedir, deserialize nedir, serialize nedir, Serialization nedir
+
+Serialization converts objects into a byte stream and brings it to a form that it can be written on stream. This is done to save it to memory, file or database.
+This article shows how to use the System.Text.Json namespace to serialize to and deserialize from JavaScript Object Notation (JSON). 
+The directions and sample code use the library directly, not through a framework such as ASP.NET Core.
+Most of the serialization sample code sets JsonSerializerOptions.WriteIndented to true to "pretty-print" the JSON (with indentation and whitespace for human readability). For production use, you would typically accept the default value of false for this setting.
+The code examples refer to the following class and variants of it:
+public class WeatherForecast
+{
+    public DateTimeOffset Date { get; set; }
+    public int TemperatureCelsius { get; set; }
+    public string Summary { get; set; }
+}
+The System.Text.Json namespace contains all the entry points and the main types. The System.Text.Json.Serialization namespace contains attributes and APIs for advanced scenarios and customization specific to serialization and deserialization. The code examples shown in this article require using directives for one or both of these namespaces:
+using System.Text.Json;
+using System.Text.Json.Serialization;
+Attributes from the System.Runtime.Serialization namespace aren't currently supported in System.Text.Json.
+To write JSON to a string or to a file, call the JsonSerializer.Serialize method.
+The following example creates JSON as a string:
+string jsonString;
+jsonString = JsonSerializer.Serialize(weatherForecast);
+The following example uses synchronous code to create a JSON file:
+jsonString = JsonSerializer.Serialize(weatherForecast);
+File.WriteAllText(fileName, jsonString);
+The following example uses asynchronous code to create a JSON file:
+using (FileStream fs = File.Create(fileName))
+{
+    await JsonSerializer.SerializeAsync(fs, weatherForecast);
+}
+The preceding examples use type inference for the type being serialized. An overload of Serialize() takes a generic type parameter:
+jsonString = JsonSerializer.Serialize<WeatherForecastWithPOCOs>(weatherForecast);
+Here's an example class that contains collection-type properties and a user-defined type:
+public class WeatherForecastWithPOCOs
+{
+    public DateTimeOffset Date { get; set; }
+    public int TemperatureCelsius { get; set; }
+    public string Summary { get; set; }
+    public string SummaryField;
+    public IList<DateTimeOffset> DatesAvailable { get; set; }
+    public Dictionary<string, HighLowTemps> TemperatureRanges { get; set; }
+    public string[] SummaryWords { get; set; }
+}
+
+public class HighLowTemps
+{
+    public int High { get; set; }
+    public int Low { get; set; }
+}
+The JSON output from serializing an instance of the preceding type looks like the following example. The JSON output is minified by default:
+{"Date":"2019-08-01T00:00:00-07:00","TemperatureCelsius":25,"Summary":"Hot","DatesAvailable":["2019-08-01T00:00:00-07:00","2019-08-02T00:00:00-07:00"],"TemperatureRanges":{"Cold":{"High":20,"Low":-10},"Hot":{"High":60,"Low":20}},"SummaryWords":["Cool","Windy","Humid"]}
 
 
 

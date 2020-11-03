@@ -11781,6 +11781,47 @@ The Visual Studio product family provides a great .NET development experience on
 The Visual Studio Marketplace has thousands of editor extensions from Microsoft and others.
 
 If you prefer to use a different editor, there are .NET command line tools and plugins for many popular editors.
+-
+-
+-
+Kestrel 	(GITHUB)
+Kestrel nedir?
+Kestrel bir Web Server'dır. Projeyi Visual Studio'dan çalıştırırsan proje IISExpress'i Web Server olarak kullanır. Ama: CLI üzerinden çalıştırırsan da KESTREL'i Web Server olarak kullanır.
+What is Kestrel?
+Kestrel is an open source, cross platform, light weight and a default webserver used for Asp.Net Core applications. Asp.Net Core applications run Kestrel webserver as in-process server to handle web request. Kestrel webserver is based on async I/O library called libuv primarily developed for Node.js.
+By default, all Asp.Net core project templates include Kestrel webserver when we create new Asp.Net Core Projects. As said before, Kestrel is a very light weight webserver that does not have every advanced features of webservers like IIS, Nginx, Apache, etc has. Due to its lightweight nature, Kestrel provides better request processing performance to Asp.Net Core applications. Some features of Kestrel,
+1.	Kestrel does not support multiple applications sharing same port similar to IIS where applications are differentiated by host header value.
+2.	Kestrel is cross platform, runs in Windows, LINUX and Mac.
+3.	Kestrel webserver supports SSL.
+Let’s understand why there is a new webserver called Kestrel when we already have a feature-rich and most used webserver IIS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

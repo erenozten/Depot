@@ -11835,6 +11835,24 @@ As it is said before, Kestrel is a very light webserver and it does not support 
  
 Note – This requires IIS integration module commonly called Asp.Net Core module that comes with Nuget package Microsoft.AspNetCore.Server.IISIntegration
  
+Executing the Asp.Net Core Application with Kestrel
+We can start the Asp.Net application that uses Kestrel webserver in two ways. Assuming, you have created a default Asp.Net Core project in Visual Studio 2017.
+1.	Visual Studio
+By default, press F5 to start the application with IISExpress as reverse proxy. To start the application from Kestrel webserver click project name menu item in run dropdown like below. ASPNETCoreVS2017Demo is my project name.
+ 
+This will start the app directly form Kestrel webserver.
+2.	Dotnet CLI
+You can also start the app from command prompt using dotnet CLI(Command Line Interface) provide by Asp.Net Core. To do this, open Command prompt and change directory to project root. Type the below command
+ 
+dotnet run
+ 
+ 
+This will start the app with Kestrel webserver and server will start listening to port 5000 by default. Refer the below image.
+ 
+Visiting http://localhost:5000 will bring the application like below,
+ 
+-
+-
 
 
 

@@ -8462,6 +8462,25 @@ The words object and instance basically refer to the same thing.
 In object oriented programming there is the concept of classes. You can basically do nothing without a class.
 A class is the blueprint for creating an object (classes marked as static, abstract etc. are excluded from this statement.), with specific characteristics and behaviour defined in the class. An object can be also called an instance of a class.
 
+For example:
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+The above is a class. It just defines a type called Person with two properties Name and Age.
+When you need a person object (or an instance of this class), you can create it using the new operator and an appropriate constructor (below I use an object initializer).
+var person = new Person 
+{ 
+    Name = "Foo",
+    Age = 30
+};
+Now the person is an object or equivalently an instance of the class Person.
+
+-
+-
+-
+
 -
 -
 -

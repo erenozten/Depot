@@ -11877,6 +11877,33 @@ This situation happened because locks were not applied and race condition happen
  Avoid Race Condition:
  Best approach to handle race condition is to write code very carefully and proactively. Always try to use locks, mutexes, ManualResetEvents, etc to make code thread safe in the case of multi-threaded environment.
 
+Deadlock
+Deadlock nedir
+Deadlock case happens in concurrent or multi-threaded environment. It is kind of a situation in which two or more competing threads or tasks wait for the other task to finish and they never finish.
+ It is a vary famous problem in multi processing systems, parallel computing and distributed systems. This case basically happens with the shared resource. This resource locks in this case. Deadlock has very vast explanation.
+ Conditions of Deadlock
+ A condition is called Deadlock if the following condition matches:
+1.	Mutual Exclusion: Only process can use the resource at the given time.
+2.	Hold and Wait
+3.	No Preemption
+4.	Circular Wait
+These four conditions are know as the Coffman Conditions. Edward G. Coffman, Jr. described this in his article published in 1971.
+Ways to Make an Object Thread-Safe
+The following are the three approaches to make an object thread-safe:
+1.	Synchronize the critical section.
+2.	Make it immutable
+3.	Use a thread-safe wrapper
+Questions based on Thread-Safety
+Question: Is the C# Static Constructor Thread -Safe?
+ Static constructors are guaranteed to be run only once per application domain, before any instances of a class are created or any static members are accessed.
+ Using a Static Constructor actually is Thread-Safe.
+ Question: Is C# Static Method Thread-Safe?
+ Static methods are not inherently thread-safe. CLR of C# doesn't thread different than instance method.
+ Question: Is C# Delegate Thread-Safe?
+ Modifying event is not thread-safe, but invoking a Delegate is thread-safe. Since a Delegate is immutable type so it is thread safe.
+-
+-
+-
 
 
 

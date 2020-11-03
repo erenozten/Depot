@@ -6758,6 +6758,67 @@ Tag helper server-side kodlarımızı html tagleri gibi oluşturup kullanmamız�
 HTML taglerimide asp- dediğimizde o tagin Tag Helperları kullanabiliriz. VS bizlere IntelliSense desteğini de sağlamaktadır.
 Tag Helperları kullanmak istiyorsak 
 View/_ViewImports.cshtml üzerinden yapıyoruz.
+
+What are Tag Helpers
+Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor files. For example, the built-in ImageTagHelper can append a version number to the image name. Whenever the image changes, the server generates a new unique version for the image, so clients are guaranteed to get the current image (instead of a stale cached image). There are many built-in Tag Helpers for common tasks - such as creating forms, links, loading assets and more - and even more available in public GitHub repositories and as NuGet packages. Tag Helpers are authored in C#, and they target HTML elements based on element name, attribute name, or parent tag. For example, the built-in LabelTagHelper can target the HTML <label> element when the LabelTagHelper attributes are applied. If you're familiar with HTML Helpers, Tag Helpers reduce the explicit transitions between HTML and C# in Razor views. In many cases, HTML Helpers provide an alternative approach to a specific Tag Helper, but it's important to recognize that Tag Helpers don't replace HTML Helpers and there's not a Tag Helper for each HTML Helper. Tag Helpers compared to HTML Helpers explains the differences in more detail.
+What Tag Helpers provide
+An HTML-friendly development experience For the most part, Razor markup using Tag Helpers looks like standard HTML. Front-end designers conversant with HTML/CSS/JavaScript can edit Razor without learning C# Razor syntax.
+A rich IntelliSense environment for creating HTML and Razor markup This is in sharp contrast to HTML Helpers, the previous approach to server-side creation of markup in Razor views. Tag Helpers compared to HTML Helpers explains the differences in more detail. IntelliSense support for Tag Helpers explains the IntelliSense environment. Even developers experienced with Razor C# syntax are more productive using Tag Helpers than writing C# Razor markup.
+A way to make you more productive and able to produce more robust, reliable, and maintainable code using information only available on the server For example, historically the mantra on updating images was to change the name of the image when you change the image. Images should be aggressively cached for performance reasons, and unless you change the name of an image, you risk clients getting a stale copy. Historically, after an image was edited, the name had to be changed and each reference to the image in the web app needed to be updated. Not only is this very labor intensive, it's also error prone (you could miss a reference, accidentally enter the wrong string, etc.) The built-in ImageTagHelper can do this for you automatically. The ImageTagHelper can append a version number to the image name, so whenever the image changes, the server automatically generates a new unique version for the image. Clients are guaranteed to get the current image. This robustness and labor savings comes essentially free by using the ImageTagHelper.
+Most built-in Tag Helpers target standard HTML elements and provide server-side attributes for the element. For example, the <input> element used in many views in the Views/Account folder contains the asp-for attribute. This attribute extracts the name of the specified model property into the rendered HTML. Consider a Razor view with the following model:
+public class Movie
+{
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public DateTime ReleaseDate { get; set; }
+    public string Genre { get; set; }
+    public decimal Price { get; set; }
+}
+The following Razor markup:
+<label asp-for="Movie.Title"></label>
+Generates the following HTML:
+<label for="Movie_Title">Title</label>
+The asp-for attribute is made available by the For property in the LabelTagHelper. See Author Tag Helpers for more information.
+Managing Tag Helper scope
+
+Tag Helpers scope is controlled by a combination of @addTagHelper, @removeTagHelper, and the "!" opt-out character.
+Opting out of individual elements
+
+You can disable a Tag Helper at the element level with the Tag Helper opt-out character ("!"). For example, Email validation is disabled in the <span> with the Tag Helper opt-out character:
+<!span asp-validation-for="Email" class="text-danger"></!span>
+You must apply the Tag Helper opt-out character to the opening and closing tag. (The Visual Studio editor automatically adds the opt-out character to the closing tag when you add one to the opening tag). After you add the opt-out character, the element and Tag Helper attributes are no longer displayed in a distinctive font.
+Self-closing Tag Helpers
+Many Tag Helpers can't be used as self-closing tags. Some Tag Helpers are designed to be self-closing tags. Using a Tag Helper that was not designed to be self-closing suppresses the rendered output. Self-closing a Tag Helper results in a self-closing tag in the rendered output. For more information, see this note in Authoring Tag Helpers.
+C# in Tag Helpers attribute/declaration
+Tag Helpers do not allow C# in the element's attribute or tag declaration area. For example, the following code is not valid:
+<input asp-for="LastName" 
+@(Model?.LicenseId == null ? "disabled" : string.Empty) />
+The preceding code can be written as:
+<input asp-for="LastName" disabled="@(Model?.LicenseId == null)" />
+IntelliSense support for Tag Helpers
+When you create a new ASP.NET Core web app in Visual Studio, it adds the NuGet package "Microsoft.AspNetCore.Razor.Tools". This is the package that adds Tag Helper tooling.
+Consider writing an HTML <label> element. As soon as you enter <l in the Visual Studio editor, IntelliSense displays matching elements:
+ 
+Not only do you get HTML help, but the icon (the "@" symbol with "<>" under it).
+ 
+identifies the element as targeted by Tag Helpers. Pure HTML elements (such as the fieldset) display the "<>" icon.
+A pure HTML <label> tag displays the HTML tag (with the default Visual Studio color theme) in a brown font, the attributes in red, and the attribute values in blue.
+ 
+After you enter <label, IntelliSense lists the available HTML/CSS attributes and the Tag Helper-targeted attributes:
+ 
+IntelliSense statement completion allows you to enter the tab key to complete the statement with the selected value:
+ 
+As soon as a Tag Helper attribute is entered, the tag and attribute fonts change. Using the default Visual Studio "Blue" or "Light" color theme, the font is bold purple. If you're using the "Dark" theme the font is bold teal. The images in this document were taken using the default theme.
+ 
+You can enter the Visual Studio CompleteWord shortcut (Ctrl +spacebar is the default inside the double quotes (""), and you are now in C#, just like you would be in a C# class. IntelliSense displays all the methods and properties on the page model. The methods and properties are available because the property type is ModelExpression. In the image below, I'm editing the Register view, so the RegisterViewModel is available.
+ 
+IntelliSense lists the properties and methods available to the model on the page. The rich IntelliSense environment helps you select the CSS class:
+ 
+ 
+
+-
+-
+
 -
 -
 StringBuilder	(GITHUB) (örnek)

@@ -9260,6 +9260,30 @@ Abstraction	Encapsulation
 It is used to hide unwanted data and shows only the required properties and methods.	It is used to bind data members and member functions into a single unit to prevent outsiders to access it directly.
 This is how we can use abstraction to hide implementation details and showing only essential features based on our requirements in c# programing language. 
 -
+
+Abstraction
+ 
+Abstraction allows us to represent complex real world in simplest manner. It is process of identifying the relevant qualities and behaviors an object should possess, in other word represent the necessary feature without representing the back ground details. Abstraction is a process of hiding work style of an object and showing only those information which are required to understand the object. Abstraction means putting all the variables and methods in a class which are necessary.
+ 
+Encapsulation
+ 
+It is a process of hiding all the internal details of an object from the outside real world. The word Encapsulation, like Enclosing into the capsule. It restrict client from seeing its internal view where behavior of the abstraction is implemented. In Encapsulation, generally to hide data making it private and expose public property to access those data from outer world. Encapsulation is a method for protecting data from unwanted access or alteration. Encapsulation is the mechanism by which Abstraction is implemented.
+ 
+Difference between Abstraction and Encapsulation
+ 
+Abstraction is a process. It is the act of identifying the relevant qualities and behaviors an object should possess. Encapsulation is the mechanism by which the abstraction is implemented.
+
+Abstraction	Encapsulation
+Abstraction solves the problem in the design level.	Encapsulation solves the problem in the implementation level.
+Abstraction is used for hiding the unwanted data and giving onlyrelevant data.	Encapsulation is hiding the code and data into a single unit toprotect the data from outer world.
+Abstraction is set focus on the object instead of how it does it.	Encapsulation means hiding the internal details or mechanics of howan object does something.
+Abstraction is outer layout in terms of design.
+For Example: - Outer Look of a iPhone, like it has a display screen.	Encapsulation is inner layout in terms of implementation.
+For Example: - Inner Implementation detail of a iPhone, how DisplayScreen are connect with each other using circuits
+-
+-
+-
+-
 -
 Cyclomatic Complexity
 Cyclomatic complexity nedir

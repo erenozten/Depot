@@ -11708,11 +11708,23 @@ The Common Language Runtime (CLR) is the virtual machine component of Microsoft'
 The exact meaning depends on the context, but Common Language Runtime usually refers to the runtime of .NET Framework. The CLR handles memory allocation and management. The CLR is also a virtual machine that not only executes apps but also generates and compiles code on-the-fly using a JIT compiler. The current Microsoft CLR implementation is Windows only.
 .Net Framework ün en alt katmanında CLR (Common Languange Runtime – Ortak Dil Platformu) mevcuttur. 
 .Net platformunda yazılmış olan kodların (c#, J# veya VB) ortak bir alanda işletim sisteminizin algılayacağı dile çevrilmesini sağlamaktadır. Bu işlem sırasında kodlar ilk olarak MSIL (Microsoft Intermediate Languange – Ara Dil) e çevrilir. Bu dönüştürmenin sebebi işletim sisteminin algılayacağı dile dönüştürmeden önce farklı dillerde yazılan kodları ortak noktada buluşturmaktır. Böylelikle MSIL kodu CLR katmanı ile farklı işletim sistemlerinde çalıştırılabilir hale gelir ve gelecekte yeni bir dille yazılan kodlar da MSIL a dönüştürerek işletim sisteminde çalışmasını sağlayacaktır.
- 
- 
 -
 -
+-
+GUI 			(GITHUB)
+GUI nedir, gui nedir
+ 
+A graphical user interface (GUI) is a type of user interface through which users interact with electronic devices via visual indicator representations.
 
+What is a Graphical User Interface?
+The graphical user interface, developed in the late 1970s by the Xerox Palo Alto research laboratory and deployed commercially in Apple’s Macintosh and Microsoft’s Windows operating systems, was designed as a response to the problem of inefficient usability in early, text-based command-line interfaces for the average user.
+Graphical user interfaces would become the standard of user-centered design in software application programming, providing users the capability to intuitively operate computers and other electronic devices through the direct manipulation of graphical icons such as buttons, scroll bars, windows, tabs, menus, cursors, and the mouse pointing device. Many modern graphical user interfaces feature touchscreen and voice-command interaction capabilities.
+How Does a Graphical User Interface Work?
+Graphical user interface design principles conform to the model–view–controller software pattern, which separates internal representations of information from the manner in which information is presented to the user, resulting in a platform where users are shown which functions are possible rather than requiring the input of command codes. Users interact with information by manipulating visual widgets, which are designed to respond in accordance with the type of data they hold and support the actions necessary to complete the user’s task.
+
+The appearance, or “skin,” of an operating system or application software may be redesigned at will due to the nature of graphical user interfaces being independent from application functions. Applications typically implement their own unique graphical user interface display elements in addition to graphical user interface elements already present on the existing operating system. A typical graphical user interface also includes standard formats for representing graphics and text, making it possible to share data between applications running under common graphical user interface design software.
+
+Graphical user interface testing refers to the systematic process of generating test cases in order to evaluate the functionality of the system and its design elements. Graphical user interface testing tools, which are either manual or automated and typically implemented by third-party operators, are available under a variety of licenses and are supported by a variety of platforms. Popular examples include: Tricentis Tosca, Squish GUI Tester, Unified Functional Testing (UFT), Maveryx, Appium, and eggPlant Functional.
 
 
 

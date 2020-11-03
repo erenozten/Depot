@@ -11862,6 +11862,22 @@ Race condition occurs when two threads access a shared variable at the same time
  Symptoms of Race Condition
 The most common symptom of a race condition is unexpected values of variable that are shared between multiple threads. In this case, sometimes one thread wins, and sometimes the other thread wins. At the other times, the result of execution may be correct. Also, if each thread executes separately, the result of variable comes expected.
 
+ Example:
+ Let us have two threads - Thread1 and Thread2 and both run simultaneously and lock has been not applied then result will be wrong.
+This situation happened because locks were not applied and race condition happened.
+1.	Int myValue = 0;  
+2.	Thread1 ---Reads value-------> 0  
+3.	Thread2 --Reads Value--------> 0  
+4.	Thread1 --Increases value with one and writes back----> 0 +1  
+5.	Same time,  
+6.	Thread2 --Increases value with one and writes back ------> 0+1  
+7.	Final Result = 1  
+8.	Expected Result = 2  
+This situation happened because locks were not applied and race condition happened. 
+ Avoid Race Condition:
+ Best approach to handle race condition is to write code very carefully and proactively. Always try to use locks, mutexes, ManualResetEvents, etc to make code thread safe in the case of multi-threaded environment.
+
+
 
 
 

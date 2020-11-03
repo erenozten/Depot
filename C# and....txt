@@ -11737,6 +11737,11 @@ Difference Between Character User Interface and Graphical User Interface
 Character user interface, also known as command-line user interface or non graphical user interface, refers to the use of text commands, managed by a command-line interpreter, in order to communicate with a computer program. Typically software developers and system administrators rely on command-line interfaces to configure machines, manage computer files, and access program features that are otherwise unavailable on a graphical user interface.
 Character user interfaces support automation and scripting and tend to provide greater granular control and a higher level of functionality than graphical user interfaces. While the character user interface was the primary method of operating computers through the 1980s, most modern electronic devices are equipped with intuitive graphical user interfaces and the average user will rarely if ever have cause to access a computer terminal.
 
+Difference Between Web User Interface and Graphical User Interface
+A web user interface, or web-based graphical user interface, refers to the interaction between a user and software running on a web server wherein the user interface is the web browser and the web page it downloaded and rendered. Technologies such as Flash, Java, JavaScript, and Silverlight enable interactions such as drag-and-drop, playing audio, drawing on the screen, and access to the keyboard and mouse.
+Web graphical user interfaces are platform independent, require no installation or separate software development, easy to update and monitor due to the nature of not being dependent upon the user to deploy updates, provides a vibrant UI experience, and are low cost, requiring only Ethernet or WiFi interface connectivity.
+Does OmniSci Offer Graphical User Interface Solutions?
+The benefits of visualizations in computing are evident in the intuitive nature of graphical user interfaces. Visualization and interactivity are similarly beneficial elements in data analytics. OmniSci Immerse is a browser-based, interactive data visualization client that works seamlessly with the OmniSci server-side technologies, OmniSciDB and Render, providing an interactive, visual platform that reduces the time to insights and dramatically expands an analyst's ability to find previously hidden insights.
 
 
 

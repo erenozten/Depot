@@ -11963,6 +11963,23 @@ The following code image shows the Form portion of the Views/Account/Register.cs
 The Visual Studio editor displays C# code with a grey background. For example, the AntiForgeryToken HTML Helper:
 @Html.AntiForgeryToken()
 
+is displayed with a grey background. Most of the markup in the Register view is C#. Compare that to the equivalent approach using Tag Helpers:
+ 
+The markup is much cleaner and easier to read, edit, and maintain than the HTML Helpers approach. The C# code is reduced to the minimum that the server needs to know about. The Visual Studio editor displays markup targeted by a Tag Helper in a distinctive font.
+Consider the Email group:
+
+<div class="form-group">
+    <label asp-for="Email" class="col-md-2 control-label"></label>
+    <div class="col-md-10">
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+</div>
+Each of the "asp-" attributes has a value of "Email", but "Email" isn't a string. In this context, "Email" is the C# model expression property for the RegisterViewModel.
+The Visual Studio editor helps you write all of the markup in the Tag Helper approach of the register form, while Visual Studio provides no help for most of the code in the HTML Helpers approach. IntelliSense support for Tag Helpers goes into detail on working with Tag Helpers in the Visual Studio editor.
+
+-
+-
 
 
 

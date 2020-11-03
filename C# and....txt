@@ -11696,6 +11696,12 @@ The following example shows the same JSON, but formatted (that is, pretty-printe
 -
 -
 -
+CMS	(GITHUB) (testset)
+Cms nedir
+A content management system (CMS) is a computer software used to manage the creation and modification of digital content. CMSs are typically used for enterprise content management (ECM) and web content management (WCM).
+-
+-
+-
 
 
 

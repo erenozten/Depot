@@ -6654,7 +6654,7 @@ namespace CodeInConsole
 }
 -
 -
-Html Helper 	(GITHUB - yetersiz) (örnek)
+Html Helper 	(GITHUB) (örnek)
 html helper nedir
 -
 HtmlHelper class generates html elements. For example, 
@@ -6672,6 +6672,9 @@ Copy
 Because the class is a reserved word in C#, you will notice in the preceding code how you have to append the @ sign in order to...
 The difference between HTML Helpers and Tag Helpers
 Tag Helpers are attached to HTML elements inside your Razor views and can help you write markup that is both cleaner and easier to read than the traditional HTML Helpers. HTML Helpers, on the other hand, are invoked as methods that are mixed with HTML inside your Razor views.
+-
+-
+
 -
 -
 Razor 	(GITHUB) (örnek)
@@ -11941,6 +11944,24 @@ namespace ConsoleApp2
 -
 -
 
+Tag Helpers vs HTML Helpers	(GITHUB) (örnek)
+Tag Helpers attach to HTML elements in Razor views, (adı üzerinde: tag helper, yani tag’larla ilgili…) while HTML Helpers are invoked as methods interspersed with HTML in Razor views. Consider the following Razor markup, which creates an HTML label with the CSS class "caption":
+
+@Html.Label("FirstName", "First Name:", new {@class="caption"})
+The at (@) symbol tells Razor this is the start of code. The next two parameters ("FirstName" and "First Name:") are strings, so IntelliSense can't help. The last argument:
+
+new {@class="caption"}
+(anonymous object nedir)
+Is an anonymous object used to represent attributes. Because class is a reserved keyword in C#, you use the @ symbol to force C# to interpret @class= as a symbol (property name). To a front-end designer (someone familiar with HTML/CSS/JavaScript and other client technologies but not familiar with C# and Razor), most of the line is foreign. The entire line must be authored with no help from IntelliSense.
+Using the LabelTagHelper, the same markup can be written as:
+<label class="caption" asp-for="FirstName"></label>
+With the Tag Helper version, as soon as you enter <l in the Visual Studio editor, IntelliSense displays matching elements:
+ 
+IntelliSense helps you write the entire line.
+The following code image shows the Form portion of the Views/Account/Register.cshtml Razor view generated from the ASP.NET 4.5.x MVC template included with Visual Studio.
+ 
+The Visual Studio editor displays C# code with a grey background. For example, the AntiForgeryToken HTML Helper:
+@Html.AntiForgeryToken()
 
 
 

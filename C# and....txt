@@ -10595,31 +10595,160 @@ The dynamic language runtime (DLR) API provides the infrastructure that supports
 -
 -
 -
-Domain Class,  Domain Object    	(BSS)	      (BSS)    
-Domain class nedir
-
-A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a domain means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional.
-
-A "domain" class is one that models your data. It is typically used to map data from your data store (e.g. a database) to an in-memory object. A business class is one that your application works with. It can be the same as the domain class, and usually performs some sort of business logic or processing.
-
-Persistence refers to the ability of the object state to be saved to some data store (e.g. xml, a text file, or more commonly, a database). So the state of this kind of object "persists" whether the application is running or not.
-(business class ile domain class arasında fark yok diyor->) To me, there is no difference with a business class: a business object doesn't perform more or less business logic than a domain object (a domain model where business logic is implemented outside the domain objects is called an Anemic Domain Model, which is a pejorative term), domain objects and business objects are the same thing.
-
-Using a mapping tool such as AutoMapper will do the mapping of the domain object to the Entity object, or you can code that separately if desired.
--
--
--
-Domain Class,  Domain Object    	(BSS)	      (BSS)    
+Domain Class,  Domain Object    	(GITHUB)	      (BSS)
 Domain class nedir, domain object nedir, business class nedir, business object nedir
 
-A domain class represents a table column and it allows you to handle the column value as a Java object. In the Doma framework, a domain means all the values which a data type may contain. In short, a domain class is a user defined class that can be map to a column. The use of the domain classes is optional.
-
 A "domain" class is one that models your data. It is typically used to map data from your data store (e.g. a database) to an in-memory object. A business class is one that your application works with. It can be the same as the domain class, and usually performs some sort of business logic or processing.
-
 Persistence refers to the ability of the object state to be saved to some data store (e.g. xml, a text file, or more commonly, a database). So the state of this kind of object "persists" whether the application is running or not.
 (business class ile domain class arasında fark yok diyor->) To me, there is no difference with a business class: a business object doesn't perform more or less business logic than a domain object (a domain model where business logic is implemented outside the domain objects is called an Anemic Domain Model, which is a pejorative term), domain objects and business objects are the same thing.
 
 Using a mapping tool such as AutoMapper will do the mapping of the domain object to the Entity object, or you can code that separately if desired.
+
+Learn Entity Framework Code First in 10 Minutes
+Entity Framework is Microsoft’s ORM (Object-Relational Mapping) framework for data access. Entity Framework initially supported Model First and Database First approach where domain object models are defined in a XML based edmx files. Entity Framework Code First is another approach released with Entity Framework 4.1 version. 
+As the name suggests, in Code First approach we can define domain model class first and then the Code First framework will create the database on the fly based on the domain model class definition. In other words, designing the domain model classes first and then creating database based on the domain model is called Domain Driven Design. This methodology allows developers to focus and think through in terms of business domain objects rather than creating domain model classes to match the database design in Database First approach.
+Defining Domain Classes
+For easy understanding, let’s build a simple model with Employee and Department to understand how Code First works.
+ 
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public int DepartmentId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Address1 { get; set; }
+    public string Address2 { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string Country { get; set; }
+    public string PostalCode { get; set; }
+}
+
+public class Department
+{
+    public int DepartmentId { get; set; }
+    public string DepartmentName { get; set; }
+}
+ 
+ 
+These classes are nothing but a plain C# class or to simply put they are POCO class which represents our domain in our project. We can now start using this C# classes as our code first model and begin writing our data access logic. These classes does not even have any configurations or setting that are related to Entity Framework or Code First paradigm or any other data access settings. This flexibility of the Code First helps us to even migrate an existing domain model classes to Code First easily. Code First also releives developers who are forced to create domain objects to match the database schema all these days.
+Next, let’s see how to let Code First know about these domain classes to manage the database creation and data access.
+Managing Domain Objects with Code First
+Entity Framework expose a class called DbContext for doing this. We just need to define a class that inherits System.Data.Entity.DbContext class and expose these domain objects as property member of this class through System.Data.Entity.DbSet<T> object. The DbSet object represents the collection of our entity that are persisted in the database by the DbContext object. It also gives the querying capabilities to the entity collection or the underlying table.
+ 
+public class DBModel : DbContext
+{
+    public DbSet<Department> Departments { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+}
+ 
+ 
+Querying Using DBModel and Entity
+Querying is similar to what we do with Entity Framework data access which uses LINQ construct. Let’s add some default rows into Employee and Department table now.
+ 
+DBModel db = new DBModel();
+if (db.Departments.Count() <= 0)
+{
+    Department department = new Department();
+    department.DepartmentName = "IT";
+    db.Departments.Add(department);
+    department = new Department();
+    department.DepartmentName = "CSE";
+    db.Departments.Add(department);
+}
+if (db.Employees.Count() <= 0)
+{
+    Employee emp = new Employee();
+    emp.FirstName = "Tom";
+    emp.LastName = "Hanks";
+    emp.Address1 = "1St Street";
+    emp.Address2 = "Columbia Ave";
+    emp.City = "Los Angeles";
+    emp.State = "CA";
+    emp.Country = "US";
+    emp.PostalCode = "123456";
+    emp.DepartmentId = 1;
+    db.Employees.Add(emp);
+
+    emp = new Employee();
+    emp.FirstName = "Bruce";
+    emp.LastName = "Willis";
+    emp.Address1 = "2nd Street";
+    emp.Address2 = "Farmers Ave";
+    emp.City = "Seattle";
+    emp.State = "WA";
+    emp.Country = "US";
+    emp.PostalCode = "756446";
+    emp.DepartmentId = 2;
+    db.Employees.Add(emp);
+
+    emp = new Employee();
+    emp.FirstName = "Johnny";
+    emp.LastName = "Depp";
+    emp.Address1 = "5Th Street";
+    emp.Address2 = "Shuttle Ave";
+    emp.City = "San Antonio";
+    emp.State = "TX";
+    emp.Country = "US";
+    emp.PostalCode = "123456";
+    emp.DepartmentId = 2;
+    db.Employees.Add(emp);
+}
+db.SaveChanges();
+ 
+ 
+
+Entity Framework Code First relies heavily on conventions to manage the domain classes and database creation.
+For example, a primary key field is identified and created when Code First finds a property with TypeName followed by “Id” string. This is how EmployeeId and DepartmentId are created as primary key. Code First also allows us to customize this conventions through number of configuration options.
+There are primarily 2 ways to use the configurations and dictate terms to Code First. They are,
+1.	By using Data Annotations
+2.	By using Fluent API
+Using Data Annotations 
+Data annotation nedir, data annotations nedir
+To make FirstName and LastName as not null columns (or mandatory in domain) we just need to decorate those property using [Required] attribute from System.ComponentModel.DataAnnotations namespace.
+ 
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public int DepartmentId { get; set; }
+    [Required]
+    public string FirstName { get; set; }
+    [Required]
+    public string LastName { get; set; }
+    public string Address1 { get; set; }
+    public string Address2 { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string Country { get; set; }
+    public string PostalCode { get; set; }
+}
+ 
+This will make the FirstName and LastName column as not null in database. Similarly, the DataAnnotations namespace has many properties to configure Code First database model properties.
+Fluent API
+Instead of using Data Annotations and mixing Entity Framework constructs in domain model we can specify the configurations using Fluent API inside DbContext OnModelCreating event. This will help to keep the domain model class free from any configuration settings. The below code will help us to add the above not null configuration by using Fluent API.
+ 
+public class DBModel : DbContext
+{
+    public DbSet<Department> Departments { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Employee>().Property(p => p.FirstName).IsRequired();
+        modelBuilder.Entity<Employee>().Property(p => p.LastName).IsRequired();
+    }
+}
+ 
+Note - There are few configurations that are available only through Fluent API and which cannot be done by Data Annotations. So, those configurations should be managed only by using Fluent API
+Database Initializers and Code First Migrations
+Though the above approaches creates database automatically, we can also set Database Initializers to manage database creation process.
+Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DBModel>());
+ 
+Calling the above statement before using the DbContext(or DBModel) will re-create database fully if there is a change detected in the model object after it has last created.
+There are other initializers like,
+•	CreateDatabaseIfNotExists – To create DB if not exists and a default option.
+•	DropCreateDatabaseAlways – To recreate DB always.
+These Database Initializers are very basic and cannot be used in real time as our production applications are incrementally built and so the database too. Entity Framework 4.3 has introduced a strategic tool called Code First Migrations for this advanced tasks. The additional table you see dbo.__MigrationHistory in the database created by Code First is used by this framework for detecting changes and managing the migrations.
 -
 -
 -

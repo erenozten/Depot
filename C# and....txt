@@ -11905,6 +11905,41 @@ Question: Is the C# Static Constructor Thread -Safe?
 -
 -
 
+Overloading örnek kod	(GITHUB) (testset)
+
+Overload nedir, overloading nedir
+
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public static class NewClass
+        {
+            public static int Calculate(int x, int y)
+            {
+                return x*y;
+            }
+            public static int Calculate(int x, int y, int z)
+            {
+                return x * y * z;
+            }
+        }
+
+        public static void Main()
+        {
+            Console.WriteLine(NewClass.Calculate(5, 5));
+            Console.WriteLine(NewClass.Calculate(4,4,4));
+        }
+    }
+}
+-
+-
+-
+-
+-
+-
 
 
 

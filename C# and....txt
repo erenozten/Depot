@@ -413,6 +413,7 @@ ASP.Net Framework:
 İlk başta Core'un adı Core değilmiş. ASP.NET 5'miş. Sonra Core'a dönmüş.
 
  
+
  
 ASP.Net sadece Windowsta Run edilir. COre ise Wİndows, macOS ve Lİnux'ta run edilir.
 ASP.NET Sadece IIS'te host edilir.
@@ -420,10 +421,27 @@ Core: IIS, Apache, Docker veya Self-host olarak host edilebilir.
 
 ASP.net Core application initially starts as a Console application. (zaten dikkat edersen Main metodu var)
 Main metot, bu console app'I configure eder, böylelikle console app ---> Web application'a dönüşür.
-Das 
+-
+-
+-
+-
+-
+-
+-
 CORE: Built in support for DEPENDENCY INJECTION.
 Wwwroot ta ne var? Css js dosyaları var. yazdığımız style scriptler vb.
 Iisexpress vs iis --> iis deploy ortamında çalışır, gerçek hayatta. Express ise development ortamında.
+
+Create an application
+First, download and install the .NET Core SDK on your computer.
+Next, open a terminal such as PowerShell, Command Prompt, or bash. Enter the following dotnet commands to create and run a C# application:
+dotnet new console --output sample1
+dotnet run --project sample1
+You should see the following output:/
+Hello World!
+Congratulations! You've created a simple .NET Core application. You can also use Visual Studio Code, Visual Studio (Windows only), or Visual Studio for Mac (macOS only), to create a .NET Core application.
+-
+-
 -
 -
 nullable bool and others

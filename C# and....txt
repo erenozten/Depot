@@ -11742,6 +11742,28 @@ A web user interface, or web-based graphical user interface, refers to the inter
 Web graphical user interfaces are platform independent, require no installation or separate software development, easy to update and monitor due to the nature of not being dependent upon the user to deploy updates, provides a vibrant UI experience, and are low cost, requiring only Ethernet or WiFi interface connectivity.
 Does OmniSci Offer Graphical User Interface Solutions?
 The benefits of visualizations in computing are evident in the intuitive nature of graphical user interfaces. Visualization and interactivity are similarly beneficial elements in data analytics. OmniSci Immerse is a browser-based, interactive data visualization client that works seamlessly with the OmniSci server-side technologies, OmniSciDB and Render, providing an interactive, visual platform that reduces the time to insights and dramatically expands an analyst's ability to find previously hidden insights.
+-
+-
+-
+.NET			(GITHUB)
+microsoft kendi sitesinden:
+You can write .NET apps in C#, F#, or Visual Basic.
+C# is a simple, modern, object-oriented, and type-safe programming language.
+F# is a cross-platform, open-source, functional programming language for .NET. It also includes object-oriented and imperative programming.
+Visual Basic is an approachable language with a simple syntax for building type-safe, object-oriented apps.
+Cross Platform
+Whether you're working in C#, F#, or Visual Basic, your code will run natively on any compatible OS. Different .NET implementations handle the heavy lifting for you:
+
+.NET Core is a cross-platform .NET implementation for websites, servers, and console apps on Windows, Linux, and macOS.
+.NET Framework supports websites, services, desktop apps, and more on Windows.
+Xamarin/Mono is a .NET implementation for running apps on all the major mobile operating systems.
+Tools
+The Visual Studio product family provides a great .NET development experience on Windows, Linux, and macOS.
+
+The Visual Studio Marketplace has thousands of editor extensions from Microsoft and others.
+
+If you prefer to use a different editor, there are .NET command line tools and plugins for many popular editors.
+
 
 
 

@@ -11819,6 +11819,22 @@ public static void Main(string[] args)
 }
 }
 
+In the above Main() method, calling UseKestrel() on WebHostBuilder object will configure the Kestrel webserver for the application.
+Note – Every Asp.Net Core application requires a Host process to start Kestrel webserver and initialize application for request processing. Calling UseIISIntegration() integrates Kestrel with IIS webserver, let’s see this in detail in next section.
+The UseKestrel() also takes KestrelServerOptions class as argument to customize Kestrel server.
+ 
+Asp.Net Core Deployment Options
+We generally deploy Asp.Net Core (also Asp.Net applications) for 2 scenarios listed below.
+1.	Internal Hosted applications
+2.	Externally Hosted applications
+Let’s see how Kestrel webserver can be used in both of these scenarios.
+1.	Internally Hosted applications
+For internal applications, the applications can just be hosted with Kestrel webserver alone. The features provided by Kestrel and with some additional middlewares (for response compressions, authentication) is sufficient for serving internally hosted applications.  
+2.	Externally Hosted applications
+As it is said before, Kestrel is a very light webserver and it does not support all features of a full-fledged webserver like IIS provide. So, if your application is external facing public website then the application should be deployed behind a full-fledged webserver like IIS or Nginx or Apache for increased security and to get feature rich support. These webservers act as proxy (commonly called reverse proxy in this scenario) and forward the request to Kestrel for request processing. This is why the Program.Main() code calls UseIISIntegration() to integrate IIS as reverse proxy to forward request to Kestrel. This is the default mode the project template code uses.  The request flow goes like below,
+ 
+Note – This requires IIS integration module commonly called Asp.Net Core module that comes with Nuget package Microsoft.AspNetCore.Server.IISIntegration
+ 
 
 
 

@@ -11795,6 +11795,29 @@ By default, all Asp.Net core project templates include Kestrel webserver when we
 3.	Kestrel webserver supports SSL.
 Let’s understand why there is a new webserver called Kestrel when we already have a feature-rich and most used webserver IIS.
 
+Why Kestrel Webserver when we have IIS/Nginx/Apache?
+The primary requirement of Asp.Net Core is to make Asp.Net Core applications to run across multiple platforms (or cross platform). Though, IIS is feature rich and highly used webserver it is a windows-only webserver. Without Kestrel, to run Asp.Net Core application on other cross platform webservers like Nginx, Apache, the Asp.Net Core application need to satisfy the Startup criteria of each of these webservers. In other words, each webserver has a different Startup configurations and this will make Asp.Net Core applications have different Startup mechanisms. This is why Asp.Net Core applications use Kestrel webserver as an in-process server where the application will have same and consistent Startup (Main() and Startup.ConfigireServices() & Startup.Configure()) process even when offering cross platform support.
+ 
+How to use Kestrel?
+Kestrel server is by default included in the Asp.Net Core project templates. It is included in the project as a Nuget package Microsoft.AspNetCore.Server.Kestrel in Project.json(in Visual Studio 2015) and as an implicitly included package when you using Visual Studio 2017 project template.
+Note – All Asp.Net Core project should use Visual Studio 2017 as it is the latest and default project template for Asp.Net Core projects henceforth. Read here to know more.
+Let’s see how kestrel server is configured in an Asp.Net Core project. Below is the Program.Main() method in a Asp.Net Core application.
+ 
+public class Program
+{
+public static void Main(string[] args)
+{
+    var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseStartup<Startup>()
+        .UseApplicationInsights()
+        .Build();
+
+    host.Run();
+}
+}
 
 
 

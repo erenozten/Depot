@@ -12272,6 +12272,13 @@ Being pluggable and modular of course has it's benefits, Nutch provides extensib
 -
 -
 -
+Cloudera	(GITHUB)  (test) 
+Cloudera nedir
+Cloudera, Inc. is a US-based software company that provides a software platform for data engineering, data warehousing, machine learning and analytics that runs in the cloud or on premises.
+Cloudera started as a hybrid open-source Apache Hadoop distribution, CDH (Cloudera Distribution Including Apache Hadoop), that targeted enterprise-class deployments of that technology. Cloudera states that more than 50% of its engineering output is donated upstream to the various Apache-licensed open source projects (Apache Spark, Apache Hive, Apache Avro, Apache HBase, and so on) that combine to form the Apache Hadoop platform. Cloudera is also a sponsor of the Apache Software Foundation.
+-
+-
+-
 
 
 

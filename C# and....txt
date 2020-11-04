@@ -7397,10 +7397,27 @@ Nutch is coded entirely in the Java programming language, but data is written in
 The fetcher ("robot" or "web crawler") has been written from scratch specifically for this project.
 -
 -
-Smalltalk 			(GITHUB) 	(örnek)
+Smalltalk	(edited) (test)
 smalltalk nedir
 Xerox PARC'ta (Palo Alto Research Center) geliştirilmiş nesne yönelimli bir programlama dilidir.
-Grafik kullanıcı arabirimleri alanında çok derin çalışmalar yapan Xerox PARC'ta geliştirilmesi sonucu Smalltalk WIMP (Windows, Icons, Menus, Pointers) sistemlerinin prototiplerini üretmede kullanıldı. Bu tip kullanıcı arayüzleri kişisel bilişimi şekillendirmiş ve günümüzde hâlen GNOME, KDE, Mac OS X, Microsoft Windows v.s. sistemlerinde kullanılmaktadır.
+Definition - What does Smalltalk mean?
+Smalltalk is an object-oriented programming (OOP) language that incorporates dynamic runtime typing methodology and maneuverability.
+
+Mostly used for application modeling, Smalltalk was created based on basic object principles, which dictate that each thing is an object, and each object can communicate with other objects.
+
+Smalltalk was initially released as version Smalltalk-80 in the 1970s by the Learning Research Group at Xerox Palo Alto Research Center Inc.
+Techopedia explains Smalltalk
+Because Smalltalk is dynamic and does not require variable type declarations, processing is determined by the receiving object. Type checking is performed at run time, rather than compiling time. Smalltalk also offers tremendous runtime application modification and maneuverability, which extends to syntax or the integrated development environment (IDE).
+
+The central concept in Smalltalk is an object, which is an instance of a class. The three operations performed by a Smalltalk object are:
+•	Receive messages from itself or other objects
+•	Send messages to itself or another object
+•	Reference other objects.
+Messaging is the most important concept in Smalltalk. Upon receiving a message, the receiver determines whether it is appropriate. A message can be sent to any object. Other objects can query the state only by sending messages to the object. The language construct in Smalltalk are messages. By default, Smalltalk uses a synchronous, single dynamic message dispatch strategy. Expressions in Smalltalk include multiple message send.
+
+Smalltalk considers primitive values such as integers, Booleans and characters as objects because they are instances of corresponding classes, and operations on them are invoked by sending messages. A programmer can change the classes that implement primitive values to define new behavior for their instances. Classes and code blocks are objects in Smalltalk. Each class is an instance of the metaclass of that class where metaclasses are also objec
+-
+-
 -
 -
 JPA / Java Persistence API   	(GITHUB) 	(örnek)

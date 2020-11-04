@@ -4305,24 +4305,18 @@ Here are some things included in the .NET platform:
 -
 -
 -
-ADO   (ActiveX Data Objects)     (GITHUB)
+ADO   (ActiveX Data Objects)     (GITHUB) (test)
 Ado nedir?
+ADO can be used to access databases from your web pages.
 What is ADO?
-ADO is a Microsoft technology
-ADO stands for ActiveX Data Objects
-ADO is a Microsoft Active-X component
-ADO is automatically installed with Microsoft IIS
-ADO is a programming interface to access data in a database
-Accessing a Database from an ASP Page
-The common way to access a database from inside an ASP page is to:
-
-Create an ADO connection to a database
-Open the database connection
-Create an ADO recordset
-Open the recordset
-Extract the data you need from the recordset
-Close the recordset
-Close the connection
+•	ADO is a Microsoft technology
+•	ADO stands for ActiveX Data Objects
+•	ADO is a Microsoft Active-X component
+•	ADO is automatically installed with Microsoft IIS
+•	ADO is a programming interface to access data in a database
+ADO.NET is a data access technology from the Microsoft .NET Framework that provides communication between relational and non-relational systems through a common set of components.[1] ADO.NET is a set of computer software components that programmers can use to access data and data services from a database. It is a part of the base class library that is included with the Microsoft .NET Framework. It is commonly used by programmers to access and modify data stored in relational database systems, though it can also access data in non-relational data sources. ADO.NET is sometimes considered an evolution of ActiveX Data Objects (ADO) technology, but was changed so extensively that it can be considered an entirely new product.
+-
+-
 -
 -
 -

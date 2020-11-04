@@ -7133,27 +7133,25 @@ Don’t stop now and take your learning to the next level. Learn all the importa
 -
 -
 Microsoft Exchange Server  (GITHUB) (örnek)
-
 Microsoft Exchange Server nedir
 Microsoft Exchange Server, Microsoft tarafından üretilen bir haberleşme yazılımıdır. Sunucu ürünlerinden Microsoft Servers'ın bir parçası olup Microsoft altyapısına sahip sistemlerde sıkça kullanılmaktadır. Exchange'in öne çıkan özellikleri e-posta, takvim, kişiler ve işler, bilgiye web tabanlı erişim olanağı ve veri depolama desteğidir.
-
-
-Dependency injection (services) in ASP.NET CORE
-ASP.NET Core has a built-in dependency injection (DI) framework that makes configured services available to an app's classes. One way to get an instance of a service in a class is to create a constructor with a parameter of the required type. The parameter can be the service type or an interface. The DI system provides the service at runtime.
-Here's a class that uses DI to get an Entity Framework Core context object. 
+Microsoft Exchange Server is a mail server and calendaring server developed by Microsoft. It runs exclusively on Windows Server operating systems.
+The first version was called Exchange Server 4.0, to position it as the successor to the related Microsoft Mail 3.5. Exchange initially used the X.400 directory service but switched to Active Directory later. Until version 5.0 it came bundled with an email client called Microsoft Exchange Client. This was discontinued in favor of Microsoft Outlook.
+Exchange Server primarily uses a proprietary protocol called MAPI to talk to email clients, but subsequently added support for POP3, IMAP, and EAS. The standard SMTP protocol is used to communicate to other Internet mail servers.
+Exchange Server is licensed both as on-premises software and software as a service (SaaS). In the on-premises form, customers purchase client access licenses (CALs); as SaaS, Microsoft charges a monthly service fee instead.
+-
+Microsoft Exchange Server™, şirketlerin iletişim trafiğini merkezi olarak yönetmesi için Microsoft tarafından geliştirilen ölçeklenebilir bir iletişim ve iş birliği platformudur. E-posta ve belge paylaşımı, takvim, rehber ve veri depolama gibi birçok özelliği destekleyen Microsoft Exchange Server, sahip olduğu üstün güvenlik ve veri depolama özellikleri sayesinde şirketlerin iletişim trafiğini mevzuatlara uygun ve güvenli bir şekilde yönetmelerine olanak tanır.
+Microsoft Outlook™ ve benzeri e-posta istemcileri ve akıllı cihazlar ile etkileşimli bir şekilde çalışan Microsoft Exchange Server, mobil ve bulut tabanlı iş birliği ve iletişim özellikleri ile kullanıcıların birçok farklı platform üzerinden iletişim kurmasına ve verileri tek bir noktada depolamasına olanak verir.
+Microsoft Exchange Server, tüm bu özelliklere ek olarak sunduğu veri yedekleme ve olağanüstü durum kurtarma çözümleri ile işletmelerin sunucu, veri tabanı ve ağ bağlantısı arızalarının yol açabileceği negatif etkilerden korunmasına yardımcı olur.
+Microsoft Exchange Server ile Neler Yapabilirsiniz?
+•	E-posta ve doküman paylaşma
+•	Merkezi iletişim trafiği yönetimi
+•	Güvenli veri depolama ve veri yedekleme
+•	Takvim ve rehber oluşturma ve yönetme
+•	Bulut ve mobil tabanlı işbirliği
+•	Kurallar aracılığıyla işlem otomatikleştirme
 -
 -
-Apache Subversion / Subversion (eski adı)
-apache subversion nedir, subversion nedir
-
-SVN: Subversion bir sürüm takip sistemidir. Kısaca SVN olarak da adlandırılmaktadır.
-Ortak bir depoda sürümlenmiş şekilde saklanan proje dosyalarını geliştiriceler kendilerine tanımlanmış kullanıcı adı ile çekebilirler. Kendi depolama alanına çekilen bu dosyalar üzerinde işlemler yapıp tekrar ortak depoya gönderebilirle
-
-
-Yazılım geliştirmede Apache Subversion (eski adıyla Subversion[1], 2000 yılında CollabNet firması tarafından başlatılan ve desteklenen bir sürüm kontrol sistemidir. Yazılım geliştiricileri Subversion'ı kaynak kodu, ağ sayfaları veya belgelendirme gibi dosyaların güncel ve geçmiş tüm değişikliklerini tutmak için kullanırlar. Amacı yaygın olarak kullanılan Concurrent Versions System (CVS)'in olabildiğince uyumlu bir ardılı olmaktır.
-Açık kaynak topluluğu Subversion'ı yaygın olarak kullanmıştır: örneğin Apache Software Foundation projelerinde, Free Pascal, FreeBSD, GCC, Django, Ruby, Mono, SourceForge, ExtJS, Tigris.org, PHP ve MediaWiki. Google Code açık kaynak proje barındırmalarında Subversion desteği de vermektedir. CodePlex diğer istemcilere olduğu kadar Subversion erişimi de sağlamaktadır.
-İş dünyası da Subversion kullanımı kabul etmeye başlamıştır. Forrester Research tarafından 2007 yılında hazırlanan bir rapora göre Tekbaşına Yazılım Konfigürasyonu Yönetimi (SCM) kategorisinde Subversion'ı lider ve Yazılım Konfigürasyonu ve Değişiklik Yönetimi (SCCM) alanında da güçlü bir oyuncu gösterilmiştir.[2]
-Subversion Apache Lisansını kullanmaktadır ve açık kaynak kodludur.
 -
 -
 Single Page Application 

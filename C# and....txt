@@ -12231,6 +12231,38 @@ A third-party transpiler GopherJS[22] compiles Go to JavaScript for front-end we
 -
 -
 -
+Smarty	(GITHUB)  (test)
+Smarty nedir
+
+Smarty is a template engine for PHP. More specifically, it facilitates a manageable way to separate application logic and content from its presentation. This is best described in a situation where the application programmer and the template designer play different roles, or in most cases are not the same person.
+For example, let's say you are creating a web page that is displaying a newspaper article.
+The article $headline, $tagline, $author and $body are content elements, they contain no information about how they will be presented. They are passed into Smarty by the application.
+Then the template designer edits the templates and uses a combination of HTML tags and template tags to format the presentation of these variables with elements such as tables, div's, background colors, font sizes, style sheets, svg etc.
+One day the programmer needs to change the way the article content is retrieved, ie a change in application logic. This change does not affect the template designer, the content will still arrive in the template exactly the same.
+Likewise, if the template designer wants to completely redesign the templates, this would require no change to the application logic.
+Therefore, the programmer can make changes to the application logic without the need to restructure templates, and the template designer can make changes to templates without breaking application logic.
+One design goal of Smarty is the separation of business logic and presentation logic.
+This means templates can certainly contain logic under the condition that it is for presentation only. Things such as including other templates, alternating table row colors, upper-casing a variable, looping over an array of data and displaying it are examples of presentation logic.
+This does not mean however that Smarty forces a separation of business and presentation logic. Smarty has no knowledge of which is which, so placing business logic in the template is your own doing.
+Also, if you desire no logic in your templates you certainly can do so by boiling the content down to text and variables only.
+
+Some of Smarty's features:
+It is extremely fast.
+It is efficient since the PHP parser does the dirty work.
+No template parsing overhead, only compiles once.
+It is smart about recompiling only the template files that have changed.
+You can easily create your own custom functions and variable modifiers, so the template language is extremely extensible.
+Configurable template {delimiter} tag syntax, so you can use {$foo}, {{$foo}}, <!--{$foo}-->, etc.
+The {if}..{elseif}..{else}..{/if} constructs are passed to the PHP parser, so the {if...} expression syntax can be as simple or as complex an evaluation as you like.
+Allows unlimited nesting of sections, if's etc.
+It is possible to embed PHP code right in your template files, although this may not be needed (nor recommended) since the engine is so customizable.
+Built-in caching support
+Arbitrary template sources
+Custom cache handling functions
+Plugin architecture
+-
+-
+-
 
 
 

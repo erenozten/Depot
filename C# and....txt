@@ -12279,6 +12279,17 @@ Cloudera started as a hybrid open-source Apache Hadoop distribution, CDH (Cloude
 -
 -
 -
+Hortonworks	(GITHUB)  (test) 
+Hortonworks nedir
+Hortonworks was a data software company based in Santa Clara, California that developed and supported open-source software (primarily around Apache Hadoop) designed to manage Big Data and associated processing.
+Hortonworks software was used to build enterprise data services and applications such as IOT (connected cars, for example), single view of X (such as customer, risk, patient), and advanced analytics and machine learning (such as next best action and realtime cybersecurity). Hortonworks had three interoperable product lines:
+Hortonworks Data Platform (HDP): based on Apache Hadoop, Apache Hive, Apache Spark
+Hortonworks DataFlow (HDF): based on Apache NiFi, Apache Storm, Apache Kafka
+Hortonworks DataPlane services: based on Apache Atlas and Cloudbreak and a pluggable architecture into which partners such as IBM can add their services.[2]
+In January 2019, Hortonworks completed its merger with Cloudera.
+-
+-
+-
 
 
 

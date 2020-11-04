@@ -7169,13 +7169,25 @@ Knockout.js data-binds the HTML elements to the JSON data.
 Entity Framework talks to the database.
 -
 -
-XHTML     (GITHUB) (örnek)
+XHTML   	(GITHUB) (test)
+
 What Is XHTML?
 XHTML stands for EXtensible HyperText Markup Language
 XHTML is almost identical to HTML
 XHTML is stricter than HTML
 XHTML is HTML defined as an XML application
 XHTML is supported by all major browsers 
+-
+Extensible HyperText Markup Language (XHTML) is part of the family of XML markup languages. It mirrors or extends versions of the widely used HyperText Markup Language (HTML), the language in which Web pages are formulated.
+While HTML, prior to HTML5, was defined as an application of Standard Generalized Markup Language (SGML), a flexible markup language framework, XHTML is an application of XML, a more restrictive subset of SGML. XHTML documents are well-formed and may therefore be parsed using standard XML parsers, unlike HTML, which requires a lenient HTML-specific parser.
+-
+XHTML stands for EXtensible HyperText Markup Language. It is the next step to evolution of internet. The XHTML was developed by World Wide Web Consortium (W3C). It helps web developers to make the transition from HTML to XML. Using XHTML, developers can enter the XML world with all the features of it, and they can still remain confident about the backward and future compatibility of the content. The XHTML 1.0 is the first document type in the XHTML family and it is Recommended by W3C in 26 January 2000. The XHTML 1.1 is Recommended by W3c in 31 May 2001. The XHTML5 is a standard and is used to develop an XML adaptation of the HTML5 specification.
+The XHTML documents contains three parts, which are discussed below:
+•	DOCTYPE: It is used to declare a DTD
+•	head: The head section is used to declare the title and other attributes.
+•	body: The body tag contains the content of web pages. It consists many tags.
+
+-
 Why XHTML?
 Many pages on the internet contain "bad" HTML.
 This HTML code works fine in most browsers (even if it does not follow the HTML rules):
@@ -7193,46 +7205,12 @@ XML is a markup language where documents must be marked up correctly (be "well-f
 XHTML was developed by combining the strengths of HTML and XML.
 XHTML is HTML redesigned as XML.
 
-The Most Important Differences from HTML:
-Document Structure:
-XHTML DOCTYPE is mandatory
-The xmlns attribute in <html> is mandatory
-<html>, <head>, <title>, and <body> are mandatory
-XHTML Elements:
-XHTML elements must be properly nested
-XHTML elements must always be closed
-XHTML elements must be in lowercase
-XHTML documents must have one root element
-XHTML Attributes:
-Attribute names must be in lower case
-Attribute values must be quoted
-Attribute minimization is forbidden
-<!DOCTYPE ....> Is Mandatory
-An XHTML document must have an XHTML DOCTYPE declaration.
-A complete list of all the XHTML Doctypes is found in our HTML Tags Reference.
-The <html>, <head>, <title>, and <body> elements must also be present, and the xmlns attribute in <html> must specify the xml namespace for the document.
-This example shows an XHTML document with a minimum of required tags:
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-  <title>Title of document</title>
-</head>
-
-<body>
-  some content
-</body>
-
-</html>
-
 XHTML Elements Must Be Properly Nested
 In HTML, some elements can be improperly nested within each other, like this:
 <b><i>This text is bold and italic</b></i>
 In XHTML, all elements must be properly nested within each other, like this:
 <b><i>This text is bold and italic</i></b>
-________________________________________
+
 XHTML Elements Must Always Be Closed
 This is wrong:
 <p>This is a paragraph
@@ -7250,7 +7228,6 @@ This is correct:
 A break: <br />
 A horizontal rule: <hr />
 An image: <img src="happy.gif" alt="Happy face" />
-________________________________________
 XHTML Elements Must Be In Lower Case
 This is wrong:
 <BODY>
@@ -7260,19 +7237,16 @@ This is correct:
 <body>
 <p>This is a paragraph</p>
 </body>
-________________________________________
 XHTML Attribute Names Must Be In Lower Case
 This is wrong:
 <table WIDTH="100%">
 This is correct:
 <table width="100%">
-
 Attribute Values Must Be Quoted
 This is wrong:
 <table width=100%>
 This is correct:
 <table width="100%">
-________________________________________
 Attribute Minimization Is Forbidden
 Wrong:
 <input type="checkbox" name="vehicle" value="car" checked />
@@ -7282,14 +7256,9 @@ Wrong:
 <input type="text" name="lastname" disabled />
 Correct:
 <input type="text" name="lastname" disabled="disabled" />
-________________________________________
-How to Convert from HTML to XHTML
-1.	Add an XHTML <!DOCTYPE> to the first line of every page
-2.	Add an xmlns attribute to the html element of every page
-3.	Change all element names to lowercase
-4.	Close all empty elements
-5.	Change all attribute names to lowercase
-6.	Quote all attribute values
+-
+-
+-
 -
 -
 XQuery 	(GITHUB) 	(örnek)

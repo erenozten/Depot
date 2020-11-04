@@ -3255,15 +3255,10 @@ NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek,
 -
 -
 -
-MongoDb		(GITHUB)
+MongoDb	(GITHUB)  (test) 
 Mongodb nedir
 
-MongoDB is the most well known among NoSQL Databases. It is an Open-Source database which is Document-oriented. MongoDB is a scalable and accessible database. It is in C++. MongoDB can likewise be utilized as the file system. In MongoDB, JavaScript can be utilized as the query language. By utilizing sharding MongoDB scales horizontally. It is very useful in Popular JavaScript Frameworks. People really enjoying sharding, advanced text searching, gridFS, map-reduce features for the 2019 year. Amazing performance and new features promoted this NoSQL database to 1st place in our list.
-•	
-Latest version: 4.0.8
-•	Blog: MongoDB
-•	Developed by: MongoDB Inc. in 2007
-•	Download: MongoDB
+MongoDB is the most well known among NoSQL Databases. It is an Open-Source database which is Document-oriented. MongoDB is a scalable and accessible database. It is in C++. MongoDB can likewise be utilized as the file system. In MongoDB, JavaScript can be utilized as the query language. By utilizing sharding MongoDB scales horizontally. It is very useful in Popular JavaScript Frameworks. People really enjoying sharding, advanced text searching, gridFS, map-reduce features for the 2019 year. Amazing performance and new features promoted this NoSQL database to 1st place in our list. 
 FEATURES
 •	Provides high performance
 •	Auto-sharding
@@ -3289,18 +3284,7 @@ CONS OF MONGODB
 •	Increase unnecessary usage of memory
 
 Bir veritabanıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
-
-(Distributed database'yi bi sonraki çalışmada inceleyelim..)
-
-MongoDB (“humongous”); MongoDB Inc. tarafından ölçeklenebilir, doküman tabanlı, C++ ile geliştirilmiş açık kaynak, NoSQL (ilişkisiz veritabanı) veritabanı uygulamasıdır. MongoDB, verileri JSON tipinde dokümanlarda saklamaktadır, anlamsal alanları dokümandan dokümana değişir ve veri yapısı zaman içinde değiştirilebilir. Belge modeli, uygulamanızın kodundaki nesnelerle eşleştirilir, böylece verilerin kullanımı kolaylaşır. Geçici sorgular, dizin oluşturmak için ve gerçek zamanlı verilerinize erişmek ve analiz etmek için güçlü yollar sağlar. MongoDB, özellikle hız gerektiren ve geleneksel ilişkisel veritabanlarının (RDBMS) hantal ve yavaş kaldığı yapılarda kullanılmaktadır.MongoDB, dağıtılmış bir veritabanı yapısına sahiptir, bu nedenle yüksek erişilebilirlik, yatayda ve dikeyde ölçeklendirme yapılabilmektedir. MongoDB, GNU Affero Genel Kamu Lisansı uyarınca yayınlanan ücretsiz ve açık kaynaktır.
-Örnek kullanım alanları arasında:
-•	Yüksek hacim/içerikli problemler
-•	Analiz için veri saklanması
-•	MMORPG uygulamaları
-•	Caching sistemleri
-•	Web içerik yönetim sistemleri
-•	Web yorum/etiket saklama ve yönetme
-İkililer, Windows, Mac OS X, Linux ve Solaris için mevcuttur.
+-
 -
 -
 -

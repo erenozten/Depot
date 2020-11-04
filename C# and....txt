@@ -7626,10 +7626,43 @@ Solr runs as a standalone full-text search server. It uses the Lucene Java searc
 Apache Lucene and Apache Solr are both produced by the same Apache Software Foundation development team.
 -
 -
-Lucene	(GITHUB) 	(örnek)
-Lucene nedir, apache lucene nedir
-Lucene, Doug Cutting tarafından Java kullanılarak yazılmış bir açık kaynak kodlu bilgi toplama kütüphanesidir. Apache Yazılım Derneği'nce desteklenen yazılım Apache Yazılım Lisansı'nı kullanmaktadır.
-Lucene, aralarında Delphi, Perl, C#, C++, Python, Ruby ve PHP'nin de bulunduğu birçok farklı dilde yeniden yazılmıştır.
+Lucene	(GITHUB)  (test)
+Lucene nedir, apache lucene nedir, apache lucene core nedir
+Apache Lucene Core
+
+Apache LuceneTM is a high-performance, full-featured text search engine library written entirely in Java. It is a technology suitable for nearly any application that requires full-text search, especially cross-platform.
+Apache Lucene is an open source project available for free download. Please use the links on the right to access Lucene.
+
+Lucene Features
+
+Lucene offers powerful features through a simple API:
+
+Scalable, High-Performance Indexing
+•	over 150GB/hour on modern hardware
+•	small RAM requirements -- only 1MB heap
+•	incremental indexing as fast as batch indexing
+•	index size roughly 20-30% the size of text indexed
+
+Powerful, Accurate and Efficient Search Algorithms
+•	ranked searching -- best results returned first
+•	many powerful query types: phrase queries, wildcard queries, proximity queries, range queries and more
+•	fielded searching (e.g. title, author, contents)
+•	sorting by any field
+•	multiple-index searching with merged results
+•	allows simultaneous update and searching
+•	flexible faceting, highlighting, joins and result grouping
+•	fast, memory-efficient and typo-tolerant suggesters
+•	pluggable ranking models, including the Vector Space Model and Okapi BM25
+•	configurable storage engine (codecs)
+•	
+Cross-Platform Solution
+•	Available as Open Source software under the Apache License which lets you use Lucene in both commercial and Open Source programs
+•	100%-pure Java
+•	Implementations in other programming languages available that are index-compatible
+-
+-
+-
+-
 -
 -
 Intermediate language	(GITHUB) (örnek)

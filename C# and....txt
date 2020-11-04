@@ -12050,6 +12050,15 @@ Açık kaynak topluluğu Subversion'ı yaygın olarak kullanmıştır: örneğin
 Subversion Apache Lisansını kullanmaktadır ve açık kaynak kodludur.
 -
 -
+CVS / Concurrent Versions System	(test) (test)
+
+Cvs nedir, concurrent versions system nedir
+Concurrent Versions System (CVS) is a program that lets a code developer save and retrieve different development versions of source code. It also lets a team of developers share control of different versions of files in a common repository of files. This kind of program is sometimes known as a version control system . CVS was created in the UNIX operating system environment and is available in both Free Software Foundation and commercial versions. It is a popular tool for programmers working on Linux and other UNIX-based systems.
+CVS works not by keeping track of multiple copies of source code files, but by maintaining a single copy and a record of all the changes. When a developer specifies a particular version, CVS can reconstruct that version from the recorded changes. CVS is typically used to keep track of each developer's work individually in a separate working directory. When desired, the work of a team of developers can be merged in a common repository. Changes from individual team members can be added to the repository through a "commit" command.
+CVS uses another program, Revision Control System (RCS), to do the actual revision management - that is, keeping the record of changes that go with each source code file. The writers of the most popular CVS Frequently Asked Questions document are careful to emphasize that CVS is not a build system, a code configuration management system, or a substitute for other good development practices, but simply a way to control the versions of the pieces of a program as they are developed.
+-
+-
+-
 
 
 

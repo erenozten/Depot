@@ -12145,6 +12145,41 @@ class AccountCreator{
 -
 -
 -
+Jira 	(GITHUB)  (test)
+jira nedir
+Jira Software is part of a family of products designed to help teams of all types manage work. 
+Originally, Jira was designed as a bug and issue tracker. 
+But today, Jira has evolved into a powerful work management tool for all kinds of use cases, from requirements and test case management to agile software development. In this guide, you'll learn which features and functionalities of Jira can help your team with your unique needs. 
+Jira for requirements & test case management
+An increasing number of teams today are developing more iteratively, and Jira Software is the central hub for the coding, collaboration, and release stages. For test management, Jira integrates with a variety of add-ons so the QA’s testing slides seamlessly into the software development cycle.  Teams can test effectively and iteratively.  QA teams Use Jira issues, customized screens, fields, and workflows to manage manual and automated tests.
+
+Jira for task management
+Create tasks for yourself and members of your team to work on, complete with its details, due dates, and reminders. Utilize subtasks to breakdown larger items of work. Allow others to watch the task to track its progress and be notified when it’s completed. Create sub-tasks within the parent task to break down the unit of work into digestible pieces for various members of the team. View all tasks on the board to easily visualize each’s status.
+
+  Email notifications	  Custom fields
+  Issue hierarchy	  Task linking / relationships
+  Subtasks	  Project linking
+  Task change log / history	 
+-
+Jira for software development teams
+Jira Software Cloud provides planning and roadmap tools so teams can manage stakeholders, budgets, and feature requirements from day one. Jira integrates with a variety of CI/CD tools to facilitate transparency throughout the software development life cycle. When it’s ready to deploy, live production code status information is surfaced in the Jira issue. Integrated feature flagging tools allow teams to roll out new features gradually and safely.
+
+  Release planning	  Project Backlog
+  Sprint planning	  Jira Service Desk integration
+  CI/CD integrations	  Feature flagging
+  Issue management	  Developer tool integrations
+-
+Jira for agile teams
+For teams who practice agile methodologies, Jira Software provides scrum and kanban boards out-of-the box. Boards are a task management hubs, where tasks are mapped to customizable workflows. Boards provide transparency across team work and visibility into the status of every work item. Time tracking capabilities, and real-time performance reports (burn-up/down charts, sprint reports, velocity charts) enable teams to closely monitor their productivity over time. Find your agile boards in Jira Software Cloud classic projects. 
+
+  Issue tracking	  Kanban boards
+  Customizable workflows	  Project- level permissions
+  Estimation & work logging	  Project backlogs
+  Progress reports	  Email notifications
+  Scrum boards	 
+-
+-
+-
 
 
 

@@ -12484,6 +12484,71 @@ Intel iPSC is an example of medium-grained parallel computer which has a grain s
 Example
 Consider a 10*10 image that needs to be processed, given that, processing of the 100 pixels is independent of each other.
 
+Fine-grained parallelism: Assume there are 100 processors that are responsible for processing the 10*10 image. Ignoring the communication overhead, the 100 processors can process the 10*10 image in 1 clock cycle. Each processor is working on 1 pixel of the image and then communicates the output to other processors. This is an example of fine-grained parallelism.
+Medium-grained parallelism: Consider that there are 25 processors processing the 10*10 image. The processing of the image will now take 4 clock cycles. This is an example of medium-grained parallelism.
+Coarse-grained parallelism: Further, if we reduce the processors to 2, then the processing will take 50 clock cycles. Each processor need to process 50 elements which increases the computation time, but the communication overhead decreases as the number of processors which share data decreases. This case illustrates coarse-grained parallelism.
+Fine-grain : Pseudocode for 100 processors	Medium-grain : Pseudocode for 25 processors	Coarse-grain : Pseudocode for 2 processors
+void main()
+{
+  switch (Processor_ID)
+  {
+    case 1: Compute element 1; break;
+    case 2: Compute element 2; break;
+    case 3: Compute element 3; break;
+    .
+    .
+    .
+    .
+    case 100: Compute element 100; 
+              break;
+  }
+}
+	void main()
+{
+  switch (Processor_ID)
+  {
+    case 1: Compute elements 1-4; break;
+    case 2: Compute elements 5-8; break;
+    case 3: Compute elements 9-12; break;
+    .
+    .
+    case 25: Compute elements 97-100; 
+             break;
+  }
+}
+	void main()
+{
+  switch (Processor_ID)
+  {
+    case 1: Compute elements 1-50; 
+            break;
+    case 2: Compute elements 51-100; 
+            break;
+  }
+}
+
+Computation time - 1 clock cycle	Computation time - 4 clock cycles	Computation time - 50 clock cycles
+Levels of parallelism
+Granularity is closely tied to the level of processing. A program can be broken down into 4 levels of parallelism -
+Instruction level.
+Loop level
+Sub-routine level and
+Program-level
+The highest amount of parallelism is achieved at instruction level, followed by loop-level parallelism. At instruction and loop level, fine-grained parallelism is achieved. Typical grain size at instruction-level is 20 instructions, while the grain-size at loop-level is 500 instructions.[1]
+At the sub-routine (or procedure) level the grain size is typically a few thousand instructions. Medium-grained parallelism is achieved at sub-routine level.[1]
+At program-level, parallel execution of programs takes place. Granularity can be in the range of tens of thousands of instructions.[1] Coarse-grained parallelism is used at this level.
+The below table shows the relationship between levels of parallelism, grain size and degree of parallelism
+Levels	Grain Size	Parallelism
+Instruction level	Fine	Highest
+Loop level	Fine	Moderate
+Sub-routine level	Medium	Moderate
+Program level	Coarse	Least
+Impact of granularity on performance
+Granularity affects the performance of parallel computers. Using fine grains or small tasks results in more parallelism and hence increases the speedup. However, synchronization overhead, scheduling strategies etc. can negatively impact the performance of fine-grained tasks. Increasing parallelism alone cannot give the best performance.[5]
+In order to reduce the communication overhead, granularity can be increased. Coarse grained tasks have less communication overhead but they often cause load imbalance. Hence optimal performance is achieved between the two extremes of fine-grained and coarse-grained parallelism.[6]
+Various studies[5][7][8] have proposed their solution to help determine the best granularity to aid parallel processing. Finding the best grain size, depends on a number of factors and varies greatly from problem-to-problem.
+-
+-
 
 
 

@@ -12333,6 +12333,28 @@ Parallel computing is a type of computation where many calculations or the execu
 Parallel computing is closely related to concurrent computing—they are frequently used together, and often conflated, though the two are distinct: it is possible to have parallelism without concurrency (such as bit-level parallelism), and concurrency without parallelism (such as multitasking by time-sharing on a single-core CPU).[5][6] In parallel computing, a computational task is typically broken down into several, often many, very similar sub-tasks that can be processed independently and whose results are combined afterwards, upon completion. In contrast, in concurrent computing, the various processes often do not address related tasks; when they do, as is typical in distributed computing, the separate tasks may have a varied nature and often require some inter-process communication during execution.
 Parallel computers can be roughly classified according to the level at which the hardware supports parallelism, with multi-core and multi-processor computers having multiple processing elements within a single machine, while clusters, MPPs, and grids use multiple computers to work on the same task. Specialized parallel computer architectures are sometimes used alongside traditional processors, for accelerating specific tasks.
 
+In some cases parallelism is transparent to the programmer, such as in bit-level or instruction-level parallelism, but explicitly parallel algorithms, particularly those that use concurrency, are more difficult to write than sequential ones,[7] because concurrency introduces several new classes of potential software bugs, of which race conditions are the most common. Communication and synchronization between the different subtasks are typically some of the greatest obstacles to getting optimal parallel program performance.
+A theoretical upper bound on the speed-up of a single program as a result of parallelization is given by Amdahl's law.
+-
+Paralel hesaplama, ya da Koşut hesaplama, aynı görevin (parçalara bölünmüş ve uyarlanmış), sonuçları daha hızlı elde etmek için çoklu işlemcilerde eş zamanlı olarak işletilmesidir. Bu fikir, problemlerin çözümünün ufak görev parçalarına bölünmesi ve bunların eş zamanlı olarak koordine edilmesine dayanır. Paralel hesaplama ile performans artar, büyük sorunlar daha az sürede çözülür ve bilimdeki gelişmeler paralel hesaplamaya gereksinim duyar.[1]
+
+İki sayının toplanması
+Seri (1 işlemci)
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+3 + 3 + 4 + 5 + 6 + 7 + 8
+6 + 4 + 5 + 6 + 7 + 8
+10 + 5 + 6 + 7 + 8
+15 + 6 + 7 + 8
+21 + 7 + 8
+28 + 8
+36
+Paralel (2 işlemci)
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+3 + 3 + 4 + 5 + 6 + 15
+6 + 4 + 5 + 21
+10 + 26
+36
+1,75 kat hızlanma sağlanır. Daha fazla işlem olursa hızlanma 2 kata kadar çıkar.[1]
 
 
 

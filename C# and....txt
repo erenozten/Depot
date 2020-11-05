@@ -12443,6 +12443,16 @@ SMP systems allow any processor to work on any task no matter where the data for
 -
 -
 -
+Parallel Operating Systems	 (GITHUB)  (test)
+Parallel Operating Systems nedir
+Parallel operating systems are the interface between parallel computers (or computer systems) and the applications (parallel or not) that are executed on them. They translate the hardware’s capabilities into concepts usable by programming languages.
+Great diversity marked the beginning of parallel architectures and their operating systems. This diversity has since been reduced to a small set of dominating configurations: symmetric multiprocessors running commodity applications and operating systems (UNIX and Windows NT) and multicomputers running custom kernels and parallel applications. Additionally, there is some (mostly experimental) work done towards the exploitation of the shared memory paradigm on top of networks of workstations or personal computers.
+In this chapter, we discuss the operating system components that are essential to support parallel systems and the central concepts surrounding their operation: scheduling, synchronization, multi-threading, inter-process communication, memory management and fault tolerance.
+Currently, SMP computers are the most widely used multiprocessors. Users find it a very interesting model to have a computer, which, although it derives its processing power from a set of processors, does not require any changes to applications and only minor changes to the operating system. Furthermore, the most popular parallel programming languages have been ported to SMP architectures enabling also the execution of demanding parallel applications on these machines.
+However, users who want to exploit parallel processing to the fullest use those same parallel programming languages on top of NORMA computers. These multicomputers with fast interconnects are the ideal hardware support for message passing parallel applications. The surviving commercial models with NORMA architectures are very expensive machines, which one will find running calculus intensive applications, such as weather forecasting or fluid dynamics modelling.
+We also discuss some of the experiments that have been made both in hardware (DASH, Alewife) and in software systems (TreadMarks, Shasta) to deal with the scalability issues of maintaining consistency in shared-memory systems and to prove their applicability on a large-scale.
+-
+-
 
 
 

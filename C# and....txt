@@ -12383,6 +12383,27 @@ Paralel bilgisayarlarda programlama için işletim sistemi seviyesinde ve progra
 Yük dengeleme, ağır yük ile çalışan işlemciden bazı görevleri daha hafif yük ile çalışan işlemcilere taşıyarak hepsinin aynı meşguliyette olmasını sağlar.
 Bazı insanlar paralel programlamayı, eş zamanlı (concurrent) programlama ile eş anlamlı kabul ederler. Bazıları da kesin bir çizgiyle ayrırırlar. Paralel programlama, işlemler arasında iyi tanımlanmış iletişim yapıları kullanan ve verimi artırmaya yönelik işlemlerinin paralel işlenmesini sağlayan bir yapıdır. Eş zamanlı (concurrent) programlama, performanstan ziyade başka nedenlerden dolayı eş zamanlı işlemler arasında yeni iletişim tekniklerine dayanan bir yapıdadır. İşlemler arası iletişim genelde paylaşımlı hafıza veya mesaj geçirme tekniği ile yapılır.
 
+İyi bilinen paralel yazılım problem kümeleri
+Cansıkıcı (Embarrassingly) paralel: Bir birinden bağımsız alt görevler içeren, kolay uygulanabilen problemlerdir. Daha çok dağıtık hesaplama için uygundurlar. Mesela büyük bir grafiğin render edilmesi veya seti@home gibi projeler buna örnek verilebilir.
+Büyük uğraştırıcı (grand challenge) problemler: Genelde çözülmesi çok zor olan problemlerdir. Ör: uygulamalı akışkanlar dinamiği, ekosistem simülasyonları, biyomedikal görüntüleme ve biyomekanik, moleküler biyoloji , kavrama, nükleer güç ve silah simulasyonları vs.
+Paralel programlama modelleri
+Bir paralel programlama modeli, paralel algoritmaları açıklayan bir yazılım teknolojileri kümesidir. Bu model, uygulamalar, diller, derleyiciler, kütüphaneler, iletişim sistemleri ve paralel giriş/çıkış alanlarını kapsar. Programcılar, kendileri ve uygulamaları için uygun bir model veya karma bir model seçip, uygulamalarını geliştirirler.
+Paralel modeller çok farklı şekillerde uyarlanırlar: klasik sıralı dillerden çağrılan kütüphaneler şeklinde, dil uzantıları şeklinde ya da tamamen yeni işleme modelleriyle. Bu modeller kabaca ikiye ayrılırlar: paylaşımlı hafıza sistemleri ve dağıtık hafıza sistemleri. Günümüzde bu iki sistem arasındaki çizgi oldukça bulanıklaşmıştır.
+
+Sık kullanılan paralel programlama modelleri
+Sık kullanılan paralel programlama modelleri şöyledir: PVM, MPI, OpenMP, Global Arrays, Co-Array Fortran, UPC, HPF, SHMEM, Occam, Linda, Cilk.
+-
+What is Parallel Computing?
+Parallel computing is a programming method that harnesses the power of multiple processors at once. Once of concern only to programmers of large supercomputers, modern computers now almost always have multi-core processors.
+Typical programming assumes that computers execute one operation at a time in the sequence specified by your program code. At any time step, the computer’s Central Processing Unit (CPU) core will be working on one particular operation from the sequence. We will call this traditional style of computing sequential.
+In contrast, with parallel computing we will now be dealing with multiple CPU cores that each are independently working on a sequence of instructions. This can allow us to do much more at once, and therefore get results more quickly than if only running an equivalent sequential program. The act of changing sequential code to parallel code is called parallelization.
+Even when coming to the world’s largest supercomputer, running existing sequential code will not show a big difference in performance. Today’s fast computers are defined by the number of CPU cores, not by individual CPU core speed. When you run code on a larger server then you need to ensure that you are effectively using the multiple cores that are available.
+Why use Parallel Computing?
+Parallel computing, even on a smaller scale, has become more popular over the last decade. Before this time, the speed of CPUs was continually increasing. The solution to a computer running too slowly was often to purchase a newer, faster computer.
+This continual increase in computer performance is often termed Moore’s Law. Moore was a cofounder of Intel and starting in the 1960s he predicted that the performance of computer processors would double every 18 months. This was indeed true for many decades.
+The increasing capability in computer processors drove ever faster processors. However, faster processors are no longer feasible since manufacturers have come up against the physical limitations of CPU manufacturing. Instead, chip manufacturers have refocused on multi-core chips. Instead of trying to create faster processor cores, they are making more cores in one physical processor chip. The laptop or desktop you are working on now probably has around 4 cores in it. The servers we use in Carleton’s Research and Development Cloud can have up to 32 cores. And even more cores exist elsewhere on clusters, where programs are written that span multiple computers across a local network.
+-
+-
 
 
 

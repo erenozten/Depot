@@ -12458,6 +12458,31 @@ Primality Test nedir, primality nedir
 A primality test is an algorithm for determining whether an input number is prime. Among other fields of mathematics, it is used for cryptography. Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality testing is comparatively easy (its running time is polynomial in the size of the input). Some primality tests prove that a number is prime, while others like Miller–Rabin prove that a number is composite. Therefore, the latter might more accurately be called compositeness tests instead of primality tests.
 -
 -
+Granularity / Grain Size (test)  (test)
+Granularity nedir
+In parallel computing, granularity (or grain size) of a task is a measure of the amount of work (or computation) which is performed by that task.[1]
+Another definition of granularity takes into account the communication overhead between multiple processors or processing elements. It defines granularity as the ratio of computation time to communication time, wherein, computation time is the time required to perform the computation of a task and communication time is the time required to exchange data between processors.[2]
+Granularity = Computation time / Communication time
+ 
+Granularity is usually measured in terms of the number of instructions executed in a particular task.[1] Alternately, granularity can also be specified in terms of the execution time of a program, combining the computation time and communication time. 
+Types of parallelism
+Depending on the amount of work which is performed by a parallel task, parallelism can be classified into three categories: fine-grained, medium-grained and coarse-grained parallelism.
+Fine-grained parallelism
+In fine-grained parallelism, a program is broken down to a large number of small tasks. These tasks are assigned individually to many processors. The amount of work associated with a parallel task is low and the work is evenly distributed among the processors. Hence, fine-grained parallelism facilitates load balancing. 
+As each task processes less data, the number of processors required to perform the complete processing is high. This in turn, increases the communication and synchronization overhead.
+Fine-grained parallelism is best exploited in architectures which support fast communication. Shared memory architecture which has a low communication overhead is most suitable for fine-grained parallelism.
+It is difficult for programmers to detect parallelism in a program, therefore, it is usually the compilers' responsibility to detect fine-grained parallelism.[1]
+An example of a fine-grained system (from outside the parallel computing domain) is the system of neurons in our brain.[4]
+Connection Machine (CM-2) and J-Machine are examples of fine-grain parallel computers that have grain size in the range of 4-5 μs.[1]
+Coarse-grained parallelism
+In coarse-grained parallelism, a program is split into large tasks. Due to this, a large amount of computation takes place in processors. This might result in load imbalance, wherein certain tasks process the bulk of the data while others might be idle. Further, coarse-grained parallelism fails to exploit the parallelism in the program as most of the computation is performed sequentially on a processor. The advantage of this type of parallelism is low communication and synchronization overhead.
+Message-passing architecture takes a long time to communicate data among processes which makes it suitable for coarse-grained parallelism.[1]
+Cray Y-MP is an example of coarse-grained parallel computer which has a grain size of about 20s.[1]
+Medium-grained parallelism
+Medium-grained parallelism is used relatively to fine-grained and coarse-grained parallelism. Medium-grained parallelism is a compromise between fine-grained and coarse-grained parallelism, where we have task size and communication time greater than fine-grained parallelism and lower than coarse-grained parallelism. Most general-purpose parallel computers fall in this category.[4]
+Intel iPSC is an example of medium-grained parallel computer which has a grain size of about 10ms.[1]
+Example
+Consider a 10*10 image that needs to be processed, given that, processing of the 100 pixels is independent of each other.
 
 
 

@@ -12289,6 +12289,23 @@ En önemli avantajı JavaScript'in sağladığı bloklamayan G/Ç (İng. non-blo
 Node.js, Google V8 JavaScript motorunu kullanarak betik dilini yorumlar ve içerisinde standart olarak dağıtılan kütüphaneler sayesinde ek bir sunucu yazılımına (Apache HTTP Sunucusu, Nginx, IIS v.s.) gerek kalmadan uygulamanın Web sunucusu görevini görür.
 -
 -
+Advantages of stateless programming	(GITHUB)  (test)
+stateless nedir, stateles programming nedir
+There are lots of advantages to stateless programming, not least of which is dramatically multithreaded and concurrent code. To put it bluntly, mutable state is enemy of multithreaded code. If values are immutable by default, programmers don't need to worry about one thread mutating the value of shared state between two threads, so it eliminates a whole class of multithreading bugs related to race conditions. Since there are no race conditions, there's no reason to use locks either, so immutability eliminates another whole class of bugs related to deadlocks as well.
+That's the big reason why functional programming matters, and probably the best one for jumping on the functional programming train. There are also lots of other benefits, including simplified debugging (i.e. functions are pure and do not mutate state in other parts of an application), more terse and expressive code, less boilerplate code compared to languages which are heavily dependent on design patterns, and the compiler can more aggressively optimize your code.
+-
+The more pieces of your program are stateless, the more ways there are to put pieces together without having anything break. The power of the stateless paradigm lies not in statelessness (or purity) per se, but the ability it gives you to write powerful, reusable functions and combine them.
+You can find a good tutorial with lots of examples in John Hughes's paper Why Functional Programming Matters (PDF).
+You will be gobs more productive, especially if you pick a functional language that also has algebraic data types and pattern matching (Caml, SML, Haskell).
+-
+Without state, it is very easy to automatically parallelize your code (as CPUs are made with more and more cores this is very important).
+-
+Consider all the difficult bugs you've spent a long time debugging.
+Now, how many of those bugs were due to "unintended interactions" between two separate components of a program? (Nearly all threading bugs have this form: races involving writing shared data, deadlocks, ... Additionally, it is common to find libraries that have some unexpected effect on global state, or read/write the registry/environment, etc.) I would posit that at least 1 in 3 'hard bugs' fall into this category.
+Now if you switch to stateless/immutable/pure programming, all those bugs go away. You are presented with some new challenges instead (e.g. when you do want different modules to interact with the environment), but in a language like Haskell, those interactions get explicitly reified into the type system, which means you can just look at the type of a function and reason about the type of interactions it can have with the rest of the program.
+That's the big win from 'immutability' IMO. In an ideal world, we'd all design terrific APIs and even when things were mutable, effects would be local and well-documented and 'unexpected' interactions would be kept to a minimum. In the real world, there are lots of APIs that interact with global state in myriad ways, and these are the source of the most pernicious bugs. Aspiring to statelessness is aspiring to be rid of unintended/implicit/behind-the-scenes interactions among components.
+-
+-
 
 
 

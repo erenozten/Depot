@@ -12453,6 +12453,11 @@ However, users who want to exploit parallel processing to the fullest use those 
 We also discuss some of the experiments that have been made both in hardware (DASH, Alewife) and in software systems (TreadMarks, Shasta) to deal with the scalability issues of maintaining consistency in shared-memory systems and to prove their applicability on a large-scale.
 -
 -
+Primality Test   (GITHUB)  (test)
+Primality Test nedir, primality nedir
+A primality test is an algorithm for determining whether an input number is prime. Among other fields of mathematics, it is used for cryptography. Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality testing is comparatively easy (its running time is polynomial in the size of the input). Some primality tests prove that a number is prime, while others like Miller–Rabin prove that a number is composite. Therefore, the latter might more accurately be called compositeness tests instead of primality tests.
+-
+-
 
 
 

@@ -12871,6 +12871,44 @@ It’s not necessary to follow the “don’t ask” part of this principle to t
 -
 -
 -
+Unit Testing	 (GITHUB)  (test)
+Unit testing nedir
+UNIT TESTING is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object.
+In SDLC, STLC, V Model, Unit testing is first level of testing done before integration testing. 
+Unit testing is a WhiteBox testing technique that is usually performed by the developer. Though, in a practical world due to time crunch or reluctance of developers to tests, QA engineers also do unit testing.
+Why Unit Testing?
+Unit Testing is important because software developers sometimes try saving time doing minimal unit testing and this is myth because inappropriate unit testing leads to high cost Defect fixing during System Testing, Integration Testing and even Beta Testing after application is built. If proper unit testing is done in early development, then it saves time and money in the end.
+Here, are the key reasons to perform unit testing:
+ 
+Unit Testing Levels
+1.	Unit tests help to fix bugs early in the development cycle and save costs.
+2.	It helps the developers to understand the code base and enables them to make changes quickly
+3.	Good unit tests serve as project documentation
+4.	Unit tests help with code re-use. Migrate both your code and your tests to your new project. Tweak the code until the tests run again.
+How to do Unit Testing
+In order to do Unit Testing, developers write a section of code to test a specific function in software application. Developers can also isolate this function to test more rigorously which reveals unnecessary dependencies between function being tested and other units so the dependencies can be eliminated. Developers generally use UnitTest framework to develop automated test cases for unit testing.
+
+Unit Testing is of two types:
+Manual
+Automated
+Unit testing is commonly automated but may still be performed manually. Software Engineering does not favor one over the other but automation is preferred. A manual approach to unit testing may employ a step-by-step instructional document.
+
+Under the automated approach-
+A developer writes a section of code in the application just to test the function. They would later comment out and finally remove the test code when the application is deployed.
+A developer could also isolate the function to test it more rigorously. This is a more thorough unit testing practice that involves copy and paste of code to its own testing environment than its natural environment. Isolating the code helps in revealing unnecessary dependencies between the code being tested and other units or data spaces in the product. These dependencies can then be eliminated.
+A coder generally uses a UnitTest Framework to develop automated test cases. Using an automation framework, the developer codes criteria into the test to verify the correctness of the code. During execution of the test cases, the framework logs failing test cases. Many frameworks will also automatically flag and report, in summary, these failed test cases. Depending on the severity of a failure, the framework may halt subsequent testing.
+The workflow of Unit Testing is 1) Create Test Cases 2) Review/Rework 3) Baseline 4) Execute Test Cases.
+Unit Testing Techniques
+The Unit Testing Techniques are mainly categorized into three parts which are Black box testing that involves testing of user interface along with input and output, White box testing that involves testing the functional behaviour of the software application and Gray box testing that is used to execute test suites, test methods, test cases and performing risk analysis.
+
+Code coverage techniques used in Unit Testing are listed below:
+Statement Coverage
+Decision Coverage
+Branch Coverage
+Condition Coverage
+Finite State Machine Coverage
+For more in refer https://www.guru99.com/code-coverage.html
+
 
 
 

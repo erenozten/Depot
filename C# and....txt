@@ -12306,6 +12306,14 @@ Now if you switch to stateless/immutable/pure programming, all those bugs go awa
 That's the big win from 'immutability' IMO. In an ideal world, we'd all design terrific APIs and even when things were mutable, effects would be local and well-documented and 'unexpected' interactions would be kept to a minimum. In the real world, there are lots of APIs that interact with global state in myriad ways, and these are the source of the most pernicious bugs. Aspiring to statelessness is aspiring to be rid of unintended/implicit/behind-the-scenes interactions among components.
 -
 -
+Concurrent Computing	 (GITHUB)  (test)
+Concurrent Computing nedir
+In concurrent computing, multiple calculations are made within overlapping time frames. It takes advantage of the concept that multiple threads or processes can make progress on a task without waiting for others to complete. This general approach to writing and executing computer programs is called concurrency.
+Concurrent computing is different than synchronous (sequential) computing, where calculations are made one after the other, with each waiting for the previous to complete. It's not the same as parallel computing, where calculations are made simultaneously on separate processors.
+The three main types of concurrent computing are threading, asynchrony, and preemptive multitasking. Each method has its own special precautions which must be taken to prevent race conditions, where multiple threads or processes access the same shared data in memory in improper order.
+-
+-
+-
 
 
 

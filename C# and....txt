@@ -12600,6 +12600,103 @@ Hacking
 In penetration testing, white-box testing refers to a method where a white hat hacker has full knowledge of the system being attacked. The goal of a white-box penetration test is to simulate a malicious insider who has knowledge of and possibly basic credentials for the target system.
 -
 -
+Tell Don’t Ask	(GITHUB)  (test)
+Tell Don’t Ask nedir, tell, don’t ask nedir
+There is a great principle in object-oriented programming which says: "Tell, Don't Ask".
+This principle tells that we should not ask object about their state, make decision and only then tell them what to do. Rather we should send commands.
+There is a good quote about that:
+Procedural code gets information then makes decisions. Object-oriented code tells objects to do things.
+-- Alec Sharp
+There are couple good examples in this article. Let's check the first one:
+<% if current_user.admin? %>
+  <%= current_user.admin_welcome_message %>
+<% else %>
+  <%= current_user.user_welcome_message %>
+<% end %>
+This code is bad. We ask current_user if he is an admin and according to answer decide which method to call.
+Another bad thing that logic which decides which message to send lives outside of current_user object. So if we want to show that message in couple places - we will have to repeat if..else statement in each place. Or if we need to change that logic at some moment - we will have to do that in couple places as well. That breaks Don't Repeat Yourself (DRY) rule.
+If we apply "Tell, Don't Ask" principle, that code would look like this:
+<%= current_user.welcome_message %>
+Logic which checks if user is an admin should live in welcome_message method.
+Let's check another example:
+class Wallet
+
+  attr_accessor :balance
+
+  def initialize(balance)
+    @balance = balance
+  end
+
+end
+
+class PaymentService
+
+  attr_reader :wallet
+
+  def initialize(wallet)
+    @wallet = wallet
+  end
+
+  def debit(amount)
+    if wallet.balance < amount
+      raise "Not enough funds"
+    else
+      wallet.balance -= amount
+    end
+  end
+
+  def credit(amount)
+    wallet.balance += amount
+  end
+end
+In this example class Wallet just stores balance variable. PaymentService class contains logic which asking wallet for a balance:
+  def debit(amount)
+    if wallet.balance < amount
+      raise "Not enough funds"
+    else
+      wallet.balance -= amount
+    end
+  end
+That's not good because that logic belongs to wallet. And again, if you decide to debit money in other part of your app you will have to check balance again and again.
+Let's rewrite that code following "Tell, Don't ask principle":
+class Wallet
+
+  attr_accessor :balance
+
+  def initialize(balance)
+    @balance = balance
+  end
+
+  def debit(amount)
+    raise "Not enogh funds" if balance < amount
+    self.balance -= amount
+  end
+
+  def credit(amount)
+    self.balance += amount
+  end
+
+end
+
+class PaymentService
+
+  attr_reader :wallet
+
+  def initialize(wallet)
+    @wallet = wallet
+  end
+
+  def debit(amount)
+    wallet.debit(amount)
+  end
+
+  def credit(amount)
+    wallet.credit(amount)
+  end
+end
+Now code looks much better. Class Wallet contains all required logic and PaymentService just sends command to wallet: debit!
+If we get new requirements for wallet behaviour - we know exactly where that logic lives - it's a Wallet class.
+Follow "Tell Don't Ask" principle. Send commands to objects and you will get clean code which is easy to maintain and flexible enough to add new features.
 
 
 

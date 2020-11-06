@@ -13321,6 +13321,48 @@ We highly encourage you to think about switching over to HTTPS. The TLS negotiat
 -
 -
 -
+Domain-driven Design / DDD 	(GITHUB)  (test)
+ Domain-driven design nedir, domain driven design nedir
+
+DDD’ın temel amacı; hızlı değişen gereksinimlere hızlı adaptasyon sağlayan, kolay ölçeklenebilir, esnek ve highly available yazılımlar üretmektir. DDD’da uygulamanın içerisinde yer alan business kurallar, mantıksal olarak domain’lere dağıtılır. Sorumluluk olarak birbiri ile en alakalı birimler aynı domain üzerinde tutulurken, diğer birimler ise farklı domain’lere taşınır. Bu yaklaşımın dayandığı temel prensipler vardır. Temel diyorum çünkü tümü değil.
+DDD, herkes tarafından anlaşılması kolay modeller oluşturmayı hedeflemektedir. Bu modelleri domain expert’leri ve developer için görünür kılmak ve somutlaştırmak adına herkesin anlayabileceği bir gösterim yöntemi seçilmelidir. Örnek olarak UML veya pseudo code bile olabilir.
+Ubiquitous Language
+Martin Fowler bu kavramı, yazılım ekibi ile domain expert’leri arasında ortak ve açık bir dilin kurulması olarak açıklamaktadır. Ortak dilin açık olması sayesinde gereksinimler üzerindeki belirsizlikler giderilmiş olacaktır.
+Eric Evans’a göre ortak bir dil belirlemek test süreçlerini kolaylaştıracağı gibi gereksinimlerin değişmesi durumunda yazılım takımının bu değişiklikleri kolay anlayabilmesini sağlayacaktır.
+Domain expertleri, domainin anlaşmasını zorlaştıracak kullanışsız veya yetersiz olan terimlere veya yapılara itiraz etmelidir. Developerlar tasarımı zor duruma düşürebilecek belirsizlikleri veya tutarsızlıkları kabul etmemelidirler. Ortak dil oluştururken aşağıdaki maddelere dikkat edilmelidir:
+
+ 
+Possible bounded contexts for an online store
+TL;DR;
+Domain-driven design [DDD] is the practice of architecting your project according to the domains it touches, following some rules discussed in the book where Eric Evans first described it.
+Most likely nobody but Evans understands DDD, due to its complexity, so I wouldn’t recommend it to simple apps.
+I know that I don’t do it 100% but the little I understand helps me already to break complex apps into small simpler parts. Of course, I’ll focus on what I know here.
+
+DDD 
+The bigger the project, the harder it is to maintain it. A way to help with that is breaking the app into smaller areas according to their business rules, known as domains.
+Basically, a domain is an area of knowledge, either public, like the rules of chess, or private, like the business rules of a nonprofit organization [NPO].
+A complex domain is likely to use knowledge from other domains. For instance, an NPO which teaches chess online will know about chess, teaching through online platforms, and, even though you are not charged as a student, about its finances.
+Each subdomain of your domain is known in DDD as bounded contexts, each has its own model of the world built with specialized units of code, known as building blocks. Here I’ll focus on entities and value-objects, both can be referenced as objects.
+Entities are objects meant to be unique within the domain. This is achieved by using one or more proprieties to identify a given entity. For instance, two users using the same name in a system will always have different emails because emails cannot be repeated — more often than not, entities are differentiated by an id, and sometimes by a combination of proprieties.
+Value-objects, on the other hand, don't have an identity, so only their properties can be used to distinguish between two instances. Take for example two pawns (the chess token), they look the same if they come from the same game set and have the same color, so it doesn't matter if you swap them around. In DDD, value-objects are immutable so it is easier to reason with them.
+Data integrity
+A bounded context does not expose all of its objects to guarantee its data integrity. Instead, it exposes some aggregate roots as a kind of public interface to itself.
+An aggregate is nothing more than an entity that is composed of other objects. To be more precise, an aggregate is a cluster of associated objects that we treat as a unit when changing data.
+
+ 
+An aggregate and its root
+In practical terms, aggregates will assume the shape of the data structure known as a tree. And for that reason, all aggregates have a root.
+The only member of an aggregate that other objects can refer to is its root, and thus this is what we expose. This is done like this because it prevents other objects to tweak data in a way the aggregate cannot control.
+Important to make clear that a bounded context might use many aggregates even when their root are not directly exposed to the outside world.
+Dealing with multiple bounded contexts
+But things can get more complicated, right? Each bounded context gets a slightly different model of the same objects, having different proprieties and behaviors. So a user in a game context may have a property to handle its score which in a financial context is irrelevant and thus does not exist.
+And that’s not all. It is also possible that a domain concept, represented as an entity in a bounded context, to be represented as an object-value in another, or just to be completely omitted.
+For example, while the teaching context requires teachers to be represented as entities so they can be assigned to students by their ids, the finance context prefers to see "teacher" as a value for the position property of the employee entity.
+Some of other DDD building blocks are services, repositories, factories and events. I'll try to describe them briefly.
+Services are capabilities of a domain that don’t naturally fit entities nor object-values. Beware that they are domain services, not application or infrastructure services.
+Repositories are bridges to storage units — hello CRUD!.
+Factories are methods for creating domain objects so they never have invalid values. This part is what got me started on thinking about product-driven tests.
+Events are objects that represent something that happened in the domain — its experts care about them. Great opportunities for create an event-driven application .
 
 
 

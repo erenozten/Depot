@@ -13287,6 +13287,41 @@ The three main benefits were:
 2.	Allows multiple requests over a single connection and therefore saving on round trips between client and server. Further, preventing low priority assets from delaying higher priority requests.
 3.	Enables the server to proactively push assets to the client that it knows the client will require (e.g. CSS and images) without waiting for the client to request them.
 
+Check out the difference between HTTP/1.1 and SPDY 3.1. However, on February 11, 2016, Google announced that Chrome will no longer support SPDY in favor of HTTP/2.
+HTTP/2#
+HTTP/2 is the protocol update to HTTP/1.1 and is based on SPDY. It was developed by the IETF's HTTP Working Group, published in May 2015 and defined in RFC 7540. Because of browser support for HTTP/2, HTTPS is currently required to take advantage of it. Read about the difference between SPDY3.1 and HTTP/2.
+As of April 2016 7.3% of the top 10 million websites support HTTP/2.
+- W3Techs
+Here are some of the benefits of HTTP/2:
+•	HTTP/2 is binary, instead of textual.
+•	It is fully multiplexed, instead of ordered and blocking.
+•	Speed increase reduces additional round trip times (RTT), making your website load faster without any optimization.
+•	It can use one connection for parallelism.
+•	It uses HPACK compression with Huffman encoding to reduce headers.
+•	It allows servers to "push" responses proactively into client caches instead of waiting for a new request for each resource.
+•	The new ALPN extension allows faster-encrypted connections since the application protocol is determined during the initial connection.
+•	Domain sharding and asset concatenation is no longer needed with HTTP/2.
+•	Addresses the head of line blocking problem in HTTP/1.1.
+More and more bigger brands and sites are now making the move to HTTP/2, such as Wikipedia this week. You can use KeyCDN's HTTP/2 test tool to check if your current server or CDN provider support HTTP/2.
+As of this morning, https://t.co/Bv0erJiH66 supports HTTP/2. Tested by https://t.co/mykDE06rEv #http2 #webperf
+- Wikipedia (@Wikipedia) May 4, 2016
+KeyCDN has supported HTTP/2 across all of its edge servers for customers since October 2015.
+What is the difference between HTTP and HTTPS?#
+Below are some of the main differences between the HTTP and HTTPS protocols, in no particular order.
+1.	HTTP URL in your browser's address bar is http:// and the HTTPS URL is https://.
+2.	HTTP is unsecured while HTTPS is secured.
+3.	HTTP sends data over port 80 while HTTPS uses port 443.
+4.	HTTP operates at application layer, while HTTPS operates at transport layer.
+5.	No SSL certificates are required for HTTP, with HTTPS it is required that you have an SSL certificate and it is signed by a CA.
+6.	HTTP doesn't require domain validation, where as HTTPS requires at least domain validation and certain certificates even require legal document validation.
+7.	No encryption in HTTP, with HTTPS the data is encrypted before sending.
+Summary#
+We highly encourage you to think about switching over to HTTPS. The TLS negotiation and CPU overhead are now very negligible and in a lot of tests we have seen performance improvements when people make the switch from HTTP to HTTPS, as long as they are running over HTTP/2. Make sure to also check out our HTTP to HTTPS migration guide. And don't forget, you can deploy KeyCDN assets over HTTPS, even if you haven't had time to migrate your origin server yet.
+-
+-
+-
+-
+
 
 
 

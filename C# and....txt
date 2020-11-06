@@ -13060,6 +13060,22 @@ Domain: A sphere of knowledge, influence, or activity. The subject area to which
 -
 -
 -
+Business Intelligence	 (GITHUB)  (test)
+business intelligence nedir
+İş Zekası (Business Intelligence), ham veriyi işleyerek daha anlamlı ve kullanışlı hale getirmemizi sağlayan süreçlere, yöntemlere verilen isimdir. İş Zekası, büyük miktarda verileri işleyerek yeni projelerin belirlenmesine ve geliştirilmesine yardımcı olur. Çalışma alanlarımız genellikle işlenebilecek ham veri miktarının en çok olduğu alanlardır. Finans sektöründen, telekomünikasyona, perakende sektöründen, enerjiye, kamu sektöründen sağlığa ve diğer bütün sektörlerde İş Zekası uygulamalarının kullanıldığını görmekteyiz.
+
+İş Zekasının bileşenleri
+Tamam, iş zekası nedir tanım olarak öğrendik, peki iş zekasının kapsamı nedir? İş Zekasının temel bileşenleri raporlama, çok boyutlu analiz süreçleri, mantıksal çözümlemeler, veri madenciliği, süreç madenciliği(süreç yönetim teknikleri), karmaşık olay analizi, iş performans yönetimi, bir iş sürecini diğer performans ölçümleriyle ya da bu iş sürecinin en iyileri ile kıyaslama, tahmine ve kurala dayalı mantıksal çözümlerdir. İş Zekası uygulamaları ihtiyaçları belirler, analizleri yürütür, İş Zekası teknik çözümlerini ve mimari tasarımını yapar ve gerçekleştirir, merkezi veya dağıtık veri ambarını tasarlar, veri ambarında bulunan verileri yönetir, veriler üzerinde analizler yapılmasını ve ihtiyaç duyulan raporların alınmasını sağlar.  Finansal başarıyı sağlayan müşteri, üretim ve insan kaynakları kriterlerini belirleyerek finansal sonuçlar gibi ardıl ölçütlerin yanı sıra bu tür öncül ölçütleri de denetim altında tutabilir. Verilerinizi detaylı analiz ederek, stratejik ve taktiksel kararları doğru verebilmenizi sağlar. image3BI için çok sayıda uygulama firmaların etkileyici yatırım, geri dönüşüm değerleri elde etmelerine yardımcı oldu. İş Zekası maliyet düşürme yöntemleri belirleme, iş fırsatları ortaya çıkarma,  ERP verilerini erişilebilir raporlara dönüştürme, perakende taleplerine hızlı tepki verme ve fiyatları optimize etmede kullanıldı. Verileri erişebilir yapmanın yanı sıra BI yazılımı , tedarikçi ve müşterilerle olan ilişkinin değerini daha kolay bir biçimde ölçebilmelerini sağlayarak, firmalara anlaşmalar esnasında daha fazla güç verir.
+
+İş Zekasına neden ihtiyaç duyarız?
+İş Zekasının ortaya çıkmasındaki  nedenlerinden biri globalleşen rekabetin oranındaki artışlardır. Dünyanın bir ucundaki bir kurumda gerçekleşen ekonomik gelişme başka bir ülkenin ekonomisini altüst edebilmektedir. Tüm kurumlar böyle rekabet dolu bir ortamda çalışırken risk unsuru ortaya çıkar. Şirketler, gelişmelerin gerisinde kalmamak için çok daha hızlı ve doğru karar vermek zorunda kalır. Sonuç olarak, birim zamanda verilmesi gereken karar sayısındaki artışla birlikte iş Zekasına olan ihtiyaç da artmıştır. İş Zekası çözümlerinin en temel özelliği, işletmelere raporlama ve analiz alanında müthiş bir verimlilik kazandırması. İş Zekası çözümleri kullanıldığında raporlamalar gerçek zamanlı verilerle, anlık olarak hazırlanıyor. Böylece analizlerde de çok daha sağlıklı sonuçlar ortaya çıkıyor. İş Zekası uygulamaları daha çok kurumların raporlama araçlarının yetersiz kaldığı durumlarda ortaya çıkar. Uygulama geliştrililirken raporlama araçları da eklenir,zaman ilerledikçe veri artar ve farklı kaynaklardan veriler alınmaya başlanır. imagesBu durumda raporlar yetersiz kalır ve iş Zekası çözümlerine ihtiyaç olur.Diğer yandan farklı uygulama ve veri tabanlarından veri alan kurum sistemlerinde veriyi ilişkilendirerek anlamlandırma noktasında iş Zekası çözüm getirir.Raporlama süreçlerinde karar destek mekanizmaları,veri madenciliği, veri ambarı araçları da kullanılmaktadır. İş Zekası, acil durumlarda çok önemli olan ve çabuk karar vermeyi gerektiren iş süreçlerinde görünürlük ve beceriyi artırarak karmaşık raporların hızlı ve kısa sürelerde hazırlanmasını sağlar.
+
+İş Zekası’nın geleceği
+Vefaceri büyüklüğü gün geçtikçe artıyor. (Amazon’un iki büyük veritabanında toplam olarak 42 terabyte’lık veri var, YouTube’a her gün 65 bin yeni video yükleniyor , 2011 yılında 2 milyar Internet, 4,6 milyar cep telefonu kullanıcısının olduğu bir ortamdan söz ediyoruz , 2012 yılında  olabilmek için şirketlerin ya bu beklentileri karşılaması ya da aşması gerekiyor. Şirketlerin eğilimler ve gelecekteki yeni gelişmeler karşısında işlerini kolaylaştıracak unsurlar arasında da iş Zekası sistemleri yer alıyor.
+-
+-
+-
+
 
 
 

@@ -13398,6 +13398,52 @@ Scenario: Uçak doluVerilen bilgilere göre SAW-123 uçuşu için uçakta 100 ko
 Strategic Design
 Strategic design, büyük modellerin ve bu modellerin içerisindeki bütün parçaların tasarlanmasına ve birbiri ile ilişkilerinin tanımlanmasına odaklanır. Bu sayede içerisinde ufak, kendi içerisinde yönetilmesi kolay modeller bulunan büyük bir tasarım elde etmiş oluruz. Bu ufak modeller alakalı olan context’ler içerisinde toplanır. Modellerin hangi context’ler içerisinde yer aldığı herkes tarafından kolayca anlaşılabilir olmalıdır.
 
+Bounded Context
+Bounded Context, DDD’ın strateji tasarım kısmına odaklanmış en merkezi prensiptir. Bütün modeller sınırları belli olan bağımsız context’ler içerisinde tanımlanmalıdır. Context’ler oluşturulurken, takımın nasıl organize edildiğine, Code Base’in yer aldığı projenin yapısına ve düzenine, context’in domain içerisinde kullanılacağı kısıma dikkat edilmelidir. Context’ler kendi içerisinde tutarlı ve bir bütün olmalıdır. Context’ler dışarı çıkartıldığında davranışı değiştirilmeye çalışılmamalıdır. Diğer context’ler farklı modeller ve kavramlar içerebilir, genel bir context yapısı olmak zorunda değildir. Her domain’in kendine özgü ortak bir dil lehçesi olabilir (DSL — Domain Specific Language).
+ 
+Context Mapping
+Context mapping, bounded context’lerin temas noktalarını ve aradaki haberleşmeyi açık bir şekilde map eden bir tasarım sürecidir. Mapping sürecinde uygulanabilecek bir çok kalıp vardır. Bunlardan bazılarını kısaca aşağıda özetleyelim.
+Shared Kernel
+Farklı takımlar tarafından paylaşılan domain’in alt kümelerini içeren bounded context’lerdir. Takımlar arasında iyi bir iletişim ve işbirliği olmalıdır. Shared Kernel kullanmadan iki kere düşünmek gerekir. Yeterince olgunlaşmamış ekipler için verimsiz olabilir.
+
+ 
+2. Customer/Supplier Development Teams
+Bir bounded context diğer bounded context’i beslerse veya bir hizmet sağlarsa alttaki bounded context üsttekine bağımlı hale gelir.Bu durumda üstteki bounded context supplier rolünü alırken alttaki ise customer rolünü almış olur. Bu kalıpta takımların kabul testlerini birlikte yapmaları gerekmektedir. Böylece birlikte çalışabilirlik (compatibility) açısından çıkacak hatalar minimize edilmiş olur.
+3. Conformist
+Alt bounded context’te çalışan ekibin, üst bounded context’te çalışan ekiple işbirliği yapma konusunda söz sahibi değilse veya fırsatı yoksa yukarıdaki bounded context’e uymak için çok az seçenek vardır. Alt bounded context’te dikte edilen arayüzlerin pek çok nedeni olabilir, ancak bu durum birlikte çalışabilirlik açısından yaşanabilecek bir çok problemi ortadan kaldırır. Bu durumda alt context’in kalitesi doğrudan üst context’in kalitesine bağlı hale gelir.
+ 
+4. Anti-corruption Layer
+Farklı sistemlerdeki bounded contexts’ler ile ilişki kurulmaya çalışıldığında modellerin uyumsuzluğundan kaynaklı bir takım sorunlar meydana gelebilir. Bu durumda iki bounded context’i birbirinden mümkün olduğu kadar soyutlamak ve her iki taraf için de conversion yapan bir katman oluşturmak en doğrusu olacaktır. Bu conversion sonucu her client kendi modeli ile çalışabilir durumda olacaktır. Anti-corruption layer kalıbı özellikle legacy sistemlerin bulunduğu yapılarda oldukça yararlı olacaktır.
+ 
+5. Seperate Ways
+Bu kalıpta context’ler arasındaki ilişki detaylı olarak incelenir. Eğer zorunluluktan doğan fonksiyonel bir ilişki bulunmuyorsa bu iki context ayrıştırılır. Bu sayede entegrasyon maliyetinden kazanım elde etmiş oluruz.
+ 
+Bu model, developerların (ve hatta yöneticilerinin) çok sınırlı bir alanda odaklı çözümler bulmasına olanak tanıdığı karmaşıklığı önemli derecede ortadan kaldırır.
+Modelling the Domain
+Strategic Design başlığı altında eforumuzu, bounded context’ler içerisinde anlaşılması kolay, kendini ifade edebilen modellerin oluşturulması için harcamamız gerektiğini ve implementasyonun ikinci planda bırakılması gerektiğini ifade etmiştik. Bunu başarabildiysek modelleri refactor etmek oldukça basit olacaktır.
+Domain modellemede kullanılan bir çok kalıp vardır. Aşağıda en çok kullanılan kalıpları bulabilirsiniz.
+Dealing with Structure
+Entities: Programlama dünyasından bildiğimiz entityler’dir. Her entity’nin bir identity’si vardır ve asla değişmez. Entity’lerin diğer propertyleri değişebilir.
+Value Objects: Yine programlana dünyasından bildiğimiz DTO’lardır. Value Object’ler’in identity’si yoktur. Sadece data transferinde kullanılan dummy objelerden ziyade içerisinde bazı business’lar bulundurabilir. Entity’leri bu tarz hesaplamalardan ve business logic’lerden arındırmak için kullanılırlar. Bu sayede entity’ler kendi yapması gereken işlere odaklanır. Ancak işin kötü yanı value object’ler içerisinde bir miktar functional programming yapılabilmektedir.
+Cardinality of Associations: Bir entity’nin diğer entity’ler ile doğrudan ilişkili olduğu duruma cardinality denir. Cardinality of Associations, bir tarafta var olan entitiy’nin diğer tarafta kaç adet entity ile etkileşim içerisinde olduğunu açıklar. Bu durum yapının karmaşıklığını arttırmaktadır. Domain içerisinde gerçekten böyle bir şeye ihtiyaç olup olmadığı sorgulanmalıdır.
+Services: Bazı durumlarda tek bir class içerisinde bütün entity ve DTO’lara ait logic’leri barındıramayabiliriz. Bu durum single reponsibility açısında da oldukça yanlış olacaktır. O nedenle birden fazla stateless sınıf içerisine bu logic’leri dağıtarak birbirinden soyutlarız. Bu yapılara servis adı verilir.
+Aggregates: Yeni modeller ekledikçe mevcut obje grafiğimiz daha büyük ve kompleks olacaktır. Bu büyük grafikler üzerinde teknik implementasyonlar yapmak, transaction’ları sınırlamak, eş zamanlı hale getirmek ve dağıtmak oldukça zorlaşacaktır. Aggregate’ler kendi sınırları içerisindeki objeleri grafiğin geri kalanından kopararak belirli bir alan içerisinde tutar. Her aggregate’in içerisinde ana görevi üstlenmiş bir entity bulunmaktadır. Yeni bir aggregate yaratıldığında domain içerisinde kendi başına ayrı bir parça olarak anlamlı olduğuna emin olunmalıdır. Aggregate’in doğruluğunu test etmek için silme testi uygulanabilir. Bu test sayesinde ana obje silindiğinde aggregate’in içerisinde veya dışında hangi objelerin de silinmesi gerektiği tespit edilebilir.
+Aggregate’ler domain’i daha sade bir hale getirerek teknik engellerin ortadan kaldırılmasına yardımcı olur. Bunu sağlayabilmek için aggregate’ler kendi içerisinde tutarsız olsa bile tüm aggregate’ler birbirleri ile tutarlı olmalıdırlar.
+2. Dealing with Life Cycles
+Factories: Aggregate’lerin yaşam döngüsünün başlangıcını yönetirler. Aslında bildiğimiz factory design pattern’in veya builder design pattern’in uygulanmasıdır. Aggregate içerisinde kurallar işletildikten sonra uygun bir obje yaratılmalıdır. Factory design pattern kullanışlık olsa da kullanmak şart değildir.
+Repositories: Aggregate’lerin yaşam döngüsünün orta ve bitiş kısmını yönetirler. Repository’ler ilişkisel veritabanlarının görevlerini temsil eden yapılardır. Repository’lerin de aggregate’ler ile çalışabildiğini de göz önünde bulundurursak, repository’ler üzerinden alınan objeler için de aggregate kurallarının uygulanması gerektiğini söyleyebiliriz(aggregation içerisinde ilişkilere uygun objelerin mapping’i vs.).
+3. Dealing with Behavior
+Specification Pattern: Bir nesne içerisindeki dönüş tipi boolean olan bir business kuralı, validation veya selection criteria‘yı dışarıya aktarmak ihtiyacı doğduğunda kullanılır. Bu sayede kurallar dışarıdan izole edilerek işletilir ve kod okuma işi kolaylaşır.
+Strategy Pattern: Policy Pattern olarak da bilinen bu kalıp, run time’da bir sınıfın içerisindeki behavior’un ya da algoritmanın değiştirilmek istendiğinde uygulanabilir. İçerisinde çeşitli strajejiler bulunduran ve her bir stratejiye karşılık gelen contect objeler bulunduran yeni objeler üretilir. Strategy objeler, context objeler içerisindeki algoritmaların çalışma şeklini değiştirerek çalıştırır.
+Composite Pattern: Bildiğimiz composite design pattern’in modellenmiş bir domain içerisinde uygulanmasıdır. Burada dikkat edilmesi gereken nokta, client tarafında dışarıdan tamamen soyutlandırılmış composite objeler kullanmalıdır.
+Application Architecture
+Fonksiyonelite açısından zengin domainler tasarlıyorsak, domain modellerinin alt yapıdan ve kuracağımız mimariden soyutlanmış olması gerekir. Örnek olarak katmanlı mimariler domain’i sistemin diğer kısımlarından izole etmek için kullanılabilir.
+Her katman, yalnızca altındaki katmanlardan haberdardır. Bu sayede daha düşük bir seviyedeki bir katman, üstündeki bir katmanı çağıramaz. Ayrıca, her katman bir biri ile uyumludur ve belirli bir katmanda yer alan sınıflar katmanın amacına ve sorumluluğuna uygun davranmaya dikkat ederler.
+ 
+User Interface: User Interface’lerin oluşturumasından ve domain model ile etkileşimlerinden sorumludur.
+Application: Domain ile nasıl çalışılacağı hakkında fikir veren ince bir katmandır.
+Domain: Fonsiyonelite açısından zengin, domain’in kolay anlaşılabilir bir modelidir. Repository’ler ve factory’ler bu katmanın birer üyeleri kabul edilseler de çoğu ORM araçları tarafından altyapı katmanına ait üyeler olarak kabul görmektedirler.
+Infrastructure: Teknolojiye özel kararlara odaklanılır, amaçtan ziyade implementasyon kısmı ile ilgilenilir. Bu katmanda domain’lerin instance’ları yaratılabilir. Ancak genellikle repository’ler bu katmanla etkileşim içerisinde olurlar.
 
 
 

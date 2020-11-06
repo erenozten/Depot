@@ -13527,6 +13527,16 @@ Apache Hadoop is a collection of open-source software utilities that facilitate 
 -
 -
 -
+Fuzzy Search	(GITHUB)  (test) 
+Fuzzy search nedir
+A fuzzy search is a process that locates Web pages that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. A fuzzy search is done by means of a fuzzy matching program, which returns a list of results based on likely relevance even though search argument words and spellings may not exactly match. Exact and highly relevant matches appear near the top of the list. Subjective relevance ratings, usually as percentages, may be given.
+A fuzzy matching program can operate like a spell checker and spelling-error corrector. For example, if a user types "Misissippi" into Yahoo or Google (both of which use fuzzy matching), a list of hits is returned along with the question, "Did you mean Mississippi?" Alternative spellings, and words that sound the same but are spelled differently, are given. A fuzzy matching program can compensate for common input typing errors, as well as errors introduced by optical character recognition ( OCR ) scanning of printed documents. The program can return hits with content that contains a specified base word along with prefixes and suffixes. For example, if "planet" is entered as a search word, hits occur for sites containing words such as "protoplanet" or "planetary." The program can also find synonyms and related terms, working like an online thesaurus or encyclopedic cross-reference tool. In the Ask Jeeves search engine, if the word "galaxy" is entered, hits are returned such as "Galaxy Photography," "Milky Way," and "The Nine Planets Solar System Tour."
+Fuzzy matching programs usually return irrelevant hits as well as relevant ones. Superfluous results are likely to occur for terms with multiple meanings, only one of which is the meaning the user intends. If the user has only a vague or general idea of the topic, or does not know exactly what to look for, the ratio of relevant hits to irrelevant hits tends to be low. (The ratio is even lower, however, when an exact matching program is used in this situation.)
+Fuzzy searching is much more powerful than exact searching when used for research and investigation. Fuzzy searching is especially useful when researching unfamiliar, foreign-language, or sophisticated terms, the proper spellings of which are not widely known. Fuzzy searching can also be used to locate individuals based on incomplete or partially inaccurate identifying information.
+-
+-
+-
+-
 
 
 

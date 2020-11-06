@@ -13537,6 +13537,19 @@ Fuzzy searching is much more powerful than exact searching when used for researc
 -
 -
 -
+DevOps	   (GITHUB)  (test) 
+Devops nedir
+
+DevOps is a set of software development practices that combines software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
+Agile and DevOps both often utilize practices such as automated build and test, continuous integration, and continuous delivery. Agile can be viewed as addressing communication gaps between customers and developers, while DevOps addresses gaps between developers and IT operations / infrastructure.[24][unreliable source?] Also, DevOps has focus on the deployment of developed software, whether it is developed via Agile or other methodologies.
+DevOps, kurumların uygulama ve hizmetleri yüksek hızda sunmanın yanı sıra ürünleri geleneksel yazılım geliştirme ve altyapı yönetimi süreçlerini kullanan kurumlara göre daha hızlı geliştirme becerisini artıran kültürel felsefelerin, uygulamaların ve araçların birleşimidir. Bu hız, kurumların müşterilerine daha iyi hizmet sunmasına ve piyasada daha etkili bir şekilde rekabet etmesine imkan tanır.
+DevOps Nasıl Çalışır
+Bir DevOps modelinde geliştirme ve operasyon ekipleri artık “silolu” değildir. Bazen bu iki ekip tek bir ekip altında birleştirilir ve ekipteki mühendisler geliştirme ve testten dağıtım ve operasyona kadar bir uygulamanın yaşam döngüsünün tamamında çalışır ve tek bir işlevle kısıtlı olmayan bir dizi beceri edinir.
+Bazı DevOps modellerinde kalite güvencesi ve güvenlik ekipleri de uygulamanın yaşam döngüsü boyunca geliştirme ve operasyon ekibiyle sıkı bir entegrasyon içinde olur. Bir DevOps ekibindeki herkes güvenliğe odaklanıyorsa buna bazen DevSecOps denir.
+Bu ekipler, süreçleri kullanarak eskiden el ile gerçekleştirilen ve yavaş olan süreçleri otomatikleştirir. Uygulamaları hızla ve güvenilir bir şekilde çalıştırıp geliştirmelerine yardımcı olan bir teknoloji yığınını ve araçları kullanırlar. Ayrıca, bu araçlar mühendislerin normalde diğer ekiplerden yardım almasını gerektirecek görevleri (örneğin, kod dağıtma veya altyapı tedarik etme) bağımsız olarak yapmasına yardımcı olarak ekiplerin hızını daha da artırır.
+-
+-
+-
 
 
 

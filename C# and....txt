@@ -13511,6 +13511,22 @@ Transact-SQL is central to using Microsoft SQL Server. All applications that com
 Stored procedures in SQL Server are executable server-side routines. The advantage of stored procedures is the ability to pass parameters.
 -
 -
+Elasticsearch	(GITHUB)  (test)
+Elastic search nedir, elasticsearch nedir
+Detaylı bilgi: http://www.borakasmer.com/elasticsearch-nedir/
+ElasticSearch, BigData yani büyük veriler ile çalışan şirketlerin, adından da anlaşılacağı gibi içerik arama, veri analizi, sorgulamalar ve öneriler gibi işlemlerde özellikle performans kabiliyetleri, güçlü ve esnek olmasından dolayı tercih ettiği bir search engine’dir. Kimdir bu büyük şirketler LinkedIn, Stack Overflow, Foursquare, GitHub, Amazon. ElasticSearch, java dili ile geliştirilmiş, “Lucene” altyapısı üzerine oturtulmuş open-source bir arama motorudur. Tabi ki boşuna bu dev teknoloji şirketleri tarafından kullanılmamaktadır.
+Visual Studio .Net tarafında NEST kütüpahanesi ile bu güçlü arama motoru kolayca implemente edilebilmektedir. 
+Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java. Following an open-core business model, parts of the software are licensed under various open-source licenses (mostly the Apache License)[2], while other parts[3] fall under the commercial (source-available) Elastic License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages.[4] According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.[5]
+Elasticsearch can be used to search all kinds of documents. It provides scalable search, has near real-time search, and supports multitenancy. "Elasticsearch is distributed, which means that indices can be divided into shards and each shard can have zero or more replicas. Each node hosts one or more shards, and acts as a coordinator to delegate operations to the correct shard(s). Rebalancing and routing are done automatically".[4] Related data is often stored in the same index, which consists of one or more primary shards, and zero or more replica shards. Once an index has been created, the number of primary shards cannot be changed.
+-
+-
+-
+Apache Hadoop	(GITHUB)  (test) 
+Hadoop nedir, apache hadoop nedir
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. Originally designed for computer clusters built from commodity hardware[3]—still the common use—it has also found use on clusters of higher-end hardware. All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common occurrences and should be automatically handled by the framework.
+-
+-
+-
 
 
 

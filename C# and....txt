@@ -13459,6 +13459,59 @@ Domain expert’ler ile developerlar arasında güçlü bir iletişim olması ge
 -
 -
 -
+.Net Application Domain 	(GITHUB)  (test)
+.Net Application Domain Nedir
+An application domain is a virtual process and is used to isolate applications from one another. Each application domain has their own virtual address space which scopes the resources for the application domain using that address space.
+Each application running within its main process boundaries and its application domain boundaries. All objects created within the same application scope are created within the same application domain. Multiple application domains can exist in a single operating system process. An application running inside one application domain cannot directly access the code running inside another application domain.
+System.AppDomain is the main class you can use to deal with application domains.
+
+-
+An application domain is the segment of reality for which a software system is developed. It is the background or starting point for the actual-state analysis and the creation of a domain model.
+An application domain can be an organization, a department within an organization, or a single workplace.
+The concept of an application domain is at least as wide, so that the domain concepts and relations relevant for the construction of models can be well understood during the analysis of the actual state of the domain. On the other hand, its extent should always be limited, that is, never be too complex.
+An application domain normally includes a domain-specific language. This means that people in this domain use specific terms and concepts and think about their domain in a specific way.
+-
+-
+-
+-
+T-SQL (Transact-SQL)	(GITHUB)  (test)
+T sql nedir, t-sql nedir
+Microsoft SQL Server veritabanı için kullanılan sorgulama diline verilen isimdir. Oracle veritabanında kullanılan SQL ile arasında komut farkları bulunmaktadır. 
+Transact-SQL provides the following statements to declare and set local variables: DECLARE, SET and SELECT.
+DECLARE @var1 NVARCHAR(30);
+SET @var1 = 'Some Name';
+SELECT @var1 = Name
+  FROM Sales.Store
+  WHERE CustomerID = 100;
+
+SQL tarafında değişken deklare edebildiğin, değişkene değer atayabildiğin bir ortamdır T-SQL. If else bile kullanabilirsin:
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+   PRINT 'It is the weekend.';
+ELSE
+   PRINT 'It is a weekday.';
+
+
+BEGIN and END mark a block of statements. If more than one statement is to be controlled by the conditional in the example above, we can use BEGIN and END like this:
+
+
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+BEGIN
+   PRINT 'It is the weekend.';
+   PRINT 'Get some rest on the weekend!';
+END;
+ELSE
+BEGIN
+   PRINT 'It is a weekday.';
+   PRINT 'Get to work on a weekday!';
+END;
+
+SQL, düzeltilmesi veya değiştirilmesi istenen bilgileri açıkça belirtmeye izin veren ve yerine getirilebilecek başlıca işlemleri tanımlamamızı sağlayan bir komut takımıdır. Bu komutların oluşturduğu yapıya T-SQL dili denir. T-SQL ile veri ve sorgulara erişebilir, güncelleyebilir ve ilişkisel veri tabanı sistemi yönetilebilir. T-SQL komutları kullanım amaçlarına göre üç genel kategoriye ayrılır.
+Transact-SQL (T-SQL) is Microsoft's and Sybase's proprietary extension to the SQL (Structured Query Language) used to interact with relational databases. T-SQL expands on the SQL standard to include procedural programming, local variables, various support functions for string processing, date processing, mathematics, etc. and changes to the DELETE and UPDATE statements.
+Transact-SQL is central to using Microsoft SQL Server. All applications that communicate with an instance of SQL Server do so by sending Transact-SQL statements to the server, regardless of the user interface of the application.
+Stored procedures in SQL Server are executable server-side routines. The advantage of stored procedures is the ability to pass parameters.
+-
+-
+
 
 
 

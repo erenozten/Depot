@@ -13216,6 +13216,21 @@ Error handling and recovery
 Testability, extensibility
 Coupling and cohesion
 
+Simulation: Simulation is a tool that models the real-life situation in order to virtually examine the behavior of the system under study.
+Functional Testing: It is a QA technique which verifies what the system does without considering how it does. This type of black box testing mainly focuses on testing the system specifications or features.
+Standardization: Standardization plays a crucial role in quality assurance. It decreases the ambiguity and guesswork, thus ensuring quality.
+Static Analysis: It is a software analysis that is done by an automated tool without actually executing the program. This technique is highly used for quality assurance in medical, nuclear and aviation software. Software metrics and reverse engineering are some popular forms of static analysis.
+Walkthroughs: Software walkthrough or code walkthrough is a kind of peer review where the developer guides the members of the development team to go through the product and raise queries, suggest alternatives, make comments regarding possible errors, standard violations or any other issues.
+Path Testing: It is a white box testing technique where the complete branch coverage is ensured by executing each independent path at least once.
+Stress Testing: This type of testing is done to check how robust a system is by testing it under heavy load i.e. beyond normal conditions.
+Six Sigma: Six Sigma is a quality assurance approach that aims at nearly perfect products or services. It is widely applied in many fields including software. The main objective of six sigma is process improvement so that the produced software is 99.76 % defect free.
+Conclusion
+SQA is an umbrella activity which is employed throughout the software lifecycle.
+Software quality assurance is very important for your software product or service to succeed in the market and survive up to the customer’s expectations.
+There are various activities, standards, and techniques that you need to follow to assure that the deliverable software is of high quality and aligns closely with the business needs.
+-
+-
+-
 
 
 

@@ -13139,6 +13139,40 @@ Given below is the list of SQA activities:
 The foremost activity includes laying down a proper plan regarding how the SQA will be carried out in your project.
 Along with what SQA approach you are going to follow, what engineering activities will be carried out, and it also includes ensuring that you have a right talent mix in your team.
 
+#2) Setting the Checkpoints:
+The SQA team sets up different checkpoints according to which it evaluates the quality of the project activities at each checkpoint/project stage. This ensures regular quality inspection and working as per the schedule.
+#3) Apply software Engineering Techniques:
+Applying some software engineering techniques aids a software designer in achieving high-quality specification. For gathering information, a designer may use techniques such as interviews and FAST (Functional Analysis System Technique).
+Later, based on the information gathered, the software designer can prepare the project estimation using techniques like WBS (work breakdown structure), SLOC (source line of codes), and FP(functional point) estimation.
+#4) Executing Formal Technical Reviews:
+An FTR is done to evaluate the quality and design of the prototype.
+In this process, a meeting is conducted with the technical staff to discuss regarding the actual quality requirements of the software and the design quality of the prototype. This activity helps in detecting errors in the early phase of SDLC and reduces rework effort in the later phases.
+#5) Having a Multi- Testing Strategy:
+By multi-testing strategy, we mean that one should not rely on any single testing approach, instead, multiple types of testing should be performed so that the software product can be tested well from all angles to ensure better quality.
+#6) Enforcing Process Adherence:
+This activity insists the need for process adherence during the software development process. The development process should also stick to the defined procedures.
+This activity is a blend of two sub-activities which are explained below in detail:
+(i) Product Evaluation:
+This activity confirms that the software product is meeting the requirements that were discovered in the project management plan. It ensures that the set standards for the project are followed correctly.
+(ii) Process Monitoring:
+This activity verifies if the correct steps were taken during software development. This is done by matching the actually taken steps against the documented steps.
+#7) Controlling Change:
+In this activity, we use a mix of manual procedures and automated tools to have a mechanism for change control.
+By validating the change requests, evaluating the nature of change and controlling the change effect, it is ensured that the software quality is maintained during the development and maintenance phases.
+#8) Measure Change Impact:
+If any defect is reported by the QA team, then the concerned team fixes the defect.
+After this, the QA team should determine the impact of the change which is brought by this defect fix. They need to test not only if the change has fixed the defect, but also if the change is compatible with the whole project.
+For this purpose, we use software quality metrics which allows managers and developers to observe the activities and proposed changes from the beginning till the end of SDLC and initiate corrective action wherever required.
+#9) Performing SQA Audits:
+The SQA audit inspects the entire actual SDLC process followed by comparing it against the established process.
+It also checks whatever reported by the team in the status reports were actually performed or not. This activity also exposes any non-compliance issues.
+#10) Maintaining Records and Reports:
+It is crucial to keep the necessary documentation related to SQA and share the required SQA information with the stakeholders. The test results, audit results, review reports, change requests documentation, etc. should be kept for future reference.
+#11) Manage Good Relations:
+In fact, it is very important to maintain harmony between the QA and the development team.
+We often hear that testers and developers often feel superior to each other. This should be avoided as it can affect the overall project quality.
+Software Quality Assurance Standards
+In general, SQA may demand conformance to one or more standards.
 
 
 

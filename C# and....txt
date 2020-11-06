@@ -13081,6 +13081,41 @@ In-circuit test (ICT) is an example of white box testing where an electrical pro
 -
 -
 -
+Software quality assurance (SQA)	 (GITHUB)  (test)
+Software quality assurance nedir, quality assurance nedir, qa nedir
+Software quality assurance (SQA) is a process which assures that all software engineering processes, methods, activities and work items are monitored and comply against the defined standards. These defined standards could be one or a combination of any like ISO 9000, CMMI model, ISO15504, etc.
+
+Software quality assurance (SQA) is a means and practice of monitoring the software engineering processes and methods used in a project to ensure proper quality of the software.[1]:10–5 It may include ensuring conformance to standards or models, such as ISO/IEC 9126 (now superseded by ISO 25010), SPICE or CMMI.
+It includes standards and procedures that managers, administrators or even developers may use to review and audit software products and activities to verify that the software meets quality criteria which link to standards. According to Automotive SPICE (which is based on ISO/IEC 15504), software quality assurance is a supporting process (SUP.1) that provides the independent assurance that all work products, activities and processes comply with the predefined plans and quality strategies.
+SQA encompasses the entire software development process, including requirements engineering, software design, coding, code reviews, source code control, software configuration management, testing, release management and software integration. It is organized into goals, commitments, abilities, activities, measurements, verification and validation.
+-
+Yazılım Kalite Güvencesi
+Yazılım Kalite Güvencesi (SQA), kaliteli yazılım ürünleri ile sonuçlanan yazılım mühendisliği süreçlerinde kaliteyi sağlamak için yapılan faaliyetler dizisidir. Bu faaliyetler, ürünler üreten süreçleri belirler ve değerlendirir. Bu da süreç odaklı eylemi içerir.
+Yazılım Kalite Kontrolü
+Yazılım Kalite Kontrolü (SQC), yazılım ürünlerindeki kaliteyi sağlamak için kullanılan bir aktiviteler dizisidir. Bu faaliyetler üretilen gerçek ürünlerde kusurları tespit etmeye odaklanmaktadır. Ürün odaklı eylem içerir.
+1.3. Peki, Neden Kalite Önemlidir?
+Kaliteli ve güvenilir bir yazılım ürününün, istenilen gereksinim ve beklentileri belirlenen bütçeye göre zamanında teslim edilen bir ürün olduğunu söylüyoruz hep. Ayrıca, yazılım ürününün sürdürülebilir olmasının da önemli olduğu vurgulanıyor. Bu unsurların önemini yazılımda yapılan hataların örnekleri üzerinden görelim.
+Yıl 1962, Mariner 1 roketi
+Hatanın sonucu: Venüs’e giden Mariner 1 roketi, fırlatıldıktan hemen sonra rotasından saptı. Düşme riski çok yüksek olduğu için NASA mühendisleri kendi kendini imha etme emrini verdi. Roket havada 293 saniye sürdü. Kayıplar 18,5 milyon dolar olarak gerçekleşti.
+Sebep: Programcı, el yazısıyla yazılmış formülü yanlış bir şekilde sembolün üstündeki satırı atlayarak bilgisayar koduna gömdü. Bu özellik kenar yumuşatmadan sorumlu olduğu için, yazılım belirli bir hızdan kritik olarak normal sapmaları algıladı. Sonuç olarak, roketteki bilgisayar yanlış düzenlemeler yaptı ve roketi rotasından saptırdı.
+Yıl 1987, Hartford Coliseum salonunun çöküşü
+Hatanın sonucu: İki basketbol takımının karşılaşmasının ardından birkaç saat geçmedi, çünkü stadyumun çelik çatısı ıslak kar ağırlığı altında çöktü. Kayıplar – 70 milyon dolar ve 20 milyona yakın yerel ekonomiye zarar.
+Sebep: CAD programcısı, stadyumu tasarlamak için kullanılan yazılım ile çatı desteklerinin sadece küçüleceğini öne sürdü. Bu nedenle, bir tanesi karın ağırlığı altında çöktüğünde, zincir reaksiyonu başlattı ve çatı bir domino gibi art arda düştü.
+1985, Tıbbi Therac-25 cihazı
+Hatanın sonucu: Radyasyon tedavisi için Therac-25 tıbbi cihaz saptadı ve hastalara ölümcül dozda radyasyon verdi. Dört kişi öldü, iki kişinin sağlığına ise ciddi zarar verdi.
+Sebep: Cihazın iki çalışma modu vardı – elektron ışını direkt olarak hastaya küçük dozlarda gönderildiğinde, ikincisi ise ışın ilk olarak radyasyon ışınlarına dönüşen ve hastaya iletilen metal bir “hedefe” yöneldiğinde. Cihazın önceki modellerinde, ikinci mod, yerinde “hedef” bulunan fiziksel dedektörlerle donatılmıştır, böylece ışınlar doğrudan hastaya büyük dozlarda yönlendirilmeyecekti. Therac-25’te, fiziksel dedektörler yazılım dedektörleri ile değiştirildi. Ne yazık ki, yazılım “aritmetik yüklenmeye” tabi tutuldu – sistem dahili hesaplarda kullanılmaya başlandı ve bu sayı onunla yapılan işlemler için çok büyük bir sayıydı. Bu esnada operatörün makineyi yapılandırması halinde güvenlik kontrolleri başarısız oldu ve “hedef” yerine oturmadı. Sonuç olarak, hasta 100 kat daha yüksek bir radyasyon dozu aldı.
+1993, Pentium ve ondalık sayı hatası
+Hata Sonucu: Intel’in yeni Pentium işlemcisi, belirli bir aralıktaki ondalıklı sayıları bölerken zaman zaman hata yaptı. Örneğin, 4195835.0 / 3145727.0 sonucu 1.33382 yerine 1.33374 sonucunu verdi. Bu da % 0.006’lık bir hata. Sorun az sayıda kullanıcıyı etkiledi, ancak Halkla İlişkiler hizmetlerinin kâbusu haline geldi. Kullanımda yaklaşık 5 milyon bozuk çip vardı. Intel başlangıçta, bu çipleri sadece yüksek hassasiyete ihtiyaç duyduğunu kanıtlayanlara değiştirmeyi teklif etti, ancak sonuç olarak tüm çipler değiştirildi. Kayıplar – 475 milyon dolara mâl oldu, bu da şirketin itibarına büyük hasara yol açtı.
+Sebep: bölme tablosundaki bir hata, her bin göstergenin yaklaşık 5’inin eksik olmasıyla sonuçlandı ve yuvarlama hatasına neden oldu.
+Yıl 1996, Ariane roketi
+Hatanın sonucu: İnsansız füze Ariane fırlatıldıktan birkaç saniye sonra imha edildi. Roketle birlikte, dünyanın manyetik alanının güneş rüzgârıyla etkileşimini incelemek için kullanılan dört bilimsel uydu da imha edildi. Zararlar 500 milyon dolar (uydular) artı 8 milyar dolarlık Ariane geliştirme maliyetidir.
+Sebep: Araç bilgisayarı roketin hızını 64 bit biçiminden 16 bit olana dönüştürmeyi denedi. Sonuç çok büyüktü ve bilgisayar başarısız oldu. Füzenin kontrolü, aynı algoritmayı kullanan güvenlik modülüne aktardı, ancak o da bir süre sonra kapandı.
+Yıl 1998, Mars Climate Orbiter
+Hatanın sonucu: uçuşunun 286. gününde, Mars Climate Orbiter uydusu, Mars eliptik yörüngesine geçiş başladı. Cihaz motorları fren yapmak için çevirdi ve yörüngeye “uçtu”. Büyük ihtimalle, Mars’ın atmosferine girdi ve çöktü. Kayıplar 125 milyon dolara ulaştı.
+Sebep: motorun itiş gücünü kontrol eden yazılım, Newton’un ölçü birimi olarak pound kuvveti ölçü birimini kullanmıştır. Uydu rotasında bir sapmaya yol açan motor itme komutları ise ölçü birimi olarak Newton’ları kabul ediyordu.
+Yıl 2008, Heathrow Havaalanı
+Hatanın sonucu: Yeni Heathrow terminalinde çok sayıda ürünü taşımak için tasarlanmış ultra modern bir bagaj kontrol sistemi kurdular. Sistem 12 binden fazla çanta ve valizlerle kapsamlı bir şekilde test edilmiştir. Sonuç olarak, terminalin açılış gününde, sahipleriyle birlikte uçmadan 42 bin valiz kayboldu. 500’den fazla uçuş iptal edildi. Diğer uçuşlar için check-in geçici olarak askıya alındı.
+Sebep: Sistem, bazı nedenlerle test sırasında test edilmeyen gerçek senaryolarla başa çıkamamıştır. Örneğin, valizlerin manuel olarak çıkarılması (yolcunun aniden valizde değerli ve gerekli bir şey olduğunu hatırlaması) programı çıldırtıyor ve kapatıyordu.
 
 
 

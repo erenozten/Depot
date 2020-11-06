@@ -13174,6 +13174,47 @@ We often hear that testers and developers often feel superior to each other. Thi
 Software Quality Assurance Standards
 In general, SQA may demand conformance to one or more standards.
 
+Some of the most popular standards are discussed below:
+ISO 9000: This standard is based on seven quality management principles which help the organizations to ensure that their products or services are aligned with the customer needs’.
+7 principles of ISO 9000 are depicted in the below image:
+ 
+CMMI level: CMMI stands for Capability maturity model Integration. This model was originated in software engineering. It can be employed to direct process improvement throughout a project, department, or an entire organization.
+5 CMMI levels and their characteristics are described in the below image:
+ 
+An organization is appraised and awarded a maturity level rating (1-5) based on the type of appraisal.
+Test Maturity Model integration (TMMi): Based on CMMi, this model focuses on maturity levels in software quality management and testing.
+5 TMMi levels are depicted in the below image:
+ 
+As an organization moves on a higher maturity level, it achieves a higher capability for producing high-quality products with fewer defects and closely meets the business requirements.
+Elements of Software Quality Assurance
+There are 10 essential elements of SQA which are enlisted below for your reference:
+Software engineering Standards
+Technical reviews and audits
+Software Testing for quality control
+Error collection and analysis
+Change management
+Educational programs
+Vendor management
+Security management
+Safety
+Risk management
+SQA Techniques
+There are several techniques for SQA. Auditing is the chief technique that is widely adopted. However, we have a few other significant techniques as well.
+Various SQA Techniques include:
+Auditing: Auditing involves inspection of the work products and its related information to determine if the set of standard processes were followed or not.
+Reviewing: A meeting in which the software product is examined by both the internal and external stakeholders to seek their comments and approval.
+Code Inspection: It is the most formal kind of review that does static testing to find bugs and avoid defect growth in the later stages. It is done by a trained mediator/peer and is based on rules, checklist, entry and exit criteria. The reviewer should not be the author of the code.
+Design Inspection: Design inspection is done using a checklist that inspects the below areas of software design:
+General requirements and design
+Functional and Interface specifications
+Conventions
+Requirement traceability
+Structures and interfaces
+Logic
+Performance
+Error handling and recovery
+Testability, extensibility
+Coupling and cohesion
 
 
 

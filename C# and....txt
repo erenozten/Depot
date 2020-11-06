@@ -13446,6 +13446,23 @@ Domain: Fonsiyonelite açısından zengin, domain’in kolay anlaşılabilir bir
 Infrastructure: Teknolojiye özel kararlara odaklanılır, amaçtan ziyade implementasyon kısmı ile ilgilenilir. Bu katmanda domain’lerin instance’ları yaratılabilir. Ancak genellikle repository’ler bu katmanla etkileşim içerisinde olurlar.
 
 
+ 
+Katmanlar arayüzlerle tasarlanmalı ve katmanlar arası etkileşim bu arayüzler üzerinden olmalıdır. Ayrıca, transactionlar domain katmanı üzerinden yönetilmelidir.
+Disadvantages
+Eric Evans ve Microsoft, DDD’ın ancak çok sayıda kompleks domain’in var olduğu bir projede kullanılmasının doğru olduğunu savunmaktadırlar.
+Ekip ürün geliştirme sürecinin sürekliliği için kurmuş olduğu dili sürekli iyileştirmelidir ve olabildiğince domain’ler içerisinde izole etmek için efor harcamalıdır.
+Tutarlılık ve bütünlüğü sağlamak oldukça maliyetlidir.
+Yazılım geliştirme ekibi business kuralları Domain expert’lerden öğrenmek durumundadırlar. Bu durumda yetkin bir domain expert ile çalışmak zorundadırlar.
+OOP kurallarına hakim yetkin bir yazılım ekibi gerektirmektedir.
+Domain expert’ler ile developerlar arasında güçlü bir iletişim olması gerektirmektedir.
+-
+-
+-
+-
+
+
+
+
 
 
 

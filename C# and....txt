@@ -13848,6 +13848,12 @@ Scrum is:
 -
 -
 -
+Vue.js             (GITHUB)  (test) 
+Vue nedir, vuejs nedir, vue.js nedir
+Vue.js (genellikle Vue olarak kullanılır) kullanıcı arayüzleri ve tek sayfa uygulamalar (single-page applications) inşa etmek için kullanılan açık kaynak Javascript is Vue.js, bildirimsel oluşturma (declarative rendering) ve bileşen kompozisyonuna odaklanan, aşamalı olarak benimsenebilen bir mimariye sahiptir. Yönlendirme (routing), durum yönetimi (state managment) ve yapım aracı(building tools) gibi karmaşık uygulamalar için gereken gelişmiş özellikler, resmi olarak destekleyici kütüphaneler ve paketler aracılığıyla sunulmaktadır.
+-
+-
+-
 
 
 

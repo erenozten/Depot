@@ -13875,6 +13875,20 @@ The Spring Framework is an application framework and inversion of control contai
 -
 -
 -
+Hibernate             (GITHUB)  (test) 
+Nhibernate nedir, hibernate nedir
+Hibernate, Java platformunda yazılmış bir ORM aracıdır (Object/Relational Mapping). 
+ORM, nesne odaklı (object oriented) dillerdeki nesnelerin, ilişkisel veri tabanlarındaki (relational databases) kayıtlara nasıl karşılık geldiğini yürüten bir teknolojidir. NHibernate adında .NET çatısı için yeniden yazılmış bir türevi bulunur.
+Hibernate gibi ORM araçlarıyla, bir nesneyi veri tabanına kaydetmek, yeni halini güncellemek ve sorgulama yapmak düz SQL bağlantılarına göre çok kolaydır.
+Örneğin, JDBC ile veri tabanına bir kayıt eklemek için şuna benzer bir kod yazılır:
+stmt.executeUpdate( "INSERT INTO KAHVE VALUES ('Colombian', 101, 7.99, 0, 0)");
+Burada, "KAHVE" tablosuna bir kayıt eklenmekte. Böyle bir işlemi Hibernate ile yapmak için:
+session.saveOrUpdate(kahve);
+kahve, bildiğimiz düz bir Java nesnesidir (POJO).
+Hibernate gibi ORM araçlarının en önemli faydası, kod yazımını kısaltmak veya kolaylaştırmaktan öte, yazılım bakımını kolaylaştırmasıdır. Veri tabanı temelli uygulamalarda, kodun 1/3´ü veri tabanı erişimine yöneliktir. Veri tabanındaki bir kolonunun tipinin değişmesi, yeni bir kolon eklenmesi gibi değişiklikler, bütün veri erişim kodunu tekrar gözden geçirmeyi gerektirir. Hibernate ile bu gözden geçirmeden çok yüksek oranda tasarruf edilir. Hibernate kullanılan yazılımlarda, veri tabanındaki değişikliklerde yapılması gereken sadece nesnelerle tabloların birbirine nasıl eşleştirildiğinin (mapping) gözden geçirilmesidir.
+-
+-
+-
 
 
 

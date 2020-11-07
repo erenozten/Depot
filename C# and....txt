@@ -13779,6 +13779,12 @@ Ne AngularJS, ne de Ionic nesne yönelimli JavaScript çerçevesidir.
 -
 -
 -
+iOS             (GITHUB)  (test) 
+ios nedir
+iOS (eski adıyla iPhone/iPad OS) Apple'ın başlangıçta iPhone için geliştirdiği ancak daha sonra iPod touch ve iPad'de de kullanılan mobil işletim sistemidir. 2007 - 2010 yılları arasında "iPhone OS" isminde idi. Mac OS X'den türetilmiştir. iOS içinde 4 katman bulundurmaktadır: Core OS tabakası, Core Servisleri tabakası, Medya tabakası ve Cocoa Touch tabakası. Yazılım cihazın içinde 2500 MB'lık bir alan kaplamaktadır.[1] iOS işletim sistemi yapısı nedeniyle Apple App Store ve iTunes dışında hiçbir yerden uygulama yüklenemez. Kurucusu Steve Jobs'tır.
+-
+-
+-
 
 
 

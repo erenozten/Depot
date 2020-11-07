@@ -13604,7 +13604,24 @@ Reverse engineering, also called backwards engineering or back engineering, is t
 Reverse engineering is applicable in the fields of computer engineering, mechanical engineering, electronic engineering, software engineering, chemical engineering,[2] and systems biology.[3]-
 -
 -
+-
+Automated Testing   (GITHUB)  (test) 
+Automated Testing   nedir
 
+Well, I can only speak of my opinions and experiences, and I'm just a developer who has worked quite a bit with testers and QA engineers. Anyway, my 2c:
+The most basic difference manual is done by hand, and automatic is done by computer :) As a consequence, the manual test process can be orders of magnitude slower than an fully automated one. On the other hand, automated tests can only detect issues they were meant to detect, and cannot detect fundamentally new behaviour of a system. That basically means that automated tests are ideal for regression testing, when it is well known what should be done, how, and what the outputs should be.
+As to the skill sets, manual tests can be basically made by anyone in the right mindset, while automated tests must be made by someone with at least some developer experience. There are frameworks that enable easy recording of a automated web tests, for example, but, it's often necessary to tweak the recorded scenarios to better suit the needs of the testing. Of course, the necessary basic skills for testing must also be present in anyone wanting a work in QA, like patience, attention to detail, great organizational abilities, great communication abilities, etc...
+And last, I don't thinks manual testing is underrated, if anything, I think automated testing is underused in most corporate environments I've seen. But, yes, some people (mostly managers, to be honest) do interpret my previous paragraph as "anyone can do manual tests".
+-
+Automated testing (especially automated unit testing) is good because it means that you can test earlier in the development cycle and you can keep testing regularly; it allows the developers to identify where they have made errors before involving the QA team. But that doesn't mean that QA is unnecessary. Apart from the matter of ensuring that the automated tests are themselves suitable, there's also the matter of working out whether the application is doing what it should; it's pretty rare for that to be understood entirely.
+It's also difficult to automatically test user interfaces. For example, assessing whether an icon is suitably meaningful and positioned nicely is a matter for people not computers, because the computer doesn't care but the user does.
+-
+The Main Advantage with Automated Testing is that you can do regression testing quickly.. Developer can verify previous functionality, if it is working fine or not after adding new functionalities into the System.
+So when you are working with a tight deadline then by using Automation tools you can reduce you testing effort.. so at that time you have to check only those functionality for which you haven't created automated test scripts. ( Like Email/SMS notifications Testing, Browser Compatibility/UI etc etc.)
+Today many companies are using Open Source Automation Tools (Like Selenium, OpenSTA, JMeter etc) for their normal testing efforts. So it's better if you know how to test an application using these freeware tools instead of paid tools.
+-
+-
+-
 
 
 

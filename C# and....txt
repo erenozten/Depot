@@ -13854,6 +13854,21 @@ Vue.js (genellikle Vue olarak kullanılır) kullanıcı arayüzleri ve tek sayfa
 -
 -
 -
+Fedora             (GITHUB)  (test) 
+Fedora nedir
+Bir işletim sistemidir. Fedora (önceki adıyla Fedora Core), açık kaynak kodlu ve özgür bir Linux dağıtımı. Dünya çapında bir özgür yazılım topluluğu olan Fedeora Projesi tarafından geliştirilmekte ve yönetilmekte, Red Hat tarafından desteklenmektedir.
+Red Hat'ın 2004 yılında sonlandırdığı Red Hat Linux dağıtımının devamı olarak adlandırılabilecek Fedora, Linux dünyasının önde gelen dağıtımlarından biridir. Fedora aynı zamanda Red Hat Enterprise Linux ürünü için bir test ortamı görevi görmektedir.
+-
+Fedora is a Linux distribution developed by the community-supported Fedora Project which is sponsored primarily by Red Hat, a subsidiary of IBM, with additional support from other companies.[11] Fedora contains software distributed under various free and open-source licenses and aims to be on the leading edge of free technologies.[12][13][14] Fedora is the upstream source of the commercial Red Hat Enterprise Linux distribution, and subsequently CentOS as well.
+Since the release of Fedora 30, five different editions are currently available: Workstation, focused on the personal computer, Server for servers, CoreOS, focused on cloud computing, Silverblue, focused on an immutable desktop specialized to container-based workflows and IoT, focused on IoT devices.
+As of February 2016, Fedora has an estimated 1.2 million users,[17] including Linus Torvalds (as of 2015), creator of the Linux kernel.
+Features
+Fedora has a reputation for focusing on innovation, integrating new technologies early on and working closely with upstream Linux communities.[14][20] Making changes upstream instead of specifically for Fedora ensures that the changes are available to all Linux distributions.
+Fedora has a relatively short life cycle: each version is usually supported for at least 13 months, where version X is supported only until 1 month after version X+2 is released and with approximately 6 months between most versions.[21] Fedora users can upgrade from version to version without reinstalling.
+The default desktop environment in Fedora is GNOME and the default user interface is the GNOME Shell. Other desktop environments, including KDE Plasma, Xfce, LXDE, MATE, Deepin and Cinnamon, are available and can be installed.
+-
+-
+-
 
 
 

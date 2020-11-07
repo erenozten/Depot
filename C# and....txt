@@ -13808,7 +13808,14 @@ TypeScript may be used to develop JavaScript applications for both client-side a
 -
 -
 -
- 
+Refactoring             (GITHUB)  (test) 
+Refactor nedir, refactoring nedir
+Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesinin artırılması sürecidir. Evet refactoring bir süreçtir. Her ne kadar amaç/niyet her zaman en baştan temiz kod yazmak olsa da, (her ne kadar yazarken en temiz şekilde yazılsa da) değişen ve gelişen kodların zaman içerisinde sürekli optimize edilmesi gerekecektir.
+Refactoring nasıl yapılır?	
+Refactoring yaparken, yapılacak olanların bir sıralamaya göre yapılması önemlidir. Ayrıca diğer bir önemli konu ise bu işi belirli bir ritimle yapmak önemlidir. Yani sırası ile yapılacak olan her küçük değişiklikten sonra test yapmak gerekir. Küçük değişikler, test, küçük değişiklikler, test, … gibi bir ritimle bu işi yapmak en basit ve garantili yoldur. Refactoring’in tanımında da bahsedildiği gibi, amacımız kodun işlevselliğinde hiçbir değişiklik yapmadan, kodların kalitesini en optimum seviyeye getirmek.Kodun işlevselliğinin değişmediğini garanti etmenin en iyi yolu da elbette test yazmaktır. 
+-
+-
+-
 
 
 

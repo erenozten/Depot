@@ -13816,6 +13816,12 @@ Refactoring yaparken, yapılacak olanların bir sıralamaya göre yapılması ö
 -
 -
 -
+xCode             (GITHUB)  (test) 
+xCode nedir
+Xcode macOS, iOS, watchOS ve tvOS için yazılım geliştirmek için Apple tarafından geliştirilen macOS için entegre bir tümleşik geliştirme ortamıdır. Yazılım geliştirme araçlarını içerir. İlk kez 2003 yılında piyasaya çıkan hizmetin en istikrarlı sürümü, sürüm 8.3.3'tür ve Mac App Store'den macOS Sierra kullanıcıları için ücretsiz olarak sunulmaktadır.[1] Kayıtlı geliştiriciler, Apple Developer web sitesinden paketi önizleme sürümlerini ve önceki sürümlerini indirebilirler. Bununla birlikte, Apple son zamanlarda yazılımın sürüm 9 beta 2'nin beta versiyonunu Apple Developer hesaplarıyla halka açık hale getirdi.[2]
+-
+-
+-
 
 
 

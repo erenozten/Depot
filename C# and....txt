@@ -13622,6 +13622,42 @@ Today many companies are using Open Source Automation Tools (Like Selenium, Open
 -
 -
 -
+Test Automation   (GITHUB)  (test) 
+Test Automation nedir
+Software Test automation makes use of specialized tools to control the execution of tests and compares the actual results against the expected result. Usually, regression tests, which are repetitive actions, are automated.
+Testing Tools not only helps us to perform regression tests but also helps us to automate data set up generation, product installation, GUI interaction, defect logging, etc. Automation tools are used for both Functional and Non-Functional testing.
+Criteria for Tool Selection:
+For automating any application, the following parameters should be considered:
+•	Data driven capabilities
+•	Debugging and logging capabilities
+•	Platform independence
+•	Extensibility & Customizability
+•	E-mail Notifications
+•	Version control friendly
+•	Support unattended test runs
+Types of Frameworks:
+Typically, there are 4 test automation frameworks that are adopted while automating the applications:
+•	Data Driven Automation Framework
+•	Keyword Driven Automation Framework
+•	Modular Automation Framework
+•	Hybrid Automation Framework
+Popular Tools that are used for Functional automation:
+Product	Vendor	URL
+Quick Test Professional	HP	www.hp.com/go/qtp
+Rational Robot	IBM	http://www-03.ibm.com/software/products/us/en/robot/
+Coded UI	Microsoft	http://msdn.microsoft.com/en-us/library/dd286726.aspx
+Selenium	Open Source	http://docs.seleniumhq.org/
+Auto IT	Open Source	http://www.autoitscript.com/site/
+Popular Tools that are used for Non Functional automation:
+Product	Vendor	URL
+Load Runner	HP	www.hp.com/go/LoadRunner
+Jmeter	Apache	jmeter.apache.org/
+Burp Suite	PortSwigger	http://portswigger.net/burp/
+Acunetix	Acunetix	http://www.acunetix.com/
+
+-
+-
+-
 
 
 

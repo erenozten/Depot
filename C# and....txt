@@ -13772,6 +13772,13 @@ webpack provides code on demand using the moniker code splitting. The Technical 
 -
 -
 -
+Ionic             (GITHUB)  (test) 
+Ionic nedir ionic nedir
+Ionic, mobil uygulamalar için HTML5 bazında hazırlanmış açık kaynak bir yazılım iskeletidir ve ön uç için yazılmış olduğundan kullanıcılara odaklanmıştır. Kullanıcı arayüzlerini konu alan Ionic, sezgisel kullanımı ve mobil uygulamanın kullanılabilirliğini düzeltmeyi hedefler. Yazılım çatısı, Angular.JS'le kullanılır ve mobil uygulamanın yapısını oluştururken Ionic look & feel'i ve performansını gerçekleştirir.
+Ne AngularJS, ne de Ionic nesne yönelimli JavaScript çerçevesidir.
+-
+-
+-
 
 
 

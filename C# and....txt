@@ -13785,6 +13785,15 @@ iOS (eski adıyla iPhone/iPad OS) Apple'ın başlangıçta iPhone için gelişti
 -
 -
 -
+Flutter             (GITHUB)  (test) 
+Flutter nedir 
+Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase.
+Flutter apps are written in the Dart language and make use of many of the language's more advanced features.[9]
+On Windows, macOS, and Linux[10] Flutter runs in the Dart virtual machine, which features a just-in-time execution engine. While writing and debugging an app, Flutter uses Just In Time compilation, allowing for "hot reload", with which modifications to source files can be injected into a running application. Flutter extends this with support for stateful hot reload, where in most cases changes to source code are reflected immediately in the running app without requiring a restart or any loss of state.
+Release versions of Flutter apps are compiled with ahead-of-time (AOT) compilation on both Android and iOS,[12] making Flutter's high performance on mobile devices possible.
+-
+-
+-
 
 
 

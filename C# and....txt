@@ -13794,6 +13794,13 @@ Release versions of Flutter apps are compiled with ahead-of-time (AOT) compilati
 -
 -
 -
+Source-to-source compiler  (S2S)             (GITHUB)  (test) 
+S2s nedir, source to source nedir
+A source-to-source compiler (S2S compiler) is a type of compiler that takes the source code of a program written in a programming language as its input and produces the equivalent source code in the same or a different programming language. A source-to-source compiler that produces the code in a different language - a transcompiler or transpiler - may perform a translation of a program at roughly the same level like from Pascal to C, while a traditional compiler translates from a language like C to assembler or Java to bytecode. An automatic parallelizing compiler will frequently take in a high level language program as an input and then transform the code and annotate it with parallel code annotations (e.g., OpenMP) or language constructs (e.g. Fortran's forall statements).
+Another purpose of source-to-source-compiling is translating legacy code to use the next version of the underlying programming language or an API that breaks backward compatibility. It will perform automatic code refactoring which is useful when the programs to refactor are outside the control of the original implementer (for example, converting programs from Python 2 to Python 3, or converting programs from an old API to the new API) or when the size of the program makes it impractical or time consuming to refactor it by hand.
+-
+-
+-
 
 
 

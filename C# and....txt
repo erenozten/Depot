@@ -13822,6 +13822,15 @@ Xcode macOS, iOS, watchOS ve tvOS için yazılım geliştirmek için Apple taraf
 -
 -
 -
+Kanban             (GITHUB)  (test) 
+Kanban nedir
+Kanban işlerimizin nasıl işlediğini bize gösteren bir metottur. — Janice Linden-Reed
+Kanban, 2000’li yılların başlarında ilk kez David J. Anderson tarafından uygulanan, karakteristik özelliklerini Yalın Üretim (Lean Production) ilkerinden (özellikle Taiichi Ohno’nun 1953 yılında Toyota’da uygulamaya başladığı yalın üretim metodu kanbandan) alan ve Kısıtlar Teorisi (Theory of Constraints) yanında Sistemsel Düşünme (Systems Thinking) gibi sistemik optimize yaklaşımlarını barındıran evrimsel bir metodolojidir.
+İlk başlangıçta süregelen sistemi değiştirmeden izleyerek, çöp üreten ve bekleme yaratan noktaların görselleştirilerek tespit edilmesini ve sonrasında yok edilmesi ile sistemi iyileştirmeyi ve hafifletmeyi amaçlar. Bu hafifleme ve yalınlaşma ile organizasyon daha çevik tepkiler verebilecektir. Evrimsel oluşundan dolayı diğer uygulamalarda yaşanabilecek organizasyon kültüründen kaynaklı negatif tepkiler en düşük seviyede gözlemlenir.
+Kanban organizasyon içiresindeki değişime belirlenmiş temel ilkerin anlatımı ve genel pratiklerin uygulaması ile başlar. İlk uygulama adımlarının efektifliği ve bu uygulamalar sonucunda elde edilen değerin yüksek olmasından dolayı Kanban‘ın tek amacının sistemi görselleştirmek ve işi sınırlamak olduğu gibi bir kanı oluşmuştur. Kanban‘ın asıl amacı; gerçek bir “pull” sistemi oluşturup, “Ertelenmiş Taahhüt” (Deferred Commitment) olgusunu benimsemiş “Tam Zamanında Üretim” (JIT Delivery) yapabilen istikrarlı bir sistem yaratmaktır.
+-
+-
+-
 
 
 

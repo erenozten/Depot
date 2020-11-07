@@ -13598,6 +13598,12 @@ One limitation to this sort of testing is that any conditions not stated in spec
 -
 -
 -
+Reverse engineering / Tersine Mühendislik / Backwards Engineering / (test)  (test) 
+Reverse engineering nedir, tersine mühendislik nedir, backward engineering nedir, back engineering nedir
+Reverse engineering, also called backwards engineering or back engineering, is the process by which an artificial object is deconstructed to reveal its designs, architecture, code or to extract knowledge from the object. It is similar to scientific research, the only difference being that scientific research occurs for a natural phenomenon
+Reverse engineering is applicable in the fields of computer engineering, mechanical engineering, electronic engineering, software engineering, chemical engineering,[2] and systems biology.[3]-
+-
+-
 
 
 

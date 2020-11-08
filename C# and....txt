@@ -14384,6 +14384,37 @@ GitHub, Inc. is an American multinational corporation that provides hosting for 
 -
 -
 -
+TFS / Team Foundation Server             (GITHUB)  (test) 
+Tfs nedir
+Microsoft TFS for source control has been around for more than a decade. And it has evolved a lot since its inception in 2005. There are professionals in the industry whose entire careers have been dedicated to managing TFS. Such expertise has been necessary because it was quite complicated to administer.
+Hands-on management was critical to deal with database changes, service packs, and countless upgrades that added numerous small features. TFS was complicated to use, because it was created when user experience (UX) was not a top priority for Microsoft. When comes to TFS testing, there was no to what was happening. Testing in TFS steps was difficult because there was relationship between bugs and failed tests.
+Microsoft TFS Project Management 
+In 2012, TFS morphed into a tool that helped teams manage their software development projects using Agile. One of the primary reasons it became popular for Agile was because companies already had Microsoft licenses. It was a simple choice. This made it easier for teams to adopt and support new Agile software development process.
+Microsoft also created a dedicated TFS ALM tool. This light-weight tool could manage some requirements, but it lacked a robust and flexible model that can support large-scale global teams. 
+On the version control side of things, TFS has had a couple of different approaches. Team Foundation Version Control (TFVC) was one centralized version control system. This system saved historical data using path-based branches created and maintained on a Windows server.
+Microsoft TFS in the Cloud
+Many people continue to run older on-premises versions of TFS. But Microsoft has been moving all the software it makes to the cloud. Some obvious examples include Office 365 and Azure, along with numerous smaller initiatives. For many, Microsoft’s cloud move was unexpected, but the benefits are clear. Azure has become a fast, secure, and integrated platform for Windows shops.
+It seems like no one ever expected Microsoft to openly embrace open source. But when you look at it closely, it makes sense.  A big part of Microsoft’s strategy has been to win the hearts and minds of developers. Open Source has become popular with both developers and the companies they work for. As a result, Microsoft has put Git front and center in Visual Studio’s Source Code Control (SCC) integration.
+TFS Evolution: What Is the Difference between VSTS and TFS?
+So, TFS has morphed again. Today, VSTS (Visual Studio Team Services) is Microsoft’s Git code hosting, collaboration, and DevOps platform. It offers features comparable to other cloud-based Git tools and is the default version control system in Visual Studio. The on-premises version of VSTS is now called TFS. It looks nothing like the TFS of old. Microsoft’s GVFS (Git Virtual File System) runs on Windows servers and turns Git into a centralized, server-based system.
+You can continue to use your legacy TFVC with Visual Studio and other popular VCS systems. Perforce Helix Core continues to have very strong integrations with the popular integrated development environment (IDE). Helix Core’s plugin for Visual Studio (P4VS) has been downloaded almost 400,000 times.
+TFS for Source Control: Evaluating the Git Takeover
+But even after all of this, yet another morph for TFS for source control may be on the horizon with Microsoft’s recent acquisition of GitHub, the actual home of open source software. Public announcements from the leadership of both companies say they will continue to operate “business as usual”, serving their respective communities.
+This being said, we all know things can change quickly in the technology marketplace. It seems very likely that, at some point in the future, GitHub and VSTS will merge. It isn’t much of a stretch to think that NuGet and other tools might make their way over to this combination. It will be interesting to see how Microsoft version control will evolve.
+What’s the Best Replacement for Team Foundation Server?
+If you are still using an older on-premises version of Microsoft TFS, consider joining many other companies who are taking advantage of this turning point to evaluate. Is Git and the new VSTS really the right set of technologies for your team?
+If you have:
+Large numbers of developers.
+Geographic locations.
+Very large files (and a lot of them).
+Automation needs.
+Then Git may not be the right solution for you.
+Helix Core + Git Support
+TFS is like an old friend. But it’s one who wants give you handwritten directions, rather than plug an address into Google maps. It’s probably holding you back, or at least delaying your arrival.
+And at this point, it isn’t just the VCS in the mix, but also Agile project management and lifecycle management. Perforce tools deliver best-in-class functionality that exceeds the comparable functionality in TFS and TFVC.
+-
+-
+-
 
 
 

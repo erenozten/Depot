@@ -14276,6 +14276,39 @@ Common examples include separating a space into rooms, so that activity in one r
 -
 -
 -
+REST - Representational state transfer             (GITHUB)  (test) 
+Rest nedir, rest api nedir
+REST (Temsilî Durum Aktarımı; İng. Representational state transfer), Web protokolleri ve teknolojilerini kullanan bir dağıtık sistemdir. REST prensiplerini sağlayan sistemler, RESTful olarak sıfatlandırılır. Temsilî Durum Aktarımı ismindeki temsilî (İng. representational), verinin temsilini kastetmekte olup onunla ilgili durumun aktarılması olarak düşünülebilir.
+SOAP ve WSDL tabanlı Web servislerine spesifikasyon olarak daha basit bir alternatif olarak geliştirilmiştir. RESTful sistemler çoğunlukla HTTP protokolü üzerinden Web tarayıcıları tarafından sayfaların transferinde de kullanılan HTTP fiilleri (GET, POST, PUT, DELETE v.s.) ile haberleşirler.
+Aktarılan verinin formatı HTML, JSON, XML ya da farklı bir tipte olabilir. REST, bu konuda bir kısıtlama getirmez. Aktarılan verinin tipi ve özellikleri istemci ve sunucu tarafından HTTP protokolünde yer alan content-type (içerik tipi) ve benzeri metaveri ile tanımlanır.
+What is REST?
+Many publicly accessible services expose a REST API which enables a wide range of applications from web user interfaces to back-end system integration and synchronization. So what exactly is REST and what makes an API RESTful?
+REST – REpresentational State Transfer
+Technically, REST stands for REpresentational State Transfer (so it’s not a perfect acronym), and essentially means that it’s an architecture intended to transfer a representation of server data or state between a client and server.
+There are a few detailed criteria that are considered necessary for an API to be RESTful, but the most important are that the API be:
+•	Stateless
+This means that there is no necessary session is held between a client and server. Data received from the server can be used by the client independently. This allows for short, discrete operations, and even offline caching of data. This makes REST a natural fit for HTTP operations in which requests are intended to be singular and short-lived.
+•	Uniform
+REST APIs are meant to be self-describing, uniform in their definition, and each operation separated by a different endpoint or URL. In practical terms, most REST APIs implement classic CRUD (Create, Read, Update, Delete) operations against a data model. This uniformity allows developers to easily learn the usage pattern of each API.
+So what does a REST API look like?
+Because it’s meant to be representational, let’s start with the data model that it’s meant to represent. For example, if we have an online commerce application, we’d want to define the operations for managing products in our catalog, centered around the Product model.
+Each of these operations would be linked to a combination of a URL and an HTTP verb. To review, there are many HTTP verbs, but most web development uses only the GET and POST verbs for requesting a URL or posting form data, respectively. But REST uses more HTTP verbs to signal to the server what type of operation the client is performing.
+ 
+The following is a simplified list of URLs combined with the HTTP verb that we’d use to expose the full API for managing a Product catalog:
+ 
+The operations and URLs above are just the basic operations on a single model. REST APIs can also support very specific operations or hierarchical operations.  For example, if you wanted to send a signal to the server to reorder a supply of products, you might expose a URL like this:
+/products/{id}/reorder 	 POST 	Signal to the server that you want to reorder quantities of a product {id}. The message body could be empty, or contain a data model used for detailed instructions on the reorder operation.
+Or, if you wanted to dive into the product catalog and run a query to return a list of all orders for a given product, the API could expose an operation like this:
+/products/{id}/orders  	 GET  	Given an {id} for a product, return all orders.
+Conversely, you could expose an order-centric endpoint that allows you to list all products in the order:
+/orders/{id}/products  	 GET  	Given an order {id} return all products in the order.
+What does the server data look like?
+While there’s no strict requirement for what type of data a REST API uses or returns, it has become a de facto standard for web-based REST APIs to use JSON as the data definition.
+This is because JSON is a native format that all modern browsers can use to represent hierarchical objects. For more information on JSON, read our article What Is JSON?
+
+-
+-
+-
 
 
 

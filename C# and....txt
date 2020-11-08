@@ -14338,6 +14338,52 @@ RESTful web services are stateless. A REST-based implementation is simple compar
 SOAP requires less plumbing code than REST services design. The Web Services Description Language describes a common set of rules to define the messages, bindings, operations and location of the service. SOAP web services are useful for asynchronous processing and invocation.
 -
 -
+Source Control vs. Version Control       (GITHUB)  (test) 
+Source control nedir, version control nedir
+ 
+Every development team needs a good way to manage changes and version code in their codebases. That's why they use source control tools. Here we cover what source control is and how to choose tools.
+What Is Source Control?
+Source control refers to tracking and managing changes to code. This ensures that developers are always working on the right version of source code.
+Source Control vs. Version Control
+These two terms are used interchangeably. However, source control is specific to source code. Version control also covers large binary files and digital assets.
+Yani şöyle diyebiliriz: Source Control = Source code…
+What Is Source Control Management?
+Source control management (SCM) refers to tools that help you keep track of your code with a complete history of changes.
+Source Control vs. Source Code Management (SCM)
+These two terms are also used interchangeably. However, source control is specific to tracking changes in source code. And source code management (SCM) tracks changes to a source code repository.
+SCM also maintains a history of changes. This is used to resolve conflicts when merging updates from multiple developers.
+Why Source Control Is Important
+Source control is important for maintaining a single source of truth for development teams. Plus, using it helps facilitate collaboration and accelerates release velocity.
+That’s because it allows multiple developers to work on the same codebase. They can commit and merge code without conflicts. And they can even make edits to shared code, without unknowingly overwriting each other’s work.
+Looking to get the best tool free? Now you can. Try Helix Core from Perforce free for up to 5 users.Tips for SCM
+Having a system is one thing. Managing it effectively is another.
+Here are some tips to keep in mind.
+Choose the right system. (Helix Core is a great one.)
+Git Source Control Is One Popular Option
+Git source control is one of the most popular options. Some teams use open source Git. Others use enterprise Git. Some popular Git source control options include GitHub, GitLab, and Bitbucket.
+Perforce also has Git tools. Helix4Git is a Git server inside a Perforce server that brings your Git source code into your pipeline. And Helix TeamHub can host Git repositories.
+SCM Tools — Beyond Git
+There are several other software options beyond Git.
+These include the following.
+Perforce Helix Core
+Helix Core is a Perforce source control tool, available for free for up to 5 users. It’s especially well-suited for complex development challenges (such as game development or embedded systems development). And it scales well as teams (and files) grow.
+Subversion (SVN)
+Subversion is an open source version control software. It mimics some features of Concurrent Versions Systems (CVS) and was popular in the early 2000s. It’s since lost some ground to Git.
+ClearCase
+IBM Rational ClearCase is another SCM tool. It used to be the cutting edge of technology. However, ClearCase can impede the adoption of DevOps processes, which has led many teams to switch tools.
+Team Foundation Server (TFS)
+Microsoft TFS is a software tool that combines version control, issue tracking, and ALM. TFS has been used to track changes to source code for the past decade, with different options for on-premises and cloud.
+Mercurial
+Mercurial is another SCM tool that emerged around the same time as Git. Many teams trust Mercurial to manage large codebases and the history of legacy code.
+But What’s the Best Source Control Tool?
+There are so many source control tools available, you might wondering… which one is the best?
+Helix Core is the best option for any team — from a small team of indie game developers to a large enterprise with 1,000s of developers working on code.
+Github
+Github nedir
+GitHub, Inc. is an American multinational corporation that provides hosting for software development and version control using Git. It offers the distributed version control and source code management (SCM) functionality of Git, plus its own features. It provides access control and several collaboration features such as bug tracking, feature requests, task management, continuous integration and wikis for every project.[4] Headquartered in California, it has been a subsidiary of Microsoft since 2018.
+-
+-
+-
 
 
 

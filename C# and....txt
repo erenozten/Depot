@@ -14309,6 +14309,27 @@ This is because JSON is a native format that all modern browsers can use to repr
 -
 -
 -
+SOAP (Simple Object Access Protocol - Basit Nesne Erişim Protokolü)              (GITHUB)  (test) 
+Soap nedir
+Service-oriented Architecture felsefesini pratiğe uyarlayan iki interface'den biridir. Üzerinde bulunan Universal Description Discovery and Integration (UDDI) ile birlikte hizmet yönelimli mimarinin pratikte kullanılmasını mümkün kılar.
+SOAP (Basit Nesne Erişim Protokolü) dağıtık uygulamalarda ve web servislerinin haberleşmesinde kullanılmak üzere tasarlanan, RPC (Remote Procedure Call) modelini kullanan, istemci/sunucu mantığına dayalı bir protokoldür. Daha genel olarak SOAP, web üzerinden fonksiyonları kullanmak için geliştirilmiş bir sistemin XML tabanlı kurallar topluluğudur. SOAP ile ilgili bütün mesajlar XML formatında iletilir ve temel olarak bir SOAP mesajı 3 şekilde oluşabilir:
+Metot Çağırımı
+Cevap Mesajı
+Hata Mesajı
+Bir SOAP mesajının yapısı
+Envelope
+Bütün SOAP mesajlarının içinde olduğu elemandır. SOAP mesajına ilişkin XML belgesinin root elemanı olmak zorundadır. 
+Envelope elemanı içinde Body veya Header gibi elemanlar bulunur. 
+Envelope elemanının içinde her zaman bir Body elemanı vardır fakat Header elemanı olmak zorunda değildir. 
+SOAP mimarisine göre eğer Envelope elemanı içinde Header elemanı varsa bu eleman Envelope elemanının içindeki ilk eleman olmalıdır. 
+Soap kullanan mimarilerde kesinlikle erişim protokolü olarark TCP kullanılmalıdır.
+Header
+SOAP mesajlarındaki Header elemanını HTML standartlarında bulunan <Head></Head> etiketlerine benzetebiliriz. Header bölümü metot çağrımı ile doğrudan ilişkili değildir. Header bölümü ile meta-data dediğimizi bilgiler gönderilir.
+Body
+Body elemanı SOAP mesajının en önemli kısmını oluşturur. Body bölümünde web metotunun adı ve metotun parametrik bilgileri XML formatında gönderilir. Cevap mesajında ise metotun geri dönüş değeri Body bölgesine eklenir. metotun parametrik yapısının bu şekilde XML formatında yazılmasına SOAP Serialization denir. Son olarak hata mesajlarında ise Body bölümünde hatanın adı ve tanımı gibi bilgiler bulunur.
+-
+-
+-
 
 
 

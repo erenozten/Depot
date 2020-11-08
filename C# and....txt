@@ -14003,6 +14003,21 @@ By contrast, a dynamic web page is a broader concept, covering any web page gene
 DHTML is differentiated from Ajax by the fact that a DHTML page is still request/reload-based. With DHTML, there may not be any interaction between the client and server after the page is loaded; all processing happens in JavaScript on the client side. By contrast, an Ajax page uses features of DHTML to initiate a request (or 'subrequest') to the server to perform additional actions. For example, if there are multiple tabs on a page, pure DHTML approach would load the contents of all tabs and then dynamically display only the one that is active, while AJAX could load each tab only when it is really needed.
 -
 -
+-
+WPF (Windows Presentation Foundation)              (GITHUB)  (test) 
+Wpf nedir
+İsminden ne olduğu anlaşılıyor: Windows PRESENTATİON Foundation. Yani tasarımla, görüntüyle ilgili bişey…
+Wpf, Microsoft tarafından geliştirilen, Windows Presentation Foundation kelimelerinin baş harflerinden oluşturulmuş yeni bir görsel tasarım sistemidir. 
+WPF, yazılım tasarımında gelişen teknolojiyle birlikte modern grafik kartlarının sunduğu avantajlardan faydalanarak daha etkileyici, aynı zamanda işlevsel görsel tasarımların oluşturulmasına imkan verir.
+Tasarımlar XAML (eXtensible Application Markup Language) adı verilen XML benzeri bir işaretleme dili ile oluşturulur. Microsoft’un geliştirdiği WPF teknolojisi ve XAML dili, Oracle’ın geliştirdiği JavaFX teknolojisi ve FXML dili birbiriyle benzer niteliklere sahip rakip teknolojilerdir.
+ 
+-
+WPF yeni nesil kullanıcı arayüzü geliştirme ve görüntüleme platformudur. Bu yeni platformun sağlamış olduğu yeni özellikler ile görsel olarak daha modern ,kullanıcı ile daha etkileşimli, içerik sunumunda daha esnek, uygulamalarda kullanılan ses ve görüntü lerin daha kolay bir şekilde gösterilmesi ve zengin içerikli uygulamaların kolay ve hızlı bir şekilde geliştirilmesi sağlanmaktadır. WPF’in mimarisinden dolayı çalıştığı sistem üzerindeki donanımı yoğun işlemlerde dahi en etkin biçimde kullanarak performans konusunda tatmin edici sonuçlar vermektedir.
+WPF in getirdiği yeniliklerin başında uygulama geliştirme aşamasında kod yazmak yerine günüzmüzde birçok firmanın ürününde sık sık karşılaştığımız deklaratif programlama ile (ASP.NET ile ilgilenenlerin yakından bildiği gibi) uygulama geliştirme imkanı sağlamasıdır. XML’e benzer yapısı ile XAML (eXtensible Application Markup Language ) dilini kullanarak(zamel olarak telaffuz edilir), HTML kullanarak hazırladığımız arayüzlerdeki gibi WPF’de de kolaylıkla esnek kullanıcı arayüzleri oluşturabiliriz. Tabi ki eskiden kullanılan yöntem yani kod ile uygulama arayüzü geliştirme (imperative programming) desteği de halen devam etmektedir. XAML dili ile programcı ve tasarımıcı arasındaki bağımlılığı ortadan kaldırmaktır. Tasarımcı XAML dilini kullanarak arayüzü oluşturacak, programcı ise çalışaması gereken kodları yazacak, uygulamanın sonunda da programıcının kodları ile tasarımcının hazırladığı arayüz birleştirilerek uygulama hazır hale getirilecek. Oysa bundan önceki programlama modelinde kullanıcı arayüzünü geliştirmek kod ile gerçekleştiğinden arayüzün hazırlanması ve kodların yazımı tamamen programcının sorumluluğunda olan bir durumdu.
+-
+-
+-
+
 
 
 

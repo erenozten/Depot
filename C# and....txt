@@ -14330,6 +14330,14 @@ Body elemanı SOAP mesajının en önemli kısmını oluşturur. Body bölümün
 -
 -
 -
+REST vs. SOAP             (GITHUB)  (test) 
+REST and SOAP offer different methods to invoke a web service REST and SOAP offer different methods to invoke a web service. 
+REST is an architectural style, while SOAP defines a standard communication protocol specification for XML-based message exchange. 
+REST applications can use SOAP.
+RESTful web services are stateless. A REST-based implementation is simple compared to SOAP, but users must understand the context and content being passed along, as there’s no standard set of rules to describe the REST web services interface. REST services are useful for restricted profile devices, such as mobile, and are easy to integrate with existing websites.
+SOAP requires less plumbing code than REST services design. The Web Services Description Language describes a common set of rules to define the messages, bindings, operations and location of the service. SOAP web services are useful for asynchronous processing and invocation.
+-
+-
 
 
 

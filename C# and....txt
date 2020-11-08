@@ -13887,6 +13887,21 @@ session.saveOrUpdate(kahve);
 kahve, bildiğimiz düz bir Java nesnesidir (POJO).
 Hibernate gibi ORM araçlarının en önemli faydası, kod yazımını kısaltmak veya kolaylaştırmaktan öte, yazılım bakımını kolaylaştırmasıdır. Veri tabanı temelli uygulamalarda, kodun 1/3´ü veri tabanı erişimine yöneliktir. Veri tabanındaki bir kolonunun tipinin değişmesi, yeni bir kolon eklenmesi gibi değişiklikler, bütün veri erişim kodunu tekrar gözden geçirmeyi gerektirir. Hibernate ile bu gözden geçirmeden çok yüksek oranda tasarruf edilir. Hibernate kullanılan yazılımlarda, veri tabanındaki değişikliklerde yapılması gereken sadece nesnelerle tabloların birbirine nasıl eşleştirildiğinin (mapping) gözden geçirilmesidir.
 -
+Hibernate ORM (or simply Hibernate) is an object-relational mapping tool for the Java programming language. It provides a framework for mapping an object-oriented domain model to a relational database. Hibernate handles object-relational impedance mismatch problems by replacing direct, persistent database accesses with high-level object handling functions.
+Hibernate is free software that is distributed under the GNU Lesser General Public License 2.1.
+Hibernate's primary feature is mapping from Java classes to database tables, and mapping from Java data types to SQL data types. Hibernate also provides data query and retrieval facilities. It generates SQL calls and relieves the developer from the manual handling and object conversion of the result set.
+Mapping
+The mapping of Java classes to database tables is implemented by the configuration of an XML file or by using Java Annotations. When using an XML file, Hibernate can generate skeleton source code for the persistence classes. This is auxiliary when annotations are used. Hibernate can use the XML file or the Java annotations to maintain the database schema.
+There are provided facilities to arrange one-to-many and many-to-many relationships between classes. In addition to managing associations between objects, Hibernate can also manage reflexive associations wherein an object has a one-to-many relationship with other instances of the class type.
+Hibernate supports the mapping of custom value types. This makes the following scenarios possible:
+Overriding the default SQL type when mapping a column to a property.
+Mapping Java Enums to columns as though they were regular properties.
+Mapping a single property to multiple columns.
+Definition: Objects in an object-oriented application follow OOP principles, while objects in the back-end follow database normalization principles, resulting in different representation requirements. This problem is called "object-relational impedance mismatch". Mapping is a way of resolving the object-relational impedance mismatch problem.
+Mapping informs the ORM tool of what Java class object to store in which database table.
+
+-
+-
 -
 -
 NHibernate             (GITHUB)  (test) 

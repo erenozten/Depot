@@ -14261,6 +14261,11 @@ Para Çokomel Eğrisi
 1 liraya 1 çokomel alabiliyorum. 2 liraya 2 tane alabilirim. Hatta toplu alsam belki 20 liraya 25 tane alabilirim. Peki bu dağıtık sistemlerde de böyle mi? 1 makina ile 100 birim iş yapabiliyor isem 10 makina ile 1000 işlem yapabilir miyim?
 Dağıtık sistemlerde makina adeti ile toplam işlem gücü arasındaki ilişki lineer değil maalesef. Çünkü sisteme eklenen her bir öğe sistemin karmaşıklığını arttırır ve beraberinde iletişim maaliyetleri getirir. Dolayısıyla 10 makina ile 1000 işlem yapmanız neredeyse olanaksızdır. 900 filan olursa öpüp başınıza koyun derim :)Yüksek özellikli makinalar her zaman verimli mi?
 
+Yazıyı bitirirken yukarıdaki grafiği de açıklamak isterim. Barroso, Clidaras ve Hölzle isimli 3 Google çalışanı bir araştırma yapıyor. Araştırmada şöyle bir soru mevcut: 4 çekirdekli sıradan makinalarla mı çalışsak daha performanslı olur, yoksa high-end dedikleri 128 çekirdekli makinalarla mı çalışsak daha iyi olur? Kurulan kümenin (cluster) boyutu küçükken (toplamda 512 çekirdekli iken mesela) 128’lik makinalı küme çok daha iyi. Çünkü iletişimin büyük bölümü makina içlerinde ve tahmin edersiniz ki belleğe ulaşmak (memory access) ağ üzerinden haberleşmeye göre oldukça ucuz/hızlı. Fakat kümenin boyutu büyüdükçe bu performans artışı gitgide azalıyor. Sonlara doğru %1-2 düzeylerinde gördüğünüz üzere. Yani dağıtık sistemlerde ölçek büyüdükçe sistem üzerindeki birimlerin büyüklüklerinin önemi ciddi ölçüde azalıyor. Problemi/çözümü kümeye nasıl dağıttığımıza kalıyor bütün mesele.
+-
+-
+-
+
 
 
 

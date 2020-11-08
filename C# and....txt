@@ -14415,6 +14415,40 @@ And at this point, it isn’t just the VCS in the mix, but also Agile project ma
 -
 -
 -
+xUnit              (GITHUB)  (test) 
+xUnit nedir
+For the particular .NET testing framework, see xUnit.net.
+xUnit is the collective name for several unit testing frameworks that derive their structure and functionality from Smalltalk's SUnit. SUnit, designed by Kent Beck in 1998, was written in a highly structured object-oriented style, which lent easily to contemporary languages such as Java and C#. Following its introduction in Smalltalk the framework was ported to Java by Kent Beck and Erich Gamma and gained wide popularity, eventually gaining ground in the majority of programming languages in current use. The names of many of these frameworks are a variation on "SUnit", usually replacing the "S" with the first letter (or letters) in the name of their intended language ("JUnit" for Java, "RUnit" for R etc.). These frameworks and their common architecture are collectively known as "xUnit". 
+All xUnit frameworks share the following basic component architecture, with some varied implementation details.
+Test runner: A test runner is an executable program that runs tests implemented using an xUnit framework and reports the test results.
+(test runner nedir)
+Test case: A test case is the most elemental class. All unit tests are inherited from here.
+(test case nedir)
+Test fixtures:
+A test fixture (also known as a test context) is the set of preconditions or state needed to run a test. The developer should set up a known good state before the tests, and return to the original state after the tests.
+Test suites
+A test suite is a set of tests that all share the same fixture. The order of the tests shouldn't matter.
+Test execution
+The execution of an individual unit test proceeds as follows:
+
+	setup(); /* First, we should prepare our 'world' to make an isolated environment for testing */
+	...
+	/* Body of test - Here we make all the tests */
+	...
+	teardown(); /* At the end, whether we succeed or fail, we should clean up our 'world' to 
+	not disturb other tests or code */
+  	
+The setup() and teardown() methods serve to initialize and clean up test fixtures.
+Test result formatter
+A test runner produces results in one or more output formats. In addition to a plain, human-readable format, there is often a test result formatter that produces XML output. The XML test result format originated with JUnit but is also used by some other xUnit testing frameworks, for instance build tools such as Jenkins and Atlassian Bamboo.
+Assertions
+An assertion is a function or macro that verifies the behavior (or the state) of the unit under test. Usually an assertion expresses a logical condition that is true for results expected in a correctly running system under test (SUT). Failure of an assertion typically throws an exception, aborting the execution of the current test.
+xUnit frameworks
+Many xUnit frameworks exist for various programming languages and development platforms.
+List of unit testing frameworks
+-
+-
+-
 
 
 

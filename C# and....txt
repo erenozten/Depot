@@ -14072,6 +14072,46 @@ The canonical implementation of Material Design for web application user interfa
 -
 -
 -
+Design language / Design Vocabulary          (GITHUB)  (test) 
+Design language nedir
+A design language or design vocabulary is an overarching scheme or style that guides the design of a complement of products or architectural settings.
+Objectives
+Designers wishing to give their suite of products a unique but consistent look and feel define a specification for it, which can describe choices for design aspects such as materials, colour schemes, shapes, patterns, textures, or layouts. They then follow the scheme in the design of each object in the suite.
+Usually, design languages are not rigorously defined; the designer basically makes one thing in a similar manner as another. In other cases, they are followed strictly, so that the products gain a strong thematic quality. For example, although there is a great variety of unusual chess set designs, the pieces within a set are usually thematically consistent.
+Sometimes, designers encourage others to follow their design languages when decorating or accessorizing.
+Industrial design
+In automobiles, the design language is often in the grille design. For instance, many BMW vehicles share a design language,[1] including front-end styling consisting of a split "kidney grille" and four circular headlights. Some manufacturers have appropriated design language cues from rival firms.
+Software
+In software architecture, design languages are related to architecture description languages. The most well known design language is Unified Modeling Language.[citation needed]
+In the context of graphical user interfaces, for example, human interface guidelines can be thought of as design languages for applications.
+Examples
+Apple
+•	Snow White
+•	Platinum
+•	Aqua
+•	Flat Design
+Microsoft
+•	Metro
+•	Fluent Design System
+•	Windows Aero
+Google
+•	Material Design
+Automotive
+Cadillac
+•	Art and Science
+Ford
+•	New Edge
+•	Kinetic Design
+Mazda
+•	Nagare
+•	Kodo[4]
+Mitsubishi
+•	Dynamic Shield[5]
+Subaru
+•	Dynamic x Solid[6]-
+-
+-
+-
 
 
 

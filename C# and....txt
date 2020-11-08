@@ -14057,6 +14057,21 @@ XML dili günümüzde veri iletimiyle alakalı her alanda sıklıkla kullanılma
 -
 -
 -
+Material Design   (GITHUB)  (test) 
+Material Design nedir
+Material Design (codenamed Quantum Paper)[1] is a design language that Google developed in 2014. Expanding on the "card" motifs that debuted in Google Now, Material Design uses more grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.
+Google announced Material Design on June 25, 2014, at the 2014 Google I/O conference.
+Overview
+Designer Matías Duarte explained that, "unlike real paper, our digital material can expand and reform intelligently. Material has physical surfaces and edges. Seams and shadows provide meaning about what you can touch." Google states that their new design language is based on paper and ink but implementation takes place in an advanced manner.
+Material Design will gradually be extended throughout Google's array of web and mobile products, providing a consistent experience across all platforms and applications. Google has also released application programming interfaces (APIs) for third-party developers to incorporate the design language into their applications.[5][6][7] The main purpose of material design is creation of new visual language that combines principles of good design with technical and scientific innovation.
+In 2018, Google detailed a revamp of the language, with a focus on providing more flexibility for designers to create custom "themes" with varying geometry, colors, and typography. Google released Material Theme Editor exclusively for the macOS design application Sketch.[8][9]
+Implementation
+As of 2020, most of Google's mobile applications for Android as well as its web app counterparts had applied the new design language, including Gmail, YouTube, Google Drive, Google Docs, Google Sheets, Google Slides, Google Photos, Google Maps, Google Classroom, Google Translate, Google Chrome, Google Keep, Google Play, and most other Google products. It is also the primary design language of Android and Chrome OS.
+In 2018, with the introduction of the ability to create custom themes, Google also began redesigning most of their apps into a customized and adapted version of Material Design called the Google Material Theme[10], also dubbed "Material Design 2"[11], which heavily emphasized white space, rounded corners, colorful icons, bottom navigation bars, and utilized a special size-condensed version of Google's proprietary Product Sans font called Google Sans.[12] As of 2020, most Google applications have also applied the new Google Material Theme design, with the notable exception of YouTube.
+The canonical implementation of Material Design for web application user interfaces is called Polymer.[13] It consists of the Polymer library, a shim that provides a Web Components API for browsers that do not implement the standard natively, and an elements catalog, including the "paper elements collection" that features visual elements of the Material Design.[14]
+-
+-
+-
 
 
 

@@ -13987,6 +13987,14 @@ A mid-2010 draft (version hixie-76) broke compatibility with reverse proxies and
 -
 -
 -
+DHTMLX             (GITHUB)  (test) 
+Dhtmlx nedir
+DHTMLX: JavaScript UI Framework
+The DHTMLX library supplies over 20 fully customizable widgets to help you build interfaces of different kinds, nicely present data and work with it. There are also multiple controls and specific features to make your applications good-looking and user-friendly.
+ 
+-
+-
+-
 
 
 

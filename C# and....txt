@@ -14552,6 +14552,12 @@ GC çalıştığında uygulamada artık referans edilmeyen objeleri temizler, ha
 -
 -
 
+Coder vs Developer              (GITHUB)  (test) 
+Coder nedir, developer nedir
+Anyone who can write some code is often referred to as a coder by the people outside of the tech industry. But, usually, coders are considered the least trained or experienced level of programmers. These individuals do not have the same algorithmic knowledge as a programmer or developer, as they are often a beginner in the field, skilled in just one coding language. Coders are usually given the job of writing forthright pieces of code that can easily be delegated by the developers. As some are put-off by the title, it is sometimes used interchangeably with “Junior Programmer” or “Junior Developer.”
+-
+-
+-
 
 
 

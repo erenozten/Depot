@@ -15547,6 +15547,10 @@ namespace ConsoleApp1
 -
 -
 -
+Foreign Key	   (GITHUB)  (test)
+Foreign key nedir
+Gereksiz query yazmamamızı sağlar diyor Mosh Hamedani. True.
+The ForeignKey attribute is used to configure a foreign key in the relationship between two entities in EF 6 and EF Core. It overrides the default conventions. As per the default convention, EF makes a property as foreign key property when its name matches with the primary key property of a related entity.
 
 
  

@@ -15128,6 +15128,87 @@ Impli  int i = 100;   // explicitly typed
 -
 -
 
+Data Types in C# (Reference Type, Value Type) 	      (GITHUB)  (test)
+Data type nedir, data types nedir, ref type nedir, reference type nedir, value types nedir, value type nedir
+Önemli: https://www.tutorialsteacher.com/csharp/csharp-data-types
+The following data types are all of value type:
+•	bool
+•	byte
+•	char
+•	decimal
+•	double
+•	enum
+•	float
+•	int
+•	long
+•	sbyte
+•	short
+•	struct
+•	uint
+•	ulong
+•	ushort
+C# mainly categorized data types in two types: Value types and Reference types. Value types include simple types (e.g. int, float, bool, and char), enum types, struct types, and Nullable value types. 
+Reference types include class types, interface types, delegate types, and array types. 
+Learn about value types and reference types in detail in the next chapter.
+ 
+Reference Types:
+Reference types have null value by default, when they are not initialized.
+For example, a string variable (or any other variable of reference type datatype) without a value assigned to it. In this case, it has a null value, meaning it doesn't point to any other memory location, because it has no value yet.
+A value type variable cannot be null because it holds a value not a memory address. However, value type variables must be assigned some value before use. 
+The compiler will give an error if you try to use a local value type variable without assigning a value to it.
+However, value type field in a class can be declared without initialization (field not a local variable in the function). (class dışında da declare edebiliyoruz zaten) It will have a default value if not assigned any value, e.g., int will have 0, boolean will have false and so on.
+class myClass
+{
+    public int i;
+}
+
+myClass mcls = new myClass();
+
+Console.WriteLine(mcls.i); 
+ 
+Output: 0
+
+Points to Remember :
+1.	Value type stores the value in its memory space, whereas reference type stores the address of the value where it is stored.
+2.	Primitive data types and struct are of the 'Value' type. Class objects, string, array, delegates are reference types.
+3.	Value type passes byval by default. Reference type passes byref by default.
+4.	Value types and reference types stored in Stack and Heap in the memory depends on the scope of the variable.
+
+Reference Data Types : The Reference Data Types will contain a memory address of variable value because the reference types won’t store the variable value directly in memory. The built-in reference types are string, object.
+•	String : It represents a sequence of Unicode characters and its type name is System.String. So, string and String are equivalent.
+Example:
+•	string s1 = "hello"; // creating through string keyword  
+•	String s2 = "welcome"; // creating through String class  
+•	Object : In C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from Object. So basically it is the base class for all the data types in C#. Before assigning values, it needs type conversion. When a variable of a value type is converted to object, it’s called boxing. When a variable of type object is converted to a value type, it’s called unboxing. Its type name is System.Object.
+
+Class’lar referans tiptedirler.
+Değişkenler içinde pointer value tutar.
+Objeler de içinde pointer tutar. Resimleri incele 
+ 
+
+        public class Book
+        {
+           public List<int> theList = new List<int>();
+        }
+
+        static void Main(string[] args)
+        {
+            Book book1 = new Book();
+            book1.theList.Add(20);
+            book1.theList.Add(21);
+
+            Book book2 = book1;
+            book2.theList.Add(51);
+
+            foreach(var item in book2.theList)
+            {
+                Console.WriteLine(item); //sonuç: 20,21,51
+                //Çünkü book2 ile yeni bir obje oluşturmadık. Ram'de aynı noktaya işaret ediyorlar. Dikkat edilirse book2 oluştururken new keyword'ü de kullanılmadı.
+            }
+            Console.ReadKey();
+        }
+Resimlerde görüldüğü gibi, book1 i instantiate ettik. Sonra book2 yi book1’e eşitledik. Bu durumda iki tane obje oluşturulmuş olmadı. İki tane pointer (book1 ve book2) tek bir objeye işaret ediyor oldu. Yani iki isimden de (book1,book2) tek bir objeye ulaşıyoruz, yani iki değişken ile aslında tek bir RAM lokasyonuna ulaşıyoruz. (dikkat edilirse new keyword’ü falan kullanmadık)
+Zaten dikkat edilirse, book2 yi oluştururken bir initialization yapmıyoruz. New keword’ünü kullanmıyoruz. Bu bize yeni bir obje oluşturmadığımız konusunda kolayca ipucu verir.
 
 
  

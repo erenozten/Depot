@@ -4486,17 +4486,15 @@ object myObject declares a new object reference.
 -
 -
 -
-Assigning
+Assigning			      (GITHUB)  (test)
 Assign nedir, assigning nedir
-Assigning is simply the storing of one value to a variable. x = 5 assigns the value 5 to the variable  x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;.
-
+Assigning is simply the storing of one value to a variable. 
+(assign kelime anlamı: allocate (a job or duty) / to give a particular job or piece of work to someone: “The case has been assigned to our most senior officer.”)
+x = 5 assigns the value 5 to the variable  x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;
 Note that the statement object myObject = new object(); combines all four of these.
-
 new object() instantiates a new object object, returning a reference to it.
 object myObject declares a new object reference.
 = initializes the reference variable by assigning the value of the reference to it.
--
--
 -
 -
 -

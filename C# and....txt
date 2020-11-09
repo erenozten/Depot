@@ -14610,7 +14610,55 @@ The steps to perform this operation are as follows −
 -
 -
 
+Implicit	      (GITHUB)  (test) 
+Implicit nedir, implicit nedir, explicit nedir
+(Implicit: dolaylı yoldan, yani direkt olarak DEĞİL / suggested, not directly expressed.)
+(explicit: stated clearly and in detail, leaving no room for confusion or doubt.)
+Java üzerinden açıklamış, güzel: 
+Explicit means done by the programmer. Implicit means done by the JVM or the tool , not the Programmer.
+For Example: Java will provide us default constructor implicitly.Even if the programmer didn't write code for constructor, he can call default constructor.
+Explicit is opposite to this , ie. programmer has to write.
+-
+-
+-
 
+Önemli:
+Why public variables are not allowed inside a method or any block except class in c#? 
+(field nedir, local variable nedir)
+Answer:
+There is a difference between variables and fields. Only fields have access protection, while variables cannot be accessed at all outside method's body.
+"Public variables" in C# are called fields. C# allows field declarations to appear only in the body of a class or a struct. Fields are parts of an object definition, which are either attached to an instance, or shared among all instances.
+Variables inside methods, on the other hand, are not fields. Being local to a method body, they do not need access protection. Their lifetime and scope are limited inside the method, so there is no way for any code outside of that method to access local variables.
+
+Another Answer:
+
+Inside a method any variable you declare is only accessible within the method, it is called a local variable. Access modifiers (public, private etc.) make no sense here, as the variable won't exist outside the scope of the method.
+
+If you want a method to set up your public variable for access elsewhere, you can assign values to it, but you can't declare a public variable in your method.
+-
+You cannot define a public element inside a method. This element exists while the method is executing and cannot be accessed outside this main method.
+-
+Fields within a method are local to the method and are therefore don't have access modifiers.
+Access modifiers are applied at the class level i.e.
+public class Person {
+
+  private String name
+
+  public String getName() {
+    return this.name
+  }
+}
+-
+Local variable can not be public. public, private, proctacted are only used with class level members.
+Assume that if it is possible to do so then also how can you access it out of the method or class. So specifing scope before locel members is dose not make any sense.
+-
+Variables declared in methods (aka local variables) are only accessible within the method. After the method returns, all local variables in the method became unaccessible. You can treat all the local variables as if they were private.
+Why is it so then?
+Local variables' purpose is to temporarily store data during the execution of a method. As we all know, a method either does something, or return something, or both. While a method is doing this business, objects might be created to help with whatever the method is doing. And the objects are stored in variables. Since these variables only help the method do its job, they are not needed after the method finishes its job (returns).
+See? They are temporary. There is no point accessing them from another scope.
+-
+-
+-
 
 
 

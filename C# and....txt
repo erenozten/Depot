@@ -15209,6 +15209,145 @@ Objeler de içinde pointer tutar. Resimleri incele
         }
 Resimlerde görüldüğü gibi, book1 i instantiate ettik. Sonra book2 yi book1’e eşitledik. Bu durumda iki tane obje oluşturulmuş olmadı. İki tane pointer (book1 ve book2) tek bir objeye işaret ediyor oldu. Yani iki isimden de (book1,book2) tek bir objeye ulaşıyoruz, yani iki değişken ile aslında tek bir RAM lokasyonuna ulaşıyoruz. (dikkat edilirse new keyword’ü falan kullanmadık)
 Zaten dikkat edilirse, book2 yi oluştururken bir initialization yapmıyoruz. New keword’ünü kullanmıyoruz. Bu bize yeni bir obje oluşturmadığımız konusunda kolayca ipucu verir.
+-
+-
+-
+-
+-
+Immutability / Immutable Value Types	      (GITHUB)  (test)
+Immutability nedir, immutability nedir, immutable nedir
+An object is immutable if its state doesn’t change once the object has been created.
+Defining a type as a value type, indicates that the runtime will copy the values instead of a reference to the runtime. Mutability, on the other hand, depends on the implementation, and each class can implement it as it wants.
+
+https://stackoverflow.com/questions/868411/are-value-types-immutable-by-definition
+
+Are value types immutable by definition?
+No, they are not immutable by definition, it depends on the case if they should be mutable or not. For instance, if they should serve as dictionary keys, they should be immutable.
+Diğer cevap:
+Short answer: No, value types are not immutable by definition. Both structs and classes can be either mutable or immutable. All four combinations are possible. If a struct or class has non-readonly public fields, public properties with setters, or methods which set private fields, it is mutable because you can change its state without creating a new instance of that type.
+Long answer: First of all, the question of immutability only applies to structs or classes with fields or properties. The most basic types (numbers, strings, and null) are inherently immutable because there is nothing (field/property) to change about them. A 5 is a 5 is a 5. Any operation on the 5 only returns another immutable value.
+-
+
+Value Type’lar Immutable’dır. Yani hiçbir şekilde değiştirilemezler. Yani örneğin integer’in 4 değeri her zaman 4’e karşılık gelir. Değiştirilemez. 
+Variable’ların value’larından bahsetmiyoruz. Bahsedilen value, Value Type’in value’sudur.
+
+-
+If you take your logic far enough, then all types are immutable. When you modify a reference type, you could argue that you're really writing a new object to the same address, rather than modifying anything.
+Or you could argue that everything is mutable, in any language, because occasionally memory that had previously been used for one thing, will be overwritten by another.
+With enough abstractions, and ignoring enough language features, you can get to any conclusion you like.
+And that misses the point. According to .NET spec, value types are mutable. You can modify it.
+int i = 0;
+Console.WriteLine(i); // will print 0, so here, i is 0
+++i;
+Console.WriteLine(i); // will print 1, so here, i is 1
+but it is still the same i. The variable i is only declared once. Anything that happens to it after this declaration is a modification.
+In something like a functional language with immutable variables, this would not be legal. The ++i would not be possible. Once a variable has been declared, it has a fixed value.
+In .NET, that is not the case, there is nothing to stop me from modifying the i after it's been declared.
+After thinking about it a bit more, here's another example that might be better:
+struct S {
+  public S(int i) { this.i = i == 43 ? 0 : i; }
+  private int i;
+  public void set(int i) { 
+    Console.WriteLine("Hello World");
+    this.i = i;
+  }
+}
+
+void Foo {
+  var s = new S(42); // Create an instance of S, internally storing the value 42
+  s.set(43); // What happens here?
+}
+On the last line, according to your logic, we could say that we actually construct a new object, and overwrite the old one with that value. But that's not possible! To construct a new object, the compiler has to set the i variable to 42. But it's private! It is only accessible through a user-defined constructor, which explicitly disallows the value 43 (setting it to 0 instead), and then through our set method, which has a nasty side-effect. The compiler has no way of just creating a new object with the values it likes. The only way in which s.i can be set to 43 is by modifying the current object by calling set(). The compiler can't just do that, because it would change the behavior of the program (it would print to the console)
+So for all structs to be immutable, the compiler would have to cheat and break the rules of the language. And of course, if we're willing to break the rules, we can prove anything. I could prove that all integers are equal too, or that defining a new class will cause your computer to catch fire. As long as we stay within the rules of the language, structs are mutable.
+
+-
+
+Değeri değiştirilemez olan: value type’lardır. Hiçbir şekilde değerleri değiştirilemez. Örneği inceleyiniz:
+
+        static void Main(string[] args)
+        {
+            DateTime datetime1 = new DateTime(2019, 6, 24);
+
+            datetime1.AddDays(1); // burada kullandığımız Addays metodu, datetime1 değişkeninin değerini değiştirmeyecektir. Bunun yerine; yeni bir Datetime instance'ı oluşturacaktır ve onun değerini değiştirecektir.
+
+            string string1;
+
+            string1 = " Hello. How'z it going? ";
+
+            string1.Trim(); // Bu da aynı şekilde, değeri değiştirmeyecektir; yeni bir string değişkeni initialize edip, bu değişken için Trim fonksiyonunu çalıştırıp çıkan sonucu return edecektir. Yani string1’in value’sini değiştirmeyecektir.
+
+            // Bu iki örnekteki sonuçların sebebi şudur: Value Type'lar genellikle immutable'dır. Yani immutable olan bir Value Type'dan bir değişken initialize etmişsek, artık onun değerini değiştiremeyiz. Internal veya external hiçbir şekilde değerini değiştirmemizin imkanı yoktur.
+            // Bu immutable Value Type'ların bazı örnekleri Datetime ve String'dir. Bu sebeple de yukarıdaki örneklerin sonucu anlatıldığı gibi olmuştur.
+
+            //Not: String'ler referance type olmasına rağmen birçok yönden value type'mış gibi davranır. String, char dizilerinin adresini tutar ve yeni bir metoda bu değişken yollandığı zaman; yeni bir değişken initialize edilip char dizisi bu değişkene yollanır. Ama burada yapılan bir kopyalama işlemi değildir. String değişkeninin adresi alınıp diğer değişkene atanır. Böylelikle yeni değişken de aynı char dizisine sahip olur. Burada 'kopyalama' yapılmamasının sebebi performanstır. String'in işaret ettiği milyonlarca char olabilir. Şu durumda bir değişken içindeki milyonlarca char'ın kopyalanacağına, adresinin yollanması çok daha verimli olacaktır.
+
+            //Şöyle bir eşitlikle işlemi başarabiliriz:
+
+            string1 = string1.ToUpper(); //İşlem başarılı. Sonuç: "Hello. How'z it going?"
+
+   Student s1 = new Student();
+            Student s2 = s1;
+
+            s1.Name = "First";
+
+            Console.WriteLine(s1.Name); // First
+            Console.WriteLine(s2.Name); // First
+
+            s1 = new Student(); //yeni bir initialization yaptık. [bkz Student();] Kısaca burada yeni bir şeyler oluyor.. Constructor metodu vb çalışıyor.. Olan şey şu; yeni bir obje oluşturuyoruz.
+            // O halde s1 ile s2 artık RAM'de aynı yere işaret edebilir mi? Edemez. Çünkü s2 artık ESKİ objeye (s1) işaret ediyor. Fakat biz bu satırda yeni bir s1 objesi initialize ettik. Yani artık bu ikisi RAM'da aynı lokasyona bakmıyor. Görelim:
+            s1.Name = "Second";
+
+            Console.WriteLine(s1.Name); // Second
+            Console.WriteLine(s2.Name); // First
+
+            Console.ReadKey();
+            Console.ReadKey();
+        }
+-
+In English Language Mutable means "can change" and immutable means "cannot change". The term Immutable Object means that the state of the Object cannot change after its creation. An immutable type sets the property or state of the object as read only because it cannot be modified after it is assigned during initialization.
+Is String in .Net immutable?
+Yes, the String in .Net is immutable. The System.String class is an immutable type provided in the .NET framework class library. Since a String is an immutable type, it cannot be modified. When you modify a string you are actually creating a new string object with the desired value.
+e.g.
+ 
+The above code will create 1000 new string variables in the memory.
+-
+Mutable nedir, immutable nedir:
+Mutable and Immutable ?
+In English Language Mutable means "can change" and immutable means "cannot change". The term Immutable Object means that the state of the Object cannot change after its creation. An immutable type sets the property or state of the object as read only because it cannot be modified after it is assigned during initialization.
+Is String in .Net immutable ?
+Yes, the String in .Net is immutable. The System.String class is an immutable type provided in the .NET framework class library. Since a String is an immutable type, it cannot be modified. When you modify a string you are actually creating a new string object with the desired value.
+e.g.
+ 
+The above code will create 1000 new string variables in the memory.
+Immutability of strings has positive significance in multithreaded applications because it provides automatic thread safety. Instances of immutable types are inherently thread-safe, because no thread can modify it.
+The main drawback of immutable types is that they require more resources than other object types. Because each time it modified, it creates a new one.
+The above code segment creates 1000 new string variables. In these type of situations you should use the StringBuilder class, which allows you to modify the text without making new String class instances. StringBuilder is a Mutable type, that means when you alter it , it still holding same data.
+-
+-
+-
+
+-
+-
+-
+
+String bir value type gibi görünür:
+String s1 = "Hello";
+s1.Trim();
+
+Evet, yukarıdaki Trim metodu s1 değişkeninin değerini değiştiremez. Halbuki değiştirmesi gerekiyordu? Değil mi? Neden, çünkü string’e bir ref type dedik.. 
+
+String’ler ref type olabilirler evet, ama value type gibi davranırlar. O yüzden bu örnekteki Trim metodu asıl değerimizi değiştirmeyecek, kendi kendine farklı bir değişken yaratıp değerini ona atayacak, bizim asıl s1’imize atamayacak. 
+Trim bir değişken return edecek. Bu değişkeni havada kapmalıyız, şöyle ki:
+
+String s2 = s1.Trim();
+
+Return edilmiş değeri s2 diye bir değişkene attık ve işlemi tamamladık.
+
+String’in bir reference type olduğunu hangi mantık yoluyla hatırlayabiliriz? Bence şöyle hatırlanabilir: String değişkeni çok büyük değerler tutabilir içinde. Aşsdkasidkasdşlaksdşaiskd gibi bir değer veya çok daha uzun bir string değeri tutabilir. Şu durumda çok büyük bir Ram lokasyonu ayırmak gerekir; o halde her string değişkeni için kocaman RAM lokasyonu ayırmamız gerekmez miydi, çünkü çok büyük string’ler de gelebilir bu değişkene (sadklşasdlasdşklas örneği gibi). O halde biz bunları 
+-
+-
+-
+
 
 
  

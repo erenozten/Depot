@@ -14506,6 +14506,18 @@ Experienced logic programmers use the procedural interpretation to write program
 -
 -
 
+OOD - Nesne Yönelimli Tasarım               (GITHUB)  (test) 
+Ood nedir, oop nedir
+ 
+What does Object-Oriented Design (OOD) mean?
+Object-oriented design (OOD) is the process of using an object-oriented methodology to design a computing system or application. This technique enables the implementation of a software solution based on the concepts of objects.
+OOD serves as part of the object-oriented programming (OOP) process or lifecycle.
+Techopedia explains Object-Oriented Design (OOD)
+In object-oriented system design and development, OOD helps in designing the system architecture or layout - usually after completion of an object-oriented analysis (OOA). The designed system is later created or programmed using object-oriented based techniques and/or an object-oriented programming language (OOPL).
+The OOD process takes the conceptual systems model, use cases, system relational model, user interface (UI) and other analysis data as input from the OOA phase. This is used in OOD to identify, define and design systems classes and objects, as well as their relationship, interface and implementation.-
+-
+-
+-
 
 
 

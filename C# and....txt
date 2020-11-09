@@ -14897,6 +14897,128 @@ Error(s):
 (17:6) Embedded statement cannot be a declaration or labeled statement
 console
 
+If we wanted to make this code work, we could declare the variable before the if statement and assign a value to it within the if statement.
+*Note: There is a crucial difference in between the scope definition in C and C#.
+If a C# variable is defined within the local scope in a block (if/else) which is conflicting with a variable defined outside following that block, it will give an error. A similar code is compiled under C/C++ or Java. Local variables will remain in scope throughout the entire block where they have been declared. This is the opposite of C++, where the local variables are in scope at points in their block only after they have been declared.
+public void function(){
+  if (true) {
+    /* scope of local if */
+    int a = 2;
+    System.Console.WriteLine(a);
+  } else {
+    /* no conflict arises with same if/else */
+    int a = 4;
+    System.Console.WriteLine(a);
+  }
+
+  if (true) {
+    /* no conflict with local from different if scope */
+    int a = 10;
+    System.Console.WriteLine(a);
+  }
+}
+csharp
+We know that while declaring a scope, any local variable from the outer scope is known. There is no possibility that a local variable within a scope would override the local variable from an outside scope.
+Scopes and Related Error Messages
+The general rules of thumb for C# are:
+•	It is erroneous for a local variable declaration and nested local variable declaration space to contain elements of same name.
+•	There will occur a compile time error if, within the scope of a local variable, it is in a textual position that occurs before the local-variable-declarator. If the local variable declaration is implicit, there will still be an error to refer to that variable in its local-variable-declarator.
+These rules can be understood and remembered with a simple example.
+class Clarity {
+    public int time;
+
+    void Function() {
+        int seconds;
+        seconds = 0; // (Line 1) Will bind to local variable defined above
+        time = 0; // (Line 2) Binds to field time
+
+        {
+            seconds = "s"; // (Line 3) Will bind to local variable defined below
+            string seconds;
+
+            time = "s"; // (Line 4) Binds to local variable defined below.
+            string time;
+        }
+    }
+}
+csharp
+At line 2, one would think that seconds would bind to Clarity.seconds just as in line 1. However, the C# spec defines clearly that name will resolve to closest scope. At line 3 and line 4 there will be compiler errors.
+However, a reference to the local variable inside the declarator is allowed, though it is not implicitly typed. So the following will be true:
+int a = (x = 5); // Allowed
+var b = (y = 10); // Will result in an error
+csharp
+In the first statement, we have already declared the type to be int. When the binding takes place, it is okay because the left side (variable initializer) is apt. Meanwhile, we did not have a type for b initially, so when the binding takes place, we are not certain if 10 can even be assigned to b or not.
+One thing that can be done is name hiding. This is allowed only on fields that are not referenced in current scope. We are allowed to redefine a variable as a string because it has not been referenced yet in the scope for a given method.
+We realize that this method of using a name before its declarator causes the compiler to generate errors, which is not ideal. In simple terms, the plain name is resolved to whatever statement is declared inside its current block, regardless of whether there exists a same name variable or definition outside the block.
+Also, in the 2005 C# Compiler, we incorrectly bound both statements of s to outer local variable, and line 1 would bind perfectly. But there was an error on line 2 reporting that the string is not convertible to int. There was also an error on line 3 that you cannot redeclare s to something else.
+Then, in the 2008 C# Compiler, this was fixed to correctly reflect the spec. Both line 1 and line 2 would bind to line 3. Since they were textually before their declaration, both would yield an error, saying that they were being used before being declared. Line 3 also gives an error that you cannot redeclare s.
+Conclusion
+This guide has explained the scope of local variables in C#. Armed with this knowledge, we can avoid common binding issues and errors and define variables in the correct scope. If an unknown error or garbage value occurs within variables, it can be resolved by assigning values once the scope is well known.
+Happy learning C#!
+-
+Definition - What does Local Variable mean?
+A local variable, in C#, is a type of variable declared by local variable declaration at the beginning of a block the variable is intended to be local to. It can also occur in a for-statement, a switch-statement, a foreach statement, a using statement or a specific-catch statement or using statement.
+
+The local variable declaration explicitly defines the type of the variable that has been declared along with the identifier that names the variable.
+
+A local variable is a type of variable that can be used where the scope and extent of the variable is within the method or statement block in which it is declared. It is used as an iteration variable in the foreach statement, exception variable in the specific-catch clause and resource variable in the using statement. It can also be used as a constant whose value cannot be modified within the method or statement block in which it is declared.
+
+An implicitly typed local variable whose type is inferred by the compiler from the expression on its right is useful in dealing with language integrated queries (LINQ), which return anonymous types in creating a custom type for each LINQ result set.
+Techopedia explains Local Variable
+The memory allocation of a local variable is based on its type. In case of a value-typed local variable (of types like struct, integer, etc.), the entire contents are stored in the stack, whereas the reference typed variable is stored such that its reference portion is in the stack and its contents are in the heap.
+
+An implicitly typed local variable is declared without using .NET type, but with the keyword "var," which assigns the appropriate type. For example, an implicitly typed local variable can be used in a "foreach" statement without declaring its type to iterate a collection.
+
+A local variable should not be referred in the code in a textual position that precedes the declaration statement of that local variable. In addition, there cannot be two or more local variables with the same name within a single block, as this can result in compilation error. Multiple local variables of the same type can be declared and initialized in a single statement.
+
+Within a method of a class that has a local variable named similar to its field, the local variable hides the field while accessing it within the method. It is more efficient to use a local variable than a field.
+This definition was written in the context of C#
+-
+-
+-
+Aşağıda; class içindeki property ve field’lar initialize edilmediği halde değerleri atandı. Int’ler 0’a eşitlendi. String’ler null’a eşitlendi.
+
+using System;
+
+namespace ConsoleAppErenOzten
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            // Şu an, yani Static Void metodunun başındayken;
+            // Student class'ındaki Property'lerin ve field'ların değerleri gösterilmiyor debug esnasında 
+            // (galiba oluşturulmadığı için).
+            Student.Method1();
+            // Metot çalıştı. Şimdi field ve property'lerin değeri gösteriliyor.
+            // Property'ler initialize edilmediği halde değerleri oluşturuldu. 
+            // initialize edilmemiş olan int'ler 0'a eşitlendi, string'ler null'a. 
+            // Dönen değerler aşağıda parantez içinde gösterildi.
+        }
+
+        class Student
+        {
+            public static int myField;                        // 0
+            public static int Int1 { get; set; }              // 0
+            public static int Int2 { get; set; } = 2;         // 2
+
+            public static int Int3 { get; set; }              // 0
+            public static int Int4 { get; set; } = 2;         // 2
+
+            public static string Str1 { get; set; }           // null
+            public static string Str2 { get; set; } = "qwe";  // qwe
+
+
+            public static void Method1()
+            {
+            }
+        }
+    }
+}
+
+-
+-
+-
 
 
 

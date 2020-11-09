@@ -4367,15 +4367,18 @@ This is when you state to the program that there will be an object of a certain 
 -
 -
 -
-Instantiation	 	(GITHUB)
+Instantiation	 	(GITHUB)  (test)
 Instantiation nedir, instantiation nedir
-This is when memory is allocated for an object. This is what the new keyword is doing. A reference to the object that was created is returned from the new keyword.
+This is when memory is allocated for an object. (variable değil!) This is what the new keyword is doing. A reference to the object that was created is returned from the new keyword.
+Instantiation is used to create an object from a class (instantiate).
+Syntax:
+objectName = new className(parameters);
 -
 -
 -
 -
 -
--
+
 Initialization	 	(GITHUB)
 
 This is when values are put into the memory that was allocated. This is what the Constructor of a class does when using the new keyword.

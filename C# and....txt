@@ -14491,6 +14491,20 @@ Whereas procedural languages model execution of the program as a sequence of imp
 Functional programming languages support (and heavily use) first-class functions, anonymous functions and closures, although these concepts are being included in newer procedural languages.
 Functional programming languages tend to rely on tail call optimization and higher-order functions instead of imperative looping constructs.
 
+Many functional languages, however, are in fact impurely functional and offer imperative/procedural constructs that allow the programmer to write programs in procedural style, or in a combination of both styles. It is common for input/output code in functional languages to be written in a procedural style.
+There do exist a few esoteric functional languages (like Unlambda) that eschew structured programming precepts for the sake of being difficult to program in (and therefore challenging). These languages are the exception to the common ground between procedural and functional languages.
+Logic programming
+In logic programming, a program is a set of premises, and computation is performed by attempting to prove candidate theorems. From this point of view, logic programs are declarative, focusing on what the problem is, rather than on how to solve it.
+However, the backward reasoning technique, implemented by SLD resolution, used to solve problems in logic programming languages such as Prolog, treats programs as goal-reduction procedures. Thus clauses of the form:
+H :- B1, …, Bn.
+have a dual interpretation, both as procedures
+to show/solve H, show/solve B1 and … and Bn
+and as logical implications:
+B1 and … and Bn implies H.
+Experienced logic programmers use the procedural interpretation to write programs that are effective and efficient, and they use the declarative interpretation to help ensure that programs are correct.
+-
+-
+-
 
 
 

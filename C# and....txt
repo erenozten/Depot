@@ -14828,6 +14828,74 @@ Rules for Static Constructors
 -
 -
 
+Scope, Local Variable	      (GITHUB)  (test) 
+Scope nedir, local nedir, local variable nedir
+When a variable is declared in a method of a C# program, its scope is pre-defined and its visibility is defined for the rest of the program. When it's created this way, the variable will be available as long as its method is in execution. However, when the control is passed to another method, its scope ends. This type of variable is called a local variable.
+In this guide, we will learn about the scope of local variables and combat the issues related to the position of variable declaration in C# code.
+An example of a local variable:
+using System;
+public class NewProgram {
+   public static void Main(string[] args) {
+      int x;
+      x = 10; // local variable
+      Console.WriteLine("Value:" + x);
+   }
+}
+csharp
+Output will be:
+1
+Value:10
+console
+These variables can be used only within code blocks that are inside that function.
+There are other ways to define and use a variable by declaring it in a class (or as a global variable), which allows it to be available to all methods in that class.
+Global variables can be accessed from anywhere in a class or namespace. C# does not directly support global variables, but the functionality of global variables can be achieved by creating a static class, which is helpful in specific cases. As a general practice, it's best to avoid using global variables because they violate the object-oriented programming philosophy of C# and can make things complicated while multi-threading, etc. Be cautious to avoid conflicts by adding locks or ensuring that only one thread has access to the global variable at any given instance.
+The scope of a variable is within the full code block of its declaration. Also, since the code blocks are sometimes nested as per the application requirement, a loop defined within the method of a class gives three nested code blocks and subsequently three levels of nested-scope. If a variable is defined in any of these scopes, it will be visible to the current scope and the ones that are nested within it.
+In simple terms:
+•	A variable declared within a loop will not be visible outside the loop.
+•	A variable that has been declared outside a loop will be accessible from inside the loop too.
+Variable Scopes in C#
+To understand the scope of a local variable well, it is important to understand the levels of scope in C# .
+Class-Level Scope
+Variables defined in the class are available to all non-static methods declared in the class, called fields or class members. Their access modifier does not affect their scope within the class, and they can be accessed outside of the class using access modifiers.
+
+For example:
+using System; 
+class ClassScope { // class level scope starts here
+    int abc = 1000; // class level variable with class level scope 
+    public void display() { 
+    	Console.WriteLine(a); // method to access the class level variable 
+	} // method ends here
+} // class level scope ends 
+csharp
+Method-Level Scope
+Variables declared within a method are available to its corresponding parts and also the nested code blocks. They are not available outside the method. These are local variables. Variables cease to exist after method execution is complete.
+static void Main(string[] args) {
+    int marks;                                          // Declared at the method-level
+    marks = 100;                                        // Used at the method-level
+	if (marks >= 50)
+    	Console.WriteLine("Great Marks are : {0}", marks);   // Used in the nested scope
+	else
+    	Console.WriteLine("Bad marks are : {0}", marks);   // Again, used in the nested scope
+}
+csharp
+Output will be:
+Great Marks are : 100
+Nested Scope
+We have explained earlier that variables declared in a nested scope will not be available outside their respective code blocks. These can be called loop variables. We will show in the following example that a variable declared in a nested scope of an if statement cannot be used at the method level and will not compile.
+static void Main(string [] args){
+    int score = 100;
+    if (score >= 60)
+        string message = "Good score";                  // Declared in if statement 
+    else
+    	string message = "Poor score";                  // Declared in else statement
+    Console.WriteLine(message);                         // Variable unavailable
+}
+csharp
+Output will be:
+Error(s):
+(15:9) Embedded statement cannot be a declaration or labeled statement
+(17:6) Embedded statement cannot be a declaration or labeled statement
+console
 
 
 

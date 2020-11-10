@@ -15551,6 +15551,18 @@ Foreign Key	   (GITHUB)  (test)
 Foreign key nedir
 Gereksiz query yazmamamızı sağlar diyor Mosh Hamedani. True.
 The ForeignKey attribute is used to configure a foreign key in the relationship between two entities in EF 6 and EF Core. It overrides the default conventions. As per the default convention, EF makes a property as foreign key property when its name matches with the primary key property of a related entity.
+-
+-
+-
+-
+Chrome tactics (GITHUB)
+ 
+Butona tıkla. Butona tıklayınca Post yapılıyo bizim örnekte… Ters tıkla, Sayfayı incele / Network / Şimdi resme bak, solda bi liste var. Burda Create actionresult’ını görüyoruz. Ona tıkla. Sağ tarafa bak.. POST metodu yaptığımızı görüyoruz…. (Request Method: POST)
+Ama mesela client side validation yaparsan jQuery ile… O zaman button’a bassan dahi post  yapılmayacağı için… Network tab’da POST falan göremezsin, çünkü post yapılmaz…
+Client side validation’lar Data annotation’lara göre yapılır… [Required] falan ile yani.
+-
+-
+-
 
 
  

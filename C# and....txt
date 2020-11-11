@@ -15698,6 +15698,49 @@ CTRL SHIFT *   ->      Package Manager sayfasını açıyor (yeni paketler yükl
 -
 -
 -
+Object Oriented Programming / OOP / NYP  (GITHUB) 	(read)
+oop nedir, object oriented programming nedir, nyp nedir
+
+Programımız objeler üzerinden yürür. Objeler sınıflardan türetilir. Bir kalem kırmızı, diğeri mavidir. İkisi farklı objelerdir, aynı sınıftandır. Sınıfların çeşitli metotları vardır. Bir uçak uçar, bir araba yolda gider vb.
+1960'lı yılların sonuna doğru ortaya çıkan bu yaklaşım, o dönemin yazılım dünyasında beliren bir bunalımın sonucudur. Yazılımların karmaşıklığı ve boyutları sürekli artıyor, ancak belli bir nitelik düzeyi korumak için gereken bakımın maliyeti zaman ve çaba olarak daha da hızlı artıyordu. NYP'yi bu soruna karşı bir çözüm haline getiren başlıca özelliği, yazılımda birimselliği (modularity) benimsemesidir. NYP ayrıca, bilgi gizleme (information hiding), veri soyutlama (data abstraction), çok biçimlilik (polymorphism) ve kalıtım (inheritance) gibi yazılımın bakımını ve aynı yazılım üzerinde birden fazla kişinin çalışmasını kolaylaştıran kavramları da yazılım literatürüne kazandırmıştır. Sağladığı bu avantajlardan dolayı, NYP günümüzde geniş çaplı yazılım projelerinde yaygın olarak kullanılmaktadır.
+
+NYP'nin altında yatan birimselliğin ana fikri, her bilgisayar programının (izlence), etkileşim içerisinde olan birimler veya nesneler kümesinden oluştuğu varsayımıdır. Bu nesnelerin her biri, kendi içerisinde veri işleyebilir, ve diğer nesneler ile çift yönlü veri alışverişinde bulunabilir. Hâlbuki NYP'den önce var olan tek yaklaşımda (Yordamsal programlama), programlar sadece bir komut dizisi veya birer işlev (fonksiyon) kümesi olarak görülmektedirler.
+Günümüzde çok çeşitli nesne tabanlı programlama dilleri olmasıyla beraber, en popüler diller sınıflar üzerine kurulmuşlardır (class-based). Bu dillerde nesneler sınıfların birer üyesidir ve nesnelerin tipini de bu sınıflar belirlerler.
+En yaygın NYP dillerinden bazıları, Python, C++, Objective-C, Smalltalk, Delphi, Java, Swift, C#, Perl, Ruby ve PHP' dir.
+Nesne yönelimli programlama dilleri yukarıda adı geçen tüm ögelere sahip olurken, Ada, JavaScript, Visual Basic gibi nesne tabanlı programlama dilleri birkaçından yoksundur, bu dillerin başlıca yoksunluğu kalıtıma sahip olmamalarıdır.
+-
+-
+Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior.
+OOP focuses on the objects that developers want to manipulate rather than the logic required to manipulate them. This approach to programming is well-suited for programs that are large, complex and actively updated or maintained.
+The organization of an object-oriented program also makes the method beneficial to collaborative development, where projects are divided into groups.
+Additional benefits of OOP include code reusability, scalability and efficiency. Even when using microservices, developers should continue to apply the principles of OOP.
+The first step in OOP is to collect all of the objects a programmer wants to manipulate and identify how they relate to each other -- an exercise often known as data modeling.
+Examples of an object can range from physical entities, such as a human being who is described by properties like name and address, down to small computer programs, such as widgets.
+Once an object is known, it is labeled with a class of objects that defines the kind of data it contains and any logic sequences that can manipulate it. Each distinct logic sequence is known as a method. Objects can communicate with well-defined interfaces called messages.
+Object-oriented programming is based on the following principles:
+Encapsulation. The implementation and state of each object are privately held inside a defined boundary, or class. Other objects do not have access to this class or the authority to make changes but are only able to call a list of public functions, or methods. This characteristic of data hiding provides greater program security and avoids unintended data corruption.
+Abstraction. Objects only reveal internal mechanisms that are relevant for the use of other objects, hiding any unnecessary implementation code. This concept helps developers more easily make changes and additions over time.
+Başka tanım abstraction nedir (Tarık Güney): Bir varlık ya da sistemi incelerken, fiziksel, mekansal, ve zamansal nitelikleri içinden ilgimizi çekmeyen kısımları ayıklamak sureti ile sadece işimize yarayan kısımlara odaklanmak.
+Inheritance. Relationships and subclasses between objects can be assigned, allowing developers to reuse a common logic while still maintaining a unique hierarchy. This property of OOP forces a more thorough data analysis, reduces development time and ensures a higher level of accuracy.
+Polymorphism. Objects can take on more than one form depending on the context. The program will determine which meaning or usage is necessary for each execution of that object, cutting down the need to duplicate code.
+While Simula is credited as the first object-oriented programming language, the most popular OOP languages are:
+Java
+JavaScript
+Python
+C++
+Visual Basic .NET
+Ruby
+Scala
+PHP
+Criticism of OOP
+The object-oriented programming model has been criticized by developers for multiple reasons. The largest concern is that OOP overemphasizes the data component of software development and does not focus enough on computation or algorithms. Additionally, OOP code may be more complicated to write and take longer to compile.
+Alternative methods to OOP include:
+functional programming
+structured programming
+imperative programming
+Most advanced programming languages give developers the option to combine these models.
+-
+-
 
 
  

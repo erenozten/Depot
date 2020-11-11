@@ -16209,6 +16209,16 @@ The $ special character identifies a string literal as an interpolated string. A
         // Both calls produce the same output that is similar to:
         // Hello, Mark! Today is Wednesday, it's 19:40 now.-
 -
+-
+-
+Xamarin (GITHUB)
+Xamarin nedir
+Xamarin is an open source app platform from Microsoft for building modern & performant iOS and Android apps with C# and .NET.
+amarin is a Microsoft-owned San Francisco-based software company founded in May 2011[2] by the engineers that created Mono,[3] Xamarin.Android (formerly Mono for Android) and Xamarin.iOS (formerly MonoTouch), which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).
+With a C#-shared codebase, developers can use Xamarin tools to write native Android, iOS, and Windows apps with native user interfaces and share code across multiple platforms, including Windows, macOS, and Linux.[4] According to Xamarin, over 1.4 million developers were using Xamarin's products in 120 countries around the world as of April 2017.[5]
+On February 24, 2016, Microsoft announced it had signed a definitive agreement to acquire Xamarin.[6]
+
+
 
 
 

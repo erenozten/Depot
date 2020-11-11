@@ -15926,6 +15926,18 @@ Kanban, 2000’li yılların başlarında ilk kez David J. Anderson tarafından 
 -
 -
 -
+Scalability	(GITHUB)
+
+Scalability nedir
+
+Scalability is the property of a system to handle a growing amount of work by adding resources to the system. In an economic context, a scalable business model implies that a company can increase sales given increased resources.
+Scalability is the trait where a software solution can handle increased loads of work. This can be larger data-sets, higher request rates, combination of size and velocity etc.
+When talking about systems scalability, we usually differentiate between
+"Scale up" - the ability to grow by using stronger hardware
+"Scale out"- the ability to grow by adding more hardware
+A solution that can scale out can usually grow to lager loads in a more cost effective way. An important thing to know here is Amdahl's law that states that the ability to scale out is limited by the sequential part of the software
+
+-
 
 
  

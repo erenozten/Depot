@@ -15945,7 +15945,72 @@ When talking about systems scalability, we usually differentiate between
 A solution that can scale out can usually grow to lager loads in a more cost effective way. An important thing to know here is Amdahl's law that states that the ability to scale out is limited by the sequential part of the software
 -
 -
+-
+-
+OLEDB - OLE DB
 
+OLEDB nedir, ole db nedir
+Şu linkteki kod incelenebilir: https://docs.microsoft.com/tr-tr/dotnet/framework/data/adonet/ado-net-code-examples
+İngilizce olarak object linking and embedding database kelimelerinin baş harflerinden oluşan bir veritabanı terimidir. Aslında OLE terimi (object linking and embedding) Microsoft firması tarafından kazandırılan ve uygulama geliştirme sırasında bir varlığı programa bağlamaya yarayan mantıktır.
+Örneğin bir programda bulunan bir resim, programın içerisine dahil edilip çalıştırılabilir kodun (executable code) bir parçası olabileceği gibi, bir resim dosyası olarak hariçte tutulup programın çalışması sırasında bu harici dosyadan okunabilir. Bir varlığın bu şekilde programa dahil edilmesine microsoft terminolojisinde COM (component object model) ismi verilirken hariçte tutulmasına ole ismi verilir.
+OLEDB terimi ise bu açıklamadan anlaşılacağı üzere program ile veri tabanı arasındaki bağlantının hariçte tutulması anlamındadır. Aslında MDAC ismi verilen ve microsoft tarafından geliştirilen microsoft data access components (microsoft veri erişim bileşenleri) ailesinin bir üyesi olan OLEDB, kısaca microsoft ortamlarında veritabanına (DB database) erişmek için kullanılan çeşitli yöntemlerden birisidir. Yapı olarak ODBC bağlantısına benzetilebilir.
+OLEDB kullanımını daha net anlayabilmek için C# dilinde yazılmış aşağıdaki kodu anlamaya çalışalım:
+using System;
+using System.Data.OleDb;
+public class ReadFromOleDb
+{
+  [STAThread]
+  static void Main(string[] args)
+  {
+    String sConn = "provider=sqloledb;server=(local)\SQLEXPRESS;database=veritabani;Integrated Security=SSPI";
+
+    String sSQL = "select id, firstname, lastname from Employee";
+
+    OleDbConnection oConn = new OleDbConnection(sConn);
+    oConn.Open();
+
+    OleDbCommand oCmd = new OleDbCommand(sSQL, oConn);
+    OleDbDataReader oReader = oCmd.ExecuteReader();
+
+    int idxID = oReader.GetOrdinal("id");
+    int idxFirstName = oReader.GetOrdinal("firstname");
+    int idxLastName = oReader.GetOrdinal("lastname");
+
+    while(oReader.Read()) {
+      Console.WriteLine("{0} {1} {2}",
+        oReader.GetValue(idxID),
+        oReader.GetValue(idxFirstName),
+        oReader.GetValue(idxLastName));
+    }
+  }
+}
+Yukarıdaki kodda dikkat edileceği üzere System.Data.OleDb kütüphanesi kullanılmıştır. OleDb ile veritabanı işlemini 3 adımda inceleyebiliriz:
+1. Veritabanı bağlantısının kurulması
+2. Bağlantı üzerinde bir sorgunun (query) çalıştırılması
+3. Sorgu sonucunda (şayet sorgu bir sonuç kümesi döndürüyorsa (result set) ) sonuç kümesi üzerinde işlem yapılması
+Bu sıralanan adımları yukarıdaki kodda belirleyecek olursak ilk adım olan veritabanı bağlantısı
+String sConn = "provider=sqloledb;server=(local)\SQLEXPRESS;database=veritabani;Integrated Security=SSPI";
+OleDbConnection oConn = new OleDbConnection(sConn);
+oConn.Open();
+Şeklinde 3 ayrı satırda kurulmuştur.  Buradaki provider terimi sqlodedb olarak belirlenmiştir. Bunun anlamı bilgisayarımızda bu bağlantıyı sağlamaya yarayan bir sürücü (driver) bulunması gerektiği ve bağlantının isminin tam olarak sqloledb olmasıdır.
+Ardından server= ile başlayan kısımda (local) yazılmıştır. Burada da aynı bilgisayar üzerinde bulunan veri tabanına bağlanılacağı anlaşılıyor. Şayet farklı bir sunucudaki bir veritabanına bağlanılması istenirse bu durumda sunucunun internet addresi ( IP address ) veya ağ kurulumuna göre  ismi yazılmalıdır.
+Bu yazı şadi evren şeker tarafından yazılmış ve bilgisayarkavramlari.com sitesinde yayınlanmıştır. Bu içeriğin kopyalanması veya farklı bir sitede yayınlanması hırsızlıktır ve telif hakları yasası gereği suçtur.
+database= ile başlayan kısma ise veri tabanı sunucumuzda bulunan ve bağlanılmak istenen veritabanının ismi yazılır.
+Integrated Security ile SSPI ayarlanmıştır. SSPI aslında detaylıca anlatılabilecek bir güvenlik modülü olmasına karşılık bu yazıda sadece Security Support Provider Interface kelimelerinin baş harfinden oluştuğunu ve bağlantı sırasında gidip gelen verinin güvenli bir şekilde saklanmasının hedeflendiğini söylemek ile yetinelim.
+Yukarıdaki bağlantıyı gösteren ikinci satırda OleDbConnection sınıfından (class) bir nesne (object) oluşturuyoruz ve ismi de oConn olarak veriliyor. Burada OleDbConnection yapıcısına (constructor) parametre olarak bir önceki saıtrda tanımladığımız dizgiyi (string) veriyoruz.
+Son olarak oConn.open() metodunu çağırarak bağlantıyı açıyoruz.
+Bağlantı açıldıktan sonra, bu bağlantı üzerinden artık sorgu (query) çalıştırılabilir. Sorgu çalıştıran satırlarımız aşağıda verilmiştir:
+String sSQL = "select id, firstname, lastname from Employee";
+OleDbCommand oCmd = new OleDbCommand(sSQL, oConn);
+OleDbDataReader oReader = oCmd.ExecuteReader();
+Yukarıdaki 3 satırda sırasıyla bir sorgu cümlesi (query string) girilmiş, bu cümle daha önceden açılmış olan bağlantı üzerinde çalıştırılmış ve son olarak sorgunun sonucunu okumak üzere OleDbDataReader sınıfından (class) bir nesne üretilmiştir.
+Üçüncü kısımda bu sorgunun sonucu işlenmektedir.
+oReader nesnesinden getOrdinal fonksiyonu ile veritabanımızda bulunan Employee tablosundaki ilgili kolonları (column) bağlayabiliyoruz:
+oReader.GetOrdinal("id");
+Örneğin yukarıdaki kodda “id” isimli kolon alınmıştır. Daha sonra bu bağlantılar üzerinden satır satır okuma yaparak verileri çekmemiz mümkün. while döngüsünün (loop) içindeki satırlarda da bu şekilde veri çekilerek Console.write komutu ile ekrana basılmaktadır.
+-
+-
+-
 
  
 

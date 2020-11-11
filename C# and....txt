@@ -15898,6 +15898,35 @@ In summary, the benefits of encapsulation are:
 -
 -
 -
+Behavior-driven development / BDD	(GITHUB) (test)
+BDD nedir Behavior-driven development nedir,  Behavior driven development nedir, Behavior driven nedir
+In software engineering, behavior-driven development is an Agile software development process that encourages collaboration among developers, QA and non-technical or business participants in a software project. It encourages teams to use conversation and concrete examples to formalize a shared understanding of how the application should behave. It emerged from test-driven development (TDD).Behavior-driven development combines the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design to provide software development and management teams with shared tools and a shared process to collaborate on software development.
+Although BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.[5] Although these tools are often developed specifically for use in BDD projects, they can be seen as specialized forms of the tooling that supports test-driven development. The tools serve to add automation to the ubiquitous language that is a central theme of BDD.
+BDD is largely facilitated through the use of a simple domain-specific language (DSL) using natural-language constructs (e.g., English-like sentences) that can express the behaviour and the expected outcomes. Test scripts have long been a popular application of DSLs with varying degrees of sophistication. BDD is considered an effective technical practice especially when the "problem space" of the business problem to solve is complex.
+-
+https://ba-works.com/blog/yazilim-dunyasinda-yeni-nesil-bir-yaklasim-bdd-behaviour-driven-development/
+-
+Yazılım geliştirme son yıllarda Waterfall’dan Agile metodolojisine geçiş yapmaktadır. Agile ile yazılım geliştirme sürekli değişim içerdiğinden yeni hataların ortaya çıkmasını  önlemek için test yapmak vazgeçilemez hale gelmiştir. Testler bir işin istenildiği gibi olup olmadığının en büyük göstergesidir. Öte yandan iş birimleri(business) ile yapılan testler de vardır. İş birimleri kendi alışkanlıkları ve talep edilen ürünün işleyişine göre test ederler. Yani kendi davranışsal testlerini yaparlar. Buradan yola çıkarak yeni test yaklaşımları da hayatımıza girmiştir.
+Son dönemin popüler test yaklaşımlarından biri olan BDD (Behavior Driven Development) aslında TDD’ ye (Test Driven Development) alternatif olarak çıkmıştır. İki test yaklaşımı da kaliteli ve anlaşılabilir kod üretimini amaçlamaktadır. Fakat TDD yaklaşımının maliyetli oluşu ve birbirinin dilinden anlamayan birimler tarafından kullanılmaması BDD yaklaşımı ortaya çıkarmıştır. BDD yaklaşımı tüm birimler tarafından anlaşılabilen ortak bir dil kullanarak müşteri taleplerinin hızlıca yapılabilmesini ve iletişimin sağlanmasını kolaylaştırmıştır. Şimdi bu yaklaşımları detaylı bir şekilde inceleyelim.
+BDD temelinde iki kısımdan oluşur. İlk kısım BT ve iş birimlerinin yazılımın nasıl davranması gerektiğini belirledikleri süreçtir. Bu süreçte iş paydaşları,geliştiriciler ve developerlar kısa ve verimli toplantılar yaparak sistemin özelliklerini ve davranışını belirlerler. İkinci kısım ise yazılımın istenildiği gibi davrandığını yazılmış otomasyon kodları ile göstermeyi hedefler. Çalıştırılan otomasyon kodları sonrasında hızlı bir şekilde test sonuçları gözlemlenir ve eksikler belirlenerek yine hızlıca aksiyon alınabilir. Şekil 3’de BDD süreçleri detaylı bir şekilde gösterilmiştir.
+BDD ’nin kolay bir yazım yöntemi vardır. “Given-When-Then” olarak üç başlıkta test senaryoları kurulur. Given, belirlenen test senaryosu bu başlıkta yazılır. When, test senaryosunun gerçekleşeceği zamanı anlatılır. Then, belirlenen senaryo ve aksiyon sonrasında uygulamanın nasıl bir sonuç döneceğini anlatır. Örneğin, herhangi bir kullanıcının sisteme giriş yapmak istediğini düşünelim ve sırasıyla BDD adımlarını yazalım.
+Given: Kullanıcı şifre alanına hatalı şifre girer.
+When: Giriş düğmesine basar.
+Then: Kullanıcıya hatalı şifre ile giriş yapmak istediğini belirten hata mesajı gösterilir.
+-
+-
+-
+Kanban             (GITHUB)  (test) 
+Kanban nedir
+Video 2 dk. Açıklayıcı: https://www.digite.com/kanban/what-is-kanban/
+Kanban is a visual system for managing work as it moves through a process. Kanban visualizes both the process (the workflow) and the actual work passing through that process. The goal of Kanban is to identify potential bottlenecks in your process and fix them so work can flow through it cost-effectively at an optimal speed or throughput.
+TRIVIA – Kanban, also spelt “kamban” in Japanese, translates to “Billboard” (“signboard” in Chinese) that indicates “available capacity (to work)”. Kanban is a concept related to lean and just-in-time (JIT) production, where it is used as a scheduling system that tells you what to produce, when to produce it, and how much to produce. 
+Kanban, 2000’li yılların başlarında ilk kez David J. Anderson tarafından uygulanan, karakteristik özelliklerini Yalın Üretim (Lean Production) ilkerinden (özellikle Taiichi Ohno’nun 1953 yılında Toyota’da uygulamaya başladığı yalın üretim metodu kanbandan) alan ve Kısıtlar Teorisi (Theory of Constraints) yanında Sistemsel Düşünme (Systems Thinking) gibi sistemik optimize yaklaşımlarını barındıran evrimsel bir metodolojidir.
+İlk başlangıçta süregelen sistemi değiştirmeden izleyerek, çöp üreten ve bekleme yaratan noktaların görselleştirilerek tespit edilmesini ve sonrasında yok edilmesi ile sistemi iyileştirmeyi ve hafifletmeyi amaçlar. Bu hafifleme ve yalınlaşma ile organizasyon daha çevik tepkiler verebilecektir. Evrimsel oluşundan dolayı diğer uygulamalarda yaşanabilecek organizasyon kültüründen kaynaklı negatif tepkiler en düşük seviyede gözlemlenir.
+-
+-
+-
+
 
  
 

@@ -16070,9 +16070,131 @@ QueryString soyut olarak nedir?
  
 Sayfalar arası veri taşıma yollarından en kolayı olan QueryString yöntemi, URL üzerindeki stringler ile verileri taşımaya yarar. İnternette gezerken bir çok sitenin url adresleri garip harf ve sembollerle dolduğu dikkatinizi çekmiştir. İşte bu karakterler sunucu tarafında adrese eklenip sayfayla birlikte hareket eden QueryString'dir. Yeni sayfada bu link alınıp içindeki veriler sayfaya yerleştirilir. Fazla değerli verilerin olmadığı anlarda tercih edilmesi gereken yöntemdir çünkü taşınan veriler kullanıcının direk gözü önündedir. QueryString'in kullanımı çok kolaydır. Diğer bir güzel yanı ise URL adresinin içinde bulunmasından dolayı, sayfanın yerimlerine kaydedilmesi durumunda kendisinin de saklanmasıdır. Böylece yerimine gidildiğinde, sayfa saklandığı haldeki şekliyle açılır. 
 -
+How to use Querystring Parameters in Asp.Net MVC to Retrieve or Send Data
+Here we will learn query string parameters in asp.net mvc with example. Generally, the query string is one of client-side state management techniques in ASP.NET in which query string stores values in URL that are visible to Users. We mostly use query strings to pass data from one page to another page in asp.net mvc.
+ 
+In asp.net mvc routing has support for query strings in RouteConfig.cs let’s have a look on. Our routing class file RouteConfig.cs  will contain id as an Optional Parameter.
+ 
+public static void RegisterRoutes(RouteCollection routes)
+{
+routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+routes.MapRoute(
+name: "Default",
+url: "{controller}/{action}/{id}",
+defaults: new
+{
+controller = "Home",
+action = "Index",
+id = UrlParameter.Optional
+});
+}
+In asp.net mvc we can pass query string with Optional Parameter and also without Optional Parameter.
+ 
+Query strings with Optional Parameter
+ 
+http://localhost:2151/MyHome/index?Name=sai&&Age=50 
+ 
+Query strings without Optional Parameters 
+ 
+http://localhost:2151/MyHome/index/1?Name=sai&&Age=50 
+Create New Asp.Net MVC Application
+We will learn query strings with a simple example for that Open visual studio  Go to File  Select New  Select Project.
+ 
+ 
+ 
+After that, you will see a new dialog for selecting your Template and Project type. From Templates, select Visual C#  inside that select Web and then project type select ASP.NET MVC 4 Web Application, and here we are giving the name as “Tutorial9_Querystring” then finally click on ok button.
+ 
+ 
+ 
+ After naming it, click on OK now new dialog will pop up for selecting a template in that Select Basic template, view engine as Razor, and click ok like as shown below.
+ 
+ 
+ 
+After that, visual studio will create a new project for us based on our configuration that will be like as shown below.
+ 
+ 
+ 
+Now we will create a Controller with the Name MyHomeController.
+Adding New Controller (MyHomeController) in Application
+To add controller, right-click on the Controller folder, select Add from the list, and inside that select controller.
+ 
+ 
+ 
+After selecting the controller, a new dialog will popup with the name Add Controller in that give name as "MyHomeController". In the template, we are going to select the Empty MVC controller as shown below.
+ 
+ 
+ 
+After creating the controller, here is a code snippet of it.
+ 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+ 
+namespace Tutorial9_Querystring.Controllers
+{
+public class MyHomeController : Controller
+{
+//
+// GET: /MyHome/
+public ActionResult Index()
+{
+return View();
+}
+}
+}
+Creating index ActionMethod [With Optional Parameter]
+After adding the controller, now let's add parameters to the index action method. This action method has an optional parameter (ID) with 2 other parameter Names and departments.
+ 
+public ActionResult Index(string ID, string Name, string Department)
+{
+return View();
+}
+Save Application and Run it
+Now let's run the application and access the URL. For calling this URL first, we are going to call Controller [MyHome], then following with Action Method [Index], lastly with an optional parameter[10], then query string will be like [? Name=saineshwar&&Department=SoftwareDevelopment].
+ 
+E.g., the URL will be like  http://localhost:2151/MyHome/Index/10?Name=saineshwar&&Department=SoftwareDevelopment 
+ 
+ Below is a complete snapshot of how to pass the Query string.
+ 
+ 
+Output after passing Query string [With Optional Parameter].
+ 
+ 
+ 
+Following is the snapshot while debugging.
+ 
+ 
+Creating Details ActionMethod [Without Optional Parameter]
+Now let’s create Action Method with Name Details, and this method will be without optional parameters. We will pass 2 parameters, Name and Department, that will be like as shown below.
+ 
+public ActionResult Details(string Name, string Department)
+{
+string result = " Name= " Name " Department= " Department;
+return Content(result);
+}
+Save Application and Running it
+Let's Run the Application and access URL. For calling this URL first, we are going to call Controller [MyHome], then following with ActionMethod [Details], then lastly, query string that will be like as [? Name=saineshwar&&Department=SoftwareDevelopment]
+ 
+E.g., the URL will be like http://localhost:2151/MyHome/Details?Name=saineshwar&Department=SoftwareDevelopment 
+ 
+ 
+ 
+Following is the snapshot while debugging
+ 
+ 
+Now we completed query string in asp.net mvc with accessing URL now let’s call Action Method from Action Link from passing Query string. Calling Action method from Action Link with Passing Query string. 
+ 
+With Optional Parameters
+ 
+@Html.ActionLink("Call Index Action", "Index", new { ID = 10, Name = 3, Department = "test" })
+Without Optional Parameters
+ 
+@Html.ActionLink("Call Details Action", "Details", new { Name = 3, Department = "test" })
 -
 -
-
+-
 
 
 

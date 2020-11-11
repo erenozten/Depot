@@ -16401,6 +16401,35 @@ SOAP nedir, Simple Object Access Protocol nedir
 SOAP (abbreviation for Simple Object Access Protocol) is a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. Its purpose is to provide extensibility, neutrality, verbosity and independence.[vague] It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP), although some legacy systems communicate over Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
 SOAP allows developers to invoke processes running on disparate operating systems (such as Windows, macOS, and Linux) to authenticate, authorize, and communicate using Extensible Markup Language (XML). Since Web protocols like HTTP are installed and running on all operating systems, SOAP allows clients to invoke web services and receive responses independent of language and platforms.
 -
+-
+-
+cURL (GITHUB)
+curl nedir
+cURL (pronounced 'curl'[4]) is a computer software project providing a library (libcurl) and command-line tool (curl) for transferring data using various network protocols. The name stands for "Client URL",[5] which was first released in 1997.[6]
+History
+cURL was first released in 1997.[6] It was originally named httpget and then became urlget before adopting the current name of cURL.[7][8] The original author and lead developer is the Swedish developer Daniel Stenberg, who created cURL because he wanted to automate the fetching of currency exchange rates for IRC users.[1]
+libcurl
+libcurl is a free client-side URL transfer library,[9] supporting cookies, DICT, FTP, FTPS, Gopher, HTTP/1[10] (with HTTP/2 and HTTP/3 support), HTTP POST, HTTP PUT, HTTP proxy tunneling, HTTPS, IMAP, Kerberos, LDAP, MQTT, POP3, RTSP, RTMP, SCP, SMTP, and SMB. The library supports the file URI scheme, SFTP, Telnet, TFTP, file transfer resume, FTP uploading, HTTP form-based upload, HTTPS certificates, LDAPS, proxies, and user-plus-password authentication.[11]
+The libcurl library is portable. It builds and works identically on many platforms, including AIX, AmigaOS, Android, BeOS, BlackBerry Tablet OS and BlackBerry 10,[12] OpenVMS, Darwin, DOS, FreeBSD, HP-UX, HURD, iOS, IRIX, Linux, macOS, NetBSD, NetWare, OpenBSD, OS/2, QNX Neutrino, RISC OS, Solaris, Symbian, Tru64, Ultrix, UnixWare, and Microsoft Windows.[13]
+The libcurl library is free, thread-safe and IPv6 compatible. Bindings are available for more than 40 languages, including C/C++, Java, PHP and Python. The Ring programming language includes libcurl in the standard library.[14][15]
+The libcurl library can support axTLS,[16] GnuTLS, mbed TLS, NSS, QSOSSL on IBM i, SChannel on Windows, Secure Transport on macOS and iOS, SSL/TLS through OpenSSL, and wolfSSL.
+cURL
+cURL is a command-line tool for getting or sending data including files using URL syntax. Since cURL uses libcurl, it supports every protocol libcurl supports.[11]
+cURL supports HTTPS and performs SSL certificate verification by default when a secure protocol is specified such as HTTPS. When cURL connects to a remote server via HTTPS, it will obtain the remote server certificate, then check against its CA certificate store the validity of the remote server to ensure the remote server is the one it claims to be. Some cURL packages are bundled with CA certificate store file. There are several options to specify a CA certificate such as --cacert and --capath. The --cacert option can be used to specify the location of the CA certificate store file. In the Windows platform, if a CA certificate file is not specified, cURL will look for a CA certificate file name “curl-ca-bundle.crt” in the following order:
+Directory where the cURL program is located.
+Current working directory.
+Windows system directory.
+Windows directory.
+Directories specified in the %PATH% environment variables.[17]
+cURL will return an error message if the remote server is using a self-signed certificate, or if the remote server certificate is not signed by a CA listed in the CA cert file. -k or --insecure option can be used to skip certificate verification. Alternatively, if the remote server is trusted, the remote server CA certificate can be added to the CA certificate store file.
+Examples
+Basic use of cURL involves simply typing curl at the command line, followed by the URL of the output to retrieve:
+$ curl www.example.com
+cURL defaults to displaying the output it retrieves to the standard output specified on the system (usually the terminal window). So running the command above would, on most systems, display the www.example.com source-code in the terminal window. The -o flag can be used to store the output in a file instead:
+$ curl -o example.html www.example.com
+More options that change the tool's behavior are available.
+-
+
 
 
 

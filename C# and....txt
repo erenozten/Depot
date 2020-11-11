@@ -16217,7 +16217,160 @@ Xamarin is an open source app platform from Microsoft for building modern & perf
 amarin is a Microsoft-owned San Francisco-based software company founded in May 2011[2] by the engineers that created Mono,[3] Xamarin.Android (formerly Mono for Android) and Xamarin.iOS (formerly MonoTouch), which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).
 With a C#-shared codebase, developers can use Xamarin tools to write native Android, iOS, and Windows apps with native user interfaces and share code across multiple platforms, including Windows, macOS, and Linux.[4] According to Xamarin, over 1.4 million developers were using Xamarin's products in 120 countries around the world as of April 2017.[5]
 On February 24, 2016, Microsoft announced it had signed a definitive agreement to acquire Xamarin.[6]
+-
+-
+-
+-
 
+UpdateModel (GITHUB)
+UpdateModel nedir
+“We can also use UpdateModel method to fetch data from view to controller. UpdateModel is the method which is generics type and takes parameter of model type. 
+“Instead of passing Model object as a parameter to "Post()" action method, we are creating an instance of an Model object within the "Post()" function, and updating it using "UpdateModel()" function. "UpdateModel()" function inspects all the HttpRequest inputs such as posted Form data, QueryString, Cookies and Server variables and populate the employee object.
+e.g.
+[HttpPost]
+[ActionName("Create")]
+public ActionResult Create_Post() 	// görüldüğü gibi içinde employee parametresi yok!
+{
+        EmployeeBusinessLayer employeeBusinessLayer =
+            new EmployeeBusinessLayer();
+        Employee employee = new Employee();
+        UpdateModel(employee);
+        employeeBusinessLayer.AddEmmployee(employee);
+        return RedirectToAction("Index");
+}
+“
+
+https://stackoverflow.com/questions/1087279/how-does-the-asp-net-mvc-updatemodel-method-work
+Updatemodel denen şey, oluşturduğun boş bir objeye (Employee = new employee) HTTPPOST’tan gelen model’I atamaktır. Yani model binding. Başka bir şey yaptığı yok. Sadece boş objenin içini dolduruyorsun. Sağladığı bir fayda şu: httppost’un içinde employee parametresi barındırmana gerek kalmıyor. Bundan sonraki yazıda ve şu linkte anlatılıyor:  https://www.c-sharpcorner.com/article/update-model-function-in-mvc/    
+UpdateModel() is a Controller helper method that attempts to bind a bunch of different input data sources (HTTP POST data coming from a View, QueryString values, Session variables/Cookies, etc.) to the explicit model object you indicate as a parameter. Essentially, it is only for model binding.
+If you express the input parameters for your Action as a strongly-typed model (like a View Model), you've already taken all of the steps that are done behind the scenes when UpdateModel() is called. If you retrieve an object from the DataContext and edit its properties, SaveChanges() is all you need to push the updates back to the database (in this case, Save()).
+Example:
+//
+// POST: /Dinners/Edit/2
+
+[AcceptVerbs(HttpVerbs.Post)]
+public ActionResult Edit(DinnerViewModel incoming) {
+
+    var dinner = dinnerRepository.GetDinner(incoming.DinnerID);
+    dinner.Description = incoming.Description;
+    dinnerRepository.Save();
+
+    return RedirectToAction("Details", new { id = incoming.DinnerID });
+}
+However, there is a use-case for using UpdateModel() with a strongly-typed model: when you are passing in a strongly-typed model and want its values to directly replace those of an entity from the database (provided they are all named and typed the same). In this case, you would retrieve the object, use UpdateModel() on it, and its model binding operation will pull in any similarly-named and typed properties from the strongly-typed object to the retrieved object. In other words, it will perform reflection for you.
+So, like your example, if you want all properties to update without specifying which to update, and your strongly-typed model and database model have similarly-named properties, you would still want to use UpdateModel() to take advantage of the reflection.
+Example:
+//
+// POST: /Dinners/Edit/2
+
+[AcceptVerbs(HttpVerbs.Post)]
+public ActionResult Edit(DinnerViewModel incoming) {
+
+    var dinner = dinnerRepository.GetDinner(incoming.DinnerID);
+    UpdateModel(dinner);
+    dinnerRepository.Save();
+
+    return RedirectToAction("Details", new { id = incoming.DinnerID });
+}
+The only advantage here (over using a FormCollection object) is that you'd have access to all other properties of the strongly-typed object (as shown by incoming.DinnerID).
+Conclusion: if you're translating a strongly-typed object to a derived object, it's probably easiest to use UpdateModel(). However, it's largely unnecessary if you are simply updating a few properties of the derived object. Also, be aware that use of the Entity Framework (instead of something like Linq to SQL) makes all of this moot, as it can relate strongly-typed objects and derived objects with its own methods.
+
+-
+-
+
+
+ 
+
+At the moment, if I submit this form by clicking on create button, this form data will be posted to the Server and the parameters, shown in the screenshot, given below will receive the data, which is posted.
+
+ 
+
+Instead of passing the individual properties of an employee object, we are passing the parameters to it, which creates control action method, where you can actually pass the employee object as a parameter.
+
+Hence, this employee object is going to receive the posted data, as we are passing the employee object. We can get rid of the code, which we had written to pass the values, as given below.
+
+ 
+
+There are a few valid modelation errors and we will make the use of IsValid property of model 
+State object, as given below.
+
+
+ 
+
+Hence, this property is a Boolean property, which means that it will return a true or a false. It returns true, if there are no validation errors, if there are any model validation errors, it will return false.  IsValid nedir? (isvalid false gelirse validation error’lar cliend side’da gösteriliyor: örneğin:name field is required…)
+
+
+
+            int[] arr1 = new int[3];
+            arr1[0] = 7;
+            arr1[1] = 7;
+            arr1[2] = 7;
+            // bu noktada arr1'in 3 tane değeri var. Değerleri ise 7.    [0] = 7,  [1] = 7, [2] = 7
+
+            arr1 = new int[1];
+            // yukarıda arr1'in initialization'ını tekrar yaptık. 7 değerlerinin tümü silindi. 
+            // Zaten belirttiğimiz üzere initialization tekrar yapıldı: herşey sıfırlandı.
+            arr1[0] = 7;
+            // [0] = 7 , şu anki array'ın 1 tane slot'u var sadece. yukarıdaki gibi 3 tane değil.
+            arr1 = new int[5];
+
+-
+-
+
+If it returns false, we need to provide a user an opportunity to correct those errors, retain in the same form and to do that, we are going to return the view. Hence, our code is given below.
+
+ 
+
+Now, let’s run the solution. At the moment, in our table, I am having 11 rows, where we will create some data.
+
+
+ 
+
+As you can see from the output below, a value known as Milind got posted and it is inserted successfully.
+
+
+ 
+
+Now, we can achieve the same thing without passing any parameter to our controller action method. Hence, get rid of the parameter and inside it, create a function i.e. create a new Employee object
+
+ 
+Thus, we had created an Employee object and we had passed it to the UpdateModel function. Hence, this UpdateModel function is executing, as we are creating an employee object, where all the values will be null because it’s a new object and once the UpdateModel (employee) line is executed, the data we post will be bound to this employee object, which is the main purpose of this updateEmployeefunction.
+
+Now, if you notice; there are two action methods- Create() which is of the same name and doesn't have a parameter. Now, if we want to overload, we have to differ either by a type or by number of parameters, but these functions don’t have the parameters.
+
+When you build your project, we do get a compilation error.
+
+ 
+
+EmployeeController already defines a member called Create with the same parameter types. Thus, one way to fix an error is to rename it,
+
+ 
+
+Thus, we had renamed our controller and we had specified an ActionName, where we want our controller to respond in order to post a request.
+
+Whenever we post some data, we want the form to insert the values and should respond to our request as HTTPPost and ActionName is Created.
+
+For the sake of consistency, rename the other action method as Get.
+
+ 
+
+Now, let’s run the app and let’s fill the form with some details, shown below.
+
+ 
+
+As you can see from the output, shown above, I had filled the form with some details. Thus, when you click on create, you will be redirected to Index action method. Thus, our ActionName is working properly.
+
+ 
+
+SQL output
+
+ 
+
+Though our action names are different, we are specifying ActionName attribute here. These controllers' action methods are going to respond depending on whether it’s a GET or POST request.
+
+Note
+
+Right now, we didn’t get any error “Adding the specified count to the semaphore would cause it to exceed its maximum count”.
 
 
 

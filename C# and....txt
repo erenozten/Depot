@@ -16011,8 +16011,61 @@ oReader.GetOrdinal("id");
 -
 -
 -
+DTO – Faydası nedir? (GITHUB)
+DTO nedir
+When you're working with a remote interface, such as Remote Facade (388), each call to it is expensive. As a result you need to reduce the number of calls, and that means that you need to transfer more data with each call. One way to do this is to use lots of parameters. However, this is often awkward to program - indeed, it's often impossible with languages such as Java that return only a single value.
+The solution is to create a Data Transfer Object that can hold all the data for the call. It needs to be serializable to go across the connection. Usually an assembler is used on the server side to transfer data between the DTO and any domain objects.
+Many people in the Sun community use the term "Value Object" for this pattern. I use it to mean something else. See the discussion on page 487.
+Although the main reason for using a Data Transfer Object is to batch up what would be multiple remote calls into a single call, it's worth mentioning that another advantage is to encapsulate the serialization mechanism for transferring data over the wire. By encapsulating the serialization like this, the DTOs keep this logic out of the rest of the code and also provide a clear point to change serialization should you wish.
+The Sun/Java community's use of terminology has changed since the book was published. They switched to using "Transfer Object" as the name for this pattern. Consequently "Value Object" became regularly used in the way that I describe in this book.
+-
+Crossing Boundaries
+The most common example of this is creating an HTTP API using ASP.NET Core that returns an object from its Controller actions that are ultimately serialized to JSON. The consumer is oftentimes JavaScript that uses those JSON responses in displaying the browser using a Component or SPA Framework.
+Internals
+If you’re not using DTOs, then you’re likely exposing internal data structures.
+The biggest culprit of this is simple TODO demo applications that expose the database entities directly. Meaning they output a serialized list of TODOs to the javascript frontend. And when you want to create a new record, they often times take the TODO object to insert directly into the database. This is leaking internals.
+This is my biggest complaint with simple demo applications are they often don’t implement or follow some practices, because rightly so, they aren’t applicable to a simple TODO application. However, people take the example of a simple TODO and use the same patterns into a much large application.
+The problem is when internal data objects are serialized and consumed by a client you either down own or cannot change easily. Or, which happens more often, the application itself gets very large.
+Contracts
+The moment you want change internal data objects, you now have to update the clients.
+Take this simple example of a Customer that is an internal data structure we use through the system and likely use to persist using an ORM.
+	public class Customer
+	{
+	  public string Name { get; set; }
+	  public string Address1 { get; set; }
+	  public string Address2 { get; set; }
+	  public string City { get; set; }
+	  public string Country { get; set; }
+	}
+view rawcustomer.cs hosted with ❤ by GitHub
+If we are serializing this structure and clients are consuming this, if we change this structure, we’re likely going to break out clients.
+	public class Customer
+	{
+	  public string Name { get; set; }
+	  public CustomerAddress Address { get;set; } 
+	}
+	
 
- 
+	public class CustomerAddress
+	{
+	  public string Address1 { get; set; }
+	  public string Address2 { get; set; }
+	  public string City { get; set; }
+	  public string Country { get; set; }
+	}
+view rawcustomer.cs hosted with ❤ by GitHub
+This change would require a change to all of our clients. We could easily make this change in our own codebase and have all our own usages be correct, but we would be breaking all of our decoupled clients that get a serialized representation.
+Representation
+When creating an HTTP API, it’s all about representations. Most often times clients need a rich representation of a resource, not a just serialized version of a database entity. They often times need related data.
+Having your API return rich representations means you must do some level of composition to create an object, not just a database entity, that will get serialized. This is where a DTO comes into play.
+I actually don’t often use the term DTO, but rather use the word Representation or ViewModel. The purpose is still the same, it’s a data structure that is a contract between the producer and the consumer. That contract should remain stable (through backwards compatibility) or have a versioning strategy.
+Coupling
+The reason you want to use DTOs is that you want clients to couple to that contract, not to your internal data structures. This allows you to modify and evolve your internals freely without breaking clients.
+
+-
+-
+-
+
 
 
 

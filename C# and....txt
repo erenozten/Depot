@@ -15741,7 +15741,163 @@ imperative programming
 Most advanced programming languages give developers the option to combine these models.
 -
 -
+-
+Encapsulation   	(GITHUB) 	(read)
+encapsulation nedir
+w3Schools:
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+•	declare fields/variables as private
+•	provide public get and set methods, through properties, to access and update the value of a private field
+-
+Encapsulation is defined 'as the process of enclosing one or more items within a physical or logical package'. Encapsulation, in object oriented programming methodology, prevents access to implementation details.
+Abstraction and encapsulation are related features in object oriented programming. Abstraction allows making relevant information visible and encapsulation enables a programmer to implement the desired level of abstraction.
+Encapsulation is implemented by using access specifiers. An access specifier defines the scope and visibility of a class member. C# supports the following access specifiers −
+•	Public
+•	Private
+•	Protected
+•	Internal
+•	Protected internal
 
+Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. In a different way, encapsulation is a protective shield that prevents the data from being accessed by the code outside this shield.
+•	Technically in encapsulation, the variables or data of a class are hidden from any other class and can be accessed only through any member function of own class in which they are declared.
+•	As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
+•	Encapsulation can be achieved by: Declaring all the variables in the class as private and using C# Properties in the class to set and get the values of variables.
+ 
+
+using System;
+  
+public class DemoEncap
+{
+    // private variables declared 
+    // these can only be accessed by public methods of class 
+    private String studentName;
+    private int studentAge;
+ 
+    // using accessors to get and set the value of studentName 
+    public String Name
+    {
+        get
+        {
+            return studentName;
+        }
+ 
+        set
+        {
+            studentName = value;
+        }
+    }
+ 
+    // using accessors to get and set the value of studentAge 
+    public int Age
+    {
+        get
+        {
+            return studentAge;
+        }
+ 
+        set
+        {
+            studentAge = value;
+        }
+    }
+}
+ 
+// Driver Class 
+class GFG
+{
+ 
+    // Main Method 
+    static public void Main()
+    {
+ 
+        // creating object 
+        DemoEncap obj = new DemoEncap();
+ 
+        // calls set accessor of the property Name,  
+        // and pass "Ankita" as value of the  
+        // standard field 'value' 
+        obj.Name = "Ankita";
+ 
+        // calls set accessor of the property Age,  
+        // and pass "21" as value of the  
+        // standard field 'value' 
+        obj.Age = 21;
+ 
+        // Displaying values of the variables 
+        Console.WriteLine("Name: " + obj.Name);
+        Console.WriteLine("Age: " + obj.Age);
+    }
+}
+
+
+Output:
+Name: Ankita
+Age: 21
+Explanation: In the above program the class DemoEncap is encapsulated as the variables are declared as private. To access these private variables we are using the Name and Age accessors which contains the get and set method to retrieve and set the values of private fields. Accessors are defined as public so that they can access in other class.
+
+Advantages of Encapsulation:
+•	Data Hiding: The user will have no idea about the inner implementation of the class. It will not be visible to the user that how the class is stored values in the variables. He only knows that we are passing the values to accessors and variables are getting initialized to that value.
+•	Increased Flexibility: We can make the variables of the class as read-only or write-only depending on our requirement. If we wish to make the variables as read-only then we have to only use Get Accessor in the code. If we wish to make the variables as write-only then we have to only use Set Accessor.
+•	Reusability: Encapsulation also improves the re-usability and easy to change with new requirements.
+•	Testing code is easy: Encapsulated code is easy to test for unit testing.
+-
+Encapsulation: 
+ 
+We used encapsulation to hide the balance member from the outside code. Then we provided restricted access to it using public methods. The class data can be read through the GetBalance method and modified only through the Deposit and Withdraw methods.
+You cannot directly change the balance variable. You can only view its value using the public method. This helps maintain data integrity.
+We could add different verification and checking mechanisms to the methods to provide additional security and prevent errors.
+In summary, the benefits of encapsulation are:
+   - Control the way data is accessed or modified.
+   - Code is more flexible and easy to change with new requirements.
+   - Change one part of code without affecting other parts of code.
+it is a good practice to encapsulate members of a class and provide access to them only through public methods.
+-
+Encapsulation
+
+        public class BankaHesabi
+        {
+            private double guncelPara = 0;
+
+            public void ParaYatir(double n)
+            {
+                guncelPara += n;
+            }
+            public void ParaCek(double n)
+            {
+                guncelPara -= n;
+            }
+            public double GuncelParaGoster()
+            {
+                return guncelPara;
+            }
+        }
+
+        static void Main()
+        {
+            BankaHesabi bankaHesabi1 = new BankaHesabi();
+            bankaHesabi1.ParaYatir(14);
+            bankaHesabi1.ParaCek(5);
+            Console.WriteLine(bankaHesabi1.GuncelParaGoster());
+            Console.ReadKey();
+            // sonuç: 9
+
+            // Bu programda, görüleceği üzere 'guncelPara' field'ına direkt olarak erişemiyoruz. Ancak 'public double GuncelParaGoster()' metodu ile bu field'a erişebiliyoruz.
+            // İşte yapılan bu işleme Encapsulation denir.
+        }
+
+We used encapsulation to hide the guncelPara member from the outside code. Then we provided restricted access to it using public methods. The class data can be read through the GuncelParaGoster() method and modified only through the ParaYatir and ParaCek methods.
+You cannot directly change the guncelPara variable. You can only view its value using the public method. This helps maintain data integrity.
+We could add different verification and checking mechanisms to the methods to provide additional security and prevent errors.
+In summary, the benefits of encapsulation are:
+- Control the way data is accessed or modified.
+- Code is more flexible and easy to change with new requirements.
+- Change one part of code without affecting other parts of code.
+-
+-
+-
+-
+-
+-
 
  
 

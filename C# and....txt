@@ -16601,6 +16601,15 @@ FROM
 In this tutorial, you have learned about SQL Server INSTEAD OF trigger and how to create an INSTEAD OF trigger for inserting data into an underlying table via a view.
 -
 -
+SQL Server Triggers (GITHUB)
+Trigger nedir
+SQL Server triggers are special stored procedures that are executed automatically in response to the database object, database, and server events. SQL Server provides three type of triggers:
+Data manipulation language (DML) triggers which are invoked automatically in response to INSERT, UPDATE, and DELETE events against tables.
+Data definition language (DDL) triggers which fire in response to CREATE, ALTER, and DROP statements. DDL triggers also fire in response to some system stored procedures that perform DDL-like operations.
+Logon triggers which fire in response to LOGON events
+-
+-
+
 
 
 

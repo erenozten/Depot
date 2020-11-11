@@ -16475,6 +16475,15 @@ The Razor code above is explicitly setting the layout page. Examine the Views\_V
 -
 -
 -
+dbset nedir		(GITHUB)	 (bosch)
+dbset nedir
+public DbSet<Student> Students { get; set; }
+public DbSet<Enrollment> Enrollments { get; set; }
+public DbSet<Course> Courses { get; set; }
+This code creates a DbSet property for each entity set. In Entity Framework terminology, an entity set typically corresponds to a database table, and an entity corresponds to a row in the table.
+-
+-
+-
 
 
 

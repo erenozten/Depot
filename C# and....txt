@@ -16469,6 +16469,13 @@ Also there can be errors that are detected by the program itself:
 
 -
 -
+ViewStart		(GITHUB)	 (bosch)
+viewstart nedir, _viewstart nedir, _viewstart.cshtml nedir viewstart html nedir
+The Razor code above is explicitly setting the layout page. Examine the Views\_ViewStart.cshtml file, it contains the exact same Razor markup. The Views\_ViewStart.cshtml file defines the common layout that all views will use, therefore you can comment out or remove that code from the Views\HelloWorld\Index.cshtml file.
+-
+-
+-
+
 
 
 

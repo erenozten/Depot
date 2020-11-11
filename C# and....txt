@@ -16061,7 +16061,14 @@ Having your API return rich representations means you must do some level of comp
 I actually don’t often use the term DTO, but rather use the word Representation or ViewModel. The purpose is still the same, it’s a data structure that is a contract between the producer and the consumer. That contract should remain stable (through backwards compatibility) or have a versioning strategy.
 Coupling
 The reason you want to use DTOs is that you want clients to couple to that contract, not to your internal data structures. This allows you to modify and evolve your internals freely without breaking clients.
-
+-
+-
+-
+Query String (GITHUB)
+Query string endir, querystring nedir
+QueryString soyut olarak nedir?
+ 
+Sayfalar arası veri taşıma yollarından en kolayı olan QueryString yöntemi, URL üzerindeki stringler ile verileri taşımaya yarar. İnternette gezerken bir çok sitenin url adresleri garip harf ve sembollerle dolduğu dikkatinizi çekmiştir. İşte bu karakterler sunucu tarafında adrese eklenip sayfayla birlikte hareket eden QueryString'dir. Yeni sayfada bu link alınıp içindeki veriler sayfaya yerleştirilir. Fazla değerli verilerin olmadığı anlarda tercih edilmesi gereken yöntemdir çünkü taşınan veriler kullanıcının direk gözü önündedir. QueryString'in kullanımı çok kolaydır. Diğer bir güzel yanı ise URL adresinin içinde bulunmasından dolayı, sayfanın yerimlerine kaydedilmesi durumunda kendisinin de saklanmasıdır. Böylece yerimine gidildiğinde, sayfa saklandığı haldeki şekliyle açılır. 
 -
 -
 -

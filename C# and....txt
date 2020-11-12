@@ -16713,6 +16713,14 @@ PI = 8; //error
 -
 -
 -
+Memory safety	(GITHUB) (örnek)
+memory safety nedir
+Memory safety is the state of being protected from various software bugs and security vulnerabilities when dealing with memory access, such as buffer overflows and dangling pointers.[1] For example, Java is said to be memory-safe because its runtime error detection checks array bounds and pointer dereferences.[1] In contrast, C and C++ allow arbitrary pointer arithmetic with pointers implemented as direct memory addresses with no provision for bounds checking,[2] and thus are potentially memory-unsafe.[3]
+History
+Memory errors were first considered in the context of resource management and time-sharing systems, in an effort to avoid problems such as fork bombs.[4] Developments were mostly theoretical until the Morris worm, which exploited a buffer overflow in fingerd.[5] The field of computer security developed quickly thereafter, escalating with multitudes of new attacks such as the return-to-libc attack and defense techniques such as the non-executable stack[6] and address space layout randomization. Randomization prevents most buffer overflow attacks and requires the attacker to use heap spraying or other application-dependent methods to obtain addresses, although its adoption has been slow.[5] However, deployments of the technology are typically limited to randomizing libraries and the location of the stack.
+-
+-
+
 
 
 

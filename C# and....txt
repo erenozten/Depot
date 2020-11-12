@@ -16720,6 +16720,32 @@ History
 Memory errors were first considered in the context of resource management and time-sharing systems, in an effort to avoid problems such as fork bombs.[4] Developments were mostly theoretical until the Morris worm, which exploited a buffer overflow in fingerd.[5] The field of computer security developed quickly thereafter, escalating with multitudes of new attacks such as the return-to-libc attack and defense techniques such as the non-executable stack[6] and address space layout randomization. Randomization prevents most buffer overflow attacks and requires the attacker to use heap spraying or other application-dependent methods to obtain addresses, although its adoption has been slow.[5] However, deployments of the technology are typically limited to randomizing libraries and the location of the stack.
 -
 -
+Parameter arrays (GITHUB)
+Parameter arrays nedir, parameter array nedir
+Parameter arrays allow a variable number of arguments to be passed into a function member. The definition of the parameter has to include the params modifier, but the use of the parameter has no such keyword. A parameter array has to come at the end of the list of parameters, and must be a single-dimensional array. When using the function member, any number of parameters (including none) may appear in the invocation, so long as the parameters are each compatible with the type of the parameter array. Alternatively, a single array may be passed, in which case the parameter acts just as a normal value parameter. For example:
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        ShowNumbers(4, 5);
+        ShowNumbers(4, 5, 6, 7, 8);
+
+        int[] x = { 1, 2, 3 };
+        ShowNumbers(x);
+
+    }
+
+    public static void ShowNumbers(params int[] numbers)
+    {
+        foreach (int x in numbers)
+        {
+            Console.Write(x + " ");
+        }
+        Console.WriteLine();
+    }
+}
 
 
 

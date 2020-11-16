@@ -1,3 +1,0 @@
-Güzel bilgiler var, incelenmeli.
-
-https://docs.microsoft.com/en-us/ef/core/modeling/

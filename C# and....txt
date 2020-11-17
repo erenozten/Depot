@@ -16746,7 +16746,16 @@ class Program
         Console.WriteLine();
     }
 }
+-
+-
+-
+About Rollback
 
+The rollback SQL statement is used to manually rollback transactions in MS SQL Server.
+Transactions in SQL Server are used to execute a set of SQL statements in a group. With transactions, either all the statements in a group execute or none of the statements execute.
+In the case where one of the queries in a group of queries executed by a transaction fails, all the previously executed queries are rollbacked. Transactions in the SQL server are rollbacked automatically. However, with the rollback SQL statement, you can manually rollback a transaction based on certain conditions.
+In this article, you will see what a transaction is and how it can be rollbacked both manually and automatically.
+First, let’s create a dummy dataset for you to practice on unless you are 100% confident that your database is fully backed.
 
 
 

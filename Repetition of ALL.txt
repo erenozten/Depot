@@ -1,2 +1,15 @@
 2021 - REPETITION!
-
+-
+-
+-
+-
+-
+-
+To make sure that database connections are properly closed and the resources they hold freed up, you have to dispose the context instance when you are done with it. That is why the scaffolded code provides a Dispose method at the end of the StudentController class in StudentController.cs, as shown in the following example: 
+protected override void Dispose(bool disposing)
+{
+    db.Dispose();
+    base.Dispose(disposing);
+}
+-
+-

@@ -70,3 +70,26 @@ HTTPPost method hides information from URL and does not bind data to URL. It is 
 -
 -
 -
+A static class can contain only the static members while a non-static class can contain static members. Static classes are by-default sealed so they cannot be inherited.
+-
+-
+-
+-
+-
+-
+MVC, server-side bir sistemdir. Server-side sistemlerde end-user sadece html-javascript i görebilir. Csharp koduna erişemez.
+Mvc bir UI-centric bir sistem değil; Server side’dır. 
+-
+-
+-
+-
+-
+Önemli repository bilgi:
+You could instantiate a new context in the repository, but then if you used multiple repositories in one controller, each would end up with a separate context. Later you'll use multiple repositories in the Course controller, and you'll see how a unit of work class can ensure that all repositories use the same context.
+-
+-
+-
+-
+-
+-
+

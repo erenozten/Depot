@@ -22,6 +22,7 @@ public SchoolContext() : base("SchoolContext")
 -
 -
 -
+-
 BOŞ		(bosch)	 (bosch)
 ne nedir
 [HttpPost]
@@ -56,4 +57,16 @@ There are a number of ways to do this: On most web servers, you can use somethin
 On the world wide web, all URLs can be broken down into the protocol, the location of the file (or program) and the query string. The protocol you see in a browser is almost always HTTP; the location is the typical form of the hostname and filename (for example, www.techopedia.com/somefile.html), and the query string is whatever follows the question mark sign ("?").
 For example, in the URL below, the bolded area is the query string that was generated when the term "database" was searched on the Techopedia website.
 //www.techopedia.com
-
+-
+-
+-
+-
+-
+-
+HTTPPost method hides information from URL and does not bind data to URL. It is more secure than HttpGet method but it is slower than HttpGet. It is only useful when you are passing sensitive information to the server.
+-
+-
+-
+-
+-
+-

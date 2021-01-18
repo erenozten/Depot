@@ -142,3 +142,73 @@ Hard reload / Force Refresh
 Control + Shift + R or Control + F5 or Shift + F5 = ignoring cached content
 Obviously if the cache is empty then it will have to do a hard reload in order to load the required/support files again. This will again force the browser to re-download everything. However, if the page makes any after the fact downloads via JavaScript that weren’t part of page load, then these might still use the cache, which is where emptying the cache helps because it makes sure that even these won’t use cached files.
 
+RESHARPER:
+
+Ctrl + T
+
+-
+
+Step over code to skip functions
+When you are on a line of code that is a function or method call, you can press F10(Debug > Step Over) instead of F11.
+
+
+Advance the debugger out of the current function
+Sometimes, you might want to continue your debugging session but advance the debugger all the way through the current function.
+Press Shift + F11 (or Debug > Step Out).
+This command resumes app execution (and advances the debugger) until the current function returns.
+-
+F10 vs F11
+https://stackoverflow.com/questions/15584132/what-is-the-difference-between-f10-and-f11-keys-in-visual-studio/39843982
+F10 ("step over") does not descend any further into the call stack. It moves to the next line of the current function.
+F11 ("step into") drills down into the function being called.
+void function1()
+{
+    function2();
+    function3();
+}
+If you hit a breakpoint on function2(), F10 will advance to the line function3(). F11 will advance to the first line inside function2.
+-
+
+CHROME
+CTRL + SHIFT + C --> konsolu açmadan (ters tıklayıp incele demeden) mause'un üstünde olduğu elementi seçiyor. Muhteşem.
+
+RESHARPER
+alt FL   SAVE
+
+ALT WL    QUIT ALL
+
+ctrl D	  copy paste
+
+ctrl tab   açık dosyalar arası geçiş 
+ismin adının üstüne gelip F2 -> ismi değiştirmek için (projenin tümünde her yerde değiştirmek için)
+
+ctrl shift r  bir class'ı yeni bir folder'a taşı
+
+ctrl W kopyalıyor bi üst element/metoda kadar. (geri almak için: ctrl shift W)
+
+alt aşağı / yukarı   metodlar arası geçiş
+
+ctrl B  class definition'una gitme (ctrl click ile aynı)
+
+
+windows+ sağ yön tuşu (visual studio’yu ekranın sağına yapıştırıyor. Google chrome’u açıp sola bas, onu da sola yapıştır.
+
+f3    search yapılan text'i ara (diğer satırlarda)
+
+ctrl alt J     kelimeyi <tag> ile çevreleme
+
+ctrl f12    sayfa içinde text ara
+
+ctrl shift R   model'imizi farklı bir klasöre taşımak istiyorsak. (namespace'i de değiştiriyor, kolaylık sağlıyor)
+
+windows + sağ sol yukarı yön tuşları: progrmı büyütme yana yatırma 
+
+ctrl tab   sekmeler arası geçiş
+
+ctrl r     kullanma. F5 ile aynı. Eğer tam refresh yapmak istiyorsan ctrl shift f5 yap.
+
+alt enter (en alttaki seçenekten: sayfadaki aynı textlerin tümünü değiştirme)
+-
+ctrl f10 - cursor'ın olduğu yere kadar projeyi çalıştırır. Break point koymuşsun gibi.
+
+

@@ -92,4 +92,41 @@ You could instantiate a new context in the repository, but then if you used mult
 -
 -
 -
+Kısayollar / Keyboard Shortcuts	(GITHUB) (asasas)
+Kısayol nedir, shortcut nedir
+-
+f2 - değişkene yeni isim ver (sistemdeki hepsinin)
+ctrl alt f9  - breakpoint’e götürüyo seni
+
+Ctrl  backspace    kelimeyi siliyo tamamen sola doğru
+Ctrl  delete kelimeyi olduğu gibi siliyor. Sağa doğru siliyor. // ctrl + backspace de sola  doğru siliyor
+
+ctrl + shift + nokta -> aynı değişkenlerin tümünü aynı anda editleme imkanı sağlıyor. (bende çalışmıyo)
+
+-
+Chrome offers “F5” key and the “Ctrl+R” key combination are used to reload the currently open Web page. 
+Chrome also offers the reload shortcut combinations of “Ctrl + F5” and “Ctrl + Shift + R” to reload the currently open page and override the locally cached version.
+Having cursor in the address field and pressing ENTER will also do the same as CTRL + F5
+-Home, end (numpad’dakiler) : satırın başına ve sonuna gider. (shift ile de kullanılır, yazıyı seçmek için...)
+
+-Klavyenin üstündeki normal home end tuşları: sayfanın başına ve sonuna gider.
+
+-Numpad’daki home end tuşları ctrl ile kullanıldığında, tıpkı klavyenin üstündeki home-end tuşları gibi çalışıyor. Yani klavyenin üstündeki home-end tuşlarını kullanmaya gerek yok gibi görünüyor.
+
+-Ctrl – yön tuşları  kelimenin başına sonuna gidiyor atlayarak.
+
+-Next Error (F2) (çalışmadı)
+
+-Previous error (Shift + F2) ) (çalışmadı)
+
+-Expand Selection (Ctrl + W)
+
+-Ctrl + n  search everywhere (acayip bişey) / create new file
+
+- alt + yukarı aşağı arrows  iki satırın yerini birbiri arasında değiştirme.
+
+- shift + alt  veya sadece alt-> kare alan seçme (çoklu satır)
+
+-
+Don’t use anything in the cache when making the request. Forces the browser to re-download every JavaScript file, image, text file, etc.
 

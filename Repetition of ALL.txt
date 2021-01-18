@@ -210,5 +210,18 @@ ctrl r     kullanma. F5 ile aynı. Eğer tam refresh yapmak istiyorsan ctrl shif
 alt enter (en alttaki seçenekten: sayfadaki aynı textlerin tümünü değiştirme)
 -
 ctrl f10 - cursor'ın olduğu yere kadar projeyi çalıştırır. Break point koymuşsun gibi.
-
+-
+-
+HARD RELOAD – NORMAL RELOAD nedir
+Normal reload
+The same thing as pressing F5. This will use the cache but revalidate everything during page load, looking for "304 Not Modified" responses. If the browser can avoid re-downloading cached JavaScript files, images, text files, etc. then it will.
+________________________________________
+Hard reload
+Don't use anything in the cache when making the request. (which is equal to SHIFT+F5 No need to open Developer console) Force the browser do re-download every JavaScript file, image, text file, etc.
+-
+-
+-
+-
+-
+-
 

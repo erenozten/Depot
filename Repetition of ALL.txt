@@ -130,3 +130,15 @@ Having cursor in the address field and pressing ENTER will also do the same as C
 -
 Don’t use anything in the cache when making the request. Forces the browser to re-download every JavaScript file, image, text file, etc.
 
+Empty Cache and Hard Reload
+Empty Cache and hard reload = Empty the cache and Force the browser do re-download every JavaScript file, image, text file, etc.
+Chrome kısayol: 
+Crtl+F5 or Shift+F5 -> re-download cached content (i.e. JavaScript files, images, etc…)
+Normal Reload
+F5 or Control + R = Reload the current page
+“Ctrl+R” is the same thing as pressing f5. This will use the cache in every way possible. If the browser can avoid re-downloading JavaScript files, images, text files, etc. then it will.
+Note: Having cursor in the address field and pressing ENTER will also do the same as CTRL + F5
+Hard reload / Force Refresh
+Control + Shift + R or Control + F5 or Shift + F5 = ignoring cached content
+Obviously if the cache is empty then it will have to do a hard reload in order to load the required/support files again. This will again force the browser to re-download everything. However, if the page makes any after the fact downloads via JavaScript that weren’t part of page load, then these might still use the cache, which is where emptying the cache helps because it makes sure that even these won’t use cached files.
+

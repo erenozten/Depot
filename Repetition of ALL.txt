@@ -316,6 +316,16 @@ A float can be implicitly converted to a double, since a double can represent ev
 possible value of a float. The reverse conversion must be explicit.
 -
 -
+(okundu - github)
+Remember, that an if can have zero or more else if's and they must come before the last else, which is optional.
+Once an else if succeeds, none of the remaining else if's or else clause will be tested.
+-
+A do-while loop is similar to a while loop, except that a do-while loop is guaranteed to execute at least one time.
+-
+-
+-
+-
+-
 
 
 

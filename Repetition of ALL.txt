@@ -305,6 +305,17 @@ Mosh hamedani: Her halta inheritance uygulama. İnheritance şu durumlarda kulla
 -
 -
 -
+Integral to integral conversions
+Integral conversions are implicit when the destination type can represent every possible
+value of the source type. Otherwise, an explicit conversion is required. For
+example:
+int x = 12345; // int is a 32-bit integral
+long y = x; // Implicit conversion to 64-bit integral
+short z = (short)x; // Explicit conversion to 16-bit integral
+A float can be implicitly converted to a double, since a double can represent every
+possible value of a float. The reverse conversion must be explicit.
+-
+-
 
 
 

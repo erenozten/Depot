@@ -327,5 +327,30 @@ A do-while loop is similar to a while loop, except that a do-while loop is guara
 -
 -
 
+(okundu – github)
+[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult Delete(int id)
+{
+    try
+    {
+        Student student = db.Students.Find(id);
+        db.Students.Remove(student);
+        db.SaveChanges();
+    }
+    catch (DataException/* dex */)
+    {
+        //Log the error (uncomment dex variable name and add a line here to write a log.
+        return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+    }
+    return RedirectToAction("Index");
+}
+This code retrieves the selected entity, then calls the Remove method to set the entity's status to Deleted. When SaveChanges is called, a SQL DELETE command is generated. You have also changed the action method name from DeleteConfirmed to Delete. The scaffolded code named the HttpPost Delete method DeleteConfirmed to give the HttpPost method a unique signature. (The CLR requires overloaded methods to have different method parameters.) Now that the signatures are unique, you can stick with the MVC convention and use the same name for the HttpPost and HttpGet delete methods.
+If improving performance in a high-volume application is a priority, you could avoid an unnecessary SQL query to retrieve the row by replacing the lines of code that call the Find and Remove methods with the following code:
+C#Copy
+Student studentToDelete = new Student() { ID = id };
+db.Entry(studentToDelete).State = EntityState.Deleted;
+This code instantiates a Student entity using only the primary key value and then sets the entity state to Deleted. That's all that the Entity Framework needs in order to delete the entity.
+
 
 

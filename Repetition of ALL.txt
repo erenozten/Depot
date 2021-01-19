@@ -297,4 +297,14 @@ ctrl f10 - cursor'ın olduğu yere kadar projeyi çalıştırır. Break point ko
 -
 -
 -
+Bildirim için aşağıdaki yapıyı kullandık.
+ 
+Bildirim için inheritance da kullanılabilirdi. Ama mantıklı olmazdı. O yüzden yukarıdaki gibi yaptık. Aşağıdaki gibi YAPMADIK.
+Mosh hamedani: Her halta inheritance uygulama. İnheritance şu durumlarda kullanılır: polimorfizm gerekiyorsa, ortada "behavior" varsa. Bunlar yoksa inheritance falan uygulama. Çünkü gereksiz olur. Boşuna complexity artırırsın. Kodun zorlaşır.
+-
+-
+-
+-
+
+
 

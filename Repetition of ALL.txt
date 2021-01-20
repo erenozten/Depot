@@ -351,6 +351,55 @@ C#Copy
 Student studentToDelete = new Student() { ID = id };
 db.Entry(studentToDelete).State = EntityState.Deleted;
 This code instantiates a Student entity using only the primary key value and then sets the entity state to Deleted. That's all that the Entity Framework needs in order to delete the entity.
+-
+-
+-
+Performance considerations
+In general, a web page shouldn't be loading an arbitrary number of rows. A query should use paging or a limiting approach. For example, the preceding query could use Take to limit the rows returned:
+C#Kopyala
+public class IndexModel : PageModel
+{
+    private readonly SchoolContext _context;
+    private readonly MvcOptions _mvcOptions;
+
+    public IndexModel(SchoolContext context, IOptions<MvcOptions> mvcOptions)
+    {
+        _context = context;
+        _mvcOptions = mvcOptions.Value;
+    }
+
+    public IList<Student> Student { get;set; }
+
+    public async Task OnGetAsync()
+    {
+        Student = await _context.Students.Take(
+            _mvcOptions.MaxModelBindingCollectionSize).ToListAsync();
+    }
+}
+Enumerating a large table in a view could return a partially constructed HTTP 200 response if a database exception occurs part way through the enumeration.
+MaxModelBindingCollectionSize defaults to 1024. The following code sets MaxModelBindingCollectionSize:
+C#Kopyala
+public void ConfigureServices(IServiceCollection services)
+{
+    int MyMaxModelBindingCollectionSize = 100;
+    Int32.TryParse(Configuration["MyMaxModelBindingCollectionSize"],
+                               out MyMaxModelBindingCollectionSize);
+    
+    services.Configure<MvcOptions>(options => 
+           options.MaxModelBindingCollectionSize = MyMaxModelBindingCollectionSize);
+
+    services.AddRazorPages();
+
+    services.AddDbContext<SchoolContext>(options =>
+          options.UseSqlServer(Configuration.GetConnectionString("SchoolContext")));
+
+    services.AddDatabaseDeveloperPageExceptionFilter();
+}
+
+-
+-
+-
+
 
 
 

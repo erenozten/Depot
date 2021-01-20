@@ -399,6 +399,43 @@ public void ConfigureServices(IServiceCollection services)
 -
 -
 -
+<span asp-validation-for="Venue" class="text-danger"></span>
+property'ler için validation kullanmazsan, class tarafında; property'leri required olarak işaretlemen bir işe yaramaz. Örneğin class'ımız şuydu:
+public class ConcertFormViewModel
+   {
+       // property'leri string olarak oluşturduğumuza dikkat:
+ 
+       [Required]
+       public string Venue { get; set; }
+       
+       [Required]
+       public string Date { get; set; }
+       
+       [Required]
+       public string Time { get; set; }
+       
+       [Required]
+       public byte Genre { get; set; }
+       
+       public IEnumerable<Genre> Genres { get; set; } // db'deki tüm Genre'leri dropdownlist'e eklemek için kullanacağımız property
+ 
+       public DateTime GetDateTime()
+       {
+           return DateTime.Parse(string.Format("{0} {1}", Date, Time));
+       }
+   }
+
+
+Bu required attribute'lerini kullanmak client side validation'lar için yeterli değil. View'da; gereken işlem yapılmalı ki validasyon çalışsın.. Yani şunu yazmamız lazım her property için:
+<span asp-validation-for="Venue" class="text-danger"></span>
+
+Örnek olarak; venue'nin validasyon yapan html helper'ini silmiş olalım view'dan. Bu durumda client side validation, aşağıdaki resimdeki gibi olacaktır:
+ 
+Görüldüğü üzere venue boş bırakıldığı halde "The venue field is required" gibi bir uyarı verilmedi.
+Son
+-
+-
+
 
 
 

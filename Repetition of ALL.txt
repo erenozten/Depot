@@ -463,6 +463,31 @@ typedef struct
 } LIST;  
 •	The List ADT Functions is given below:
  
+A list contains elements of the same type arranged in sequential order and following operations can be performed on the list.
+•	get() – Return an element from the list at any given position.
+•	insert() – Insert an element at any position of the list.
+•	remove() – Remove the first occurrence of any element from a non-empty list.
+•	removeAt() – Remove the element at a specified location from a non-empty list.
+•	replace() – Replace an element at any position by another element.
+•	size() – Return the number of elements in the list.
+•	isEmpty() – Return true if the list is empty, otherwise return false.
+•	isFull() – Return true if the list is full, otherwise return false.
+
+2.	Stack ADT
+
+•	In Stack ADT Implementation instead of data being stored in each node, the pointer to data is stored.
+•	The program allocates memory for the data and address is passed to the stack ADT.
+ 
+•	The head node and the data nodes are encapsulated in the ADT. The calling function can only see the pointer to the stack.
+•	The stack head structure also contains a pointer to top and count of number of entries currently in stack.
+
+A Stack contains elements of the same type arranged in sequential order. All operations take place at a single end that is top of the stack and following operations can be performed:
+•	push() – Insert an element at one end of the stack called top.
+•	pop() – Remove and return the element at the top of the stack, if it is not empty.
+•	peek() – Return the element at the top of the stack without removing it, if the stack is not empty. (peak  yani tepe kelimesinden akla getirilebilir)
+•	size() – Return the number of elements in the stack.
+•	isEmpty() – Return true if the stack is empty, otherwise return false.
+•	isFull() – Return true if the stack is full, otherwise return false.
 
 -
 -

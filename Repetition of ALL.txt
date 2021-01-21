@@ -561,6 +561,18 @@ typedef struct
  int count; 
 } QUEUE; 
 
+A Queue contains elements of the same type arranged in sequential order. Operations take place at both ends, insertion is done at the end and deletion is done at the front. Following operations can be performed:
+•	enqueue() – Insert an element at the end of the queue.
+•	dequeue() – Remove and return the first element of the queue, if the queue is not empty.
+•	peek() – Return the element of the queue without removing it, if the queue is not empty.
+•	size() – Return the number of elements in the queue.
+•	isEmpty() – Return true if the queue is empty, otherwise return false.
+•	isFull() – Return true if the queue is full, otherwise return false.
+From these definitions, we can clearly see that the definitions do not specify how these ADTs will be represented and how the operations will be carried out. There can be different ways to implement an ADT, for example, the List ADT can be implemented using arrays, or singly linked list or doubly linked list. Similarly, stack ADT and Queue ADT can be implemented using arrays or linked lists.
+Reference: https://en.wikipedia.org/wiki/Abstract_data_type
+This article is contributed by Anuj Chauhan. If you like GeeksforGeeks and would like to contribute, you can also write an article using contribute.geeksforgeeks.org or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
+Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above.
+Don’t stop now and take your learning to the next level. Learn all the important concepts of Data Structures and Algorithms with the help of the most trusted course: DSA Self Paced. Become industry ready at a student-friendly price.
 -
 -
 -

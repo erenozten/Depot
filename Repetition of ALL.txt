@@ -489,6 +489,78 @@ A Stack contains elements of the same type arranged in sequential order. All ope
 •	isEmpty() – Return true if the stack is empty, otherwise return false.
 •	isFull() – Return true if the stack is full, otherwise return false.
 
+// C# code to illustrate the 
+// Stack.Peek Method 
+using System; 
+using System.Collections; 
+  
+class GFG { 
+  
+    // Driver code 
+    public static void Main() 
+    { 
+  
+        // Creating a Stack 
+        Stack myStack = new Stack(); 
+  
+        // Inserting the elements into the Stack 
+        myStack.Push("1st Element"); 
+        myStack.Push("2nd Element"); 
+        myStack.Push("3rd Element"); 
+        myStack.Push("4th Element"); 
+        myStack.Push("5th Element"); 
+        myStack.Push("6th Element"); 
+  
+        // Displaying the count of elements 
+        // contained in the Stack 
+        Console.Write("Total number of elements"+ 
+                         " in the Stack are : "); 
+  
+        Console.WriteLine(myStack.Count); 
+  
+        // Displaying the top element of Stack 
+        // without removing it from the Stack 
+        Console.WriteLine("Element at the top is : " 
+                                  + myStack.Peek()); 
+  
+        // Displaying the top element of Stack 
+        // without removing it from the Stack 
+        Console.WriteLine("Element at the top is : " 
+                                + myStack.Peek()); 
+  
+        // Displaying the count of elements 
+        // contained in the Stack 
+        Console.Write("Total number of elements "+ 
+                           "in the Stack are : "); 
+  
+        Console.WriteLine(myStack.Count); 
+    } 
+-
+-
+-
+
+
+
+
+3.	Queue ADT
+•	The queue abstract data type (ADT) follows the basic design of the stack abstract data type.
+ 
+•	Each node contains a void pointer to the data and the link pointer to the next element in the queue. The program’s responsibility is to allocate memory for storing the data.
+
+
+//Queue ADT Type Definitions 
+typedef struct node 
+{ 
+ void *DataPtr; 
+ struct node *next; 
+} QueueNode; 
+typedef struct 
+{ 
+ QueueNode *front; 
+ QueueNode *rear; 
+ int count; 
+} QUEUE; 
+
 -
 -
 -

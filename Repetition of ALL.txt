@@ -638,6 +638,45 @@ o	Are not supported in Razor Pages.
 •	Exception filters apply global policies to unhandled exceptions that occur before the response body has been written to.
 •	Result filters run code immediately before and after the execution of action results. They run only when the action method has executed successfully. They are useful for logic that must surround view or formatter execution.
 
+The following diagram shows how filter types interact in the filter pipeline.
+ 
+Implementation
+Filters support both synchronous and asynchronous implementations through different interface definitions.
+Synchronous filters run code before and after their pipeline stage. For example, OnActionExecuting is called before the action method is called. OnActionExecuted is called after the action method returns.
+C#Copy
+public class MySampleActionFilter : IActionFilter 
+{
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        // Do something before the action executes.
+        MyDebug.Write(MethodBase.GetCurrentMethod(), context.HttpContext.Request.Path);
+    }
+
+    public void OnActionExecuted(ActionExecutedContext context)
+    {
+        // Do something after the action executes.
+        MyDebug.Write(MethodBase.GetCurrentMethod(), context.HttpContext.Request.Path);
+    }
+}
+In the preceding code, MyDebug is a utility function in the sample download.
+Asynchronous filters define an On-Stage-ExecutionAsync method. For example, OnActionExecutionAsync:
+C#Copy
+public class SampleAsyncActionFilter : IAsyncActionFilter
+{
+    public async Task OnActionExecutionAsync(
+        ActionExecutingContext context,
+        ActionExecutionDelegate next)
+    {
+        // Do something before the action executes.
+
+        // next() calls the action method.
+        var resultContext = await next();
+        // resultContext.Result is set.
+        // Do something after the action executes.
+    }
+}
+In the preceding code, the SampleAsyncActionFilter has an ActionExecutionDelegate (next) that executes the action method.
+
 
 
 

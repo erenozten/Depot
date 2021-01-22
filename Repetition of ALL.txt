@@ -785,6 +785,64 @@ public class SampleController : Controller
         return Content("Header values by configuration.");
     }
 
+Under Response Headers, author: Rick Anderson, and Editor: Joe Smith is displayed when the Sample/Index2 endpoint is called.
+The following code applies the MyActionFilterAttribute and the AddHeaderAttribute to the Razor Page:
+C#Copy
+[AddHeader("Author", "Rick Anderson")]
+[ServiceFilter(typeof(MyActionFilterAttribute))]
+public class IndexModel : PageModel
+{
+    public void OnGet()
+    {
+    }
+}
+Filters cannot be applied to Razor Page handler methods. They can be applied either to the Razor Page model or globally.
+Several of the filter interfaces have corresponding attributes that can be used as base classes for custom implementations.
+Filter attributes:
+•	ActionFilterAttribute
+•	ExceptionFilterAttribute
+•	ResultFilterAttribute
+•	FormatFilterAttribute
+•	ServiceFilterAttribute
+•	TypeFilterAttribute
+Filter scopes and order 
+Action filters
+Action filters do not apply to Razor Pages. Razor Pages supports IPageFilter and IAsyncPageFilter . For more information, see Filter methods for Razor Pages.
+Action filters:
+•	Implement either the IActionFilter or IAsyncActionFilter interface.
+•	Their execution surrounds the execution of action methods.
+The following code shows a sample action filter:
+C#Copy
+public class MySampleActionFilter : IActionFilter 
+{
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        // Do something before the action executes.
+        MyDebug.Write(MethodBase.GetCurrentMethod(), context.HttpContext.Request.Path);
+    }
+
+    public void OnActionExecuted(ActionExecutedContext context)
+    {
+        // Do something after the action executes.
+        MyDebug.Write(MethodBase.GetCurrentMethod(), context.HttpContext.Request.Path);
+    }
+}
+The ActionExecutingContext provides the following properties:
+•	ActionArguments - enables reading the inputs to an action method.
+•	Controller - enables manipulating the controller instance.
+•	Result - setting Result short-circuits execution of the action method and subsequent action filters.
+Throwing an exception in an action method:
+•	Prevents running of subsequent filters.
+•	Unlike setting Result, is treated as a failure instead of a successful result.
+The ActionExecutedContext provides Controller and Result plus the following properties:
+•	Canceled - True if the action execution was short-circuited by another filter.
+•	Exception - Non-null if the action or a previously run action filter threw an exception. Setting this property to null:
+o	Effectively handles the exception.
+o	Result is executed as if it was returned from the action method.
+For an IAsyncActionFilter, a call to the ActionExecutionDelegate:
+•	Executes any subsequent action filters and the action method.
+•	Returns ActionExecutedContext.
+To short-circuit, assign Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext.Result to a result instance and don't call next (the ActionExecutionDelegate).
 
 
 

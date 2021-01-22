@@ -677,6 +677,115 @@ public class SampleAsyncActionFilter : IAsyncActionFilter
 }
 In the preceding code, the SampleAsyncActionFilter has an ActionExecutionDelegate (next) that executes the action method.
 
+Multiple filter stages
+Interfaces for multiple filter stages can be implemented in a single class. For example, the ActionFilterAttribute class implements:
+•	Synchronous: IActionFilter and IResultFilter
+•	Asynchronous: IAsyncActionFilter and IAsyncResultFilter
+•	IOrderedFilter
+Implement either the synchronous or the async version of a filter interface, not both. The runtime checks first to see if the filter implements the async interface, and if so, it calls that. If not, it calls the synchronous interface's method(s). If both asynchronous and synchronous interfaces are implemented in one class, only the async method is called. When using abstract classes like ActionFilterAttribute, override only the synchronous methods or the asynchronous methods for each filter type.
+Built-in filter attributes
+ASP.NET Core includes built-in attribute-based filters that can be subclassed and customized. For example, the following result filter adds a header to the response:
+C#Copy
+public class AddHeaderAttribute : ResultFilterAttribute
+{
+    private readonly string _name;
+    private readonly string _value;
+
+    public AddHeaderAttribute(string name, string value)
+    {
+        _name = name;
+        _value = value;
+    }
+
+    public override void OnResultExecuting(ResultExecutingContext context)
+    {
+        context.HttpContext.Response.Headers.Add( _name, new string[] { _value });
+        base.OnResultExecuting(context);
+    }
+}
+Attributes allow filters to accept arguments, as shown in the preceding example. Apply the AddHeaderAttribute to a controller or action method and specify the name and value of the HTTP header:
+C#Copy
+[AddHeader("Author", "Rick Anderson")]
+public class SampleController : Controller
+{
+    public IActionResult Index()
+    {
+        return Content("Examine the headers using the F12 developer tools.");
+    }
+Use a tool such as the browser developer tools to examine the headers. Under Response Headers, author: Rick Anderson is displayed.
+The following code implements an ActionFilterAttribute that:
+•	Reads the title and name from the configuration system. Unlike the previous sample, the following code doesn't require filter parameters to be added to the code.
+•	Adds the title and name to the response header.
+C#Copy
+public class MyActionFilterAttribute : ActionFilterAttribute
+{
+    private readonly PositionOptions _settings;
+
+    public MyActionFilterAttribute(IOptions<PositionOptions> options)
+    {
+        _settings = options.Value;
+        Order = 1;
+    }
+
+    public override void OnResultExecuting(ResultExecutingContext context)
+    {
+        context.HttpContext.Response.Headers.Add(_settings.Title, 
+                                                 new string[] { _settings.Name });
+        base.OnResultExecuting(context);
+    }
+}
+The configuration options are provided from the configuration system using the options pattern. For example, from the appsettings.json file:
+JSONCopy
+{
+  "Position": {
+    "Title": "Editor",
+    "Name": "Joe Smith"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+In the StartUp.ConfigureServices:
+•	The PositionOptions class is added to the service container with the "Position" configuration area.
+•	The MyActionFilterAttribute is added to the service container.
+C#Copy
+public void ConfigureServices(IServiceCollection services)
+{
+    services.Configure<PositionOptions>(
+             Configuration.GetSection("Position"));
+    services.AddScoped<MyActionFilterAttribute>();
+
+    services.AddControllersWithViews();
+}
+The following code shows the PositionOptions class:
+C#Copy
+public class PositionOptions
+{
+    public string Title { get; set; }
+    public string Name { get; set; }
+}
+The following code applies the MyActionFilterAttribute to the Index2 method:
+C#Copy
+[AddHeader("Author", "Rick Anderson")]
+public class SampleController : Controller
+{
+    public IActionResult Index()
+    {
+        return Content("Examine the headers using the F12 developer tools.");
+    }
+
+    [ServiceFilter(typeof(MyActionFilterAttribute))]
+    public IActionResult Index2()
+    {
+        return Content("Header values by configuration.");
+    }
+
+
 
 
 

@@ -844,6 +844,63 @@ For an IAsyncActionFilter, a call to the ActionExecutionDelegate:
 •	Returns ActionExecutedContext.
 To short-circuit, assign Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext.Result to a result instance and don't call next (the ActionExecutionDelegate).
 
+The framework provides an abstract ActionFilterAttribute that can be subclassed.
+The OnActionExecuting action filter can be used to:
+•	Validate model state.
+•	Return an error if the state is invalid.
+C#Copy
+public class ValidateModelAttribute : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext 
+                                           context)
+    {
+        if (!context.ModelState.IsValid)
+        {
+            context.Result = new BadRequestObjectResult(
+                                                context.ModelState);
+        }
+    }
+ Note
+Controllers annotated with the [ApiController] attribute automatically validate model state and return a 400 response. For more information, see Automatic HTTP 400 responses.
+The OnActionExecuted method runs after the action method:
+•	And can see and manipulate the results of the action through the Result property.
+•	Canceled is set to true if the action execution was short-circuited by another filter.
+•	Exception is set to a non-null value if the action or a subsequent action filter threw an exception. Setting Exception to null:
+o	Effectively handles an exception.
+o	ActionExecutedContext.Result is executed as if it were returned normally from the action method.
+C#Copy
+public class ValidateModelAttribute : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext 
+                                           context)
+    {
+        if (!context.ModelState.IsValid)
+        {
+            context.Result = new BadRequestObjectResult(
+                                                context.ModelState);
+        }
+    }
+
+
+    public override void OnActionExecuted(ActionExecutedContext 
+                                          context)
+    {
+        var result = context.Result;
+        // Do something with Result.
+        if (context.Canceled == true)
+        {
+            // Action execution was short-circuited by another filter.
+        }
+
+        if(context.Exception != null)
+        {
+            // Exception thrown by action or action filter.
+            // Set to null to handle the exception.
+            context.Exception = null;
+        }
+        base.OnActionExecuted(context);
+    }
+}
 
 
 

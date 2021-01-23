@@ -970,6 +970,25 @@ public class House
 Like aggregation, composition is also a whole/part or parent/child relationship. However, in composition the life cycle of the part or child is controlled by the whole or parent that owns it. It should be noted that this control can either be direct or transitive. That is, the parent may be directly responsible for the creation or destruction of the child or the parent may use a child that has been already created. Similarly, a parent object might delegate the control to some other parent to destroy the child object. Composition is represented in UML using a line connecting the objects with a solid diamond at the end of the object that owns the other object.
 I hope this discussion of association, aggregation, and composition relationships has helped you understand how these three concepts differ. Remember that aggregation and composition are both subsets of association. In both aggregation and composition, an object of one class can be the owner of an object of another class. And in both aggregation and composition, the child objects belong to a single parent object, i.e., they may have only one owner.
 Finally, in an aggregation relationship, the life cycles of parent objects and child objects are independent. In a composition relationship, the death of a parent object also means the death of its children.
+-
+-
+-
+-
+-
+-
+Assigning			      (GITHUB)  (test)
+Assign nedir, assigning nedir
+Assigning is simply the storing of one value to a variable.  x = 5 assigns the value 5 to the variable  x.
+(assign kelime anlamı: allocate (a job or duty) / to give a particular job or piece of work to someone: “The case has been assigned to our most senior officer.”)
+x = 5 assigns the value 5 to the variable  x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;
+Note that the statement object myObject = new object(); combines all four of these.
+new object() instantiates a new object object, returning a reference to it.
+object myObject declares a new object reference.
+= initializes the reference variable by assigning the value of the reference to it.
+-
+-
+
+
 
 
 

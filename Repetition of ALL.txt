@@ -956,6 +956,20 @@ public class IDGBlogAccount
        //Other members of the IDGBlogAccount class
    }
 Aggregation is usually represented in UML using a line with a hollow diamond. Like association, aggregation can involve a one-to-one, one-to-many, or many-to-many relationship between the participating objects. In the case of a one-to-many or many-to-many relationship, we may say that it is a redundant relationship.
+-
+Composition in object oriented programming
+Composition is a specialized form of aggregation. In composition, if the parent object is destroyed, then the child objects also cease to exist. Composition is actually a strong type of aggregation and is sometimes referred to as a “death” relationship. As an example, a house may be composed of one or more rooms. If the house is destroyed, then all of the rooms that are part of the house are also destroyed. The following code snippet illustrates a composition relationship between two classes, House and Room.
+public class House
+{
+   private Room room;
+   public House()
+   {
+       room = new Room();
+   }
+}
+Like aggregation, composition is also a whole/part or parent/child relationship. However, in composition the life cycle of the part or child is controlled by the whole or parent that owns it. It should be noted that this control can either be direct or transitive. That is, the parent may be directly responsible for the creation or destruction of the child or the parent may use a child that has been already created. Similarly, a parent object might delegate the control to some other parent to destroy the child object. Composition is represented in UML using a line connecting the objects with a solid diamond at the end of the object that owns the other object.
+I hope this discussion of association, aggregation, and composition relationships has helped you understand how these three concepts differ. Remember that aggregation and composition are both subsets of association. In both aggregation and composition, an object of one class can be the owner of an object of another class. And in both aggregation and composition, the child objects belong to a single parent object, i.e., they may have only one owner.
+Finally, in an aggregation relationship, the life cycles of parent objects and child objects are independent. In a composition relationship, the death of a parent object also means the death of its children.
 
 
 

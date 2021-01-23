@@ -901,6 +901,44 @@ public class ValidateModelAttribute : ActionFilterAttribute
         base.OnActionExecuted(context);
     }
 }
+-
+-
+-
+-
+-
+Association, aggregation, and composition in OOP explained
+How to use association, aggregation, and composition to define relationships between the objects in your application
+•	 
+ 
+•	 
+ 
+•	 
+ 
+•	 
+ 
+•	 
+ 
+•	 
+ 
+The Unified Modeling Language (UML) is a de-facto standard for modeling object-oriented systems. In UML there are five different types of relationships: association, aggregation, composition, dependency, and inheritance. This article presents a discussion of the first three of these concepts, leaving the remaining ones to another blog post.
+[ .Net roadmap: The new features you can expect in .Net Standard 2.1. | .Net Framework or .Net Core? Learn when to use which. | Keep up with hot topics in programming with InfoWorld’s App Dev Report newsletter. ]
+Association in object oriented programming
+Association is a semantically weak relationship (a semantic dependency) between otherwise unrelated objects. An association is a “using” relationship between two or more objects in which the objects have their own lifetime and there is no owner.
+As an example, imagine the relationship between a doctor and a patient. A doctor can be associated with multiple patients. At the same time, one patient can visit multiple doctors for treatment or consultation. Each of these objects has its own life cycle and there is no “owner” or parent. The objects that are part of the association relationship can be created and destroyed independently.
+In UML an association relationship is represented by a single arrow. An association relationship can be represented as one-to-one, one-to-many, or many-to-many (also known as cardinality). Essentially, an association relationship between two or more objects denotes a path of communication (also called a link) between them so that one object can send a message to another. The following code snippet illustrates how two classes, IDGBlogAccount and IDGBlogEntry, are associated with one another.
+public class IDGBlogAccount
+   {
+       private IDGBlogEntry[] blogEntries;
+       //Other members of the IDGBlogAccount class
+   }
+public class IDGBlogEntry
+   {
+       Int32 blogId;
+       string caption;
+       string text;
+       //Other members of the IDGBlogEntry class
+   }
+-
 
 
 

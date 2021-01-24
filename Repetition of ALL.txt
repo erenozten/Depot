@@ -987,7 +987,19 @@ object myObject declares a new object reference.
 = initializes the reference variable by assigning the value of the reference to it.
 -
 -
-
+-
+-
+-
+Authentication and authorization might sound similar, but they are distinct security processes in the world of identity and access management (IAM).
+Authentication confirms that users are who they say they are. Authorization gives those users permission to access a resource.
+What Is Authentication?
+Authentication is the act of validating that users are whom they claim to be. This is the first step in any security process. 
+Complete an authentication process through:
+•	Passwords. Usernames and passwords are the most common authentication factors. If a user enters the correct data, the system assumes the identity is valid and grants access.
+•	One-time pins. Grant access for only one session or transaction.
+•	Authentication apps. Generate security codes via an outside party that grants access.
+•	Biometrics. A user presents a fingerprint or eye scan to gain access to the system. 
+In some instances, systems require the successful verification of more than one factor before granting access. This multi-factor authentication (MFA) requirement is often deployed to increase security beyond what passwords alone can provide.
 
 
 

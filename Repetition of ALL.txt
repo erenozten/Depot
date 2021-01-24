@@ -1012,5 +1012,16 @@ In secure environments, authorization must always follow authentication. Users s
 -
 
 
+-
+Instance ve obje arasındaki fark! Instance nedir, object nedir
+-
+-
+The Instance and Object are from Object Oriented Programming.
+For some programming languages like Java, C++, and Smalltalk, it is important to describe and understand code. In other languages that used in Structured Programming, this concept doesn't exist.
+This is a view from Structural Programming. There's no real significant difference that should consume too much of your time. There might be some fancy language that some people might take up a lot of spaces to write about, but at the end of the day, as far as a coder, developer, programmer, architect, is concerned, an instance of a class and an object mean the same thing and can often be used interchangeably. I have never met anyone in my career that would be picky and spend a half-hour trying to point out the differences because there's really none. Time can be better spent on other development efforts.
+UPDATE With regards to Swift, this is what Apple who invented Swift prefers :
+An instance of a class is traditionally known as an object. However, Swift classes and structures are much closer in functionality than in other languages, and much of this chapter describes functionality that can apply to instances of either a class or a structure type. Because of this, the more general term instance is used.
+
+
 
 

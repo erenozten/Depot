@@ -1021,6 +1021,43 @@ For some programming languages like Java, C++, and Smalltalk, it is important to
 This is a view from Structural Programming. There's no real significant difference that should consume too much of your time. There might be some fancy language that some people might take up a lot of spaces to write about, but at the end of the day, as far as a coder, developer, programmer, architect, is concerned, an instance of a class and an object mean the same thing and can often be used interchangeably. I have never met anyone in my career that would be picky and spend a half-hour trying to point out the differences because there's really none. Time can be better spent on other development efforts.
 UPDATE With regards to Swift, this is what Apple who invented Swift prefers :
 An instance of a class is traditionally known as an object. However, Swift classes and structures are much closer in functionality than in other languages, and much of this chapter describes functionality that can apply to instances of either a class or a structure type. Because of this, the more general term instance is used.
+-
+SQL alıştırma siteleri:
+
+https://sqlbolt.com/lesson/select_queries_with_constraints
+
+https://www.hackerrank.com/challenges/revising-the-select-query/problem
+-
+-
+-
+Properties expose fields. Fields should (almost always) be kept private to a class and accessed via get and set properties. 
+Properties provide a level of abstraction allowing you to change the fields while not affecting the external way they are accessed by the things that use your class.
+
+public class MyClass
+{
+
+    // this is a field.  It is private to your class and stores the actual data.
+    private string _myField;
+
+    // this is a property. When accessed it uses the underlying field,
+    // but only exposes the contract, which will not be affected by the underlying field
+    public string MyProperty
+    {
+        get
+        {
+            return _myField;
+        }
+        set
+        {
+            _myField = value;
+        }
+    }
+
+    // This is an AutoProperty (C# 3.0 and higher) - which is a shorthand syntax
+    // used to generate a private field for you
+    public int AnotherProperty{get;set;} 
+}
+
 
 
 

@@ -1218,6 +1218,10 @@ ReadOnly Vs Const Keyword
 -
 -
 -
+Constructors
+Class’larda constructor’u sen belirtmesen bile, constructor’lar IMPLICIT olarak zaten yaratılırlar. Sen explicit olarak yazmasan dahi vardır yani ve sen bir obje initialize edeceğin zaman bu constructor her halükarda çalışacaktır. Sen ister yazmış ol ister yazmamış ol.
+A class constructor is a special member method of a class that is executed whenever a new object of that class is created.
+
 
 
 

@@ -1221,6 +1221,34 @@ ReadOnly Vs Const Keyword
 Constructors
 Class’larda constructor’u sen belirtmesen bile, constructor’lar IMPLICIT olarak zaten yaratılırlar. Sen explicit olarak yazmasan dahi vardır yani ve sen bir obje initialize edeceğin zaman bu constructor her halükarda çalışacaktır. Sen ister yazmış ol ister yazmamış ol.
 A class constructor is a special member method of a class that is executed whenever a new object of that class is created.
+-
+-
+-
+-
+Data Types in C# (Reference Type, Value Type) 	      (GITHUB)  (test)
+Data type nedir, data types nedir, ref type nedir, reference type nedir, value types nedir, value type nedir
+Önemli: https://www.tutorialsteacher.com/csharp/csharp-data-types
+
+ 
+
+ 
+
+The following data types are all of value type:
+•	bool
+•	byte
+•	char
+•	decimal
+•	double
+•	enum
+•	float
+•	int
+•	long
+•	sbyte
+•	short
+•	struct
+•	uint
+•	ulong
+•	ushort
 
 
 

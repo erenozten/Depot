@@ -1229,10 +1229,6 @@ Data Types in C# (Reference Type, Value Type) 	      (GITHUB)  (test)
 Data type nedir, data types nedir, ref type nedir, reference type nedir, value types nedir, value type nedir
 Önemli: https://www.tutorialsteacher.com/csharp/csharp-data-types
 
- 
-
- 
-
 The following data types are all of value type:
 •	bool
 •	byte
@@ -1249,6 +1245,19 @@ The following data types are all of value type:
 •	uint
 •	ulong
 •	ushort
+-
+-
+-
+-
+-
+C# mainly categorized data types in two types: Value types and Reference types. Value types include simple types (e.g. int, float, bool, and char), enum types, struct types, and Nullable value types. 
+Reference types include class types, interface types, delegate types, and array types. 
+Learn about value types and reference types in detail in the next chapter.
+ 
+Reference Types:
+Reference types have null value by default, when they are not initialized.
+For example, a string variable (or any other variable of reference type datatype) without a value assigned to it. In this case, it has a null value, meaning it doesn't point to any other memory location, because it has no value yet.
+A value type variable cannot be null because it holds a value not a memory address. However, value type variables must be assigned some value before use. 
 
 
 

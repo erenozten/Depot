@@ -1278,6 +1278,55 @@ Console.WriteLine(mcls.i);
 Output: 0
 -
 
+Aşağıdaki örnekte yukardaki olay açığa çıkıyor:
+
+using System;
+
+class Program
+{
+         // Hata oluşmaması için int a; ve int b; deklarasyonu burada, yani class içind yapılmalıydı!
+	  // Hata oluşmasının sebebi şu: Local variable’larda initialization yapılmaz! (yani int a; -> 0’a eşitlenmez.
+         // Fakat field’lar initialize edilir… yani int a; dediğimizde a değişkeni 0’a eşitlenir…
+         // Kısacası, bir değişkenin (field veya local variable) otomatik olarak initialize edilmesini istiyorsan, bu değişkeni metot içinde değil, class içinde deklare etmelisin!
+
+    static void Main()
+    {
+        int a;
+        string b;
+
+        Console.WriteLine(a); // Hata! Use of unassigned loal variable 'a'
+        Console.WriteLine(b); // Hata! Use of unassigned loal variable 'b'
+
+        // instance method çağırılıyor
+        SampleClass sampleClass = new SampleClass();
+        sampleClass.SampleMethod();
+
+        // static method çağırılıyor
+        SampleClass.SampleMethod2();
+    }
+
+    class SampleClass
+    {
+        int a1;
+        int b1;
+
+        static int a2;
+        static int b2;
+
+        public void SampleMethod()
+        {
+            Console.WriteLine(a1); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+            Console.WriteLine(b1); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+        }
+
+        public static void SampleMethod2()
+        {
+            Console.WriteLine(a2); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+            Console.WriteLine(b2); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+        }
+    }
+}
+
 
 
 

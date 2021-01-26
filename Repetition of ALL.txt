@@ -1371,6 +1371,38 @@ class Program
         }
     }
 }
+-
+ÖNEMLİ, static metotlar sadece static field’I, property’i çağırabiliyor:
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+    }
+
+    class SampleClass
+    {
+        int instanceField;
+        static int staticField;
+
+        public void SampleMethod()
+        {
+            Console.WriteLine(instanceField);
+            Console.WriteLine(staticField); 
+        }
+
+        public static void SampleMethod2()
+        {
+            Console.WriteLine(instanceField); // Hata! Static metot, instance field'ı çağıramıyor! 
+            Console.WriteLine(staticField); // Hata yok. Static method static field'ı çağırdı.
+        }
+    }
+}
+
+-
 
 
 

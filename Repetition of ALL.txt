@@ -1422,6 +1422,20 @@ Scope: they can live as long as the instance they belong to is active.
 
 Local variables: Variables that are declared within a method or a specific block of statements.
 Scope: Live throughout the execution of the block
+-
+Points to Remember :
+1.	Value type stores the value in its memory space, whereas reference type stores the address of the value where it is stored.
+2.	Primitive data types and struct are of the 'Value' type. Class objects, string, array, delegates are reference types.
+3.	Value type passes byval by default. Reference type passes byref by default.
+4.	Value types and reference types stored in Stack and Heap in the memory depends on the scope of the variable.
+
+Reference Data Types : The Reference Data Types will contain a memory address of variable value because the reference types won’t store the variable value directly in memory. The built-in reference types are string, object.
+•	String : It represents a sequence of Unicode characters and its type name is System.String. So, string and String are equivalent.
+Example:
+•	string s1 = "hello"; // creating through string keyword  
+•	String s2 = "welcome"; // creating through String class  
+•	Object : In C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from Object. So basically it is the base class for all the data types in C#. Before assigning values, it needs type conversion. When a variable of a value type is converted to object, it’s called boxing. When a variable of type object is converted to a value type, it’s called unboxing. Its type name is System.Object.
+
 
 
 

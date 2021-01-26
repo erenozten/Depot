@@ -1403,6 +1403,26 @@ class Program
 }
 
 -
+-
+What is the difference between a field variable and a local variable?
+Local Variables:
+
+- Local variable’s scope is within the block in which they were defined.
+- They are alive as long as the block is executed.
+- They can not have static access modifier
+
+Field Variables:
+
+- The life span is more than the local variables.
+- The are alive as long as the instance of that class is active.
+- They can have only ‘static’ access modifier.
+What is the difference between a field variable and a local variable?
+Field variables: Variable that are declared as a member of a class. OR Variables declared outside any method/constructor but inside the class block.
+Scope: they can live as long as the instance they belong to is active.
+
+Local variables: Variables that are declared within a method or a specific block of statements.
+Scope: Live throughout the execution of the block
+
 
 
 

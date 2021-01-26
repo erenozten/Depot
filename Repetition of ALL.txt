@@ -1435,6 +1435,42 @@ Example:
 •	string s1 = "hello"; // creating through string keyword  
 •	String s2 = "welcome"; // creating through String class  
 •	Object : In C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from Object. So basically it is the base class for all the data types in C#. Before assigning values, it needs type conversion. When a variable of a value type is converted to object, it’s called boxing. When a variable of type object is converted to a value type, it’s called unboxing. Its type name is System.Object.
+-
+Class’lar referans tiptedirler.
+Değişkenler içinde pointer value tutar.
+Objeler de içinde pointer tutar. Resimleri incele 
+ 
+
+        public class Book
+        {
+           public List<int> theList = new List<int>();
+        }
+
+        static void Main(string[] args)
+        {
+            Book book1 = new Book();
+            book1.theList.Add(20);
+            book1.theList.Add(21);
+
+            Book book2 = book1;
+            book2.theList.Add(51);
+
+            foreach(var item in book2.theList)
+            {
+                Console.WriteLine(item); //sonuç: 20,21,51
+                //Çünkü book2 ile yeni bir obje oluşturmadık. Ram'de aynı noktaya işaret ediyorlar. Dikkat edilirse book2 oluştururken new keyword'ü de kullanılmadı.
+            }
+            Console.ReadKey();
+        }
+-
+Resimlerde görüldüğü gibi, book1 i instantiate ettik. Sonra book2 yi book1’e eşitledik. Bu durumda iki tane obje oluşturulmuş olmadı. İki tane pointer (book1 ve book2) tek bir objeye işaret ediyor oldu. Yani iki isimden de (book1,book2) tek bir objeye ulaşıyoruz, yani iki değişken ile aslında tek bir RAM lokasyonuna ulaşıyoruz. (dikkat edilirse new keyword’ü falan kullanmadık)
+Zaten dikkat edilirse, book2 yi oluştururken bir initialization yapmıyoruz. New keword’ünü kullanmıyoruz. Bu bize yeni bir obje oluşturmadığımız konusunda kolayca ipucu verir.
+-
+-
+-
+
+
+Variables in C# are broadly classified into two types: Value types and Reference types. In this tutorial we will be discussing about primitive (simple) data types which is a subclass of Value types.
 
 
 

@@ -1326,6 +1326,52 @@ class Program
         }
     }
 }
+-
+Hatasız çalışan:
+
+using System;
+
+class Program
+{
+    public static int a;
+    public static string b;
+
+    static void Main()
+    {
+        Console.WriteLine(a); // Result: 0
+        Console.WriteLine(b); // Result: ""
+        Console.WriteLine("-"); 
+
+        // instance method çağırılıyor
+        SampleClass sampleClass = new SampleClass();
+        sampleClass.SampleMethod();
+
+        // static method çağırılıyor
+        SampleClass.SampleMethod2();
+    }
+
+    class SampleClass
+    {
+        int a1;
+        int b1;
+
+        static int a2;
+        static int b2;
+
+        public void SampleMethod()
+        {
+            Console.WriteLine(a1); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+            Console.WriteLine(b1); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+        }
+
+        public static void SampleMethod2()
+        {
+            Console.WriteLine(a2); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+            Console.WriteLine(b2); // result: 0 (otomatik olarak 0'a initialize edildiği için 0 döndü)
+        }
+    }
+}
+
 
 
 

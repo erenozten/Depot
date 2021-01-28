@@ -1692,7 +1692,17 @@ When we make this request we get the following:
 	]
 }
 As you can see by adding a .Include statement we are able to fetch the linked authors.
+-
+-
+A note on lazy loading
+Lazy loading is also an alternative to using the .Include syntax, however I recommend against using it in almost all cases as it makes it very easy to introduce subtle performance issues into your application. in addition using the include syntax makes it much more obvious what queries your code performs so increases readability.
 
+How does Entity Framework detect Navigation Properties
+When entity framework examines a class which is attached to the context it finds other complex type properties on the class and assumes that they are a foreign key to that table. Entity framework then creates a foreign key with the name [PropertyName]_[PropertyIdName] for example in the case of the post class the Author is [PropertyName] and in the user table Id is the Id. This means Author_Id is generated as the foreign key name.
+The rules around navigation properties what’s acceptable and how they are generated are defined by a set of conventions. I’m not going to go into any more detail on how these work but for more information you can take a look at the following pages:
+•	EF Feature CTP5: Pluggable Conventions
+•	MSDN - System.Data.Entity.ModelConfiguration.Conventions Namespace
+•	Entity Framework Navigation Property generation rules
 
 
 

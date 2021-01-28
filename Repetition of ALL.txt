@@ -1616,6 +1616,45 @@ public class Post
 	public int Id { get; set; }
 	public User Author { get; set; }
 }
+-
+-
+How do Navigation Properties work?
+When you are using navigation properties in your code you are asking Entity Framework to automatically perform a SQL join between your two tables. For example:
+context.Posts.Where(p => p.Author.Name == "Luke");
+will be translated into the following SQL*:
+SELECT
+	 p.Id,
+	 p.Author_Id
+   FROM  Posts AS p
+	 INNER JOIN Users AS u ON p.Author_Id = u.Id
+   WHERE u.Name = N'Luke'
+As you can see our relationship in c# has been converted into the equivalent SQL join.
+How do I load my properties (Why is my navigation property null)?
+Navigation properties are not loaded by default, so its important to know how and when you need to load navigation properties. So lets look at some scenarios and see what entity framework will give us. These scenarios are based off the following data:
+User
+Id	Name
+1	Luke
+2	Bob
+Post
+Id	Author_Id
+1	1
+2	2
+Case 1 :
+context.Posts.ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": null
+		},
+		{
+			"id": 2,
+			"author": null
+		}
+	]
+}
+As you can see we have retrieved all the posts but haven’t received any of the linked authors.
 
 
 

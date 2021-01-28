@@ -1656,6 +1656,43 @@ When we make this request we get the following:
 }
 As you can see we have retrieved all the posts but haven’t received any of the linked authors.
 
+Case 2:
+context.Posts.Where(p => p.Author.Name == "Luke").ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": null
+		}
+	]
+}
+In this case the where clause successfully interacts with the author to filter by name, however when the results are returned the author is still not linked.
+Case 3:
+using System.Data.Entity; //this is required for .Include
+...
+context.Posts.Include(p => p.Author).ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": {
+				"id":1,
+				"name": "Luke"
+			}
+		},
+		{
+			"id": 2,
+			"author":  {
+				"id":2,
+				"name": "Bob"
+			}
+		}
+	]
+}
+As you can see by adding a .Include statement we are able to fetch the linked authors.
+
 
 
 

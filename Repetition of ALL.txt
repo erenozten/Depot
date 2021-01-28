@@ -1471,6 +1471,31 @@ Zaten dikkat edilirse, book2 yi oluştururken bir initialization yapmıyoruz. Ne
 
 
 Variables in C# are broadly classified into two types: Value types and Reference types. In this tutorial we will be discussing about primitive (simple) data types which is a subclass of Value types.
+-
+-
+-
+-
+-
+One to Many ilişki  Entity Framework ile nasıl yapılıyor. Düzgün anlatım:
+
+One-to-Many Relationships
+model
+relationship
+In a one-to-many relationship, each row of data in one table is linked to one or more rows in the second table. It is the most common type of relationship.
+•	A one-to-many relationship happens when the primary key of one table becomes foreign keys in another table.
+•	The foreign key is defined in the table that represents the many end of the relationship.
+Let's say we have Author and Book entities.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
 
 
 

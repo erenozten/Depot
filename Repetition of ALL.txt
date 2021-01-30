@@ -1809,6 +1809,11 @@ class Program
 }
 
 
+Uzun anlatım:
+Merhaba Arkadaşlar,
+2004 ve  2005 yıllarında uzun bir süre editörlüğünü yaptığım C#Nedir? topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
+Ancak insan zaman içerisinde profesyonelleşme yolunda ilerledikçe konuları çok daha farklı açılardan ele alması gerektiğini de öğreniyor. Profesyonel bir eğitmenin en iyi yaptığı işlerin başında, en zor konuları çöp adam kullanarak anlatmak gelmektedir. Tabi eğitmenin gerçek hayat tecrübelerini ve ip uçlarını da aktarıyor olması, profesyonelliğinin diğer bir göstergesidir. Böyle bir eğitmenin vereceği önerileri pür dikkat dinlemekte yarar vardır.
+Ben eğitmenliği bırakalı uzun bir süre oldu ama makale yazarken veya görsel ders çekerken, konunun anlatımı sırasında yukarıdaki hususlara dikkat etmeye çalışıyorum. Bu anlamda bazen çok basit olarak görünen bir konunun, aslında derinlere inildiğinde dikkat edilmesi gereken noktalar içerdiğini sürekli vurgulamaya çalışan yazıları da hazırlama uğraşısı içerisindeyim. İşte bu yazımızın konusu da; C# 4.0 ile birlikte gelen yeni dil özelliklerden birisi olan Default Parameters ile ilişkili tuzaklar. Öncelikli olarak konuya aşağıdaki hazır kod parçası ile başlayalım.
 
 
 

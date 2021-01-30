@@ -1760,6 +1760,34 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
 Will create the following relationship
  
 Note that in this example we have specified a remote collection for the relationship. This means that you can use the Entity2s property to find all linked entities.
+-
+-
+-
+-
+-
+-
+Default Parameters / Optional Parameters / Required Parameters
+
+static void Main()
+        {
+            MyMethod(3,3);
+            Console.ReadKey();
+        }
+        static void MyMethod(int x, int y = 2)
+        {
+            Console.WriteLine(x);
+            Console.WriteLine(y);       
+        }
+Yukarıdaki MyMethod metodumuzda iki tane parametre var: x ve y.
+Bunlardan:
+ int x ==> required parameter
+int y = 2  ==> optional parameter (default parameter)
+ikinci parametreye opsiyonel deniyor; çünkü bu parametreye değer vermesek de olur.
+Not: Metod tanımlanırken, optional parametreler, required parametrelerden sonra yazılmalıdır. 
+Yani şu durumda:
+static void MyMethod(int x = 2, int y)
+gibi bir şey yazarsak hata verecektir.
+
 
 
 

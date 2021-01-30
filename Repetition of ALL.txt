@@ -1924,6 +1924,81 @@ Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Gö
 Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda(Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
 Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
 
-
+Aslında Constructor kullanımının buradaki amacı, Connection tipine ait nesne örneklerinin oluşturulması sırasında alternatif versiyonları varsayılan parametre değerlerine göre sunabilmektir. Bu amaç düşünüldüğünde Default Parameters yeteneği önemli bir avantaj sağlamaktadır. Gelin kodumuzu Default Parameters kabiliyetini kullanarak aşağıdaki hale getirelim.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks",20,512); 
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; }
+ 
+        public Connection(string server=".", string databaseName="master", int timeout=45, int packetSize=4096) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+        }
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};database={1};timeout={2},packetSize={3}", Server, Database, Timeout, PacketSize); 
+        } 
+    }    
+}
 
 

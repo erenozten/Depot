@@ -1788,6 +1788,25 @@ Yani şu durumda:
 static void MyMethod(int x = 2, int y)
 gibi bir şey yazarsak hata verecektir.
 
+Bi örnek daha:
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        MyMethod(1, 2);
+        MyMethod(5);
+        Console.ReadKey();
+    }
+    static void MyMethod(int x, int y = 0)
+    {
+        Console.WriteLine(x + ", " + y);
+        //1,2
+        //5,0   (x'i 5 verip y yi boş bıraktık. y'nin default value'su da 0 idi. O yüzden 0 döndü)
+    }
+
+}
 
 
 

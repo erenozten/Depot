@@ -1815,6 +1815,114 @@ Merhaba Arkadaşlar,
 Ancak insan zaman içerisinde profesyonelleşme yolunda ilerledikçe konuları çok daha farklı açılardan ele alması gerektiğini de öğreniyor. Profesyonel bir eğitmenin en iyi yaptığı işlerin başında, en zor konuları çöp adam kullanarak anlatmak gelmektedir. Tabi eğitmenin gerçek hayat tecrübelerini ve ip uçlarını da aktarıyor olması, profesyonelliğinin diğer bir göstergesidir. Böyle bir eğitmenin vereceği önerileri pür dikkat dinlemekte yarar vardır.
 Ben eğitmenliği bırakalı uzun bir süre oldu ama makale yazarken veya görsel ders çekerken, konunun anlatımı sırasında yukarıdaki hususlara dikkat etmeye çalışıyorum. Bu anlamda bazen çok basit olarak görünen bir konunun, aslında derinlere inildiğinde dikkat edilmesi gereken noktalar içerdiğini sürekli vurgulamaya çalışan yazıları da hazırlama uğraşısı içerisindeyim. İşte bu yazımızın konusu da; C# 4.0 ile birlikte gelen yeni dil özelliklerden birisi olan Default Parameters ile ilişkili tuzaklar. Öncelikli olarak konuya aşağıdaki hazır kod parçası ile başlayalım.
 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; }
+ 
+        #region Constructors
+ 
+        public Connection(string server,string databaseName,int timeout,int packetSize) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+        } 
+        public Connection(string server, string databaseName, int timeout) 
+            : this(server, databaseName, timeout, 4096) 
+        { 
+        } 
+        public Connection(string server, string databaseName) 
+            : this(server, databaseName, 45, 4096) 
+        { 
+        } 
+        public Connection() 
+            : this(".", "master", 45, 4096) 
+        { 
+        }
+ 
+        #endregion
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};database={1};timeout={2},packetSize={3}", Server, Database, Timeout, PacketSize); 
+        } 
+    } 
+}
+ 
+Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Görüldüğü üzere en fazla sayıda parametre alan yapıcı metod, diğer yapıcı metodlar tarafından kullanılmaktadır. Burada this anahtar kelimesini takip eden ifadeler içerisinde gerekli aktarma işlemlerinin yapıldığı görülebilir.
+
+Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda(Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
+Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
 
 
 

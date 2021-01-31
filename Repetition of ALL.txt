@@ -2172,5 +2172,15 @@ namespace DefaultAndOptionalParametersCase
     }    
 }
 
+Kodda sadece processId isimli bir metod parametresi eklendiğini görmekteyiz. Bu aslında sonradan yapılan bir değişiklik olarak düşünülmelidir. Bir başka deyişle geliştirdiğimiz projelerde sonradan varsayılan parametre eklenmesi söz konusu olabilir. Buna göre çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
+Dikkatinizi çeken bir nokta var mı?
+Son çıktıya göre ProcessId değerinin 512 olduğu görülmektedir. Oysaki 512 değeri daha önceki kodlamaya göre PacketSize özelliği için atanan bir değerdir. Bir başka deyişle yanlış bir değer ataması söz konusudur. İşin kötü yanı bu senaryoda derleme zamanında bir hata veya uyarı mesajı alınmamaktadır. Dolayısıyla kodun hatalı çalışması olasıdır.
+Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
+Yani metod yapısını aşağıdaki gibi değiştirmemiz doğru bir çalışma zamanı çıktısı elde etmemizi sağlayacaktır.
+1	public Connection(string server = ".", string databaseName = "master", int timeout = 45, int packetSize = 4096,int processId = 10)
+,sonucu çalışma zamanı çıktısı aşağıdaki gibidir.
+
+
 
 

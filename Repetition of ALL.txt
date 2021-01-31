@@ -2083,5 +2083,13 @@ namespace DefaultAndOptionalParametersCase
     }    
 }
 
+Dikkat edileceği üzere tek bir yapıcı metod kullanımı söz konusudur. Bir başka deyişle kod kısalmıştır. Yapıcı metodun parametrelerinde verilen varsayılan değerler sayesinde, Connection tipine ait nesne örneklerinin oluşturulması şekillendirilmiştir. Örneğin, çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
+Aslında işin içerisine Named Parameters kullanımını da katmamız yerinde olacaktır. Neden? Main metodu içerisindeki aşağıdaki kod satırını göz önüne alalım.
+1	myConn = new Connection("localhost", "AdventureWorks",20,512);
+Geliştirici kodu yazarken parametrelerin ne anlama geldiğini, isimlerinden veya varsa eğer XML Comment’ lerden çıkartabilir. Ancak tamamlanmış kodun okunması sırasında 20 ve 512 rakamlarının en anlama geldiği kolayca anlaşılamayabilir. İşte bu noktada parametreleri isimlendirerek kullanmak aşağıdaki okunurluğu sağlayacaktır.
+1	myConn = new Connection(server:"localhost", databaseName:"AdventureWorks", timeout:20, packetSize:512);
+
+
 
 

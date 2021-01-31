@@ -2364,4 +2364,44 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 -
 -
 -
+One of the major annoyances when starting with C# was the lack of default arguments. Generating two or three overloads manually is ok, but looking at the 28 overloads for a MessageBox makes my head tingle (in an ugly way).
+Now I can't hack the C# compiler to magically allow this. I can, however, provide a code generator that creates a set of overloads from a declaration containing default arguments.
+Using the Tool
+Enter your declaration in the first edit box. You can add default arguments like you would in C++, and the generated code appears immediately in the text field below. Click "Copy" to copy the generated code to the clipboard. Example:
+Hide   Copy Code
+void Add(string name = "(none)", int age = 22)
+The above generates the following implementations:
+Hide   Copy Code
+// $overload: void Add(string name = "(none)", int age = 22){
+ // do your worst! - implement the actual method here
+}
+
+#region overloads for: Add
+
+public void Add(string name)
+{
+ Add(name, 22);
+}
+
+public void Add()
+{
+ Add("(none)", 22);
+}
+
+#endregion // overloads
+public void Add(string name, int age)
+The first overload is the method you actually implement. The other overloads have a reduced argument list and call the first.
+The first line is for integration with Linkify (see below).
+It Gets Better (Optionally)
+C++ default arguments allow to omit parameters at the end of the argument list. However, in the above example where argument types are distinct, you may want to omit the name but still specify the age. I've added a custom "keyword", optional, that can drop arguments from the middle of the argument list:
+Hide   Copy Code
+void Add(optional string name = "(none)", int age = 22)
+This generates the following signatures:
+Hide   Copy Code
+public void Add(string name, int age) { } // the one to implement
+public void Add(string name)
+public void Add()
+public void Add(int age)
+The last one omits the string name parameter.
+It is your responsibility to make sure the resulting overloads aren't ambiguous. If you don't feel up to the job, the compiler will catch you!
 

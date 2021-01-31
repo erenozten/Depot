@@ -2090,6 +2090,87 @@ Aslında işin içerisine Named Parameters kullanımını da katmamız yerinde o
 Geliştirici kodu yazarken parametrelerin ne anlama geldiğini, isimlerinden veya varsa eğer XML Comment’ lerden çıkartabilir. Ancak tamamlanmış kodun okunması sırasında 20 ve 512 rakamlarının en anlama geldiği kolayca anlaşılamayabilir. İşte bu noktada parametreleri isimlendirerek kullanmak aşağıdaki okunurluğu sağlayacaktır.
 1	myConn = new Connection(server:"localhost", databaseName:"AdventureWorks", timeout:20, packetSize:512);
 
+Parametre Sayısının Arttırılması
+Gelelim default parameters kullanımında dikkatli olmamız gereken hususlara. İlk olarak parametre sayısının arttırılması durumunu göz önüne alacağız. Ancak senaryonun oluşumunda Named Parameters kullanmadığımızı varsayıyoruz. Bu amaçla Connection tipine ait yapıcı metodu aşağıdaki gibi değiştirdiğimizi düşünelim.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks",20,512);            
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; } 
+        public int ProcessId { get; set; }
+ 
+        public Connection(string server=".", string databaseName="master", int timeout=45,int processId=10, int packetSize=4096) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+            ProcessId = processId; 
+        }
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};database={1};timeout={2},packetSize={3},PId:{4}", Server, Database, Timeout, PacketSize,ProcessId); 
+        } 
+    }    
+}
 
 
 

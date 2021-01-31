@@ -2270,5 +2270,9 @@ namespace DefaultAndOptionalParametersCase
     }   
 }
 
+Aslında bu senaryo Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı) başlıklı yazımızdan size tanıdık gelecektir.
+Sınıf şemasından da görüleceği üzere ICommand arayüzünü(Interface) uygulayan Command isimli bir tip ve bundan türeyen MyCommand sınıfı söz konusudur. MyCommand sınıfı, Command tipinde virtual olarak tanımlanmış ve aslında ICommand arayüzü tarafından zorunlu hale getirilmiş PrepareSelectTop metodunu ezmektedir(Overriding).
+Kritik olan yer Main metodu içerisindeki değişken atamalardır. Dikkat edileceği üzere ICommand ve Command tipinden olan değişkenlere aynı MyCommand nesne örneği atanmıştır. Eğer çok biçimlilik ilkesini biliyorsak, iCmd ve cmd isimli nesne örnekleri üzerinden yapılan PrepareSelectTop çağrılarının aslında MyCommand tipindeki metod içeriğine doğru yapılması gerektiğini biliriz. Buna göre de tüm Select sorgularında Top 50 değerinin kullanılıyor olması gerekmektedir. Oysaki çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
 
 

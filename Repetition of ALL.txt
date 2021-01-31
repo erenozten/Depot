@@ -2000,5 +2000,10 @@ namespace DefaultAndOptionalParametersCase
         } 
     }    
 }
+-
+Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Görüldüğü üzere en fazla sayıda parametre alan yapıcı metod, diğer yapıcı metodlar tarafından kullanılmaktadır. Burada this anahtar kelimesini takip eden ifadeler içerisinde gerekli aktarma işlemlerinin yapıldığı görülebilir.
+
+Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda(Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
+Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
 
 

@@ -2181,6 +2181,94 @@ Yani metod yapısını aşağıdaki gibi değiştirmemiz doğru bir çalışma z
 1	public Connection(string server = ".", string databaseName = "master", int timeout = 45, int packetSize = 4096,int processId = 10)
 ,sonucu çalışma zamanı çıktısı aşağıdaki gibidir.
 
+Türetme(Inheritance) ve Varsayılan Parametreler
+Gelelim diğer bir vakaya. Bu vaka çok daha kritik ve önemlidir. Nitekim işin içerisinde türetme(Inheritance) kavramı vardır. Konuyu netleştirmek için aşağıdaki sınıf şemasına sahip örnek kod parçasını göz önüne alarak ilerleyelim.
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            MyCommand myCmd = new MyCommand(); 
+            ICommand iCmd = myCmd; 
+            Command cmd = myCmd;
+ 
+            Console.WriteLine(myCmd.PrepareSelectTop("Product")); 
+            Console.WriteLine(iCmd.PrepareSelectTop("Product")); 
+            Console.WriteLine(cmd.PrepareSelectTop("Product")); 
+        } 
+    }
+ 
+    interface ICommand 
+    { 
+        string PrepareSelectTop(string tableName, int topNumber = 3); 
+    } 
+    class Command 
+       : ICommand 
+    { 
+        #region ICommand Members
+ 
+        public virtual string PrepareSelectTop(string tableName, int topNumber = 10) 
+        { 
+            return String.Format("Select top {0} from {1}",topNumber,tableName);            
+        }
+ 
+        #endregion 
+    } 
+    class MyCommand 
+       : Command 
+    { 
+        public override string PrepareSelectTop(string tableName, int topNumber = 50) 
+        { 
+            return String.Format("Select top {0} from {1}",topNumber,tableName); 
+        } 
+    }   
+}
 
 
 

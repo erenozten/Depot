@@ -2282,3 +2282,86 @@ veya Command tipi için şu şekilde olacaktır.
 Böyle bir vakanın oluşmasının sebebi Defaul Parameter’ ların çalışma zamanı(Runtime) yerine derleme zamanında(Compile Time) çözümleniyor olmalarıdır. Bu durum IL(Intermediate Language) kodunda açık bir şekilde görülebilir ve ispatlanabilir.
 
 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38	.method private hidebysig static void  Main(string[] args) cil managed 
+{ 
+  .entrypoint 
+  // Code size       68 (0x44) 
+  .maxstack  3 
+  .locals init ([0] class DefaultAndOptionalParametersCase.MyCommand myCmd, 
+           [1] class DefaultAndOptionalParametersCase.ICommand iCmd, 
+           [2] class DefaultAndOptionalParametersCase.Command cmd) 
+  IL_0000:  nop 
+  IL_0001:  newobj     instance void DefaultAndOptionalParametersCase.MyCommand::.ctor() 
+  IL_0006:  stloc.0 
+  IL_0007:  ldloc.0 
+  IL_0008:  stloc.1 
+  IL_0009:  ldloc.0 
+  IL_000a:  stloc.2 
+  IL_000b:  ldloc.0 
+  IL_000c:  ldstr      "Product" 
+  IL_0011:  ldc.i4.s   50 
+  IL_0013:  callvirt   instance string DefaultAndOptionalParametersCase.Command::PrepareSelectTop(string, 
+                                                                                                  int32) 
+  IL_0018:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_001d:  nop 
+  IL_001e:  ldloc.1 
+  IL_001f:  ldstr      "Product" 
+  IL_0024:  ldc.i4.3 
+  IL_0025:  callvirt   instance string DefaultAndOptionalParametersCase.ICommand::PrepareSelectTop(string, 
+                                                                                                   int32) 
+  IL_002a:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_002f:  nop 
+  IL_0030:  ldloc.2 
+  IL_0031:  ldstr      "Product" 
+  IL_0036:  ldc.i4.s   10 
+  IL_0038:  callvirt   instance string DefaultAndOptionalParametersCase.Command::PrepareSelectTop(string, 
+                                                                                                  int32) 
+  IL_003d:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_0042:  nop 
+  IL_0043:  ret 
+} // end of method Program::Main
+IL kodunda yer alan ldc komutlaraına bakıldığında Defualt Parameter değerlerinin, tip tanımlamaları sırasında yazıldığı gibi set edildiği açık bir şekilde görülebilmektedir.
+Kolayca gözden kaçabilecek bir durum olduğu için tehlikeli bir vaka olduğunu ifade edebiliriz. Dolayısıyla en azından bu senaryoya göre Default Parameter kullanımını aslında Interface seviyesinde bırakmak çözüm olarak düşünülebilir.
+Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+-
+-
+-
+-
+

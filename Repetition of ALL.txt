@@ -2453,5 +2453,18 @@ A domain is the targeted subject area of a computer program. It is a term used i
 Domain in the realm of software engineering commonly refers to the subject area on which the application is intended to apply. In other words, during application development, the domain is the "sphere of knowledge and activity around which the application logic revolves." —Andrew Powell-Morse
 Domain: A sphere of knowledge, influence, or activity. The subject area to which the user applies a program is the domain of the software. —Eric Evans
 
+Eager Loading
+
+(bu cümle ne diyor) If you use lazy loading, EntityFramework will take care of loading the navigation property for you, so you won't get an exception.
+Lazy loading will produce several SQL calls while Eager loading may load data with one "more heavy" call (with joins/subqueries).
+Mantık şu şekilde kurumalı. Lazyloading = tembel, o yüzden en az ne kadar data getirebiliyorsa, o kadar getiriyor. Yani her ilişkili datayı yüklenmiyor sırtına. 
+Eager ise adı üstünde, eager olduğu için tüm datayı getiriyor, eager bir kedi gibi düşünebiliriz, yerinde durmayan. Lazy kedi ise en ufak işgücünü ortaya koyar, kendini yormaz.
+For example, If there is a high ping between your web and sql servers you would go with Eager loading instead of loading related items 1-by-1 with lazy Loading.
+
+ Lazy loading will produce several SQL calls while Eager loading may load data with one "more heavy" call (with joins/subqueries).
+For example, If there is a high ping between your web and sql servers you would go with Eager loading instead of loading related items 1-by-1 with lazy Loading.
+
+You can't perform eager loading with the Find method, so the Where
+and Single methods are used instead to select the instructor.
 
 

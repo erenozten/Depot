@@ -2427,6 +2427,16 @@ Auto-Paste makes that even easier. It works without Linkify installed (but then,
 » DefaultOverloader closes
 Restore the DefaultOverloader from minimized state to cancel the paste sequence. There is a small delay between the first paste and the second data arriving on clipboard, so don't paste too fast in succession!
 
+Limitations
+The parser is fairly simple. So you might be able to create declarations that aren't interpreted correctly. One thing is a function name with multiple template parameters: don't put spaces in the template list, otherwise, I get the function name wrong!
+The parser doesn't validate your declaration - that's left to your compiler.
+This is unfortunately no full replacement for default parameters. One thing where some language and IDE support would be helpful is Intellisense - you still get listed all overloads separately. Also, when you modify the declaration, you have to use the Overloader again.
+The Debate
+There is a reason there are no default parameters in MSIL or the C# language - to learn about the reasons, read Eric Gunnersons response [^] or start at Google [^].
+In my opinion, Eric has a valid argument why default arguments aren't in MSIL - but it doesn't hold up for the C# language itself. After all, C# could do what I do.:)
+Points of Interest
+Permutation of Bools
+For implementing the optional keyword, I needed to permute over all variations of having them in. With N parameters tagged optional, I need to generate all possible combinations of N bool values. While some approaches can be found on the 'net, none was plug-and-play-enough for me. Thinking how to implement it myself, a "background thread" associated the idea of a bool array with a bit array - bools are bits! This allows a very simple solution: just count from 0 to 2<sup>N</sup>-1, and treat each bit as a flag.
 
 
 

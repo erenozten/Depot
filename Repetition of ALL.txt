@@ -2438,6 +2438,14 @@ Points of Interest
 Permutation of Bools
 For implementing the optional keyword, I needed to permute over all variations of having them in. With N parameters tagged optional, I need to generate all possible combinations of N bool values. While some approaches can be found on the 'net, none was plug-and-play-enough for me. Thinking how to implement it myself, a "background thread" associated the idea of a bool array with a bit array - bools are bits! This allows a very simple solution: just count from 0 to 2<sup>N</sup>-1, and treat each bit as a flag.
 
+Parsing the Argument List
+The sources contain a (still somewhat experimental) Tokenizer that respects single- and double-quoted strings as well as round, square and curly brackets. This is required to parse declarations like the following correctly:
+Hide   Copy Code
+SendMessage(string X = "Hello, World", int[,] targetCoords) 
+It's barely tested and needs some extensions to be reusable, but it works well enough for the application given.
+Thank You
+A big thank you to everyone who helped me at the C# forums here - especially Judah Himango who often went an extra mile.
+I am currently working on my first "real world" C# project (complete with time pressure, feature creep, big plans, and get-it-done-while-everybody-is-out-to-distract you), and you have been really helpful in getting my stubborn head through this wall - or at least into it.
 
 
 

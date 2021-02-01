@@ -2405,3 +2405,29 @@ public void Add(int age)
 The last one omits the string name parameter.
 It is your responsibility to make sure the resulting overloads aren't ambiguous. If you don't feel up to the job, the compiler will catch you!
 
+Integration with Visual Studio - Linkify
+I've updated my Linkify article that allows to visit URLs and run external tools from source code comments. Also, DefaultOverloader now generates a declaration line that Linkify can understand:
+Hide   Copy Code
+// $overload: void Add(string name = "(none)", int age = 22)
+void Add(string name, int age)
+Note: You need to set the path to the DefaultOverloader executable first in the Linkify configuration dialog. See that article for details.
+Place the caret on the "$overload" and click "Linkify". Default Overloader opens with your declaration already in place.
+You can also copy the two declaration lines separately by clicking "copy head", and the overloads region by clicking "copy body". This allows to preserve the body of the main functions implementation. Auto-Paste makes that even easier.
+Auto-Paste
+Auto-Paste makes that even easier. It works without Linkify installed (but then, the first step is more complicated). To modify an existing block with overloads:
+1.	Place caret on "$overload", and start Linkify
+» DefaultOverloader will open, with your declaration ready to be edited.
+2.	After making your modifications, click "Auto-Paste"
+» DefaultOverloader minimizes, and displays "Paste Head" as title
+3.	Select the two head lines (comment and main function header), and paste
+» The declarations are replaced with the new contents
+» DefaultOverloader (still minimized) displays "Paste Body" as title
+4.	Collapse the #region Overloads for..., select the entire line, and paste
+» New overloads replace the previous ones
+» DefaultOverloader closes
+Restore the DefaultOverloader from minimized state to cancel the paste sequence. There is a small delay between the first paste and the second data arriving on clipboard, so don't paste too fast in succession!
+
+
+
+
+

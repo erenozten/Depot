@@ -2475,6 +2475,17 @@ Lazy Loading: In case of lazy loading, related objects (child objects) are not l
 Use Lazy Loading when you are using one-to-many collections.
 1.	Use Lazy Loading when you are sure that you are not using related entities instantly.
 NOTE: Entity Framework supports three ways to load related data – eager loading, lazy loading and explicit loading.
--
+
+Eager loading is the opposite of Lazy loading but Explicit loading is similar to lazy loading, except that: you explicitly retrieve the related data in code; it doesn't happen automatically when you access a navigation property. You load related data manually by getting the object state manager entry for an entity and calling the Collection.Load method for collections or the Reference.Load method for properties that hold a single entity.
+From techblog:
+Eager Loading :
+Eager loading is the opposite of Lazy loading which is : The process of loading a specific set of related objects along with the objects that were explicitly requested in the query.
+Explicit Loading :
+Explicit loading is defined as : when objects are returned by a query, related objects are not loaded at the same time. By default, they are not loaded until explicitly requested using the Load method on a navigation property.
+And:
+If I Use lazy loading and I call for example dpc_gestion.dpc_participant, does the navigation properties loads?or I will get an exception?
+You don't get any exception and the navigation properties should loads.
+Is there a case when eager loading or explicit loading were better than lazy loading in performance and responsiveness?
+
 
 

@@ -2487,5 +2487,22 @@ If I Use lazy loading and I call for example dpc_gestion.dpc_participant, does t
 You don't get any exception and the navigation properties should loads.
 Is there a case when eager loading or explicit loading were better than lazy loading in performance and responsiveness?
 
+Eager loading is typically more efficient when you need the related data for all retrieved rows of the primary table. And also when relations are not too much, eager loading will be good practice to reduce further queries on server. But when you know that you will not need a property instantly then lazy loading maybe a good choice. And also eager loading is a good choice in a situation where your db context would be disposed and lazy loading could not take place anymore. For example consider the following:
+public List<Auction> GetAuctions()
+{
+    using (DataContext db = new DataContext())
+    {
+        return db.Auctions.ToList();
+    }
+}
+After calling this method, You cannot load the related entity lazily because the db is disposed and so the Eager Loading would be a better choice here.
+One more thing to note is: Lazy loading will produce several SQL request while Eager loading load data with one request. Eager loading is also a good choice to solve the n+1 selects issue in ORMs. Have a look at this post: What is the n+1 selects issue?
+-
+
+
+
+notes on eager loading - II
+
+
 
 

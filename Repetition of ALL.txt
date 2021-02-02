@@ -2499,6 +2499,11 @@ After calling this method, You cannot load the related entity lazily because the
 One more thing to note is: Lazy loading will produce several SQL request while Eager loading load data with one request. Eager loading is also a good choice to solve the n+1 selects issue in ORMs. Have a look at this post: What is the n+1 selects issue?
 -
 
+we have known how to use Eager Loading, Explicit Loading and Lazy Loading in the previous three posts. I am going to dig into what’s the advantages and disadvantages of those methods.
+Eager Loading
+Eager Loading means that the related data will load from the database as the initial query. in other words, Eager Loading can save your time from avoid executing additional SQL queries.
+both Entity Framework 6 and Entity Framework Core support eager loading of entities. if you are operating some lightweight data or fast-queries, then the eager loading would be suited for you.
+Most of the scenarios can fit this Eager Loading strategy.
 
 
 notes on eager loading - II

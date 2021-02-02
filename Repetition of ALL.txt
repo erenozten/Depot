@@ -2467,4 +2467,14 @@ For example, If there is a high ping between your web and sql servers you would 
 You can't perform eager loading with the Find method, so the Where
 and Single methods are used instead to select the instructor.
 
+Eager Loading: Eager Loading helps you to load all your needed entities at once. i.e. related objects (child objects) are loaded automatically with its parent object.
+Use Eager Loading when the relations are not too much. Thus, Eager Loading is a good practice to reduce further queries on the Server.
+1.	Use Eager Loading when you are sure that you will be using related entities with the main entity everywhere.
+
+Lazy Loading: In case of lazy loading, related objects (child objects) are not loaded automatically with its parent object until they are requested. By default LINQ supports lazy loading.
+Use Lazy Loading when you are using one-to-many collections.
+1.	Use Lazy Loading when you are sure that you are not using related entities instantly.
+NOTE: Entity Framework supports three ways to load related data – eager loading, lazy loading and explicit loading.
+-
+
 

@@ -2611,6 +2611,21 @@ class Employee
 }
 Shows an Employee class that has a private static variable and two public instance variables.
 
+-
+-
+Class Variables are variables which are declared as static in Class. And Instance variable are variables which are not declared as static they can either private or public.
+Static Example
+Declaring instance variables:
+private string customerName;
+private int customerAge;
+private boolean favoriteCustomer = false;
+Declaring a class variable:
+private static int noOfCustomers;
+ 
+________________________________________
+Regards
+Nayan Paregi (MCTS)
+Please remember to click “Mark as Answer” on the post that helps you, and to click “Unmark as Answer” if a marked post does not actually answer your question. This can be beneficial to other community members reading the thread.-
 
 
 

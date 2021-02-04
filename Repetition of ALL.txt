@@ -2662,6 +2662,48 @@ Sınıfı kullanan kişi özelliklere doğrudan erişebilir. Alanlara doğrudan 
 Tabi bu örnekte kontrol kısmı (ki asıl önemli konudur) yok. Sade olsun diye eklenmedi. Aşağıdakinde ise kontrol ediyoruz. Genellikle değer gönderirken (get bloğunda) varsa değer göndermeden önce yapılacak işler, testler veya ayarlamalar yapılır. Tabi varsa.
 Asıl önemli olan set bölümü. Bu bölümde value ile gelen değeri kontrol ederiz ve eğer değer uygun ise alana atarız. Aksi halde bir hata fırlatırız veya varsayılan bir değeri atarız. Tabi değer atamadan önce veya sonra başka yapılacak işlemler de varsa onları da yapabiliriz.
 
+
+1.	public class Deneme
+2.	{
+3.	    private int genislik;
+4.	 
+5.	    public int Genislik
+6.	    {
+7.	        get
+8.	        {
+9.	            return genislik; 
+10.	        }
+11.	        set
+12.	        {
+13.	            if (value <= 0)
+14.	                throw new Exception("Deneme'nin genişliği 0'dan büyük bir değer olmalı.");
+15.	            genislik = value;
+16.	        }
+17.	    }
+18.	}
+Örnekte set bölümünde gelen değer (value) 0 veya daha küçük ise bir hata fırlatıyoruz. Tabi varsayılan bir değerle de değiştirilebilir.
+Peki kullanırken neler oluyor?
+Örnek bir kullanım ve etkileri şöyle:
+1.	Deneme d = new Deneme();
+2.	d.Genislik = 10; // set bölümü çalışır ve value'nin değeri 10 olur.
+3.	int gen = d.Genislik; // get bölümü çalıştırılır ve genislik alanının değeri gelir.
+4.	d.Genislik = 0; // set bölümü çalışır, hata verir.
+-
+Field:
+class Person
+{
+ int age;
+  	string name;
+public void SayHi()
+{
+    	Console.WriteLine("Hi");
+  }
+}
+The code above declares a class named Person, which has age and name fields as well as a SayHi method that displays a greeting to the screen.
+
+
+
+
 field nedir devam
 
 

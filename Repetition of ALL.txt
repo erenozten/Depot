@@ -2721,6 +2721,22 @@ Instance Variable
 Instance variable nedir, instance variable nedir
 Instance variables are non-static variables and are declared in a class but outside any method, constructor or block. As instance variables are declared in a class, these variables are created when an object of the class is created and destroyed when the object is destroyed. Unlike local variables, we may use access specifiers for instance variables.
 
+Difference betwwen Instance variable & Static variable
+Each object will have its own copy of instance variable whereas We can only have one copy of a static variable per class irrespective of how many objects we create.
+Changes made in an instance variable using one object will not be reflected in other objects as each object has its own copy of instance variable. In the case of static, changes will be reflected in other objects as static variables are common to all object of a class.
+We can access instance variables through object references and Static Variables can be accessed directly using class name.
+In the life cycle of a class a static variable ie initialized one and only one time, whereas instance variables are initialized for 0 times if no instance is created and n times if n instances are created.
+The Syntax for static and instance variables are :
+ class Example
+        {
+            static int a; // static variable
+            int b;        // instance variable
+        }
+
+In object-oriented programming with classes, an instance variable is a variable defined in a class (i.e. a member variable), for which each instantiated object of the class has a separate copy, or instance. An instance variable has similarities with a class variable[1], but is non-static. An instance variable is a variable which is declared in a class but outside of constructors, methods, or blocks. Instance variables are created when an object is instantiated, and are accessible to all the constructors, methods, or blocks in the class. Access modifiers can be given to the instance variable.
+An instance variable is not a class variable although there are similarities. It is a type of class attribute (or class property, field, or data member). The same dichotomy between instance and class members applies to methods ("member functions") as well; a class may have both instance methods and class methods.
+Each instance variable lives in memory for the life of the object it is owned by.
+Variables are properties an object knows about itself. All instances of an object have their own copies of instance variables, even if the value is the same from one object to another. One object instance can change values of its instance variables without affecting all other instances. Instance variables can be used by all methods of a class unless the method is declared as static.
 
 
 field nedir devam

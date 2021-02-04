@@ -2738,6 +2738,18 @@ An instance variable is not a class variable although there are similarities. It
 Each instance variable lives in memory for the life of the object it is owned by.
 Variables are properties an object knows about itself. All instances of an object have their own copies of instance variables, even if the value is the same from one object to another. One object instance can change values of its instance variables without affecting all other instances. Instance variables can be used by all methods of a class unless the method is declared as static.
 
+C# - Static Class, Methods, Constructors, Fields	      (GITHUB)  (test) 
+Static nedir
+-
+Class members (variables, properties, methods) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member.
+-
+We can’t use this keyword inside the static function.
+-
+The Main method is static, as it is the starting point of any program. Therefore any method called directly from Main had to be static.
+
+
+
+
 
 field nedir devam
 

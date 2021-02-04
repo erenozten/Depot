@@ -2747,9 +2747,41 @@ We can’t use this keyword inside the static function.
 -
 The Main method is static, as it is the starting point of any program. Therefore any method called directly from Main had to be static.
 
+In C#, static means something which cannot be instantiated. You cannot create an object of a static class and cannot access static members using an object.
+C# classes, variables, methods, properties, operators, events, and constructors can be defined as static using the static modifier keyword.
+Static Class
+Apply the static modifier before the class name and after the access modifier to make a class static. The following defines a static class with static fields and methods.
+Example: C# Static Class
+public static class Calculator
+{
+    private static int _resultStorage = 0;
+    
+    public static string Type = "Arithmetic";
 
+    public static int Sum(int num1, int num2)
+    {
+        return num1 + num2;
+    }
 
+    public static void Store(int result)
+    {
+        _resultStorage = result;
+    }
+}
+Above, the Calculator class is a static. All the members of it are also static.
+You cannot create an object of the static class; therefore the members of the static class can be accessed directly using a class name like ClassName.MemberName, as shown below.
+Example: Accessing Static Members
+class Program
+{
+    static void Main(string[] args)
+    {
+        var result = Calculator.Sum(10, 25); // calling static method
+        Calculator.Store(result); 
 
+        var calcType = Calculator.Type; // accessing static variable
+        Calculator.Type = "Scientific"; // assign value to static variable
+    }
+}
 
 field nedir devam
 

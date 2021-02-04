@@ -2596,6 +2596,20 @@ instance1.Print(); // Prints 3, 5
 instance2.Print(); // Prints 3, 7
 -
 -
+I think people use different terminology for these kind of things like we hear all kind of terms Base class, parent class, inherited class or derived class etc.
+As per the ECMA Specification of C# here is some explaination of fields:
+A field is a member that represents a variable associated with an object or class.
+A static variable is associated with a type, whereas an instance variable is associated with an instance.
+For example:
+
+class Employee
+{
+     private static ds;
+     public string Name;
+     public decimal Salary;
+…
+}
+Shows an Employee class that has a private static variable and two public instance variables.
 
 
 

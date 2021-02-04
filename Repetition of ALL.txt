@@ -2701,6 +2701,25 @@ public void SayHi()
 }
 The code above declares a class named Person, which has age and name fields as well as a SayHi method that displays a greeting to the screen.
 
+Properties & Fields – Difference: 
+
+class Person
+{
+private string name;   // field
+
+public string Name    // property
+{
+get { return name; }
+set { name = value; }
+}
+}
+The property is accessed by its name, just like any other public member of the class.
+
+-
+-
+Instance Variable
+Instance variable nedir, instance variable nedir
+Instance variables are non-static variables and are declared in a class but outside any method, constructor or block. As instance variables are declared in a class, these variables are created when an object of the class is created and destroyed when the object is destroyed. Unlike local variables, we may use access specifiers for instance variables.
 
 
 

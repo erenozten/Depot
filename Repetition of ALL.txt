@@ -2562,6 +2562,40 @@ MSDN forumundan puanlı bi adamdan cevap:
  
 Instance variables are defined on an instance of the class.  This means that each instance of an object will have it's own "copy" of the instance variable.
 
+For example:
+ 
+// Given:
+
+public class MyClass {
+
+  public static int ClassVariable { get; set; }
+
+  public int InstanceVariable { get; set; }
+
+  public void Print()
+  {
+     Console.WriteLine("Class: {0} - Instance: {1}", ClassVaraible, InstanceVariable );
+  }
+}
+
+
+// You can do:
+
+// Set the "class" level variable
+MyClass.ClassVariable = 3;
+
+// Create two instances
+MyClass instance1 = new MyClass();
+MyClass instance2 = new MyClass();
+
+instance1.InstanceVariable = 5;
+instance2.InstanceVariable = 7;
+
+instance1.Print(); // Prints 3, 5
+
+instance2.Print(); // Prints 3, 7
+-
+-
 
 
 

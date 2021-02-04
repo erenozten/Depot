@@ -2551,6 +2551,17 @@ public class MyClass
     public int AnotherProperty{get;set;} 
 }
 
+Fields are ordinary member variables or member instances of a class. Properties are an abstraction to get and set their values. Properties are also called accessors because they offer a way to change and retrieve a field if you expose a field in the class as private. Generally, you should declare your member variables private, then declare or define properties for them.
+-
+-
+-
+-
+-
+MSDN forumundan puanlı bi adamdan cevap: 
+"Class variables", in C#, are called static variables.  They are variables that are defined at the type level instead of defined on an instance.  This allows all instances of the class (and the class itself) to reference the same variable.
+ 
+Instance variables are defined on an instance of the class.  This means that each instance of an object will have it's own "copy" of the instance variable.
+
 
 
 

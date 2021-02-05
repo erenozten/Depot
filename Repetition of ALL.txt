@@ -2783,6 +2783,32 @@ class Program
     }
 }
 
+Rules for Static Class
+1.	Static classes cannot be instantiated.
+2.	All the members of a static class must be static; otherwise the compiler will give an error.
+3.	A static class can contain static variables, static methods, static properties, static operators, static events, and static constructors.
+4.	A static class cannot contain instance members and constructors.
+5.	Indexers and destructors cannot be static
+6.	var cannot be used to define static members. You must specify a type of member explicitly after the static keyword.
+7.	Static classes are sealed class and therefore, cannot be inherited.
+8.	A static class cannot inherit from other classes.
+9.	Static class members can be accessed using ClassName.MemberName.
+10.	A static class remains in memory for the lifetime of the application domain in which your program resides.
+Static Members in Non-static Class
+The normal class (non-static class) can contain one or more static methods, fields, properties, events and other non-static members.
+It is more practical to define a non-static class with some static members, than to declare an entire class as static.
+Static Fields
+Static fields in a non-static class can be defined using the static keyword.
+Definition - What does Static Field mean?
+A static field is in programming languages is the declaration for a variable that will be held in common by all instances of a class. The static modifier determines the class variable as one that will be applied universally to all instances of a particular class. A final modifier can also be added to indicate that the class variable will not change.
+
+A static field may also be called a class variable.
+Techopedia explains Static Field
+A static field or class variable is often contrasted with a non-static field, which can also be called an instance variable. This kind of more specialized variable applies to only one instance of a given class. For example, if an instance of the class "dog" received an instance variable "red," it would indicate that a particular dog is red, whereas a similarly applied class variable or static field would indicate that all dogs are red.
+
+A static field or class variable is useful in certain programming languages and code situations to assign a particular variable (representing a common characteristic) to all instances of a class, either as a fixed value, or one that could change in the future. The key to this type of identifier is that if the change happens, it will be applied equally to all instances of the class.
+
+
 field nedir devam
 
 

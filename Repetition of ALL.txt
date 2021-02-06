@@ -3008,6 +3008,68 @@ class Program
 }
 Try it
 
+You can define one or more static methods in a non-static class. Static methods can be called without creating an object. You cannot call static methods using an object of the non-static class.
+The static methods can only call other static methods and access static members. You cannot access non-static members of the class in the static methods.
+Example: Static Method
+class Program
+{
+    static int counter = 0;
+    string name = "Demo Program";
+
+    static void Main(string[] args)
+    {
+        counter++; // can access static fields
+        Display("Hello World!"); // can call static methods
+
+        name = "New Demo Program"; //Error: cannot access non-static members
+        SetRootFolder("C:\MyProgram"); //Error: cannot call non-static method
+    }
+
+    static void Display(string text)
+    {
+        Console.WriteLine(text);
+    }
+
+    public void SetRootFolder(string path) {  }
+}
+Rules for Static Methods
+1.	Static methods can be defined using the static keyword before a return type and after an access modifier.
+2.	Static methods can be overloaded but cannot be overridden.
+3.	Static methods can contain local static variables.
+4.	Static methods cannot access or call non-static variables unless they are explicitly passed as parameters.
+Static Constructors
+A non-static class can contain a parameterless static constructor. It can be defined with the static keyword and without access modifiers like public, private, and protected.
+The following example demonstrates the difference between static constructor and instance constructor. (Aşağıdaki örnek çok faydalı, -- static constructor nedir)
+Example: Static Constructor vs Instance Constructor
+public class StopWatch
+{
+    // static constructor
+    static StopWatch()
+    {
+        Console.WriteLine("Static constructor called");
+    }
+
+    // instance constructor
+    public StopWatch()
+    {
+        Console.WriteLine("Instance constructor called");
+    }
+
+    // static method
+    public static void DisplayInfo()
+    {
+        Console.WriteLine("DisplayInfo called");
+    }
+
+    // instance method
+    public void Start() { }
+
+    // instance method
+    public void Stop() {  }
+}
+Try it
+
+
 
 field nedir devam
 

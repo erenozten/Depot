@@ -3334,6 +3334,39 @@ class Program
     }
 }
 
+Static Class (GITHUB)
+Static class nedir
+A static class is a class which can not be instantiated. We do not need to create an object of a static class like we did in non-static classes. Members of static classes can be accessed directly using the class name followed by a (.) and class member name. Class Members can be methods, fields, properties, or events. A static class can contain only the static members while a non-static class can contain static members. Also, Static classes are by-default sealed so they cannot be inherited.
+
+To declare a class and its members as static, 'static' keyword are used as shown below,
+1.	using System;  
+2.	  
+3.	namespace Tutpoint  
+4.	{  
+5.	    // Static class  
+6.	    static class TutLovers  
+7.	    {  
+8.	        // Static Variable  
+9.	        public static int val_Static;  
+10.	  
+11.	        // Static Method  
+12.	        public static void Addition_Static()  
+13.	        {  
+14.	            Console.Write("Static Method");  
+15.	        }  
+16.	  
+17.	        // Static property  
+18.	        public static int Addition_NonStatic  
+19.	        {  
+20.	            get; set;  
+21.	        }  
+22.	    }  
+For more understanding see the example shown below,
+
+The example shown below contains two non-static classes named "TutLovers" and "TutHaters". Here a class "TutLovers" contains static as well as non-static methods and variable. When we access them from class "TutHaters" then, For the static members, they will be accessed directly using class name followed by (.) and
+For non-static members, we have created an object of that class.
+
+
 
 
 field nedir devam

@@ -3271,6 +3271,68 @@ Rules for Static Constructors
 -
 -
 -
+Static class		 (GITHUB)		(read)
+Static class örnek, static class nedir, list oluşturma, list nedir, static nedir
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+ 
+class Program
+{
+    public class Student
+    {
+        public int Id;
+        public string Name;
+    }
+ 
+    //static class'ın member'ları da static olmalıdır
+    public static class CreateStudents
+    {
+        //public string SampleProperty { get; set; } //hata verir, static olmalıdır
+        public static string SampleProperty { get; set; }
+ 
+        //public void Create() //hata verir, static olmalıdır
+        public static List<Student> StudentsList { get; set; } = new List<Student>
+        {
+            new Student()
+            {
+                Id = 1,
+                Name = "Ali"
+            },
+            new Student()
+            {
+                Id = 2,
+                Name = "Ahmet"
+            },
+            new Student()
+            {
+                Id = 3,
+                Name = "Veli"
+            }
+        };
+    }
+ 
+    static void Main()
+    {
+        var studentsQuery =
+            from s in CreateStudents.StudentsList
+            where s.Id > 1
+            select s;
+ 
+        foreach (var item in CreateStudents.StudentsList)
+        {
+            Console.WriteLine(item.Name);
+        }
+ 
+        Console.WriteLine("--");
+ 
+        foreach (var item in studentsQuery)
+        {
+            Console.WriteLine(item.Id);
+        }
+    }
+}
 
 
 

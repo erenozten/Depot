@@ -3499,6 +3499,97 @@ public void geek(String name)
 // Return type can be int, float String or user defined data type.
 Memory allocation: These methods themselves are stored in Permanent Generation space of heap but the parameters (arguments passed to them) and their local variables and the value to be returned are allocated in stack. They can be called within the same class in which they reside or from the different classes defined either in the same package or other packages depend on the access type provided to the desired instance method.
 
+Important Points:
+•	Instance method(s) belong to the Object of the class not to the class i.e. they can be called after creating the Object of the class.
+•	Every individual Object created from the class has its own copy of the instance method(s) of that class.
+•	Instance methods are not stored on a per-instance basis, even with virtual methods. They’re stored in a single memory location, and they only “know” which object they belong to because the this pointer is passed when you call them.
+•	They can be overridden since they are resolved using dynamic binding at run time. (dynamic binding'in runtime'da yapıldığını öğrenmiştik. metoda verilen argument'lerin zaten runtime'da değiştirilebildiğini biliyoruz.Yani buradan zaten bu sonuca kendimiz de varabiliriz: Bu bir Dynamic Binding olayıdır.
+
+
+When to use static methods ??
+•	When you have code that can be shared across all instances of the same class, put that portion of code into static method.
+•	They are basically used to access static field(s) of the class.
+
+ Instance method vs Static method
+•	Instance method can access the instance methods and instance variables directly.
+•	Instance method can access static variables and static methods directly.
+•	Static methods can access the static variables and static methods directly.
+•	Static methods can’t access instance methods and instance variables directly. They must use reference to object. And static method can’t use this keyword as there is no instance for ‘this’ to refer to.
+References
+•	https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html
+•	Stackoverflow
+This article is contributed by Nitsdheerendra. If you like GeeksforGeeks and would like to contribute, you can also write an article using contribute.geeksforgeeks.org or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
+Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above.
+
+Daha fazla:
+Instance methods in a class can make use of any of the public or private static data that belongs to that class.  (They can also make use of static data from other classes, provided that it is accessible).
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+	public class Dog
+{
+    // Instance Properties
+    public string Name { get; set; }
+    public int Age { get; set; }
+ 
+    // Static property
+    public static Dog LastGuyThatBarked { get; protected set; }
+ 
+    // Public static data
+    public readonly static string TheDogMotto = "Man's Best Friend";
+ 
+    // Private static data
+    private static int TotalNumDogs = 0;
+ 
+    public Dog(string name, int age)
+    {
+        Name = name;
+        Age = age;
+        TotalNumDogs++;
+    }
+ 
+    public void Bark()
+    {
+        Console.WriteLine("{0} says Woof", Name);
+ 
+        // Access static property
+        Dog.LastGuyThatBarked = this;
+ 
+        // Access static data
+        Console.WriteLine("There are {0} total dogs", Dog.TotalNumDogs);
+        Console.WriteLine("Remember our motto: {0}", Dog.TheDogMotto);
+    }
+}
+
+
 
 field nedir devam
 

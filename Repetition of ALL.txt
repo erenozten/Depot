@@ -3589,6 +3589,215 @@ Instance methods in a class can make use of any of the public or private static 
     }
 }
 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+	public class Dog
+{
+    // Instance Properties
+    public string Name { get; set; }
+    public int Age { get; set; }
+ 
+    // Static property
+    public static Dog LastGuyThatBarked { get; protected set; }
+ 
+    // Public static data
+    public readonly static string TheDogMotto = "Man's Best Friend";
+ 
+    // Private static data
+    private static int TotalNumDogs = 0;
+ 
+    public Dog(string name, int age)
+    {
+        Name = name;
+        Age = age;
+        TotalNumDogs++;
+    }
+ 
+    public void Bark()
+    {
+        Console.WriteLine("{0} says Woof", Name);
+ 
+        // Access static property
+        Dog.LastGuyThatBarked = this;
+ 
+        // Access static data
+        Console.WriteLine("There are {0} total dogs", Dog.TotalNumDogs);
+        Console.WriteLine("Remember our motto: {0}", Dog.TheDogMotto);
+    }
+}
+#284 – Static Methods Can Call Instance Methods
+MARCH 28, 2011 1 COMMENT
+Static methods can call instance methods in a class–provided that they have access to a reference to an instance of the class.
+In the example below, we have a static method of the Dog class that dumps out a bunch of information about every Dog instance in a collection of dogs passed to it.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14	public static void ListDogs(List<Dog> dogList, Cat cat)
+{
+    foreach (Dog d in dogList)
+    {
+        string likes = d.LikesCat(cat) ? "Yes" : "No";
+ 
+        Console.WriteLine("{0}: {1} yrs old.  Motto is [{2}]. Likes {3}? {4}",
+            d.Name,
+            d.Age,
+            d.Motto,
+            cat.Name,
+            likes);
+    }
+}
+Note that the static Dog method can also call an instance method of the Cat class.
+Here’s how we might call this method:
+1
+2
+3
+4
+5
+6
+7
+8
+9	List<Dog> dogs = new List<Dog>();
+ 
+dogs.Add(new Dog("Kirby", 14, "Chase balls"));
+dogs.Add(new Dog("Jack", 17, "Lounge around house"));
+dogs.Add(new Dog("Ruby", 1, "Stare out window"));
+ 
+Cat morris = new Cat("Morris");
+ 
+Dog.ListDogs(dogs, morris);
+Output:
+ 
+FILED UNDER METHODS TAGGED WITH C#, INSTANCE METHODS, METHODS, STATIC METHODS
+#283 – Instance Methods Can Call Static Methods
+MARCH 27, 2011 LEAVE A COMMENT
+Instance methods in a class can access static data or call static methods.  The instance method accesses static data or methods in the same way that other code does–by using the class name to qualify the data or method name.
+Here’s an example, where the Dog.Bark instance method makes use of the private static Dog.FormatTheCreed method:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15	// Static property -- one value for all dogs
+public static string Creed { get; set; }
+ 
+// Private static method to format our Dog creed
+private static string FormatTheCreed()
+{
+    return string.Format("As dogs, we believe: {0}", Dog.Creed);
+}
+ 
+// Instance method, in which a Dog barks
+public void Bark()
+{
+    // Dump out my name and the universal Dog creed.
+    Console.WriteLine("{0}: 'Woof'!  (Creed: [{1}])", this.Name, Dog.FormatTheCreed());
+}
+Calling the Bark method:
+1
+2
+3
+4
+5	// Set static property
+Dog.Creed = "We serve man";
+ 
+Dog kirby = new Dog("Kirby");
+kirby.Bark();
+ 
+#238 – Call a Method from Another Method
+You can call an instance method of a class from another instance method within that class.  The second method called will execute upon the same instance of the class for which the first method was called.
+In the example below, we can call the Dog.Growl method, or the Dog.BarkAndGrowl method which in turn calls Growl.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16	public class Dog
+{
+    public string Name;
+    public int Age;
+ 
+    public void BarkAndGrowl()
+    {
+        Console.WriteLine("Woof.  --{0}", Name);
+        Growl();
+    }
+ 
+    public void Growl()
+    {
+        Console.WriteLine("Grrr.  --{0}", Name);
+    }
+}
+Here’s an example of calling these methods on an instance of the Dog class.
+1
+2
+3
+4
+5	Dog kirby = new Dog();
+kirby.Name = "Kirby";
+ 
+kirby.Growl();      // Grrr.
+kirby.BarkAndGrowl();  // Woof.  Grrr.
+
+-
+-
 
 
 field nedir devam

@@ -3367,6 +3367,56 @@ The example shown below contains two non-static classes named "TutLovers" and "T
 For non-static members, we have created an object of that class.
 
 
+1.	using System;  
+2.	  
+3.	namespace Tutpoint  
+4.	{  
+5.	    class TutLovers  
+6.	    {  
+7.	        public static int val_Static;  
+8.	  
+9.	        public int val_NonStatic;  
+10.	  
+11.	        public static void Addition_Static()  
+12.	        {  
+13.	            Console.Write("Static Method");  
+14.	        }  
+15.	  
+16.	        public void Addition_NonStatic()  
+17.	        {  
+18.	            Console.Write("Non-Static Method");  
+19.	        }  
+20.	    }  
+21.	  
+22.	    //If the class is non-static  
+23.	    class TutHaters  
+24.	    {  
+25.	        public void Haters()  
+26.	        {  
+27.	            //Object of TutLovers class is created  
+28.	            TutLovers tutLovers = new TutLovers();  
+29.	  
+30.	            //Non-Static members can be called only from object  
+31.	            tutLovers.Addition_NonStatic();  
+32.	            tutLovers.val_NonStatic = 5;  
+33.	  
+34.	            //Static members can only be called using class_name followed by a (.)  
+35.	            TutLovers.Addition_Static();  
+36.	            TutLovers.val_Static = 5;  
+37.	  
+38.	            /* When we try to access static member from object then it will create an error  
+39.	            Error as "Members 'TutLovers.Addition_Static()' can not be accessed with an instance referen            -ce; qualify it with a type name instead" */
+40.	            tutLovers.Addition_Static();  
+41.	  
+42.	            /* When we try to access non-static member using class_name then it will create an error  
+43.	            Error as "An object reference is required for the non-static field                                      , method or property 'TutLovers.Addition_NonStatic()'" */
+44.	            TutLovers.Addition_NonStatic();  
+45.	        }  
+46.	    }  
+47.	  
+48.	}  
+As shown above, when we try to access static member with an instance reference, it will create an error as "Members 'TutLovers.Addition_Static()' can not be accessed with an instance reference; qualify it with a type name instead" and when we try to access non-static member using class_name then it will create an error as "An object reference is required for the non-static field, method or property 'TutLovers.Addition_NonStatic()'".
+
 
 
 field nedir devam

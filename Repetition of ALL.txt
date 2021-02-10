@@ -3807,6 +3807,43 @@ MSDN Definition - A static class is basically the same as a non-static class, bu
 C# fields must be declared inside a class. However, if we declare a method or a field as static, we can call the method or access the field by using the name of the class. No instance is required. We can also use the static keyword when defining a field. With this feature, we can create a single field that is shared among all objects created from a single class. Non-static fields are local to each instance of an object.
 When you define a static method or field, it does not have access to any instance fields defined for the class; it can use only fields that are marked as static. Furthermore, it can directly invoke only other methods in the class that are marked as static; nonstatic (instance) methods or fields must first create an object on which to call them. 
 
+Look at the example given below,
+1.	using System;  
+2.	using System.Collections.Generic;  
+3.	using System.Text;   
+4.	namespace TestiClass  
+5.	{  
+6.	   class Program  
+7.	   {  
+8.	       int val = 20;  
+9.	       static void Main(string[] args)  
+10.	       {  
+11.	           Program x = new Program();  
+12.	           int newval = x.val;  
+13.	           Console.WriteLine(newval);  
+14.	           Console.ReadKey();  
+15.	       }  
+16.	   }  
+17.	}  
+In the above example, we have a non-static field named val. From the main method (static method), I'm trying to access that field and to do this I need to create the instance of the class inside the main method (static method) because the static method only accesses the static fields and val is not static here. So, to access this I have created an instance (named x) of Program class that has val field and then assigned the val to newval field inside static main method. This is really cumbersome to do. To fix the inconvenience, C# uses static fields. Let's take a look at the use of static here.
+Look at the example given below,
+1.	using System;  
+2.	using System.Collections.Generic;  
+3.	using System.Text;   
+4.	namespace TestiClass  
+5.	{  
+6.	   class Program  
+7.	   {  
+8.	       static int val = 20;  
+9.	       static void Main(string[] args)  
+10.	       {  
+11.	           Console.WriteLine(val);  
+12.	           Console.ReadKey();  
+13.	       }  
+14.	   }  
+15.	}  
+Try to compare both examples, you will see the difference. Here we have not used any instance of class inside static main method. This is the use of static fields in our application. We will talk about static methods in the next post.
+HAPPY CODING!!
 
 
 field nedir devam

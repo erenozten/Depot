@@ -3845,6 +3845,55 @@ Look at the example given below,
 Try to compare both examples, you will see the difference. Here we have not used any instance of class inside static main method. This is the use of static fields in our application. We will talk about static methods in the next post.
 HAPPY CODING!!
 
+It is also applicable to properties, event, and operators. To create a static member(class, variable, methods, constructor), precede its declaration with the keyword static. When a member is declared static, it can be accessed with the name of its class directly.
+-
+-
+Static Variable nedir
+Bu ilginç. Çünkü class içinde variable olmuyor diye biliyorum. Class içinde int i; yazdığımızda variable değil field oluşturmuş oluyoruz. Peki static variable ne?
+Static Variables and Static Methods
+Each object has its own set of member variables and all the member variables have a scope.
+
+If we want a variable to have the same value throughout all instances of the object then we can declare it as a static variable in our program. To manipulate and use the values of static variables we can also define a function as static.
+
+The keyword "static" means that only one instance of a given variable exists for a class. Static variables are used to define constants because their values can be retrieved by invoking the class without creating an instance of it.
+
+(Static variable nedir)
+Static variables can be initialized outside the member function or class definition. The following code is an example of a static variable, which shows the declaration and initialization of a static variable.
+1.	using System;  
+2.	namespace staticexample  
+3.	{  
+4.	    class Program  
+5.	    {  
+6.	        public static int i;  
+7.	        public static void display()  
+8.	        {  
+9.	            i=10;  
+10.	            Console.WriteLine(i);  
+11.	        }  
+12.	        public void demo()  
+13.	        {  
+14.	            int j=20;  
+15.	            Console.WriteLine(j);  
+16.	        }  
+17.	  
+18.	   
+19.	        static void Main(string[] args)  
+20.	        {  
+21.	            Program obj = new Program();  
+22.	            Program.display();  
+23.	            obj.demo();  
+24.	            Console.Read();  
+25.	        }  
+26.	    }  
+27.	}
+Here we have not used an instance of the class for the static method display(). However, for the nonstatic demo() method we need the instance of the class to call it. This is how to call static and non-static methods.
+Note
+
+Unlike other member variables, only one copy of the static variable exists in memory for all the objects of that class. Therefore, all objects share one copy of the static variable in memory.
+-
+
+
+
 
 field nedir devam
 

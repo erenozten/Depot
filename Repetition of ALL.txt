@@ -3892,6 +3892,57 @@ Note
 Unlike other member variables, only one copy of the static variable exists in memory for all the objects of that class. Therefore, all objects share one copy of the static variable in memory.
 -
 
+Static Class
+A static class is declared with the help of static keyword. A static class can only contain static data members, static methods, and a static constructor. It is not allowed to create objects of the static class. Static classes are sealed, means one cannot inherit a static class from another class.
+-
+-
+The static method is defined with a static keyword as I have defined below. The static method uses class memory rather than an object. Static Method is called by class name. We can call a non-static function in static function by making an object of the class. We can’t use this keyword inside the static function.
+-
+Statik method içinde instance method çağırılmaz. Örnek:
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string name = "Mark";
+        var date = DateTime.Now;
+
+        // Composite formatting:
+        Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+        // String interpolation:
+        Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
+        // Both calls produce the same output that is similar to:
+        // Hello, Mark! Today is Wednesday, it's 19:40 now.
+    }
+
+    class SampleClass
+    {
+        int instanceField;
+        static int staticField;
+
+        public void InstanceMethod()
+        {
+            Console.WriteLine(instanceField);
+            Console.WriteLine(staticField); 
+        }
+
+        public static void StaticMethod()
+        {
+        }
+
+        public static void StaticMethod2()
+        {
+            Console.WriteLine(instanceField); // Hata! Static metot, instance field'ı çağıramıyor! 
+            Console.WriteLine(staticField); // Hata yok. Static method static field'ı çağırdı.
+
+            //InstanceMethod(); // Hata! Statik metotta sadece statik metotlar çağırılabilir.
+            StaticMethod(); // Hata yok.
+        }
+    }
+}
+-
+-
 
 
 

@@ -4063,6 +4063,26 @@ public class Employee {
  } 
 }
 
+Referring to the Employee class – I’ve defined two private fields _firstName and _middleName. These explicit field definitions are used as backing fields (bildiğin field'in diğer adı) for the FirstName and MiddleName public properties, as you can clearly see from the code. If you use fields in this manner, there’s no need to explicitly declare them. Simply use Auto-Implemented properties as I’ve done with the LastName property. As their name implies, auto-Implemented properties automatically create the backing field behind the scenes. This reduces the amount of boilerplate code you need to write.  I’ve mixed the two styles in this example for demonstration purposes.
+The Count property is a static, class-wide property declared with the help of the static keyword. I increment this value whenever an employee object is created. Note that you must access static properties via the class name.
+Lastly, in this example I have overridden the Object.ToString() method.  To demonstrate this code I’ll need another class that implements a Main() method.
+using System;
+
+public class MainApp {
+  public static void Main(){
+   Employee e1 = new Employee();
+   Employee e2 = new Employee("Rick", "W", "Miller");
+   Console.WriteLine(e1); 
+   Console.WriteLine(e2); 
+   Console.WriteLine(Employee.Count); 
+  }
+}
+Referring to the MainApp class – I create two instances of Employee testing both versions of the constructor. I then write their values to the console and then, with the help of the static Employee. Count property, I write the number of employee objects created. Figure 1 shows the results of running this program.
+-
+-
+-
+
+
 
 field nedir devam
 

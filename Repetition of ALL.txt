@@ -4007,6 +4007,13 @@ Math.PI’nin bir metod değil de bir field  olduğunu şuradan da anlayabiliriz
 [class ve method nedir, class ve metod nedir]
 -
 -
+Static Fields/Properties vs. Instance Fields/Properties	(örnek) (örnek)
+static fields nedir, instance fields nedir, Instance fields nedir, Instance properties nedir instance properties nedir, instance property nedir, Instance property nedir, static property nedir, static properties nedir, backing field nedir
+Field'in bir diğer adı da Backing Field'dir!
+
+ 
+Classes and structures can contain, among other types of members, fields and properties. In this post I’ll focus on field and property members and explain the difference between instance fields/properties and static fields/properties. Before reading further here’s a short video on the topic:
+
 
 
 field nedir devam

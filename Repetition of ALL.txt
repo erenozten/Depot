@@ -3987,6 +3987,26 @@ class SomeClass
 The constructor will get called once when we try to access SomeClass.X or SomeClass.Y.
 -
 -
+-
+-
+There are a number of useful static methods and properties available in Cy#: 
+Örneğin: Math.PI  (PI bir Field’dir. Metod değildir. Çünkü bir metod, parametrelerine aldığı argümanlara göre istenilen işlemleri yaparak çeşitli sonuçlar dönderir. Lakin bildiğimiz üzere PI sayisi sabit bir değerdir (3.14) ve Math.PI komutunun da PI sayısını dönderdiğini biliyoruz. Bu durumda görüyoruz ki, burada çeşitli işlemler yapılmamakta, sürekli sabit bir değer dönderilmektedir. Alınan herhangi bir parametre yoktur, çeşitlilik yoktur: sonuç hep aynıdır. (Ve sonucun hep aynı olması, hiçbir zaman değiştirilemiyor olması da bize bu member’in bir constant olduğu ipucunu verir. Buradan da doğal olarak şu sonuç çıkar: Constant member’lar doğal olarak statik olmalıdır, çünkü değerleri değişmemektedir. Değerleri değişmiyorsa neden objelere ait olsun ki? Constant members are static by definition)
+Math.PI’nin bir metod değil de bir field  olduğunu şuradan da anlayabiliriz ki: Parantez bulundurmamaktadır. Zira bir member’in parantez bulundurması demek, parametre ve dolayısıyla argüman bulundurması demektir. Bu da zaten member’in bir field olmadığını; aksine bir metod olduğunu gösterir.
+(member: class’ın üyelerinden herhangi birisi ‘member’ olarak nitelendirilir. Yani property, field, metod gibi öğeler, bir class’ın member’leridir.)
+
+            Math.PI       //Field   //the constant PI.
+            Math.E        //Field   //represents the natural logarithmic base e.
+            Math.Max();   //Method  //returns the larger of its two arguments.
+            Math.Min();   //Method  //returns the smaller of its two arguments.
+            Math.Abs();   //Method  //returns the absolute value of its argument.
+            Math.Sin();   //Method  //returns the sine of the specified angle.
+            Math.Cos();   //Method  //returns the cosine of the specified angle.
+            Math.Pow();   //Method  //returns a specified number raised to the specified power.
+            Math.Round(); //Method  //rounds the decimal number to its nearest integral value.
+            Math.Sqrt();  //Method  //returns the square root of a specified number. 
+[class ve method nedir, class ve metod nedir]
+-
+-
 
 
 field nedir devam

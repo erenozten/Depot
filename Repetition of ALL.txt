@@ -4014,6 +4014,54 @@ Field'in bir diğer adı da Backing Field'dir!
  
 Classes and structures can contain, among other types of members, fields and properties. In this post I’ll focus on field and property members and explain the difference between instance fields/properties and static fields/properties. Before reading further here’s a short video on the topic:
 
+The Purpose of Fields and Properties
+
+Fields are used to store object state data, and properties are used to set and query object state data. An instance field stores state data for individual objects, that is, every object of a particular type will have its very own copy of any and all instance fields defined for that class or structure type. A static field stores state data for all instances of the type. In other words, a static field’s value is shared by all instances of the type. Let’s take a look at an example.
+
+using System;
+
+public class Employee {
+  //Instance Fields 
+  private string _firstName; 
+  private string _middleName; 
+
+  //Instance Properties 
+  public string FirstName {
+    get {return _firstName;} 
+    set {_firstName = value;} 
+  } 
+
+  public string MiddleName {
+    get {return _middleName;}
+    set {_middleName = value;}
+  } 
+
+  public string LastName {
+    get;
+    set;
+  }
+
+  //Static Properties 
+  public static int Count {
+    get; 
+    private set; 
+  } 
+
+ //Constructors 
+ public Employee(string firstName, string middleName, string lastName){
+   _firstName = firstName; 
+   _middleName = middleName; 
+   LastName = lastName; 
+   Employee.Count++; 
+ } 
+
+ public Employee():this("John", "J", "Doe"){}
+
+ //Overridden Object Methods 
+ public override string ToString(){
+   return _firstName + " " + _middleName + " " + LastName; 
+ } 
+}
 
 
 field nedir devam

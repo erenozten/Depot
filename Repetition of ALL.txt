@@ -4096,6 +4096,34 @@ This allows you to easily manage the generated assembly, so if you need to creat
 COMP.SomeFrameworkName;
 That would easily seperate your company's (or Team's) Dlls from external Dlls and Nuget Packages.
 
+Stack      (GITHUB)
+Stack Nedir
+
+        void f()
+        {
+            int x = 123; // <- located in stack
+        }
+
+        int x; // <- located in heap
+        void f()
+        {
+            x = 123
+        }
+
+
+
+Videoyu izle: https://www.youtube.com/watch?v=HlzAtIHFRk0
+ 
+Resmi incele.
+
+Value type olanlar (örneğin int) ---> Stack içinde saklanır.
+Pointer'lar da Stack içinde saklanır.
+Ama objeler Heap içinde saklanır.
+
+Yani neymiş, örneğin Report report = new Report(); deyince; buradaki report, (YANİ OBJE DEĞİL, POINTER!) -- STACK içinde tutuluyor. AMA report aracılığıyla üretilen yeni OBJE HEAP'TE TUTULUYOR. Güzel bilgi bu… 
+Dikkat et… report dediğin şey bir pointer'dir, objenin kendisi değildir. Inıtialize yapıyorsan bu pointer gidip bir OBJE üretecektir. Ama kendisi, yani report, o yeni üretilen objeye işaret eden bir pointer'dir.
+
+Report report2 = report; deyince görüldüğü üzere yeni bir obje üretmedik. Zaten initialization olmadığı belli… new Report(); deyip constructor çalıştırmadık veya bir property'sine bir değer atamadık. Yani yeni bir obje oluşmamış oldu. Yani aynı referansı tutuyor report ile…..
 
 
 

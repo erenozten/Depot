@@ -4125,6 +4125,35 @@ Dikkat et… report dediğin şey bir pointer'dir, objenin kendisi değildir. In
 
 Report report2 = report; deyince görüldüğü üzere yeni bir obje üretmedik. Zaten initialization olmadığı belli… new Report(); deyip constructor çalıştırmadık veya bir property'sine bir değer atamadık. Yani yeni bir obje oluşmamış oldu. Yani aynı referansı tutuyor report ile…..
 
+Stack
+Stack nedir
+
+Stack bir data tipidir; ama abstract bir data tipidir.
+
+In computer science, a stack is an abstract data type that serves as a collection of elements, with two principal operations:
+•	push, which adds an element to the collection, and
+•	pop, which removes the most recently added element that was not yet removed.
+ 
+Örnek:
+
+Stack myStack = new Stack();
+myStack.Push("Hello!!");
+myStack.Push(null);
+myStack.Push(1);
+myStack.Push(2);
+
+
+https://www.tutorialsteacher.com/csharp/csharp-stack
+
+ 
+-
+Stack: The build-in data types, such as int and double, are used to declare variables that are value types. Their value is stored in memory in a location called the stack:
+ 
+
+Heap: Reference types are stored in a part of the memory called the heap. (Reference types are used for storing objects. For example, when you create an object of a class, it is stored as a reference type.)
+ 
+As you can see, the p1 object of type Person on the stack stores the memory address of the heap where the actual object is stored.
+-
 
 
 field nedir BİTTİİİ

@@ -4081,9 +4081,24 @@ Referring to the MainApp class – I create two instances of Employee testing bo
 -
 -
 -
+Soru: Project naming conventions: [Company].[ProjectName] vs [Company_ProjectName] [closed]
+Ask Question
+
+Most of the solutions I came across follow the following convention:
+CompanyName.SolutionName.LayerName
+So basically in a company named COMP and a Project Named StackOverflow, you would end up with a project that looks like this:
+COMP.StackOverflow.Business
+COMP.StackOverflow.Data
+COMP.StackOverflow.Web
+COMP.StackOverflow.Core
+
+This allows you to easily manage the generated assembly, so if you need to create a common library to be used in your company. You would name it:
+COMP.SomeFrameworkName;
+That would easily seperate your company's (or Team's) Dlls from external Dlls and Nuget Packages.
 
 
 
-field nedir devam
+
+field nedir BİTTİİİ
 
 

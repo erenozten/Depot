@@ -4240,7 +4240,14 @@ As you can see, the p1 object of type Person on the stack stores the memory addr
 -
 Heap & Stack –Difference:  Stack is used for static memory allocation, which includes all your value types, like x (see the picture above).
 Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
-
+-
+-
+Stack vs. Heap: What's the difference?
+ 
+The Stack is more or less responsible for keeping track of what's executing in our code (or what's been "called").  The Heap is more or less responsible for keeping track of our objects (our data, well... most of it - we'll get to that later.).
+ 
+Think of the Stack as a series of boxes stacked one on top of the next.  We keep track of what's going on in our application by stacking another box on top every time we call a method (called a Frame).  We can only use what's in the top box on the stack.  When we're done with the top box (the method is done executing) we throw it away and proceed to use the stuff in the previous box on the top of the stack. The Heap is similar except that its purpose is to hold information (not keep track of execution most of the time) so anything in our Heap can be accessed at  any time.  With the Heap, there are no constraints as to what can be accessed like in the stack.  The Heap is like the heap of clean laundry on our bed that we have not taken the time to put away yet - we can grab what we need quickly.  The Stack is like the stack of shoe boxes in the closet where we have to take off the top one to get to the one underneath it. 
+The picture above, while not really a true representation of what's happening in memory, helps us distinguish a Stack from a Heap.
 
 
 

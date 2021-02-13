@@ -4238,6 +4238,8 @@ That is why it is called a reference type - it contains a reference (the memory 
 As you can see, the p1 object of type Person on the stack stores the memory address of the heap where the actual object is stored.
 -
 -
+Heap & Stack –Difference:  Stack is used for static memory allocation, which includes all your value types, like x (see the picture above).
+Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
 
 
 

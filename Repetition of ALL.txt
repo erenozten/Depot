@@ -4346,9 +4346,17 @@ Stack is used for static memory allocation, which includes all your value types,
 Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
 -
 -
+Reference Type, Value Type  	(GITHUB) (örnek)
+Reference type nedir, Value type nedir,
 
 -
 -
+
+The following data types are of reference type:
+•	String
+•	All arrays, even if their elements are value types
+•	Class
+•	Delegates
 
 kalınan dosya: 1) Heap, stack
 

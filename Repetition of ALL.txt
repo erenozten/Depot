@@ -4282,6 +4282,37 @@ All the "things" declared with the types in this list are Reference types (and i
 •	object
 •	string
 
+Pointers
+ 
+The third type of "thing" to be put in our memory management scheme is a Reference to a Type. A Reference is often referred to as a Pointer.  We don't explicitly use Pointers, they are managed by the Common Language Runtime (CLR). A Pointer (or Reference) is different than a Reference Type in that when we say something is a Reference Type is means we access it through a Pointer.  A Pointer is a chunk of space in memory that points to another space in memory.  A Pointer takes up space just like any other thing that we're putting in the Stack and Heap and its value is either a memory address or null. 
+
+
+public void Method1()
+{
+    // Line 1
+    int i=4;
+
+    // Line 2
+    int y=2;
+
+    //Line 3
+    class1 cls1 = new class1();
+}
+
+-
+-
+
+[data types nedir, data type nedir, data tipi nedir, data tipleri nedir]
+C# mainly categorized data types in two types: Value types and Reference types. 
+Value types include simple types (such as int, float, bool, and char), enum types, struct types, and Nullable value types. 
+Reference types include class types, interface types, delegate types, and array types. Learn about value types and reference types in detail in the next chapter.
+ 
+
+-
+- 
+Break keyword 
+-
+-
 
 kalınan dosya: 1) Heap, stack
 

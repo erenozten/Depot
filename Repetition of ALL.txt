@@ -4249,6 +4249,38 @@ The Stack is more or less responsible for keeping track of what's executing in o
 Think of the Stack as a series of boxes stacked one on top of the next.  We keep track of what's going on in our application by stacking another box on top every time we call a method (called a Frame).  We can only use what's in the top box on the stack.  When we're done with the top box (the method is done executing) we throw it away and proceed to use the stuff in the previous box on the top of the stack. The Heap is similar except that its purpose is to hold information (not keep track of execution most of the time) so anything in our Heap can be accessed at  any time.  With the Heap, there are no constraints as to what can be accessed like in the stack.  The Heap is like the heap of clean laundry on our bed that we have not taken the time to put away yet - we can grab what we need quickly.  The Stack is like the stack of shoe boxes in the closet where we have to take off the top one to get to the one underneath it. 
 The picture above, while not really a true representation of what's happening in memory, helps us distinguish a Stack from a Heap.
 
+The Stack is self-maintaining, meaning that it basically takes care of its own memory management.  When the top box is no longer used, it's thrown out.  The Heap, on the other hand, has to worry about Garbage collection (GC) - which deals with how to keep the Heap clean (no one wants dirty laundry laying around... it stinks!).
+ 
+What goes on the Stack and Heap?
+ 
+We have four main types of things we'll be putting in the Stack and Heap as our code is executing: Value Types, Reference Types, Pointers, and Instructions. 
+ 
+Value Types
+ 
+In C#, all the "things" declared with the following list of type declarations are Value types (because they are from System.ValueType):
+•	bool
+•	byte
+•	char
+•	decimal
+•	double
+•	enum
+•	float
+•	int
+•	long
+•	sbyte
+•	short
+•	struct
+•	uint
+•	ulong
+•	ushort
+Reference Types
+ 
+All the "things" declared with the types in this list are Reference types (and inherit from System.Object... except, of course, for object which is the System.Object object):
+•	class
+•	interface
+•	delegate
+•	object
+•	string
 
 
 kalınan dosya: 1) Heap, stack

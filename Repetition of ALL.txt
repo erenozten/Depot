@@ -4328,6 +4328,24 @@ Stack is used for static memory allocation, which includes all your value types,
 Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
 -
 -
+[heap nedir, stack nedir, reference types nedir, reference type nedir]
+(stack: Stock kelimesinden akla getirilebilir. Stok; yani standart olan şeyler… Yani tipik data tiplerini tutar (int, string vb). Lakin heap böyle çalışmaz.)
+(Yine aynı fikirden yola çıkarsak… Stack öyle farklı farklı öğeler için farklı miktarlarda hafıza ayırmaz… Neden? Çünkü adı üstünde: O bir stock… Stock olan aynıdır, sabittir… Lakin heap’te durum böyle değildir. Detaylar için siyah yazıyı okuyunuz)
+(Yine aynı fikirden; eğer stock denen şey farklı farklı hafıza tiplerini barındıracak güçte değilse; demek ki objeleri de barındıracak kapasitede olamayacaktır… Çünkü objelerin gerektirdiği hafıza miktarları değişken olacaktır haliyle… 
+Bu durumda, objeler nereye gönderilir?? Tabi ki heap’e… Stack’ta ise sadece; gönderilmiş olan bu objeye işaret eden adres tutulur.
+Gördüğümüz gibi; stock denen şey sabit, durağan.... Heap ise tam tersi… Yani heap dediğimiz şey, dynamic memory allocation için kullanılır, gördüğümüz gibi… Stack ise static memory allocation için kullanılır.)
+ 
+
+Reference types are used for storing objects. For example, when you create an object of a class, it is stored as a reference type.
+Reference types are stored in a part of the memory called the heap. 
+When you instantiate an object, the data for that object is stored on the heap, while its heap memory address is stored on the stack.
+That is why it is called a reference type - it contains a reference (the memory address) to the actual object on the heap.
+As you can see, the p1 object of type Person on the stack stores the memory address of the heap where the actual object is stored.
+
+Stack is used for static memory allocation, which includes all your value types, like x.
+Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
+-
+-
 
 -
 -

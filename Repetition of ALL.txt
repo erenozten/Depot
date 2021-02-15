@@ -4584,6 +4584,29 @@ namespace ConsoleApp1
 -
 -
 -
+A data type is a value type if it holds a data value within its own memory space. It means variables of these data types directly contain their values.
+All the value types derive from System.ValueType, which in-turn, derives from System.Object.
+
+For example, consider integer variable int i = 100;
+The system stores 100 in the memory space allocated for the variable 'i'. The following image illustrates how 100 is stored at some hypothetical location in the memory (0x239110) for 'i':
+ 
+
+
+•	bool
+•	byte
+•	char
+•	decimal
+•	double
+•	enum
+•	float
+•	int
+•	long
+•	sbyte
+•	short
+•	struct
+•	uint
+•	ulong
+•	ushort
 
 
 

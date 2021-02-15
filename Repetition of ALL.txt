@@ -4375,6 +4375,18 @@ new operator
 int myInt = new int(); // Invoked default constructor for int type.  
 -
 -
+Reference Data Types : The Reference Data Types will contain a memory address of variable value because the reference types won’t store the variable value directly in memory. The built-in reference types are string, object.
+
+Value Data Types : In C#, the Value Data Types will directly store the variable value in memory and it will also accept both signed and unsigned literals. The derived class for these data types are System.ValueType. Following are different Value Data Types in C# programming language:…
+Value Type VALUE TUTAR. Adı üstünde… Başka da bişey tutmaz. Yani sadece Value alacak… 0,1,2,3 gibi…
+Reference Type da reference tutar. Adı üstünde. Yani referansını tutar…
+Initialize etmediğimiz bir int değeri olsun;
+Int newInt;
+Bu obje'nin bu haldeki değeri 0 olur.Null olmaz. Çünkü int'ler value type'dır ve value'den başka bir şey tutamaz. (Int, yukarıdaki haliyle null olamaz, bir int değeri null olabilmesi için int? şeklinde declare edilmelidir)
+String asdf;
+Bu ise Reference Type olduğu için null değere işaret eder. Yani değeri NULL olur. Çünkü String'ler Reference Type'dır. Bir değeri yoktur. Değeri olmayan bir verinin ADRESİNİ TUTAR. Adresini tuttuğu şeyin değeri yoktur şu anda (String asdf;). Bu yüzden bu string'in şu anki değeri NULL olur.
+-
+-
 
 
 

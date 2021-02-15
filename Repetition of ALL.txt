@@ -4609,8 +4609,36 @@ The system stores 100 in the memory space allocated for the variable 'i'. The fo
 •	ushort
 
 
+Passing by Value:
+
+When you pass a value type variable from one method to another method, the system creates a separate copy of a variable in another method, so that if value got changed in the one method won't affect on the variable in another method.
+
+Bir önceki başlığı düşünelim. Neydi? Value type; hafızada kendi noktasını oluşturuyordu. 
+Passing by Value yapıyorsak: bu durumda yeni değişken de hafızada kendi noktasını oluşturur.
+Yani örneğin bir integer i’nin başlangıçta 100 olan değerini; bu değişkeni başka bir metod içine yollayıp orada int x olarak bu değeri alıp 200 e eşitlersek;
+i’in asıl değeri değişmez: 100 olarak kalır:
+
+static void ChangeValue(int x)
+{
+    x =  200;
+
+    Console.WriteLine(x);
+}
+
+static void Main(string[] args)
+{
+    int i = 100;
+
+    Console.WriteLine(i);
+    
+    ChangeValue(i);
+    
+    Console.WriteLine(i);
+}
 
 
+
+iraz anlam karmaşası oluyor.. :
 kalınan dosya: 1) Heap, stack
 
 

@@ -4638,7 +4638,38 @@ static void Main(string[] args)
 
 
 
-iraz anlam karmaşası oluyor.. :
+Biraz anlam karmaşası oluyor.. :
+
+Data type’I    Value Type olan bir data (örneğin integer):
+Hafızada kendi lokasyonunu oluşturuyor ve buradaki değeri tutuyor. Adresi değil.
+
+Ama Passing By Value işleminde kendi hafıza lokasyonunu gösteren bir adresi yollamıyor. Value’yi yolluyor (örneğin integer = 3 ise 3 değerini yolluyor. Kendi hafıza lokasyonuyla hiçbi ilgisi yok.).
+
+Value type => adreslemeyle ilgisi yok diye aklımızda tutabiliriz. Kendi lokasyonunu tutuyor hafızada.
+Ve passing by value işlemi yapılırken de aynı şekilde; adresleme falan yok. Yani VALUE varsa ADRES YOK. Kendi öz lokasyonu var.
+
+Class’ın bir objesini pass yaptığımız zaman adresi tuttuğu için ikisini de değiştirdi.
+Ama String için aynı şey olmadı wtf?
+
+Class’ın passing işlemi için yazılan şu: (örneği için aşağıya in: reference type konusu)
+ since Student is an object, when we send the Student object std1 to the ChangeReferenceType() method, what is actually sent is the memory address of std1. Thus, when the ChangeReferenceType() method changes StudentName, it is actually changing StudentName of std1, because std1 and std2 are both pointing to the same address in memory. Therefore, the output is Steve.
+
+Reference Type
+Unlike value types, a reference type doesn't store its value directly. Instead, it stores the address where the value is being stored. In other words, a reference type contains a pointer to another memory location that holds the data.
+For example, consider following string variable:
+string s = "Hello World!!";
+The following image shows how the system allocates the memory for the above string variable.
+ 
+
+
+
+The following data types are of reference type:
+•	String
+•	All arrays, even if their elements are value types
+•	Class
+•	Delegates
+
+
 kalınan dosya: 1) Heap, stack
 
 

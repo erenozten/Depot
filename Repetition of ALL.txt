@@ -4689,6 +4689,68 @@ Steve
 
 In the above example, since Student is an object, when we send the Student object std1 to the ChangeReferenceType() method, what is actually sent is the memory address of std1. Thus, when the ChangeReferenceType() method changes StudentName, it is actually changing StudentName of std1, because std1 and std2 are both pointing to the same address in memory. Therefore, the output is Steve.
 
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace _1_EmptyConsoleApp
+{
+    class Program
+    {
+        public class Sample
+        {
+            public int ReturnInt()
+            {
+                return 5;
+            }
+        }
+
+        static void Main()
+        {
+            Stack stack = new Stack();
+
+            stack.Push("1 İhsan");
+            Console.WriteLine("Peeking: " + stack.Peek());
+                                        
+            stack.Push("2 Apo");        
+            Console.WriteLine("Peeking: " + stack.Peek());
+                                        
+            stack.Push("3 Muro");       
+            Console.WriteLine("Peeking: " + stack.Peek());
+                                        
+            stack.Push("4 Ramo");       
+            Console.WriteLine("Peeking: " + stack.Peek());
+            
+            stack.Push("5 Michael (son kişi)");
+            Console.WriteLine("Popping: " + stack.Pop());
+            Console.WriteLine("Peeking: " + stack.Peek());
+
+            Console.WriteLine("Counting: " + stack.Count); // görüldüğü 
+            // üzere () parantezleri yok. Yani Count
+            // bir metot değil property'dir.
+
+            Console.WriteLine(stack.Contains("1 İhsan"));
+            Console.WriteLine(stack.Contains("1 İhsannnnnn"));
+
+            var kopyalanmisStack = stack.Clone();
+
+            // ÖNEMLİ, ŞUNA DİKKAT:
+            // debug esnasında stack değişkeninin üzerine gelirsek:
+            // görürüz ki: 
+            // stack[0] = ilk eklediğimiz veri değil.
+            // son eklediğimiz veri...
+
+            stack.Clear(); // tüm verileri siler.
+            Console.WriteLine("Counting: " + stack.Count); // şu an
+            // 0 döner. Veri yok çünkü.
+
+            var asd = stack.AsQueryable();
+        }
+    }
+
+}
 
 -
 -

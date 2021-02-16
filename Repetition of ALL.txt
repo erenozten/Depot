@@ -4669,6 +4669,33 @@ The following data types are of reference type:
 •	Class
 •	Delegates
 
+static void ChangeReferenceType(Student std2)
+{
+    std2.StudentName = "Steve";
+}
+
+static void Main(string[] args)
+{
+    Student std1 = new Student();
+    std1.StudentName = "Bill";
+    
+    ChangeReferenceType(std1);
+
+    Console.WriteLine(std1.StudentName);
+}
+
+Output:
+Steve
+
+In the above example, since Student is an object, when we send the Student object std1 to the ChangeReferenceType() method, what is actually sent is the memory address of std1. Thus, when the ChangeReferenceType() method changes StudentName, it is actually changing StudentName of std1, because std1 and std2 are both pointing to the same address in memory. Therefore, the output is Steve.
+
+
+-
+-
+-
+
+
+
 
 kalınan dosya: 1) Heap, stack
 

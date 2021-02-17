@@ -4794,6 +4794,18 @@ GET methodu HTTP istekleri arasındaki varsayılan yöntemdir.  GET metodu ile y
 POST metodu ise URL’ de görünmesini istemediğimiz veriler olduğunda kullanılabilir. POST yönteminde gönderebileceğimiz verinin boyutu ile ilgili bir sınır yoktur. Ayrıca gönderdiğimiz parametrelerin adres satırında görünmemesi dolayısıyla GET yöntemine göre daha güvenlidir. HTML form gönderileceği zaman neredeyse her zaman POST yöntemi tercih edilir.
 Örnek vermek gerekirse Kisilers tablomuzun olduğu bir proje üzerinde kişi bilgilerini düzenlemek isteyebiliriz. Bunun için genellikle iki Action oluştururuz. Bunlardan biri kişinin ID sini parametre olarak alan gelen ID ye göre kişinin bilgilerini Edit formunda açan Action iken diğeri POST olduğunda yani Kaydet butonuna tıklandığında kullanılacak Actiondur.
 
+public ActionResult Edit(int? id)
+{
+if (id == null)
+{  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);  } 
+Kisiler kisiler = db.Kisilers.Find(id);
+if (kisiler == null) 
+{
+return HttpNotFound();
+}
+return View(kisiler);
+} 
+Yukarıdaki Action’ da querystring’imiz kisa iken aşağıdakinde Kisilers tablosundaki kolon sayısına göre uzunluğu değişecek bir querystring söz konusu. Ayrıca buradan dönen bilgilerinde adres çubuğunda görünmesini istemediğimiz için POST methodunu kullanırız.
 
 kalınan dosya: 1) Httpget nedir httppost nedir
 

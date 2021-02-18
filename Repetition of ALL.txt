@@ -4815,8 +4815,22 @@ Güzel bir açıklama:
 Ignore caching for a moment. Another way of thinking about this is that search engines will store HTTP GET links during their indexing/crawling process, therefore they will show up in search results.
 Suppose if your /Home/Index is implemented as GET but it lets say deletes a row in your Database, every time this link shows up on a search engine and somebody clicks it, you will have a delete row, and soon you have a lot deleted rows.
 
+Implicit	      (GITHUB)  (test) 
+Implicit nedir, implicit nedir, explicit nedir
+(Implicit: dolaylı yoldan, yani direkt olarak DEĞİL / suggested, not directly expressed.)
+(explicit: stated clearly and in detail, leaving no room for confusion or doubt.)
+Java üzerinden açıklamış, güzel: 
+Explicit means done by the programmer. Implicit means done by the JVM or the tool , not the Programmer.
+For Example: Java will provide us default constructor implicitly.Even if the programmer didn't write code for constructor, he can call default constructor.
+Explicit is opposite to this , ie. programmer has to write.
+-
+-
+-
 
-kalınan dosya: 1) Httpget nedir httppost nedir
+
+
+
+1) Implicit nedir, implicit nedir, explicit nedir
 
 
 

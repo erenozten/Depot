@@ -4857,12 +4857,18 @@ objectName = new className(parameters);
 -
 -
 -
+Instantiation vs Initialization	 	(GITHUB)  (test)
+Instantiation nedir, instantiation nedir, initialization nedir, Initialization nedir
+
+To initialize something is to set it to its initial value. To instantiate something is to create an instance of it.
+-
+Here I will explain difference between initialization and instantiation in c#, vb.net with example or instantiation vs initialization in asp.net or how to instantiate and initialize a class in asp.net using c#, vb.net with example. In c# or vb.net instantiation means declaring object for class and initialization means assigning values to variables or setting initial values.
 
 
 
 
 
-1) Implicit nedir, implicit nedir, explicit nedir
+1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir
 
 
 

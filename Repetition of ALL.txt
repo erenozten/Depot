@@ -4826,6 +4826,29 @@ Explicit is opposite to this , ie. programmer has to write.
 -
 -
 -
+class Program
+{
+    static void Main()
+    {
+        // Aşağıdaki kod hata üretir!
+        //Implicitly-typed variables must be initialized.
+        // Hata ne yapmamızı istiyor? Initialize etmemizi istiyor Implicitly-typed variable'ı. Yani -> var degisken = 5; gibi
+        var degisken;
+        degisken = "2";
+    }
+}
+
+
+
+Implicitly typed variable: 
+Variables declared using the var keyword are called implicitly typed variables.
+Implicitly typed variables must be initialized with a value.
+For example, the following program will cause an error: 
+var num;
+num = 42;
+-
+-
+
 
 
 

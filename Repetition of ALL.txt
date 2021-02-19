@@ -4874,6 +4874,24 @@ Anlam: of or at the beginning:
 Anlam: the first letter of a name, especially when used to represent the whole name:
 “He wrote his initials, P.M.R., at the bottom of the page.”
 
+Görüldüğü gibi “ilk” anlamı var kelimenin. Biz bir değişkeni declare ettiğimizde onun değerini henüz vermemiş oluyoruz, sadece değişkeni declare etmiş oluyoruz. Ama onu “initialize” ettiğimizde; ona “ilk” değerini vermiş oluyoruz…
+Int a;
+Int a = 5;  “ilk değerini vermiş olduk. Yani initialization yapmış olduk. Mantıken, kelime anlamlarına baktığımızda burada bi “instantiation” görmüyoruz. Çünkü bir şeyi “örneklemiyoruz”. Bir class’tan örnekleme yapsaydık, yani yeni bir obje oluştursaydık, işte o zaman instantiation yapmış olacaktık”.
+-
+Description:
+In previous posts I explained cursor in sql server with example, oops concepts in c# with examples, difference between dispose vs finalize method, difference between pageload and page_init in asp.net, constructors in c#, vb.net, delegates in c# with example and many articles relating to interview questions, asp.net, c#.net. Now I will explain difference between instantiation and initialization in c#, vb.net with example.
+
+Initialization
+Initialization means assigning initial value to variables while declaring.
+Example of Initialization
+Following is the simple example of initialization in application.
+  int a;  //Declaration
+
+  a = 10;  //Initialization
+
+  or
+
+  int a = 10;
 
 
 

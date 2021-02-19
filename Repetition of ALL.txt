@@ -4893,6 +4893,29 @@ Following is the simple example of initialization in application.
 
   int a = 10;
 
+Instantiation
+Instantiation means defining or creating new object for class to access all properties like methods, operators, fields, etc. from class.
+
+Following is the example of defining instantiation in application.
+class sampleclass {
+// your code
+}
+class Program
+{
+static void Main()
+{
+// Instantiating sampleclass
+sampleclass sobj = new sampleclass();
+}
+}
+
+If you observe above syntax we created new object by instantiating sampleclass class. By using new object sobj we can access all the methods and properties from sampleclass class.
+I hope it helps you to understand difference between initialization and instantiation.
+-
+-
+-
+-
+-
 
 
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir

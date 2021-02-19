@@ -4864,6 +4864,15 @@ To initialize something is to set it to its initial value. To instantiate someth
 -
 Here I will explain difference between initialization and instantiation in c#, vb.net with example or instantiation vs initialization in asp.net or how to instantiate and initialize a class in asp.net using c#, vb.net with example. In c# or vb.net instantiation means declaring object for class and initialization means assigning values to variables or setting initial values.
 
+(instance nedir)
+(instance: an instance is a concrete occurrence of any object, existing usually during the runtime of a computer program. Formally, "instance" is synonymous with "object" as they are each a particular value (realization), and these may be called an instance object; "instance" emphasizes the distinct identity of the object. The creation of an instance is called instantiation.)
+(instance’ın kelime anlamına baktığımızda zaten anlıyoruz ki; instance bir class’a aittir. Çünkü instance şeyin “örneği” demektir. C# veya OOP’de neyin bir “örneği” olur? Tabi ki class’ın…  
+(instance kelime anlamı: an example or single occurrence of something. Örnek Cümle: "a serious instance of corruption")
+(initialization şuradan akla getirilebilir -> Gene kelime anlamına bakalım: 
+Anlam: of or at the beginning:
+“My initial surprise was soon replaced by delight.”
+Anlam: the first letter of a name, especially when used to represent the whole name:
+“He wrote his initials, P.M.R., at the bottom of the page.”
 
 
 

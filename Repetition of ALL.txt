@@ -5028,6 +5028,14 @@ const string message4 = "You can't get rid of me!";
 char[] letters = { 'A', 'B', 'C' };
 string alphabet = new string(letters);
 
+Declaration nedir
+This is when you state to the program that there will be an object of a certain type existing and what the name of that object will be.
+Deklare: olayı DEKLARE ETME anlamına gelir. Yani programa DEKLERE EDİYOZ bir şey yapacağımızı. Yani ilerde sana ihtiyacımız olabilir diyoruz. Yani hafızaya ihtiyacımız olabilir
+Declare means to tell the compiler that something exists, so that space may be allocated for it. This is separate from defining or initializing something in that it does not necessarily say what "value" the thing has, only that it exists. In C/C++ there is a strong distinction between declaring and defining. In C# there is much less of a distinction, though the terms can still be used similarly.
+Instantiate literally means "to create an instance of". In programming, this generally means to create an instance of an object (generally on "the heap"). This is done via the new keyword in most languages. ie: new object();. Most of the time you will also save a reference to the object. ie: object myObject = new object();.
+Initialize means to give an initial value to. In some languages, if you don't initialize a variable it will have arbitrary (dirty/garbage) data in it. In C# it is actually a compile-time error to read from an uninitialized variable.
+Assigning is simply the storing of one value to a variable. x = 5 assigns the value 5 to the variable x. In some languages, assignment cannot be combined with declaration, but in C# it can be: int x = 5;.
+(assign nedir, assigning nedir)
 
 
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir

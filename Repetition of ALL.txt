@@ -5102,6 +5102,20 @@ Bir üretim hattında birden fazla istasyon vardır. Bu istasyonlarda diğer ist
 Kanban tedarikçinin iteklediği (push) malları stoklamak yerine tükenmesine yakın kap getir (pull) mantığı ile kullanılan bir görsel karttır aslında. Bu kart görsel bir kart olup neyin, ne zamana kadar ve ne kadar üretileceğini göstermektedir.
 
 
+Burda dikkat edilecek husus kanban envanterinizi yönetmiyor onun yerine ihtiyacı bildiriyor olmasıdır.
+2004 yılında kanban sistemini ve yalın üretim felsefesini temel alıp yazılım geliştirmede yapılacak işleri nasıl senkronize ederiz ve böylece üretkenliği artırırz düşüncesiyle bir metod ortaya koyulmuştur.
+Kanban özetle iş akışının devamlılığını ve sürekli teslimatı, çıktıyı vurgulamaktadır. Anlık olarak sürecin bir adımıyla ilgili yapılan işlerin sayısını kısıtlayarak akışın tıkanmamasını sağlamaya çalışır.
+Kanban, temelde 4 temel prensibi kullanır:
+•	Şimdi ne biliyorsan onunla başla,
+•	Artırımsal ve evrimsel değişimi takip etmeyi kabul et,
+•	Mevcut sürece, rollere, sorumluluklara ve ünvanlara saygı göster.
+•	Tüm seviyelerde liderliği teşvik et
+Bu prensiplerin ışığında Kanban’ın 5 ana özelliği sayılırsa:
+1.	İş akışını görselleştir,
+2.	Aynı anda yapılan işleri sınırlandır (WIP),
+3.	Akışı yönet ve ölç,
+4.	Süreç ilkelerini belirgin kıl,
+5.	İşbirliği yaparak iyileştir.
 
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir
 

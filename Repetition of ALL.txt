@@ -5080,6 +5080,25 @@ char[] letters = { 'A', 'B', 'C' };
 string alphabet = new string(letters);
 
 
+-
+Internal server error:
+API çalışırken, kod patladı (db’ye kayıt eklenirken hata oluşmuştu). Ve 500 Internal server error verdi. Aşağıdaki çorba gibi hata kodu oluştu. 500 Internal server hatasını da resimde görüyoruz.
+ 
+ 
+-
+Kullanıcıya internal server error’la çorba kod göstermek anlamısız. Hatayı BadRequest olarak gösterelim ve bi hata mesajı gösterelim. Resme bkz:
+400 Bad Request gösterdik ve hata kodumuzu yazdık:
+ 
+-
+Aşağıda nasıl Badrequest return ettiğimizi ve yazdığımız hata mesajını görebiliriz:
+ 
+-
+-
+-
+-
+-
+
+
 
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir
 

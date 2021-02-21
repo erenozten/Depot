@@ -5097,6 +5097,9 @@ Aşağıda nasıl Badrequest return ettiğimizi ve yazdığımız hata mesajın�
 -
 -
 -
+Kanban görsel işaret veya kart anlamına gelen ve telafuzundan da anlaşılacağı gibi Japonca bir kelimedir. Yalın ve tam zamanında üretim konusunda bahsi geçen bir kavramdır. Kanban, lojistik zinciri kontrol altında tutmak için Toyota’nın ünlü mühendisi Taiichi Ohno tarafından 1950’lerde Toyota Üretim Sistemi çerçevesinde kullanılmaya başlanmıştır.
+Bir üretim hattında birden fazla istasyon vardır. Bu istasyonlarda diğer istasyonlarda üretilen parçaların belli bir sırada birleştirilmesiyle esas nihai ürün üretilmiş olur. Örneğin bir bulaşık makinası yıkama motoru, tahliye motoru, ön paneli, kazanı, fıskiyesi, deterjan çekmeceleri, kapı ve zamanlayıcı gibi bir çok parçadan oluşur. Üretim esnasında bir çok parça belli bir sıra ile montaj edilirler. Her parçanın önceden belli miktarda hazır halde bulundurulması üretimin akışının devamını sağlamak için gereklidir. Fakat her parçanın fiziksel boyutta kaplayacağı bir alan ve finansal boyutta bir maliyeti vardır. Gereksiz yere çok parçanın tedarik edilmesi demek bir o kadar fazla alanda istiflenmesi ve toplam maliyeti karşılayacak bir finansal yük getirecektir. Yalın ve tam zamanında üretim bu iki parametreyi en aza indirgeyecek bir yaklaşımdır. Mümkün olan en az stokla yani envanterle ve en az harcamayla bu üretimin kesilmeden akması sağlanması gerekmektedir.
+Kanban tedarikçinin iteklediği (push) malları stoklamak yerine tükenmesine yakın kap getir (pull) mantığı ile kullanılan bir görsel karttır aslında. Bu kart görsel bir kart olup neyin, ne zamana kadar ve ne kadar üretileceğini göstermektedir.
 
 
 

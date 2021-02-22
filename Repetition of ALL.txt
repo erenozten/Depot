@@ -5117,6 +5117,11 @@ Bu prensiplerin ışığında Kanban’ın 5 ana özelliği sayılırsa:
 4.	Süreç ilkelerini belirgin kıl,
 5.	İşbirliği yaparak iyileştir.
 
+Kanban metodunun en avantajlı yanlarından biri mevcut sürecinizde hemen bir değişikliğe gitmenizi zorunlu kılmamasıdır. Zaman içinde sürecinizin evrimleşeceğini öngörür. Yani Kanban Yazılım Geliştirme Süreci veya Proje Yönetimi diye bir şey yoktur. Kanban bir süreç değildir, sürekli akışı teşvik eden, hafif siklet bir metodtur.
+Sürecin belli adımlarında yapılan iş diğer adımlarda yapılan işlerden daha çabuk sonuçlanmış olabilir. Bir adımın çıktısı diğer bir adımın girdisidir. Zamanında tüketilemeyen çıktı o adımda bir birikime neden olacaktır. Kanbanda her bir adımda eş zamanlı yapılacak işlerin sayısına bir sınır getirilmesi sürecin darboğazlarının azalmasına imkan tanır. Bir üretkenlik yaratılıp arkadan gelmekte olan işler için bir yer açar. Sınırlama getirilmemesi durumunda bir sürecin belli bir adımında çok iş yapılıyor olmasına rağmen biten bir iş olmayacaktır. Sonuç olarak takım ne kadar çok çalışırsa çalışsın o zamana kadar bir değer üretememiş olacaktır.
+
+
+
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir
 
 

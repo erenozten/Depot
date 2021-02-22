@@ -5120,7 +5120,11 @@ Bu prensiplerin ışığında Kanban’ın 5 ana özelliği sayılırsa:
 Kanban metodunun en avantajlı yanlarından biri mevcut sürecinizde hemen bir değişikliğe gitmenizi zorunlu kılmamasıdır. Zaman içinde sürecinizin evrimleşeceğini öngörür. Yani Kanban Yazılım Geliştirme Süreci veya Proje Yönetimi diye bir şey yoktur. Kanban bir süreç değildir, sürekli akışı teşvik eden, hafif siklet bir metodtur.
 Sürecin belli adımlarında yapılan iş diğer adımlarda yapılan işlerden daha çabuk sonuçlanmış olabilir. Bir adımın çıktısı diğer bir adımın girdisidir. Zamanında tüketilemeyen çıktı o adımda bir birikime neden olacaktır. Kanbanda her bir adımda eş zamanlı yapılacak işlerin sayısına bir sınır getirilmesi sürecin darboğazlarının azalmasına imkan tanır. Bir üretkenlik yaratılıp arkadan gelmekte olan işler için bir yer açar. Sınırlama getirilmemesi durumunda bir sürecin belli bir adımında çok iş yapılıyor olmasına rağmen biten bir iş olmayacaktır. Sonuç olarak takım ne kadar çok çalışırsa çalışsın o zamana kadar bir değer üretememiş olacaktır.
 
-
+Akış düzenli olarak izlenmeli ve raporlanmalıdır. Akış ile kastedilen işlerin bir durumdan diğer duruma sürekli olarak hareketinin, geçişinin sağlanmasıdır. Burada önemli olan bu akışın mümkün olduğunca pürüzsüz ve hızlıca olmasıdır böylece risk ve gecikmeden dolayı oluşacak maliyet azalır.
+Süreci iyileştirmek için safhalarının net bir şekilde belli olması gerekir. Bazı şeylerin nasıl işlediğinin ve nasıl yapıldığının bilinmemesi sonucunda yapılacak olan tartışmalar yanlı ve duygusal olacaktır. Net belli olduğunda ise mantıklı, tarafsız ve deneysel olacaktır.
+Süreç sorunlarının konuşulmasını sağlayacak olan yapılmakta olan işin sınırlandırılmasıdır.
+Kanban’da görselleştirme Değer Akış diyagramları ile ve kanban tahtası ile sağlanabilir. Değer akış diyagramları mevcut durumun, gelecekteki sistemin anlaşılması ve israfın önlenmesi için kullanılır.
+Aşağıda Kanban tahtasına bir örnek verilmiştir.
 
 1) Instantiation nedir, instantiation nedir initialization nedir, , declaration nedir, declare nedir
 

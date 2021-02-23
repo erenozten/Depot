@@ -5142,6 +5142,23 @@ Kanban, 2000’li yılların başlarında ilk kez David J. Anderson tarafından 
 
 İlk başlangıçta süregelen sistemi değiştirmeden izleyerek, çöp üreten ve bekleme yaratan noktaların görselleştirilerek tespit edilmesini ve sonrasında yok edilmesi ile sistemi iyileştirmeyi ve hafifletmeyi amaçlar. Bu hafifleme ve yalınlaşma ile organizasyon daha çevik tepkiler verebilecektir. Evrimsel oluşundan dolayı diğer uygulamalarda yaşanabilecek organizasyon kültüründen kaynaklı negatif tepkiler en düşük seviyede gözlemlenir.
 
+Scrum             (GITHUB)  (test) 
+Scrum nedir 
+Scrum itself is a simple framework for effective team collaboration on complex products.  
+
+Scrum (engl. "itişip kakışma“), yazılım Mühendisliği'nde bir uygulama geliştirme yöntemidir. Bu geliştirme yönteminin temel özelliği gözlemci, geliştirmeci ve tekrara dayalı olmasıdır. Birçok modern yazılım projesinin oldukça karmaşık olduğu ve en baştan tümünü planlamanın zor olacağı şeklindeki bir varsayımdan hareket eder. Bu karmaşıklığı üç ilke ile azaltmaya çalışır.
+Şeffaflık: Projedeki ilerlemeler ve sorunlar günlük olarak tutulur ve herkes tarafından izlenebilir olması sağlanır.
+Denetleme : Ürünün parçaları ya da fonksiyonları düzenli aralıklarla teslim edilir ve değerlendirilir.
+Uyarlama: Ürün için gereksinimler en baştan bir defalığına belirlenmez, bilakis her teslimat tekrar değerlendirilir ve duruma göre uyarlamalar yapılır.
+Scrum is a framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value.
+ 
+Scrum itself is a simple framework for effective team collaboration on complex products.  Scrum co-creators Ken Schwaber and Jeff Sutherland have written The Scrum Guide to explain Scrum clearly and succinctly.  This Guide contains the definition of Scrum. This definition consists of Scrum’s roles, events, artifacts, and the rules that bind them together. 
+Scrum is:
+•	Lightweight
+•	Simple to understand
+•	Difficult to master
+-
+-
 
 Kalınan dosya: 1) Kanban ne
 

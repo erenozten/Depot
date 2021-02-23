@@ -5173,6 +5173,33 @@ Scrum ve Kanban Arasındaki Benzerlikler
 	Deneysel veriye(Scrum’da takımın ortalama hızı, Kanban’da lead time’a -bir fikrin ortaya çıkışı ve teslim tarihi arasındaki fark) göre teslim planı sürekli olarak güncellenir.
 	İkisinde de özellikle bir pratiğin- TDD, Sürekli Teslim, Refactoring, Acceptance Testing, Small Releases, Simple Design, Coding Standards, Shared Metaphor, Collective Code Ownership-  kullanılması belirtilmemiştir. İçinde bulunulan ortama göre bu pratiklerin benimsenmesi geliştirme takımına bırakılmıştır.
 
+Scrum ve Kanban Arasındaki Farklılıklar
+Scrum	Kanban
+Geliştirme belirlenen zaman limiti içinde başlar ve biter. Sprint…
+Geliştirme sürekli olarak devam eder. Limit belirlemek opsiyoneldir.
+Planlama, süreç iyileştirmeleri ve teslim için farklı ritimlere sahip olabilir. Sprint Planlama, Sprint Retrospektif ve Teslim Planlaması farklı zamanlarda yapılabilir.	Yaşanılan gelişmelere göre aksiyon alınır. Önceden belirlenmiş toplantılar ya da aktiviteler bulunmamaktadır.
+Takım bir iterasyonda belirli miktarda işi bitireceğine dair söz verir.	Söz vermek opsiyoneldir.
+Takımın hızı planlama ve süreç iyileştirme için temel metrik olarak kullanılır.	Lead Time, planlama ve süreç iyileştirme için temel metrik olarak kullanılır.
+Geliştirme Takımları’nın çapraz fonksiyonel olması kuraldır.	Geliştirme Takımları’nın çapraz fonksiyonel olması opsiyoneldir. Uzmanlıkların ön planda olduğu takımlar kurulabilir.
+İş maddeleri bir Sprint içinde tamamlanacak küçük parçalara bölünmelidir.	İş maddeleri büyüklükleri farklılık gösterebilir. Belirlenen alt ya da üst bir limit yoktur.
+Burndown grafiklerin kullanılması tavsiye edilir.	Belirli tipte bir grafiğin kullanılması zorunlu değildir. İşi yapmaya yarayacak herhangi bir grafik kullanılabilir.
+Geliştirilen iş sayısı dolaylı olarak kısıtlanır. Bir Sprint’te Geliştirme Takımı’nın gerçekleştirebileceği iş miktarı belirlidir.	Geliştirilen iş sayısı direk olarak kısıtlanır. Bu kısıt koyulurken iş akış durumuna bakılır.
+İşlerin büyüklükleri hakkında tahmin yapmak tavsiye edilir.	İşlerin büyüklüklerini tahmin etmek opsiyoneldir.
+Devam eden bir Sprint’e yeni işler eklenemez.
+Kapasite uygun olduğu sürece yeni işler eklenebilir.
+Sprint İş Listesi belirli bir takım tarafından sahiplenilmiştir.
+Kanban Tahtası, birçok takım ya da kişi tarafından kullanılabilir.
+Üç rol belirlenmiştir. Ürün Sahibi, Geliştirme Takımı, Scrum Master
+Herhangi bir rol belirlenmemiştir.
+Scrum Tahtası her Sprint başında yeniden oluşturulur.
+Kanban Tahtası kalıcıdır.
+
+Önceliklendirilmiş bir İş Listesi zorunludur.	Önceliklendirme zorunlu değildir.
+İş geliştirilirken kısa aralıklarla ulaşılabilecek hedefler konulur. Böylece takım hedefe her ulaşmaya çalıştığında deney yapabilir ve önceki deneylerden çıkardığı sonuçlar ile gelecekteki deneylerde daha iyi sonuçlar elde etmek için iyileştirmelerde bulunabilir. Amaç bir ritim yakalamak ve olabildiğince bu ritmi iyileştirerek ilerlemektir.	İşler bir akış mantığı içinde geliştirilir. Akışta bir dar boğaz tespit edildiğinde bu dar boğaza karşı aksiyon alınır ve tekrarlamaması için iyileştirmeler yapılır. Kısa vadelerde belirlenen hedefler yoktur. Geliştirme sürekli olarak devam eder. İş sürekli olarak akar. Amaç işin pürüzsüz bir şekilde sürekli olarak akışını sağlamaktır.
+-
+
+
+
 Kalınan dosya: 1) Kanban ne
 
 

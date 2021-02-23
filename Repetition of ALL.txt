@@ -5159,6 +5159,19 @@ Scrum is:
 •	Difficult to master
 -
 -
+Scrum ve Kanban Arasındaki Benzerlikler ve Farklılıklar
+Çevikliği düşününce aklıma gelen ilk iki şey Scrum ve Kanban oluyor. Tabi ki çeviklik sadece bu iki yaklaşımla bitmiyor, çok daha büyük birşeyi, bir kültürü anlatıyor. Çevik yazılım geliştirme dediğimizde aklımıza gelen bu yaklaşımları ne kadar biliyoruz? Bu soru aklıma düştüğünde cevaplamanın en iyi yolunun bu iki yaklaşımın benzerliklerinin ve farklılıklarının neler olduğu belirleyerek çok daha kolay anlayabileceğimi ve anlatabileceğimi düşündüm. İşte burada Scrum ve Kanban arasındaki benzerlikler ve farklılıklar bulunuyor. Umarım faydalı olur.
+Scrum ve Kanban Arasındaki Benzerlikler
+	İkisininde özünde Çeviklik ve Yalınlık bulunur.
+	İşler emir komuta ile değil iş çekme prensibine dayalı tamamlanır.
+	İkiside aynı anda geliştirilen işleri sınırlamayı önerir(Kanban WIP’i limitleyerek bunu direk olarak yaparken, Scrum bir Sprint’te geliştirilecek iş miktarını sınırlayarak yapar).
+	İkiside sürecin iyileştirilmesi için şeffaflığı kullanır.
+	İkiside deneyciliğe dayanır.
+	İkiside olabildiğince erken ve sık yazılım teslimatı yapmaya çalışır.
+	İkisinde de geliştirme takımları kendi kendini yönetir.
+	İkisinde de büyük işlerin küçük parçalara ayrılması tavsiye edilir.
+	Deneysel veriye(Scrum’da takımın ortalama hızı, Kanban’da lead time’a -bir fikrin ortaya çıkışı ve teslim tarihi arasındaki fark) göre teslim planı sürekli olarak güncellenir.
+	İkisinde de özellikle bir pratiğin- TDD, Sürekli Teslim, Refactoring, Acceptance Testing, Small Releases, Simple Design, Coding Standards, Shared Metaphor, Collective Code Ownership-  kullanılması belirtilmemiştir. İçinde bulunulan ortama göre bu pratiklerin benimsenmesi geliştirme takımına bırakılmıştır.
 
 Kalınan dosya: 1) Kanban ne
 

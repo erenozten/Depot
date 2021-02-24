@@ -5262,5 +5262,34 @@ class SelectSample1
 //Output: 97 92 81
 The type of the sequence produced by the select clause determines the type of the query variable queryHighScores. In the simplest case, the select clause just specifies the range variable. This causes the returned sequence to contain elements of the same type as the data source. For more information, see Type Relationships in LINQ Query Operations. However, the select clause also provides a powerful mechanism for transforming (or projecting) source data into new types. For more information, see Data Transformations with LINQ (C#).
 
+Example
+The following example shows all the different forms that a select clause may take. In each query, note the relationship between the select clause and the type of the query variable (studentQuery1, studentQuery2, and so on).
+C#Copy
+    class SelectSample2
+    {
+        // Define some classes
+        public class Student
+        {
+            public string First { get; set; }
+            public string Last { get; set; }
+            public int ID { get; set; }
+            public List<int> Scores;
+            public ContactInfo GetContactInfo(SelectSample2 app, int id)
+            {
+                ContactInfo cInfo =
+                    (from ci in app.contactList
+                    where ci.ID == id
+                    select ci)
+                    .FirstOrDefault();
+
+                return cInfo;
+            }
+
+            public override string ToString()
+            {
+                return First + " " + Last + ":" + ID;
+            }
+        }
+
 
 

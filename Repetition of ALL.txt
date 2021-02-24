@@ -5239,6 +5239,28 @@ The following example shows a simple select clause in a query expression.
 
 kalınan 1) linq select bilgi
 
+class SelectSample1
+{
+    static void Main()
+    {
+        //Create the data source
+        List<int> Scores = new List<int>() { 97, 92, 81, 60 };
+
+        // Create the query.
+        IEnumerable<int> queryHighScores =
+            from score in Scores
+            where score > 80
+            select score;
+
+        // Execute the query.
+        foreach (int i in queryHighScores)
+        {
+            Console.Write(i + " ");
+        }
+    }
+}
+//Output: 97 92 81
+The type of the sequence produced by the select clause determines the type of the query variable queryHighScores. In the simplest case, the select clause just specifies the range variable. This causes the returned sequence to contain elements of the same type as the data source. For more information, see Type Relationships in LINQ Query Operations. However, the select clause also provides a powerful mechanism for transforming (or projecting) source data into new types. For more information, see Data Transformations with LINQ (C#).
 
 
 

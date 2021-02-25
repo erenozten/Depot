@@ -5504,4 +5504,14 @@ As shown in studentQuery8 in the previous example, sometimes you might want the 
 Remarks
 At compile time, the select clause is translated to a method call to the Select standard query operator.
 
-kalınan 1) linq select bilgi
+@using OkulYonetimSistemi.Models
+@model IEnumerable<Student>
+-
+-
+-
+-
+Veya
+@model IEnumerable<OkulYonetimSistemi.Models.Student>
+
+
+kalınan 1) one to many many to many navigation property - buradan devam -

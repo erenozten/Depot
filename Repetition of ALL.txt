@@ -5513,5 +5513,28 @@ At compile time, the select clause is translated to a method call to the Select 
 Veya
 @model IEnumerable<OkulYonetimSistemi.Models.Student>
 
+One to Many ilişki  Entity Framework ile nasıl yapılıyor. Düzgün anlatım:
+
+One-to-Many Relationships
+model
+relationship
+In a one-to-many relationship, each row of data in one table is linked to one or more rows in the second table. It is the most common type of relationship.
+•	A one-to-many relationship happens when the primary key of one table becomes foreign keys in another table.
+•	The foreign key is defined in the table that represents the many end of the relationship.
+Let's say we have Author and Book entities.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
+
+
 
 kalınan 1) one to many many to many navigation property - buradan devam -
+

@@ -5567,6 +5567,41 @@ public class Book
 }
 Try it
 
+Add Navigation Properties in Both Entities
+Adding navigation properties at both entities will also result in a one-to-many relationship. For example, Author class contains a collection of Books while Book class contains a navigation property of type Author.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public Author Author { get; set; }
+}
+Try it
+Fully Defined Relationship
+A fully defined relationship at both ends will also create a one-to-many relationship. For example, the Book entity includes foreign key property AuthorId with its reference property Author and Author class contains a collection of Books.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+Try it
+All these conventions produces the same result in the database.
+
 
 kalınan 1) one to many many to many navigation property - buradan devam -
 

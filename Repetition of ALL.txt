@@ -5533,7 +5533,39 @@ public class Book
     public int BookId { get; set; }
     public string Title { get; set; }
 }
+Configure One-to-Many Relationship
+In EF6, most of the times you don't need to configure the one-to-many relationship because one-to-many relationship conventions cover all combinations. You can establish a one-to-many relationship by using any of the following code first conventions.
+Code First Conventions
+Add Reference Navigation Property
+Include a reference navigation property of type Author in the Book entity class.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
 
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public Author Author { get; set; }
+}
+Adding an Author navigation property will create a one-to-many relationship between the Authors and Books tables in the database by adding a foreign key Author_AuthorId to Books table.
+Add Collection Navigation Property
+You can achieve one-to-many relationship by adding the collection navigation property of Book entity in the Author entity class.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
+Try it
 
 
 kalınan 1) one to many many to many navigation property - buradan devam -

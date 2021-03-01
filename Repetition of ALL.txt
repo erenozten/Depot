@@ -5726,6 +5726,28 @@ When we make this request we get the following:
 }
 As you can see by adding a .Include statement we are able to fetch the linked authors.
 
+A note on lazy loading
+Lazy loading is also an alternative to using the .Include syntax, however I recommend against using it in almost all cases as it makes it very easy to introduce subtle performance issues into your application. in addition using the include syntax makes it much more obvious what queries your code performs so increases readability.
+
+How does Entity Framework detect Navigation Properties
+When entity framework examines a class which is attached to the context it finds other complex type properties on the class and assumes that they are a foreign key to that table. Entity framework then creates a foreign key with the name [PropertyName]_[PropertyIdName] for example in the case of the post class the Author is [PropertyName] and in the user table Id is the Id. This means Author_Id is generated as the foreign key name.
+The rules around navigation properties what’s acceptable and how they are generated are defined by a set of conventions. I’m not going to go into any more detail on how these work but for more information you can take a look at the following pages:
+•	EF Feature CTP5: Pluggable Conventions
+•	MSDN - System.Data.Entity.ModelConfiguration.Conventions Namespace
+•	Entity Framework Navigation Property generation rules
+More than the defaults with the Model Builder
+Entity framework provides a mechanism to configure additional information about navigation properties. This additional configuration can be done using the Model Builder. The model builder allows control over how Entity Framework represents the database, one of the features of the model builder allows for control over how foreign keys in the database are translated to Navigation Properties in the Entity Framework Model.
+To get access to the model builder you will need to override the OnModelCreating method on your DbContext. You can then use the modelBuilder argument to structure your Entity Framework Model.
+public class MyContext : DbContext
+{
+	protected override void OnModelCreating(DbModelBuilder modelBuilder)
+	{
+	}   
+}
+The Model Builder uses a two part fluent expression to define navigation properties within the model. The first part of the expression defines the navigation property on the current entity, the second part of the expression defines the reverse navigation property. Navigation properties properties can be either Optional (ie 0..1 to x), Required (ie 1 to x) or Many (ie ** to x*). So lets take a look at some examples:
+Optional relationship
+
+
 
 kalınan 1) one to many many to many navigation property - buradan devam -
 

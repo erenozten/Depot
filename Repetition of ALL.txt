@@ -5663,6 +5663,68 @@ SELECT
    WHERE u.Name = N'Luke'
 As you can see our relationship in c# has been converted into the equivalent SQL join.
 
+How do I load my properties (Why is my navigation property null)?
+Navigation properties are not loaded by default, so its important to know how and when you need to load navigation properties. So lets look at some scenarios and see what entity framework will give us. These scenarios are based off the following data:
+User
+Id	Name
+1	Luke
+2	Bob
+Post
+Id	Author_Id
+1	1
+2	2
+Case 1 :
+context.Posts.ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": null
+		},
+		{
+			"id": 2,
+			"author": null
+		}
+	]
+}
+As you can see we have retrieved all the posts but haven’t received any of the linked authors.
+Case 2:
+context.Posts.Where(p => p.Author.Name == "Luke").ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": null
+		}
+	]
+}
+In this case the where clause successfully interacts with the author to filter by name, however when the results are returned the author is still not linked.
+Case 3:
+using System.Data.Entity; //this is required for .Include
+...
+context.Posts.Include(p => p.Author).ToArray();
+When we make this request we get the following:
+{
+	"posts": [
+		{
+			"id": 1,
+			"author": {
+				"id":1,
+				"name": "Luke"
+			}
+		},
+		{
+			"id": 2,
+			"author":  {
+				"id":2,
+				"name": "Bob"
+			}
+		}
+	]
+}
+As you can see by adding a .Include statement we are able to fetch the linked authors.
 
 
 kalınan 1) one to many many to many navigation property - buradan devam -

@@ -5621,6 +5621,47 @@ Bunun adı Navigation Property'dir
 -
 -
 -
+Linki kesin oku bi: https://blog.staticvoid.co.nz/2012/entity_framework-navigation_property_basics_with_code_first/
+
+Entity Framework - Navigation Property Basics with Code First
+What is a navigation property?
+Navigation properties are Entity Frameworks way of representing Foreign Key relationships inside the database. Navigation properties allow you to define relationships between entities (rows in your database) in a way that makes sense in an object oriented language. Consider the following database:
+ 
+As you can see a post has an author and that is relationaly linked inside our database. So how would we represent this same structure inside of an application (if we ignore the way this is implemented in a relational database)? It seems sensible that we would model this same structure with something like the following:
+public class User
+{
+	public string Name { get; set; }
+}
+
+public class Post
+{
+	public User Author { get; set; }
+}
+Which means we can use it in code like this:
+String.Format("{0} wrote this post", post.Author.Name);
+What Entity Framework navigation proprieties do is to allow us to do just this with our database models. For example the above database structure could be represented as:
+public class User
+{
+	public int Id { get; set; }
+	public string Name { get; set; }
+}
+
+public class Post
+{
+	public int Id { get; set; }
+	public User Author { get; set; }
+}
+How do Navigation Properties work?
+When you are using navigation properties in your code you are asking Entity Framework to automatically perform a SQL join between your two tables. For example:
+context.Posts.Where(p => p.Author.Name == "Luke");
+will be translated into the following SQL*:
+SELECT
+	 p.Id,
+	 p.Author_Id
+   FROM  Posts AS p
+	 INNER JOIN Users AS u ON p.Author_Id = u.Id
+   WHERE u.Name = N'Luke'
+As you can see our relationship in c# has been converted into the equivalent SQL join.
 
 
 

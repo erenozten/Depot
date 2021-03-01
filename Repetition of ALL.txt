@@ -5747,6 +5747,50 @@ public class MyContext : DbContext
 The Model Builder uses a two part fluent expression to define navigation properties within the model. The first part of the expression defines the navigation property on the current entity, the second part of the expression defines the reverse navigation property. Navigation properties properties can be either Optional (ie 0..1 to x), Required (ie 1 to x) or Many (ie ** to x*). So lets take a look at some examples:
 Optional relationship
 
+If you have the following classes:
+public class Entity1
+{
+    public int Id { get; set; }
+}
+
+public class Entity2
+{
+    public int Id { get; set; }
+    public Entity1 Entity1 { get; set; }
+}
+Using the following model builder statement
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Entity2>().HasOptional(e => e.Entity1).WithMany();
+}  
+Yukarıdaki kodu okuyalım: Entity2 optional olarak Entity1 e sahip (sahip olabilir de olmayabilir de.) (yani aşağıdaki çizimde, okun ucu 0 veya 1 olabilir... sahip olabilir veya olmayabilir)
+Sağ kısmı okuyalım (entity1).WithMany();           Entity1 birçok (withmany) entity1’e sahip.
+Will create the following relationship
+ 
+Note the two parts of the query the first to define Entity1 navigation property, the first part defines an optional relationship (ie a nullable foreign key) and the second part .WithMany() defines the remote entity’s (Entity1) multiplicity. Using .WithMany() with no argument tells Entity Framework that the relationship does not have a remote navigation property. (koda bak oradan da görürsün... Entity1 class’ında navigation property yok)
+Required Relationship
+If you have the following classes:
+public class Entity1
+{
+   public int Id { get; set; }
+   public List<Entity2> Entity2s { get; set; }
+}
+
+public class Entity2
+{
+   public int Id { get; set; }
+   public Entity1 Entity1 { get; set; }
+}
+Using the following model builder statement
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+	modelBuilder.Entity<Entity2>()
+		.HasRequired(e => e.Entity1)
+		.WithMany(e => e.Entity2s);
+}   
+Will create the following relationship
+ 
+Note that in this example we have specified a remote collection for the relationship. This means that you can use the Entity2s property to find all linked entities.
 
 
 kalınan 1) one to many many to many navigation property - buradan devam -

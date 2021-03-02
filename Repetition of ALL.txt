@@ -5792,6 +5792,33 @@ Will create the following relationship
  
 Note that in this example we have specified a remote collection for the relationship. This means that you can use the Entity2s property to find all linked entities.
 
+Many Relationship
+If you have the following classes:
+public class Entity1
+{
+	public int Id { get; set; }
+	public List<Entity2> Entity2s { get; set; }
+}
+
+public class Entity2
+{
+	public int Id { get; set; }
+	public List<Entity1> Entity1s { get; set; }
+}
+Using the following model builder statement
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+	modelBuilder.Entity<Entity2>()
+		.HasMany(e => e.Entity1s)
+		.WithMany(e => e.Entity2s);
+}
+Will produce the following relationship
+ 
+With the following database tables 
+Note that here we have chained two .Many statements to produce a many to many relationship. As you can see the Entity Framework has created a link table in the database but the actual link in the model is created as two collections (without a link table) which makes more sense in c#.
+
+
+
 
 kalınan 1) one to many many to many navigation property - buradan devam -
 

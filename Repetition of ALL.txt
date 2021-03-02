@@ -5890,6 +5890,231 @@ public class Book
 }
 Try it
 
+Code First Conventions
+Yol 1) Add Reference Navigation Property
+Include a reference navigation property of type Author in the Book entity class.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public Author Author { get; set; }
+}
+Adding an Author navigation property will create a one-to-many relationship between the Authors and Books tables in the database by adding a foreign key Author_AuthorId to Books table.
+Yol 2) Add Collection Navigation Property
+You can achieve one-to-many relationship by adding the collection navigation property of Book entity in the Author entity class.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
+
+Yol 3) Add Navigation Properties in Both Entities
+Adding navigation properties at both entities will also result in a one-to-many relationship. For example, Author class contains a collection of Books while Book class contains a navigation property of type Author.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public Author Author { get; set; }
+}
+
+Yol 4) Fully Defined Relationship
+A fully defined relationship at both ends will also create a one-to-many relationship. For example, the Book entity includes foreign key property AuthorId with its reference property Author and Author class contains a collection of Books.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+All these conventions produces the same result in the database.
+Using Fluent API
+You can also configure relationships using Fluent API to override the default conventions and make it more maintainable.
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    // configures one-to-many relationship
+    modelBuilder.Entity<Book>()
+        .HasRequired<Author>(b => b.Author)
+        .WithMany(a => a.Books)
+        .HasForeignKey<int>(b => b.AuthorId);
+}
+
+One-to-One Relationships
+One to one relationship / one-to-one relationship / bire bir ilişki / bire-bir ilişki / bir-bir ilişki
+
+model
+relationship
+In a one-to-one relationship, each row of data in one table is linked to zero or one row in the second table. For example, the Author and AuthorBiography have a one-to-one relationship.
+•	This type of relationship is not common because most information related in this way would be an all-in-one table.
+•	When you define a one-to-one relationship in your model, you use a reference navigation property in each class.
+Let's say we have an Author class which contains author name and collection of books.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
+Now we want to add another class AuthorBiography class to contain some more information about the author like Biography, DateOfBirth and Nationality, etc.
+public class AuthorBiography
+{
+    public int AuthorBiographyId { get; set; }
+    public string Biography { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public string PlaceOfBirth { get; set; }
+    public string Nationality { get; set; }
+    public virtual Author Author { get; set; }
+}
+Configure One-to-One Relationship
+Let's also add a Biography property to the 'Author' class, so that we can navigate both directions.
+public class Author
+{
+    [Key]
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+    public virtual AuthorBiography Biography { get; set; }
+}
+Code First can't determine which class is dependent and when you execute to build the model, an exception is thrown.
+System.InvalidOperationException: 'Unable to determine the principal end of an association between the types 'EFDemo.Author' and 'EFDemo.AuthorBiography'. The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.'
+
+Using Data Annotation
+You can solve this problem very easily by using a ForeignKey data annotation on the dependent class so that code first can identify that it contains the foreign key.
+public class AuthorBiography
+{
+    [ForeignKey("Author")]
+    public int AuthorBiographyId { get; set; }
+    public string Biography { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public string PlaceOfBirth { get; set; }
+    public string Nationality { get; set; }
+    public virtual Author Author { get; set; }
+}
+
+In this case, the AuthorBiography is depending on Author, so the AuthorBiographyId property is a primary as well as a foreign key.
+Using Fluent API
+You can also use Fluent API to configure a one-to-one relationship between the Author and AuthorBiography entities.
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Author>()
+        .HasOptional(a => a.Biography)
+        .WithRequired(ab => ab.Author);
+}
+
+•	The HasOptional() method marks the Biography property optional in Author entity.
+•	The .WithRequired()method marks Author property as required in AuthorBiography entity.
+•	it will throw an exception when the AuthorBiography entity is saved without the Author navigation property.
+Many-to-Many Relationships
+Many-to many relationship, many to many relationship, one to many relationship, one-to-many relationship, çoka çok ilişki, çoka-çok ilişki, çok-çok ilişki, çok çok ilişki
+
+In a many-to-many relationship, each row of data in one table is linked to many rows in the second table and vice versa.
+•	A many-to-many relationship occurs when multiple records in one table are associated with multiple records in another table.
+•	For example, a many-to-many relationship exists between Book and Category entities.
+Let's say we have Author and Book entities.
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
+
+public class Category
+{
+    public int CategoryId { get; set; }
+    public string CategoryName { get; set; }
+}
+Every record in the books table is linked to one or more category records, and every record in the categories table is linked to one or more records in the books table.
+Configure Many-to-Many relationship
+The many-to-many relationship creates join table because relational database systems usually don't allow a many-to-many relationship between two tables. The join table will have a composite primary key consisting combination of the primary key of both tables.
+Code First Conventions
+Code First default convention creates the join table to handle the many-to-many relationship when a collection navigation properties are added in both entities.
+•	For example, the Book class should include collection navigation property of type Category, and the Category class should contain a collection navigation property of type Book
+•	It will create a many-to-many relationship between them without any configuration.
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public virtual ICollection<Category> Categories { get; set; }
+}
+
+public class Category
+{
+    public int CategoryId { get; set; }
+    public string CategoryName { get; set; }
+    public virtual ICollection<Book> Books { get; set; }
+}
+Entity Framework will create Books, Categories and also the joining table CategoryBooks in the database. The CategoryBooks table will include the PK (Primary Key) of both tables Book_BookId & Category_CategoryId.
+ 
+Using Data Annotations
+To configure many-to-many relationship Using Data Annotations, you need to create the Join Table in the model.
+•	The Join Table BookCategory will have properties for the primary key of both the table.
+•	It will have two navigational properties one each for Book and Category class.
+•	The Book and Category class will have the navigational property which maps to the Join Table BookCategory.
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+    public virtual ICollection<BookCategory> BookCategories { get; set; }
+}
+
+public class Category
+{
+    public int CategoryId { get; set; }
+    public string CategoryName { get; set; }
+    public virtual ICollection<BookCategory> BookCategories { get; set; }
+}
+
+public class BookCategory
+{
+    [Key, Column(Order = 1)]
+    public int BookId { get; set; }
+    [Key, Column(Order = 2)]
+    public int CategoryId { get; set; }
+    public Book Book { get; set; }
+    public Category Category { get; set; }
+}
+
+It will create Books, Categories and BookCategories tables in the database. The BookCategories table will have composite key BookId & CategoryId.
+Using Fluent API
+The many-to-may relationship can be achieved using HasMany and WithMany methods.
+•	The default conventions for many-to-many relationships creates a joining table with the default naming conventions.
+•	You can customize a joining table name and column names using Fluent API.
+modelBuilder.Entity<Book>()
+   .HasMany(b => b.Categories)
+   .WithMany(c => c.Books)
+   .Map(cs =>
+   {
+       cs.MapLeftKey("BookId");
+       cs.MapRightKey("CategoryId");
+       cs.ToTable("BookCategories");
+   });
+
+
+
+
 
 
 

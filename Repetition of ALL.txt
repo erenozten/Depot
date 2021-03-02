@@ -5817,6 +5817,28 @@ Will produce the following relationship
 With the following database tables 
 Note that here we have chained two .Many statements to produce a many to many relationship. As you can see the Entity Framework has created a link table in the database but the actual link in the model is created as two collections (without a link table) which makes more sense in c#.
 
+Wrapping up
+In this post we have looked in detail at navigation properties, what they are, how they are detected and how they are configured. As with many ORMs Entity Framework provides an abstraction over database Foreign Keys. As with any abstraction its really important to understand its limitations. I hope this post helps you better understand how Navigation Properties work and enables you to make good decisions when dealing with Entity Framework.
+
+One to many için kesin oku!
+
+https://entityframework.net/one-to-many-relationship
+One-to-Many Relationships
+In a one-to-many relationship, each row of data in one table is linked to one or more rows in the second table. It is the most common type of relationship.
+•	A one-to-many relationship happens when the primary key of one table becomes foreign keys in another table.
+•	The foreign key is defined in the table that represents the many end of the relationship.
+Let's say we have Author and Book entities.
+public class Author
+{
+    public int AuthorId { get; set; }
+    public string Name { get; set; }
+}
+
+public class Book
+{
+    public int BookId { get; set; }
+    public string Title { get; set; }
+}
 
 
 

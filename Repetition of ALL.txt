@@ -5,6 +5,17 @@
 -
 -
 -
+A subquery is a query that is nested inside a SELECT, INSERT, UPDATE, or DELETE statement, or inside another subquery. A subquery can be used anywhere an expression is allowed. In this example a subquery is used as a column expression named MaxUnitPrice in a SELECT statement.
+SQLCopy
+USE AdventureWorks2016;
+GO
+SELECT Ord.SalesOrderID, Ord.OrderDate,
+    (SELECT MAX(OrdDet.UnitPrice)
+     FROM Sales.SalesOrderDetail AS OrdDet
+     WHERE Ord.SalesOrderID = OrdDet.SalesOrderID) AS MaxUnitPrice
+FROM Sales.SalesOrderHeader AS Ord;
+GO
+-
 
 Simply put it this way: in a statically typed language variables' types are static, meaning once you set a variable to a type, you cannot change it. That is because typing is associated with the variable rather than the value it refers to.
 For example in Java:

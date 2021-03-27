@@ -5,6 +5,14 @@
 -
 -
 -
+
+Simply put it this way: in a statically typed language variables' types are static, meaning once you set a variable to a type, you cannot change it. That is because typing is associated with the variable rather than the value it refers to.
+For example in Java:
+String str = "Hello";  //variable str statically typed as string
+str = 5;               //would throw an error since str is supposed to be a string only
+Where on the other hand: in a dynamically typed language variables' types are dynamic, meaning after you set a variable to a type, you CAN change it. That is because typing is associated with the value it assumes rather than the variable itself.
+
+-
 To make sure that database connections are properly closed and the resources they hold freed up, you have to dispose the context instance when you are done with it. That is why the scaffolded code provides a Dispose method at the end of the StudentController class in StudentController.cs, as shown in the following example: 
 protected override void Dispose(bool disposing)
 {

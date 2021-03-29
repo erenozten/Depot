@@ -6271,6 +6271,32 @@ ismin adının üstüne gelip F2 -> ismi değiştirmek için (projenin tümünde
 
 ctrl shift r  bir class'ı yeni bir folder'a taşı
 
+ctrl W kopyalıyor bi üst element/metoda kadar. (geri almak için: ctrl shift W)
+
+alt aşağı / yukarı   metodlar arası geçiş
+
+ctrl B  class definition'una gitme (ctrl click ile aynı)
+
+
+windows+ sağ yön tuşu (visual studio’yu ekranın sağına yapıştırıyor. Google chrome’u açıp sola bas, onu da sola yapıştır.
+
+f3    search yapılan text'i ara (diğer satırlarda)
+
+ctrl alt J     kelimeyi <tag> ile çevreleme
+
+ctrl f12    sayfa içinde text ara
+
+ctrl shift R   model'imizi farklı bir klasöre taşımak istiyorsak. (namespace'i de değiştiriyor, kolaylık sağlıyor)
+
+windows + sağ sol yukarı yön tuşları: progrmı büyütme yana yatırma 
+
+ctrl tab   sekmeler arası geçiş
+
+ctrl r     kullanma. F5 ile aynı. Eğer tam refresh yapmak istiyorsan ctrl shift f5 yap.
+
+alt enter (en alttaki seçenekten: sayfadaki aynı textlerin tümünü değiştirme)
+-
+ctrl f10 - cursor'ın olduğu yere kadar projeyi çalıştırır. Break point koymuşsun gibi.
 
 
 

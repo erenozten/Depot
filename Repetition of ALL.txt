@@ -6139,6 +6139,78 @@ When you pass a value type variable from one method to another method, the syste
 Public member’lar büyük harfle başlar. Private ise küçük harfle başlarmış (pluralSight). Lakin genelde alttan tire ve küçük harfle başlanıyordu wtf.
 -
 
+Kısayollar / Keyboard Shortcuts	(GITHUB) (asasas)
+Kısayol nedir, shortcut nedir
+
+-
+KULLANMAYA ALIŞ BUNU: action’ın üzerine ctrl ile tıkla. Usage of Symbol’e tıklayınca action’ın kullanıldığı yerleri görebiliyosun. Mesela View’da kullanılmışsa bu action (httppost metoduysa misal) görebilirsin view’u hemen. Ctrl f yapıp action’ın kullanıldığı yere gitmene gerek yok.
+Muhtemelen class vb için de kullanabiliriz bunu.
+-
+Return View();  view() üzerine ctrl ile tıklayınca view dosyasını açıyor
+-
+Ctrl-u  Sayfa kaynağını görüntülüyor CHROME
+-
+-----------------------------------------------
+
+KENDİ CUSTOM AYARLARIM
+
+Comment’leme için kullandığım mucizevi iksir:
+
+Tools -> Options -> Environment -> Keyboard: Edit.CommentSelection yaz search’e. Kısayolunu: Ctrl / yap.
+Tools -> Options -> Environment -> Keyboard: Edit.UncommentSelection yaz search’e. Kısayolunu: Ctrl Shift / yap.
+
+Debug işlemleri için kullandığım mucizevi iksir:
+
+Tools -> Options -> Environment -> Keyboard: Debug.StepInto yaz search’e. Kısayolu: Ctrl + yap.
+
+Tools -> Options -> Environment -> Keyboard: Debug.StepOver yaz search’e. Kısayolu: Ctrl - yap.
+
+Tools -> Options -> Environment -> Keyboard: Debug.StepOut yaz search’e. Kısayolu: Ctrl * yap.
+
+
+
+
+
+
+
+
+-----------------------------------------------
+f2 - değişkene yeni isim ver (sistemdeki hepsinin)
+ctrl alt f9  - breakpoint’e götürüyo seni
+
+Ctrl  backspace    kelimeyi siliyo tamamen sola doğru
+Ctrl  delete kelimeyi olduğu gibi siliyor. Sağa doğru siliyor. // ctrl + backspace de sola  doğru siliyor
+
+ctrl + shift + nokta -> aynı değişkenlerin tümünü aynı anda editleme imkanı sağlıyor. (bende çalışmıyo)
+
+-
+Chrome offers “F5” key and the “Ctrl+R” key combination are used to reload the currently open Web page. 
+Chrome also offers the reload shortcut combinations of “Ctrl + F5” and “Ctrl + Shift + R” to reload the currently open page and override the locally cached version.
+Having cursor in the address field and pressing ENTER will also do the same as CTRL + F5
+-Home, end (numpad’dakiler) : satırın başına ve sonuna gider. (shift ile de kullanılır, yazıyı seçmek için...)
+
+-Klavyenin üstündeki normal home end tuşları: sayfanın başına ve sonuna gider.
+
+-Numpad’daki home end tuşları ctrl ile kullanıldığında, tıpkı klavyenin üstündeki home-end tuşları gibi çalışıyor. Yani klavyenin üstündeki home-end tuşlarını kullanmaya gerek yok gibi görünüyor.
+
+-Ctrl – yön tuşları  kelimenin başına sonuna gidiyor atlayarak.
+
+-Next Error (F2) (çalışmadı)
+
+-Previous error (Shift + F2) ) (çalışmadı)
+
+-Expand Selection (Ctrl + W)
+
+-Ctrl + n  search everywhere (acayip bişey) / create new file
+
+- alt + yukarı aşağı arrows  iki satırın yerini birbiri arasında değiştirme.
+
+- shift + alt  veya sadece alt-> kare alan seçme (çoklu satır)
+
+-
+Don’t use anything in the cache when making the request. Forces the browser to re-download every JavaScript file, image, text file, etc.
+Empty Cache and Hard Reload
+Empty Cache and hard reload = Empty the cache and Force the browser do re-download every JavaScript file, image, text file, etc.
 
 
 

@@ -352,6 +352,54 @@ JPA with NoSQL
 Until fairly recently, non-relational databases were uncommon curiosities. The NoSQL movement changed all that, and now a variety of NoSQL databases are available to Java developers. Some JPA implementations have evolved to embrace NoSQL, including Hibernate OGM and EclipseLink.
 -
 -
+Apache Maven  	(GITHUB) (test)
+maven nedir, apache maven nedir
+Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. The Maven project is hosted by the Apache Software Foundation, where it was formerly part of the Jakarta Project.
+-
+-
+-
+Reverse engineering / Tersine Mühendislik / Backwards Engineering / (test)  (test) 
+Reverse engineering nedir, tersine mühendislik nedir, backward engineering nedir, back engineering nedir
+Reverse engineering, also called backwards engineering or back engineering, is the process by which an artificial object is deconstructed to reveal its designs, architecture, code or to extract knowledge from the object. It is similar to scientific research, the only difference being that scientific research occurs for a natural phenomenon
+Reverse engineering is applicable in the fields of computer engineering, mechanical engineering, electronic engineering, software engineering, chemical engineering,[2] and systems biology.[3]-
+-
+-
+-
+PyCharm		(bosch)	 (bosch)
+pycharm nedir
+PyCharm, çapraz platform bir Python geliştirme ortamı (IDE)'dir. Kod analizleri, grafiksel hata ayıklamacısı (debugger), versiyon kontrol sistemi (VCS) ile entegre ve Django ile Python web geliştirmeleri yapılmasını sağlamaktadır.
+
+Çapraz platformu Windows, OS X ve GNU/Linux işletim sistemleri üzerinde çalışır. PyCharm Community Edition ücretsiz olarak indirilebilir bir sürümdür. Genelde öğrenciler tarafından kullanılmaktadır. Professional Edition ise ücretli bir sürümdür ve gelişmiş özellikleri bulunmaktadır. 
+-
+-
+-
+-
+-
+MacOS (Macintosh Operating System)	(GITHUB) (test)
+macOS nedir, mac nedir, macintosh nedir
+macOS, (eski adları "Mac OS X" ve "OS X") Macintosh işletim sistemi ailesinin son sürümüdür ve Apple Inc. tarafından Macintosh bilgisayarları için tasarlanmış bir işletim sistemidir.
+-
+-
+-
+-
+Subroutine  	(empty)  (empty) 
+[Subroutine nedir]
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+In computer programming, a subroutine is a sequence of program instructions that performs a specific task, packaged as a unit. This unit can then be used in programs wherever that particular task should be performed.
+Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes used.[1]
+The name subprogram suggests a subroutine behaves in much the same way as a computer program that is used as one step in a larger program or another subprogram. A subroutine is often coded so that it can be started several times and from several places during one execution of the program, including from other subroutines, and then branch back (return) to the next instruction after the call, once the subroutine's task is done. The idea of a subroutine was initially conceived by John Mauchly during his work on ENIAC,[2] and recorded in a January 1947 Harvard symposium on "Preparation of Problems for EDVAC-type Machines".[3] Maurice Wilkes, David Wheeler, and Stanley Gill are generally credited with the formal invention of this concept, which they termed a closed subroutine,[4][5] contrasted with an open subroutine or macro.[6] However, Turing had discussed subroutines in a paper of 1945 on design proposals for the NPL ACE, going so far as to invent the concept of a return address stack.[7]
+-
+-
+-
+
+
+
+
+
+
+
 
 
 

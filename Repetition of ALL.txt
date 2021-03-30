@@ -267,6 +267,67 @@ A third-party transpiler GopherJS[22] compiles Go to JavaScript for front-end we
 
 
 
+Spring Boot  	(GITHUB) (test)
+spring boot nedir, springboot nedir
+Spring Boot is an open source Java-based framework used to create a micro Service. It is developed by Pivotal Team and is used to build stand-alone and production ready spring applications. This chapter will give you an introduction to Spring Boot and familiarizes you with its basic concepts.
+What is Micro Service?
+Micro Service is an architecture that allows the developers to develop and deploy services independently. Each service running has its own process and this achieves the lightweight model to support business applications.
+Advantages
+Micro services offers the following advantages to its developers −
+•	Easy deployment
+•	Simple scalability
+•	Compatible with Containers
+•	Minimum configuration
+•	Lesser production time
+What is Spring Boot? 	
+Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run. You can get started with minimum configurations without the need for an entire Spring configuration setup.
+Advantages
+Spring Boot offers the following advantages to its developers −
+•	Easy to understand and develop spring applications
+•	Increases productivity
+•	Reduces the development time
+Goals
+Spring Boot is designed with the following goals −
+•	To avoid complex XML configuration in Spring
+•	To develop a production ready Spring applications in an easier way
+•	To reduce the development time and run the application independently
+•	Offer an easier way of getting started with the application-
+-
+-
+Spring             (GITHUB)  (test) 
+Spring nedir
+The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. Although the framework does not impose any specific programming model, it has become popular in the Java community as an addition to the Enterprise JavaBeans (EJB) model. The Spring Framework is open source. -
+-
+-
+-
+Smalltalk	(edited) (test)
+smalltalk nedir
+Xerox PARC'ta (Palo Alto Research Center) geliştirilmiş nesne yönelimli bir programlama dilidir.
+Definition - What does Smalltalk mean?
+Smalltalk is an object-oriented programming (OOP) language that incorporates dynamic runtime typing methodology and maneuverability.
+
+Mostly used for application modeling, Smalltalk was created based on basic object principles, which dictate that each thing is an object, and each object can communicate with other objects.
+
+Smalltalk was initially released as version Smalltalk-80 in the 1970s by the Learning Research Group at Xerox Palo Alto Research Center Inc.
+Techopedia explains Smalltalk
+Because Smalltalk is dynamic and does not require variable type declarations, processing is determined by the receiving object. Type checking is performed at run time, rather than compiling time. Smalltalk also offers tremendous runtime application modification and maneuverability, which extends to syntax or the integrated development environment (IDE).
+
+The central concept in Smalltalk is an object, which is an instance of a class. The three operations performed by a Smalltalk object are:
+•	Receive messages from itself or other objects
+•	Send messages to itself or another object
+•	Reference other objects.
+Messaging is the most important concept in Smalltalk. Upon receiving a message, the receiver determines whether it is appropriate. A message can be sent to any object. Other objects can query the state only by sending messages to the object. The language construct in Smalltalk are messages. By default, Smalltalk uses a synchronous, single dynamic message dispatch strategy. Expressions in Smalltalk include multiple message send.
+
+Smalltalk considers primitive values such as integers, Booleans and characters as objects because they are instances of corresponding classes, and operations on them are invoked by sending messages. A programmer can change the classes that implement primitive values to define new behavior for their instances. Classes and code blocks are objects in Smalltalk. Each class is an instance of the metaclass of that class where metaclasses are also objec
+-
+-
+
+
+
+
+
+
+
 
 
 

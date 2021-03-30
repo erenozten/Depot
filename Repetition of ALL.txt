@@ -321,6 +321,39 @@ Messaging is the most important concept in Smalltalk. Upon receiving a message, 
 Smalltalk considers primitive values such as integers, Booleans and characters as objects because they are instances of corresponding classes, and operations on them are invoked by sending messages. A programmer can change the classes that implement primitive values to define new behavior for their instances. Classes and code blocks are objects in Smalltalk. Each class is an instance of the metaclass of that class where metaclasses are also objec
 -
 -
+Look And Feel          (GITHUB)  (test) 
+Look and feel nedir
+In software design, the look and feel of a graphical user interface comprises aspects of its design, including elements such as colors, shapes, layout, and typefaces (the "look"), as well as the behavior of dynamic elements such as buttons, boxes, and menus (the "feel"). The term can also refer to aspects of a non-graphical user interface (such as a command-line interface), as well as to aspects of an API – mostly to parts of an API that are not related to its functional properties. The term is used in reference to both software and websites.
+Look and feel applies to other products. In documentation, for example, it refers to the graphical layout (document size, color, font, etc.) and the writing style. In the context of equipment, it refers to consistency in controls and displays across a product line.
+Look and feel in operating system user interfaces serves two general purposes. First, it provides branding, helping to identify a set of products from one company. Second, it increases ease of use, since users will become familiar with how one product functions (looks, reads, etc.) and can translate their experience to other products with the same look and feel.
+-
+-
+-
+
+
+
+
+
+JPA / Java Persistence API   	(GITHUB) (test)
+Jpa nedir
+
+The Java ORM standard for storing, accessing, and managing Java objects in a relational database.
+As a specification, the Java Persistence API is concerned with persistence, which loosely means any mechanism by which Java objects outlive the application process that created them. Not all Java objects need to be persisted, but most applications persist key business objects. The JPA specification lets you define which objects should be persisted, and how those objects should be persisted in your Java applications.
+By itself, JPA is not a tool or framework; rather, it defines a set of concepts that can be implemented by any tool or framework. While JPA's object-relational mapping (ORM) model was originally based on Hibernate, it has since evolved. Likewise, while JPA was originally intended for use with relational/SQL databases, some JPA implementations have been extended for use with NoSQL datastores. A popular framework that supports JPA with NoSQL is EclipseLink, the reference implementation for JPA 2.2.
+The Java Persistence API was first released as a subset of the EJB 3.0 specification (JSR 220) in Java EE 5. It has since evolved as its own spec, starting with the release of JPA 2.0 in Java EE 6 (JSR 317). As of this writing, JPA 2.2 has been adopted for continuation as part of Jakarta EE.
+JPA and Hibernate
+Because of their intertwined history, Hibernate and JPA are frequently conflated. However, like the Java Servlet specification, JPA has spawned many compatible tools and frameworks; Hibernate is just one of them.
+What is Java ORM?
+While they differ in execution, every JPA implementation provides some kind of ORM layer. In order to understand JPA and JPA-compatible tools, you need to have a good grasp on ORM.
+Object-relational mapping is a task–one that developers have good reason to avoid doing manually. A framework like Hibernate ORM or EclipseLink codifies that task into a library or framework, an ORM layer. As part of the application architecture, the ORM layer is responsible for managing the conversion of software objects to interact with the tables and columns in a relational database. In Java, the ORM layer converts Java classes and objects so that they can be stored and managed in a relational database.
+[ Learn Java from beginning concepts to advanced design patterns in this comprehensive 12-part course! ]
+By default, the name of the object being persisted becomes the name of the table, and fields become columns. Once the table is set up, each table row corresponds to an object in the application. Object mapping is configurable, but defaults tend to work well.
+JPA with NoSQL
+Until fairly recently, non-relational databases were uncommon curiosities. The NoSQL movement changed all that, and now a variety of NoSQL databases are available to Java developers. Some JPA implementations have evolved to embrace NoSQL, including Hibernate OGM and EclipseLink.
+-
+-
+
+
 
 
 

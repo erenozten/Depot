@@ -215,6 +215,59 @@ Jython, yüksek seviyeli, dinamik ve nesne yönelimli bir dil olan Python'un tam
 -
 -
 -
+BCPL		(bosch)	 (bosch)
+bcpl nedir
+BCPL ("Basic Combined Programming Language") is a procedural, imperative, and structured programming language. Originally intended for writing compilers for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called B, was the language on which the C programming language was based. BCPL introduced several features of many modern programming languages, including using curly braces to delimit code blocks. BCPL was first implemented by Martin Richards of the University of Cambridge in 1967.
+The book BCPL: The language and its compiler describes the philosophy of BCPL as follows:
+"The philosophy of BCPL is not one of the tyrant who thinks he knows best and lays down the law on what is and what is not allowed; rather, BCPL acts more as a servant offering his services to the best of his ability without complaint, even when confronted with apparent nonsense. The programmer is always assumed to know what he is doing and is not hemmed in by petty restrictions."
+-
+-
+-
+-
+-
+-
+Cloudera	(GITHUB)  (test) 
+Cloudera nedir
+Cloudera, Inc. is a US-based software company that provides a software platform for data engineering, data warehousing, machine learning and analytics that runs in the cloud or on premises.
+Cloudera started as a hybrid open-source Apache Hadoop distribution, CDH (Cloudera Distribution Including Apache Hadoop), that targeted enterprise-class deployments of that technology. Cloudera states that more than 50% of its engineering output is donated upstream to the various Apache-licensed open source projects (Apache Spark, Apache Hive, Apache Avro, Apache HBase, and so on) that combine to form the Apache Hadoop platform. Cloudera is also a sponsor of the Apache Software Foundation.
+-
+-
+-
+MVC örneğinde: class / Property / Entity / Attribute 
+
+   public class Book
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [DisplayName("Kitap Adı"), DisplayFormat(NullDisplayText = "Veri yok"), StringLength(30, ErrorMessage = "30 haneden fazla hane girdiniz."), MinLength(2, ErrorMessage = "2 hanedan az hane girdiniz.")]
+        public string BookName { get; set; }
+    }
+
+Yukarıdaki örnekte Book class’ını oluşturduk. 
+Bu class’ın herhangi bir örneğine Entity denir.
+Property’nin üzerine yazdığımız öğelere Attribute denir. Bu durumda [Required], [DisplayName] bir Attribute’dir. (ayrıca Data Annotation)
+-
+-
+-
+Go / Golang	(GITHUB)  (test) 
+go nedir, golang nedir
+
+Go is a statically typed, compiled programming language designed at Google[14] by Robert Griesemer, Rob Pike, and Ken Thompson.[12] Go is syntactically similar to C, but with memory safety, garbage collection, structural typing,[6] and CSP-style concurrency.[15] The language is often referred to as "Golang" because of its domain name, golang.org, but the proper name is Go.[16]
+There are two major implementations:
+•	Google's self-hosting[17] compiler toolchain targeting multiple operating systems, mobile devices,[18] and WebAssembly.[19]
+•	gccgo, a GCC frontend.[20][21]
+A third-party transpiler GopherJS[22] compiles Go to JavaScript for front-end web development.
+-
+-
+-
+-
+
+
+
+
+
+
 
 
 

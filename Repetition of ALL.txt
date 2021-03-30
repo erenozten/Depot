@@ -188,6 +188,37 @@ NantMenu, a Windows Shell Extension allowing you to run NAnt build scripts direc
 -
 -
 -
+Hortonworks	(GITHUB)  (test) 
+Hortonworks nedir
+Hortonworks was a data software company based in Santa Clara, California that developed and supported open-source software (primarily around Apache Hadoop) designed to manage Big Data and associated processing.
+Hortonworks software was used to build enterprise data services and applications such as IOT (connected cars, for example), single view of X (such as customer, risk, patient), and advanced analytics and machine learning (such as next best action and realtime cybersecurity). Hortonworks had three interoperable product lines:
+Hortonworks Data Platform (HDP): based on Apache Hadoop, Apache Hive, Apache Spark
+Hortonworks DataFlow (HDF): based on Apache NiFi, Apache Storm, Apache Kafka
+Hortonworks DataPlane services: based on Apache Atlas and Cloudbreak and a pluggable architecture into which partners such as IBM can add their services.[2]
+In January 2019, Hortonworks completed its merger with Cloudera.
+-
+-
+-
+CakePHP	(GITHUB)  (test) 
+Cakephp nedir
+Pastanın katmanlarını düşün, ismi oradan geliyor. Model view controller katmanları…
+CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License.
+CakePHP uses well-known software engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active record, association data mapping, and front controller.
+CakePHP started in April 2005, when a Polish programmer Michal Tatarynowicz[3] wrote a minimal version of a rapid application development framework in PHP, dubbing it Cake. He published the framework under the MIT license, and opened it up to the online community of developers. In December 2005, L. Masters and G. J. Woodworth founded the Cake Software Foundation to promote development related to CakePHP.[6] Version 1.0 was released in May 2006.
+One of the project's inspirations was Ruby on Rails, using many of its concepts. The community has since grown and spawned several sub-projects.
+-
+-
+-
+Jython    	(empty)  (empty) 
+[Jython nedir]
+Jython, yüksek seviyeli, dinamik ve nesne yönelimli bir dil olan Python'un tamamen Java ile yazılmış bir derleyicisidir. Python kütüphaneleri ile birlikte Java kütüphanesinin kullanımına imkân vermektedir. Jython eskiden JPython olarak bilinirdi. CPython'dakinin aksine tamamen çoklu kullanıma açıktır. Mayıs 2015 itibarıyla son sürümü Jython 2.7.0'dır.
+-
+-
+-
+
+
+
+
 
 
 

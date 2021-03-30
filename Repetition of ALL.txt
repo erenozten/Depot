@@ -394,6 +394,28 @@ The name subprogram suggests a subroutine behaves in much the same way as a comp
 -
 -
 
+Puppet	(empty)  (empty) 
+[puppet nedir]
+PUPPET is a system management tool for centralizing and automating the configuration management process. Puppet is also used as a software deployment tool. It is an open-source configuration management software widely used for server configuration, management, deployment, and orchestration of various applications and services across the whole infrastructure of an organization.
+Puppet is specially designed to manage the configuration of Linux and Windows systems. It is written in Ruby and uses its unique Domain Specific Language (DSL) to describe system configuration.
+What are the Puppet versions?
+Puppet comes in two versions:
+•	Open Source Puppet: It is a basic version of Puppet configuration management tool, which is also known as Open Source Puppet. It is available directly from Puppet's website and is licensed under the Apache 2.0 system.
+•	Puppet Enterprise: Commercial version that offers features like compliance reporting, orchestration, role-based access control,GUI,API and command line tools for effective management of nodes.
+What Puppet can do?
+For example, you have an infrastructure with about 100 servers. As a system admin, it's your role to ensure that all these servers are always up to date and running with full functionality.
+ System Admin working manually on the servers
+To do this, you can use Puppet, which allows you to write a simple code which can be deployed automatically on these servers. This reduces the human effort and makes the development process fast and effective.
+ 
+Puppet automates Server Management
+Puppet performs the following functions:
+•	Puppet allows you to define distinct configurations for every host.
+•	The tool allows you to continuously monitor servers to confirm whether the required configuration exists or not and it is not altered. If the config is changed, Puppet tool will revert to the pre-defined configuration on the host.
+•	It also provides control over all the configured system, so a centralized change gets automatically effected.
+•	It is also used as a deployment tool as it automatically deploys software to the system. It implements the infrastructure as a code because policies and configurations are written as code.
+-
+-
+-
 
 
 

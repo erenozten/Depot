@@ -428,10 +428,47 @@ Impala stores and manages large amounts of data (petabytes).	Relational database
 -
 -
 -
+Apache Nutch	(GITHUB)  (test) 
+Apache Nutch nedir
+Apache Nutch is a highly extensible and scalable open source web crawler software project. Stemming from Apache Lucene, the project has diversified and now comprises two codebases, namely:
+Nutch 1.x: A well matured, production ready crawler. 1.x enables fine grained configuration, relying on Apache Hadoop data structures, which are great for batch processing.
+Nutch 2.x: An emerging alternative taking direct inspiration from 1.x, but which differs in one key area; storage is abstracted away from any specific underlying data store by using Apache Gora for handling object to persistent mappings. This means we can implement an extremely flexibile model/stack for storing everything (fetch time, status, content, parsed text, outlinks, inlinks, etc.) into a number of NoSQL storage solutions.
+Being pluggable and modular of course has it's benefits, Nutch provides extensible interfaces such as Parse, Index and ScoringFilter's for custom implementations e.g. Apache Tika for parsing. Additionally, pluggable indexing exists for Apache Solr, Elastic Search, etc.
+-
+Apache Solr   (GITHUB)  (test)
+apache solr nedir, solr nedir
+Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
+Solr (pronounced "solar") is an open-source enterprise-search platform, written in Java, from the Apache Lucene project. Its major features include full-text search, hit highlighting, faceted search, real-time indexing, dynamic clustering, database integration, NoSQL features[2] and rich document (e.g., Word, PDF) handling. Providing distributed search and index replication, Solr is designed for scalability and fault tolerance.[3] Solr is widely used for enterprise search and analytics use cases and has an active development community and regular releases.
+Solr runs as a standalone full-text search server. It uses the Lucene Java search library at its core for full-text indexing and search, and has REST-like HTTP/XML and JSON APIs that make it usable from most popular programming languages. Solr's external configuration allows it to be tailored to many types of applications without Java coding, and it has a plugin architecture to support more advanced customization.
+Apache Lucene and Apache Solr are both produced by the same Apache Software Foundation development team.
+-
+-
+-
+Apache Spark     	(GITHUB) (test)
+apache spark nedir, spark nedir
+Apache Spark is an open-source distributed general-purpose cluster-computing framework. Spark provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Originally developed at the University of California, Berkeley's AMPLab, the Spark codebase was later donated to the Apache Software Foundation, which has maintained it since.
 
-
-
-
+Overview
+Apache Spark has its architectural foundation in the Resilient Distributed Dataset (RDD), a read-only multiset of data items distributed over a cluster of machines, that is maintained in a fault-tolerant way.[2] The Dataframe API was released as an abstraction on top of the RDD, followed by the Dataset API. In Spark 1.x, the RDD was the primary application programming interface (API), but as of Spark 2.x use of the Dataset API is encouraged[3] even though the RDD API is not deprecated.[4][5] The RDD technology still underlies the Dataset API.[6][7]
+Spark and its RDDs were developed in 2012 in response to limitations in the MapReduce cluster computing paradigm, which forces a particular linear dataflow structure on distributed programs: MapReduce programs read input data from disk, map a function across the data, reduce the results of the map, and store reduction results on disk. Spark's RDDs function as a working set for distributed programs that offers a (deliberately) restricted form of distributed shared memory.[8]
+-
+-
+Metadata 	(GITHUB)  (read)
+metadata nedir
+Metadata is simply data about data. It means it is a description and context of the data. It helps to organize, find and understand data. Here are a few real world examples of metadata:
+Those are some typical metadata elements:
+1.	Title and description,
+2.	Tags and categories,
+3.	Who created and when,
+4.	Who last modified and when,
+5.	Who can access or update.
+Every time you take a photo with today's cameras a bunch of metadata is gathered and saved with it:
+•	date and time,
+•	filename,
+•	camera settings,
+•	geolocation.
+-
+-
 
 
 

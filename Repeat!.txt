@@ -325,5 +325,120 @@ The organization's headquarters are in Washington, D.C. ANSI's operations office
 
 
 
+Bell Labs	(empty)  (empty) 
+Bell labs nedir
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+Bell Laboratuvarları (ayrıca Bell Labs ve geçmişte AT&T Bell Laboratuvarları ve Bell Telefon Laboratuvarları olarak bilinir), önceleri American Telephone & Telegraph Company (AT&T) 'nin şimdilerde ise Alcatel-Lucent 'in araştırma geliştirme kurumudur. Merkezi Murray Hill, New Jersey ABD'de bulunmaktadır.
+
+ 
+Transistörler 1947'de Bell Laboratuvarları'nda icat edilmiştir
+ 
+Murray Hill, New Jersey'deki Bell Laboratuvarları
+
+En başarılı zamanlarında, Bell Laboratuvarları radyo astronomi, transistör, lazer, enformasyon teorisi, UNIX işletim sistemi, ve C programlama dili dahil çok çeşitli devrimsel teknolojiler geliştiren kendi türündeki ilk tesisti. Bell Laboratuvarlarında tamamlanan yedi esere Nobel Ödülü verilmiştir.
+1937, Clinton J. Davisson "Deneysel olarak elektronların kristaller tarafından kırınımlarını" bulmasından dolayı George Paget Thomson ile Nobel Fizik Ödülünü paylaştı.
+1956, John Bardeen, Walter H. Brattain, ve William Shockley"Yarı iletkenlere dair çalışmalarından ve transistör etkisini keşfinden dolayı" Nobel Fizik Ödülünü aldılar.
+1977, Philip W. Anderson "Manyetik düzensiz sistemlerin elektronik yapısına dair temel teorik araştırmalarından dolayı" Nobel Fizik ödülünü Nevill Francis Mott ve John Hasbrouck Van Vleck ile paylaştı.
+1978, Arno A. Penzias ve Robert W. Wilson "Kozmik mikrodalga arka plan ışımasını bulmalarından dolayı" Nobel Fizik Ödülünü aldılar.
+1997, Steven Chu "Laser ışığıyla atomların soğutulması ve yakalanması için bir method geliştirdiğinden dolayı" Nobel Fizik Ödülünü Claude Cohen-Tannoudji ve William Daniel Phillips ile paylaştı.
+1998, Horst Stormer, Robert Laughlin, ve Daniel Tsui çok küçük kuantum koridor etkisini bulmaları ve açıklamaları nedeniyle Nobel Fizik Ödülünü aldılar.
+2009, Willard Boyle ve George E. Smith yarı iletken görüntüleme devresi (CCD sensörü) icat etmelerinden dolayı Nobel Fizik Ödülünü Charles K. Kao ile paylaştılar.-
+-
+-
+-
+-
+Apache
+Apache nedir
+Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules. Most WordPress hosting providers use Apache as their web server software. However, WordPress can run on other web server software as well.
+Apache açık kaynak kodlu, güçlü, sağlam, yetenekli ve esnek bir http (web) sunucusudur. Apache Software Foundation (ASF) tarafından geliştirilir. ASF, Apache yazarları tarafından 1999’da yazılım için yasal bir şemsiye olması için oluşturulmuştur. Açık kaynak kodlu bir yazılımdır, lisansı ücretsizdir. Yazılım firmaları, kurumlara verdikleri hizmetten (kurulum, teknik destek, vb) kazanç sağlarlar.
+Internetteki web sitelerinin %60’ı Apache üzerinde çalışmaktadır. Apache, en yakın rakibi Microsoft’un web sunucularının 3 katı pazar payına sahiptir.
+
+Apache’yi Kim Kullanıyor?
+
+Web siteleri Apache üzerinde çalışan farklı sektörlerden birkaç kurum:
+
+Cumhurbaşkanlığı
+Turkcell
+Migros
+Garanti Bankası
+Sabah Gazetesi
+Sabancı Üniversitesi
+Orta Doğu Teknik Üniversitesi
+AGB Anadolu Ajansı
+Türkiye Odalar ve Borsalar Birliği
+İstanbul Menkul Kıymetler Borsası
+Oracle
+Mercedes-Benz
+Ericsson
+Amazon
+-
+-
+Apache Hadoop	(GITHUB)  (test) 
+Hadoop nedir, apache hadoop nedir
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. Originally designed for computer clusters built from commodity hardware[3]—still the common use—it has also found use on clusters of higher-end hardware. All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common occurrences and should be automatically handled by the framework.
+-
+-
+-
+-
+Apache Hive     	(GITHUB) (test)
+apache hive nedir, hive nedir
+Apache Hive is a data warehouse software project built on top of Apache Hadoop for providing data query and analysis.[3] Hive gives an SQL-like interface to query data stored in various databases and file systems that integrate with Hadoop. Traditional SQL queries must be implemented in the MapReduce Java API to execute SQL applications and queries over distributed data. Hive provides the necessary SQL abstraction to integrate SQL-like queries (HiveQL) into the underlying Java without the need to implement queries in the low-level Java API. Since most data warehousing applications work with SQL-based querying languages, Hive aids portability of SQL-based applications to Hadoop.[4] While initially developed by Facebook, Apache Hive is used and developed by other companies such as Netflix and the Financial Industry Regulatory Authority (FINRA).[5][6] Amazon maintains a software fork of Apache Hive included in Amazon Elastic MapReduce on Amazon Web Services.[7]
+-
+-
+-
+Apache Impala     	(GITHUB) (test)
+apache Impala nedir, apache impala nedir, impala nedir
+What is Impala?
+Impala is a MPP (Massive Parallel Processing) SQL query engine for processing huge volumes of data that is stored in Hadoop cluster. It is an open source software which is written in C++ and Java. It provides high performance and low latency compared to other SQL engines for Hadoop.
+In other words, Impala is the highest performing SQL engine (giving RDBMS-like experience) which provides the fastest way to access data that is stored in Hadoop Distributed File System.
+Why Impala?
+Impala combines the SQL support and multi-user performance of a traditional analytic database with the scalability and flexibility of Apache Hadoop, by utilizing standard components such as HDFS, HBase, Metastore, YARN, and Sentry.
+•	With Impala, users can communicate with HDFS or HBase using SQL queries in a faster way compared to other SQL engines like Hive.
+•	Impala can read almost all the file formats such as Parquet, Avro, RCFile used by Hadoop.
+Impala uses the same metadata, SQL syntax (Hive SQL), ODBC driver, and user interface (Hue Beeswax) as Apache Hive, providing a familiar and unified platform for batch-oriented or real-time queries.
+Unlike Apache Hive, Impala is not based on MapReduce algorithms. It implements a distributed architecture based on daemon processes that are responsible for all the aspects of query execution that run on the same machines.
+Thus, it reduces the latency of utilizing MapReduce and this makes Impala faster than Apache Hive.
+Advantages of Impala
+Here is a list of some noted advantages of Cloudera Impala.
+•	Using impala, you can process data that is stored in HDFS at lightning-fast speed with traditional SQL knowledge.
+•	Since the data processing is carried where the data resides (on Hadoop cluster), data transformation and data movement is not required for data stored on Hadoop, while working with Impala.
+•	Using Impala, you can access the data that is stored in HDFS, HBase, and Amazon s3 without the knowledge of Java (MapReduce jobs). You can access them with a basic idea of SQL queries.
+•	To write queries in business tools, the data has to be gone through a complicated extract-transform-load (ETL) cycle. But, with Impala, this procedure is shortened. The time-consuming stages of loading & reorganizing is overcome with the new techniques such as exploratory data analysis & data discovery making the process faster.
+•	Impala is pioneering the use of the Parquet file format, a columnar storage layout that is optimized for large-scale queries typical in data warehouse scenarios.
+Features of Impala
+Given below are the features of cloudera Impala −
+•	Impala is available freely as open source under the Apache license.
+•	Impala supports in-memory data processing, i.e., it accesses/analyzes data that is stored on Hadoop data nodes without data movement.
+•	You can access data using Impala using SQL-like queries.
+•	Impala provides faster access for the data in HDFS when compared to other SQL engines.
+•	Using Impala, you can store data in storage systems like HDFS, Apache HBase, and Amazon s3.
+•	You can integrate Impala with business intelligence tools like Tableau, Pentaho, Micro strategy, and Zoom data.
+•	Impala supports various file formats such as, LZO, Sequence File, Avro, RCFile, and Parquet.
+•	Impala uses metadata, ODBC driver, and SQL syntax from Apache Hive.
+Relational Databases and Impala
+Impala uses a Query language that is similar to SQL and HiveQL. The following table describes some of the key dfferences between SQL and Impala Query language.
+Impala	Relational databases
+Impala uses an SQL like query language that is similar to HiveQL.	Relational databases use SQL language.
+In Impala, you cannot update or delete individual records.	In relational databases, it is possible to update or delete individual records.
+Impala does not support transactions.	Relational databases support transactions.
+Impala does not support indexing.	Relational databases support indexing.
+Impala stores and manages large amounts of data (petabytes).	Relational databases handle smaller amounts of data (terabytes) when compared to Impala.
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
+
 
 

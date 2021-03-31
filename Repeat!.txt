@@ -469,6 +469,21 @@ Every time you take a photo with today's cameras a bunch of metadata is gathered
 •	geolocation.
 -
 -
+Redux  (GITHUB)  (test) 
+Redux nedir
+https://www.smashingmagazine.com/2018/07/redux-designers-guide/
+
+Let’s say we are building a Dribbble shot page. What is the data we want to display on the page? They include the author’s profile photo, name, the animated GIF, the number of hearts, the comments, and so on.
+ 
+Data on a Dribbble shot page (Large preview)
+First, we need to fetch all these data from a server in the cloud and put it somewhere. Next, we need to actually display the data. We need to assign pieces of this data to corresponding UI elements that represent what we actually see in the browser. For example, we assign the URL of the profile photo to the src attribute of an HTML img tag:
+<img src='https://url/to/profile_photo'>
+Copy
+Finally, we need to handle changes to the data. For example, if a user adds a new comment to a Dribbble shot, or adds a star, we need to update the HTML accordingly.
+Coordinating these three aspects of state is a big part in front-end development, and React has various degree of support for this task. Sometimes the built-in facility in React works well enough. But as the app grows more complex, its state may become harder to manage with React alone. That’s why many people start using Redux as an alternative.
+-
+-
+
 
 
 

@@ -1,263 +1,321 @@
-2021 - REPETITION! (PART II)
--
--
--
--
--
--
-Kısayollar / Keyboard Shortcuts	(GITHUB) (asasas)
-Kısayol nedir, shortcut nedir
--
-KULLANMAYA ALIŞ BUNU: action’ın üzerine ctrl ile tıkla. Usage of Symbol’e tıklayınca action’ın kullanıldığı yerleri görebiliyosun. Mesela View’da kullanılmışsa bu action (httppost metoduysa misal) görebilirsin view’u hemen. Ctrl f yapıp action’ın kullanıldığı yere gitmene gerek yok.
-Muhtemelen class vb için de kullanabiliriz bunu.
--
-Return View();  view() üzerine ctrl ile tıklayınca view dosyasını açıyor
--
-Ctrl-u  Sayfa kaynağını görüntülüyor CHROME
--
------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
-KENDİ CUSTOM AYARLARIM
-
-Comment’leme için kullandığım mucizevi iksir:
-
-Tools -> Options -> Environment -> Keyboard: Edit.CommentSelection yaz search’e. Kısayolunu: Ctrl / yap.
-Tools -> Options -> Environment -> Keyboard: Edit.UncommentSelection yaz search’e. Kısayolunu: Ctrl Shift / yap.
-
-Debug işlemleri için kullandığım mucizevi iksir:
-
-Tools -> Options -> Environment -> Keyboard: Debug.StepInto yaz search’e. Kısayolu: Ctrl + yap.
-
-Tools -> Options -> Environment -> Keyboard: Debug.StepOver yaz search’e. Kısayolu: Ctrl - yap.
-
-Tools -> Options -> Environment -> Keyboard: Debug.StepOut yaz search’e. Kısayolu: Ctrl * yap.
------------------------------------------------
-f2 - değişkene yeni isim ver (sistemdeki hepsinin)
-ctrl alt f9  - breakpoint’e götürüyo seni
-
-Ctrl  backspace    kelimeyi siliyo tamamen sola doğru
-Ctrl  delete kelimeyi olduğu gibi siliyor. Sağa doğru siliyor. // ctrl + backspace de sola  doğru siliyor
-
-ctrl + shift + nokta -> aynı değişkenlerin tümünü aynı anda editleme imkanı sağlıyor. (bende çalışmıyo)
-
--
-Chrome offers “F5” key and the “Ctrl+R” key combination are used to reload the currently open Web page. 
-Chrome also offers the reload shortcut combinations of “Ctrl + F5” and “Ctrl + Shift + R” to reload the currently open page and override the locally cached version.
-Having cursor in the address field and pressing ENTER will also do the same as CTRL + F5
--Home, end (numpad’dakiler) : satırın başına ve sonuna gider. (shift ile de kullanılır, yazıyı seçmek için...)
-
--Klavyenin üstündeki normal home end tuşları: sayfanın başına ve sonuna gider.
-
--Numpad’daki home end tuşları ctrl ile kullanıldığında, tıpkı klavyenin üstündeki home-end tuşları gibi çalışıyor. Yani klavyenin üstündeki home-end tuşlarını kullanmaya gerek yok gibi görünüyor.
-
--Ctrl – yön tuşları  kelimenin başına sonuna gidiyor atlayarak.
-
--Next Error (F2) (çalışmadı)
-
--Previous error (Shift + F2) ) (çalışmadı)
-
--Expand Selection (Ctrl + W)
-
--Ctrl + n  search everywhere (acayip bişey) / create new file
-
-- alt + yukarı aşağı arrows  iki satırın yerini birbiri arasında değiştirme.
-
-- shift + alt  veya sadece alt-> kare alan seçme (çoklu satır)
-
--
-Don’t use anything in the cache when making the request. Forces the browser to re-download every JavaScript file, image, text file, etc.
-Empty Cache and Hard Reload
-Empty Cache and hard reload = Empty the cache and Force the browser do re-download every JavaScript file, image, text file, etc.
-
-Chrome kısayol: 
-Crtl+F5 or Shift+F5 -> re-download cached content (i.e. JavaScript files, images, etc…)
-Normal Reload
-F5 or Control + R = Reload the current page
-“Ctrl+R” is the same thing as pressing f5. This will use the cache in every way possible. If the browser can avoid re-downloading JavaScript files, images, text files, etc. then it will.
-Note: Having cursor in the address field and pressing ENTER will also do the same as CTRL + F5
-HARD RELOAD – NORMAL RELOAD nedir
-Normal reload
-The same thing as pressing F5. This will use the cache but revalidate everything during page load, looking for "304 Not Modified" responses. If the browser can avoid re-downloading cached JavaScript files, images, text files, etc. then it will.
-________________________________________
-Hard reload
-Don't use anything in the cache when making the request. (which is equal to SHIFT+F5 No need to open Developer console) Force the browser do re-download every JavaScript file, image, text file, etc.
--
-
-Hard reload / Force Refresh
-Control + Shift + R or Control + F5 or Shift + F5 = ignoring cached content
-Obviously if the cache is empty then it will have to do a hard reload in order to load the required/support files again. This will again force the browser to re-download everything. However, if the page makes any after the fact downloads via JavaScript that weren’t part of page load, then these might still use the cache, which is where emptying the cache helps because it makes sure that even these won’t use cached files.
-RESHARPER:
-
-Ctrl + T
-
--
-
-Step over code to skip functions
-When you are on a line of code that is a function or method call, you can press F10(Debug > Step Over) instead of F11.
-
-
-Advance the debugger out of the current function
-Sometimes, you might want to continue your debugging session but advance the debugger all the way through the current function.
-Press Shift + F11 (or Debug > Step Out).
-This command resumes app execution (and advances the debugger) until the current function returns.
--
-F10 vs F11
-https://stackoverflow.com/questions/15584132/what-is-the-difference-between-f10-and-f11-keys-in-visual-studio/39843982
-F10 ("step over") does not descend any further into the call stack. It moves to the next line of the current function.
-F11 ("step into") drills down into the function being called.
-void function1()
+namespace TrainingLinqAndSql
 {
-    function2();
-    function3();
-}
-If you hit a breakpoint on function2(), F10 will advance to the line function3(). F11 will advance to the first line inside function2.
--
-
-CHROME
-CTRL + SHIFT + C --> konsolu açmadan (ters tıklayıp incele demeden) mause'un üstünde olduğu elementi seçiyor. Muhteşem.
-
-RESHARPER
-alt FL   SAVE
-
-ALT WL    QUIT ALL
-
-ctrl D	  copy paste
-
-ctrl tab   açık dosyalar arası geçiş 
-ismin adının üstüne gelip F2 -> ismi değiştirmek için (projenin tümünde her yerde değiştirmek için)
-
-ctrl shift r  bir class'ı yeni bir folder'a taşı
-
-ctrl W kopyalıyor bi üst element/metoda kadar. (geri almak için: ctrl shift W)
-
-alt aşağı / yukarı   metodlar arası geçiş
-
-ctrl B  class definition'una gitme (ctrl click ile aynı)
-
-
-windows+ sağ yön tuşu (visual studio’yu ekranın sağına yapıştırıyor. Google chrome’u açıp sola bas, onu da sola yapıştır.
-
-f3    search yapılan text'i ara (diğer satırlarda)
-
-ctrl alt J     kelimeyi <tag> ile çevreleme
-
-ctrl f12    sayfa içinde text ara
-
-ctrl shift R   model'imizi farklı bir klasöre taşımak istiyorsak. (namespace'i de değiştiriyor, kolaylık sağlıyor)
-
-windows + sağ sol yukarı yön tuşları: progrmı büyütme yana yatırma 
-
-ctrl tab   sekmeler arası geçiş
-
-ctrl r     kullanma. F5 ile aynı. Eğer tam refresh yapmak istiyorsan ctrl shift f5 yap.
-
-alt enter (en alttaki seçenekten: sayfadaki aynı textlerin tümünü değiştirme)
--
-ctrl f10 - cursor'ın olduğu yere kadar projeyi çalıştırır. Break point koymuşsun gibi.
--
--
--
-In mathematics, a tuple is a finite ordered list (sequence) of elements. An n-tuple is a sequence (or ordered list) of n elements, where n is a non-negative integer. There is only one 0-tuple, referred to as the empty tuple. An n-tuple is defined inductively using the construction of an ordered pair.
-
-In mathematics, a tuple is a finite ordered list (sequence) of elements. An n-tuple is a sequence (or ordered list) of n elements, where n is a non-negative integer. There is only one 0-tuple, referred to as the empty tuple. An n-tuple is defined inductively using the construction of an ordered pair.
-Mathematicians usually write tuples by listing the elements within parentheses "( )" and separated by commas; for example, (2, 7, 4, 1, 7) denotes a 5-tuple. Sometimes other symbols are used to surround the elements, such as square brackets "[ ]" or angle brackets "⟨ ⟩". Braces "{ }" are only used in defining arrays in some programming languages but not in mathematical expressions, as they are the standard notation for sets. The term tuple can often occur when discussing other mathematical objects, such as vectors.
-In computer science, tuples come in many forms. Most typed functional programming languages implement tuples directly as product types,[1] tightly associated with algebraic data types, pattern matching, and destructuring assignment.[2] Many programming languages offer an alternative to tuples, known as record types, featuring unordered elements accessed by label.[3] A few programming languages combine ordered tuple product types and unordered record types into a single construct, as in C structs and Haskell records. Relational databases may formally identify their rows (records) as tuples.
-Tuples also occur in relational algebra; when programming the semantic web with the Resource Description Framework (RDF); in linguistics;[4] and in philosophy.[5]
-
--
--
--
-SonarQube (formerly Sonar)[2] is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security vulnerabilities.[3][4]
-SonarQube can record metrics history and provides evolution graphs. SonarQube provides fully automated analysis and integration with Maven, Ant, Gradle, MSBuild and continuous integration tools (Atlassian Bamboo, Jenkins, Hudson, etc.).
--
--
--
--
--
-Nant
-NAnt is a free and open source software tool for automating software build processes. It is similar to Apache Ant, but targeted at the .NET environment rather than Java. The name NAnt comes from the fact that the tool is Not Ant.[1]
-NAnt requires one of the .NET frameworks (1.0, 1.1, 2.0, 3.5 or 4.0) or the third party Mono platform.
-Front-ends
-There are several front-end GUI tools available:
-NAntBuilder, a full-featured Integrated Development Environment (IDE) for NAnt. It is designed to be a NAnt script creator, editor, and debugger.
-NAntGUI, an open source tool for editing and running NAnt scripts.
-Nantpad, a commercial tool by Profusion Software Studios that allows authoring, browsing and executing NAnt scripts.
-ColorNAnt, The Perl script ColorNAnt is a wrapper for 'NAnt' and produces the same output but with pretty 'syntax' highlighting. Color schemes can be customized.
-NantMenu, a Windows Shell Extension allowing you to run NAnt build scripts directly from within Windows Explorer.
--
--
--
--
-Hortonworks	(GITHUB)  (test) 
-Hortonworks nedir
-Hortonworks was a data software company based in Santa Clara, California that developed and supported open-source software (primarily around Apache Hadoop) designed to manage Big Data and associated processing.
-Hortonworks software was used to build enterprise data services and applications such as IOT (connected cars, for example), single view of X (such as customer, risk, patient), and advanced analytics and machine learning (such as next best action and realtime cybersecurity). Hortonworks had three interoperable product lines:
-Hortonworks Data Platform (HDP): based on Apache Hadoop, Apache Hive, Apache Spark
-Hortonworks DataFlow (HDF): based on Apache NiFi, Apache Storm, Apache Kafka
-Hortonworks DataPlane services: based on Apache Atlas and Cloudbreak and a pluggable architecture into which partners such as IBM can add their services.[2]
-In January 2019, Hortonworks completed its merger with Cloudera.
--
--
--
-CakePHP	(GITHUB)  (test) 
-Cakephp nedir
-Pastanın katmanlarını düşün, ismi oradan geliyor. Model view controller katmanları…
-CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP, modeled after the concepts of Ruby on Rails, and distributed under the MIT License.
-CakePHP uses well-known software engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active record, association data mapping, and front controller.
-CakePHP started in April 2005, when a Polish programmer Michal Tatarynowicz[3] wrote a minimal version of a rapid application development framework in PHP, dubbing it Cake. He published the framework under the MIT license, and opened it up to the online community of developers. In December 2005, L. Masters and G. J. Woodworth founded the Cake Software Foundation to promote development related to CakePHP.[6] Version 1.0 was released in May 2006.
-One of the project's inspirations was Ruby on Rails, using many of its concepts. The community has since grown and spawned several sub-projects.
--
--
--
-Jython    	(empty)  (empty) 
-[Jython nedir]
-Jython, yüksek seviyeli, dinamik ve nesne yönelimli bir dil olan Python'un tamamen Java ile yazılmış bir derleyicisidir. Python kütüphaneleri ile birlikte Java kütüphanesinin kullanımına imkân vermektedir. Jython eskiden JPython olarak bilinirdi. CPython'dakinin aksine tamamen çoklu kullanıma açıktır. Mayıs 2015 itibarıyla son sürümü Jython 2.7.0'dır.
--
--
--
-BCPL		(bosch)	 (bosch)
-bcpl nedir
-BCPL ("Basic Combined Programming Language") is a procedural, imperative, and structured programming language. Originally intended for writing compilers for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called B, was the language on which the C programming language was based. BCPL introduced several features of many modern programming languages, including using curly braces to delimit code blocks. BCPL was first implemented by Martin Richards of the University of Cambridge in 1967.
-The book BCPL: The language and its compiler describes the philosophy of BCPL as follows:
-"The philosophy of BCPL is not one of the tyrant who thinks he knows best and lays down the law on what is and what is not allowed; rather, BCPL acts more as a servant offering his services to the best of his ability without complaint, even when confronted with apparent nonsense. The programmer is always assumed to know what he is doing and is not hemmed in by petty restrictions."
--
--
--
--
--
--
-Cloudera	(GITHUB)  (test) 
-Cloudera nedir
-Cloudera, Inc. is a US-based software company that provides a software platform for data engineering, data warehousing, machine learning and analytics that runs in the cloud or on premises.
-Cloudera started as a hybrid open-source Apache Hadoop distribution, CDH (Cloudera Distribution Including Apache Hadoop), that targeted enterprise-class deployments of that technology. Cloudera states that more than 50% of its engineering output is donated upstream to the various Apache-licensed open source projects (Apache Spark, Apache Hive, Apache Avro, Apache HBase, and so on) that combine to form the Apache Hadoop platform. Cloudera is also a sponsor of the Apache Software Foundation.
--
--
--
-MVC örneğinde: class / Property / Entity / Attribute 
-
-   public class Book
+    class Program
     {
-        public int Id { get; set; }
+        static void Main(string[] args)
+        {
+            // inner join örneği 
+            // İki tablodaki id'leri eşleşen tüm veriler çekiliyor
+            var result = Employee.GetAllEmployees().Join(Department.GetAllDepartments(), e => e.DepartmentId, d => d.Id, 
+                (emp, dep) => new
+                {
+                    NewName = emp.Name,
+                    NewDepartment = dep.Name
+                });
 
-        [Required]
-        [DisplayName("Kitap Adı"), DisplayFormat(NullDisplayText = "Veri yok"), StringLength(30, ErrorMessage = "30 haneden fazla hane girdiniz."), MinLength(2, ErrorMessage = "2 hanedan az hane girdiniz.")]
-        public string BookName { get; set; }
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.NewName + " " + item.NewDepartment);
+            }
+
+            Console.WriteLine("---");
+
+            var result2 = Employee.GetAllEmployees().Where(e=>e.DepartmentId == 1).Join(Department.GetAllDepartments(), e => e.DepartmentId, d => d.Id,
+                (emp, dep) => new
+                {
+                    NewName = emp.Name,
+                    NewDepartment = dep.Name
+                });
+
+            foreach (var item in result2)
+            {
+                Console.WriteLine(item.NewName + " " + item.NewDepartment);
+            }
+        }
     }
 
-Yukarıdaki örnekte Book class’ını oluşturduk. 
-Bu class’ın herhangi bir örneğine Entity denir.
-Property’nin üzerine yazdığımız öğelere Attribute denir. Bu durumda [Required], [DisplayName] bir Attribute’dir. (ayrıca Data Annotation)
--
--
--
-Go / Golang	(GITHUB)  (test) 
-go nedir, golang nedir
+    class Employee
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-Go is a statically typed, compiled programming language designed at Google[14] by Robert Griesemer, Rob Pike, and Ken Thompson.[12] Go is syntactically similar to C, but with memory safety, garbage collection, structural typing,[6] and CSP-style concurrency.[15] The language is often referred to as "Golang" because of its domain name, golang.org, but the proper name is Go.[16]
-There are two major implementations:
-•	Google's self-hosting[17] compiler toolchain targeting multiple operating systems, mobile devices,[18] and WebAssembly.[19]
-•	gccgo, a GCC frontend.[20][21]
-A third-party transpiler GopherJS[22] compiles Go to JavaScript for front-end web development.
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
+
+        public Department Department { get; set; }
+
+        public static List<Employee> GetAllEmployees()
+        {
+            return new List<Employee>()
+            {
+                new Employee()
+                {
+                    Id = 1,
+                    Name = "Ahmet",
+                    DepartmentId = 1
+                },
+                new Employee()
+                {
+                    Id = 2,
+                    Name = "Mehmet",
+                    DepartmentId = 1
+                },
+                new Employee()
+                {
+                    Id = 3,
+                    Name = "Necdet",
+                    DepartmentId = 2
+                },
+                new Employee()
+                {
+                    Id = 4,
+                    Name = "Şevket",
+                    DepartmentId = 2
+                },
+                new Employee()
+                {
+                    Id = 5,
+                    Name = "Hıdır",
+                },
+                new Employee()
+                {
+                    Id = 6,
+                    Name = "Murat"
+                },
+            }; // örnek employee'ler oluşturulup bu employee'lerin içinde olduğu liste dönülüyor.
+        }
+    }
+
+    class Department
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public List<Employee> Employees { get; set; } = new List<Employee>();
+
+        public static List<Department> GetAllDepartments()
+        {
+            return new List<Department>()
+            {
+                new Department()
+                {
+                    Id = 1,
+                    Name = "HR"
+                },
+                new Department()
+                {
+                    Id = 2,
+                    Name = "IT"
+                },
+                new Department()
+                {
+                    Id = 3,
+                    Name = "Payroll"
+                },
+            }; // örnek department'lar oluşturulup bu department'ların içinde olduğu liste dönülüyor.
+        }
+    }
+
+}
+
+-
+-
+-
+-
+-
+-
+        {
+            int sayi = 942 / 10;
+            string str = sayi.ToString(); // sonuç 94   - Yani sondaki rakamı attı.
+
+            int sayi2 = 8 / 10;
+            string str2 = sayi2.ToString(); // sonuç 0  -  sekizi ona böldü, buradan sonucu sıfır veriyor. Mantıken de böyle olmalı gibi.
+        }
+-
+-
+-
+-
+-
+-
+A LANGUAGE IS STRONGLY TYPED if the compiler can guarantee that the accepted programs will execute without type errors. 
+-
+-
+
+CREATE PROCEDURE NEW44
+AS
+BEGIN
+SELECT [CompanyName], [ContactName]
+FROM CUSTOMERS
+WHERE [ContactName] LIKE 'A_A_E%'
+END
+GO
+-
+-
+-
+-
+-
+-
+CREATE PROCEDURE QWE
+AS
+BEGIN
+SELECT ColumnName, ColumnId FROM DB 
+WHERE  ColumnaSDF LIKE '_%2%_'   -- where içinde kullanılacak property'i SELECT ile seçmemiz gerekmiyor
+END
+GO
+-
+-
+-
+-
+-
+-
+class Kutu
+  {
+      public int Yukseklik { get; set; }
+      public int Genislik { get; set; }
+ 
+      public Kutu(int yuk, int gen)
+      {
+          Yukseklik = yuk;
+          Genislik = gen;
+      }
+ 
+      public static Kutu operator *(Kutu k1, Kutu k2)  // eksi işareti de kullanılabilirdi. Sonuç değişmez. Operatörle ilgisi yok yani. + - * / hepsi aynı sonuç.
+      {
+          int toplamYukseklik = k1.Yukseklik + k2.Yukseklik;
+          int toplamGenislik = k1.Genislik + k2.Genislik;
+ 
+          Kutu k3 = new Kutu(toplamYukseklik, toplamGenislik);
+          return k3;
+      }
+  }
+ 
+  static void Main(string[] args)
+  {
+      Kutu k1 = new Kutu(7, 3);
+      Kutu k2 = new Kutu(16, 4);
+      Kutu k3 = k1 * k2; // burada, static'te belirttiğimiz operatörü kullanıyoruz: *
+ 
+      Console.WriteLine(k3.Yukseklik); //19
+      Console.WriteLine(k3.Genislik); //10
+      Console.ReadKey();
+  }
+-
+-
+-
+-
+-
+-
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+class Program
+{
+    class Student
+    {
+        public string Name { get; set; }
+    }
+
+    class Araba: IAraba
+    {
+        // IAraba'nın metotlarını implement etmesi gerek...
+
+        public void Cam() // implement edilen metotlar PUBLIC olmak zorunda.
+        {
+            Console.WriteLine("");
+        }
+
+        public void Teker()
+        {
+
+        }
+
+        public string CamaYaziYazdir()
+        {
+            return "Text";
+        }
+
+        public Student OgrenciyiArabayaBindir()
+        {
+            Student student = new Student();
+            return student;
+        }
+    }
+
+    //class gibi bir şeydir interface. Parantez açıp kapama yokk. Zaten anlamsız oluyor diğer şekilde.
+    interface IAraba
+    {
+        void Cam(); // köşeli parantez yokk
+        void Teker();
+        string CamaYaziYazdir();
+        Student OgrenciyiArabayaBindir();
+    }
+}
+
+CREATE PROCEDURE QWE
+AS
+BEGIN
+SELECT ColumnName, ColumnId FROM DB 
+WHERE  ColumnaSDF LIKE '_%2%_' 
+END
+-
+-
+xCode             (GITHUB)  (test) 
+xCode nedir
+Xcode macOS, iOS, watchOS ve tvOS için yazılım geliştirmek için Apple tarafından geliştirilen macOS için entegre bir tümleşik geliştirme ortamıdır. Yazılım geliştirme araçlarını içerir. İlk kez 2003 yılında piyasaya çıkan hizmetin en istikrarlı sürümü, sürüm 8.3.3'tür ve Mac App Store'den macOS Sierra kullanıcıları için ücretsiz olarak sunulmaktadır. Kayıtlı geliştiriciler, Apple Developer web sitesinden paketi önizleme sürümlerini ve önceki sürümlerini indirebilirler. Bununla birlikte, Apple son zamanlarda yazılımın sürüm 9 beta 2'nin beta versiyonunu Apple Developer hesaplarıyla halka açık hale getirdi.
+-
+-
+WebPack             (GITHUB)  (test) 
+Webpack nedir
+Webpack is an open-source JavaScript module bundler. It is made primarily for JavaScript, but it can transform front-end assets such as HTML, CSS, and images if the corresponding loaders are included. webpack takes modules with dependencies and generates static assets representing those modules.
+Webpack takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes. It can be used from the command line, or can be configured using a config file which is named webpack.config.js. This file is used to define rules, plugins, etc., for a project. (webpack is highly extensible via rules which allow developers to write custom tasks that they want to perform when bundling files together.)
+Node.js is required for using webpack.
+webpack provides code on demand using the moniker code splitting. The Technical Committee 39 for ECMAScript is working on standardization of a function that loads additional code: "proposal-dynamic-import".
+-
+-
+-
+CSS (Cascading Style Sheets)             (GITHUB)  (test) 
+Css nedir
+CSS, “Cascading Style Sheets” kelimelerinin kısaltılmasından oluştur ve türkçe anlamı Basamaklı Stil Şablonları ya da Basamaklı Biçim Sayfaları şeklindedir.
+Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
+The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.
+-
+-
+-
+ANSI C
+ 
+Gömülü sistemler alanında bilinmesi gereken temel şeylerden biri ANSI C programlama dilidir. Belki C dilini duymuşsunuzdur ama ANSI de ne diye soruyor olabilirsiniz. Kısaca açıklayayım:
+ANSI – Amerikan Ulusal Standartlar Enstitüsü’nün adıdır. ANSI C ile bu kurumun yayınlamış olduğu C programlama dili standartıdır. En geniş kullanımı olan standart 89 yılında yayınlanmıştır. Bu standart ayrıca ANSI C89 olarak da bilinmekte. Şu an birçok derleyici bu standarta göre tasarlanmıştır.
+C ve C++ dilleri farklı olsalar da genellikle bir arada anılıyorlar. Bu konudan daha önceki “C ve C++” farklı programlama dilleridir” yazımda bahsetmiştim. Gömülü sistemler alanında en çok kullanımı bulunan dil C’dir. C dili prosedürel bir dil iken C++ nesneye yönelik bir dildir. Diller değerlendirilirken bu iki fark gözetilmelidir.
+C dili hem assembly gibi donanıma yakın hem de üst seviye dillerin özelliklerine sahip bir dil olduğundan mikroişlemci / mikrodenetleyici tabanlı sistemlerin programlanmasında vazgeçilmez hale gelmiştir. Dolayısıyla gömülü sistemler alanında çalışma yapmak için bu dili öğrenmek de kaçınılmazdır.
+ANSI C öğrenmek denildiğinde sadece bir dil öğrenmekten değil aynı zamanda işlemcilerin çalışma mantığını da öğrenmekten bahsediyoruz. Çoğu zaman donanımla direk olarak konuşan sürücüler yazmak zorunda kalındığında o donanımın yapısı ve çalışma biçimi iyice kavranmadan bunu gerçekleştirmek çok zordur. C dili bize assembly dilinin gücüne yakın bir şekilde ve aynı zamanda onun zorluklarından sıyrılarak programlama yapma olanağı sağlamaktadır.
+ANSI C çalışmaya herhangi bir mikrodenetleyici kullanmadan başlayabilirsiniz. Bunun için internette ücretsiz derleyiciler bulunabiliyor. Bunlardan en yaygın kullanılan bir tanesi DEV-C’yi bu linkten indirebilirsiniz. Dev-C ile C çalışmalarınızı gerçekleştirerek dili iyice kavrayabilirsiniz.
+-
+-
+-
+ANSI C, ISO C and Standard C are successive standards for the C programming language published by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). Historically, the names referred specifically to the original and best-supported version of the standard (known as C89 or C90). Software developers writing in C are encouraged to conform to the standards, as doing so helps portability between compilers.
+-
+-
+-
+-
+ANSI
+The American National Standards Institute (ANSI /ˈænsi/ AN-see) is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States.[3] The organization also coordinates U.S. standards with international standards so that American products can be used worldwide.
+ANSI accredits standards that are developed by representatives of other standards organizations, government agencies, consumer groups, companies, and others. These standards ensure that the characteristics and performance of products are consistent, that people use the same definitions and terms, and that products are tested the same way. ANSI also accredits organizations that carry out product or personnel certification in accordance with requirements defined in international standards.[4]
+The organization's headquarters are in Washington, D.C. ANSI's operations office is located in New York City. The ANSI annual operating budget is funded by the sale of publications, membership dues and fees, accreditation services, fee-based programs, and international standards programs.
 -
 -
 -
@@ -267,167 +325,169 @@ A third-party transpiler GopherJS[22] compiles Go to JavaScript for front-end we
 
 
 
-Spring Boot  	(GITHUB) (test)
-spring boot nedir, springboot nedir
-Spring Boot is an open source Java-based framework used to create a micro Service. It is developed by Pivotal Team and is used to build stand-alone and production ready spring applications. This chapter will give you an introduction to Spring Boot and familiarizes you with its basic concepts.
-What is Micro Service?
-Micro Service is an architecture that allows the developers to develop and deploy services independently. Each service running has its own process and this achieves the lightweight model to support business applications.
-Advantages
-Micro services offers the following advantages to its developers −
-•	Easy deployment
-•	Simple scalability
-•	Compatible with Containers
-•	Minimum configuration
-•	Lesser production time
-What is Spring Boot? 	
-Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run. You can get started with minimum configurations without the need for an entire Spring configuration setup.
-Advantages
-Spring Boot offers the following advantages to its developers −
-•	Easy to understand and develop spring applications
-•	Increases productivity
-•	Reduces the development time
-Goals
-Spring Boot is designed with the following goals −
-•	To avoid complex XML configuration in Spring
-•	To develop a production ready Spring applications in an easier way
-•	To reduce the development time and run the application independently
-•	Offer an easier way of getting started with the application-
--
--
-Spring             (GITHUB)  (test) 
-Spring nedir
-The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. Although the framework does not impose any specific programming model, it has become popular in the Java community as an addition to the Enterprise JavaBeans (EJB) model. The Spring Framework is open source. -
--
--
--
-Smalltalk	(edited) (test)
-smalltalk nedir
-Xerox PARC'ta (Palo Alto Research Center) geliştirilmiş nesne yönelimli bir programlama dilidir.
-Definition - What does Smalltalk mean?
-Smalltalk is an object-oriented programming (OOP) language that incorporates dynamic runtime typing methodology and maneuverability.
-
-Mostly used for application modeling, Smalltalk was created based on basic object principles, which dictate that each thing is an object, and each object can communicate with other objects.
-
-Smalltalk was initially released as version Smalltalk-80 in the 1970s by the Learning Research Group at Xerox Palo Alto Research Center Inc.
-Techopedia explains Smalltalk
-Because Smalltalk is dynamic and does not require variable type declarations, processing is determined by the receiving object. Type checking is performed at run time, rather than compiling time. Smalltalk also offers tremendous runtime application modification and maneuverability, which extends to syntax or the integrated development environment (IDE).
-
-The central concept in Smalltalk is an object, which is an instance of a class. The three operations performed by a Smalltalk object are:
-•	Receive messages from itself or other objects
-•	Send messages to itself or another object
-•	Reference other objects.
-Messaging is the most important concept in Smalltalk. Upon receiving a message, the receiver determines whether it is appropriate. A message can be sent to any object. Other objects can query the state only by sending messages to the object. The language construct in Smalltalk are messages. By default, Smalltalk uses a synchronous, single dynamic message dispatch strategy. Expressions in Smalltalk include multiple message send.
-
-Smalltalk considers primitive values such as integers, Booleans and characters as objects because they are instances of corresponding classes, and operations on them are invoked by sending messages. A programmer can change the classes that implement primitive values to define new behavior for their instances. Classes and code blocks are objects in Smalltalk. Each class is an instance of the metaclass of that class where metaclasses are also objec
--
--
-Look And Feel          (GITHUB)  (test) 
-Look and feel nedir
-In software design, the look and feel of a graphical user interface comprises aspects of its design, including elements such as colors, shapes, layout, and typefaces (the "look"), as well as the behavior of dynamic elements such as buttons, boxes, and menus (the "feel"). The term can also refer to aspects of a non-graphical user interface (such as a command-line interface), as well as to aspects of an API – mostly to parts of an API that are not related to its functional properties. The term is used in reference to both software and websites.
-Look and feel applies to other products. In documentation, for example, it refers to the graphical layout (document size, color, font, etc.) and the writing style. In the context of equipment, it refers to consistency in controls and displays across a product line.
-Look and feel in operating system user interfaces serves two general purposes. First, it provides branding, helping to identify a set of products from one company. Second, it increases ease of use, since users will become familiar with how one product functions (looks, reads, etc.) and can translate their experience to other products with the same look and feel.
--
--
--
-
-
-
-
-
-JPA / Java Persistence API   	(GITHUB) (test)
-Jpa nedir
-
-The Java ORM standard for storing, accessing, and managing Java objects in a relational database.
-As a specification, the Java Persistence API is concerned with persistence, which loosely means any mechanism by which Java objects outlive the application process that created them. Not all Java objects need to be persisted, but most applications persist key business objects. The JPA specification lets you define which objects should be persisted, and how those objects should be persisted in your Java applications.
-By itself, JPA is not a tool or framework; rather, it defines a set of concepts that can be implemented by any tool or framework. While JPA's object-relational mapping (ORM) model was originally based on Hibernate, it has since evolved. Likewise, while JPA was originally intended for use with relational/SQL databases, some JPA implementations have been extended for use with NoSQL datastores. A popular framework that supports JPA with NoSQL is EclipseLink, the reference implementation for JPA 2.2.
-The Java Persistence API was first released as a subset of the EJB 3.0 specification (JSR 220) in Java EE 5. It has since evolved as its own spec, starting with the release of JPA 2.0 in Java EE 6 (JSR 317). As of this writing, JPA 2.2 has been adopted for continuation as part of Jakarta EE.
-JPA and Hibernate
-Because of their intertwined history, Hibernate and JPA are frequently conflated. However, like the Java Servlet specification, JPA has spawned many compatible tools and frameworks; Hibernate is just one of them.
-What is Java ORM?
-While they differ in execution, every JPA implementation provides some kind of ORM layer. In order to understand JPA and JPA-compatible tools, you need to have a good grasp on ORM.
-Object-relational mapping is a task–one that developers have good reason to avoid doing manually. A framework like Hibernate ORM or EclipseLink codifies that task into a library or framework, an ORM layer. As part of the application architecture, the ORM layer is responsible for managing the conversion of software objects to interact with the tables and columns in a relational database. In Java, the ORM layer converts Java classes and objects so that they can be stored and managed in a relational database.
-[ Learn Java from beginning concepts to advanced design patterns in this comprehensive 12-part course! ]
-By default, the name of the object being persisted becomes the name of the table, and fields become columns. Once the table is set up, each table row corresponds to an object in the application. Object mapping is configurable, but defaults tend to work well.
-JPA with NoSQL
-Until fairly recently, non-relational databases were uncommon curiosities. The NoSQL movement changed all that, and now a variety of NoSQL databases are available to Java developers. Some JPA implementations have evolved to embrace NoSQL, including Hibernate OGM and EclipseLink.
--
--
-Apache Maven  	(GITHUB) (test)
-maven nedir, apache maven nedir
-Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. The Maven project is hosted by the Apache Software Foundation, where it was formerly part of the Jakarta Project.
--
--
--
-Reverse engineering / Tersine Mühendislik / Backwards Engineering / (test)  (test) 
-Reverse engineering nedir, tersine mühendislik nedir, backward engineering nedir, back engineering nedir
-Reverse engineering, also called backwards engineering or back engineering, is the process by which an artificial object is deconstructed to reveal its designs, architecture, code or to extract knowledge from the object. It is similar to scientific research, the only difference being that scientific research occurs for a natural phenomenon
-Reverse engineering is applicable in the fields of computer engineering, mechanical engineering, electronic engineering, software engineering, chemical engineering,[2] and systems biology.[3]-
--
--
--
-PyCharm		(bosch)	 (bosch)
-pycharm nedir
-PyCharm, çapraz platform bir Python geliştirme ortamı (IDE)'dir. Kod analizleri, grafiksel hata ayıklamacısı (debugger), versiyon kontrol sistemi (VCS) ile entegre ve Django ile Python web geliştirmeleri yapılmasını sağlamaktadır.
-
-Çapraz platformu Windows, OS X ve GNU/Linux işletim sistemleri üzerinde çalışır. PyCharm Community Edition ücretsiz olarak indirilebilir bir sürümdür. Genelde öğrenciler tarafından kullanılmaktadır. Professional Edition ise ücretli bir sürümdür ve gelişmiş özellikleri bulunmaktadır. 
--
--
--
--
--
-MacOS (Macintosh Operating System)	(GITHUB) (test)
-macOS nedir, mac nedir, macintosh nedir
-macOS, (eski adları "Mac OS X" ve "OS X") Macintosh işletim sistemi ailesinin son sürümüdür ve Apple Inc. tarafından Macintosh bilgisayarları için tasarlanmış bir işletim sistemidir.
--
--
--
--
-Subroutine  	(empty)  (empty) 
-[Subroutine nedir]
+Bell Labs	(empty)  (empty) 
+Bell labs nedir
 Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
 -
 -
-In computer programming, a subroutine is a sequence of program instructions that performs a specific task, packaged as a unit. This unit can then be used in programs wherever that particular task should be performed.
-Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes used.[1]
-The name subprogram suggests a subroutine behaves in much the same way as a computer program that is used as one step in a larger program or another subprogram. A subroutine is often coded so that it can be started several times and from several places during one execution of the program, including from other subroutines, and then branch back (return) to the next instruction after the call, once the subroutine's task is done. The idea of a subroutine was initially conceived by John Mauchly during his work on ENIAC,[2] and recorded in a January 1947 Harvard symposium on "Preparation of Problems for EDVAC-type Machines".[3] Maurice Wilkes, David Wheeler, and Stanley Gill are generally credited with the formal invention of this concept, which they termed a closed subroutine,[4][5] contrasted with an open subroutine or macro.[6] However, Turing had discussed subroutines in a paper of 1945 on design proposals for the NPL ACE, going so far as to invent the concept of a return address stack.[7]
--
--
--
+Bell Laboratuvarları (ayrıca Bell Labs ve geçmişte AT&T Bell Laboratuvarları ve Bell Telefon Laboratuvarları olarak bilinir), önceleri American Telephone & Telegraph Company (AT&T) 'nin şimdilerde ise Alcatel-Lucent 'in araştırma geliştirme kurumudur. Merkezi Murray Hill, New Jersey ABD'de bulunmaktadır.
 
-Puppet	(empty)  (empty) 
-[puppet nedir]
-PUPPET is a system management tool for centralizing and automating the configuration management process. Puppet is also used as a software deployment tool. It is an open-source configuration management software widely used for server configuration, management, deployment, and orchestration of various applications and services across the whole infrastructure of an organization.
-Puppet is specially designed to manage the configuration of Linux and Windows systems. It is written in Ruby and uses its unique Domain Specific Language (DSL) to describe system configuration.
-What are the Puppet versions?
-Puppet comes in two versions:
-•	Open Source Puppet: It is a basic version of Puppet configuration management tool, which is also known as Open Source Puppet. It is available directly from Puppet's website and is licensed under the Apache 2.0 system.
-•	Puppet Enterprise: Commercial version that offers features like compliance reporting, orchestration, role-based access control,GUI,API and command line tools for effective management of nodes.
-What Puppet can do?
-For example, you have an infrastructure with about 100 servers. As a system admin, it's your role to ensure that all these servers are always up to date and running with full functionality.
- System Admin working manually on the servers
-To do this, you can use Puppet, which allows you to write a simple code which can be deployed automatically on these servers. This reduces the human effort and makes the development process fast and effective.
  
-Puppet automates Server Management
-Puppet performs the following functions:
-•	Puppet allows you to define distinct configurations for every host.
-•	The tool allows you to continuously monitor servers to confirm whether the required configuration exists or not and it is not altered. If the config is changed, Puppet tool will revert to the pre-defined configuration on the host.
-•	It also provides control over all the configured system, so a centralized change gets automatically effected.
-•	It is also used as a deployment tool as it automatically deploys software to the system. It implements the infrastructure as a code because policies and configurations are written as code.
+Transistörler 1947'de Bell Laboratuvarları'nda icat edilmiştir
+ 
+Murray Hill, New Jersey'deki Bell Laboratuvarları
+
+En başarılı zamanlarında, Bell Laboratuvarları radyo astronomi, transistör, lazer, enformasyon teorisi, UNIX işletim sistemi, ve C programlama dili dahil çok çeşitli devrimsel teknolojiler geliştiren kendi türündeki ilk tesisti. Bell Laboratuvarlarında tamamlanan yedi esere Nobel Ödülü verilmiştir.
+1937, Clinton J. Davisson "Deneysel olarak elektronların kristaller tarafından kırınımlarını" bulmasından dolayı George Paget Thomson ile Nobel Fizik Ödülünü paylaştı.
+1956, John Bardeen, Walter H. Brattain, ve William Shockley"Yarı iletkenlere dair çalışmalarından ve transistör etkisini keşfinden dolayı" Nobel Fizik Ödülünü aldılar.
+1977, Philip W. Anderson "Manyetik düzensiz sistemlerin elektronik yapısına dair temel teorik araştırmalarından dolayı" Nobel Fizik ödülünü Nevill Francis Mott ve John Hasbrouck Van Vleck ile paylaştı.
+1978, Arno A. Penzias ve Robert W. Wilson "Kozmik mikrodalga arka plan ışımasını bulmalarından dolayı" Nobel Fizik Ödülünü aldılar.
+1997, Steven Chu "Laser ışığıyla atomların soğutulması ve yakalanması için bir method geliştirdiğinden dolayı" Nobel Fizik Ödülünü Claude Cohen-Tannoudji ve William Daniel Phillips ile paylaştı.
+1998, Horst Stormer, Robert Laughlin, ve Daniel Tsui çok küçük kuantum koridor etkisini bulmaları ve açıklamaları nedeniyle Nobel Fizik Ödülünü aldılar.
+2009, Willard Boyle ve George E. Smith yarı iletken görüntüleme devresi (CCD sensörü) icat etmelerinden dolayı Nobel Fizik Ödülünü Charles K. Kao ile paylaştılar.-
 -
 -
 -
+-
+Apache
+Apache nedir
+Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules. Most WordPress hosting providers use Apache as their web server software. However, WordPress can run on other web server software as well.
+Apache açık kaynak kodlu, güçlü, sağlam, yetenekli ve esnek bir http (web) sunucusudur. Apache Software Foundation (ASF) tarafından geliştirilir. ASF, Apache yazarları tarafından 1999’da yazılım için yasal bir şemsiye olması için oluşturulmuştur. Açık kaynak kodlu bir yazılımdır, lisansı ücretsizdir. Yazılım firmaları, kurumlara verdikleri hizmetten (kurulum, teknik destek, vb) kazanç sağlarlar.
+Internetteki web sitelerinin %60’ı Apache üzerinde çalışmaktadır. Apache, en yakın rakibi Microsoft’un web sunucularının 3 katı pazar payına sahiptir.
 
+Apache’yi Kim Kullanıyor?
 
+Web siteleri Apache üzerinde çalışan farklı sektörlerden birkaç kurum:
 
+Cumhurbaşkanlığı
+Turkcell
+Migros
+Garanti Bankası
+Sabah Gazetesi
+Sabancı Üniversitesi
+Orta Doğu Teknik Üniversitesi
+AGB Anadolu Ajansı
+Türkiye Odalar ve Borsalar Birliği
+İstanbul Menkul Kıymetler Borsası
+Oracle
+Mercedes-Benz
+Ericsson
+Amazon
+-
+-
+Apache Hadoop	(GITHUB)  (test) 
+Hadoop nedir, apache hadoop nedir
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. Originally designed for computer clusters built from commodity hardware[3]—still the common use—it has also found use on clusters of higher-end hardware. All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common occurrences and should be automatically handled by the framework.
+-
+-
+-
+-
+Apache Hive     	(GITHUB) (test)
+apache hive nedir, hive nedir
+Apache Hive is a data warehouse software project built on top of Apache Hadoop for providing data query and analysis.[3] Hive gives an SQL-like interface to query data stored in various databases and file systems that integrate with Hadoop. Traditional SQL queries must be implemented in the MapReduce Java API to execute SQL applications and queries over distributed data. Hive provides the necessary SQL abstraction to integrate SQL-like queries (HiveQL) into the underlying Java without the need to implement queries in the low-level Java API. Since most data warehousing applications work with SQL-based querying languages, Hive aids portability of SQL-based applications to Hadoop.[4] While initially developed by Facebook, Apache Hive is used and developed by other companies such as Netflix and the Financial Industry Regulatory Authority (FINRA).[5][6] Amazon maintains a software fork of Apache Hive included in Amazon Elastic MapReduce on Amazon Web Services.[7]
+-
+-
+-
+Apache Impala     	(GITHUB) (test)
+apache Impala nedir, apache impala nedir, impala nedir
+What is Impala?
+Impala is a MPP (Massive Parallel Processing) SQL query engine for processing huge volumes of data that is stored in Hadoop cluster. It is an open source software which is written in C++ and Java. It provides high performance and low latency compared to other SQL engines for Hadoop.
+In other words, Impala is the highest performing SQL engine (giving RDBMS-like experience) which provides the fastest way to access data that is stored in Hadoop Distributed File System.
+Why Impala?
+Impala combines the SQL support and multi-user performance of a traditional analytic database with the scalability and flexibility of Apache Hadoop, by utilizing standard components such as HDFS, HBase, Metastore, YARN, and Sentry.
+•	With Impala, users can communicate with HDFS or HBase using SQL queries in a faster way compared to other SQL engines like Hive.
+•	Impala can read almost all the file formats such as Parquet, Avro, RCFile used by Hadoop.
+Impala uses the same metadata, SQL syntax (Hive SQL), ODBC driver, and user interface (Hue Beeswax) as Apache Hive, providing a familiar and unified platform for batch-oriented or real-time queries.
+Unlike Apache Hive, Impala is not based on MapReduce algorithms. It implements a distributed architecture based on daemon processes that are responsible for all the aspects of query execution that run on the same machines.
+Thus, it reduces the latency of utilizing MapReduce and this makes Impala faster than Apache Hive.
+Advantages of Impala
+Here is a list of some noted advantages of Cloudera Impala.
+•	Using impala, you can process data that is stored in HDFS at lightning-fast speed with traditional SQL knowledge.
+•	Since the data processing is carried where the data resides (on Hadoop cluster), data transformation and data movement is not required for data stored on Hadoop, while working with Impala.
+•	Using Impala, you can access the data that is stored in HDFS, HBase, and Amazon s3 without the knowledge of Java (MapReduce jobs). You can access them with a basic idea of SQL queries.
+•	To write queries in business tools, the data has to be gone through a complicated extract-transform-load (ETL) cycle. But, with Impala, this procedure is shortened. The time-consuming stages of loading & reorganizing is overcome with the new techniques such as exploratory data analysis & data discovery making the process faster.
+•	Impala is pioneering the use of the Parquet file format, a columnar storage layout that is optimized for large-scale queries typical in data warehouse scenarios.
+Features of Impala
+Given below are the features of cloudera Impala −
+•	Impala is available freely as open source under the Apache license.
+•	Impala supports in-memory data processing, i.e., it accesses/analyzes data that is stored on Hadoop data nodes without data movement.
+•	You can access data using Impala using SQL-like queries.
+•	Impala provides faster access for the data in HDFS when compared to other SQL engines.
+•	Using Impala, you can store data in storage systems like HDFS, Apache HBase, and Amazon s3.
+•	You can integrate Impala with business intelligence tools like Tableau, Pentaho, Micro strategy, and Zoom data.
+•	Impala supports various file formats such as, LZO, Sequence File, Avro, RCFile, and Parquet.
+•	Impala uses metadata, ODBC driver, and SQL syntax from Apache Hive.
+Relational Databases and Impala
+Impala uses a Query language that is similar to SQL and HiveQL. The following table describes some of the key dfferences between SQL and Impala Query language.
+Impala	Relational databases
+Impala uses an SQL like query language that is similar to HiveQL.	Relational databases use SQL language.
+In Impala, you cannot update or delete individual records.	In relational databases, it is possible to update or delete individual records.
+Impala does not support transactions.	Relational databases support transactions.
+Impala does not support indexing.	Relational databases support indexing.
+Impala stores and manages large amounts of data (petabytes).	Relational databases handle smaller amounts of data (terabytes) when compared to Impala.
+-
+-
+-
+Apache Nutch	(GITHUB)  (test) 
+Apache Nutch nedir
+Apache Nutch is a highly extensible and scalable open source web crawler software project. Stemming from Apache Lucene, the project has diversified and now comprises two codebases, namely:
+Nutch 1.x: A well matured, production ready crawler. 1.x enables fine grained configuration, relying on Apache Hadoop data structures, which are great for batch processing.
+Nutch 2.x: An emerging alternative taking direct inspiration from 1.x, but which differs in one key area; storage is abstracted away from any specific underlying data store by using Apache Gora for handling object to persistent mappings. This means we can implement an extremely flexibile model/stack for storing everything (fetch time, status, content, parsed text, outlinks, inlinks, etc.) into a number of NoSQL storage solutions.
+Being pluggable and modular of course has it's benefits, Nutch provides extensible interfaces such as Parse, Index and ScoringFilter's for custom implementations e.g. Apache Tika for parsing. Additionally, pluggable indexing exists for Apache Solr, Elastic Search, etc.
+-
+Apache Solr   (GITHUB)  (test)
+apache solr nedir, solr nedir
+Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
+Solr (pronounced "solar") is an open-source enterprise-search platform, written in Java, from the Apache Lucene project. Its major features include full-text search, hit highlighting, faceted search, real-time indexing, dynamic clustering, database integration, NoSQL features[2] and rich document (e.g., Word, PDF) handling. Providing distributed search and index replication, Solr is designed for scalability and fault tolerance.[3] Solr is widely used for enterprise search and analytics use cases and has an active development community and regular releases.
+Solr runs as a standalone full-text search server. It uses the Lucene Java search library at its core for full-text indexing and search, and has REST-like HTTP/XML and JSON APIs that make it usable from most popular programming languages. Solr's external configuration allows it to be tailored to many types of applications without Java coding, and it has a plugin architecture to support more advanced customization.
+Apache Lucene and Apache Solr are both produced by the same Apache Software Foundation development team.
+-
+-
+-
+Apache Spark     	(GITHUB) (test)
+apache spark nedir, spark nedir
+Apache Spark is an open-source distributed general-purpose cluster-computing framework. Spark provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Originally developed at the University of California, Berkeley's AMPLab, the Spark codebase was later donated to the Apache Software Foundation, which has maintained it since.
 
+Overview
+Apache Spark has its architectural foundation in the Resilient Distributed Dataset (RDD), a read-only multiset of data items distributed over a cluster of machines, that is maintained in a fault-tolerant way.[2] The Dataframe API was released as an abstraction on top of the RDD, followed by the Dataset API. In Spark 1.x, the RDD was the primary application programming interface (API), but as of Spark 2.x use of the Dataset API is encouraged[3] even though the RDD API is not deprecated.[4][5] The RDD technology still underlies the Dataset API.[6][7]
+Spark and its RDDs were developed in 2012 in response to limitations in the MapReduce cluster computing paradigm, which forces a particular linear dataflow structure on distributed programs: MapReduce programs read input data from disk, map a function across the data, reduce the results of the map, and store reduction results on disk. Spark's RDDs function as a working set for distributed programs that offers a (deliberately) restricted form of distributed shared memory.[8]
+-
+-
+Metadata 	(GITHUB)  (read)
+metadata nedir
+Metadata is simply data about data. It means it is a description and context of the data. It helps to organize, find and understand data. Here are a few real world examples of metadata:
+Those are some typical metadata elements:
+1.	Title and description,
+2.	Tags and categories,
+3.	Who created and when,
+4.	Who last modified and when,
+5.	Who can access or update.
+Every time you take a photo with today's cameras a bunch of metadata is gathered and saved with it:
+•	date and time,
+•	filename,
+•	camera settings,
+•	geolocation.
+-
+-
+Redux  (GITHUB)  (test) 
+Redux nedir
+https://www.smashingmagazine.com/2018/07/redux-designers-guide/
 
-
-
-
-
-
-
-
+Let’s say we are building a Dribbble shot page. What is the data we want to display on the page? They include the author’s profile photo, name, the animated GIF, the number of hearts, the comments, and so on.
+ 
+Data on a Dribbble shot page (Large preview)
+First, we need to fetch all these data from a server in the cloud and put it somewhere. Next, we need to actually display the data. We need to assign pieces of this data to corresponding UI elements that represent what we actually see in the browser. For example, we assign the URL of the profile photo to the src attribute of an HTML img tag:
+<img src='https://url/to/profile_photo'>
+Copy
+Finally, we need to handle changes to the data. For example, if a user adds a new comment to a Dribbble shot, or adds a star, we need to update the HTML accordingly.
+Coordinating these three aspects of state is a big part in front-end development, and React has various degree of support for this task. Sometimes the built-in facility in React works well enough. But as the app grows more complex, its state may become harder to manage with React alone. That’s why many people start using Redux as an alternative.
+-
+-
+Apache Pig     	(GITHUB) (test)
+pig nedir, apache pig nedir
+Apache Pig[1] is a high-level platform for creating programs that run on Apache Hadoop. The language for this platform is called Pig Latin.[1] Pig can execute its Hadoop jobs in MapReduce, Apache Tez, or Apache Spark.[2] Pig Latin abstracts the programming from the Java MapReduce idiom into a notation which makes MapReduce programming high level, similar to that of SQL for relational database management systems. Pig Latin can be extended using user-defined functions (UDFs) which the user can write in Java, Python, JavaScript, Ruby or Groovy[3] and then call directly from the language.
+-
+-
 
 
 

@@ -268,4 +268,62 @@ BEGIN
 SELECT ColumnName, ColumnId FROM DB 
 WHERE  ColumnaSDF LIKE '_%2%_' 
 END
+-
+-
+xCode             (GITHUB)  (test) 
+xCode nedir
+Xcode macOS, iOS, watchOS ve tvOS için yazılım geliştirmek için Apple tarafından geliştirilen macOS için entegre bir tümleşik geliştirme ortamıdır. Yazılım geliştirme araçlarını içerir. İlk kez 2003 yılında piyasaya çıkan hizmetin en istikrarlı sürümü, sürüm 8.3.3'tür ve Mac App Store'den macOS Sierra kullanıcıları için ücretsiz olarak sunulmaktadır. Kayıtlı geliştiriciler, Apple Developer web sitesinden paketi önizleme sürümlerini ve önceki sürümlerini indirebilirler. Bununla birlikte, Apple son zamanlarda yazılımın sürüm 9 beta 2'nin beta versiyonunu Apple Developer hesaplarıyla halka açık hale getirdi.
+-
+-
+WebPack             (GITHUB)  (test) 
+Webpack nedir
+Webpack is an open-source JavaScript module bundler. It is made primarily for JavaScript, but it can transform front-end assets such as HTML, CSS, and images if the corresponding loaders are included. webpack takes modules with dependencies and generates static assets representing those modules.
+Webpack takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes. It can be used from the command line, or can be configured using a config file which is named webpack.config.js. This file is used to define rules, plugins, etc., for a project. (webpack is highly extensible via rules which allow developers to write custom tasks that they want to perform when bundling files together.)
+Node.js is required for using webpack.
+webpack provides code on demand using the moniker code splitting. The Technical Committee 39 for ECMAScript is working on standardization of a function that loads additional code: "proposal-dynamic-import".
+-
+-
+-
+CSS (Cascading Style Sheets)             (GITHUB)  (test) 
+Css nedir
+CSS, “Cascading Style Sheets” kelimelerinin kısaltılmasından oluştur ve türkçe anlamı Basamaklı Stil Şablonları ya da Basamaklı Biçim Sayfaları şeklindedir.
+Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
+The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.
+-
+-
+-
+ANSI C
+ 
+Gömülü sistemler alanında bilinmesi gereken temel şeylerden biri ANSI C programlama dilidir. Belki C dilini duymuşsunuzdur ama ANSI de ne diye soruyor olabilirsiniz. Kısaca açıklayayım:
+ANSI – Amerikan Ulusal Standartlar Enstitüsü’nün adıdır. ANSI C ile bu kurumun yayınlamış olduğu C programlama dili standartıdır. En geniş kullanımı olan standart 89 yılında yayınlanmıştır. Bu standart ayrıca ANSI C89 olarak da bilinmekte. Şu an birçok derleyici bu standarta göre tasarlanmıştır.
+C ve C++ dilleri farklı olsalar da genellikle bir arada anılıyorlar. Bu konudan daha önceki “C ve C++” farklı programlama dilleridir” yazımda bahsetmiştim. Gömülü sistemler alanında en çok kullanımı bulunan dil C’dir. C dili prosedürel bir dil iken C++ nesneye yönelik bir dildir. Diller değerlendirilirken bu iki fark gözetilmelidir.
+C dili hem assembly gibi donanıma yakın hem de üst seviye dillerin özelliklerine sahip bir dil olduğundan mikroişlemci / mikrodenetleyici tabanlı sistemlerin programlanmasında vazgeçilmez hale gelmiştir. Dolayısıyla gömülü sistemler alanında çalışma yapmak için bu dili öğrenmek de kaçınılmazdır.
+ANSI C öğrenmek denildiğinde sadece bir dil öğrenmekten değil aynı zamanda işlemcilerin çalışma mantığını da öğrenmekten bahsediyoruz. Çoğu zaman donanımla direk olarak konuşan sürücüler yazmak zorunda kalındığında o donanımın yapısı ve çalışma biçimi iyice kavranmadan bunu gerçekleştirmek çok zordur. C dili bize assembly dilinin gücüne yakın bir şekilde ve aynı zamanda onun zorluklarından sıyrılarak programlama yapma olanağı sağlamaktadır.
+ANSI C çalışmaya herhangi bir mikrodenetleyici kullanmadan başlayabilirsiniz. Bunun için internette ücretsiz derleyiciler bulunabiliyor. Bunlardan en yaygın kullanılan bir tanesi DEV-C’yi bu linkten indirebilirsiniz. Dev-C ile C çalışmalarınızı gerçekleştirerek dili iyice kavrayabilirsiniz.
+-
+-
+-
+ANSI C, ISO C and Standard C are successive standards for the C programming language published by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). Historically, the names referred specifically to the original and best-supported version of the standard (known as C89 or C90). Software developers writing in C are encouraged to conform to the standards, as doing so helps portability between compilers.
+-
+-
+-
+-
+ANSI
+The American National Standards Institute (ANSI /ˈænsi/ AN-see) is a private non-profit organization that oversees the development of voluntary consensus standards for products, services, processes, systems, and personnel in the United States.[3] The organization also coordinates U.S. standards with international standards so that American products can be used worldwide.
+ANSI accredits standards that are developed by representatives of other standards organizations, government agencies, consumer groups, companies, and others. These standards ensure that the characteristics and performance of products are consistent, that people use the same definitions and terms, and that products are tested the same way. ANSI also accredits organizations that carry out product or personnel certification in accordance with requirements defined in international standards.[4]
+The organization's headquarters are in Washington, D.C. ANSI's operations office is located in New York City. The ANSI annual operating budget is funded by the sale of publications, membership dues and fees, accreditation services, fee-based programs, and international standards programs.
+-
+-
+-
+-
+
+
+
+
+
+
 

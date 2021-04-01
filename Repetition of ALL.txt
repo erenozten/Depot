@@ -488,6 +488,224 @@ pig nedir, apache pig nedir
 Apache Pig[1] is a high-level platform for creating programs that run on Apache Hadoop. The language for this platform is called Pig Latin.[1] Pig can execute its Hadoop jobs in MapReduce, Apache Tez, or Apache Spark.[2] Pig Latin abstracts the programming from the Java MapReduce idiom into a notation which makes MapReduce programming high level, similar to that of SQL for relational database management systems. Pig Latin can be extended using user-defined functions (UDFs) which the user can write in Java, Python, JavaScript, Ruby or Groovy[3] and then call directly from the language.
 -
 -
+In mathematics, a tuple is a finite ordered list (sequence) of elements. An n-tuple is a sequence (or ordered list) of n elements, where n is a non-negative integer. There is only one 0-tuple, referred to as the empty tuple. An n-tuple is defined inductively using the construction of an ordered pair.
+
+In mathematics, a tuple is a finite ordered list (sequence) of elements. An n-tuple is a sequence (or ordered list) of n elements, where n is a non-negative integer. There is only one 0-tuple, referred to as the empty tuple. An n-tuple is defined inductively using the construction of an ordered pair.
+Mathematicians usually write tuples by listing the elements within parentheses "( )" and separated by commas; for example, (2, 7, 4, 1, 7) denotes a 5-tuple. Sometimes other symbols are used to surround the elements, such as square brackets "[ ]" or angle brackets "⟨ ⟩". Braces "{ }" are only used in defining arrays in some programming languages but not in mathematical expressions, as they are the standard notation for sets. The term tuple can often occur when discussing other mathematical objects, such as vectors.
+In computer science, tuples come in many forms. Most typed functional programming languages implement tuples directly as product types,[1] tightly associated with algebraic data types, pattern matching, and destructuring assignment.[2] Many programming languages offer an alternative to tuples, known as record types, featuring unordered elements accessed by label.[3] A few programming languages combine ordered tuple product types and unordered record types into a single construct, as in C structs and Haskell records. Relational databases may formally identify their rows (records) as tuples.
+Tuples also occur in relational algebra; when programming the semantic web with the Resource Description Framework (RDF); in linguistics;[4] and in philosophy.[5]
+-
+-
+C# 
+(double, int) t1 = (4.5, 3);
+Console.WriteLine($"Tuple with elements {t1.Item1} and {t1.Item2}.");
+// Output:
+// Tuple with elements 4.5 and 3.
+
+(double Sum, int Count) t2 = (4.5, 3);
+Console.WriteLine($"Sum of {t2.Count} elements is {t2.Sum}.");
+// Output:
+// Sum of 3 elements is 4.5.
+As the preceding example shows, to define a tuple type, you specify types of all its data members and, optionally, the field names. You cannot define methods in a tuple type, but you can use the methods provided by .NET, as the following example shows:
+C#Kopyala
+Çalıştır
+(double, int) t = (4.5, 3);
+Console.WriteLine(t.ToString());
+Console.WriteLine($"Hash code of {t} is {t.GetHashCode()}.");
+// Output:
+// (4.5, 3)
+// Hash code of (4.5, 3) is 718460086.
+Beginning with C# 7.3, tuple types support equality operators == and !=. For more information, see the Tuple equality section.
+Tuple types are value types; tuple elements are public fields. That makes tuples mutable value types.
+ Not
+The tuples feature requires the System.ValueTuple type and related generic types (for example, System.ValueTuple<T1,T2>), which are available in .NET Core and .NET Framework 4.7 and later. To use tuples in a project that targets .NET Framework 4.6.2 or earlier, add the NuGet package System.ValueTuple to the project.
+You can define tuples with an arbitrary large number of elements:
+C#Kopyala
+Çalıştır
+var t = 
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+11, 12, 13, 14, 15, 16, 17, 18,
+19, 20, 21, 22, 23, 24, 25, 26);
+Console.WriteLine(t.Item26);  // output: 26
+Use cases of tuples
+One of the most common use cases of tuples is as a method return type. That is, instead of defining out method parameters, you can group method results in a tuple return type, as the following example shows:
+C#Kopyala
+Çalıştır
+var xs = new[] { 4, 7, 9 };
+var limits = FindMinMax(xs);
+Console.WriteLine($"Limits of [{string.Join(" ", xs)}] are {limits.min} and {limits.max}");
+// Output:
+// Limits of [4 7 9] are 4 and 9
+
+var ys = new[] { -9, 0, 67, 100 };
+var (minimum, maximum) = FindMinMax(ys);
+Console.WriteLine($"Limits of [{string.Join(" ", ys)}] are {minimum} and {maximum}");
+// Output:
+// Limits of [-9 0 67 100] are -9 and 100
+
+(int min, int max) FindMinMax(int[] input)
+{
+    if (input is null || input.Length == 0)
+    {
+        throw new ArgumentException("Cannot find minimum and maximum of a null or empty array.");
+    }
+
+    var min = int.MaxValue;
+    var max = int.MinValue;
+    foreach (var i in input)
+    {
+        if (i < min)
+        {
+            min = i;
+        }
+        if (i > max)
+        {
+            max = i;
+        }
+    }
+    return (min, max);
+}
+As the preceding example shows, you can work with the returned tuple instance directly or deconstruct it in separate variables.
+You can also use tuple types instead of anonymous types; for example, in LINQ queries. For more information, see Choosing between anonymous and tuple types.
+Typically, you use tuples to group loosely related data elements. That is usually useful within private and internal utility methods. In the case of public API, consider defining a class or a structure type.
+Tuple field names
+You can explicitly specify the names of tuple fields either in a tuple initialization expression or in the definition of a tuple type, as the following example shows:
+C#Kopyala
+Çalıştır
+var t = (Sum: 4.5, Count: 3);
+Console.WriteLine($"Sum of {t.Count} elements is {t.Sum}.");
+
+(double Sum, int Count) d = (4.5, 3);
+Console.WriteLine($"Sum of {d.Count} elements is {d.Sum}.");
+Beginning with C# 7.1, if you don't specify a field name, it may be inferred from the name of the corresponding variable in a tuple initialization expression, as the following example shows:
+C#Kopyala
+Çalıştır
+var sum = 4.5;
+var count = 3;
+var t = (sum, count);
+Console.WriteLine($"Sum of {t.count} elements is {t.sum}.");
+That's known as tuple projection initializers. The name of a variable isn't projected onto a tuple field name in the following cases:
+•	The candidate name is a member name of a tuple type, for example, Item3, ToString, or Rest.
+•	The candidate name is a duplicate of another tuple field name, either explicit or implicit.
+In those cases you either explicitly specify the name of a field or access a field by its default name.
+The default names of tuple fields are Item1, Item2, Item3 and so on. You can always use the default name of a field, even when a field name is specified explicitly or inferred, as the following example shows:
+C#Kopyala
+Çalıştır
+var a = 1;
+var t = (a, b: 2, 3);
+Console.WriteLine($"The 1st element is {t.Item1} (same as {t.a}).");
+Console.WriteLine($"The 2nd element is {t.Item2} (same as {t.b}).");
+Console.WriteLine($"The 3rd element is {t.Item3}.");
+// Output:
+// The 1st element is 1 (same as 1).
+// The 2nd element is 2 (same as 2).
+// The 3rd element is 3.
+Tuple assignment and tuple equality comparisons don't take field names into account.
+At compile time, the compiler replaces non-default field names with the corresponding default names. As a result, explicitly specified or inferred field names aren't available at run time.
+Tuple assignment and deconstruction
+C# supports assignment between tuple types that satisfy both of the following conditions:
+•	both tuple types have the same number of elements
+•	for each tuple position, the type of the right-hand tuple element is the same as or implicitly convertible to the type of the corresponding left-hand tuple element
+Tuple element values are assigned following the order of tuple elements. The names of tuple fields are ignored and not assigned, as the following example shows:
+C#Kopyala
+Çalıştır
+(int, double) t1 = (17, 3.14);
+(double First, double Second) t2 = (0.0, 1.0);
+t2 = t1;
+Console.WriteLine($"{nameof(t2)}: {t2.First} and {t2.Second}");
+// Output:
+// t2: 17 and 3.14
+
+(double A, double B) t3 = (2.0, 3.0);
+t3 = t2;
+Console.WriteLine($"{nameof(t3)}: {t3.A} and {t3.B}");
+// Output:
+// t3: 17 and 3.14
+You can also use the assignment operator = to deconstruct a tuple instance in separate variables. You can do that in one of the following ways:
+•	Explicitly declare the type of each variable inside parentheses:
+C#Kopyala
+Çalıştır
+var t = ("post office", 3.6);
+(string destination, double distance) = t;
+Console.WriteLine($"Distance to {destination} is {distance} kilometers.");
+// Output:
+// Distance to post office is 3.6 kilometers.
+•	Use the var keyword outside the parentheses to declare implicitly typed variables and let the compiler infer their types:
+C#Kopyala
+Çalıştır
+var t = ("post office", 3.6);
+var (destination, distance) = t;
+Console.WriteLine($"Distance to {destination} is {distance} kilometers.");
+// Output:
+// Distance to post office is 3.6 kilometers.
+•	Use existing variables:
+C#Kopyala
+Çalıştır
+var destination = string.Empty;
+var distance = 0.0;
+
+var t = ("post office", 3.6);
+(destination, distance) = t;
+Console.WriteLine($"Distance to {destination} is {distance} kilometers.");
+// Output:
+// Distance to post office is 3.6 kilometers.
+For more information about deconstruction of tuples and other types, see Deconstructing tuples and other types.
+Tuple equality
+Beginning with C# 7.3, tuple types support the == and != operators. These operators compare members of the left-hand operand with the corresponding members of the right-hand operand following the order of tuple elements.
+C#Kopyala
+Çalıştır
+(int a, byte b) left = (5, 10);
+(long a, int b) right = (5, 10);
+Console.WriteLine(left == right);  // output: True
+Console.WriteLine(left != right);  // output: False
+
+var t1 = (A: 5, B: 10);
+var t2 = (B: 5, A: 10);
+Console.WriteLine(t1 == t2);  // output: True
+Console.WriteLine(t1 != t2);  // output: False
+As the preceding example shows, the == and != operations don't take into account tuple field names.
+Two tuples are comparable when both of the following conditions are satisfied:
+•	Both tuples have the same number of elements. For example, t1 != t2 doesn't compile if t1 and t2 have different numbers of elements.
+•	For each tuple position, the corresponding elements from the left-hand and right-hand tuple operands are comparable with the == and != operators. For example, (1, (2, 3)) == ((1, 2), 3) doesn't compile because 1 is not comparable with (1, 2).
+The == and != operators compare tuples in short-circuiting way. That is, an operation stops as soon as it meets a pair of non equal elements or reaches the ends of tuples. However, before any comparison, all tuple elements are evaluated, as the following example shows:
+C#Kopyala
+Çalıştır
+Console.WriteLine((Display(1), Display(2)) == (Display(3), Display(4)));
+
+int Display(int s)
+{
+    Console.WriteLine(s);
+    return s;
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// False
+Tuples as out parameters
+Typically, you refactor a method that has out parameters into a method that returns a tuple. However, there are cases in which an out parameter can be of a tuple type. The following example shows how to work with tuples as out parameters:
+C#Kopyala
+Çalıştır
+var limitsLookup = new Dictionary<int, (int Min, int Max)>()
+{
+    [2] = (4, 10),
+    [4] = (10, 20),
+    [6] = (0, 23)
+};
+
+if (limitsLookup.TryGetValue(4, out (int Min, int Max) limits))
+{
+    Console.WriteLine($"Found limits: min is {limits.Min}, max is {limits.Max}");
+}
+// Output:
+// Found limits: min is 10, max is 20
+Tuples vs System.Tuple
+C# tuples, which are backed by System.ValueTuple types, are different from tuples that are represented by System.Tuple types. The main differences are as follows:
+•	ValueTuple types are value types. Tuple types are reference types.
+•	ValueTuple types are mutable. Tuple types are immutable.
+•	Data members of ValueTuple types are fields. Data members of Tuple types are properties.
+
 
 
 

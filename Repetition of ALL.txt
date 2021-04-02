@@ -1120,6 +1120,78 @@ Subaru
 
 
 
+Chef     	(empty)  (empty) 
+[chef nedir]
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+Chef is a company and the name of a configuration management tool written in Ruby and Erlang. It uses a pure-Ruby, domain-specific language (DSL) for writing system configuration "recipes". Chef is used to streamline the task of configuring and maintaining a company's servers, and can integrate with cloud-based platforms such as Internap, Amazon EC2, Google Cloud Platform, Oracle Cloud, OpenStack, SoftLayer, Microsoft Azure, and Rackspace to automatically provision and configure new machines. Chef contains solutions for both small and large scale systems, with features and pricing for the respective ranges.
+-
+-
+
+
+
+
+
+
+
+C     	(empty)  (empty) 
+c nedir, c programlama dili nedir, c dili nedir
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+AT&T Bell laboratuvarlarında, Ken Thompson ve Dennis Ritchie tarafından UNIX İşletim Sistemi' ni geliştirebilmek amacıyla B dilinden türetilmiş yapısal bir programlama dilidir. Geliştirilme tarihi 1972 olmasına rağmen yayılıp yaygınlaşması Brian Kernighan ve Dennis M. Ritchie tarafından yayımlanan "C Programlama Dili" kitabından sonra hızlanmıştır. 
+
+Günümüzde neredeyse tüm işletim sistemlerinin (Microsoft Windows, GNU/Linux, *BSD, Minix) yapımında %95' lere varan oranda kullanılmış, hâlen daha sistem, sürücü yazılımı, işletim sistemi modülleri ve hız gereken her yerde kullanılan oldukça yaygın ve sınırları belirsiz oldukça keskin bir dildir.[kaynak belirtilmeli]" Keskinliği, programcıya sonsuz özgürlüğün yanında çok büyük hatalar yapabilme olanağı sağlamasıdır. Programlamanın gelişim süreciyle beraber programlamanın karmaşıklaşması, gereksinimlerin artması ile uygulama programlarında nesne yönelimliliğin ortaya çıkmasından sonra C programcıları büyük ölçüde nesne yönelimliliği destekleyen C++ diline geçmişlerdir.
+ 
+C Dilinin erken tarihi
+C'nin ilk gelişme safhaları 1969 ile 1974 arasında AT&T Bell Laboratuvarları'nda gerçekleşti. Ritchie'ye göre, en yaratıcı devre 1972 idi. Dilin pek çok özelliği "B" adlı bir dilden türediği için, yeni dile "C" adı verildi. B dili yorumlanan bir dildi ve veri tipi desteği yoktu. Yeni donanımların farklı veri tiplerini desteklemesi, ve yorumlanan dillerin çalışma zamanında görece yavaş olması sebebi ile, C dili, tip desteği eklenmiş ve derlenen B olarak geliştirildi.
+"B" adının kökeni konusunda ise söylentiler değişik: Ken Thompson B'nin BCPL programlama dilinden türediğini söylemektedir, ancak Thompson eşi Bonnie'nin onuruna adını Bon koyduğu bir programlama dili de geliştirmiştir.
+1973'e kadar C yeterince güçlü bir hale gelmiş ve ilk başta PDP-11/20 assembly dili ile yazılan UNIX'in çekirdeğinin büyük kısmı C ile yeniden yazılmıştı. 
+(Linus Torvalds tarafından temelleri atılan Linux, UNIX olmayıp bir UNIX türevidir. UNIX'ten ilham alan, bir grup bağımsız yazılımcı tarafından geliştirilen bir işletim sistemi çekirdeğidir.)
+Böylece UNIX, çekirdeği bir assembly dili ile yazılmayan ilk işletim sistemlerinden biri olmuştu.
+-
+-
+-
+-
+-
+Coder vs Developer              (GITHUB)  (test) 
+Coder nedir, developer nedir
+Anyone who can write some code is often referred to as a coder by the people outside of the tech industry. But, usually, coders are considered the least trained or experienced level of programmers. These individuals do not have the same algorithmic knowledge as a programmer or developer, as they are often a beginner in the field, skilled in just one coding language. Coders are usually given the job of writing forthright pieces of code that can easily be delegated by the developers. As some are put-off by the title, it is sometimes used interchangeably with “Junior Programmer” or “Junior Developer.”
+-
+-
+-
+-
+Web Server	 (GITHUB)
+Web server nedir
+Web server ya da ağ sunucusu, internet üzerinde bir web sitesinin yayınından sorumlu olan sunucudur. Web server, Hosting ya da “barındırma” işlemini internet protokolü üzerinden sunan bir sunucudur. Barındırma ya da hosting, Web sayfalarını internette yayınlamak için gerekli alanın kiralanmasıdır. Diğer bir ifade ile hosting, bir Web sitesinde yayınlanmak istenen sayfaların, resimlerin veya dokümanların internet kullanıcıları tarafından erişebileceği bir bilgisayarda tutulmasıdır.
+A Web server is software or hardware that uses HTTP and other protocols to respond to client requests made over the World Wide Web (WWW). Web server software controls how a user accesses hosted files. It is accessed through the domain names of websites and ensures the delivery of the site's content to the requesting user. As hardware, a Web server is a computer that holds web server software and other files related to a website, such as HTML documents, images and JavaScript files. Web server hardware is connected to the internet and allows data to be exchanged with other connected devices.
+The Web server process is an example of the client/server model. All computers that host Web sites must have Web server software. 
+Leading Web servers include Apache, Microsoft's Internet Information Server (IIS) and Nginx -- pronounced engine X. Other Web servers include Novell's NetWare server, Google Web Server (GWS) and IBM's family of Domino servers.
+Web servers often come as part of a larger package of internet- and intranet-related programs that are used for:
+•	Sending and receiving emails.
+•	Downloading requests for File Transfer Protocol (FTP) files.
+•	Building and publishing Web pages.
+Considerations in choosing a Web server include how well it works with the operating system and other servers; its ability to handle server-side programming; security characteristics; and the particular publishing, search engine and site building tools that come with it.
+So basically a web server is the software that receives your request to access a web page. It runs a few security checks on your HTTP request and takes you to the web page. Depending on the page you have requested, the page may ask the server to run a few extra modules while generating the document to serve you. It then serves you the document you requested. Pretty awesome isn’t it.
+-
+A web server is server software, or hardware dedicated to running this software, that can satisfy client requests on the World Wide Web. A web server can, in general, contain one or more websites. A web server processes incoming network requests over HTTP and several other related protocols.
+The primary function of a web server is to store, process and deliver web pages to clients.[1] The communication between client and server takes place using the Hypertext Transfer Protocol (HTTP). Pages delivered are most frequently HTML documents, which may include images, style sheets and scripts in addition to the text content.
+ 
+Multiple web servers may be used for a high traffic website; here, Dell servers are installed together being used for the Wikimedia Foundation.
+A user agent, commonly a web browser or web crawler, initiates communication by making a request for a specific resource using HTTP and the server responds with the content of that resource or an error message if unable to do so. The resource is typically a real file on the server's secondary storage, but this is not necessarily the case and depends on how the web server is implemented.
+While the major function is to serve content, a full implementation of HTTP also includes ways of receiving content from clients. This feature is used for submitting web forms, including uploading of files.
+Many generic web servers also support server-side scripting using Active Server Pages (ASP), PHP (Hypertext Preprocessor), or other scripting languages. This means that the behaviour of the web server can be scripted in separate files, while the actual server software remains unchanged. Usually, this function is used to generate HTML documents dynamically ("on-the-fly") as opposed to returning static documents. The former is primarily used for retrieving or modifying information from databases. The latter is typically much faster and more easily cached but cannot deliver dynamic content.
+-
+-
+
+
+
+
+
+
+
+
 
 
 

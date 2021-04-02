@@ -1021,6 +1021,101 @@ However, it is a difficult job when they are working on a massive infrastructure
 -
 -
 -
+Design language / Design Vocabulary          (GITHUB)  (test) 
+Design language nedir
+A design language or design vocabulary is an overarching scheme or style that guides the design of a complement of products or architectural settings.
+The term “Design Language” is used to describe the overall visual design of a digital product. Chances are, you’ve already got a set of resources that you refer to as your Design Language. But what makes a set of UI elements a design language?
+At first glance, it appears to be: an amalgamation of component designs with a consistent visual aesthetic and brand, typically accompanied by usage guidelines in the form of online documentation. This is all good, but there’s a tremendous amount missing from this picture; arguably the very things that make it a language in the first place.
+Visual communication is a complicated beast, and in most cases we over-simplify it in order to ship a consistent UI. I’m as guilty as anyone in this. However, what we cannot ignore the fact that a visual interface is in fact a very sophisticated method of visual communication that warrants attention to detail and an understanding of how the elements of design are used to speak to our users.
+For the purpose of this article, when I refer to “design elements,” I am speaking to foundational elements such as color, shape, line, contrast, repetition, economy, shadows, animation types, measurements of time, etc. If thinking in terms of Atomic Design, these are the sub-atomic particles.
+What is a Language?
+Let’s start with a cliché. The definition of a Language (Dictionary.com):
+“[4.] any set or system of such symbols as used in a more or less uniform fashion by a number of people, who are thus enabled to communicate intelligibly with one another.”
+“[5.] any system of formalized symbols, signs, sounds, gestures, or the like used or conceived as a means of communicating thought, emotion, etc.”
+“[7.] communication of meaning in any way; medium that is expressive, significant, etc.”
+Pretty clear here that in order to call a set of designs a “design language”, they need to have a formal, unified system of meanings as a way to intelligibly communicate with our users.
+ 
+ 
+If we look to written and verbal communication as a framework to guide us, we can see an atomic structure and patterns emerge that parallel UI design.
+1.	Words have meaning
+2.	Punctuation has meaning
+3.	Types of words (nouns, adjectives, and verbs) have meaning.
+4.	Grouped words have meaning & give formal structure
+5.	Sentences have meaning & give formal structure
+6.	Paragraphs have meaning & give formal structure
+From here it continues to grow and we define more complex, larger methods of communication above these, level such as how to structure scientific objectives (hypothesis, method, result), term papers (thesis statement, outline, content, conclusion), and a myriad of story structures.
+It’s clear that languages are complex systems. Everything has meaning and intent, and the structures and ways in which we combine these structures expand upon their meanings or create new ones altogether.
+ 
+ 
+Make rules, then follow them.
+Clear and consistent rules are what make languages successful. Inconsistencies, ambiguity, or straight-up contradictions can make languages very hard to learn, teach, and understand. How many times have you been confused by the rule “I before E, except after C”?
+ 
+ 
+And make sure your rules are logical, not confusing
+Language as it relates to the visual interface
+A component can be a combination of atoms and molecules, so we need to define the atomic design elements in a way that gives semantic meaning, just like languages define punctuation and word types. The foundation of creating a Visual Design Language is
+•	Clearly defined semantics (and no, “error”, “warning”, “success”, and “info” aren’t nearly enough)
+•	Thorough and mature mapping of core elements of design with clear purposes and meanings
+•	A solid family of UI components and patterns that effectively support the semantics, and use design elements (based on their meanings) to support the meaning of the components
+•	Thorough, comprehensive documentation about the visual communication system
+ 
+ 
+Colors are a great example of semantics, and may have multiple meanings, or no meaning at all.
+Your pattern library or style guide is the dictionary and thesaurus for your Visual Design Language. Documenting the core semantics, structures, and meanings behind the elements of design (color, line, shape, etc) will add a concrete foundation behind the decisions that are made in designing and the usage of components in your interface.
+Give yourself a Litmus test
+When you’re working on your pattern library, UI Kit, or however else you prepare your Visual Design Language, there are some ways to ensure your design is truly linguistic. Comb through every single element of the designs and ask yourself:
+•	What does this color mean?
+•	What does dimensionality mean (such shadows/bevels)?
+•	What does the thickness of a border mean?
+•	What does a rounded corner mean?
+•	What do my fonts say/mean?
+•	What does the use of italics mean?
+A simple framework is to fill in the blanks of this statement:
+The ______ used in the ______ helps to communicate _________.
+The first item of the statement is a specific design element, the second line is the component or pattern you are analyzing, and the final item is the semantic.
+Example: The line thickness used in the primary button component helps to communicate important interactive elements.
+Most design elements may have no meaning at all when you create your first design language. But evolving your system to follow and support semantics of the most atomic or subatomic elements will help your system to mature into a true visual language.
+-
+-
+-
+-
+Objectives
+Designers wishing to give their suite of products a unique but consistent look and feel define a specification for it, which can describe choices for design aspects such as materials, colour schemes, shapes, patterns, textures, or layouts. They then follow the scheme in the design of each object in the suite.
+Usually, design languages are not rigorously defined; the designer basically makes one thing in a similar manner as another. In other cases, they are followed strictly, so that the products gain a strong thematic quality. For example, although there is a great variety of unusual chess set designs, the pieces within a set are usually thematically consistent.
+Sometimes, designers encourage others to follow their design languages when decorating or accessorizing.
+Industrial design
+In automobiles, the design language is often in the grille design. For instance, many BMW vehicles share a design language,[1] including front-end styling consisting of a split "kidney grille" and four circular headlights. Some manufacturers have appropriated design language cues from rival firms.
+Software
+In software architecture, design languages are related to architecture description languages. The most well known design language is Unified Modeling Language.[citation needed]
+In the context of graphical user interfaces, for example, human interface guidelines can be thought of as design languages for applications.
+Examples
+Apple
+•	Snow White
+•	Platinum
+•	Aqua
+•	Flat Design
+Microsoft
+•	Metro
+•	Fluent Design System
+•	Windows Aero
+Google
+•	Material Design
+Automotive
+Cadillac
+•	Art and Science
+Ford
+•	New Edge
+•	Kinetic Design
+Mazda
+•	Nagare
+•	Kodo[4]
+Mitsubishi
+•	Dynamic Shield[5]
+Subaru
+•	Dynamic x Solid[6]-
+-
+-
+
 
 
 

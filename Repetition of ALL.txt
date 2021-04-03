@@ -1199,6 +1199,22 @@ The fundamental problem addressed by a type theory is to ensure that programs ha
 Assigning a data type, termed typing, gives meaning to a sequence of bits such as a value in memory or some object such as a variable. The hardware of a general purpose computer is unable to discriminate between for example a memory address and an instruction code, or between a character, an integer, or a floating-point number, because it makes no intrinsic distinction between any of the possible values that a sequence of bits might mean.[note 1] Associating a sequence of bits with a type conveys that meaning to the programmable hardware to form a symbolic system composed of that hardware and some program.
 
 -
+Operations Support Systems (OSS)	(empty)  (empty) 
+[OSS nedir, Operations Support Systems nedir]
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+Operations Support Systems (OSS), or Operational Support Systems in British usage,[1] are computer systems used by telecommunications service providers to manage their networks (e.g., telephone networks). They support management functions such as network inventory, service provisioning, network configuration and fault management.
+Together with Business Support Systems (BSS), they are used to support various end-to-end telecommunication services. BSS and OSS have their own data and service responsibilities. The two systems together are often abbreviated OSS/BSS, BSS/OSS or simply B/OSS.
+The acronym OSS is also used in a singular form to refer to all the Operations Support Systems viewed as a whole system.
+Different subdivisions of OSS have been proposed by the TM Forum, industrial research labs or OSS vendors. In general, an OSS covers at least the following five functions:
+•	Network management systems
+•	Service delivery
+•	Service fulfillment, including the network inventory, activation and provisioning
+•	Service assurance
+•	Customer care
+-
+
 
 
 

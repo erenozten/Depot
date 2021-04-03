@@ -1214,6 +1214,86 @@ Different subdivisions of OSS have been proposed by the TM Forum, industrial res
 •	Service assurance
 •	Customer care
 -
+NPM	(GITHUB) (örnek)
+npm  nedir
+npm, short for Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. These applications can be searched for on http://npmjs.org/. Once you have a package you want to install, it can be installed with a single command-line command.
+ 
+npm is the world's largest Software Library (Registry)
+npm is also a software Package Manager and Installer
+________________________________________
+The World's Largest Software Registry (Library)
+npm is the world's largest Software Registry.
+The registry contains over 800,000 code packages.
+Open-source developers use npm to share software.
+Many organizations also use npm to manage private development.
+________________________________________
+Using npm is Free
+npm is free to use.
+You can download all npm public software packages without any registration or logon.
+________________________________________
+Command Line Client
+npm includes a CLI (Command Line Client) that can be used to download and install software:
+Windows Example
+C:\>npm install <package>
+Mac OS Example
+>npm install <package>
+________________________________________
+Installing npm
+npm is installed with Node.js
+This means that you have to install Node.js to get npm installed on your computer.
+Download Node.js from the official Node.js web site: https://nodejs.org
+________________________________________
+Software Package Manager
+The name npm (Node Package Manager) stems from when npm first was created as a package manager for Node.js.
+All npm packages are defined in files called package.json.
+The content of package.json must be written in JSON.
+At least two fields must be present in the definition file: name and version.
+Example
+{
+"name" : "foo",
+"version" : "1.2.3",
+"description" : "A package for fooing things",
+"main" : "foo.js",
+"keywords" : ["foo", "fool", "foolish"],
+"author" : "John Doe",
+"licence" : "ISC"
+}
+________________________________________
+Managing Dependencies
+npm can manage dependencies.
+npm can (in one command line) install all the dependencies of a project.
+Dependencies are also defined in package.json.
+________________________________________
+Sharing Your Software
+If you want to share your own software in the npm registry, you can sign in at:
+https://www.npmjs.com
+________________________________________
+Publishing a Package
+You can publish any directory from your computer as long as the directory has a package.json file.
+Check if npm is installed:
+C:\>npm
+Check if you are logged in:
+C:\>npm whoami
+If not, log in:
+C:\>npm login
+Username: <your username>
+Password: <your password>
+Navigate to your project and publish your project:
+C:\Users\myuser>cd myproject
+C:\Users\myuser\myproject>npm publish
+-
+
+Let's say you're hard at work one day, developing the Next Great Application. You come across a problem, and you decide that it's time to use that cool library you keep hearing about - let's use Caolan McMahon's async as an example. Thankfully, npm is very simple to use: you only have to run npm install async, and the specified module will be installed in the current directory under ./node_modules/. Once installed to your node_modules folder, you'll be able to use require() on them just like they were built-ins.
+Let's look at an example of a global install - let's say coffee-script. The npm command is simple: npm install coffee-script -g. This will typically install the program and put a symlink to it in /usr/local/bin/. This will then allow you to run the program from the console just like any other CLI tool. In this case, running coffee will now allow you to use the coffee-script REPL.
+Another important use for npm is dependency management. When you have a node project with a package.json file, you can run npm install from the project root and npm will install all the dependencies listed in the package.json. This makes installing a Node.js project from a git repo much easier! For example, vows, a Node.js testing framework, can be installed from git, and its single dependency, eyes, can be automatically handled:
+Example:
+git clone https://github.com/cloudhead/vows.git
+cd vows
+npm install
+After running those commands, you will see a node_modules folder containing all of the project dependencies specified in the package.json.
+-
+-
+
 
 
 

@@ -1315,6 +1315,37 @@ These are just some of the possible usage scenarios. There are other commands th
 -
 -
 -
+GUI 			(GITHUB)
+GUI nedir, gui nedir
+ 
+A graphical user interface (GUI) is a type of user interface through which users interact with electronic devices via visual indicator representations.
+
+What is a Graphical User Interface?
+The graphical user interface, developed in the late 1970s by the Xerox Palo Alto research laboratory and deployed commercially in Apple’s Macintosh and Microsoft’s Windows operating systems, was designed as a response to the problem of inefficient usability in early, text-based command-line interfaces for the average user.
+Graphical user interfaces would become the standard of user-centered design in software application programming, providing users the capability to intuitively operate computers and other electronic devices through the direct manipulation of graphical icons such as buttons, scroll bars, windows, tabs, menus, cursors, and the mouse pointing device. Many modern graphical user interfaces feature touchscreen and voice-command interaction capabilities.
+How Does a Graphical User Interface Work?
+Graphical user interface design principles conform to the model–view–controller software pattern, which separates internal representations of information from the manner in which information is presented to the user, resulting in a platform where users are shown which functions are possible rather than requiring the input of command codes. Users interact with information by manipulating visual widgets, which are designed to respond in accordance with the type of data they hold and support the actions necessary to complete the user’s task.
+
+The appearance, or “skin,” of an operating system or application software may be redesigned at will due to the nature of graphical user interfaces being independent from application functions. Applications typically implement their own unique graphical user interface display elements in addition to graphical user interface elements already present on the existing operating system. A typical graphical user interface also includes standard formats for representing graphics and text, making it possible to share data between applications running under common graphical user interface design software.
+
+Graphical user interface testing refers to the systematic process of generating test cases in order to evaluate the functionality of the system and its design elements. Graphical user interface testing tools, which are either manual or automated and typically implemented by third-party operators, are available under a variety of licenses and are supported by a variety of platforms. Popular examples include: Tricentis Tosca, Squish GUI Tester, Unified Functional Testing (UFT), Maveryx, Appium, and eggPlant Functional.
+Graphical User Interface Examples
+Sketchpad, believed to be the first graphical computer-aided design program, was developed in 1962 by Ivan Sutherland while he was at MIT, and consisted of a light pen that enabled users to create and manipulate objects in engineering drawings in real time with coordinated graphics.
+Modern operating systems and graphical user interfaces are incorporated into nearly every interactive application, such as ATMs, self-service checkouts, airline self-ticketing and check-in, video games, smartphones, and desktops. Some popular, modern graphical user interface examples include Microsoft Windows, macOS, Ubuntu Unity, and GNOME Shell for desktop environments, and Android, Apple's iOS, BlackBerry OS, Windows 10 Mobile, Palm OS-WebOS, and Firefox OS for smartphones.
+Advantages of Graphical User Interfaces
+The advantage of a graphical user interface is a stark improvement in useability for the average person. The features of a graphical user interface leverage familiar metaphors, such as drag-and-drop for transferring files, and use familiar icons, such as a trash bin for deleted files, creating an environment in which computer operations are intuitive and easily mastered without any prior practice or knowledge of computing machinery or languages. Graphical user interface applications are self descriptive, feedback is typically immediate, and visual cues encourage and steer discoverability.
+Best Programming Language for Graphical User Interfaces
+While there are several different visual programming languages with their own unique advantages for the development of a graphical user interface design, C# or Java may be considered preferable options due to their ability to run GUIs simultaneously in a browser and as a desktop application. Other options include Python, HTML5/Javascript, and C/C++.
+Difference Between Character User Interface and Graphical User Interface
+Character user interface, also known as command-line user interface or non graphical user interface, refers to the use of text commands, managed by a command-line interpreter, in order to communicate with a computer program. Typically software developers and system administrators rely on command-line interfaces to configure machines, manage computer files, and access program features that are otherwise unavailable on a graphical user interface.
+Character user interfaces support automation and scripting and tend to provide greater granular control and a higher level of functionality than graphical user interfaces. While the character user interface was the primary method of operating computers through the 1980s, most modern electronic devices are equipped with intuitive graphical user interfaces and the average user will rarely if ever have cause to access a computer terminal.
+Difference Between Web User Interface and Graphical User Interface
+A web user interface, or web-based graphical user interface, refers to the interaction between a user and software running on a web server wherein the user interface is the web browser and the web page it downloaded and rendered. Technologies such as Flash, Java, JavaScript, and Silverlight enable interactions such as drag-and-drop, playing audio, drawing on the screen, and access to the keyboard and mouse.
+Web graphical user interfaces are platform independent, require no installation or separate software development, easy to update and monitor due to the nature of not being dependent upon the user to deploy updates, provides a vibrant UI experience, and are low cost, requiring only Ethernet or WiFi interface connectivity.
+Does OmniSci Offer Graphical User Interface Solutions?
+The benefits of visualizations in computing are evident in the intuitive nature of graphical user interfaces. Visualization and interactivity are similarly beneficial elements in data analytics. OmniSci Immerse is a browser-based, interactive data visualization client that works seamlessly with the OmniSci server-side technologies, OmniSciDB and Render, providing an interactive, visual platform that reduces the time to insights and dramatically expands an analyst's ability to find previously hidden insights.
+-
+
 
 
 

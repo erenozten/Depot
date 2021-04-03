@@ -1345,6 +1345,62 @@ Web graphical user interfaces are platform independent, require no installation 
 Does OmniSci Offer Graphical User Interface Solutions?
 The benefits of visualizations in computing are evident in the intuitive nature of graphical user interfaces. Visualization and interactivity are similarly beneficial elements in data analytics. OmniSci Immerse is a browser-based, interactive data visualization client that works seamlessly with the OmniSci server-side technologies, OmniSciDB and Render, providing an interactive, visual platform that reduces the time to insights and dramatically expands an analyst's ability to find previously hidden insights.
 -
+IT Nedir? |
+IT Uzmanı Nedir?
+Gün geçtikçe hızla gelişen ve büyüyen bilişim ve teknoloji dünyası, bilişimi ve teknolojiyi daha etkin, daha aktif kılmak için zamanla profesyonel, alanında uzman kişilere ihtiyaç duymaya başlamış, bu sayede kısaca IT denilen Enformasyon Teknolojileri (Information Technologies) programını ortaya çıkarmıştır. 
+
+IT Nedir?
+ 
+IT (Information Technology)'nin yani Enformasyon Teknolojileri'nin ne olduğunu öğrenmeden önce enformasyon kelimesine bakmamızda fayda var.  Enformasyon,  bilgi ve veri ile karıştırılsa da, genel anlamda, belirli ve dar kapsamdaki bir konuyu ölçüm, deney, gözlem, araştırma ve istihbarat sonuçlarının derlenmesi ile ortaya çıkan bir bilgi parçasıdır. Dolayısıyla birçok verinin toplanması sonucu oluşan enformasyonlar da bir araya gelerek bilgiyi oluştururlar.
+ 
+ 
+Enformasyon Teknolojileri ise, büyüyen bilişim teknolojileri ile bilişim alanındaki bütün ihtiyaçlara çözüm üreten, kayıt, depolama, sorgulama, düzenleme ve özetleme süreçlerinden geçerek toplanan verileri işleyerek enformasyona dönüştürmeyi sağlayan ve bu bağlamda problemleri çözmeyi ve karar vermeyi sağlayan bir programdır. Daha basit bir ifadeyle, bilişim sektöründeki sorunlara, ihtiyaçlara, eksikliklere çözüm bulmayı sağlayan uzmanları yetiştirmeyi hedefleyen bir programdır. 
+ 
+IT Tarihi ve Önemi
+ 
+IT'nin başlangıcı ve gelişim süreci Elektronik Mühendisliği'ne dayanır. Ayrıca  bilgisayar teknolojisinin gelişmesi ile büyük önem kazanan Bilgisayar Mühendisliği, kuramsal altyapı ile Bilgisayar Bilimi ve bilgisayar teknolojilerinde daha spesifik bir alana sahip olan Yazılım Mühendisliği'nin  gelişmesinin sonucunda bu alanlar sayesinde IT'nin temelleri ortaya atılmıştır. 
+
+Bilgisayar teknolojilerinin gelişimi ve üretiminden çok kullanımı ve ihtiyaçlara cevap vermesi önemli olan ülkelerde, bilgisayar teknolojilerinin ne kadar etkin ve geniş kullanıldığı önemlidir. Buna bağlı olarak bu etkinliği ve genişliği artırmak için Enformasyon Teknolojileri'ne verilen önem artmıştır ve böylece bilişim ve teknoloji dünyasında hızla yayılan IT, zamanla şirketlerin organizasyonlarında olmazsa olmaz bir departman haline gelmiş, buna bağlı olarak IT Uzmanlığı olarak bilinen bir iş alanı ortaya çıkarmıştır. 
+ 
+IT Uzmanı Ne İş Yapar?
+ 
+IT uzmanları şirketlerin, bilişim ve teknoloji alanındaki sorunlarını tespit ederek, teknolojik imkanlar ve yetenekler sayesinde sorunlara çözüm bulur, ihtiyaçları karşılar. Bu özellikleri itibariyle IT Uzmanları, bilişim araçlarına, sistemlere, teknolojik gelişmelere hakimdir ve açıktır.  
+ 
+IT Uzmanları, aldıkları eğitimler ve yetkin teknolojiler ile büyük bilişim projelerinin tasarlanmasında ve idaresinde, bilgisayar sistemlerinin kurulması ve yönetiminde, bilgi güvenliğinin sağlanmasında ve veritabanları konusunda profesyonelleşirler.
+
+IT Uzmanları aynı zamanda matematiksel düşünme ve analiz konusunda yetenekli, sorumluluk duygusuna sahip, işbirliğine ve takım çalışmalara yatkın insanlardır. Bilişim ve teknolojinin getirdiği yenilikleri takip eder, bu yenilikleri en yararlı biçimde uygulamaya, kullanmaya çalışır. 
+ 
+IT Uzmanı Çalışma Alanları ve İş Fırsatları 
+ 
+IT Uzmanları, şirketlerin bilgisayar, telekomünikasyon ve elektronik teknolojilerini kullanmaya başlaması ile birçok konuda iş sahibi olabilmekte ve bu sistemlerin gelişmesi ve her geçen gün yenilenmesiyle yeni iş alanları ortaya çıkmaktadır. IT Uzmanlarının çalışabileceği bu alanlardan bazıları şunlardır:
+ 
+► Bilişim Sistemleri Yöneticisi              ►Bilgisayar Destek Analisti
+► Bilgisayar Sistem Analisti                   ►Yazılım Proje Lideri
+►Yazılım Geliştiriciliği                          ►Kurumsal Mimari Uzmanı 
+► Bilgi Güvenliği Uzmanlığı                   ►Ağ Sistemleri Yöneticiliği
+► Veri Tabanı Yöneticiliği                      ►İletişim Güvenliği Uzmanı
+
+Birçok ülkede IT alanına yapılan yatırım yıldan yıla artmakta, bu da bu alana ne kadar önem verildiğini göstermektedir. Dünyada IT hizmetlerine yapılan yatırımlar 2012 yılında 881 milyar doları, 2013 yılında ise 927 milyar doları bulmuştur. Ayrıca bilgisayar teknolojileri ve tasarımını içeren hizmetlerde istihdam oranı büyük bir hızla artmaktadır.  Bu gelişmeler ve büyümeler IT hizmetlerine verilen önemi büyük derecede göstermektedir.
+
+-
+-
+-
+SharePoint 	(GITHUB)		    (read)
+sharepoint nedir
+There are the Windows SharePoint Services (WSS), the Microsoft Office SharePoint Server (MOSS) and Microsoft Search Server. Each bring their own functionalities to the table and build upon each other. 
+When looking up what SharePoint is, you get a lot of different answers from the Internet:
+•	Microsoft SharePoint is a browser-based collaboration and document management platform from Microsoft - Wikipedia
+•	Microsoft's content management system. It allows groups to set up a centralized, password protected space for document sharing. Documents can be stored, downloaded and edited, then uploaded for continued sharing. - SAIT Polytechnic Teaching - Glossary
+•	SharePoint is a web-based intranet that can help improve your organization's effectiveness by streamlining the management of and access to data. - Creative SharePoint
+•	SharePoint is an enterprise information portal, from Microsoft, that can be configured to run Intranet, Extranet and Internet sites. - SharePoint HQ
+•	{..} SharePoint is a sort of sharing/blogging/wiki-style server that mainly provides a back end to Microsoft Office - Jack Schofield, Technical Writer Guardian newspaper, UK.
+So what is SharePoint? Let's first look at it from a technical perspective. There are the Windows SharePoint Services (WSS), the Microsoft Office SharePoint Server (MOSS) and Microsoft Search Server. Each bring their own functionality to the table and build upon each other.
+Windows SharePoint Services function the basic functionality that Gartner calls Basic Content Services. It offers the user access to Versioning and Check-in/Checkout functionality. WSS can then be extended through the use of the applets to add additional collaborative functions like email alerts, shared calendars, etc.
+Microsoft Office SharePoint Server (MOSS) sits on top of WSS and adds additional features, both to the underlying WSS layer as well as additional ways for the end-user to interact with the repository. The data resides in a SQL Database. Using Webparts it can then present this information to the user using a wide range of different modules and for interaction in different business scenarios. These include such diverse applications as Collaboration, Document management, Records Management (including DOD 5015.2 certified components), Workflow, Personalization, more complex metadata models as well as Blogs and Wikis from the Web 2.0 side.Open Sanshttps://www.youtube.com/watch?time_continue=104&v=s12Jb5Z2xaE&feature=emb_logoOpen Sanshttps://medium.com/@serdalkepil/sharepoint-nedir-neden-kullan%C4%B1l%C4%B1r-79a1e8426599
+-
+-
+-
+-
 
 
 

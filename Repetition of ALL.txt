@@ -1407,6 +1407,23 @@ A servlet is a Java programming language class that is used to extend the capabi
 Java servlet, Java EE'de Java Servlet API'siyle uyumlu bir Java (programlama) sınıfı olup HTTP istemlerine cevap vermek için kullanılır. Belirli bir istemci-sunucu protokolüne bağlı olmamasına rağmen genelde bu protokolle kullanılır. Servlet kelimesi genelde HTTP servlet yerine bu yüzden kullanılmaktadır.[1] Dolayısıyla bir yazılım uzmanı, Java platformu sayesinde servleti bir Web sunucusuna dinamik içerik eklemek için kullanabilir. Üretilen kod genelde HTML olsa da bazen XML de olabilir. Servletler, CGI ya da ASP.NET gibi Java-dışı Web içerik teknolojilerinin Java'daki karşıt üründür. Servletlerle HTTP çerezleri veya URL yeniden yazımı kullanılarak oturum değişkenlerinin sistem durumunu birçok sunucu hareketleri boyunca koruması sağlanmaktadır.
 -
 -
+C		(bosch)	 (bosch)
+c nedir, c programlama dili nedir, c dili nedir
+AT&T Bell laboratuvarlarında, Ken Thompson ve Dennis Ritchie tarafından UNIX İşletim Sistemi' ni geliştirebilmek amacıyla B dilinden türetilmiş yapısal bir programlama dilidir. Geliştirilme tarihi 1972 olmasına rağmen yayılıp yaygınlaşması Brian Kernighan ve Dennis M. Ritchie tarafından yayımlanan "C Programlama Dili" kitabından sonra hızlanmıştır. 
+
+Günümüzde neredeyse tüm işletim sistemlerinin (Microsoft Windows, GNU/Linux, *BSD, Minix) yapımında %95' lere varan oranda kullanılmış, hâlen daha sistem, sürücü yazılımı, işletim sistemi modülleri ve hız gereken her yerde kullanılan oldukça yaygın ve sınırları belirsiz oldukça keskin bir dildir.[kaynak belirtilmeli]" Keskinliği, programcıya sonsuz özgürlüğün yanında çok büyük hatalar yapabilme olanağı sağlamasıdır. Programlamanın gelişim süreciyle beraber programlamanın karmaşıklaşması, gereksinimlerin artması ile uygulama programlarında nesne yönelimliliğin ortaya çıkmasından sonra C programcıları büyük ölçüde nesne yönelimliliği destekleyen C++ diline geçmişlerdir.
+ 
+C Dilinin erken tarihi
+C'nin ilk gelişme safhaları 1969 ile 1974 arasında AT&T Bell Laboratuvarları'nda gerçekleşti. Ritchie'ye göre, en yaratıcı devre 1972 idi. Dilin pek çok özelliği "B" adlı bir dilden türediği için, yeni dile "C" adı verildi. B dili yorumlanan bir dildi ve veri tipi desteği yoktu. Yeni donanımların farklı veri tiplerini desteklemesi, ve yorumlanan dillerin çalışma zamanında görece yavaş olması sebebi ile, C dili, tip desteği eklenmiş ve derlenen B olarak geliştirildi.
+"B" adının kökeni konusunda ise söylentiler değişik: Ken Thompson B'nin BCPL programlama dilinden türediğini söylemektedir, ancak Thompson eşi Bonnie'nin onuruna adını Bon koyduğu bir programlama dili de geliştirmiştir.
+1973'e kadar C yeterince güçlü bir hale gelmiş ve ilk başta PDP-11/20 assembly dili ile yazılan UNIX'in çekirdeğinin büyük kısmı C ile yeniden yazılmıştı. 
+(Linus Torvalds tarafından temelleri atılan Linux, UNIX olmayıp bir UNIX türevidir. UNIX'ten ilham alan, bir grup bağımsız yazılımcı tarafından geliştirilen bir işletim sistemi çekirdeğidir.)
+Böylece UNIX, çekirdeği bir assembly dili ile yazılmayan ilk işletim sistemlerinden biri olmuştu.
+-
+-
+-
+-
+
 
 
 

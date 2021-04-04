@@ -1423,6 +1423,30 @@ Böylece UNIX, çekirdeği bir assembly dili ile yazılmayan ilk işletim sistem
 -
 -
 -
+BCPL		(bosch)	 (bosch)
+bcpl nedir
+BCPL ("Basic Combined Programming Language") is a procedural, imperative, and structured programming language. Originally intended for writing compilers for other languages, BCPL is no longer in common use. However, its influence is still felt because a stripped down and syntactically changed version of BCPL, called B, was the language on which the C programming language was based. BCPL introduced several features of many modern programming languages, including using curly braces to delimit code blocks. BCPL was first implemented by Martin Richards of the University of Cambridge in 1967.
+The book BCPL: The language and its compiler describes the philosophy of BCPL as follows:
+"The philosophy of BCPL is not one of the tyrant who thinks he knows best and lays down the law on what is and what is not allowed; rather, BCPL acts more as a servant offering his services to the best of his ability without complaint, even when confronted with apparent nonsense. The programmer is always assumed to know what he is doing and is not hemmed in by petty restrictions."
+-
+
+Microsoft Azure HDInsight       	(GITHUB)  (test)
+Microsoft Azure HDInsight nedir
+Azure HDInsight is a cloud-based service from Microsoft for big data analytics that helps organizations process large amounts of streaming or historical data. Microsoft promotes HDInsight for applications in data warehousing and ETL (extract, transform, load) scenarios as well as machine learning and Internet of Things (IoT) environments.
+The fully-managed and open source service is based on the Hortonworks Data Platform (HDP) Hadoop distribution and includes implementations of Apache products, including:
+•	Spark
+•	HBase
+•	Storm
+•	Pig
+•	Hive
+•	Sqoop
+•	Oozie
+•	Ambari
+HDInsight enables integration with business intelligence tools like Power BI, Excel, SQL Server Analysis Services and SQL Server Reporting Services. The service's security measures for data include encryption, monitoring, virtual networks, Active Directory authentication, authorization and role-based access control (RBAC).
+Açık kaynak analize yönelik uygun maliyetli, kurumsal sınıf bir hizmet olan Azure HDInsight’ı kullanarak Apache Hadoop, Spark ve Kafka dahil olmak üzere popüler açık kaynak çerçeveleri kolayca çalıştırın. Azure’ın küresel ölçeği sayesinde çok büyük miktarda veriyi hiç çaba harcamadan işleyin ve geniş açık kaynak ekosisteminin tüm avantajlarına sahip olun.
+-
+
+
 
 
 

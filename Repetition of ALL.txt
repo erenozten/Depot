@@ -1484,6 +1484,20 @@ By contrast, a dynamic web page is a broader concept, covering any web page gene
 DHTML is differentiated from Ajax by the fact that a DHTML page is still request/reload-based. With DHTML, there may not be any interaction between the client and server after the page is loaded; all processing happens in JavaScript on the client side. By contrast, an Ajax page uses features of DHTML to initiate a request (or 'subrequest') to the server to perform additional actions. For example, if there are multiple tabs on a page, pure DHTML approach would load the contents of all tabs and then dynamically display only the one that is active, while AJAX could load each tab only when it is really needed.
 -
 -
+An important note	      (GITHUB)  (test) 
+Why public variables are not allowed inside a method or any block except class in c#? 
+(field nedir, local variable nedir)
+Answer:
+There is a difference between variables and fields. Only fields have access protection, while variables cannot be accessed at all outside method's body.
+"Public variables" in C# are called fields. C# allows field declarations to appear only in the body of a class or a struct. Fields are parts of an object definition, which are either attached to an instance, or shared among all instances.
+Variables inside methods, on the other hand, are not fields. Being local to a method body, they do not need access protection. Their lifetime and scope are limited inside the method, so there is no way for any code outside of that method to access local variables.
+
+Another Answer:
+
+Inside a method any variable you declare is only accessible within the method, it is called a local variable. Access modifiers (public, private etc.) make no sense here, as the variable won't exist outside the scope of the method.
+-
+You cannot define a public element inside a method. This element exists while the method is executing and cannot be accessed outside this main method.
+-
 
 
 

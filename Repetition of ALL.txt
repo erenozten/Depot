@@ -1445,6 +1445,28 @@ The fully-managed and open source service is based on the Hortonworks Data Platf
 HDInsight enables integration with business intelligence tools like Power BI, Excel, SQL Server Analysis Services and SQL Server Reporting Services. The service's security measures for data include encryption, monitoring, virtual networks, Active Directory authentication, authorization and role-based access control (RBAC).
 Açık kaynak analize yönelik uygun maliyetli, kurumsal sınıf bir hizmet olan Azure HDInsight’ı kullanarak Apache Hadoop, Spark ve Kafka dahil olmak üzere popüler açık kaynak çerçeveleri kolayca çalıştırın. Azure’ın küresel ölçeği sayesinde çok büyük miktarda veriyi hiç çaba harcamadan işleyin ve geniş açık kaynak ekosisteminin tüm avantajlarına sahip olun.
 -
+DHTML
+
+What does Dynamic HyperText Markup Language (DHTML) mean?
+Dynamic HyerText Markup Language (DHTML) is a combination of Web development technologies used to create dynamically changing websites. Web pages may include animation, dynamic menus and text effects. The technologies used include a combination of HTML, JavaScript or VB Script,
+CSS and the document object model (DOM).
+
+Designed to enhance a Web user’s experience, DHTML includes the following features:
+•	Dynamic content, which allows the user to dynamically change Web page content
+•	Dynamic positioning of Web page elements
+•	Dynamic style, which allows the user to change the Web page’s color, font, size or content
+RELATED QUESTION
+What’s the difference between a function and a functor?
+Techopedia explains Dynamic HyperText Markup Language (DHTML)
+While DHTML enhances the website user’s experience, the technology may also be frustrating for users when it is used incorrectly. For example, a website menu with flashy DHTML animations can easily confuse user navigation. Another DHTML issue occurs when Web developers attempt to create cross-browser DHTML, which is very difficult.
+
+For Web developers, DHTML poses the following problems:
+•	It can be difficult to develop and debug because of lack of Web browser and technological support.
+•	DHTML scripts may not work correctly in various Web browsers.
+•	The Web page layout may not display correctly when it is developed to display in different screen size combinations and in different browsers.
+As a result of these problems, Web developers must determine whether DHTML enhances the user experience in any given context. Most Web developers abandon complex DHTML and use simple cross-browser routines to improve user experience, as opposed to integrating excessive DHTML visual effects.
+
+
 
 
 

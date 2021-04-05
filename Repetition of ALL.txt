@@ -1499,6 +1499,26 @@ Inside a method any variable you declare is only accessible within the method, i
 You cannot define a public element inside a method. This element exists while the method is executing and cannot be accessed outside this main method.
 -
 
+Fields within a method are local to the method and are therefore don't have access modifiers.
+Access modifiers are applied at the class level i.e.
+public class Person {
+
+  private String name
+
+  public String getName() {
+    return this.name
+  }
+}
+-
+Local variable can not be public. public, private, proctacted are only used with class level members.
+Assume that if it is possible to do so then also how can you access it out of the method or class. So specifing scope before locel members is dose not make any sense.
+-
+Variables declared in methods (aka local variables) are only accessible within the method. After the method returns, all local variables in the method became unaccessible. You can treat all the local variables as if they were private.
+Why is it so then?
+Local variables' purpose is to temporarily store data during the execution of a method. As we all know, a method either does something, or return something, or both. While a method is doing this business, objects might be created to help with whatever the method is doing. And the objects are stored in variables. Since these variables only help the method do its job, they are not needed after the method finishes its job (returns).
+See? They are temporary. There is no point accessing them from another scope.
+-
+
 
 
 

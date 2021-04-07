@@ -1592,6 +1592,13 @@ Android is a mobile operating system based on a modified version of the Linux ke
 
 Initially developed by Android Inc., which Google bought in 2005, Android was unveiled in 2007, with the first commercial Android device launched in September 2008. The current stable version is Android 10, released on September 3, 2019. The core Android source code is known as Android Open Source Project (AOSP), which is primarily licensed under the Apache License. This has allowed variants of Android to be developed on a range of other electronics, such as game consoles, digital cameras, PCs and others, each with a specialized user interface. Some well known derivatives include Android TV for televisions and Wear OS for wearables, both developed by Google.
 -
+Vue.js             (GITHUB)  (test) 
+Vue nedir, vuejs nedir, vue.js nedir
+Vue.js (genellikle Vue olarak kullanılır) kullanıcı arayüzleri ve tek sayfa uygulamalar (single-page applications) inşa etmek için kullanılan açık kaynak Javascript is Vue.js, bildirimsel oluşturma (declarative rendering) ve bileşen kompozisyonuna odaklanan, aşamalı olarak benimsenebilen bir mimariye sahiptir. Yönlendirme (routing), durum yönetimi (state managment) ve yapım aracı(building tools) gibi karmaşık uygulamalar için gereken gelişmiş özellikler, resmi olarak destekleyici kütüphaneler ve paketler aracılığıyla sunulmaktadır.
+-
+-
+-
+
 
 
 

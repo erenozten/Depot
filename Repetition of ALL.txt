@@ -1518,6 +1518,40 @@ Why is it so then?
 Local variables' purpose is to temporarily store data during the execution of a method. As we all know, a method either does something, or return something, or both. While a method is doing this business, objects might be created to help with whatever the method is doing. And the objects are stored in variables. Since these variables only help the method do its job, they are not needed after the method finishes its job (returns).
 See? They are temporary. There is no point accessing them from another scope.
 -
+The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called as recursive function. Using recursive algorithm, certain problems can be solved quite easily. Examples of such problems are Towers of Hanoi (TOH), Inorder/Preorder/Postorder Tree Traversals, DFS of Graph, etc.
+
+-
+In computer science, recursion is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.[1] Such problems can generally be solved by iteration, but this needs to identify and index the smaller instances at programming time. Recursion solves such recursive problems by using functions that call themselves from within their own code. The approach can be applied to many types of problems, and recursion is one of the central ideas of computer science.[2]
+The power of recursion evidently lies in the possibility of defining an infinite set of objects by a finite statement. In the same manner, an infinite number of computations can be described by a finite recursive program, even if this program contains no explicit repetitions.
+— Niklaus Wirth, Algorithms + Data Structures = Programs, 1976[3]
+Most computer programming languages support recursion by allowing a function to call itself from within its own code. Some functional programming languages (for instance, Clojure)[4] do not define any looping constructs but rely solely on recursion to repeatedly call code. It is proved in computability theory that these recursive-only languages are Turing complete; this means that they are as powerful (they can be used to solve the same problems) as imperative languages based on control structures such as while and for.
+Repeatedly calling a function from within itself may cause the call stack to have a size equal to the sum of the input sizes of all involved calls. It follows that, for problems that can be solved easily by iteration, recursion is generally less efficient, and, for large problems, it is fundamental to use optimization techniques such as tail call optimization.[citation needed]
+-
+A common computer programming tactic is to divide a problem into sub-problems of the same type as the original, solve those sub-problems, and combine the results. This is often referred to as the divide-and-conquer method; when combined with a lookup table that stores the results of previously solved sub-problems (to avoid solving them repeatedly and incurring extra computation time), it can be referred to as dynamic programming or memoization.
+
+-
+Recursive definition
+Daha kolay anlaşılıyo şu acıklama:
+: a definition of a function permitting values of the function to be calculated systematically in a finite number of stepsespecially : a mathematical definition in which the first case is given and the nth case is defined in terms of one or more previous cases and especially the immediately preceding one.
+// a recursive definition of the factorial is given by 0! = 1 and (n + 1)! = (n + 1) ‧ n!
+-
+
+In mathematics and computer science, a recursive definition, or inductive definition, is used to define the elements in a set in terms of other elements in the set (Aczel 1977:740ff). Some examples of recursively-definable objects include factorials, natural numbers, Fibonacci numbers, and the Cantor ternary set.[1]
+A recursive definition of a function defines values of the function for some inputs in terms of the values of the same function for other (usually smaller) inputs. For example, the factorial function n! is defined by the rules
+0! = 1.
+(n + 1)! = (n + 1)·n!.
+This definition is valid for each natural number n, because the recursion eventually reaches the base case of 0. The definition may also be thought of as giving a procedure for computing the value of the function n!, starting from n = 0 and proceeding onwards with n = 1, n = 2, n = 3 etc.
+The recursion theorem states that such a definition indeed defines a function that is unique. The proof uses mathematical induction.[2]
+An inductive definition of a set describes the elements in a set in terms of other elements in the set. For example, one definition of the set N of natural numbers is:
+1.	1 is in N.
+2.	If an element n is in N then n + 1 is in N.
+3.	N is the intersection of all sets satisfying (1) and (2).
+There are many sets that satisfy (1) and (2) – for example, the set {1, 1.649, 2, 2.649, 3, 3.649, ...} satisfies the definition. However, condition (3) specifies the set of natural numbers by removing the sets with extraneous members. Note that this definition assumes that N is contained in a larger set (such as the set of real numbers) — in which the operation + is defined.
+Properties of recursively defined functions and sets can often be proved by an induction principle that follows the recursive definition. For example, the definition of the natural numbers presented here directly implies the principle of mathematical induction for natural numbers: if a property holds of the natural number 0 (or 1), and the property holds of n+1 whenever it holds of n, then the property holds of all natural numbers (Aczel 1977:742).
+-
+ 
+Four stages in the construction of a Koch snowflake. As with many other fractals, the stages are obtained via a recursive definition.
+-
 
 
 

@@ -1557,6 +1557,20 @@ Four stages in the construction of a Koch snowflake. As with many other fractals
 
 
 
+JSF / JavaServer Faces  	(GITHUB) 	(örnek)
+java server faces nedir, jsf nedir, javaserver faces nedir, javaserverfaces nedir
+JavaServer Faces (JSF) is the Java standard technology for building component-based, event-oriented web interfaces. Like JavaServer Pages (JSP), JSF allows access to server-side data and logic. Unlike JSP, which is essentially an HTML page imbued with server-side capabilities, JSF is an XML document that represents formal components in a logical tree. JSF components are backed by Java objects, which are independent of the HTML and have the full range of Java abilities, including accessing remote APIs and databases.
+The key idea to a framework like JSF is to encapsulate (or wrap) client-side technologies like HTML, CSS, and JavaScript, allowing developers to build web interfaces without much interaction with these technologies.
+This article presents a snapshot of JSF's approach to component-based UI development for Java web applications. Simple examples introduce JSF's MVC architecture, event model, and component library. Examples include new features in JSF 2.3, and we'll use PrimeFaces for our component library.
+-
+-
+
+
+
+
+
+
+
 
 
 

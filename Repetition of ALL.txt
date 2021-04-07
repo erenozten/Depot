@@ -1598,6 +1598,29 @@ Vue.js (genellikle Vue olarak kullanılır) kullanıcı arayüzleri ve tek sayfa
 -
 -
 -
+Bell Labs		(bosch)	 (bosch)
+Bell labs nedir
+Bell Laboratuvarları (ayrıca Bell Labs ve geçmişte AT&T Bell Laboratuvarları ve Bell Telefon Laboratuvarları olarak bilinir), önceleri American Telephone & Telegraph Company (AT&T) 'nin şimdilerde ise Alcatel-Lucent 'in araştırma geliştirme kurumudur. Merkezi Murray Hill, New Jersey ABD'de bulunmaktadır.
+
+ 
+Transistörler 1947'de Bell Laboratuvarları'nda icat edilmiştir
+ 
+Murray Hill, New Jersey'deki Bell Laboratuvarları
+
+En başarılı zamanlarında, Bell Laboratuvarları radyo astronomi, transistör, lazer, enformasyon teorisi, UNIX işletim sistemi, ve C programlama dili dahil çok çeşitli devrimsel teknolojiler geliştiren kendi türündeki ilk tesisti. Bell Laboratuvarlarında tamamlanan yedi esere Nobel Ödülü verilmiştir.
+1937, Clinton J. Davisson "Deneysel olarak elektronların kristaller tarafından kırınımlarını" bulmasından dolayı George Paget Thomson ile Nobel Fizik Ödülünü paylaştı.
+1956, John Bardeen, Walter H. Brattain, ve William Shockley"Yarı iletkenlere dair çalışmalarından ve transistör etkisini keşfinden dolayı" Nobel Fizik Ödülünü aldılar.
+1977, Philip W. Anderson "Manyetik düzensiz sistemlerin elektronik yapısına dair temel teorik araştırmalarından dolayı" Nobel Fizik ödülünü Nevill Francis Mott ve John Hasbrouck Van Vleck ile paylaştı.
+1978, Arno A. Penzias ve Robert W. Wilson "Kozmik mikrodalga arka plan ışımasını bulmalarından dolayı" Nobel Fizik Ödülünü aldılar.
+1997, Steven Chu "Laser ışığıyla atomların soğutulması ve yakalanması için bir method geliştirdiğinden dolayı" Nobel Fizik Ödülünü Claude Cohen-Tannoudji ve William Daniel Phillips ile paylaştı.
+1998, Horst Stormer, Robert Laughlin, ve Daniel Tsui çok küçük kuantum koridor etkisini bulmaları ve açıklamaları nedeniyle Nobel Fizik Ödülünü aldılar.
+2009, Willard Boyle ve George E. Smith yarı iletken görüntüleme devresi (CCD sensörü) icat etmelerinden dolayı Nobel Fizik Ödülünü Charles K. Kao ile paylaştılar.-
+-
+-
+-
+-
+-
+
 
 
 

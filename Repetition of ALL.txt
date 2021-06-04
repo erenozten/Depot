@@ -1620,6 +1620,80 @@ En başarılı zamanlarında, Bell Laboratuvarları radyo astronomi, transistör
 -
 -
 -
+Refactoring             (GITHUB)  (test) 
+Refactor nedir, refactoring nedir
+Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesinin artırılması sürecidir. Evet refactoring bir süreçtir. Her ne kadar amaç/niyet her zaman en baştan temiz kod yazmak olsa da, (her ne kadar yazarken en temiz şekilde yazılsa da) değişen ve gelişen kodların zaman içerisinde sürekli optimize edilmesi gerekecektir.
+Refactoring nasıl yapılır?	
+Refactoring yaparken, yapılacak olanların bir sıralamaya göre yapılması önemlidir. Ayrıca diğer bir önemli konu ise bu işi belirli bir ritimle yapmak önemlidir. Yani sırası ile yapılacak olan her küçük değişiklikten sonra test yapmak gerekir. Küçük değişikler, test, küçük değişiklikler, test, … gibi bir ritimle bu işi yapmak en basit ve garantili yoldur. Refactoring’in tanımında da bahsedildiği gibi, amacımız kodun işlevselliğinde hiçbir değişiklik yapmadan, kodların kalitesini en optimum seviyeye getirmek.Kodun işlevselliğinin değişmediğini garanti etmenin en iyi yolu da elbette test yazmaktır. 
+-
+-
+-
+UI (User Interface)   (GITHUB) (test)
+Ui nedir, user interface nedir
+The user interface (UI) is the point of human-computer interaction and communication in a device. This can include display screens, keyboards, a mouse and the appearance of a desktop. It is also the way through which a user interacts with an application or a website. The growing dependence of many businesses on web applications and mobile applications has led many companies to place increased priority on UI in an effort to improve the user's overall experience.
+Types of user interfaces
+The various types of user interfaces include:
+•	graphical user interface (GUI)
+•	command line interface (CLI)
+•	menu-driven user interface
+•	touch user interface
+•	voice user interface (VUI)
+•	form-based user interface
+•	natural language user interface
+Examples of user interfaces
+Some examples of user interfaces include:
+•	computer mouse
+•	remote control
+•	virtual reality
+•	ATMs
+•	speedometer
+•	the old iPod click wheel
+Websites such as Airbnb, Dropbox and Virgin America display strong user interface design. Sites like these have created pleasant, easily operable, user-centered designs (UCD) that focus on the user and their needs.
+
+In early computers, there was very little user interface except for a few buttons at an operator's console. Many of these early computers used punched cards, prepared using keypunch machines, as the primary method of input for computer programs and data. While punched cards have been essentially obsolete in computing since 2012, some voting machines still use a punched card system.
+The user interface evolved with the introduction of the command line interface, which first appeared as a nearly blank display screen with a line for user input. Users relied on a keyboard and a set of commands to navigate exchanges of information with the computer. This command line interface led to one in which menus (lists of choices written in text) predominated.
+Finally, the GUI arrived, originating mainly in Xerox's Palo Alto Research Center (PARC), adopted and enhanced by Apple and effectively standardized by Microsoft in its Windows operating systems. Elements of a GUI include such things as windows, pull-down menus, buttons, scroll bars and icons. With the increasing use of multimedia as part of the GUI, sound, voice, motion video and virtual reality are increasingly becoming the GUI for many applications.
+UI ve UX çoğu kez beraber kullanılmalarına rağmen aslında çok farklı iki alandır. UI konusunda olmasa bile UX konusunda çok geride olan ülkemizde, maalesef bu işi profesyonel olarak yapan insanlar bile aralarındaki farkı çok bilmiyorlar. Ülkemizde bir UXD (User Interface Designer) ile tanışmanız çok zor. Türkiye’de bu işle ilgili çoğu insanın özgeçmişinde “UI/UX” yazar. Bunun bir sebebi aralarındaki farkın bilinmemesi, diğer sebebi ise internet sektörünü geriden takip etmemizden dolayı bu işi iki parçaya bölmenin bir lüks olarak görünmesidir.
+
+Kısaca bahsetmek gerekirse; UI, aslında arayüz tasarımıdır. Televizyon kumandasının üstündeki tuşlar, bir arayüz tasarımı örneğidir. Tuşların yerleri, büyüklüğü, renkleri tasarımcının verdiği kararlar sonucu uygulanır. Arayüz tasarımının internet sitelerindeki karşılığı ise butonlar, grid yapısı, mizanpaj, renkler, boşluklar gibi tüm grafik elemanlardan oluşan görsel tasarımdır. Zamanla internet sitelerindeki interaksiyon arttıkça, önceleri çok da önemsenmeyen arayüz tasarımı da gittikçe önemli bir hal aldı. Kullanıcıların sitede rahatça dolaşmaları ve hatta kalmalarını sağlamak için basit ve kullanılabilir bir arayüz artık şart. Kullanıcılar bir sitede dolaşmaya veya terk etmeye saniyeler içerisinde karar veriyorlar. Yoğun uğraşlarla sitenize yönlendirdiğiniz kullanıcıları sitenizde tutamadığınız zaman da maalesef tüm uğraşlarınız boşa gidiyor.
+The emerging popularity of mobile applications has also affected UI, leading to something called mobile UI. Mobile UI is specifically concerned with creating usable, interactive interfaces on the smaller screens of smartphones and tablets and improving special features, like touch controls.
+-
+-
+-
+-
+UX (User Experience) (GITHUB) (test)
+Ux nedir, user experience nedir
+
+UI ve UX çoğu kez beraber kullanılmalarına rağmen aslında çok farklı iki alandır. UI konusunda olmasa bile UX konusunda çok geride olan ülkemizde, maalesef bu işi profesyonel olarak yapan insanlar bile aralarındaki farkı çok bilmiyorlar. Ülkemizde bir UXD (User Interface Designer) ile tanışmanız çok zor. Türkiye’de bu işle ilgili çoğu insanın özgeçmişinde “UI/UX” yazar. Bunun bir sebebi aralarındaki farkın bilinmemesi, diğer sebebi ise internet sektörünü geriden takip etmemizden dolayı bu işi iki parçaya bölmenin bir lüks olarak görünmesidir.
+-
+-
+-
+UI ve UX arasındaki farklar nelerdir ?   (GITHUB) (örnek)
+
+The UI is often talked about in conjunction with user experience (UX), which may include the aesthetic appearance of the device, response time and the content that is presented to the user within the context of the user interface. Both terms fall under the concept of human-computer interaction (HCI), which is the field of study focusing on the creation of computer technology and the interaction between humans and all forms of IT design. Specifically, HCI studies areas such as UCD, UI design and UX design.
+An increasing focus on creating an optimized user experience has led some to carve out careers as UI and UX experts. Certain languages, such as HTML and CSS, have been geared toward making it easier to create a strong user interface and experience.
+UI ingilizce User Interface'in (kullanıcı arayüzü) kısaltılmış hali, UX ise ingilizce User Experience'in (kullanıcı deneyimi) kısaltılmış halidir. UX, içinde UI'i de içeren bir çok disiplini de içeren daha büyük bir halkadır, yani UX > UI diyebiliriz. UX, bir kullanıcının ilgili şeyi (ürünü, hizmeti, web sitesini...) kullanırken, tasarım, kolay kullanım, kolay anlama, kullanırken memnun kalma gibi daha geniş bir perspektifte değerlendirir. UI ise bu deneyimin tasarım kısmını ifade eder. 
+UI ve UX arasındaki farkı basit bir örnekle anlatalım. UX bir binanın tasarımını yapan mimar gibidir. Oda yerleşimleri ve büyüklükleri nasıl olacak, hangi malzemeler kullanılacak, ışıklandırma ve renkler nasıl olacak tüm bunları hesaplar, planlar... Tüm planlanan işlerin yapılması ise UI'dir. Görüldüğü gibi UX birden fazla disiplini içinde barındıran, daha çok planlamayı içeren ancak alt disiplinlerle ilgili  yeterli derecede bilgiyi barındıran, daha çok soyut bir çıktı veren bir alandır. UI ise, somut bir çıktı veren bir alandır. UI bir kahveyi içmek için gereken bardağı tasarlamış, UX ise buna ek olarak kahveyi içenin elinin yanmaması için bir bardak daha eklemiş. UX, UI'den farklı olarak kullanıcının ilgili ürünü kullanırken karşılaşabileceği problemleri de düşünür ve bunlarada çözümler bulur.
+ 
+-
+- 
+We should also distinguish UX and usability: According to the definition of usability, it is a quality attribute of the UI, covering whether the system is easy to learn, efficient to use, pleasant, and so forth. Again, this is very important, and again total user experience is an even broader concept.
+-
+User Experience Basics
+User experience (UX) focuses on having a deep understanding of users, what they need, what they value, their abilities, and also their limitations.  It also takes into account the business goals and objectives of the group managing the project. UX best practices promote improving the quality of the user’s interaction with and perceptions of your product and any related services.
+Factors that Influence UX
+At the core of UX is ensuring that users find value in what you are providing to them.  Peter Morville represents this through his User Experience Honeycomb  .
+ 
+He notes that in order for there to be a meaningful and valuable user experience, information must be:
+•	Useful: Your content should be original and fulfill a need
+•	Usable: Site must be easy to use
+•	Desirable: Image, identity, brand, and other design elements are used to evoke emotion and appreciation
+•	Findable: Content needs to be navigable and locatable onsite and offsite
+•	Accessible: Content needs to be accessible to people with disabilities
+•	Credible: Users must trust and believe what you tell them
+
+
+
 
 
 

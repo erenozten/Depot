@@ -1774,6 +1774,30 @@ Git vs. GitHub in Simple Terms
 So, taken all together: Git vs. GitHub… what’s the difference? Simply put, Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service that lets you manage Git repositories. If you have open-source projects that use Git, then GitHub is designed to help you better manage them. 
 After all, in the world of programming, naming conventions aren’t always intuitive. That’s why it’s worth recognizing the connections and the differences in the similarly named Git and GitHub. Both Git and GitHub give programmers valuable version-control functionality so that they can build ongoing coding projects without being afraid of messing everything up. GitHub just takes things a little bit further than Git, offering more functionality and resources, as well as a place online to store and collaborate on projects. 
 And that’s essentially it. Simple, right?
+-
+Anemic Domain Model, Rich Domain Model    (GITHUB) (asasas)
+
+Anemic Domain Model nedir, Rich Domain Model nedir
+
+Anemic domain model = database tables mapped to objects (only field values, no real behavior)
+Rich domain model = a collection of objects that expose behavior
+If you want to create a simple CRUD application, maybe an anemic model with a classic MVC framework is enough. But if you want to implement some kind of logic, anemic model means that you will not do object oriented programming.
+*Note that object behavior has nothing to do with persistence. A different layer (Data Mappers, Repositories e.t.c.) is responsible for persisting domain objects.
+
+Anemic domain model is the use of a software domain model where the domain objects contain little or no business logic (validations, calculations, business rules etc.).
+
+-
+-
+-
+Domain model nedir:
+
+Basically, it's the "model" of the objects required for your business purposes. Say you were making a sales tracking website - you'd potentially have classes such as Customer, Vendor, Transaction, etc. That entire set of classes, as well as the relationships between them, would consititute your Domain Model.
+-
+Domain nedir ve domain model nedir açıklaması:
+A domain model is a visual representation of real situation objects in a domain. A domain is an area of concern. Its used to refer to the area you are dealing with. The model is a diagram, for domain models the class diagram UML is mostly used. The class diagram is only used for the notation. The term domain model does not mean a set of diagrams describing software classes.
+So for example imagine a store. For that store you want to build a brand new Point Of Sale system (lets call it POS system). A POS system is a computerized application used to record sale and handle payments. So you focus on the domain of the POS system. Now you will conceptualize the objects that will be used for this system. So you will get objects like: Sale, Payment, Register, Item etc. In a domain model you model these objects and draw associations between them so that you have an high level idea how this system will work. An example of the POS domain model will be like this:
+ 
+-
 
 
 

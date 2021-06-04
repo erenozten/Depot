@@ -1939,7 +1939,64 @@ The combinations included in these software platforms will make each function mo
 And although BI will remain valuable in and of itself, Howson says organizations can’t compete if they’re not moving beyond only BI and adopting advanced analytics as well.
 In fact, Gartner’s Magic Quadrant report predicts that by 2020 organizations offering “users access to a curated catalog of internal and external data will realize twice the business value from analytics investments than those that do not.”
 Howson adds: “There is a need for reporting, but reporting alone is not enough. If you’re only doing reporting you’re behind already. Unless your reporting is smart and agile, you’re behind. You’re a laggard.”
+-
+-
+OLEDB - OLE DB
 
+OLEDB nedir, ole db nedir
+ODBC and OLE DB are two competing data access technologies. Specifically regarding SQL Server, Microsoft has promoted both of them as their Preferred Future Direction - though at different times.
+ODBC
+ODBC is an industry-wide standard interface for accessing table-like data. It was primarily developed for databases and presents data in collections of records, each of which is grouped into a collection of fields. Each field has its own data type suitable to the type of data it contains. Each database vendor (Microsoft, Oracle, Postgres, …) supplies an ODBC driver for their database.
+There are also ODBC drivers for objects which, though they are not database tables, are sufficiently similar that accessing data in the same way is useful. Examples are spreadsheets, CSV files and columnar reports.
+OLE DB
+OLE DB is a Microsoft technology for access to data. Unlike ODBC it encompasses both table-like and non-table-like data such as email messages, web pages, Word documents and file directories. However, it is procedure-oriented rather than object-oriented and is regarded as a rather difficult interface with which to develop access to data sources. To overcome this, ADO was designed to be an object-oriented layer on top of OLE DB and to provide a simpler and higher-level – though still very powerful – way of working with it. ADO’s great advantage it that you can use it to manipulate properties which are specific to a given type of data source, just as easily as you can use it to access those properties which apply to all data source types. You are not restricted to some unsatisfactory lowest common denominator.
+While all databases have ODBC drivers, they don’t all have OLE DB drivers. There is however an interface available between OLE and ODBC which can be used if you want to access them in OLE DB-like fashion. This interface is called MSDASQL (Microsoft OLE DB provider for ODBC).
+SQL Server Data Access Technologies
+Since SQL Server is (1) made by Microsoft, and (2) the Microsoft database platform, both ODBC and OLE DB are a natural fit for it.
+ODBC
+Since all other database platforms had ODBC interfaces, Microsoft obviously had to provide one for SQL Server. In addition to this, DAO, the original default technology in Microsoft Access, uses ODBC as the standard way of talking to all external data sources. This made an ODBC interface a sine qua non. The version 6 ODBC driver for SQL Server, released with SQL Server 2000, is still around. Updated versions have been released to handle the new data types, connection technologies, encryption, HA/DR etc. that have appeared with subsequent releases. As of 09/07/2018 the most recent release is v13.1 “ODBC Driver for SQL Server”, released on 23/03/2018.
+OLE DB
+This is Microsoft’s own technology, which they were promoting strongly from about 2002 – 2005, along with its accompanying ADO layer. They were evidently hoping that it would become the data access technology of choice. (They even made ADO the default method for accessing data in Access 2002/2003.) However, it eventually became apparent that this was not going to happen for a number of reasons, such as:
+1.	The world was not going to convert to Microsoft technologies and away from ODBC;
+2.	DAO/ODBC was faster than ADO/OLE DB and was also thoroughly integrated into MS Access, so wasn’t going to die a natural death;
+3.	New technologies that were being developed by Microsoft, specifically ADO.NET, could also talk directly to ODBC. ADO.NET could talk directly to OLE DB as well (thus leaving ADO in a backwater), but it was not (unlike ADO) solely dependent on it.
+For these reasons and others, Microsoft actually deprecated OLE DB as a data access technology for SQL Server releases after v11 (SQL Server 2012). For a couple of years before this point, they had been producing and updating the SQL Server Native Client, which supported both ODBC and OLE DB technologies. In late 2012 however, they announced that they would be aligning with ODBC for native relational data access in SQL Server, and encouraged everybody else to do the same. They further stated that SQL Server releases after v11/SQL Server 2012 would actively not support OLE DB!
+This announcement provoked a storm of protest. People were at a loss to understand why MS was suddenly deprecating a technology that they had spent years getting them to commit to. In addition, SSAS/SSRS and SSIS, which were MS-written applications intimately linked to SQL Server, were wholly or partly dependent on OLE DB. Yet another complaint was that OLE DB had certain desirable features which it seemed impossible to port back to ODBC – after all, OLE DB had many good points.
+In October 2017, Microsoft relented and officially un-deprecated OLE DB. They announced the imminent arrival of a new driver (MSOLEDBSQL) which would have the existing feature set of the Native Client 11 and would also introduce multi-subnet failover and TLS 1.2 support. The driver was released in March 2018.
+
+-
+-
+Şu linkteki kod incelenebilir: https://docs.microsoft.com/tr-tr/dotnet/framework/data/adonet/ado-net-code-examples
+İngilizce olarak object linking and embedding database kelimelerinin baş harflerinden oluşan bir veritabanı terimidir. Aslında OLE terimi (object linking and embedding) Microsoft firması tarafından kazandırılan ve uygulama geliştirme sırasında bir varlığı programa bağlamaya yarayan mantıktır.
+Örneğin bir programda bulunan bir resim, programın içerisine dahil edilip çalıştırılabilir kodun (executable code) bir parçası olabileceği gibi, bir resim dosyası olarak hariçte tutulup programın çalışması sırasında bu harici dosyadan okunabilir. Bir varlığın bu şekilde programa dahil edilmesine microsoft terminolojisinde COM (component object model) ismi verilirken hariçte tutulmasına ole ismi verilir.
+OLEDB terimi ise bu açıklamadan anlaşılacağı üzere program ile veri tabanı arasındaki bağlantının hariçte tutulması anlamındadır. Aslında MDAC ismi verilen ve microsoft tarafından geliştirilen microsoft data access components (microsoft veri erişim bileşenleri) ailesinin bir üyesi olan OLEDB, kısaca microsoft ortamlarında veritabanına (DB database) erişmek için kullanılan çeşitli yöntemlerden birisidir. Yapı olarak ODBC bağlantısına benzetilebilir.
+OLEDB kullanımını daha net anlayabilmek için C# dilinde yazılmış aşağıdaki kodu anlamaya çalışalım:
+using System;
+using System.Data.OleDb;
+public class ReadFromOleDb
+{
+  [STAThread]
+  static void Main(string[] args)
+  {
+    String sConn = "provider=sqloledb;server=(local)\SQLEXPRESS;database=veritabani;Integrated Security=SSPI";
+    String sSQL = "select id, firstname, lastname from Employee";
+    OleDbConnection oConn = new OleDbConnection(sConn);
+    oConn.Open();
+    OleDbCommand oCmd = new OleDbCommand(sSQL, oConn);
+    OleDbDataReader oReader = oCmd.ExecuteReader();
+
+    int idxID = oReader.GetOrdinal("id");
+    int idxFirstName = oReader.GetOrdinal("firstname");
+    int idxLastName = oReader.GetOrdinal("lastname");
+
+    while(oReader.Read()) {
+      Console.WriteLine("{0} {1} {2}",
+        oReader.GetValue(idxID),
+        oReader.GetValue(idxFirstName),
+        oReader.GetValue(idxLastName));
+    }
+  }
+}
 
 
 

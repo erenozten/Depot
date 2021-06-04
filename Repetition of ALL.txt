@@ -1928,6 +1928,18 @@ There are tons of vendors and offerings in the BI space, and wading through them
 For a deeper look at today’s most popular business intelligence systems, see "Top 12 BI tools of 2019" and "Top 10 BI data visualization tools."
 Business intelligence analyst
 Any company that's serious about BI will need to have business intelligence analysts on staff. CIO.com has an in-depth article on what that job entails; in general, they aim to use all the features of BI tools to get the data that companies need, the most important being discovering areas of revenue loss and identifying where improvements can be made to save the company money or increase profits.
+Even if your company relies on self-service BI tools on a day-to-day basis, business intelligence analysts have an important role to play, as they are necessary for managing and maintaining those tools and their vendors. They also set up and standardize the reports that managers are going to be generating to make sure that results are consistent and meaningful across your organization. And to avoid garbage in/garbage out problems, business intelligence analysts need to make sure the data going into the system is correct and consistent, which often involves getting it out of other data stores and cleaning it up.
+Business intelligence analyst jobs often require only a bachelor's degree, at least at the entry level, though to advance up the ranks an MBA may be helpful or even required. As of October 2019, the median business intelligence salary is around $67,500, though depending on your employer that could range from $49,000 to $94,000.
+The future of business intelligence
+Moving ahead, Howson says Gartner sees a third wave of disruption on the horizon, something the research firm calls “augmented analytics,” where machine learning is baked into the software and will guide users on their queries into the data.
+“It will be BI and analytics, and it will be smart,” she says.
+The combinations included in these software platforms will make each function more powerful individually and more valuable to the businesspeople using them, Gorman says.
+“Someone will look at reports from, for example, last year’s sales — that’s BI — but they’ll also get predictions about next year’s sales — that’s business analytics — and then add to that a what-if capability: What would happen if we did X instead of Y,” Gorman says, explaining that software makers are moving to develop applications that will provide those functions within a single application rather than delivering them via multiple platforms as is now the case.
+“Now the system delivers higher-value recommendations. It makes the decision-maker more efficient, more powerful and more accurate,” he adds.
+And although BI will remain valuable in and of itself, Howson says organizations can’t compete if they’re not moving beyond only BI and adopting advanced analytics as well.
+In fact, Gartner’s Magic Quadrant report predicts that by 2020 organizations offering “users access to a curated catalog of internal and external data will realize twice the business value from analytics investments than those that do not.”
+Howson adds: “There is a need for reporting, but reporting alone is not enough. If you’re only doing reporting you’re behind already. Unless your reporting is smart and agile, you’re behind. You’re a laggard.”
+
 
 
 

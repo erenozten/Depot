@@ -2213,34 +2213,52 @@ If T reads the value written by J in S1, then it also reads the value written by
 
 If T performs the final write on the data value in S1, then it also performs the final write on the data value in S2.
 
-Conflict Equivalence
-Two schedules would be conflicting if they have the following properties −
+-
+Wikipediden, güzel görünüyo baya:
+In computer science, ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.
+In 1983,[1] Andreas Reuter and Theo Härder coined the acronym ACID, building on earlier work by Jim Gray[2] who named atomicity, consistency, and durability, but not isolation, when characterizing the transaction concept. These four properties are the major guarantees of the transaction paradigm, which has influenced many aspects of development in database systems.
+According to Gray and Reuter, the IBM Information Management System supported ACID transactions as early as 1973 (although the acronym was created later).[3]
+Characteristics
+The characteristics of these four properties as defined by Reuter and Härder are as follows:
+Atomicity
+	Main article: Atomicity (database systems)
 
-Both belong to separate transactions.
-Both accesses the same data item.
-At least one of them is "write" operation.
-Two schedules having multiple transactions with conflicting operations are said to be conflict equivalent if and only if −
+Transactions are often composed of multiple statements. Atomicity guarantees that each transaction is treated as a single "unit", which either succeeds completely, or fails completely: if any of the statements constituting a transaction fails to complete, the entire transaction fails and the database is left unchanged. An atomic system must guarantee atomicity in each and every situation, including power failures, errors and crashes.[4] A guarantee of atomicity prevents updates to the database occurring only partially, which can cause greater problems than rejecting the whole series outright. As a consequence, the transaction cannot be observed to be in progress by another database client. At one moment in time, it has not yet happened, and at the next it has already occurred in whole (or nothing happened if the transaction was cancelled in progress).
+An example of an atomic transaction is a monetary transfer from bank account A to account B. It consists of two operations, withdrawing the money from account A and saving it to account B. Performing these operations in an atomic transaction ensures that the database remains in a consistent state, that is, money is neither debited nor credited if either of those two operations fail.[5]
+Consistency
+	Main article: Consistency (database systems)
 
-Both the schedules contain the same set of Transactions.
-The order of conflicting pairs of operation is maintained in both the schedules.
-Note − View equivalent schedules are view serializable and conflict equivalent schedules are conflict serializable. All conflict serializable schedules are view serializable too.
+Consistency ensures that a transaction can only bring the database from one valid state to another, maintaining database invariants: any data written to the database must be valid according to all defined rules, including constraints, cascades, triggers, and any combination thereof. This prevents database corruption by an illegal transaction, but does not guarantee that a transaction is correct. Referential integrity guarantees the primary key – foreign key relationship. [6]
+Isolation
+	Main article: Isolation (database systems)
 
-States of Transactions
-A transaction in a database can be in one of the following states −
+Transactions are often executed concurrently (e.g., multiple transactions reading and writing to a table at the same time). Isolation ensures that concurrent execution of transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially. Isolation is the main goal of concurrency control; depending on the method used, the effects of an incomplete transaction might not even be visible to other transactions. [7]
+Durability
+	Main article: Durability (database systems)
 
-Transaction States
-Active − In this state, the transaction is being executed. This is the initial state of every transaction.
-
-Partially Committed − When a transaction executes its final operation, it is said to be in a partially committed state.
-
-Failed − A transaction is said to be in a failed state if any of the checks made by the database recovery system fails. A failed transaction can no longer proceed further.
-
-Aborted − If any of the checks fails and the transaction has reached a failed state, then the recovery manager rolls back all its write operations on the database to bring the database back to its original state where it was prior to the execution of the transaction. Transactions in this state are called aborted. The database recovery module can select one of the two operations after a transaction aborts −
-
-Re-start the transaction
-Kill the transaction
-Committed − If a transaction executes all its operations successfully, it is said to be committed. All its effects are now permanently established on the database system.
-
+Durability guarantees that once a transaction has been committed, it will remain committed even in the case of a system failure (e.g., power outage or crash). This usually means that completed transactions (or their effects) are recorded in non-volatile memory.[citation needed]
+Examples
+This section does not cite any sources. Please help improve this section by adding citations to reliable sources. Unsourced material may be challenged and removed. (May 2018) (Learn how and when to remove this template message)
+The following examples further illustrate the ACID properties. In these examples, the database table has two columns, A and B. An integrity constraint requires that the value in A and the value in B must sum to 100. The following SQL code creates a table as described above:
+CREATE TABLE acidtest (A INTEGER, B INTEGER, CHECK (A + B = 100));
+Atomicity
+Atomicity is the guarantee that series of database operations in an atomic transaction will either all occur (a successful operation), or none will occur (an unsuccessful operation). The series of operations cannot be separated with only some of them being executed, which makes the series of operations "indivisible". A guarantee of atomicity prevents updates to the database occurring only partially, which can cause greater problems than rejecting the whole series outright. In other words, atomicity means indivisibility and irreducibility.[8] Alternatively, we may say that a logical transaction may be made of, or composed of, one or more (several), physical transactions. Unless and until all component physical transactions are executed, the Logical transaction will not have occurred – to the effects of the database. Say our Logical transaction consists of transferring funds from account A to account B. This logical transaction may be composed of several physical transactions consisting of first removing the amount from account A as a first physical transaction and then, as a second transaction, depositing said amount in account B. We would not want to see the amount removed from account A before we are sure it has been transferred into account B. Then, unless and until both transactions have happened and the amount has been transferred to account B, the transfer has not, to the effects of the database, occurred.
+Consistency failure
+Consistency is a very general term, which demands that the data must meet all validation rules. In the previous example, the validation is a requirement that A + B = 100. All validation rules must be checked to ensure consistency. Assume that a transaction attempts to subtract 10 from A without altering B. Because consistency is checked after each transaction, it is known that A + B = 100 before the transaction begins. If the transaction removes 10 from A successfully, atomicity will be achieved. However, a validation check will show that A + B = 90, which is inconsistent with the rules of the database. The entire transaction must be cancelled and the affected rows rolled back to their pre-transaction state. If there had been other constraints, triggers, or cascades, every single change operation would have been checked in the same way as above before the transaction was committed. Similar issues may arise with other constraints. We may have required the data types of both A and B to be integers. If we were then to enter, say, the value 13.5 for A, the transaction will be cancelled, or the system may give rise to an alert in the form of a trigger (if/when the trigger has been written to this effect). Another example would be with integrity constraints, which would not allow us to delete a row in one table whose primary key is referred to by at least one foreign key in other tables.
+Isolation failure
+To demonstrate isolation, we assume two transactions execute at the same time, each attempting to modify the same data. One of the two must wait until the other completes in order to maintain isolation.
+Consider two transactions: T1 transfers 10 from A to B. T2 transfers 20 from B to A.
+Combined, there are four actions:
+1.	T1 subtracts 10 from A.
+2.	T1 adds 10 to B.
+3.	T2 subtracts 20 from B.
+4.	T2 adds 20 to A.
+If these operations are performed in order, isolation is maintained, although T2 must wait. Consider what happens if T1 fails halfway through. The database eliminates T1's effects, and T2 sees only valid data.
+By interleaving the transactions, the actual order of actions might be:
+1.	T1 subtracts 10 from A.
+2.	T2 subtracts 20 from B.
+3.	T2 adds 20 to A.
+4.	T1 adds 10 to B.
 
 
 

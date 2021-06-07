@@ -2024,6 +2024,137 @@ oReader.GetOrdinal("id");
 -
 -
 -
+NoSQL	  (GITHUB)  (test) 
+Nosql nedir
+İlişkisiz veritabanıdır. NoSQL is not a relational database.
+Bir NoSQL veritabanında, kayıtlar genellikle bir JSON belgesi olarak saklanır.
+NoSQL (ilişkisel olmayan) Veritabanları Nasıl Çalışır?
+NoSQL is a whole new way of thinking about a database. NoSQL is not a relational database. The reality is that a relational database model may not be the best solution for all situations. The easiest way to think of NoSQL, is that of a database which does not adhering to the traditional relational database management system (RDMS) structure. Sometimes you will also see it revered to as 'not only SQL'.
+Basit bir kitap veritabanının şemasını modelleme örneğini ele alalım:
+•	İlişkisel bir veritabanında genellikle bir kitap kaydı gizlenerek (veya “normalleştirilerek”) ayrı tablolarda depolanırken, ilişkiler birincil ve yabancı anahtar kısıtlamaları tarafından tanımlanır. Bu örnekte Books (Kitaplar) tablosu ISBN, Book Title (Kitap Başlığı) ve Edition Number (Baskı Sayısı) sütunlarına; Authors (Yazarlar) tablosu AuthorID (Yazar Kimliği) ve Author Name (Yazar Adı) sütunlarına; Author-ISBN (Yazar-ISBN) tablosu ise AuthorID (Yazar Kimliği) ve ISBN sütunlarına sahiptir. İlişkisel model, veritabanının yedekliliği azaltacak şekilde normalleştirilmiş ve genel olarak depolama için optimize edilmiş tablolar arasında başvurusal bütünlük uygulamasına imkan tanıyacak şekilde tasarlanmıştır.
+•	Bir NoSQL veritabanında, kitap kaydı genellikle bir JSON belgesi olarak saklanır. Her kitap için öğe, ISBN, Book Title (Kitap Başlığı), Edition Number (Baskı Sayısı), Author Name (Yazar Adı) ve AuthorID (Yazar Kimliği) bilgileri tek bir belgede öznitelikler olarak depolanır. Bu modelde, veriler sezgisel yazılım geliştirme ve yatay ölçeklenebilirlik için optimize edilir.
+
+Neden NoSQL veritabanı kullanmalısınız?
+NoSQL veritabanları, harika kullanıcı deneyimleri sunulması amacıyla esnek, ölçeklenebilir, yüksek performanslı ve yüksek oranda işlevsel veritabanları gerektiren mobil, web ve oyun gibi birçok modern uygulama için idealdir.
+•	Esneklik: NoSQL genellikle daha hızlı ve daha fazla yinelemeli yazılım geliştirmeyi mümkün kılan esnek şemalar sağlar. Esnek veri modeli sayesinde NoSQL veritabanları yarı yapılandırılmış ve yapılandırılmamış veriler için idealdir.
+•	Ölçeklenebilirlik: NoSQL veritabanları genellikle pahalı ve kalıcı sunucular eklenerek ölçeği artırılabilecek şekilde değil, dağıtılmış donanım kümeleri kullanılarak ölçeği genişletilebilecek şekilde tasarlanır. Bazı bulut sağlayıcıları bu işlemleri arka planda, tam olarak yönetilen bir hizmet olarak gerçekleştirir.
+•	Yüksek performans: NoSQL veritabanları, benzer işlevlerin ilişkisel veritabanlarıyla gerçekleştirilmesi ile karşılaştırıldığında daha yüksek performansı mümkün kılan belirli veri modelleri (belge, anahtar-değer, grafik gibi) ve erişim desenleri için optimize edilmiştir.
+•	Yüksek oranda işlevsel: NoSQL veritabanları, her biri ilgili veri modeli için özel olarak tasarlanmış yüksek oranda işlevsel API'ler ve veri türleri sağlar.
+BEST NOSQL DATABASES 2020
+•	MongoDB
+•	It is an open-source NoSQL database which is document-oriented. MongoDB uses JSON like documents to store any data. It is written in C++.
+•	Cassandra
+•	It was developed at Facebook for inbox search. Cassandra is a distributed data storage system for handling very large amounts of structured data.
+•	Redis
+•	Redis is the most famous key-value store. Redis is composed in C language. It is authorized under BSD.
+•	HBase
+•	It is a distributed and non-relational database which is designed for the BigTable database by Google.
+•	Neo4j
+•	Neo4j is referred to as a native graph database because it effectively implements the property graph model down to the storage level.
+•	Oracle NoSQL
+•	Oracle NoSQL Database implements a map from user-defined keys to opaque data items.
+•	Amazon DynamoDB
+•	DynamoDB uses a NoSQL database model, which is nonrelational, allowing documents, graphs and columnar among its data models.
+•	Couchbase
+•	Couchbase Server is a NoSQL document database for interactive web applications. It has a flexible data model, is easily scalable, provides consistently high performance.
+•	Memcached
+•	It is an open source, high-performance, distributed memory caching system intended to speed up dynamic web applications by reducing the database load.
+•	CouchDB
+•	It is an Open Source NoSQL Database which utilizes JSON to store information and JavaScript as its query language.
+-
+-
+-
+MongoDb	(GITHUB)  (test) 
+Mongodb nedir
+
+MongoDB is the most well known among NoSQL Databases. It is an Open-Source database which is Document-oriented. MongoDB is a scalable and accessible database. It is in C++. MongoDB can likewise be utilized as the file system. In MongoDB, JavaScript can be utilized as the query language. By utilizing sharding MongoDB scales horizontally. It is very useful in Popular JavaScript Frameworks. People really enjoying sharding, advanced text searching, gridFS, map-reduce features for the 2019 year. Amazing performance and new features promoted this NoSQL database to 1st place in our list. 
+FEATURES
+•	Provides high performance
+•	Auto-sharding
+•	Run over multiple servers
+•	Supports Master-Slave replication
+•	Data is stored in the form of JSON style documents
+•	index any field in a document
+•	It has an automatic load balancing configuration because of data placed in shards
+•	Supports regular expression searches
+•	Easy to administer in the case of failures
+PROS OF MONGODB
+•	Easy to setup MongoDB
+•	MongoDB Inc. provides professional support to its clients
+•	Support ad-hoc query
+•	High-Speed Database
+•	Schema-less database
+•	Horizontally scalable database
+•	Performance is very high
+CONS OF MONGODB
+•	Doesn’t support joins
+•	Data Size is High
+•	Nesting of documents is limited
+•	Increase unnecessary usage of memory
+
+
+Bir veritabanıdır, ilişkisiz veritabanıdır -> MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.
+-
+-
+-
+Cassandra	(GITHUB)  (test) 
+Cassandra nedir
+ 
+Cassandra NoSQL database in top 10
+Cassandra was developed at Facebook for inbox search. Cassandra is a distributed data storage system for handling very large amounts of structured data. Generally, these data are spread out across many commodity servers. You can also add storage capacity of your data keeping your service online and you can do this task easily. As all the nodes in a cluster are same, there is no complex configuration to deal with. Cassandra is written in Java. (CQL nedir) Cassandra Query Language (CQL) is a SQL-like language for querying Cassandra Database. As a result, Cassandra stands 2nd in best open source databases. Cassandra is being used by some of the biggest companies such as Facebook, Twitter, Cisco, Rackspace, eBay, Twitter, Netflix, and more.
+•	Developed by: Apache Software Foundation
+FEATURES
+•	Linearly scalable
+•	Maintains a quick response time
+•	Supports properties like Atomicity, Consistency, Isolation, and Durability (ACID)
+•	Supports MapReduce with Apache Hadoop
+•	Maximal flexibility to distribute the data
+•	Highly scalable
+•	Peer-to-peer architecture
+PROS OF CASSANDRA
+•	Highly scalable
+•	No single point of failure
+•	Multi-DC Replication
+•	Integrate tightly with other JVM based applications
+•	More suitable for multiple data-center deployments, redundancy, failover and disaster recovery
+CONS OF CASSANDRA
+•	Limited support for aggregations
+•	Unpredictable Performance
+•	Doesn’t Support ad-hoc query
+-
+-
+-
+Redis (Remote Dictionary Server)  	(GITHUB)  (test) 
+Redis nedir
+İsmine dikkat, remote Sözlük server’ı
+ 
+Redis NoSQL database
+Redis(Remote Dictionary Server) is a key-value store. Furthermore, it is the most famous key-value store. Redis has support for some C++, PHP, Ruby, Python, Perl, Scala and so forth. Redis is composed in C language. Furthermore, it is authorized under BSD. Some fun facts about Redis NoSQL Database – It can handle up to 2 ³² keys and was tested in practice to handle at least 250 million keys per instance. It is an in-memory but persistent on-disk database. It means it will store all data in RAM only for backup only use disk(HDD or SSD).
+FEATURES
+•	Automatic failover
+•	Holds its database entirely in the memory
+•	Transactions
+•	Lua scripting
+•	Replicate data to any number of slaves
+•	Keys with a limited time-to-live
+•	LRU eviction of keys
+•	Supports Publish/Subscribe
+PROS OF REDIS
+•	Supports a huge variety of data types
+•	Easy to install
+•	Very fast(perform about 110000 SETs per second, about 81000 GETs per second)
+•	Operations are atomic
+•	Multi-utility tool(used in a number of use cases)
+•	Redis Sentinel is featured provided by Redis to create replication into a distributed system.
+Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+
+Redis (/ˈrɛdɪs/; Remote Dictionary Server) is an in-memory data structure project implementing a distributed, in-memory key-value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indexes. The project is mainly developed by Salvatore Sanfilippo and as of 2019, is sponsored by Redis Labs.[8] It is open-source software released under a BSD 3-clause license.
+
+History
+The Redis project began when Salvatore Sanfilippo, nicknamed antirez, the original developer of Redis, was trying to improve the scalability of his Italian startup, developing a real-time web log analyzer. After encountering significant problems in scaling some types of workloads using traditional database systems, Sanfilippo began to prototype a first proof of concept version of Redis in Tcl.[9] Later Sanfilippo translated that prototype to the C language and implemented the first data type, the list. After a few weeks of using the project internally with success, Sanfilippo decided to open source it, announcing the project on Hacker News. The project began to get traction, more so among the Ruby community, with GitHub and Instagram being among the first companies adopting it. 
+-
+-
+-
 
 
 

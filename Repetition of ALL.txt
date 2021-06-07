@@ -2278,6 +2278,35 @@ Distributed transactions
 	Main article: Distributed transaction
 
 Guaranteeing ACID properties in a distributed transaction across a distributed database, where no single node is responsible for all data affecting a transaction, presents additional complications. Network connections might fail, or one node might successfully complete its part of the transaction and then be required to roll back its changes because of a failure on another node. The two-phase commit protocol (not to be confused with two-phase locking) provides atomicity for distributed transactions to ensure that each participant in the transaction agrees on whether the transaction should be committed or not.[9] Briefly, in the first phase, one node (the coordinator) interrogates the other nodes (the participants) and only when all reply that they are prepared does the coordinator, in the second phase, formalize the transaction.
+-
+-
+-
+DML (Data Manipulation Language)  (GITHUB)  (test)
+Dml nedir
+Veritabanındaki veri üzerinde değişiklik yapmanı sağlayan yapı. 
+
+SELECT, INSERT, UPDATE, DELETE'DEN OLUŞUR (WIKI ENGLISH)
+
+Bilgiyi çağırma, bilgiye yeni bir şeyler ekleme, bilgiden bir şeyler silme, bilgiyi güncelleştirme işlemlerini yapar. Temel dört komutu vardır:
+Select: Veritabanındaki nesneden alan çağırmayı ve gereken bilgiyi görebilmeyi sağlar.
+İnsert: Nesneye alan eklemeyi sağlar.
+Update: Nesnede bilgi değiştirmeyi sağlar.
+Delete: Nesneden alan silmeyi sağlar.
+-
+A data manipulation language (DML) is a computer programming language used for adding (inserting), deleting, and modifying (updating) data in a database. A DML is often a sublanguage of a broader database language such as SQL, with the DML comprising some of the operators in the language.[1] Read-only selecting of data is sometimes distinguished as being part of a separate data query language (DQL), but it is closely related and sometimes also considered a component of a DML; some operators may perform both selecting (reading) and writing.
+A popular data manipulation language is that of Structured Query Language (SQL), which is used to retrieve and manipulate data in a relational database.[2] Other forms of DML are those used by IMS/DLI, CODASYL databases, such as IDMS and others.
+SQL
+In SQL, the data manipulation language comprises the SQL-data change statements,[3] which modify stored data but not the schema or database objects. Manipulation of persistent database objects, e.g., tables or stored procedures, via the SQL schema statements,[3] rather than the data stored within them, is considered to be part of a separate data definition language (DDL). In SQL these two categories are similar in their detailed syntax, data types, expressions etc., but distinct in their overall function.[3]
+The SQL-data change statements are a subset of the SQL-data statements; this also contains the SELECT query statement,[3] which strictly speaking is part of the DQL, not the DML. In common practice though, this distinction is not made and SELECT is widely considered to be part of DML,[4] so the DML consists of all SQL-data statements, not only the SQL-data change statements. The SELECT ... INTO ... form combines both selection and manipulation, and thus is strictly considered to be DML because it manipulates (i.e. modifies) data.
+Data manipulation languages have their functional capability organized by the initial word in a statement, which is almost always a verb. In the case of SQL, these verbs are:
+•	SELECT ... FROM ... WHERE ... (strictly speaking DQL)
+•	SELECT ... INTO ...
+•	INSERT INTO ... VALUES ...
+•	UPDATE ... SET ... WHERE ...
+•	DELETE FROM ... WHERE ...
+For example, the command to insert a row into table employees:
+INSERT INTO employees (first_name, last_name, fname) VALUES ('John', 'Capita', 'xcapit00');
+
 
 
 

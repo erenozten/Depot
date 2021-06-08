@@ -2306,6 +2306,57 @@ Data manipulation languages have their functional capability organized by the in
 •	DELETE FROM ... WHERE ...
 For example, the command to insert a row into table employees:
 INSERT INTO employees (first_name, last_name, fname) VALUES ('John', 'Capita', 'xcapit00');
+-
+-
+-
+-
+MVC örneğinde: class / Property / Entity / Attribute 
+
+   public class Book
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [DisplayName("Kitap Adı"), DisplayFormat(NullDisplayText = "Veri yok"), StringLength(30, ErrorMessage = "30 haneden fazla hane girdiniz."), MinLength(2, ErrorMessage = "2 hanedan az hane girdiniz.")]
+        public string BookName { get; set; }
+    }
+
+Yukarıdaki örnekte Book class’ını oluşturduk. 
+Bu class’ın herhangi bir örneğine Entity denir.
+Property’nin üzerine yazdığımız öğelere Attribute denir. Bu durumda [Required], [DisplayName] bir Attribute’dir. (ayrıca Data Annotation)
+-
+-
+-
+-
+Six Benefits Of Using MVC Model For Effective Web Application Development
+ 
+Over the years, software development has gone through many changes. One of the biggest changes that happened in recent years, is the use of MVC patterns for developing software or web application. The Model–view–controller shortly known as MVC is a software architectural design for implementing user interfaces on computers. The MVC pattern is a great architecture no matter whatever the language you are using for the development.
+How Does MVC Pattern Work?
+MVC patterns separate the input, processing, and output of an application. This model divided into three interconnected parts called the model, the view, and the controller. All of the three above given components are built to handle some specific development aspects of any web or .net application development.
+In the MVC application development, the controller receives all requests for the application and then instructs the model to prepare any information required by the view. The view uses that data prepared by the controller to bring the final output.
+Three Levels Of MVC Model:
+Model:
+This level is very important as it represents the data to the user. This level defines where the application’s data objects are stored. The model doesn’t know anything about views and controllers. So, whenever there are changes done in the model it will automatically notify observers that the changes are made. The model may be a single object or a structure of objects.
+Views:
+A view is a visual representation of the MVC model. This level creates an interface to show the actual output to the user. However, a view will not display anything itself. It is the controller or model that tells view of what to display to the user. It also handles requests from the user and informs the controller. A view is connected to its model and gets the data necessary for the presentation by asking certain questions. Sometimes, it also updates the model by sending appropriate messages. All these questions and messages are sent back to the model in such an easy terminology that can easily understand the information sent by a model or a controller.
+Controller:
+The controller is a level that acts as the brain of the entire MVC system. A controller also acts as a link between a user and the system. It provides the user with the input by providing appropriate views to present it appropriately on the screen. The controller understands user output, converts it into the appropriate messages and passes the same to views.
+Advantages Of Using MVC Framework
+1. Faster Development Process:
+MVC supports rapid and parallel development. If an MVC model is used to develop any particular web application then it is possible that one programmer can work on the view while the other can work on the controller to create the business logic of the web application. Hence this way, the application developed using the MVC model can be completed three times faster than applications that are developed using other development patterns.
+2. Ability To Provide Multiple Views:
+In the MVC Model, you can create multiple views for a model. Today, there is an increasing demand for new ways to access your application and for that MVC development is certainly a great solution. Moreover, in this method, Code duplication is very limited because it separates data and business logic from the display.
+3. Support For Asynchronous Technique:
+The MVC architecture can also integrate with the JavaScript Framework. This means that MVC applications can be made to work even with PDF files, site-specific browsers, and also with desktop widgets. MVC also supports an asynchronous technique, which helps developers to develop an application that loads very fast.
+4. The Modification Does Not Affect The Entire Model:
+For any web application, the user interface tends to change more frequently than even the business rules of the .net development company. It is obvious that you make frequent changes in your web application like changing colors, fonts, screen layouts, and adding new device support for mobile phones or tablets. Moreover, Adding a new type of view are very easy in the MVC pattern because the Model part does not depend on the views part. Therefore, any changes in the Model will not affect the entire architecture.
+5. MVC Model Returns The Data Without Formatting:
+MVC pattern returns data without applying any formatting. Hence, the same components can be used and called for use with any interface. For example, any kind of data can be formatted with HTML, but it could also be formatted with Macromedia Flash or Dream viewer.
+6. SEO Friendly Development Platform:
+MVC platform supports the development of SEO friendly web pages or web applications. Using this platform, it is very easy to develop SEO-friendly URLs to generate more visits from a specific application. This development architecture is commonly used in Test-Driven Development applications. Moreover, Scripting languages like JavaScript and jQuery can be integrated with MVC to develop feature-rich web applications.
+Thus, the MVC design pattern is surely a great approach to building software applications. The MVC framework is easy to implement as it offers above given numerous advantages. Projects that are developed with the help of the MVC model can be easily developed with lesser expenditure and within less time too. Above all, its power to manage multiple views makes MVC the best architecture pattern for developing web applications.
+As a result, today organizations are looking for the .net development of web applications based on MVC architecture for cost and time benefits. There are many web development companies providing MVC development services to develop web applications that satisfy every requirement of the clients. Brainvire is one such .net development company that provides the most desired output to its clients by offering fast and highly interactive web applications using MVC 6 development architecture. Contact us today
+
 
 
 

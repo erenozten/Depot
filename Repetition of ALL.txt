@@ -2476,8 +2476,18 @@ ORM (Object relational Mapping)  (GITHUB)
 -
 -
 -
+Jira 	(GITHUB)  (test)
+jira nedir
+Jira Software is part of a family of products designed to help teams of all types manage work. 
+Originally, Jira was designed as a bug and issue tracker. 
+But today, Jira has evolved into a powerful work management tool for all kinds of use cases, from requirements and test case management to agile software development. In this guide, you'll learn which features and functionalities of Jira can help your team with your unique needs. 
 
+JIRA is a tool developed by Australian Company Atlassian. This software is used for bug tracking, issue tracking, and project management. The JIRA full form is actually inherited from the Japanese word "Gojira" which means "Godzilla". The basic use of this tool is to track issue and bugs related to your software and Mobile apps.
+It is also used for project management. The JIRA dashboard consists of many useful functions and features which make handling of issues easy. Some of the key features are listed below. Now in these Jira tutorials, let's learn JIRA Defect and Project tracking software with this Training Course.
 -
+-
+-
+
 
 
 

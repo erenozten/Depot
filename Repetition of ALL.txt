@@ -2416,6 +2416,43 @@ This is all about the differences between programming languages and few major pr
 -
 -
 -
+Method = Function
+
+Both are same, there is no difference its just a different term for the same thing in C#.
+Method:
+In object-oriented programming, a method is a subroutine (or procedure or function) associated with a class.
+With respect to Object Oriented programming the term "Method" is used, not functions.
+Detay II: 
+When a function is a part of a class, it's called a method.
+C# is an OOP language and doesn't have functions that are declared outside of classes, that's why all functions in C# are actually methods.
+Though, beside this formal difference, they are the same...
+-
+-
+update-database -TargetMigration:0
+..
+Note: It's possible to get other errors when migrating data and making schema changes. If
+you get migration errors you can't resolve, you can either change the database name in the
+connection string or delete the database. The simplest approach is to rename the database
+in Web.config file. The following example shows the name changed to CU_Test:
+<add name="SchoolContext" connectionString="Data
+Source=(LocalDb)\v11.0;Initial Catalog=CU_Test;Integrated
+Security=SSPI;"
+providerName="System.Data.SqlClient" />
+With a new database, there is no data to migrate, and the update-database command is
+much more likely to complete without errors. For instructions on how to delete the
+database, see How to Drop a Database from Visual Studio 2012.
+If that fails, another thing you can try is re-initialize the database by entering the
+following command in the PMC:
+update-database -TargetMigration:0
+Open the database in Server Explorer as you did earlier, and expand the Tables node to see that
+all of the tables have been created. (If you still have Server Explorer open from the earlier time,
+click the Refresh button.)
+..
+-
+-
+-
+-
+
 
 
 

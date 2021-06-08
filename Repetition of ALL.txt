@@ -2452,6 +2452,33 @@ click the Refresh button.)
 -
 -
 -
+Oracle Database	(GITHUB) (test)
+Oracle nedir
+Oracle Database (commonly referred to as Oracle RDBMS or simply as Oracle) is a proprietary multi-model database[4] management system produced and marketed by Oracle Corporation.
+It is a database commonly used for running online transaction processing (OLTP), data warehousing (DW) and mixed (OLTP & DW) database workloads. The latest generation, Oracle Database 19c, is available on-prem, on-cloud, or in a hybrid-Cloud environment. 19c may also be deployed on Oracle Engineered Systems (e.g. Exadata) on-prem, on Oracle (public) cloud or (private) cloud at customer.[5] At Openworld 2017 in San Francisco, Executive Chairman of the Board and CTO, Larry Ellison announced the next database generation, Oracle Autonomous Database.[6]
+
+Oracle Database, Oracle firması tarafından geliştirilen ve pazarlaması yapılan,zaman zaman Oracle RDBMS (relational database management system), Oracle ilişkisel veritabanı yönetim sistemi (Oracle İVTYS) veya sadece Oracle olarak anılan, gelişmiş bir ilişkisel veritabanı yönetim sistemidir. Tüm ilişkisel veritabanı sistemleri gibi büyük miktarda verinin çok kullanıcılı ortamda depolanmasını ve güvenli bir şekilde erişimini yönetir.
+
+Oracle veritabanı yazılımları özellikle kurumsal alanda kullanılan yaygın bir veritabanı sistemidir. Oracle çok sayıda araçtan oluşur ve uygulama geliştiricilerinin kolay ve esnek uygulamalar geliştirmesini sağlar. Oracle’de diğer veritabanı yönetim sistemlerinde olduğu gibi, stored procedure’lar, paketler, trigger’ler gibi bileşenler yer alır.
+-
+-
+-
+-
+ORM   (Object Relational Mapping) / (Object-relational Mapper) (GITHUB) (test)
+Orm nedir?
+
+Entity Framework'ün tanımı şudur: Entity Framework is an Object Relational Mapper (ORM) which is a type of tool that simplifies mapping between objects in your software to the tables and columns of a relational database. Entity Framework (EF) is an open source ORM framework for ADO.NET which is a part of .NET Framework.
+ORM, veritabanında oluşturulan her bir nesneye (tabloya) karşılık uygulama tarafında bir nesne oluşturma işidir. Bu işlem bazı Frameworklerde ara yazılımlar sayesinde (ORM Tools), bazı frameworklerde ise elle gerçekleştirilmektedir.
+-
+ORM (Object relational Mapping)  (GITHUB)
+
+İlişkisel veritabanı (RDBMS) ile nesneye yönelik programlanın arasında bir tür köprü özelliği gören ve ilişkisel veritabanındaki bilgilerimizi yönetmek için, nesne modellerimizi kullandığımız bir tekniktir”. Basite indirgemek istersek: “Nesnelerimizi ilişkisel veritabanındaki tablomuza bağlayan ve veri alış-verişini bizim için yapan bir tekniktir/metodtur”. ORM tekniği belli bir programlama diline bağlı değildir ve her OO dilinde yazılabilir/kullanılabilir.
+-
+-
+-
+
+-
+
 
 
 

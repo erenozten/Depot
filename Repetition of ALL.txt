@@ -2552,6 +2552,51 @@ var adhocQuery = "SELECT * FROM test_table WHERE id = " + UserId ;
 Ad-hoc queries are dynamic aka “on the fly” queries that are treated entirely different queries by SQL Server for every execution. The side effect of ad-hoc queries is that SQL Server does nor reuse such statements and instead it adds those to the procedure cache. As a consequence, on a system with significant traffic intensity, this can cause that procedure cache became bloated causing flushing the data from the buffer cache and thus forcing the SQL Server to read more data straight from the physical disk instead of from memory. The result could be a severe performance problem that can slow down SQL Server severely due to a created I/O bottleneck
 Now, an ad-hoc query is not something that have to be avoided in all cases, and occasional use can be legitimate, but one should avoid to use them in some iterative cursor or RBAR (Row By Agonizing Row) processes
 
+DECLARE       @tablesCount INT,
+    @rowsCount INT,
+    @tablename VARCHAR(100),
+    @EMP_ID integer,
+    @BIRTH_DATE date,
+    @WAGE integer,
+    @CREDIT_CARD integer,
+    @EMP_NAME varchar(10)
+
+SET @tablesCount = 0
+
+WHILE (@tablesCount < 2) -- set the number of tables you want to be created
+BEGIN
+  SET @tablesCount = @tablesCount + 1 
+  SET @tablename = 'Table' + cast(@tablesCount as CHAR)
+  
+  PRINT 'Created table: ' + @tableName
+  
+  EXEC('CREATE TABLE ' + @tablename + '(
+      EMP_ID integer,
+      BIRTH_DATE date,
+      WAGE integer,
+      CREDIT_CARD integer,
+      EMP_NAME varchar(10))')   
+    
+  SET @rowsCount = 0
+  
+  WHILE (@rowsCount < 5) -- set the number of rows to be populated in each table
+  BEGIN 
+    SET @rowsCount = @rowsCount + 1
+    
+    SET @EMP_ID = @rowsCount
+    SET @BIRTH_DATE = DATEADD(d,-((18 * 365) + ABS(CONVERT(int,CONVERT(binary(4),NEWID())))/2147483648. * (47 * 365)),DATEADD(d,0,DATEDIFF(d,0,GETDATE())))
+    SET @WAGE = CONVERT(int,50000 + ABS(CONVERT(int,CONVERT(binary(4),NEWID())))/2147483648.*90000)
+    SET @CREDIT_CARD = CONVERT(int,5000000 + ABS(CONVERT(int,CONVERT(binary(4),NEWID())))/21474648. * 9000000)
+    SET @EMP_NAME = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(CONVERT(varchar(10), ABS(CONVERT(int,CONVERT(binary(4),NEWID())))) ,'1','a'),'2','b'),'3','c'),'4','d'),'5','e'),'6','f'),'7','g'),'8','h'),'9','i'),'0','j')
+
+    EXEC ('INSERT INTO ' + @tablename + ' VALUES (' + 
+      @EMP_ID + ', ' + 
+      '''' + @BIRTH_DATE + ''', ' +
+      @WAGE + ', ' +
+      @CREDIT_CARD + ', ' +
+      '''' + @EMP_NAME + ''')')
+  END     
+END
 
 
 

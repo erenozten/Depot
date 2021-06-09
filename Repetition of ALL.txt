@@ -2633,8 +2633,562 @@ The example of the query result:
 A single execution of this query indicates that 82% of queries executed on SQL Server are an ad-hoc query, so depending on the expected value and application design, such result could indicate that there is a need for closer inspection of the application design.
 However, for getting some more reliable information regarding the potential ad-hoc query impact on SQL Server, this query should be scheduled and results collected and stored so that they can be analyzed and compared over the time. But none of those allow relevant and measurable analysis of the actual impact that ad-hoc query use imposes on SQL Server performance
 
+-
+-
+-
+-
+Default Parameters / Optional Parameters / Required Parameters
 
+static void Main()
+        {
+            MyMethod(3,3);
+            Console.ReadKey();
+        }
+        static void MyMethod(int x, int y = 2)
+        {
+            Console.WriteLine(x);
+            Console.WriteLine(y);       
+        }
+Yukarıdaki MyMethod metodumuzda iki tane parametre var: x ve y.
+Bunlardan:
+ int x ==> required parameter
+int y = 2  ==> optional parameter (default parameter)
+ikinci parametreye opsiyonel deniyor; çünkü bu parametreye değer vermesek de olur.
+Not: Metod tanımlanırken, optional parametreler, required parametrelerden sonra yazılmalıdır. 
+Yani şu durumda:
+static void MyMethod(int x = 2, int y)
+gibi bir şey yazarsak hata verecektir.
+-
+-
+Bi örnek daha:
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        MyMethod(1, 2);
+        MyMethod(5);
+        Console.ReadKey();
+    }
+    static void MyMethod(int x, int y = 0)
+    {
+        Console.WriteLine(x + ", " + y);
+        //1, 2
+        //5,0   (x'i 5 verip y yi boş bıraktık. y'nin default value'su da 0 idi. O yüzden 0 döndü)
+    }
+
+}
+-
+-
+-
+-
+-
+using System;
+
+namespace ConsoleAppForExercises
+{
+    class Program
+    {
+        static void Main()
+        {
+            MyMethod(6, 7);
+            MyMethod(1);
+            Console.ReadKey();
+        }
+        static void MyMethod(int x, int y = 2)
+        {
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            Console.WriteLine("---");
+        }
+
+        /*
+           SONUÇ:
+           6
+           7
+           ---
+           1
+           2
+           ---
+         */
+
+    }
+}
+-
+-
+-
+-
+Uzun anlatım:
+Merhaba Arkadaşlar,
+2004 ve  2005 yıllarında uzun bir süre editörlüğünü yaptığım C#Nedir? topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
+Ancak insan zaman içerisinde profesyonelleşme yolunda ilerledikçe konuları çok daha farklı açılardan ele alması gerektiğini de öğreniyor. Profesyonel bir eğitmenin en iyi yaptığı işlerin başında, en zor konuları çöp adam kullanarak anlatmak gelmektedir. Tabi eğitmenin gerçek hayat tecrübelerini ve ip uçlarını da aktarıyor olması, profesyonelliğinin diğer bir göstergesidir. Böyle bir eğitmenin vereceği önerileri pür dikkat dinlemekte yarar vardır.
+Ben eğitmenliği bırakalı uzun bir süre oldu ama makale yazarken veya görsel ders çekerken, konunun anlatımı sırasında yukarıdaki hususlara dikkat etmeye çalışıyorum. Bu anlamda bazen çok basit olarak görünen bir konunun, aslında derinlere inildiğinde dikkat edilmesi gereken noktalar içerdiğini sürekli vurgulamaya çalışan yazıları da hazırlama uğraşısı içerisindeyim. İşte bu yazımızın konusu da; C# 4.0 ile birlikte gelen yeni dil özelliklerden birisi olan Default Parameters ile ilişkili tuzaklar. Öncelikli olarak konuya aşağıdaki hazır kod parçası ile başlayalım.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", 
+"AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; }
+ 
+        #region Constructors
+ 
+        public Connection(string server,string databaseName,
+int timeout,int packetSize) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+        } 
+        public Connection(string server, string databaseName, 
+int timeout) 
+            : this(server, databaseName, timeout, 4096) 
+        { 
+        } 
+        public Connection(string server, string databaseName) 
+            : this(server, databaseName, 45, 4096) 
+        { 
+        } 
+        public Connection() 
+            : this(".", "master", 45, 4096) 
+        { 
+        }
+ 
+        #endregion
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};
+database={1};timeout={2},
+packetSize={3}", Server, Database, Timeout, PacketSize); 
+        } 
+    } 
+}
+ 
+Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Görüldüğü üzere en fazla sayıda parametre alan yapıcı metod, diğer yapıcı metodlar tarafından kullanılmaktadır. Burada this anahtar kelimesini takip eden ifadeler içerisinde gerekli aktarma işlemlerinin yapıldığı görülebilir.
+
+Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda(Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
+Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
+ 
+Aslında Constructor kullanımının buradaki amacı, Connection tipine ait nesne örneklerinin oluşturulması sırasında alternatif versiyonları varsayılan parametre değerlerine göre sunabilmektir. Bu amaç düşünüldüğünde Default Parameters yeteneği önemli bir avantaj sağlamaktadır. Gelin kodumuzu Default Parameters kabiliyetini kullanarak aşağıdaki hale getirelim.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks",20,512); 
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; }
+ 
+        public Connection(string server=".", string databaseName="master", int timeout=45, int packetSize=4096) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+        }
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};database={1};timeout={2},packetSize={3}", Server, Database, Timeout, PacketSize); 
+        } 
+    }    
+}
+Dikkat edileceği üzere tek bir yapıcı metod kullanımı söz konusudur. Bir başka deyişle kod kısalmıştır. Yapıcı metodun parametrelerinde verilen varsayılan değerler sayesinde, Connection tipine ait nesne örneklerinin oluşturulması şekillendirilmiştir. Örneğin, çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
+Aslında işin içerisine Named Parameters kullanımını da katmamız yerinde olacaktır. Neden? Main metodu içerisindeki aşağıdaki kod satırını göz önüne alalım.
+1	myConn = new Connection("localhost", "AdventureWorks",20,512);
+Geliştirici kodu yazarken parametrelerin ne anlama geldiğini, isimlerinden veya varsa eğer XML Comment’ lerden çıkartabilir. Ancak tamamlanmış kodun okunması sırasında 20 ve 512 rakamlarının en anlama geldiği kolayca anlaşılamayabilir. İşte bu noktada parametreleri isimlendirerek kullanmak aşağıdaki okunurluğu sağlayacaktır.
+1	myConn = new Connection(server:"localhost", databaseName:"AdventureWorks", timeout:20, packetSize:512);
+Parametre Sayısının Arttırılması
+Gelelim default parameters kullanımında dikkatli olmamız gereken hususlara. İlk olarak parametre sayısının arttırılması durumunu göz önüne alacağız. Ancak senaryonun oluşumunda Named Parameters kullanmadığımızı varsayıyoruz. Bu amaçla Connection tipine ait yapıcı metodu aşağıdaki gibi değiştirdiğimizi düşünelim.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Connection myConn = new Connection(); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks"); 
+            Console.WriteLine(myConn.ToString()); 
+            myConn = new Connection("localhost", "AdventureWorks",20,512);            
+            Console.WriteLine(myConn.ToString()); 
+        } 
+    }
+ 
+    class Connection 
+    { 
+        public string Server { get; set; } 
+        public string Database { get; set; } 
+        public int Timeout { get; set; } 
+        public int PacketSize { get; set; } 
+        public int ProcessId { get; set; }
+ 
+        public Connection(string server=".", string databaseName="master", int timeout=45,int processId=10, int packetSize=4096) 
+        { 
+            Server = server; 
+            Database = databaseName; 
+            Timeout = timeout; 
+            PacketSize = packetSize; 
+            ProcessId = processId; 
+        }
+ 
+        public override string ToString() 
+        { 
+            return String.Format("server={0};database={1};timeout={2},packetSize={3},PId:{4}", Server, Database, Timeout, PacketSize,ProcessId); 
+        } 
+    }    
+}
+Kodda sadece processId isimli bir metod parametresi eklendiğini görmekteyiz. Bu aslında sonradan yapılan bir değişiklik olarak düşünülmelidir. Bir başka deyişle geliştirdiğimiz projelerde sonradan varsayılan parametre eklenmesi söz konusu olabilir. Buna göre çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
+Dikkatinizi çeken bir nokta var mı?
+Son çıktıya göre ProcessId değerinin 512 olduğu görülmektedir. Oysaki 512 değeri daha önceki kodlamaya göre PacketSize özelliği için atanan bir değerdir. Bir başka deyişle yanlış bir değer ataması söz konusudur. İşin kötü yanı bu senaryoda derleme zamanında bir hata veya uyarı mesajı alınmamaktadır. Dolayısıyla kodun hatalı çalışması olasıdır.
+Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
+Yani metod yapısını aşağıdaki gibi değiştirmemiz doğru bir çalışma zamanı çıktısı elde etmemizi sağlayacaktır.
+1	public Connection(string server = ".", string databaseName = "master", int timeout = 45, int packetSize = 4096,int processId = 10)
+,sonucu çalışma zamanı çıktısı aşağıdaki gibidir.
+ 
+Türetme(Inheritance) ve Varsayılan Parametreler
+Gelelim diğer bir vakaya. Bu vaka çok daha kritik ve önemlidir. Nitekim işin içerisinde türetme(Inheritance) kavramı vardır. Konuyu netleştirmek için aşağıdaki sınıf şemasına sahip örnek kod parçasını göz önüne alarak ilerleyelim.
+ 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43	using System;
+ 
+namespace DefaultAndOptionalParametersCase 
+{ 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            MyCommand myCmd = new MyCommand(); 
+            ICommand iCmd = myCmd; 
+            Command cmd = myCmd;
+ 
+            Console.WriteLine(myCmd.PrepareSelectTop("Product")); 
+            Console.WriteLine(iCmd.PrepareSelectTop("Product")); 
+            Console.WriteLine(cmd.PrepareSelectTop("Product")); 
+        } 
+    }
+ 
+    interface ICommand 
+    { 
+        string PrepareSelectTop(string tableName, int topNumber = 3); 
+    } 
+    class Command 
+       : ICommand 
+    { 
+        #region ICommand Members
+ 
+        public virtual string PrepareSelectTop(string tableName, int topNumber = 10) 
+        { 
+            return String.Format("Select top {0} from {1}",topNumber,tableName);            
+        }
+ 
+        #endregion 
+    } 
+    class MyCommand 
+       : Command 
+    { 
+        public override string PrepareSelectTop(string tableName, int topNumber = 50) 
+        { 
+            return String.Format("Select top {0} from {1}",topNumber,tableName); 
+        } 
+    }   
+}
+Aslında bu senaryo Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı) başlıklı yazımızdan size tanıdık gelecektir.
+Sınıf şemasından da görüleceği üzere ICommand arayüzünü(Interface) uygulayan Command isimli bir tip ve bundan türeyen MyCommand sınıfı söz konusudur. MyCommand sınıfı, Command tipinde virtual olarak tanımlanmış ve aslında ICommand arayüzü tarafından zorunlu hale getirilmiş PrepareSelectTop metodunu ezmektedir(Overriding).
+Kritik olan yer Main metodu içerisindeki değişken atamalardır. Dikkat edileceği üzere ICommand ve Command tipinden olan değişkenlere aynı MyCommand nesne örneği atanmıştır. Eğer çok biçimlilik ilkesini biliyorsak, iCmd ve cmd isimli nesne örnekleri üzerinden yapılan PrepareSelectTop çağrılarının aslında MyCommand tipindeki metod içeriğine doğru yapılması gerektiğini biliriz. Buna göre de tüm Select sorgularında Top 50 değerinin kullanılıyor olması gerekmektedir. Oysaki çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+ 
+Görüldüğü gibi son iki çağrıda topNumber için Default Parameter değerleri tanımlandıkları yerdekiler olmuştur. ICommand için 3 iken Command için 10 olarak ele alınmıştır. Tam bu noktada “Amanın! Yoksa ICommand ve Command tipleri çok biçimlilik göstermiyorlarmış!” diye haykırabilirsiniz. Ama dereyi görmeden paçaları sıvamamak lazım. Nitekim uygulamayı debug modda değerlendirdiğimizde, aslında tüm PrepareSelectTop çağrılarının, MyCommand içinden yapıldığı görülecektir.
+Sorun tamamen Default Parameter’ lar ile alakalıdır. Söz gelimi ICommand üzerinden yapılan çağrı sonucu topNumber değeri aşağıdaki gibi olacaktır.
+ 
+veya Command tipi için şu şekilde olacaktır.
+ 
+Böyle bir vakanın oluşmasının sebebi Defaul Parameter’ ların çalışma zamanı(Runtime) yerine derleme zamanında(Compile Time) çözümleniyor olmalarıdır. Bu durum IL(Intermediate Language) kodunda açık bir şekilde görülebilir ve ispatlanabilir.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38	.method private hidebysig static void  Main(string[] args) cil managed 
+{ 
+  .entrypoint 
+  // Code size       68 (0x44) 
+  .maxstack  3 
+  .locals init ([0] class DefaultAndOptionalParametersCase.MyCommand myCmd, 
+           [1] class DefaultAndOptionalParametersCase.ICommand iCmd, 
+           [2] class DefaultAndOptionalParametersCase.Command cmd) 
+  IL_0000:  nop 
+  IL_0001:  newobj     instance void DefaultAndOptionalParametersCase.MyCommand::.ctor() 
+  IL_0006:  stloc.0 
+  IL_0007:  ldloc.0 
+  IL_0008:  stloc.1 
+  IL_0009:  ldloc.0 
+  IL_000a:  stloc.2 
+  IL_000b:  ldloc.0 
+  IL_000c:  ldstr      "Product" 
+  IL_0011:  ldc.i4.s   50 
+  IL_0013:  callvirt   instance string DefaultAndOptionalParametersCase.Command::PrepareSelectTop(string, 
+                                                                                                  int32) 
+  IL_0018:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_001d:  nop 
+  IL_001e:  ldloc.1 
+  IL_001f:  ldstr      "Product" 
+  IL_0024:  ldc.i4.3 
+  IL_0025:  callvirt   instance string DefaultAndOptionalParametersCase.ICommand::PrepareSelectTop(string, 
+                                                                                                   int32) 
+  IL_002a:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_002f:  nop 
+  IL_0030:  ldloc.2 
+  IL_0031:  ldstr      "Product" 
+  IL_0036:  ldc.i4.s   10 
+  IL_0038:  callvirt   instance string DefaultAndOptionalParametersCase.Command::PrepareSelectTop(string, 
+                                                                                                  int32) 
+  IL_003d:  call       void [mscorlib]System.Console::WriteLine(string) 
+  IL_0042:  nop 
+  IL_0043:  ret 
+} // end of method Program::Main
+IL kodunda yer alan ldc komutlaraına bakıldığında Defualt Parameter değerlerinin, tip tanımlamaları sırasında yazıldığı gibi set edildiği açık bir şekilde görülebilmektedir.
+Kolayca gözden kaçabilecek bir durum olduğu için tehlikeli bir vaka olduğunu ifade edebiliriz. Dolayısıyla en azından bu senaryoya göre Default Parameter kullanımını aslında Interface seviyesinde bırakmak çözüm olarak düşünülebilir.
+Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+-
+-
+-
 
 
 

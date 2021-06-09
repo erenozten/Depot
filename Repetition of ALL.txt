@@ -2487,6 +2487,30 @@ It is also used for project management. The JIRA dashboard consists of many usef
 -
 -
 -
+Ad Hoc Query	(GITHUB)  (test) 
+Ad hoc nedir, ad hoc query nedir, ad-hoc query nedir
+(ad hoc = amaca özel, niyete mahsus, latince) (Ad hoc is a Latin phrase meaning literally 'to this')
+Anlam ad hoc:
+adverb
+1.	when necessary or needed.
+"the group was constituted ad hoc"
+adjective
+1.	created or done for a particular purpose as necessary.
+"the discussions were on an ad hoc basis"
+-
+-
+In SQL, an ad hoc query is a loosely typed command/query whose value depends upon some variable
+-
+-
+Ad hoc is latin for "for this purpose". You might call it an "on the fly" query, or a "just so" query. It's the kind of SQL query you just loosely type out where you need it
+var newSqlQuery = "SELECT * FROM table WHERE id = " + myId;
+
+...which is an entirely different query each time that line of code is executed, depending on the value of myId. The opposite of an ad hoc query is a predefined query such as a Stored Procedure, where you have created a single query for the entire generalized purpose of selecting from that table (say), and pass the ID as a variable.
+-
+-
+An Ad-Hoc Query is a query that cannot be determined prior to the moment the query is issued. It is created in order to get information when need arises and it consists of dynamically constructed SQL which is usually constructed by desktop-resident query tools.
+Check: http://www.learn.geekinterview.com/data-warehouse/dw-basics/what-is-an-ad-hoc-query.html
+-
 
 
 

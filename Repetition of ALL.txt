@@ -2511,6 +2511,32 @@ var newSqlQuery = "SELECT * FROM table WHERE id = " + myId;
 An Ad-Hoc Query is a query that cannot be determined prior to the moment the query is issued. It is created in order to get information when need arises and it consists of dynamically constructed SQL which is usually constructed by desktop-resident query tools.
 Check: http://www.learn.geekinterview.com/data-warehouse/dw-basics/what-is-an-ad-hoc-query.html
 -
+-
+-
+In SQL, an ad hoc query is a loosely typed command/query whose value depends upon some variable. Each time the command is executed, the result is different, depending on the value of the variable. It cannot be predetermined and usually comes under dynamic programming SQL query. An ad hoc query is short lived and is created at runtime.
+Techopedia Explains Ad Hoc Query
+As the word "ad hoc" suggests, this type of query is designed for a "particular purpose,"which is in contrast to a predefined query, which has the same output value on every execution. An ad hoc query does not reside in the system for a long time and is created dynamically on demand by the user. It is more efficient to use an ad hoc query in programming as it saves system resources, but, at the same time complex, ad hoc queries (have multiple variables) also challenge the processing speed and runtime memory of the system.
+-
+-
+
+Also want to add that ad hoc query is vulnerable to SQL injection attacks. We should try to avoid using it and use parameterized SQLs instead (like PreparedStatement in Java).
+Share
+Improve this answer
+Follow
+answered Jun 5 '13 at 16:04
+
+ 
+
+xli
+2,14422 gold badges1616 silver badges2525 bronze badges
+Is this answer outdated?
+Yes | No
+•	7
+An ad-hoc query is not vulnerable to SQL Injection. An unparametized query that accepts user-input is vulnerable to SQL Injection. – Ben Dec 25 '13 at 10:00
+•	@Ben An ad-hoc query is always unparameterized. It cannot be SQL injection attacked if we don't expose the variables to users; but the point is ad-hoc query is risky to SQL Injection. – xli Dec 31 '13 at 15:06
+-
+-
+
 
 
 

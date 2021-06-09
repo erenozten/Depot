@@ -3189,6 +3189,87 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 -
 -
 -
+One of the major annoyances when starting with C# was the lack of default arguments. Generating two or three overloads manually is ok, but looking at the 28 overloads for a MessageBox makes my head tingle (in an ugly way).
+Now I can't hack the C# compiler to magically allow this. I can, however, provide a code generator that creates a set of overloads from a declaration containing default arguments.
+Using the Tool
+Enter your declaration in the first edit box. You can add default arguments like you would in C++, and the generated code appears immediately in the text field below. Click "Copy" to copy the generated code to the clipboard. Example:
+Hide   Copy Code
+void Add(string name = "(none)", int age = 22)
+The above generates the following implementations:
+Hide   Copy Code
+// $overload: void Add(string name = "(none)", int age = 22){
+ // do your worst! - implement the actual method here
+}
+
+#region overloads for: Add
+
+public void Add(string name)
+{
+ Add(name, 22);
+}
+
+public void Add()
+{
+ Add("(none)", 22);
+}
+
+#endregion // overloads
+public void Add(string name, int age)
+The first overload is the method you actually implement. The other overloads have a reduced argument list and call the first.
+The first line is for integration with Linkify (see below).
+It Gets Better (Optionally)
+C++ default arguments allow to omit parameters at the end of the argument list. However, in the above example where argument types are distinct, you may want to omit the name but still specify the age. I've added a custom "keyword", optional, that can drop arguments from the middle of the argument list:
+Hide   Copy Code
+void Add(optional string name = "(none)", int age = 22)
+This generates the following signatures:
+Hide   Copy Code
+public void Add(string name, int age) { } // the one to implement
+public void Add(string name)
+public void Add()
+public void Add(int age)
+The last one omits the string name parameter.
+It is your responsibility to make sure the resulting overloads aren't ambiguous. If you don't feel up to the job, the compiler will catch you!
+Integration with Visual Studio - Linkify
+I've updated my Linkify article that allows to visit URLs and run external tools from source code comments. Also, DefaultOverloader now generates a declaration line that Linkify can understand:
+Hide   Copy Code
+// $overload: void Add(string name = "(none)", int age = 22)
+void Add(string name, int age)
+Note: You need to set the path to the DefaultOverloader executable first in the Linkify configuration dialog. See that article for details.
+Place the caret on the "$overload" and click "Linkify". Default Overloader opens with your declaration already in place.
+You can also copy the two declaration lines separately by clicking "copy head", and the overloads region by clicking "copy body". This allows to preserve the body of the main functions implementation. Auto-Paste makes that even easier.
+Auto-Paste
+Auto-Paste makes that even easier. It works without Linkify installed (but then, the first step is more complicated). To modify an existing block with overloads:
+1.	Place caret on "$overload", and start Linkify
+» DefaultOverloader will open, with your declaration ready to be edited.
+2.	After making your modifications, click "Auto-Paste"
+» DefaultOverloader minimizes, and displays "Paste Head" as title
+3.	Select the two head lines (comment and main function header), and paste
+» The declarations are replaced with the new contents
+» DefaultOverloader (still minimized) displays "Paste Body" as title
+4.	Collapse the #region Overloads for..., select the entire line, and paste
+» New overloads replace the previous ones
+» DefaultOverloader closes
+Restore the DefaultOverloader from minimized state to cancel the paste sequence. There is a small delay between the first paste and the second data arriving on clipboard, so don't paste too fast in succession!
+Limitations
+The parser is fairly simple. So you might be able to create declarations that aren't interpreted correctly. One thing is a function name with multiple template parameters: don't put spaces in the template list, otherwise, I get the function name wrong!
+The parser doesn't validate your declaration - that's left to your compiler.
+This is unfortunately no full replacement for default parameters. One thing where some language and IDE support would be helpful is Intellisense - you still get listed all overloads separately. Also, when you modify the declaration, you have to use the Overloader again.
+The Debate
+There is a reason there are no default parameters in MSIL or the C# language - to learn about the reasons, read Eric Gunnersons response [^] or start at Google [^].
+In my opinion, Eric has a valid argument why default arguments aren't in MSIL - but it doesn't hold up for the C# language itself. After all, C# could do what I do.:)
+Points of Interest
+Permutation of Bools
+For implementing the optional keyword, I needed to permute over all variations of having them in. With N parameters tagged optional, I need to generate all possible combinations of N bool values. While some approaches can be found on the 'net, none was plug-and-play-enough for me. Thinking how to implement it myself, a "background thread" associated the idea of a bool array with a bit array - bools are bits! This allows a very simple solution: just count from 0 to 2<sup>N</sup>-1, and treat each bit as a flag.
+Parsing the Argument List
+The sources contain a (still somewhat experimental) Tokenizer that respects single- and double-quoted strings as well as round, square and curly brackets. This is required to parse declarations like the following correctly:
+Hide   Copy Code
+SendMessage(string X = "Hello, World", int[,] targetCoords) 
+It's barely tested and needs some extensions to be reusable, but it works well enough for the application given.
+Thank You
+A big thank you to everyone who helped me at the C# forums here - especially Judah Himango who often went an extra mile.
+I am currently working on my first "real world" C# project (complete with time pressure, feature creep, big plans, and get-it-done-while-everybody-is-out-to-distract you), and you have been really helpful in getting my stubborn head through this wall - or at least into it.
+
+
 
 
 

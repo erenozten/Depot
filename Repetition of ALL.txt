@@ -3268,7 +3268,28 @@ It's barely tested and needs some extensions to be reusable, but it works well e
 Thank You
 A big thank you to everyone who helped me at the C# forums here - especially Judah Himango who often went an extra mile.
 I am currently working on my first "real world" C# project (complete with time pressure, feature creep, big plans, and get-it-done-while-everybody-is-out-to-distract you), and you have been really helpful in getting my stubborn head through this wall - or at least into it.
+-
+-
+-
+What’s the Difference Between a URI and a URL?
 
+The terms “URI” and “URL” are often used interchangeably, but they are not exactly the same.
+1.	A URI is an identifier of a specific resource. Like a page, or book, or a document.
+2.	A URL is special type of identifier that also tells you how to access it, such as HTTPs, FTP, etc.—like https://www.google.com.
+3.	If the protocol (https, ftp, etc.) is either present or implied for a domain, you should call it a URL—even though it’s also a URI.
+All URLs are URIs, but not all URIs are URLs.
+ 
+DOMAINS AREN’T EITHER URIS OR URLS BECAUSE ALL URLS ARE ALSO URIS
+When most people talk about a given URI, they’re also talking about a URL because the protocol is implied.
+That’s really it.
+TL;DR: When communicating, being more specific is usually better, so “URL” is better than “URI” when talking about web addresses.
+That’s all you probably need to know, but if you want to see how the sausage is made (I warn you, it’s gross), feel free to read on!
+________________________________________
+A deeper explanation (let’s get technical)
+This is one of the most common Nerd Fight debates in tech history, and that’s saying a lot.
+One obstacle to getting to the bottom of things is that the relevant RFCs are extremely dense, confusing, and even contradictory. For example, RFC 3986 says a URI can be a name, locator, or both…
+My emphasis.
+A URI can be further classified as a locator, a name, or both. The term “Uniform Resource Locator” (URL) refers to the subset of URIs that, in addition to identifying a resource, provide a means of locating the resource by describing its primary access mechanism (e.g., its network “location”).
 
 
 

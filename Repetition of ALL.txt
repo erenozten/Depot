@@ -3290,6 +3290,72 @@ This is one of the most common Nerd Fight debates in tech history, and that’s 
 One obstacle to getting to the bottom of things is that the relevant RFCs are extremely dense, confusing, and even contradictory. For example, RFC 3986 says a URI can be a name, locator, or both…
 My emphasis.
 A URI can be further classified as a locator, a name, or both. The term “Uniform Resource Locator” (URL) refers to the subset of URIs that, in addition to identifying a resource, provide a means of locating the resource by describing its primary access mechanism (e.g., its network “location”).
+-
+-
+-
+rfc 3986, section 1.1.3
+Related
+multi-dimensional vulnerability hierarchies
+But just a little further down that same RFC says…
+My emphasis.
+The URI itself only provides identification; access to the resource is neither guaranteed nor implied by the presence of a URI.
+
+rfc 3986, section 1.2.2
+And then, if you’re not yet completely confused, it also says…
+My emphasis.
+Each URI begins with a scheme name, as defined in Section 3.1, that refers to a specification for assigning identifiers within that scheme.
+
+rfc 3986, section 1.1.1
+And it goes on to give examples:
+Notice how they all their examples have schemes.
+ftp://ftp.is.co.za/rfc/rfc1808.txt
+http://www.ietf.org/rfc/rfc2396.txt
+ldap://[2001:db8::7]/c=GB?objectClass?one
+mailto:John.Doe@example.com
+news:comp.infosystems.www.servers.unix
+tel:+1-816-555-1212
+telnet://192.0.2.16:80/
+urn:oasis:names:specification:docbook:dtd:xml:4.1.2
+Related
+an ngrok tutorial and primer
+Wait…what?
+These three contradictions are the source of this entire long-lived debate.
+The same RFC just told us that a URI can be a name, a locator, or both—but a URI only provides identification, and a way to access isn’t guaranteed or implied—oh and also each URI begins with a scheme name (which in many cases tells you exactly how to access the resource).
+It’s no wonder everyone is confused!
+The reason the internet’s been fighting about this for over a decade is that the RFC is poorly written.
+salvaging practical rules from all this
+Being the top search result for this topic means I have the conversation a lot.
+Ok, so given the fact that the RFC adds to confusion rather than eliminating it, what—if anything—can we use from them?
+In the vein of language being here for communication rather than pedantry, here are my own practical interpretations of the RFCs that will hopefully synchronize people and result in fewer swordfights.
+Related
+the internet, the deep web, and the dark web
+All butterflies fly, but not everything that flies is a butterfly.
+1.	A Uniform Resource Identifier (URI) provides a simple and extensible means for identifying a resource (straight from RFC 3986). It’s just an identifier; don’t overthink it.
+2.	For most debates about this that matter, URI is the superset, so the question is just whether a given URI is formally a URL or not. All URLs are URIs, but not all URIs are URLs. In general, if you see http(s)://, it’s a URL.
+3.	URIs technically do require a scheme (see above), but the RFC also says they can be a name, locator, or both, so YOLO! My advice for anyone saying URIs do or do not require a scheme is to show them this article, because it’s the only thing I know of that highlights the contradictions in the RFC.
+4.	Fragments like file.htm actually are not URNs, because URNs are required to use a special notation with urn: in the beginning.
+5.	A little-known section of RFC 3986 actually speaks directly to the religious part of the argument, and seems to say we should say URI instead of URL.
+RFC 3986 is from 2005, so presumably they’re saying URI is the preferred term after that point.
+Future specifications and related documentation should use the general term “URI” rather than the more restrictive terms “URL” and “URN”
+
+rfc 3986, section 1.1.3
+So that’s support for the “URI” denomination, but in my opinion it’s even more support for those who say, “stop looking for the answers in 15-year-old RFCs”.
+It’s like another widely-read text in this way.
+There’s just so much contradictory content that there’s partial backing for multiple conclusions.
+summary
+What a mess. Here’s the tl;dr…
+1.	The RFCs are ancient, poorly written, and not worth debating until they’re updated.
+2.	A URI is an identifier.
+3.	A URL is an identifier that tells you how to get to it.
+4.	Use the term that is best understood by the recipient.
+I’d welcome a new version of the RFC that simplifies and clarifies the distinction, with modern examples.
+These RFCs were written a very long time ago, and they’re written with the academic weakness of not being optimized for reading.
+The best thing I can possibly tell you about this debate is not to over-index on it. I’ve not once in 20 years seen a situation where the confusion between URI or URL actually mattered.
+The irony is that RFCs are supposed to remove confusion, not add to it.
+So while there is some direct support that “URI” is preferred by the RFCs, and “URL” seems most accurate for full addresses with http(s) schemes (because it’s most specific), I’ve chosen to prioritize the Principle of Communication Clarity higher than that of pedantic nuance.
+It’s taken me a long time to get to this point.
+As a result, I personally use “URL” in most cases because it’s least likely to cause confusion, but if I hear someone use “URI” I’ll often switch immediately to using that instead.
+
 
 
 

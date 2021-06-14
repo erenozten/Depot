@@ -3434,6 +3434,20 @@ Computer programming
 Origin
 Martin Richards, creator of the BCPL language (a precursor of C), designed arrays initiating at 0 as the natural position to start accessing the array contents in the language, since the value of a pointer p used as an address accesses the position p + 0 in memory.[5][6] Canadian systems analyst Mike Hoye asked Richards the reasons for choosing that convention. BCPL was first compiled for the IBM 7094; the language introduced no run time indirection lookups, so the indirection optimization provided by these arrays was done at compile time.[6] The optimization was nevertheless important.[6][7]
 Edsger W. Dijkstra later wrote a pertinent note Why numbering should start at zero[8] in 1982, analyzing the possible designs of array indices by enclosing them in a chained inequality, combining sharp and standard inequalities to four possibilities, demonstrating that to his conviction zero-based arrays are best represented by non-overlapping index ranges, which start at zero, alluding to open, half-open and closed intervals as with the real numbers. Dijkstra's criteria for preferring this convention are in detail that it represents empty sequences in a more natural way (a ≤ i < a ?) than closed "intervals" (a ≤ i ≤ (a−1) ?), and that with half-open "intervals" of naturals, the length of a sub-sequence equals the upper minus the lower bound (a ≤ i < b gives (b−a) possible values for i, with a, b, i all integers).
+-
+-
+-
+Intranet    	(GITHUB)  (test)
+Intranet nedir, intranet nedir
+ 
+İntranet, sadece belirli bir kuruluş içindeki bilgisayarları, yerel ağları (LAN) ve geniş alan ağlarını (WAN) birbirine bağlayan, çoğunlukla TCP/IP tabanlı bir ağdır. İntranet'ler Ağ geçitleri (İng: gateways) ile diğer ağlara bağlanabilir. Temel oluşturulma amaçları, kuruluş bünyesinde bilgileri ve bilgi işlem kapasitesini paylaşmaktır.
+İntranet'ler, şirket(ler) içi tele-konferans uygulamalarında ve farklı birimlerdeki kişilerin bir araya gelebildiği iş gruplarının oluşturulmasında da kullanılırlar. İntranet'ler üzerinden HTTP, FTP gibi pek çok protokol uygulamaları çalıştırılabilir. Günümüzde, İntranet'ler içinde, Web erişimi ile kaynakların kullanımı oldukça yaygındır.
+Bazı şirketlerdeki intranet'lerden, ateş duvarı (İng: Firewall) sistemleri üzerinden (bazı emniyet tedbirleri ile), İnternet çıkışı da yapılmaktadır. Bu sayede, her iki yönde de ileti trafiği kontrol edilebilmekte ve güvenlik sağlanmaktadır.
+İntranet üzerinde; muhasebe, insan kaynakları, üretim otomasyon yazılımları çalıştırmak mümkün olduğu gibi çeşitli veri tabanlarını tutmak ve belge dağıtımı gibi işleri gerçekleştirmek mümkündür. Özünde İnternet teknolojisinin şirket içinde kullanılmasıdır.
+İntranet dağıtık bilişim stratejilerini destekler. İntranetin üzerinde kuruluşun bütün faaliyetleriyle ilgili modüller çalıştırılıyorsa ve uygun bir modelleme yapılmışsa kuruluş içinde her şeyin bütünleşik çalıştığı, sistemde kendini denetleme mekanizmaları bulunur. Küresel erişim, multimedya olanakları ve düşük maliyet sağlanmış ve bütün bunların bir araya gelmesi İntranet'i güçlü kılmıştır. Türkiyed'de ki en büyük intranet ağı "Polnet" ile Emniyet Genel Müdürlüğü'ne aittir.
+Kullanım alanları
+Belge Dağıtımı, insan kaynakları, eğitim ve oryantasyon, çalışma grupları, ortak iş programlarının kullanılması, üretim, yeni belgeleme sistemlerinin oluşturulması, tedarikçiler ile ilişkiler, sanal alış-veriş, servis ve destek vs.vs.
+-
 
 
 

@@ -1,3 +1,15 @@
+In C#, the following things are always true:
+
+short == Int16
+ushort == UInt16
+int == Int32
+uint == UInt32
+long == Int64
+ulong == UInt64
+Both versions are data types. All of the above are integers of various lengths and signed-ness.
+
+The main difference between the two versions (as far as I know) is what colour they are highlighted as in Visual Studio.-
+-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -3586,44 +3586,17 @@ Bazı şirketlerdeki intranet'lerden, ateş duvarı (İng: Firewall) sistemleri 
 Kullanım alanları
 Belge Dağıtımı, insan kaynakları, eğitim ve oryantasyon, çalışma grupları, ortak iş programlarının kullanılması, üretim, yeni belgeleme sistemlerinin oluşturulması, tedarikçiler ile ilişkiler, sanal alış-veriş, servis ve destek vs.vs.
 -
+Race Condition	(GITHUB) (testset)
+Race condition nedir
+Kısaca: 
+A race condition or race hazard is the condition of an electronics, software, or other system where the system's substantive behavior is dependent on the sequence or timing of other uncontrollable events. It becomes a bug when one or more of the possible behaviors is undesirable.
 
+-
+It is also called race hazard. It is a behavior of software or system where output is based on the sequence or timing of other uncontrolled events. It becomes painful or bug when events do not happen in the order in which functionality is required.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Race condition occurs when two threads access a shared variable at the same time. The first thread reads the variable, and the second thread writes to the same variable at the same time.
+ Symptoms of Race Condition
+The most common symptom of a race condition is unexpected values of variable that are shared between multiple threads. In this case, sometimes one thread wins, and sometimes the other thread wins. At the other times, the result of execution may be correct. Also, if each thread executes separately, the result of variable comes expected.
 
 
 

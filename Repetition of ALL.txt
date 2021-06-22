@@ -3640,6 +3640,8 @@ Modifying event is not thread-safe, but invoking a Delegate is thread-safe. Sinc
 -
 -
 -
+When you make a PUT request to https://internet-street.com/plot-1 with a prefabricated house, you’re saying “Please PUT this house in the location marked as plot-1”. That instruction searches through our street for the specified location and replaces the content at that location. If nothing is found at the location, it’ll simply PUT the resource at the location. In this case, a full prefabricated house. Thus, a PUT request always contains a full resource. This is necessary because, a necessary quality of PUT requests is idempotence — the quality of producing the same result even if the same request is made multiple times.
+
 
 
 

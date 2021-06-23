@@ -3641,6 +3641,35 @@ Modifying event is not thread-safe, but invoking a Delegate is thread-safe. Sinc
 -
 -
 When you make a PUT request to https://internet-street.com/plot-1 with a prefabricated house, you’re saying “Please PUT this house in the location marked as plot-1”. That instruction searches through our street for the specified location and replaces the content at that location. If nothing is found at the location, it’ll simply PUT the resource at the location. In this case, a full prefabricated house. Thus, a PUT request always contains a full resource. This is necessary because, a necessary quality of PUT requests is idempotence — the quality of producing the same result even if the same request is made multiple times.
+-
+WCF ile Web Service olayı nedir, aralarındaki bağ nedir:
+
+There are many services available today such as WCF, REST, Web API etc., but still Web Service plays an important role in cross platform application communication such using  SAP web service to provide data for other platform applications.
+
+
+WCF is a tool often used to implement and deploy a service-oriented architecture (SOA). It is designed using service-oriented architecture principles to support distributed computing where services have remote consumers. Clients can consume multiple services; services can be consumed by multiple clients. Services are loosely coupled to each other. Services typically have a WSDL interface (Web Services Description Language) that any WCF client can use to consume the service, regardless of which platform the service is hosted on. WCF implements many advanced Web services (WS) standards such as WS-Addressing, WS-ReliableMessaging and WS-Security. With the release of .NET Framework 4.0, WCF also provides RSS Syndication Services, WS-Discovery, routing and better support for REST services.
+The mnemonic "ABC" can be used to remember address/binding/contract. Binding specifies what communication protocols are used to access the service, whether security mechanisms are to be used, and the like. WCF includes predefined bindings for most common communication protocols such as SOAP over HTTP, SOAP over TCP, and SOAP over Message Queues, etc. Interaction between WCF endpoint and client is done using a SOAP envelope. SOAP envelopes are in simple XML form, which makes WCF platform-independent. When a client wants to access the service via an endpoint, it not only needs to know the contract, but it also has to adhere to the binding specified by the endpoint. Thus, both client and server must have compatible endpoints.
+
+WCF ile RESTFUL service geliştirilir mi? Evet:
+
+https://www.c-sharpcorner.com/article/wcf-restful-service/
+
+I have read several WCF Rest services articles and found that it is difficult to understand the concept for new learners, hence I am trying to create simple WCF REST Service sample and going to explain how it is going to access the service using windows application.
+ 
+RESTful service follows the REST (Representational State Transfer) architectural style. WCF service will allows to make calls and exchange the data using SOAP protocol over different protocols (HTTP, TCP, MSMQ etc..) and it uses the complex mechanism like SOAP for communication.
+ 
+The REST service is simple to use it uses the HTTP protocol for all operations, its lightweight and faster, it uses the .json and .xml formats.
+ 
+Creating Sample application for WCF REST
+1.	Open Visual Studio and create new WCF Service Application
+
+ 
+ 
+
+
+
+
+
 
 
 

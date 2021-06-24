@@ -4876,6 +4876,19 @@ Copy
 •	Information cards are more flexible than simple user names and passwords.
 •	Information cards employ strong cryptography, which makes their use more secure than passwords.
 •	Information cards can potentially present any type of identity claim that makes sense to all of the interacting parties and which users are willing to release.
+-
+şu metinden anlaşılabiliyor API nin anlamı:
+In computing, Open Database Connectivity (ODBC) is a standard application programming interface (API) for accessing database management systems (DBMS). The designers of ODBC aimed to make it independent of database systems and operating systems.[citation needed] An application written using ODBC can be ported to other platforms, both on the client and server side, with few changes to the data access code.
+-
+-
+-
+Apinin adı önemli. bu bir INTERFACE dir. Application Programming INTERFACE. Bence burası önemli. API nin ne olduğunu INTERFACE kelimesi gösteriyor.
+
+In computing, an application programming interface (API) is an interface that defines interactions between multiple software applications or mixed hardware-software intermediaries.[1] It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc. It can also provide extension mechanisms so that users can extend existing functionality in various ways and to varying degrees.[2] An API can be entirely custom, specific to a component, or designed based on an industry-standard to ensure interoperability. Through information hiding, APIs enable modular programming, allowing users to use the interface independently of the implementation.
+Reference to Web APIs is currently the most common use of the term.[3] There are also APIs for programming languages, software libraries, computer operating systems, and computer hardware. APIs originated in the 1940s, though the term API did not emerge until the 1960s and 70s.
+Purpose
+In building applications, an API (application programming interface) simplifies programming by abstracting the underlying implementation and only exposing objects or actions the developer needs. While a graphical interface for an email client might provide a user with a button that performs all the steps for fetching and highlighting new emails, an API for file input/output might give the developer a function that copies a file from one location to another without requiring that the developer understand the file system operations occurring behind the scenes.[4]
+-
 
 
 

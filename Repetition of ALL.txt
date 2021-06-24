@@ -4889,6 +4889,53 @@ Reference to Web APIs is currently the most common use of the term.[3] There are
 Purpose
 In building applications, an API (application programming interface) simplifies programming by abstracting the underlying implementation and only exposing objects or actions the developer needs. While a graphical interface for an email client might provide a user with a button that performs all the steps for fetching and highlighting new emails, an API for file input/output might give the developer a function that copies a file from one location to another without requiring that the developer understand the file system operations occurring behind the scenes.[4]
 -
+Web APIs
+	Main article: Web API
+
+Web APIs are the defined interfaces through which interactions happen between an enterprise and applications that use its assets, which also is a Service Level Agreement (SLA) to specify the functional provider and expose the service path or URL for its API users. An API approach is an architectural approach that revolves around providing a program interface to a set of services to different applications serving different types of consumers.[29]
+When used in the context of web development, an API is typically defined as a set of specifications, such as Hypertext Transfer Protocol (HTTP) request messages, along with a definition of the structure of response messages, usually in an Extensible Markup Language (XML) or JavaScript Object Notation (JSON) format. An example might be a shipping company API that can be added to an eCommerce-focused website to facilitate ordering shipping services and automatically include current shipping rates, without the site developer having to enter the shipper's rate table into a web database. While "web API" historically has been virtually synonymous with web service, the recent trend (so-called Web 2.0) has been moving away from Simple Object Access Protocol (SOAP) based web services and service-oriented architecture (SOA) towards more direct representational state transfer (REST) style web resources and resource-oriented architecture (ROA).[30] Part of this trend is related to the Semantic Web movement toward Resource Description Framework (RDF), a concept to promote web-based ontology engineering technologies. Web APIs allow the combination of multiple APIs into new applications known as mashups.[31] In the social media space, web APIs have allowed web communities to facilitate sharing content and data between communities and applications. In this way, content that is created in one place dynamically can be posted and updated to multiple locations on the web.[32] For example, Twitter's REST API allows developers to access core Twitter data and the Search API provides methods for developers to interact with Twitter Search and trends data.[33]
+Design
+The design of an API has significant impact on its usage.[4] The principle of information hiding describes the role of programming interfaces as enabling modular programming by hiding the implementation details of the modules so that users of modules need not understand the complexities inside the modules.[34] Thus, the design of an API attempts to provide only the tools a user would expect.[4] The design of programming interfaces represents an important part of software architecture, the organization of a complex piece of software.[35]
+-
+What is Web API?
+Before we understand what is Web API, let's see what is an API (Application Programing Interface).
+As per Wikipedia's Definition of API: In computer programming, an application programming interface (API) is a set of subroutine definitions, protocols, and tools for building software and applications.
+To put it in simple terms, API is some kind of interface which has a set of functions that allow programmers to access specific features or data of an application, operating system or other services.
+Web API as the name suggests, is an API over the web which can be accessed using HTTP protocol. It is a concept and not a technology. We can build Web API using different technologies such as Java, .NET etc. For example, Twitter's REST APIs provide programmatic access to read and write data using which we can integrate twitter's capabilities into our own application.
+ASP.NET Web API
+The ASP.NET Web API is an extensible framework for building HTTP based services that can be accessed in different applications on different platforms such as web, windows, mobile etc. It works more or less the same way as ASP.NET MVC web application except that it sends data as a response instead of html view. It is like a webservice or WCF service but the exception is that it only supports HTTP protocol.
+ Web API
+ASP.NET Web API Characteristics
+1.	ASP.NET Web API is an ideal platform for building RESTful services.
+2.	ASP.NET Web API is built on top of ASP.NET and supports ASP.NET request/response pipeline
+3.	ASP.NET Web API maps HTTP verbs to method names.
+4.	ASP.NET Web API supports different formats of response data. Built-in support for JSON, XML, BSON format.
+5.	ASP.NET Web API can be hosted in IIS, Self-hosted or other web server that supports .NET 4.0+.
+6.	ASP.NET Web API framework includes new HttpClient to communicate with Web API server. HttpClient can be used in ASP.MVC server side, Windows Form application, Console application or other apps.
+ASP.NET Web API vs WCF
+Web API	WCF
+Open source and ships with .NET framework.	Ships with .NET framework
+Supports only HTTP protocol.	Supports HTTP, TCP, UDP and custom transport protocol.
+Maps http verbs to methods	Uses attributes based programming model.
+Uses routing and controller concept similar to ASP.NET MVC.	Uses Service, Operation and Data contracts.
+Does not support Reliable Messaging and transaction.	Supports Reliable Messaging and Transactions.
+Web API can be configured using HttpConfiguration class but not in web.config.	Uses web.config and attributes to configure a service.
+Ideal for building RESTful services.	Supports RESTful services but with limitations.
+When to choose WCF?
+•	Choose WCF if you use .NET Framework 3.5. Web API does not support .NET 3.5 or below.
+•	Choose WCF if your service needs to support multiple protocols such as HTTP, TCP, Named pipe.
+•	Choose WCF if you want to build service with WS-* standards like Reliable Messaging, Transactions, Message Security.
+•	Choose WCF if you want to use Request-Reply, One Way, and Duplex message exchange patterns.
+When to choose ASP.NET Web API?
+•	Choose Web API if you are using .NET framework 4.0 or above.
+•	Choose Web API if you want to build a service that supports only HTTP protocol.
+•	Choose Web API to build RESTful HTTP based services.
+•	Choose Web API if you are familiar with ASP.NET MVC.
+Let's begin by creating a simple ASP.NET Web API project using Visual Studio in the next section.
+-
+-
+-
+-
 
 
 

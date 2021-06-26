@@ -1,3 +1,70 @@
+Argument ve Parameter nedir?
+[argüman nedir, argument nedir, parameter nedir, parameter nedir]
+Örnek üzerinden açıklayalım:
+
+{
+        static void Metodumuz(int x) // Buradaki x = parametre.
+        {
+            x = x * x;
+        }
+        static void Main()
+        {
+            Metodumuz(3); // Buradaki 3 = argüman.
+
+            // Metodun içine aldığı değişkene parametre denir (int a, int b gibi). 
+            // Bu parametreye verilen değer (3,5,7,"ahmet","mehmet" gibi) ise argümandır.
+        }
+    }
+
+You can call the method in Main and pass in the value for its parameters (also called arguments):
+
+The value 3 is passed to the method as an argument and is assigned to the formal parameter x.
+
+Metodların içine tanımlanan değişkenlere parametre denir. Bu değişkenlere bilindiği üzere değerler atanır.
+Aşağıdaki örneği incelersek;
+
+Print metodununda tanımlı bir ‘x’ değişkeni olduğunu görüyoruz. İşte bu metodun içerisinde bulunan bu x değişkenine parametre denir.
+
+Bu parametreye atadığımız değere de argüman denir. 
+Aşağıdaki örnekte argümanımızın 3 olduğunu görüyoruz.
+
+static void Print(int x)
+        {
+            Console.WriteLine(x);
+        }
+        static void Main(string[] args)
+        {
+            Print(3);
+        }
+-
+-
+Passing Arguments
+
+[by reference, by output, reference nedir, output nedir, output kerword nedir, reference keyword nedir]
+There are three ways to pass arguments to a method when the method is called: By value, By reference, and as Output.
+
+by value:
+
+By value copies the argument's value into the method's formal parameter. Here, we can make changes to the parameter within the method without having any effect on the argument. 
+
+(Örnekteki argümanımız => 3)
+
+    {
+        static void Sqr(int x)
+        {
+            x = x * x;
+        }
+        static void Main()
+        {
+            int a = 3;
+            Sqr(a);
+
+            Console.WriteLine(a); // Outputs 3
+        }
+    }
+
+-
+-
 Atomicity: The atomicity acid property in SQL. It means either all the operations (insert, update, delete) inside a transaction take place or none. Or you can say, all the statements (insert, update, delete) inside a transaction are either completed or rolled back.
 -
 

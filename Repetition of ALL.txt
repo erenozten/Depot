@@ -5003,9 +5003,9 @@ Let's begin by creating a simple ASP.NET Web API project using Visual Studio in 
 -
 -
 -
+The wwwroot folder is new in ASP.NET 5.0. All of the static files in your project go into this folder. These are assets that the app will serve directly to clients, including HTML files, CSS files, image files, and JavaScript files. The wwwroot folder is the root of your web site. That is, http://some.hostname/ points to wwwroot, all URLs for static content are relative to the wwwroot folder.
 
-
-
+Code files should be placed outside of wwwroot. That includes all of your C# files and Razor files. > Having a wwwroot folder keeps a clean separation between code files and static files.
  
 
 

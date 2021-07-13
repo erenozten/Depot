@@ -447,5 +447,219 @@ Eğer hali hazırda bir CI yazılımı kullanmaktaysanız, SonarQube veya benzer
 Doğal entegrasyona sahip CI araçlarında SonarQube rapor sonucuna göre pipeline’ınızı kırıp, ilgili yerlere bildirim yapabilirsiniz. Örneğin build adımından sonra SonarQube’ü tetikler, raporu sonucunu bekletir ve rapor başarısız olursa bir sonraki adıma geçmeyebilirsiniz.
 Plugin ile doğal entegrasyon imkanı olmayan CI araçlarında SonarQube’ü tetiklemek için ise, yml scriptinize MSBuild SonarScanner İle Projenin Kod Analizi bölümünde belirttiğimiz komutları ekleyerek ilerleyebilirsiniz. Bu noktada rapor sonucunu bekleyerek, gelen sonucuna göre bir aksiyon almak mümkün müdür açıkçası bilmiyorum. Yorumlarınızı alabilirim.
 
+-
+-
+-
+UNIX		(GITHUB)
+Unix nedir
+Unix (/ˈjuːnɪks/; trademarked as UNIX) is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others.[3]
+-Unix vs linux yazılar var: https://chandigarhinfo.in/unix-vs-linux-whats-the-difference/
+-
+UNIX türevi işletim sistemleri çok işlemcili çok pahalı makinalardan, tek işlemcili basit ve çok ucuz ev bilgisayarlarına kadar pek çok cihaz üzerinde çalışabilen esnek ve sağlamlığı çok değişik koşullarda test edilmiş sistemlerdir. Fakat özellikle kararlı yapısı ve çok kullanıcılı-çok görevli yapısıyla çok işlemcili sunucularda adeta standard haline gelmiştir ve özellikle akademik dünyada iş istasyonları üzerinde çok yaygın bir kullanım alanı bulmuştur. UNIX, Interdata 7/32, VAX, ve Motorola 68000 arasında hızla yayıldı.
+Unix işletim sistemi 1969 yılında AT&T Bell Laboratuvarları'nda ABD de Ken Thompson, Dennis Ritchie, Brian Kernighan, Douglas McIlroy, Michael Lesk ve Joe Ossanna tarafından tasarlanıp uygulamaya konmuştur.İlk olarak 1971'de yayınlandı ve başlangıçta tamamen bilgisayar programlarının yazılmasında kullanılan alt seviyeli bir çevirme dilinde yazılmıştı. Daha sonra 1973'te Dennis Ritche tarafından C programlama dili ile tekrar yazıldı. Üst düzey bir dilde yazılmış bir işletim sisteminin geçerliliği diğer farklı bilgisayar platformlarına kolayca taşınabilirlik için olanak sağlar. Lisans için AT&T'yi zorlayan yasal bir aksaklık nedeniyle, UNIX hızlıca büyüdü ve öğretim kurumları ve işletmeler tarafından kabul edilir oldu.
+UNIX, 1969 yılında,Ken Thompson, Dennis Ritchie, Brian Kernighan, Douglas McIlroy, Michael Lesk ve Joe Ossanna tarafından Bell Laboratuvarları'nda geliştirilmiş, çok kullanıcılı (multiuser), çok görevli yapıyı destekleyen (multitasking) bir bilgisayar işletim sistemidir. Komut yorumlayıcı yazılımlar (shell) aracılığı ile kullanıcı ve bilgisayar sisteminin iletişimi sağlanır.
+Linus Torvalds tarafından temelleri atılan Linux, UNIX olmayıp bir UNIX türevidir. UNIX'ten ilham alan, bir grup bağımsız yazılımcı tarafından geliştirilen bir işletim sistemi çekirdeğidir. 
+-
+-
+-
+-
+Linux 		(GITHUB)
+Linux nedir
+
+The name “Linux” comes from the Linux kernel. It is the software on a computer that allows applications and users to access the devices on the computer to perform certain specific functions.
+Bilgisayar işletim sistemlerinin en temel parçası olan çekirdek yazılımlarından bir tanesidir.verilmiştir.[1]Günümüzde süper bilgisayarlarda, akıllı cihazların ve internet altyapısında kullanılan cihazların işletim sistemlerinde yaygın olarak kullanılmaktadır. Bunlardan en popüler olanı Google tarafından geliştirilen Android işletim sistemidir.
+Android, Linux çekirdeği üzerine inşa edilmiş bir mobil işletim sistemidir.
+Android işletim sistemi beş kısımdan oluşur.
+1.	Çekirdek: Linux kernelidir. Güvenlik, hafıza yönetimi, süreç yönetimi, ağ yığınları ve sürücü modellerini içermektedir.
+2.	Android Runtime: Sanal makinedir. Dalvik Sanal Makinesini de içermektedir. 5.0 ile Dalvik kaldırılmış ve ART'ye geçilmiştir.
+3.	Kütüphaneler: Veritabanı kütüphaneleri, web tarayıcı kütüphaneleri, grafik ve arayüz kütüphanelerini içermektedir.
+4.	Uygulama Çatısı: Uygulama geliştiricilere geniş bir platform sunan kısımdır.
+5.	Uygulama Katmanı: Doğrudan Java (programlama dili) ile geliştirilmiş uygulamaları içermektedir.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+UNIX vs. LINUX		(bosch)	 (bosch)
+unix nedir, linux nedir, UNIX nedir
+The UNIX is a multiuser computer operating systems was born in the late 1960s. AT & T Bell Labs released an OS called Unix written in C, which allows for faster modification, portability and acceptance. It began as a one-man project led by Ken Thompson of Bell Labs. It became the most widely used operating system. Unix is a proprietary operating system.
+Unix OS works on CLI (Command Line Interface), but recently it has been developed for GUI on Unix systems. Unix is an operating system that is popular in companies, universities, large companies, etc
+What is LINUX? 
+Linux is an operating system built by Linus Torvalds at the University of Helsinki in 1991. The name “Linux” comes from the Linux kernel. It is the software on a computer that allows applications and users to access the devices on the computer to perform certain specific functions.
+Linux OS forwards instructions from an application from the computer processor and sends the results back to the application via Linux OS. It can be installed on another type of computers, mobile phones, tablets, video game consoles, etc.
+The development of Linux is one of the most prominent examples of collaboration with free and open source. Today, many companies and similar individuals have released their own version of the OS based on the Linux kernel.
+ 
+ 
+ 
+Features of Unix OS
+	Multitasking and Multi-user operating system
+	It can be used as a master control program in servers and  workstations.
+	Hundreds of commercial applications available
+	In its day, UNIX was rapidly adopted and became the standard OS in universities.
+if you are learn more about linux then Join CBitss Technologies. CBitss Provides Best Linux Training in Chandigarh Sector 34A. More details Call Now –  (+91) 9988741983
+Features of Linux Operating System
+	Support multitasking
+	Programs consist of one or more processes, and each process has one or more threads
+	It can easily co-exists along with other Operating systems.
+	It can run multiple user programs
+	Individual accounts are protected because of appropriate authorization
+	Linux is a copy of UNIX but does not use its code
+Difference between Unix and Linux
+Cost 
+	 Linux is freely distributed, downloaded via newspapers, books, websites, etc. There are also paid versions available for Linux.
+	Unix – Different flavors of Unix have different prices depending on the supplier type
+Development
+	Linux is Open Source and thousands of programmers collaborate online and contribute to its development
+	Unix systems have different versions. These versions are mainly developed by AT&T and other commercial suppliers
+User
+	Linux – All. From home users to both developers and computer enthusiasts.
+	UNIX can be used on Internet servers, workstations, and computers
+Text made interface
+	BASH is the Linux shell. It offers support for several command interpreters
+	Unix Originally build up to work in Bourne Shell. But it is now compatible with much other software.
+GUI
+	Linux has two GUIs, KDE and Gnome. Although there are many options like Mate, LXDE, Xfce, etc.
+	Unix – Shared desktop environment and also has Gnome.
+Viruses
+	Linux has had about 60-100 viruses so far listed that are not currently spreading.
+	There are between 80 and 120 viruses reported to date in Unix.
+Threat detection
+	Threat detection and resolution are very fast as Linux is mainly community-driven. So if any Linux user publishes some kind of threat, a team of qualified developers will start working to resolve this threat
+	Unix users require longer waiting times to get the correct fix
+Architectures
+	Linux – Originally developed for Intel x86 hardware processors. It is available for over 20 different types of CPU, which also includes an ARM
+	Unix – It is available on PA-RISC and Itanium machines
+Usage
+	Linux OS can be installed on different types of devices such as mobile, tablets
+	The UNIX operating system is used for Internet servers, workstations, and computers
+Best feature
+	Linux – Kernel update without a reboot
+	Unix – Feta ZFS – next-generation DTrace file system – dynamic kernel tracking
+Versions
+	Various versions of Linux are Redhat, Ubuntu, OpenSuse, Solaris etc
+	Different versions of Unix are AIS, BSD, HP-UX, etc.
+Supported file type
+	File system supported by file type such as xfs, nfs, cramfsm ext 1 to 4, ufs, devpts, NTFS
+	The file systems supported by file types are zfs, hfx, GPS, xfs, vxfs
+Portability
+	Linux is portable and is booted from a USB Stick
+	Unix is not portable
+Source Code
+	Linux – The source is available to the general public
+	Unix – The source code is not available to anyone
+Limitation of Linux
+	There’s no standard edition of Linux
+	Linux has patchier support for drivers that can cause system-wide errors.
+	Linux, at least for new users, is not as easy to use as Windows.
+	Many of the programs we use for Windows will only run on Linux using a complicated emulator. For example. Microsoft Office
+	Linux is best suitable for a corporate user. It’s much harder to introduce in a home setting.
+Limitations of Unix
+	The unfriendly, terse, inconsistent, and non-mnemonic user interface
+	Unix Operating system is designed for a slow computer system, so you can’t expect fast performance.
+	The Shell interface can be treacherous because typos can destroy files.
+	Versions on different machines are slightly different, so it lacks consistency.
+	Unix does not provide a secure response time for hardware failure, so it does not support real-time response systems.
+-
+-
+-
+UNIX		(bosch)	 (bosch)
+unix nedir
+UNIX türevi işletim sistemleri çok işlemcili çok pahalı makinalardan, tek işlemcili basit ve çok ucuz ev bilgisayarlarına kadar pek çok cihaz üzerinde çalışabilen esnek ve sağlamlığı çok değişik koşullarda test edilmiş sistemlerdir. Fakat özellikle kararlı yapısı ve çok kullanıcılı-çok görevli yapısıyla çok işlemcili sunucularda adeta standard haline gelmiştir ve özellikle akademik dünyada iş istasyonları üzerinde çok yaygın bir kullanım alanı bulmuştur. UNIX, Interdata 7/32, VAX, ve Motorola 68000 arasında hızla yayıldı.
+Unix işletim sistemi 1969 yılında AT&T Bell Laboratuvarları'nda ABD de Ken Thompson, Dennis Ritchie, Brian Kernighan, Douglas McIlroy, Michael Lesk ve Joe Ossanna tarafından tasarlanıp uygulamaya konmuştur.İlk olarak 1971'de yayınlandı ve başlangıçta tamamen bilgisayar programlarının yazılmasında kullanılan alt seviyeli bir çevirme dilinde yazılmıştı. Daha sonra 1973'te Dennis Ritche tarafından C programlama dili ile tekrar yazıldı. Üst düzey bir dilde yazılmış bir işletim sisteminin geçerliliği diğer farklı bilgisayar platformlarına kolayca taşınabilirlik için olanak sağlar. Lisans için AT&T'yi zorlayan yasal bir aksaklık nedeniyle, UNIX hızlıca büyüdü ve öğretim kurumları ve işletmeler tarafından kabul edilir oldu.
+UNIX, 1969 yılında,Ken Thompson, Dennis Ritchie, Brian Kernighan, Douglas McIlroy, Michael Lesk ve Joe Ossanna tarafından Bell Laboratuvarları'nda geliştirilmiş, çok kullanıcılı (multiuser), çok görevli yapıyı destekleyen (multitasking) bir bilgisayar işletim sistemidir. Komut yorumlayıcı yazılımlar (shell) aracılığı ile kullanıcı ve bilgisayar sisteminin iletişimi sağlanır.
+Linus Torvalds tarafından temelleri atılan Linux, UNIX olmayıp bir UNIX türevidir. UNIX'ten ilham alan, bir grup bağımsız yazılımcı tarafından geliştirilen bir işletim sistemi çekirdeğidir. 
+-
+-
+-
+-
+-
+UNIX vs. LINUX		(bosch)	 (bosch)
+unix nedir, linux nedir, UNIX nedir
+The UNIX is a multiuser computer operating systems was born in the late 1960s. AT & T Bell Labs released an OS called Unix written in C, which allows for faster modification, portability and acceptance. It began as a one-man project led by Ken Thompson of Bell Labs. It became the most widely used operating system. Unix is a proprietary operating system.
+Unix OS works on CLI (Command Line Interface), but recently it has been developed for GUI on Unix systems. Unix is an operating system that is popular in companies, universities, large companies, etc
+What is LINUX? 
+Linux is an operating system built by Linus Torvalds at the University of Helsinki in 1991. The name “Linux” comes from the Linux kernel. It is the software on a computer that allows applications and users to access the devices on the computer to perform certain specific functions.
+Linux OS forwards instructions from an application from the computer processor and sends the results back to the application via Linux OS. It can be installed on another type of computers, mobile phones, tablets, video game consoles, etc.
+The development of Linux is one of the most prominent examples of collaboration with free and open source. Today, many companies and similar individuals have released their own version of the OS based on the Linux kernel.
+ 
+ 
+ 
+Features of Unix OS
+	Multitasking and Multi-user operating system
+	It can be used as a master control program in servers and  workstations.
+	Hundreds of commercial applications available
+	In its day, UNIX was rapidly adopted and became the standard OS in universities.
+if you are learn more about linux then Join CBitss Technologies. CBitss Provides Best Linux Training in Chandigarh Sector 34A. More details Call Now –  (+91) 9988741983
+Features of Linux Operating System
+	Support multitasking
+	Programs consist of one or more processes, and each process has one or more threads
+	It can easily co-exists along with other Operating systems.
+	It can run multiple user programs
+	Individual accounts are protected because of appropriate authorization
+	Linux is a copy of UNIX but does not use its code
+Difference between Unix and Linux
+Cost 
+	 Linux is freely distributed, downloaded via newspapers, books, websites, etc. There are also paid versions available for Linux.
+	Unix – Different flavors of Unix have different prices depending on the supplier type
+Development
+	Linux is Open Source and thousands of programmers collaborate online and contribute to its development
+	Unix systems have different versions. These versions are mainly developed by AT&T and other commercial suppliers
+User
+	Linux – All. From home users to both developers and computer enthusiasts.
+	UNIX can be used on Internet servers, workstations, and computers
+Text made interface
+	BASH is the Linux shell. It offers support for several command interpreters
+	Unix Originally build up to work in Bourne Shell. But it is now compatible with much other software.
+GUI
+	Linux has two GUIs, KDE and Gnome. Although there are many options like Mate, LXDE, Xfce, etc.
+	Unix – Shared desktop environment and also has Gnome.
+Viruses
+	Linux has had about 60-100 viruses so far listed that are not currently spreading.
+	There are between 80 and 120 viruses reported to date in Unix.
+Threat detection
+	Threat detection and resolution are very fast as Linux is mainly community-driven. So if any Linux user publishes some kind of threat, a team of qualified developers will start working to resolve this threat
+	Unix users require longer waiting times to get the correct fix
+Architectures
+	Linux – Originally developed for Intel x86 hardware processors. It is available for over 20 different types of CPU, which also includes an ARM
+	Unix – It is available on PA-RISC and Itanium machines
+Usage
+	Linux OS can be installed on different types of devices such as mobile, tablets
+	The UNIX operating system is used for Internet servers, workstations, and computers
+Best feature
+	Linux – Kernel update without a reboot
+	Unix – Feta ZFS – next-generation DTrace file system – dynamic kernel tracking
+Versions
+	Various versions of Linux are Redhat, Ubuntu, OpenSuse, Solaris etc
+	Different versions of Unix are AIS, BSD, HP-UX, etc.
+Supported file type
+	File system supported by file type such as xfs, nfs, cramfsm ext 1 to 4, ufs, devpts, NTFS
+	The file systems supported by file types are zfs, hfx, GPS, xfs, vxfs
+Portability
+	Linux is portable and is booted from a USB Stick
+	Unix is not portable
+Source Code
+	Linux – The source is available to the general public
+	Unix – The source code is not available to anyone
+Limitation of Linux
+	There’s no standard edition of Linux
+	Linux has patchier support for drivers that can cause system-wide errors.
+	Linux, at least for new users, is not as easy to use as Windows.
+	Many of the programs we use for Windows will only run on Linux using a complicated emulator. For example. Microsoft Office
+	Linux is best suitable for a corporate user. It’s much harder to introduce in a home setting.
+Limitations of Unix
+	The unfriendly, terse, inconsistent, and non-mnemonic user interface
+	Unix Operating system is designed for a slow computer system, so you can’t expect fast performance.
+	The Shell interface can be treacherous because typos can destroy files.
+	Versions on different machines are slightly different, so it lacks consistency.
+	Unix does not provide a secure response time for hardware failure, so it does not support real-time response systems.
+-
+-
+-
+-
+
 
 

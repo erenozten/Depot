@@ -373,5 +373,79 @@ Done butonuna tıkladıktan sonra aşağıdaki ekranla karşılaşacaksınız. B
  
  
 Ekran 4: Proje ekleme son adım
+SonarScanner Kurulumu
+Yukarıdaki ekran görüntüsünde dikkat ederseniz ”Download and unzip the Scanner for MSBuild” ifadesi yer alıyor. Peki neden MSBuild Scanner? Dil olarak C# seçtiğimiz için SonarQube ilgili Scanner hangisiyse onu indirmemiz gerektiğini söylüyor. Download butonu ile yönlendirileceğiniz ekrandaki talimatları yerine getirerek MSBuild Scanner’ını bilgisayarınıza kurmuş olacaksınız. (%PATH% güncellemesini unutmayınız) Bu arada hangi tür Scanner kurarsanız kurun sisteminizde mutlaka java’nın kurulu olması gerektiğini belirteyim. JRE hakkındaki detayları da yine download butonuyla yönlendirileceğiniz sayfadan görebilirsiniz.
+MSBuild SonarScanner İle Projenin Kod Analizi
+Önceki adımda kurduğumuz Scanner’ı kullanarak C# dili ile yazılmış olan projemiz için static kod analizini yapabiliriz artık. Bunun için projenin ana dizinindeyken sırasıyla aşağıdaki 3 komutu çalıştırmamız yeterli. Son komuttan sonra 5 nolu ekran görüntüsüyle karşılaşmanız raporun oluştuğu ve sonarcloud’a gönderildiği anlamına gelir. (rabbitmq sonarcloud da projemi oluştururken verdiğim key’in ismi)
+ 
+Ekran 5: Kod analizinin başarıyla yapılması
+SonarScanner.MSBuild.exe begin /k:"<proje unique key buraya>" /d:sonar.organization="<organizasyon_adi_buraya>" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="<olusturulan_token_adi_buraya>"MsBuild.exe /t:RebuildSonarScanner.MSBuild.exe end /d:sonar.login="<olusturulan_token_degeri_buraya>"
+Bu 3 komutta koyulaştırdığım kısımlar sizin proje ve organizasyon isminize göre değişecektir. 4 nolu ekran görüntüsünde yer alan bu 3 komutu bir yere kopyaladıysanız, hızlıca komut satırından çalıştırabilirsiniz. Komut satırında “Post-processing succeded” ifadesini gördükten sonra artık sonarcloud’a geçiş yaparak projenizin analiz edildiğini görebilmelisiniz.
+ 
+ 
+Ekran 6: “Passed” :)
+106 sayısı kod satır sayısını ifade etmekte. Hemen altında da C# ibaresi, programlama dilini işaret ediyor. Evet, çok küçük ve XS (X Small) kategorisinde bir proje olmasına rağmen yeşil renkli “Passed” ifadesini görmek güzel hissettiriyor :) Buradan inceleyebilirsiniz.
+Oluşan Raporun Yorumlanması
+Raporu yorumlamadan önce hemen belirteyim, örnek proje zamanında RabbitMQ yü kurcalamak için oluşturduğum bir Asp.Net MVC uygulaması.
+Proje public bir proje olduğu için sonarcloud hesabınız olmasa bile, yani sonarcloud a giriş yapmadan da oluşan son raporu buradan görebilirsiniz.
+Linke tıkladıysanız aşağıdaki ekranla karşılaşmış olmanız gerekiyor.
+ 
+Ekran 7: rabbitmq key’i ile oluşturduğum projemin sonarcloud dashboard’u
+Dikkat ederseniz rapor 5 ana başlıktan oluşuyor. Bunlar;
+Bugs
+Projenizde bu kategoriye alınan kodlarınız varsa bir şeylerin yanlış veya eksik olduğundan emin olabilirsiniz. Eğer düzeltilmezse ileride başınız ağrıyabilir, dolayısıyla bu kategoriyi önemseyin. Bizim 109 satırlık küçük uygulamamızda Bug olarak nitelendirilecek bir şey bulamamış sevgili SonarQube. A alarak geçmişiz bu dersten :) Eğer ne tür durumların bug olarak ele alındığını merak ediyorsanız buraya tıklayarak public projeleri keşfedebilir, raporları dilediğinizce inceleyerek bir çok şey öğrenebilirsiniz.
+Vulnerabilities
+Güvenlik zafiyetine sebebiyet verecek olan kod parçacıkları bu kategoride raporlanmaktadır. Yani bu kategoride en az Bug kategorisi kadar önemli. Göz ardı etmemekte fayda var, bir örnek olması açısından rastgele public bir projeden aldığım aşağıda ekran görüntüsünü paylaşmak istedim.
+ 
+ 
+Ekran 8: SonarQube’ün zafiyet olarak gördüğü alert kullanımı
+Burada bir js dosyası içerisinde kullanılan alert metodu zafiyet olarak görülmüş. Üç nokta (…) icon’una tıklayarak açılan aşağıdaki bilgilendirme ekranında SonarQube’ün gerekçesini de görebilmeniz mümkün. Özetle, debug modda alert’e tamam ama production da hassas veri gösterme riski taşıdığından burada bir zafiyet var arkadaş, diyor SonarQube.
+ 
+ 
+Ekran 9: SonarQube: Production ortamında unutulan alert can yakabilir
+Code Smells
+İlk 2 maddemiz kadar risk teşkil etmeyen ancak, kod okunabilirliği ve bakım maliyetleri açısından negatif etki yapabilecek kod parçacıkları bu kategoride değerlendirilmekte. Raporumuzda 3 adet code smells olduğu görülüyor. Hemen yanında yazan 14 min ifadesi ise, bu 3 adet sorunun tahmini çözüm süresi :) Evet SonarQube sağ olsun onu da hesaplıyor ama tabi bu değerde bir hata payı olabileceğini söylememe gerek yok sanırım. Şimdi bu 3 rakamına tıklayarak aşağıdaki detay ekranına erişiyoruz.
+ 
+ 
+Ekran 10: Code Smell liste ekranı
+Listede koyu renkle yazılı olan özet bilgisi aslında gerekli detayı veriyor. Örneğin ilk maddede sadece constructor içerisinden değer atanan _hostName adındaki field’ın readonly olarak işaretlenmesi gerektiğinden bahsediyor. Eğer bu maddenin üzerine tıklarsanız aşağıdaki detay ekranında ilgili kod dosyasının ilgili satırını görebiliyorsunuz.
+ 
+ 
+Ekran 11: Code Smell detayı
+Burada yine Make _hostName readonly ifadesinin yanındaki üç nokta (…) ya tıklarsanız ekranın en altında o maddeyle alakalı bilgilendirici açıklamayı görebilirsiniz. SonarQube sadece açıklarınız bulmuyor aynı zamanda eğitiyor da :) Gördüğünüz gibi içerikte örnek kod bile var.
+
+Coverage
+Buradan yazılan testlerin projenizin ne kadarını cover ettiğiniz görebilirsiniz. Bu küçük projede test yazılmadığı için değerimiz %0 ve kırmızı renk bir uyarı manasında, yani unit test yazılmadığını ifade ediyor.
+Duplications
+Proje genelinde tekrarlı kod satırlarının toplam kod satırına oranını ifade eder. Örneğin 1000 satır kod içerisinde toplamda 100 satır eğer tekrarlı ise bu değer %10 olacaktır. Örnek projemiz az sayıda kod içerdiğinden ötürü hiç tekrarlı kod yoktur. Ben orta ve büyük ölçekli projelerde bu değerin %40- 50 'lerde olabildiğini görmüştüm ki çok ciddi bir oran. SonarQube detaylı olarak aşağıdaki ekran görüntüsünde gördüğünüz gibi dosya bazında tekrarlı kod oranlarını başarılı şekilde raporlayabiliyor.
+ 
+ 
+Ekran 13: Kod dosyası bazında rapor detayları
+Quality Gates, Quality Profiles ve Rules Kavramları Hakkında
+Quality Gate’ler projemizin production ortamı için hazır olup olmadığına karar veren kural dizileridir. Bir başka değişle, kod analiz raporunun başarılı mı (Passed), başarısız mı (Failed) olacağının belirlenmesi için kullanılırlar. 6 nolu ekran görüntüsünde yer alan yeşil renkli “Passed” ifadesi, kod analiz işlemi esnasında mevcut Quality Gate’lerin hepsinden geçildiği ve rapor sonucunun başarılı olduğu anlamına geliyor.
+SonarQube desteklediği her programlama dili için default (ön tanımlı) olarak, Quality Profile, Rules ve Quality Gate tanımlamalarına sahip. Örneğin C# dili için buraya tıklayarak ulaşabileceğiniz, benim oluşturduğum public organizasyonun aşağıdaki ekranında ön tanımlı olarak gelen Quality Gate’leri görebilirsiniz.
+Örneğin; en altta belirtilen kuraldan, Security notunun A’dan daha kötü olması raporun başarısız sonuçlanacağını anlamalıyız. Ve en önemlisi, sol üst köşedeki Create butonuyla, kendi custom Quality Gate’inizi oluşturabilirsiniz. Örneğin siz projenizde Security notunun B den daha kötü olması durumunda raporun başarısız olmasını sağlayabilirsiniz.
+ 
+Ekran 14: Ön tanımlı Quality Gate’ler
+Peki Security notu nasıl belirleniyor? Burada Rules kavramına değinmemiz gerekiyor. Yukarıdaki ekran görüntüsünde Rules sekmesine tıkladığınızda aşağıdaki ekrana erişeceksiniz. Sol taraftaki filtreleme özelliğini kullanarak yalnızca C# için tanımlı olan kuralları listeledim. Kurallara tıklayarak örnek kod parçacıklarının da yer verildiği bilgilendirici detay sayfalarına göz atabilirsiniz. Dikkat ederseniz C# dili için kural havuzunda toplam 358 adet (21.08.2018 tarihli kural sayısı ) kural tanımlı. Bu kurallar C# ve diğer diller için sürekli olarak artmakta, eklenen yeni kurallarla SonarQube geliştirilmeye devam etmektedir.
+ 
+ 
+Ekran 15: C# dili için tanılı kurallar listesi
+Quality Profile içinse en basit haliyle, çeşitli kuralları içeren gruplardır diyebiliriz. Yani C# dili için kendinize özel oluşturacağınız bir Quality Profile, en az 1 en fazla 358 adet kuraldan oluşabilir.
+Özetle SonarQube’ün ön tanımlı Quality Gate ve Quality Profile ını kullanmayıp, kendi tanımlamalarınızı yapabilirsiniz. Üstelik bunları proje bazlı da yapabilirsiniz. Aşağıdaki ekrandan rabbitmq projemiz için Administrator sekmesinde tıkladığımızda açılan menüden bu değişikliği yapabiliriz.
+ 
+ 
+Ekran 16: Proje bazlı admin ekranları için menü
+Bu menüden Quality Gate sekmesinde tıkladığımızda gelen ekrandan, projemiz için istediğimiz Quality Gate’i seçebiliriz. Buradaki sample gate isimli Quality Gate benim örnek olması için yaptığım tanımlama. Dikkat ederseniz Sonar way için, default ibaresi var yani tüm projeler ilk oluşturulduklarında ön tanımlı olarak Sonar way Quality Gate’ine tabi tutulmaktalar.
+ 
+ 
+Ekran 17: Projenin Quality Gate’inin değiştirilmesi
+Aynı şekilde Quality Profiles linkine tıklayarak SonarQube’ün projenize atadığı ön tanımlı profili kullanmayıp kendi tanımladığınız profilin kullanılmasını sağlayabilirsiniz. Ön tanımlı gelen Sonar way isimli Quality Profile tüm kuralları içerirken siz kendi profiliniz için kapsamı daraltmak isteyebilirsiniz mesela.
+Örnek vermek gerekirse; kendi özel tanımlayacağınız Quality Profile’ınızdan projemizde 2 adet Code Smell olarak değerlendirilen, readonly field kuralını çıkarırsanız, Code Smell sayımız bire inecektir. Bu yolla siz, “readonly field kuralı benim için code smell değildir”, demiş olursunuz aslında.
+SonarQube’ü CI Pipeline’ınıza Dahil Edin
+Eğer hali hazırda bir CI yazılımı kullanmaktaysanız, SonarQube veya benzeri bir statik kod analiz aracını CI pipeline’ınıza dahil edebilirsiniz. Bu noktada kullandığınız CI yazılımına göre eforunuz değişecektir. Jenkins, TeamCtiy, Travis CI vs. gibi bazı CI araçları SonarQube için sahip oldukları plugin’ler sayesinde bu eforu minimuma indirmekteler. Diğer bir ifadeyle SonarQube için doğal desteğe sahipler.
+Doğal entegrasyona sahip CI araçlarında SonarQube rapor sonucuna göre pipeline’ınızı kırıp, ilgili yerlere bildirim yapabilirsiniz. Örneğin build adımından sonra SonarQube’ü tetikler, raporu sonucunu bekletir ve rapor başarısız olursa bir sonraki adıma geçmeyebilirsiniz.
+Plugin ile doğal entegrasyon imkanı olmayan CI araçlarında SonarQube’ü tetiklemek için ise, yml scriptinize MSBuild SonarScanner İle Projenin Kod Analizi bölümünde belirttiğimiz komutları ekleyerek ilerleyebilirsiniz. Bu noktada rapor sonucunu bekleyerek, gelen sonucuna göre bir aksiyon almak mümkün müdür açıkçası bilmiyorum. Yorumlarınızı alabilirim.
+
 
 

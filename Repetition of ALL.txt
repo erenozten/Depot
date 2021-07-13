@@ -340,6 +340,38 @@ devtool has many possible values, the most used probably are:
 •	none: adds no source maps
 •	source-map: ideal for production, provides a separate source map that can be minimized, and adds a reference into the bundle, so development tools know that the source map is available. Of course you should configure the server to avoid shipping this, and just use it for debugging purposes
 •	inline-source-map: ideal for development, inlines the source map as a Data URL
-
+-
+-
+-
+SonarQube (formerly Sonar)[2] is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security vulnerabilities.[3][4]
+SonarQube can record metrics history and provides evolution graphs. SonarQube provides fully automated analysis and integration with Maven, Ant, Gradle, MSBuild and continuous integration tools (Atlassian Bamboo, Jenkins, Hudson, etc.).
+ 
+Bir önceki yazımda ( Yazılım Ekiplerinde Kod Kalitesi ve Kalitede Sürekliliğin Sağlanması ) Continuous Code Quality kavramından, DevOps kültüründeki, ve bir CI pipleline’ındaki yerinden bahsetmiştim. Özellikle büyük veya büyüme kapasitesi olan ekiplerde her commit’in ana branch’e merge edilmeden önce mutlaka code-review işlemine tabi tutulması gerektiğini ve bu işlemden önce bir statik kod analiz aracı kullanımının, kod kalitesi, hatasızlık ve zaman tasarrufu açısından faydalı olacağından bahsetmiştim. Bu yazımda SonarQube statik kod analiz aracından bahsedeceğim.
+ 
+SonarQube (eski ismiyle Sonar), Sonarsource firmasının iki ana ürününden birisidir. Diğer ürün SonarLint’de yine bir code quality tool’udur, ancak SonarQube’den farklı olarak yazılımın geliştirme aşamasında, yani henüz kodumuzu commit’lemeden önce bizi uyarır. Bir çok popüler IDE için desteği mevcuttur. “Fix issues before they exist” diye de bir sloganları var. Bu yazıda SonarLint’den bahsetmeyeceğim. Merak edenleriniz buradan inceleyebilirler.
+SonarQube’ü açık kaynak projeleriniz için cloud üzerinden ücretsiz olarak kullanabileceğiniz gibi, private projeler için on-premise kurulum yaparak da kullanabilirsiniz. Cloud üzerinden private projeleriniz için ücret ödemeniz gerekiyor.
+Amacım SonarQube kullanımı hakkında bilgi vermek olduğu için, kurulum kısmını atlayıp, konuyu cloud üzerinden yani https://sonarcloud.io uygulaması üzerinden anlatacağım. SonarQube’ü aşağıda listelediğim 6 ana başlıkta inceleyeceğiz;
+•	https://sonarcloud.io uygulamasına giriş ve boş bir proje oluşturma
+•	Kişisel bilgisayarımıza SonarScanner kurulumu
+•	SonarScanner ile örnek bir .Net projesinin analiz edilmesi ve raporun sonarcloud.io ya gönderilmesi
+•	sonarcloud.io ya gönderilen raporun yorumlanması
+•	Quality Gates, Quality Profiles ve Rules kavramları hakkında
+•	SonarQube’ün bir CI pipeline’ına dahil edilmesi
+sonarcloud.io SaaS Uygulamasına Giriş
+SonarQube’ü açık kaynak projeler için cloud üzerinden ücretsiz olarak kullanabiliyoruz. Giriş ekranında sizi 3 OAuth seçeneği karşılıyor. Ben github hesabımla giriş yaptım.
+ 
+Ekran 1: OAuth login seçenekleri
+Sağ üst köşedeki menüden “Create new organization” diyerek bir organizasyon oluşturarak başlıyoruz. SonarQube de her proje bir organizasyona bağlıdır. Daha sonra yine sağ üst köşeden “Analyze new project” diyoruz ve aşağıdaki ekranla karşılaşıyoruz.
+ 
+ 
+Ekran 2: Mevcut organizasyona proje ekleme
+Önceki adımda oluşturduğumuz organizasyonumuz seçili geliyor. Devam diyoruz ve sonraki adımda bir token oluşturuyoruz. Oluşan token değeri lazım olacak, hemen bir yere kopyalayıp devam ediyoruz ve aşağıdaki ekrandan projemizin ana programlama dilini seçiyoruz ve projemiz için bir anahtar kelime belirliyoruz.( Projede birden fazla dil olabileceğinden ötürü (c#, html, js) ana dil ifadesi kullanılmış )
+ 
+ 
+Ekran 3: Projenin ana programlama dili seçimi
+Done butonuna tıkladıktan sonra aşağıdaki ekranla karşılaşacaksınız. Bu ekranda gördüğünüz üzere Scanner’ı çalıştırmak ve projenizi analiz edebilmek için komut satırından çalıştırmanız gereken 3 adet komut yer almakta. Bu 3 komutu bir yere kopyalayıp ekranı kapatabilirsiniz.
+ 
+ 
+Ekran 4: Proje ekleme son adım
 
 

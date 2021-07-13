@@ -1,0 +1,19 @@
+
+
+
+
+
+WWW     	(GITHUB)  (empty) 
+[www nedir, world wide web nedir]
+Renkler: yazı örnek yazı yazı örnek yazı yazı örnek yazı 
+-
+-
+World Wide Web, Dünya Çapında Ağ (kısaca WWW veya Web), İnternet üzerinde yayınlanan birbirleriyle bağlantılı hiper-metin dokümanlarından oluşan bir bilgi sistemidir. Bu dokümanların her birine Web sayfası adı verilir ve Web sayfalarına İnternet kullanıcısının bilgisayarında çalışan Web tarayıcısı adı verilen bilgisayar programları aracılığıyla erişilir. Web sayfalarında metin, imaj, video ve diğer multimedya ögeleri bulunabilir ve diğer bağlantı ya da link adı verilen hiper-bağlantılar ile başka Web sayfalarına geçiş yapılabilir.
+
+İnternet ve Web terimleri aynı olguyu tanımlamaz. Zira Web sadece İnternet üzerinde çalışan bir servistir. Web kavramı, CERN'de bir bilgisayar programcısı olan Tim Berners-Lee'nin HTML adlı metin işaretleme dilini geliştirmesiyle oluşmuştur. Bugün de kendisinin başkanı olduğu W3C (World Wide Web Consortium) tarafından standartları belirlenmektedir.
+
+Yapısı
+Web’in temeli İnternet'tir. Web İnternet üzerinde kurulmuştur ve İnternet'in sunduğu mekanizmalardan çoğunun kullanılmasını sağlar. İnternet'in fiziksel görünüşleri –bilgisayarlar, ağlar ve servisler– Dünya üzerindeki diğer binlerce bilgisayara bağlanmamıza izin verir. Web, İnternet'in en tepesindeki soyutlanmış genel servisler kümesidir. World Wide Web (W3), insanların fikir ve projelerinin paylaşılmasını sağlayan bir bilgi ve kültür havuzudur. İstemci-sunucu uygulamaları ile yapılan birçok organizasyon üzerinde Web tarayıcıları istemci olarak çalışabilirler. Web yürütümü standart İstemci-sunucu modelini izler. Aşağıdaki şekilde gösterildiği gibi "Web tarayıcısı" adı verilen programı çalıştıran bir istemci bilgisayar ile Web sunucu yazılımı çalıştıran bir sunucu bilgisayar arasındaki etkileşime "istemci-sunucu" etkileşimi adı verilir. İstemci bilgisayar sunucudan HTTP'yi (Hypertext Transfer Protocol) ve İnternet mesaj standardı TCP/IP'yi kullanarak bir doküman ister ve sunucu istemcinin göstereceği dokümanı geri döndürür.-
+-
+
+

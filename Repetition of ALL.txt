@@ -1210,7 +1210,184 @@ Sonraki yazılarımda görüşmek üzere…
 -
 -
 -
+css tarafında değişkenler oluşturup işi kolaylaştıran teknoloji.
 
+LESS isn’t the only CSS preprocessor out there. Syntactically Awesome Stylesheets (Sass) is another popular one (sass-lang.com), for just one example. 
+-
+-
+-
+In this article, I’ll discuss Web development using the LESS Framework for dynamic generation of CSS content.
+No doubt that CSS represented a big leap forward with its promise—largely fulfilled—of completely separating content from presentation of Web pages. Even though CSS is (or should be?) in the realm of designers, it heralds the principle of separation of concerns, to which nearly every developer is sensitive. So use of CSS picked up quickly and has become deeply ingrained into Web development to the point that it sometimes struggles to keep up with modern Web sites.
+The point isn’t that CSS is insufficient to style modern, graphically rich and appealing Web sites, but rather a purely declarative language isn’t always appropriate to express complex and interconnected declarations of styles. Thankfully, browsers can still make sense of any CSS as long as it’s correctly written—but can we say the same for humans?
+A relatively new direction in Web development aims to build an infrastructure around CSS so developers and designers can produce the same CSS in a more sustainable way. The final stylesheet for the browser doesn’t change, but the manner in which it’s produced should be different, easier to read and more manageable.
+This field of Web development started a few years ago and is now reaching maturity, as several available frameworks can help you out with dynamic CSS content generation. I’ll provide an executive summary of one of these frameworks—the LESS Framework—and show how it can be integrated with ASP.NET MVC solutions.
+Why LESS?
+One of the biggest issues developers address with LESS is repetition of information. As a software developer, you probably know the “don’t repeat yourself” (DRY) principle and apply it every day. The major benefit of DRY is that it reduces the places where the same information is stored, and thus the number of places where it should be updated.
+In plain CSS, you simply have no DRY issues. For example, in some other scenarios, if some color is used in multiple classes and you have to change it, you likely have no better way than updating it in every single occurrence. CSS classes let you define the appear¬ance of certain elements and reuse them across pages to style related elements in the same way. While CSS classes certainly reduce repetition, they’re sometimes insufficient in other aspects.
+One problem with CSS classes is they operate at the level of the semantic HTML element. In building various CSS classes, you often face repetition of small pieces of information such as colors or widths. You can’t easily have a class for each of these repeatable small pieces. Even if you manage to have a CSS class for nearly any repeatable style, such as colors and widths, then when it comes to style the semantic element—say, a container—you should concatenate multiple CSS classes together to achieve the desired effect.
+If you’ve ever used a framework such as Bootstrap for designing your Web page, you know what I mean. Here’s an example:
+XMLCopy
+<a class="btn btn-primary" ... />
+The anchor is first set to be a button (class btn) and then a particular flavor of button (class btn-primary). This approach works, but it might require some significant work to plan ahead for the classes you need. It results in overhead in Web projects that often are on the brink of deadlines.
+A dynamic stylesheet language such as LESS represents a sort of lateral thinking. You don’t spend any time trying to make your plain CSS smarter; you simply use different tools—mostly languages—to generate it. LESS, therefore, is a framework that adds programmer-friendly concepts to CSS coding, such as variables, blocks and functions.
+Strictly related to dynamic CSS generation is the problem of processing it to plain CSS for the browser to consume. The client can process the LESS code through ad hoc JavaScript code or preprocess it on the server so the browser just receives final CSS.
+Setting up LESS in ASP.NET MVC
+I’ll demonstrate what it takes to use LESS from within an ASP.NET MVC application. To start out, I’ll focus on client-side processing of the LESS code. In the HEAD section of the layout file, add the following:
+XMLCopy
+<link rel="stylesheet/less"
+  type="text/css"
+ href="@Url.Content("~/content/less/mysite.less")" />
+<script type="text/javascript"
+ src="@Url.Content("~/content/scripts/less-1.3.3.min.js")"></script>
+This assumes you’ve created a Content/Less folder in the project to contain all your LESS files. You’ll need a JavaScript file to do the actual LESS-to-CSS processing within the browser. You can get the script file from lesscss.org. I’ll review a few scenarios where LESS proves useful.
+LESS in Action: Variables
+A good way to understand the role of LESS variables is by looking into CSS gradients. For years, designers used small GIF files to paint the background of HTML containers with gradients. More recently, browsers added CSS support for gradients. These are also part of the official CSS3 standard through the linear-gradient syntax and its variations. Unfortunately, if you want to make sure the gradient is picked up by the widest possible range of browsers, you have to resort to something like the code in Figure 1.
+The code in Figure 1 is nearly unreadable. Worse yet, it must be repeated anywhere you want that gradient. Also, if you want to change the gradient color slightly (or simply the saturation or fading), the only option is editing all occurrences manually. Without beating around the bush, this can be extremely tough. However, it’s the only way it can work in plain CSS.
+Figure 1 Comprehensive Code for Displaying Gradients on a Wide Range of Browsers
+XMLCopy
+/* Old browsers fallback */
+background-color: #ff0000;
+background: url(images/red_gradient.png);
+background-repeat: repeat-x;
+/* Browser specific syntax */
+background: -moz-linear-gradient(  left,  #fceabb 0%, 
+  #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+background: -Webkit-linear-gradient(  left, #fceabb 0%,
+  #fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+background: -o-linear-gradient(  left, #fceabb 0%,
+  #fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+background: -ms-linear-gradient(  left, #fceabb 0%,
+  #fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+/* Standard syntax */
+background: linear-gradient(  to right, #fceabb 0%,
+  #fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+To find a better solution, you need to look outside CSS and enter the territory of LESS. In LESS, you define the CSS for the gradient once and refer to it by name wherever appropriate. Here’s an example:
+XMLCopy
+.background-gradient-orange { background: #fceabb; ... }
+.container { .background-gradient-orange; }
+The class named background-gradient-orange is embedded by name in the class container and any other class where appropriate. The definition of the gradient, though, is kept in one place.
+There’s nothing revolutionary in this if you look at it from a developer’s perspective. However, it uses a feature—variables—that just doesn’t exist in CSS. The preceding syntax, in fact, won’t work if you save and reference the file as a plain stylesheet. Some code is required to turn the extended syntax into plain CSS. The LESS JavaScript parser does just this and expands variables to their actual CSS content.
+Variables apply also to scalar values such as colors or sizes. Consider the following LESS code:
+XMLCopy
+@black: #111;
+#main {  color: @black; }
+.header { background-color: @black; }
+The parser expands the @black variable to the assigned value and replaces it all over the file. The net effect is that you change the actual color in one place and changes ripple through the file automatically.
+LESS in Action: Imports
+You can split your LESS code across multiple files, reference files and contained classes where necessary. Suppose, for example, you create a gradients.less file with the following content:
+XMLCopy
+.background-gradient-orange { background: #fceabb; ... }
+In another LESS file, say main.less, you can reference any gradients by importing the file:
+XMLCopy
+@import "gradients";
+.container { .background-gradient-orange; }
+If gradients.less (the extension isn’t strictly required) lives in a different folder, you should indicate path information in the call to import.
+LESS Mixins
+I called the LESS artifact for gradients a variable. To be picky, that’s not entirely correct. In LESS, a variable encompasses a single value. A container for a CSS class is known as a mixin. This is similar to a function but doesn’t contain any custom logic. Just like a function, a LESS mixin can take and process parameters. Consider the code in Figure 2 that demonstrates a mixin.
+In Figure 2, a mixin named shadow defines the styles for a box shadow and exposes the color as an external parameter. Similarly, the text-box mixin defines the basic appearance of an input field. It imports the shadow definition and keeps the width parametric. In this way, defining three classes for input fields of different sizes (mini, normal and large) is a breeze. More important, it requires a fraction of the editing and takes only minimal effort to update (see Figure 3).
+Figure 2 Mixins in the LESS Framework
+XMLCopy
+/*  Mixins  */
+.shadow(@color) {
+  box-shadow: 3px 3px 2px @color;
+}
+.text-box(@width) {
+  .shadow(#555);
+  border: solid 1px #000;
+  background-color: #dddd00;
+  padding: 2px;
+  width: @width;
+}
+/*  CSS classes  */
+.text-box-mini {
+  .text-box(50px);
+}
+.text-box-normal {
+  .text-box(100px);
+}
+.text-box-large {
+  .text-box(200px);
+}
+ 
+Figure 3 LESS Mixins in Action
+Mixins can accept multiple parameters and also a variable number of parameters. In addition, individual parameters support default values:
+XMLCopy
+.mixin(@color: #ff0) { ... }
+LESS isn’t an expression of a rich programming language, and by design it lacks commands to indicate conditions or loops. However, the behavior of a mixin can still be different depending on the passed value. Suppose you want to give a larger button a thicker border and font. You define a parametric mixin named button and use the keyword “when” to bind settings to a condition. The condition must be based on a single parameter:
+XMLCopy
+.button (@size) when (@size < 100px) {
+ padding: 3px;
+ font-size: 0.7em;
+ width: @size *2;
+}
+.button (@size) when (@size >= 100px) {
+  padding: 10px;
+  font-size: 1.0em;
+  font-weight: 700;
+  background-color: red;
+  width: @size *3;
+}
+You apply different settings, but you also can use basic operations to multiply the size by a factor. Next, use mixins in actual CSS classes:
+XMLCopy
+.push-button-large {
+  .button(150px);
+}
+.push-button-small {
+  .button(80px);
+}
+The results of running this code are shown in Figure 4.
+ 
+Figure 4 Effects of Using LESS Mixins in CSS Classes
+LESS comes with a long list of predefined functions for manipulating colors. You have functions to darken, lighten and saturate colors by a percentage and fade colors in and out by a percentage, as shown here:
+XMLCopy
+.push-button {
+  background-color: fade(red, 30%);
+}
+For full documentation about the functions supported by LESS, check out lesscss.org.
+Nesting Classes
+Personally, I find rather annoying the need to repeat CSS blocks to indicate sibling styles. A typical example is:
+XMLCopy
+#container h1 { ... }
+#container p { ... }
+#container p a { ... }
+#container img { ... }
+In well-written plain CSS, you can actually avoid much of the repetition, but the manner in which styles are laid out—using a flat listing—isn’t optimal. In this case, a bit of a hierarchy is preferable. In LESS, you can nest style rules like this:
+XMLCopy
+.container {
+  h1 {
+    font-size: 0.8em;
+   color: fade(#333, 30%);
+   a {
+     color: #345;
+     &:hover {color: red;}
+    }
+  }
+}
+Once processed, the preceding LESS code produces the following styles:
+XMLCopy
+.container h1
+.container h1 a
+.container h1a:hover
+Server-Side Processing
+You can download the LESS code as is and process it on the client through JavaScript code. You can also preprocess on the server and download it to the client as plain CSS. In the former case, everything works as if you were using plain CSS files: Server-side changes are applied to the client with the next page refresh.
+Server-side preprocessing might be a better option if you have performance concerns and are dealing with large, complex CSS files. Server-side preprocessing takes place every time you modify the CSS on the server. You can manually take care of the extra step at the end of the build process. You preprocess LESS code to CSS using the LESS compiler from the command line. The compiler is part of the dotless NuGet package you install for server-side work.
+In ASP.NET MVC 4, however, you can integrate the LESS Framework with the bundle mechanism covered in my October 2013 column, “Programming CSS: Bundling and Minification” (msdn.microsoft.com/magazine/dn451436). This ensures the LESS-to-CSS transformation is performed whenever you make a request for a LESS file. It also ensures caching is managed properly via the If-Modified-Since header. Finally, you can mix together parsing and minifying. To integrate LESS in ASP.NET MVC, first download and install the dotless NuGet package. Second, add the following code to the BundleConfig class:
+XMLCopy
+var lessBundle =
+  new Bundle("~/myless").IncludeDirectory("~/content/less", "*.less");
+lessBundle.Transforms.Add(new LessTransform());
+lessBundle.Transforms.Add(new CssMinify());
+bundles.Add(lessBundle);
+The bundle will package all .less files found in the specified folder. The LessTransform class is responsible for the LESS-to-CSS transformation. The class uses the dotless API to parse LESS scripts. The code for LessTransform is fairly simple:
+XMLCopy
+public class LessTransform : IBundleTransform
+{
+  public void Process(BundleContext context, BundleResponse response)
+  {
+    response.Content = dotless.Core.Less.Parse(response.Content);
+    response.ContentType = "text/css";
+  }
+}
 
 
 

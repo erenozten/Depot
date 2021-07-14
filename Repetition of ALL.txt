@@ -880,6 +880,22 @@ MVCC uses timestamps (TS), and incrementing transaction IDs, to achieve transact
 If transaction Ti wants to Write to object P, and there is also another transaction Tk happening to the same object, the Read Timestamp RTS(Ti) must precede the Read Timestamp RTS(Tk), i.e., RTS(Ti) < RTS(Tk)[clarification needed], for the object Write Operation (WTS) to succeed. A Write cannot complete if there are other outstanding transactions with an earlier Read Timestamp (RTS) to the same object. Like standing in line at the store, you cannot complete your checkout transaction until those in front of you have completed theirs.
 To restate; every object (P) has a Timestamp (TS), however if transaction Ti wants to Write to an object, and the transaction has a Timestamp (TS) that is earlier than the object's current Read Timestamp, TS(Ti) < RTS(P), then the transaction is aborted and restarted. (This is because a later transaction already depends on the old value.) Otherwise, Ti creates a new version of object P and sets the read/write timestamp TS of the new version to the timestamp of the transaction TS ← TS(Ti).[2]
 The drawback to this system is the cost of storing multiple versions of objects in the database. On the other hand, reads are never blocked, which can be important for workloads mostly involving reading values from the database. MVCC is particularly adept at implementing true snapshot isolation, something which other methods of concurrency control frequently do either incompletely or with high performance costs.
+Examples
+Concurrent read–write
+At Time = 1, the state of a database could be:
+Time	Object 1	Object 2
+0	"Foo" by T0	"Bar" by T0
+1	"Hello" by T1	
+T0 wrote Object 1="Foo" and Object 2="Bar". After that T1 wrote Object 1="Hello" leaving Object 2 at its original value. The new value of Object 1 will supersede the value at 0 for all transactions that start after T1 commits at which point version 0 of Object 1 can be garbage collected.
+If a long running transaction T2 starts a read operation of Object 2 and Object 1 after T1 committed and there is a concurrent update transaction T3 which deletes Object 2 and adds Object 3="Foo-Bar", the database state will look like this at time 2:
+Time	Object 1	Object 2	Object 3
+0	"Foo" by T0	"Bar" by T0	
+1	"Hello" by T1		
+2		(deleted) by T3	"Foo-Bar" by T3
+There is a new version as of time 2 of Object 2 which is marked as deleted and a new Object 3. Since T2 and T3 run concurrently T2 sees the version of the database before 2 i.e. before T3 committed writes, as such T2 reads Object 2="Bar" and Object 1="Hello". This is how multiversion concurrency control allows snapshot isolation reads without any locks.
+History
+Multiversion concurrency control is described in some detail in the 1981 paper "Concurrency Control in Distributed Database Systems"[3] by Phil Bernstein and Nathan Goodman, then employed by the Computer Corporation of America. Bernstein and Goodman's paper cites a 1978 dissertation[4] by David P. Reed which quite clearly describes MVCC and claims it as an original work.
+The first shipping, commercial database software product featuring MVCC was VAX Rdb/ELN, created at Digital Equipment Corporation by Jim Starkey. Starkey went on to create the second commercially successful MVCC database - InterBase.[5]
 
 
 

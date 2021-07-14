@@ -851,6 +851,17 @@ The canonical implementation of Material Design for web application user interfa
 -
 -
 
+- 
+Cross-platform software  / Multi-platform software  (GITHUB)  (test)
+Cross-platform nedir, cross platform nedir, multi platform nedir, multi-platform nedir
+For example, a cross-platform application may run on Microsoft Windows, Linux, and macOS. Cross-platform programs may run on as many as all existing platforms, or on as few as two platforms. Cross-platform frameworks (such as Qt, Flutter, NativeScript, Xamarin, Phonegap, Ionic, and React Native) exist to aid cross-platform development.
+Platform can refer to the type of processor (CPU) or other hardware on which a given operating system or application runs, the type of operating system on a computer or the combination of the type of hardware and the type of operating system running on it.[4] An example of a common platform is Microsoft Windows running on the x86 architecture. Other well-known desktop computer platforms include Linux/Unix and macOS - both of which are themselves cross-platform.
+-
+-
+- 
+-
+
+
 
 
 

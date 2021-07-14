@@ -919,6 +919,16 @@ Computer programming
 Origin
 Martin Richards, creator of the BCPL language (a precursor of C), designed arrays initiating at 0 as the natural position to start accessing the array contents in the language, since the value of a pointer p used as an address accesses the position p + 0 in memory.[5][6] Canadian systems analyst Mike Hoye asked Richards the reasons for choosing that convention. BCPL was first compiled for the IBM 7094; the language introduced no run time indirection lookups, so the indirection optimization provided by these arrays was done at compile time.[6] The optimization was nevertheless important.[6][7]
 Edsger W. Dijkstra later wrote a pertinent note Why numbering should start at zero[8] in 1982, analyzing the possible designs of array indices by enclosing them in a chained inequality, combining sharp and standard inequalities to four possibilities, demonstrating that to his conviction zero-based arrays are best represented by non-overlapping index ranges, which start at zero, alluding to open, half-open and closed intervals as with the real numbers. Dijkstra's criteria for preferring this convention are in detail that it represents empty sequences in a more natural way (a ≤ i < a ?) than closed "intervals" (a ≤ i ≤ (a−1) ?), and that with half-open "intervals" of naturals, the length of a sub-sequence equals the upper minus the lower bound (a ≤ i < b gives (b−a) possible values for i, with a, b, i all integers).
+-
+-
+-
+Microsoft Azure	(GITHUB)  (test)
+Azure nedir
+Microsoft Azure, commonly referred to as Azure (/ˈæʒər/), is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. It provides software as a service (SaaS), platform as a service (PaaS) and infrastructure as a service (IaaS) and supports many different programming languages, tools, and frameworks, including both Microsoft-specific and third-party software and systems.
+Azure was announced in October 2008, started with codename "Project Red Dog",[1] and released on February 1, 2010, as Windows Azure before being renamed to Microsoft Azure on March 25, 2014.
+-
+-
+
 
 
 

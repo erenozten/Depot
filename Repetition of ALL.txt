@@ -660,6 +660,88 @@ Limitations of Unix
 -
 -
 -
+Combining webpack with ASP.NET MVC 5
+ 
+
+Jonathan Harrison
+
+
+Sep 20, 2017·4 min read
+
+I am currently working on an ASP.NET MVC 5 web application in Visual Studio 2017 with my colleague matthewygf; on other recent projects we have been using a typical JavaScript Single Page Application (SPA) stack e.g. npm, gulp, etc.
+Even though ASP.NET MVC 5 and Visual Studio includes everything needed for development i.e. package management with NuGet, TypeScript and LESS compiling, bundling and minification etc; we wanted a development pipeline such that if we ever decided to move to a SPA, reuse it on other new projects or replace gulp on others we could.
+This lead us to build a “hybrid” combining webpack with ASP.NET MVC 5; it suits our needs very well so we thought we would share our template.
+The complete project is over on GitHub if you just want to download it and start using it, otherwise you can create it from scratch by following these steps.
+Create an ASP.NET Web Application project
+First of all create an ASP.NET MVC Web application project in Visual Studio. Specifically we used:
+•	.NET Framework 4.6.1
+•	MVC
+•	Authentication: No Authentication
+Uninstall JavaScript and CSS NuGet packages
+By default the ASP.NET MVC template includes Bootstrap and jQuery downloaded from NuGet. We want to use npm instead, so uninstall the following NuGet packages:
+•	bootstrap
+•	jQuery
+•	jQuery.Validation
+•	Microsoft.jQuery.Unobstrusive.Validation
+•	Modernizr
+•	Respond
+After uninstalling the packages, make sure the Fonts and Scripts folders are deleted and also,the Content folder only contains Site.css.
+Create package.json and install dependencies
+Now that we have a clean starting point, in the project folder open a terminal and run.
+npm init
+Just accept all the default values and then you will have a package.json file created. After that its time to use:
+npm install --save
+To install the following packages:
+•	bootstrap
+•	jquery
+•	jquery-validation
+•	jquery-validation-unobtrusive
+With the main dependencies installed, we need to install the development dependencies which includes webpack and other to support TypeScript and LESS. Use:
+npm install -D
+To install the following packages:
+•	@types/bootstrap
+•	@types/jquery
+•	@types/jquery-validation-unobtrusive
+•	@types/jquery.validation
+•	awesome-typescript-loader
+•	clean-webpack-plugin
+•	css-loader
+•	extract-text-webpack-plugin
+•	file-loader
+•	html-loader
+•	html-webpack-plugin
+•	less
+•	less-loader
+•	source-map-loader
+•	style-loader
+•	typescript
+•	webpack
+•	webpack-merge
+Create src folder
+All the dependencies are installed so create a folder called src in the root of the ASP.NET MVC project; this folder will contain all the TypeScript and LESS source files.
+After creating the folder, move the Site.css file from the Content folder to src and rename it index.less. Open the index.less file and at the top add this:
+@import "../node_modules/bootstrap/less/bootstrap.less";
+This will make the bootstrap classes and styles available across our application.
+Now create a index.ts file and add the following to it:
+import "./index.less";
+import "bootstrap";
+This imports the LESS file we just created and also bootstrap in order that bootstrap components such as the navigation bar work as expected.
+Modify _Layout.cshtml
+As per webpack’s best practices for production, our production webpack configuration will generate multiple bundles each having a unique name every time they build. webpack can inject tags for these generated files into a HTML file, we will use the MVC shared layout file for this.
+First of all rename the _Layout.cshtml file in Views/Shared to _Layout_Template.cshtml; this is because webpack will generate _Layout.cshtml from _Layout_Template.cshtml with the script and link tags appended at the end of the body element.
+Create tsconfig.json
+To support TypeScript compilation, you will need to create a tsconfig.json file at the root of the ASP .NET project. This file specifies the root files and the compiler options required to compile the TypeScript files. Simply copy the file from over on the GitHub project: tsconfig.json.
+Create webpack configuration files
+Now its time to create the webpack configuration files, create these at the root of the ASP .NET project. Simply copy the files from over on the GitHub project: webpack.common.js, webpack.dev.js, webpack.prod.js
+Running webpack
+Now that everything is setup, we just need to run webpack. We can use npm scripts to do this, so in your package.json add the following:
+"scripts": {
+"build:dev": "webpack --config webpack.dev.js",
+"build:prod": "webpack --config webpack.prod.js"
+}
+You will need to be run build:dev for example every time you build your ASP.NET project. This can be done by using the NPM Task Runner extension for Visual Studio, where you can setup a binding for BeforeBuild to run build:dev.
+After you have configured the extension, every time you build it runs the selected script. Note — this will only work in Visual Studio not on a build server; for a build server you will need to run these npm scripts manually.
+If you followed all the steps above or grabbed the code from GitHub, just run the project and you will see the same old ASP.NET bootstrap starter site.
 
 
 

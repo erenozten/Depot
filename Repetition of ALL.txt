@@ -896,6 +896,30 @@ There is a new version as of time 2 of Object 2 which is marked as deleted and a
 History
 Multiversion concurrency control is described in some detail in the 1981 paper "Concurrency Control in Distributed Database Systems"[3] by Phil Bernstein and Nathan Goodman, then employed by the Computer Corporation of America. Bernstein and Goodman's paper cites a 1978 dissertation[4] by David P. Reed which quite clearly describes MVCC and claims it as an original work.
 The first shipping, commercial database software product featuring MVCC was VAX Rdb/ELN, created at Digital Equipment Corporation by Jim Starkey. Starkey went on to create the second commercially successful MVCC database - InterBase.[5]
+-
+-
+-
+ilk değeri sıfır olan listeler şunlar bunlar vb.
+
+örneğe bkz:
+
+This will assign the value 23 to the first element of the array.
+Arrays in C# are zero-indexed meaning the first member has index 0, the second has index 1, and so on.
+-
+-
+Zero-based numbering  
+Connected to:
+ NumberingDerivativeComputer science
+From Wikipedia, the free encyclopedia	
+Zero-based numbering is a way of numbering in which the initial element of a sequence is assigned the index 0, rather than the index 1 as is typical in everyday non-mathematical or non-programming circumstances. 
+
+Under zero-based numbering, the initial element is sometimes termed the zeroth element,[1] rather than the first element; zeroth is a coined ordinal number corresponding to the number zero. In some cases, an object or value that does not (originally) belong to a given sequence, but which could be naturally placed before its initial element, may be termed the zeroth element. There is not wide agreement regarding the correctness of using zero as an ordinal (nor regarding the use of the term zeroth) as it creates ambiguity for all subsequent elements of the sequence when lacking context.
+Numbering sequences starting at 0 is quite common in mathematics notation, in particular in combinatorics, though programming languages for mathematics usually index from 1.[2][3][4] In computer science, array indices usually start at 0 in modern programming languages, so computer programmers might use zeroth in situations where others might use first, and so forth. In some mathematical contexts, zero-based numbering can be used without confusion, when ordinal forms have well established meaning with an obvious candidate to come before first; for instance a zeroth derivative of a function is the function itself, obtained by differentiating zero times. Such usage corresponds to naming an element not properly belonging to the sequence but preceding it: the zeroth derivative is not really a derivative at all. However, just as the first derivative precedes the second derivative, so also does the zeroth derivative (or the original function itself) precede the first derivative.
+Computer programming
+Origin
+Martin Richards, creator of the BCPL language (a precursor of C), designed arrays initiating at 0 as the natural position to start accessing the array contents in the language, since the value of a pointer p used as an address accesses the position p + 0 in memory.[5][6] Canadian systems analyst Mike Hoye asked Richards the reasons for choosing that convention. BCPL was first compiled for the IBM 7094; the language introduced no run time indirection lookups, so the indirection optimization provided by these arrays was done at compile time.[6] The optimization was nevertheless important.[6][7]
+Edsger W. Dijkstra later wrote a pertinent note Why numbering should start at zero[8] in 1982, analyzing the possible designs of array indices by enclosing them in a chained inequality, combining sharp and standard inequalities to four possibilities, demonstrating that to his conviction zero-based arrays are best represented by non-overlapping index ranges, which start at zero, alluding to open, half-open and closed intervals as with the real numbers. Dijkstra's criteria for preferring this convention are in detail that it represents empty sequences in a more natural way (a ≤ i < a ?) than closed "intervals" (a ≤ i ≤ (a−1) ?), and that with half-open "intervals" of naturals, the length of a sub-sequence equals the upper minus the lower bound (a ≤ i < b gives (b−a) possible values for i, with a, b, i all integers).
+
 
 
 

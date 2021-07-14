@@ -1388,6 +1388,16 @@ public class LessTransform : IBundleTransform
     response.ContentType = "text/css";
   }
 }
+More Intelligent Tools
+LESS isn’t the only CSS preprocessor out there. Syntactically Awesome Stylesheets (Sass) is another popular one (sass-lang.com), for just one example. The bottom line is that regardless of the tool, a CSS preprocessor is definitely something you want to consider for extensive Web programming. Whether you’re a graphic designer or a developer, more intelligent tools to manage and organize CSS code are almost a necessity. They’re even better when they’re also integrated into the Web platform. Finally, note that Visual Studio 2012 and Visual Studio 2013 offer excellent support for LESS (and related technologies) through the Web Essentials extension, which you can download at vswebessentials.com. Also, the LESS editor is available in Visual Studio 2012 Update 2 and in the upcoming Visual Studio 2013.
+________________________________________
+Dino Esposito is the author of “Architecting Mobile Solutions for the Enterprise” (Microsoft Press, 2012) and the upcoming “Programming ASP.NET MVC 5” (Microsoft Press). A technical evangelist for the .NET and Android platforms at JetBrains and frequent speaker at industry events worldwide, Esposito shares his vision of software at software2cents.wordpress.com and on Twitter at twitter.com/despos.
+Thanks to the following technical expert for reviewing this article: Mads Kristensen (Microsoft)
+Mads Kristensen is a Program Manager on the Web Platforms & Tools team at Microsoft, working on the Web developer experiences of Visual Studio. He has more than a decade of experience in developing Web applications on the Microsoft platform. He founded the BlogEngine.NET open source project, which became the most popular blog application on the ASP.NET platform, used by 800,000 people worldwide. Kristnsen is also the creator of some popular Visual Studio extension including Web Essentials, Image Optimizer and CssCop.
+-
+-
+
+
 
 
 

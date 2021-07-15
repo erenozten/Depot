@@ -1833,6 +1833,36 @@ An RFC is authored by individuals or groups of engineers and computer scientists
 Requests for Comments are produced in non-reflowable text format, but work has begun to change the format so that documents can be viewed optimally in devices with varying display sizes.[5]
 Outside of the Internet community, other documents also called requests for comments have been published in U.S. Federal government work, such as the National Highway Traffic Safety Administration.[6]
 -
+Xamarin (GITHUB)
+Xamarin nedir
+Xamarin is an open source app platform from Microsoft for building modern & performant iOS and Android apps with C# and .NET.
+Xamarin is a Microsoft-owned San Francisco-based software company founded in May 2011[2] by the engineers that created Mono,[3] Xamarin.Android (formerly Mono for Android) and Xamarin.iOS (formerly MonoTouch), which are cross-platform implementations of the Common Language Infrastructure (CLI) and Common Language Specifications (often called Microsoft .NET).
+With a C#-shared codebase, developers can use Xamarin tools to write native Android, iOS, and Windows apps with native user interfaces and share code across multiple platforms, including Windows, macOS, and Linux.[4] According to Xamarin, over 1.4 million developers were using Xamarin's products in 120 countries around the world as of April 2017.[5]
+On February 24, 2016, Micros oft announced it had signed a definitive agreement to acquire Xamarin.[6]
+-
+-
+-
+Terminal 	(GITHUB)
+Terminal nedir
+
+Terminal, Apple bilgisayarları ve Linux işletim sistemi kullanılan bilgisayarların içerisinde yer alan, kullanıcıların bir klavye ve ekran yardımıyla işletim sistemi yada yazılımları kontrol etmesine yardımcı olan komut ekranıdır. 
+A terminal is simply a text-based interface to the computer. In a terminal, you can type commands, manipulate files, execute programs, and open documents. When working in a terminal, the current directory is called your working directory. A terminal will usually start in the top-level directory of your account.
+Directories are separated by a backslash /. The topmost directory is indicated by a single backslash. The total directory tree is all relative to the top level directory.
+On MacOS, there is a Volumes directory at the top that lists all mounted drives (networked or local). So if you have mounted your network directory, the path to it will look like the following if you substitute your username for mine.
+/Volumes/Personal/bmaxwell
+In a terminal, you generally type a command and any modifiers or arguments the command requires, then hit return and the command is executed. For example, to set your current (working) directory to your home directory, type cd and the prompt and hit return. Below is an example of a terminal and some commands.
+ 
+-
+-
+-
+-
+
+
+
+
+
+
+
 
 
 

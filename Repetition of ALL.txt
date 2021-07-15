@@ -1851,7 +1851,19 @@ Directories are separated by a backslash /. The topmost directory is indicated b
 On MacOS, there is a Volumes directory at the top that lists all mounted drives (networked or local). So if you have mounted your network directory, the path to it will look like the following if you substitute your username for mine.
 /Volumes/Personal/bmaxwell
 In a terminal, you generally type a command and any modifiers or arguments the command requires, then hit return and the command is executed. For example, to set your current (working) directory to your home directory, type cd and the prompt and hit return. Below is an example of a terminal and some commands.
- 
+-
+-
+-
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
+
+github ve açık kaynak yazılım ile yazılım dünyasına katılmıştır. bir projeye destek verilmek isteniyorsa, ilgili proje çatallanır* daha sonra ilgili değişiklikler yapılır. yalnız bu yapılan değişiklikler hala sizin taraftadır. bunların asıl projeye aktarılması için pull request atılır. proje sahibi yapılan değişiklikleri gözden geçirir ve uygunsa değişiklikleri uygular. *
+ilk duyduğumda "ismi çok saçma push request olması gerekmiyor mu sonuçta karşı tarafin reposuna push yapmak istiyoruz" diye düşünürdüm ama sonra öğrendim ki "kardeş bak bu benim kodum sana zahmet repona pull'ar misin" şeklinde ortaya çıkmış.
+
+gitlab gibi bazı mecralar bu karışıklığı engellemek için merge request demeyi tercih etmiş
+-
+-
+-
+
 -
 -
 -

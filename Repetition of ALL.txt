@@ -2127,6 +2127,18 @@ Bir istek(request) oluyor controller kısmında gerekli method,fonksiyon çalı�
 -
 -
 -
+It's a hard comparison to make because differences in the respective stacks mean you end up doing the same thing differently and if you do them the same for the purpose of comparison it's not a very realistic test.
+PHP, which I like, is in its most basic form loaded with every request, interpreted and then discarded. It is very much like CGI in this respect (which is no surprise considering it is roughly 15 years old).
+Now over the years various optimisations have been made to improve the performance, most notably opcode caching with APC, for example (so much so that APC will be a standard part of PHP 6 and not an optional module like it is now).
+But still PHP scripts are basically transient. Session information is (normally) file based and mutually exclusive (session_start() blocks other scripts accessing the same user session until session_commit() or the script finishes) whereas that's not the case in ASP.NET. Aside from session data, it's fairly easy (and normal) to have objects that live within the application context in ASP.NET (or Java for that matter, which ASP.NET is much more similar to).
+This is a key difference. For example, database access in PHP (using mysql, mysqli, PDO, etc) is transient (persistent connections notwithstanding) whereas .Net/Java will nearly always use persistent connection pools and build on top of this to create ORM frameworks and the like, the caches for which are beyond any particular request.
+As a bytecode interpreted platform, ASP.NET is theoretically faster but the limits to what PHP can do are so high as to be irrelevant for most people. 4 of the top 20 visited sites on the internet are PHP for example. Speed of development, robustness, cost of running the environment, etc... tend to be far more important when you start to scale than any theoretical speed difference.
+Bear in mind that .Net has primitive types, type safety and these sorts of things that will make code faster than PHP can run it. If you want to do a somewhat unfair test, sort an array of one million random 64 bit integers in both platforms. ASP.NET will kill it because they are primitive types and simple arrays will be more efficient than PHP's associative arrays (and all arrays in PHP are associative ultimately). Plus PHP on a 32 bit OS won't have a native 64 bit integer so will suffer hugely for that.
+It should also be pointed out that ASP.NET is pre-compiled whereas PHP is interpreted on-the-fly (excluding opcode caching), which can make a difference but the flexibility of PHP in this regard is a good thing. Being able to deploy a script without bouncing your server is great. Just drop it in and it works. Brilliant. But it is less performant ultimately.
+Ultimately though I think you're arguing what's really an irrelevant detail.
+-
+-
+-
 
 
 

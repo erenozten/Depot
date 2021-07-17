@@ -2112,6 +2112,21 @@ Other internal implementation differences between JavaScript and JScript, at som
 -
 -
 -
+ASP.NET MVC Framework
+ 
+ASP.NET MVC Framework "Community Technology Preview", 10 Aralık 2007 tarihinde, Microsoft'un ASP.NET için geliştirdiği Model-view-controller iskeletidir. Bu iskelet ile ASP.NET uygulamaları, Model, View ve Controller rollerine bölünerek geliştiriliyor.Model (Tanım) uygulamanın üzerinde duracağı meseleyi temsil ediyor. Genel olarak bu bir veritabanıdır. Controller, Model üzerindeki operasyonları tarif eden roldür. View ise, gerekli bilginin görünümünden sorumludur. ASP.NET MVC Framework, "interface"ler aracılığıyla bu üç rolü de destekliyor. Resmi olarak geliştirilen View kısmı sadece Web Formlarını destekliyor. Ama bağımsız olarak başka görünüm motorları uyarlanabilir. Sayfalar etkileşimde PostBack değil, URL Routing mekanizmasını kullanıyor. Böylelikle fiziksel dosya hiyerarşisiyle ilişkisiz, REST uyumlu URL'ler tanımlanabiliyor. ASP.NET MVC Framework bu URL'lerin ilgili Controller metotlarına eşlenmesi ve bu URL'lerin üretimi için hazır bir altyapı sunuyor.
+Asp.net MVC Model-View-Controller Yapısı
+Model
+Veritabanına erişim, sınıflar(class),ilişkiler(kategori-ürün ilişkisi) gibi yapıların bulunduğu çeşitli frameworklerinde: Entity Framework,Linq to Sql,Nhibernate,Ado.Net gibi frameworkleri içerisinde barındırır.
+View
+Kullanıcının gördüğü ve arayüze ait Html,Css ve Javascript gibi teknolojilerin bulunduğu ve yazıldığı kısımdır(javascript kodları buraya yazılabilir veya dışarıdan çağrılabilir)
+Controller
+İstemci tarafından isteklerin yakalandığı ve işleme tabi tutulduğu,model ile view arasında köprü görevi gören değişkenlerin tanımlandığı,method,fonksiyonların çağrıldığı bir yapıdır
+ASP.Net Mvc Nasıl Çalışır ?
+Bir istek(request) oluyor controller kısmında gerekli method,fonksiyon çalışıyor model kısmına gidiyor model yeniden controller kısmına giderek işlemler gerçekleştiriyor yaptığı işlemleri view kısmında bir arayüze dönüştürüp çıktı olarak view de ekrana basıyor
+-
+-
+-
 
 
 

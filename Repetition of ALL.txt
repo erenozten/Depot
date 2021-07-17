@@ -2139,6 +2139,193 @@ Ultimately though I think you're arguing what's really an irrelevant detail.
 -
 -
 -
+şu metinden anlaşılabiliyor API nin anlamı:
+In computing, Open Database Connectivity (ODBC) is a standard application programming interface (API) for accessing database management systems (DBMS). The designers of ODBC aimed to make it independent of database systems and operating systems.[citation needed] An application written using ODBC can be ported to other platforms, both on the client and server side, with few changes to the data access code.
+-
+-
+-
+Apinin adı önemli. bu bir INTERFACE dir. Application Programming INTERFACE. Bence burası önemli. API nin ne olduğunu INTERFACE kelimesi gösteriyor.
+
+In computing, an application programming interface (API) is an interface that defines interactions between multiple software applications or mixed hardware-software intermediaries.[1] It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc. It can also provide extension mechanisms so that users can extend existing functionality in various ways and to varying degrees.[2] An API can be entirely custom, specific to a component, or designed based on an industry-standard to ensure interoperability. Through information hiding, APIs enable modular programming, allowing users to use the interface independently of the implementation.
+Reference to Web APIs is currently the most common use of the term.[3] There are also APIs for programming languages, software libraries, computer operating systems, and computer hardware. APIs originated in the 1940s, though the term API did not emerge until the 1960s and 70s.
+Purpose
+In building applications, an API (application programming interface) simplifies programming by abstracting the underlying implementation and only exposing objects or actions the developer needs. While a graphical interface for an email client might provide a user with a button that performs all the steps for fetching and highlighting new emails, an API for file input/output might give the developer a function that copies a file from one location to another without requiring that the developer understand the file system operations occurring behind the scenes.[4]
+-
+Web APIs
+	Main article: Web API
+
+Web APIs are the defined interfaces through which interactions happen between an enterprise and applications that use its assets, which also is a Service Level Agreement (SLA) to specify the functional provider and expose the service path or URL for its API users. An API approach is an architectural approach that revolves around providing a program interface to a set of services to different applications serving different types of consumers.[29]
+When used in the context of web development, an API is typically defined as a set of specifications, such as Hypertext Transfer Protocol (HTTP) request messages, along with a definition of the structure of response messages, usually in an Extensible Markup Language (XML) or JavaScript Object Notation (JSON) format. An example might be a shipping company API that can be added to an eCommerce-focused website to facilitate ordering shipping services and automatically include current shipping rates, without the site developer having to enter the shipper's rate table into a web database. While "web API" historically has been virtually synonymous with web service, the recent trend (so-called Web 2.0) has been moving away from Simple Object Access Protocol (SOAP) based web services and service-oriented architecture (SOA) towards more direct representational state transfer (REST) style web resources and resource-oriented architecture (ROA).[30] Part of this trend is related to the Semantic Web movement toward Resource Description Framework (RDF), a concept to promote web-based ontology engineering technologies. Web APIs allow the combination of multiple APIs into new applications known as mashups.[31] In the social media space, web APIs have allowed web communities to facilitate sharing content and data between communities and applications. In this way, content that is created in one place dynamically can be posted and updated to multiple locations on the web.[32] For example, Twitter's REST API allows developers to access core Twitter data and the Search API provides methods for developers to interact with Twitter Search and trends data.[33]
+Design
+The design of an API has significant impact on its usage.[4] The principle of information hiding describes the role of programming interfaces as enabling modular programming by hiding the implementation details of the modules so that users of modules need not understand the complexities inside the modules.[34] Thus, the design of an API attempts to provide only the tools a user would expect.[4] The design of programming interfaces represents an important part of software architecture, the organization of a complex piece of software.[35]
+-
+What is Web API?
+Before we understand what is Web API, let's see what is an API (Application Programing Interface).
+As per Wikipedia's Definition of API: In computer programming, an application programming interface (API) is a set of subroutine definitions, protocols, and tools for building software and applications.
+To put it in simple terms, API is some kind of interface which has a set of functions that allow programmers to access specific features or data of an application, operating system or other services.
+Web API as the name suggests, is an API over the web which can be accessed using HTTP protocol. It is a concept and not a technology. We can build Web API using different technologies such as Java, .NET etc. For example, Twitter's REST APIs provide programmatic access to read and write data using which we can integrate twitter's capabilities into our own application.
+ASP.NET Web API
+The ASP.NET Web API is an extensible framework for building HTTP based services that can be accessed in different applications on different platforms such as web, windows, mobile etc. It works more or less the same way as ASP.NET MVC web application except that it sends data as a response instead of html view. It is like a webservice or WCF service but the exception is that it only supports HTTP protocol.
+ Web API
+ASP.NET Web API Characteristics
+1.	ASP.NET Web API is an ideal platform for building RESTful services.
+2.	ASP.NET Web API is built on top of ASP.NET and supports ASP.NET request/response pipeline
+3.	ASP.NET Web API maps HTTP verbs to method names.
+4.	ASP.NET Web API supports different formats of response data. Built-in support for JSON, XML, BSON format.
+5.	ASP.NET Web API can be hosted in IIS, Self-hosted or other web server that supports .NET 4.0+.
+6.	ASP.NET Web API framework includes new HttpClient to communicate with Web API server. HttpClient can be used in ASP.MVC server side, Windows Form application, Console application or other apps.
+ASP.NET Web API vs WCF
+Web API	WCF
+Open source and ships with .NET framework.	Ships with .NET framework
+Supports only HTTP protocol.	Supports HTTP, TCP, UDP and custom transport protocol.
+Maps http verbs to methods	Uses attributes based programming model.
+Uses routing and controller concept similar to ASP.NET MVC.	Uses Service, Operation and Data contracts.
+Does not support Reliable Messaging and transaction.	Supports Reliable Messaging and Transactions.
+Web API can be configured using HttpConfiguration class but not in web.config.	Uses web.config and attributes to configure a service.
+Ideal for building RESTful services.	Supports RESTful services but with limitations.
+When to choose WCF?
+•	Choose WCF if you use .NET Framework 3.5. Web API does not support .NET 3.5 or below.
+•	Choose WCF if your service needs to support multiple protocols such as HTTP, TCP, Named pipe.
+•	Choose WCF if you want to build service with WS-* standards like Reliable Messaging, Transactions, Message Security.
+•	Choose WCF if you want to use Request-Reply, One Way, and Duplex message exchange patterns.
+When to choose ASP.NET Web API?
+•	Choose Web API if you are using .NET framework 4.0 or above.
+•	Choose Web API if you want to build a service that supports only HTTP protocol.
+•	Choose Web API to build RESTful HTTP based services.
+•	Choose Web API if you are familiar with ASP.NET MVC.
+Let's begin by creating a simple ASP.NET Web API project using Visual Studio in the next section.
+-
+-
+-
+With the Document Object Model, programmers can build documents, navigate their structure, and add, modify, or delete elements and content. Anything found in an HTML or XML document can be accessed, changed, deleted, 
+-
+-
+-
+Document Object Model, "DOM", "Belge Nesnesi Modeli" anlamlarına da gelmektedir. İnternet tarayıcıları girilen internet sitesini bir belge, bu belge (sayfa) içerisinde bulunan tüm elemanları da nesne olarak kabul eder. Buna göre resim, yazı, form gibi tüm elemanlar nesnedir. İşte DOM sayfa içindeki herhangi bir nesnenin özelliğine müdahale edebilmemize, nesne özelliklerini değiştirebilmemize olanak sağlar. Bunu yapabilmek için de JavaScript gibi bazı script dilleri kullanmamız gerekir.
+
+Nasıl kullanılır? (Örnek)
+Sayfada bulunan bir resim nesnesi üzerinde fare üzerine getirilince kırmızı bir kenarlık, fare üzerinden çekilince mavi bir kenarlık olması istendiğinde, bunun tarayıcıya yaptırılabilmesi için iki şekilde kod yazılabilir.
+1. yöntem
+Doğrudan resim nesnesinin etiketi üzerinde script çalıştırılabilir.
+  <img src="resim.jpg" border="1" onMouseOver="this.style.border='1px solid red'" onMouseOut="this.style.border='1px solid blue'">
+2. yöntem
+İlk olarak web sayfasımızın <head>etiketi</head> arasına (tavsiye edilir, zorunlu değildir) ya da herhangi bir yerine aşağıdaki betiğin yazılması gerekir.
+  <script type="text/javascript">
+
+  function kirmizi(){
+
+    document.resim.style.border='1px solid red';
+
+  }
+
+  function mavi(){
+
+    document.resim.style.border='1px solid blue';
+
+  }
+
+  </script>
+Daha sonra resim üzerinde yukarıdaki scriptin çalıştırılabilmesi için onMouseOver ve onMouseOut uygulamalarının kullanılması yeterli olacaktır. Script resim isimli nesneyi bularak yapılması gereken müdahaleyi yapacaktır.
+  <img src="resim.jpg" border="1" name="resim" onMouseOver="kirmizi()" onMouseOut="mavi()">
+Birden fazla nesnede uygulanışı ise aşağıdaki gibi olabilir
+Öncelikle aşağıdaki betik sayfada <head>etiketi</head> veya herhangi bir yere yazılır.
+  <script type="text/javascript">
+
+  function kirmizi(Obj){
+
+    Obj.style.border='1px solid red';
+
+  }
+
+  function mavi(Obj){
+
+    Obj.style.border='1px solid blue';
+
+  }
+
+  </script>
+Daha sonra yine onMouseOver ve onMouseOut uygulamaları kullanılır.
+  <img src="resim1.jpg" border="1" onMouseOver="kirmizi(this)" onMouseOut="mavi(this)">
+  <img src="resim2.jpg" border="1" onMouseOver="kirmizi(this)" onMouseOut="mavi(this)">
+Fonksiyonların mudahale edeceği nesneyi tanıması için de this koduyla fonksiyona (function) tanımlama gönderilir. this tanımlaması alan fonksiyon Obj isimli tanımsız olan nesneyi this aracılığı ile tanımlayacak ve gereken müdahaleyi yapacaktır.[1]
+-
+-
+What is the Document Object Model?
+Editors
+Jonathan Robie, Texcel Research
+Introduction
+The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. (bilindiği üzere API, birden fazla programın birbiriyle interaction kurmasının sağlandığı bir arayüzdü. Burada da DOM bir api, ve dökümanlara nasıl ulaşılabileceğini ve nasıl manipüle edilebileceğini gösteriyormuş. Web api gibi yani. O da client'ın ilgili servisi nasıl consume edeceğini nasıl kullanabileceğini gösteren bir arayüzdü. Aynı şey.Burada dom'un, kullanıcıyla kullanıcının ekranda görmüş olduğu css html'lerin arasındaki köprü (api) denebilir galiba. Web API gibi; burada da kullanıcıya document'in nasıl ve ne şekilde consume edileceği, düzenlenebileceği silinebileceği vb gösteriliyor. API mantığı ve DOM mantığı böyle kurulabilir)
+In the DOM specification, the term "document" is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.
+With the Document Object Model, programmers can build documents, navigate their structure, and add, modify, or delete elements and content. Anything found in an HTML or XML document can be accessed, changed, deleted, or added using the Document Object Model, with a few exceptions - in particular, the DOM interfaces for the XML internal and external subsets have not yet been specified.
+As a W3C specification, one important objective for the Document Object Model is to provide a standard programming interface that can be used in a wide variety of environments and applications. The DOM is designed to be used with any programming language. In order to provide a precise, language-independent specification of the DOM interfaces, we have chosen to define the specifications in OMG IDL, as defined in the CORBA 2.2 specification. In addition to the OMG IDL specification, we provide language bindings for Java and ECMAScript (an industry-standard scripting language based on JavaScript and JScript). Note: OMG IDL is used only as a language-independent and implementation-neutral way to specify interfaces. Various other IDLs could have been used. In general, IDLs are designed for specific computing environments. The Document Object Model can be implemented in any computing environment, and does not require the object binding runtimes generally associated with such IDLs.
+What the Document Object Model is
+The DOM is a programming API for documents. It closely resembles the structure of the documents it models. For instance, consider this table, taken from an HTML document:
+
+      <TABLE>
+      <TBODY> 
+      <TR> 
+      <TD>Shady Grove</TD>
+      <TD>Aeolian</TD> 
+      </TR> 
+      <TR>
+      <TD>Over the River, Charlie</TD>        
+      <TD>Dorian</TD> 
+      </TR> 
+      </TBODY>
+      </TABLE>
+    
+The DOM represents this table like this:
+________________________________________
+ 
+________________________________________
+DOM representation of the example table
+________________________________________
+
+
+In the DOM, documents have a logical structure which is very much like a tree; to be more precise, it is like a "forest" or "grove", which can contain more than one tree. However, the DOM does not specify that documents must be implemented as a tree or a grove, nor does it specify how the relationships among objects be implemented. The DOM is a logical model that may be implemented in any convenient manner. In this specification, we use the term structure model to describe the tree-like representation of a document; we specifically avoid terms like "tree" or "grove" in order to avoid implying a particular implementation. One important property of DOM structure models is structural isomorphism: if any two Document Object Model implementations are used to create a representation of the same document, they will create the same structure model, with precisely the same objects and relationships.
+The name "Document Object Model" was chosen because it is an "object model" in the traditional object oriented design sense: documents are modeled using objects, and the model encompasses not only the structure of a document, but also the behavior of a document and the objects of which it is composed. In other words, the nodes in the above diagram do not represent a data structure, they represent objects, which have functions and identity. As an object model, the DOM identifies:
+•	the interfaces and objects used to represent and manipulate a document
+•	the semantics of these interfaces and objects - including both behavior and attributes
+•	the relationships and collaborations among these interfaces and objects
+The structure of SGML documents has traditionally been represented by an abstract data model, not by an object model. In an abstract data model, the model is centered around the data. In object oriented programming languages, the data itself is encapsulated in objects that hide the data, protecting it from direct external manipulation. The functions associated with these objects determine how the objects may be manipulated, and they are part of the object model.
+The Document Object Model currently consists of two parts, DOM Core and DOM HTML. The DOM Core represents the functionality used for XML documents, and also serves as the basis for DOM HTML. A compliant implementation of the DOM must implement all of the fundamental interfaces in the Core chapter with the semantics as defined. Further, it must implement at least one of the HTML DOM and the extended (XML) interfaces with the semantics as defined.
+What the Document Object Model is not
+This section is designed to give a more precise understanding of the DOM by distinguishing it from other systems that may seem to be like it.
+•	Although the Document Object Model was strongly influenced by "Dynamic HTML", in Level 1, it does not implement all of "Dynamic HTML". In particular, events have not yet been defined. Level 1 is designed to lay a firm foundation for this kind of functionality by providing a robust, flexible model of the document itself.
+•	The Document Object Model is not a binary specification. DOM programs written in the same language will be source code compatible across platforms, but the DOM does not define any form of binary interoperability.
+•	The Document Object Model is not a way of persisting objects to XML or HTML. Instead of specifying how objects may be represented in XML, the DOM specifies how XML and HTML documents are represented as objects, so that they may be used in object oriented programs.
+•	The Document Object Model is not a set of data structures, it is an object model that specifies interfaces. Although this document contains diagrams showing parent/child relationships, these are logical relationships defined by the programming interfaces, not representations of any particular internal data structures.
+•	The Document Object Model does not define "the true inner semantics" of XML or HTML. The semantics of those languages are defined by W3C Recommendations for these languages. The DOM is a programming model designed to respect these semantics. The DOM does not have any ramifications for the way you write XML and HTML documents; any document that can be written in these languages can be represented in the DOM.
+•	The Document Object Model, despite its name, is not a competitor to the Component Object Model (COM). COM, like CORBA, is a language independent way to specify interfaces and objects; the DOM is a set of interfaces and objects designed for managing HTML and XML documents. The DOM may be implemented using language-independent systems like COM or CORBA; it may also be implemented using language-specific bindings like the Java or ECMAScript bindings specified in this document.
+
+
+Where the Document Object Model came from
+The DOM originated as a specification to allow JavaScript scripts and Java programs to be portable among Web browsers. "Dynamic HTML" was the immediate ancestor of the Document Object Model, and it was originally thought of largely in terms of browsers. However, when the DOM Working Group was formed at W3C, it was also joined by vendors in other domains, including HTML or XML editors and document repositories. Several of these vendors had worked with SGML before XML was developed; as a result, the DOM has been influenced by SGML Groves and the HyTime standard. Some of these vendors had also developed their own object models for documents in order to provide an API for SGML/XML editors or document repositories, and these object models have also influenced the DOM.
+Entities and the DOM Core
+In the fundamental DOM interfaces, there are no objects representing entities. Numeric character references, and references to the pre-defined entities in HTML and XML, are replaced by the single character that makes up the entity's replacement. For example, in:
+
+        <p>This is a dog &amp; a cat</p>        
+      
+the "&amp;" will be replaced by the character "&", and the text in the P element will form a single continuous sequence of characters. Since numeric character references and pre-defined entities are not recognized as such in CDATA sections, or the SCRIPT and STYLE elements in HTML, they are not replaced by the single character they appear to refer to. If the example above were enclosed in a CDATA section, the "&amp;" would not be replaced by "&"; neither would the <p> be recognized as a start tag. The representation of general entities, both internal and external, are defined within the extended (XML) interfaces of the Level 1 specification.
+Note: When a DOM representation of a document is serialized as XML or HTML text, applications will need to check each character in text data to see if it needs to be escaped using a numeric or pre-defined entity. Failing to do so could result in invalid HTML or XML. Also, implementations should be aware of the fact that serialization into a character encoding ("charset") that does not fully cover ISO 10646 may fail if there are characters in markup or CDATA sections that are not present in the encoding.
+DOM Interfaces and DOM Implementations
+The DOM specifies interfaces which may be used to manage XML or HTML documents. It is important to realize that these interfaces are an abstraction - much like "abstract base classes" in C++, they are a means of specifying a way to access and manipulate an application's internal representation of a document. Interfaces do not imply a particular concrete implementation. Each DOM application is free to maintain documents in any convenient representation, as long as the interfaces shown in this specification are supported. Some DOM implementations will be existing programs that use the DOM interfaces to access software written long before the DOM specification existed. Therefore, the DOM is designed to avoid implementation dependencies; in particular,
+1.	Attributes defined in the IDL do not imply concrete objects which must have specific data members - in the language bindings, they are translated to a pair of get()/set() functions, not to a data member. (Read-only functions have only a get() function in the language bindings).
+2.	DOM applications may provide additional interfaces and objects not found in this specification and still be considered DOM compliant.
+3.	Because we specify interfaces and not the actual objects that are to be created, the DOM can not know what constructors to call for an implementation. In general, DOM users call the createXXX() methods on the Document class to create document structures, and DOM implementations create their own internal representations of these structures in their implementations of the createXXX() functions.
+
+
+Limitations of Level 1
+The DOM Level 1 specification is intentionally limited to those methods needed to represent and manipulate document structure and content. The plan is for future Levels of the DOM specification to provide:
+1.	A structure model for the internal subset and the external subset.
+2.	Validation against a schema.
+3.	Control for rendering documents via style sheets.
+4.	Access control.
+5.	Thread-safety.
+6.	Events.
+-
+-
+-
 
 
 

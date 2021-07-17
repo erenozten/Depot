@@ -2100,6 +2100,18 @@ TypeScript and CoffeeScript:
 -
 -
 -
+JScript is Microsoft's dialect of the ECMAScript standard[2] that is used in Microsoft's Internet Explorer.
+JScript is implemented as an Active Scripting engine. This means that it can be "plugged in" to OLE Automation applications that support Active Scripting, such as Internet Explorer, Active Server Pages, and Windows Script Host.[3] It also means such applications can use multiple Active Scripting languages, e.g., JScript, VBScript or PerlScript.
+JScript was first supported in the Internet Explorer 3.0 browser released in August 1996. Its most recent version is JScript 9.0, included in Internet Explorer 9.
+JScript 10.0[4] is a separate dialect, also known as JScript .NET, which adds several new features from the abandoned fourth edition of the ECMAScript standard. It must be compiled for .NET Framework version 2 or version 4, but static type annotations are optional.
+Comparison to JavaScript
+As explained by Douglas Crockford in his talk titled The JavaScript Programming Language on YUI Theater,
+[Microsoft] did not want to deal with Sun Microsystems about the trademark issue, and so they called their implementation JScript. A lot of people think that JScript and JavaScript are different but similar languages. That's not the case. They are just different names for the same language, and the reason the names are different was to get around trademark issues.[5]
+However, JScript supports conditional compilation, which allows a programmer to selectively execute code within block comments. This is an extension to the ECMAScript standard that is not supported in other JavaScript implementations, thus making the above statement not completely true, although conditional compilation is no longer supported in Internet Explorer 11 Standards mode.
+Other internal implementation differences between JavaScript and JScript, at some point in time, are noted on the Microsoft Developer Network (MSDN).[6] Although, the default type value for the script element in Internet Explorer is JavaScript, while JScript was its alias.[7] In an apparent transition from JScript to JavaScript, online, the Microsoft Edge Developer Guide refers to the Mozilla MDN web reference library as its definitive documentation.[8] As of October 2017, Microsoft MSDN pages for scripting in Internet Explorer are being redirected there as well.[9] This information may not include JScript specific objects, such as Enumerator, which are listed in the JavaScript language reference on Microsoft Docs.[10] Those provide additional features that are not included in the ECMA Standards, whether they are supported in the Edge browser or its predecessor.[11]
+-
+-
+-
 
 
 

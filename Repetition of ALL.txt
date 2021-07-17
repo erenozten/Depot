@@ -2326,6 +2326,94 @@ The DOM Level 1 specification is intentionally limited to those methods needed t
 -
 -
 -
+Betik dili (İngilizce: scripting language veya script language), betik yorumlamak için yazılmış özel çalışma-zamanı sistemlerinin (run-time environment) yorumlayabileceği programlama dilleridir. Diğer programlama dilleri ile yazılan kodlar makine koduna çevrilip çıkan program doğrudan çalıştırılırken betik kodları interpreter tarafından doğrudan okunur ve yorumlanarak işlemler interpreter'ın kendisi tarafından yapılır.
+İlk betik dilleri genelde yığın dilleri veya iş denetim dilleri olarak adlandırılırdı. İlk betik dilleri geleneksel düzenleme, derleme, bağlama ve çalıştırma işlemlerini kısaltmak için tasarlanmıştı.
+Örnekler
+•	PHP, Python, Ruby, Lua, Perl gibi betikleri çalıştırmak için tasarlanmış yazılımlar
+•	Web sayfalarındaki kodları yorumlayan web tarayıcıları (çoğunlukla javascript)
+•	İşletim sistemlerindeki shell'ler (bash, ksh, sh, zsh, powershell)
+•	AppleScript (OSX işletim sisteminde otomatik işlem yapmak için)
+•	VBScript (Microsoft'un birçok yazılımında otomatik işlem yapmak için)
+-
+-
+-
+A scripting language is a programming language that is interpreted. It is translated into machine code when the code is run, rather than beforehand. Scripting languages are often used for short scripts over full computer programs. JavaScript, Python, and Ruby are all examples of scripting languages.
+________________________________________
+You may be surprised to learn that more than 700 programming languages have been invented throughout the history of computers. That’s not nearly as many as the 6,900 human languages we have, but learning any new language is no small feat. 
+What is a Scripting Language?
+Scripting language (also known as scripting, or script) is a series of commands that are able to be executed without the need for compiling. While all scripting languages are programming languages, not all programming languages are scripting languages. PHP, Perl, and Python are common examples of scripting languages. 
+Scripting languages use a program known as an interpreter to translate commands and are directly interpreted from source code, not requiring a compilation step. Other programming languages, on the other hand, may require a compiler to translate commands into machine code before it can execute those commands. 
+ 
+FIND YOUR BOOTCAMP MATCH
+•	Career Karma matches you with top tech bootcamps
+•	Get exclusive scholarships and prep courses
+ 
+ 
+ 
+GET MATCHED
+By continuing you indicate that you have read and agree to Career Karma Terms of Service and Privacy Policy
+It is important to know the difference between interpreted vs compiled programming languages. However, advanced hardware and coding practices are beginning to make the distinction somewhat obsolete.
+Interpreted vs Compiled Programming Languages
+ Interpreted or compiled? 
+An interpreted programming language is a language designed to execute source code directly and without the need to compile a program into machine-language instructions. An interpreter will execute the program by translating statements into a series of one or more subroutines before finally translating them into another language, such as machine code.
+
+» MORE:  Software Engineer vs Programmer: What’s the Difference?
+
+In compiled programming languages, a compiler program translates code written in a high level programming language into a lower-level language in order for the program to execute. C or Java programs must usually be compiled first in order to run. Two well-known compilers are Eclipse for Java and gcc for C and C++. 
+The easiest way to understand how a compiler functions is to think about various operating systems. For instance, Windows programs are compiled to run on Windows platforms and thus are not compatible with Mac. 
+Server-Side Scripting vs Client-Side Scripting
+ Whose side are you on?
+There are two types of scripting languages: server side and client side. The only significant difference between the two is that the former requires a server for its processing. 
+Server-side scripting languages run on a web server. When a client sends a request, the server responds by sending content via HTTP. In contrast, client-side scripting languages run on the client end—on their web browser.
+The benefit of client-side scripts is that they can reduce demand on the server, allowing web pages to load faster. Whereas, one significant benefit of server-side scripts is they are not viewable by the public like client-side scripts are.
+When trying to decide which way to go on a project, keep in mind that client-side scripting is more focused on user interface and functionality. Conversely, server-side scripting focuses on faster processing, access to data, and resolving errors.
+Examples of Server-Side Scripting Languages
+The following are examples of server-side scripting languages. 
+Language	Comments
+PHP	The most popular server-side language used on the web.
+ASP.NET	Web-application framework developed by Microsoft.
+Node.js	Can run on a multitude of platforms, including Windows, Linux, Unix, Mac, etc.
+Java	Used in everything from your car stereo’s Bluetooth to NASA applications.
+Ruby	Dynamic. Focuses heavily on simplicity.
+Perl	A bit of a mashup between C, shell script, AWK, and sed.
+Python	Great for beginners to learn. Uses shorter code.
+Examples of Client-Side Scripting Languages
+The following are examples of client-side scripting languages.
+
+» MORE:  The Best Coding Websites for Beginners
+
+Language	Comments
+HTML	The foundation of web development. 
+CSS	Improves appearance and graphics on pages in your web browser.
+JavaScript	Though typically client-side, can occasionally be used on server-side as well.
+Applications of Scripting Languages
+ What are scripting languages used for?
+Scripting languages are used in many areas, both on and off the web. In addition to server-side and client-side applications, scripting languages can be used in system administration. Examples of scripts used in system admin are Shell, Perl, and Python. 
+Scripting languages are also used in lots of games and multimedia. For example, Minecraft mods use Java to allow users to create their own worlds and items in the game. Additionally, Second Life, Trainz, and Wesnoth all allow users to create extensions on the games. 
+Similar to the extensions used in games, extensions in other programs, such as Google’s Chrome browser extensions, are all run using scripting languages.
+Pros and Cons of Scripting Languages
+ The pros far outweigh the cons.
+Pros. There are many benefits to using scripting languages over other programming languages. First, they are open-source. This allows users from around the world to join in the improvement process. Other pros include:
+•	No requirement to compile, although occasionally it is necessary.
+•	Easy to transfer between operating systems.
+•	Scripting languages make web pages look awesome.
+•	Easier to learn and write.
+•	Scripts can be used as a prototype for programs, saving time on test projects.
+Cons. There are not a whole lot of cons to using scripting languages. One con is the fact that some companies don’t want scripts to be read by everyone, so they use server-side scripts to avoid releasing them to the public. Also, installing an interpreter program can be a hassle. Finally, sometimes scripts are slower than programs. 
+
+» MORE:  How Many Computer Programming Languages Are There?
+
+Want to Try Learning a Scripting Language?
+ Ready to try? You got this.
+If you’re ready to try learning a scripting language, check out our list of the 17 easiest programming languages to learn. You may find one that interests you. We suggest you find one that makes sense to you before you commit to a programming bootcamp that focuses on that language.
+A programming bootcamp is great in that it not only teaches you how to code but also prepares you for a career in tech. Most programming bootcamps last less than a year and they provide career services and different payment methods that allow all types of people to start a career in the tech industry.
+Conclusion
+Learning a scripting language is the easiest way to get your feet wet in the coding world. There are bountiful resources out there to help you try each one until you find one that makes sense to you. Just remember to take it slow, be patient with yourself, and aim to start with small projects, instead of a large one. You’ll find your niche in no time.
+
+
+
+About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+
 
 
 

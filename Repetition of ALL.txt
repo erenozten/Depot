@@ -2600,6 +2600,52 @@ Retries : Oluşturduğumuz işlemlerde hata olması durumunda,hata oluşan işle
 Recurring Jobs : Oluşturulan işlemlerin bilgisinin tutulduğu kısımdır.Ne zaman oluşturulduğu,ne zaman çalışacağı bilgileri yer alır.
 Servers : Kullanılan sunucuların bilgilerinin bulunduğu kısım.
 Hangfire kurulumu ve kullanımı görüldüğü gibi gayet kolay ve pratik.Bu kısımın daha fazla uzamaması adına Güvenlik,Loglama ve Error Management kısımlarını farklı makaleler altında ele almaya çalışacağım şimdilik bu kadar :) Sevgiyle kalın.
+-
+-
+-
+POCO 
+Poco nedir, dto nedir
+Bildiğin dümdüz bi class, kimseden inherit almıyo, base class’I yok, herhangi bir framework'e bağlı değil. Attribute’u falan da yok başında….
+Yorum: Galiba her domain model bir poco class'tır. Ama her poco class'ın domain model olması beklenmez. çünkü domain model dediğin şey database'ile; data store ile ilgilidir. Ama poco'nun bununla ilgisi yok.
+
+"POCO" stands for plain old CLR object. A POCO is a .NET type that doesn't depend on any framework-specific types, for example, through inheritance or attributes.
+A Plain Old CLR Objects (POCO) is a class, which doesn't depend on any framework-specific base class. It is like any other normal .NET class. Due to this, they are called Plain Old CLR Objects. These POCO entities (also known as persistence-ignorant objects) support most of the same LINQ queries as Entity Object derived entities. These classes (POCO classes) implements only the domain business logic of the Application.
+Some developers use Data Transfer Objects (DTOs) with the classes to pass the data between the layers because POCOs are also used to pass the data between the layers, but they become heavy. Hence they use DTOs, which are also the classes.
+The main difference between DTO and POCO is that DTOs do not contain any methods. They only contain public members. Thus, sending the data, using a DTO is easy because they are lightweight objects.
+The code given below defines a POCO class.
+ 
+-
+-
+-
+POCO
+ 
+A Plain Old CLR Objects (POCO) is a class, which doesn't depend on any framework-specific base class. It is like any other normal .NET class. Due to this, they are called Plain Old CLR Objects. These POCO entities (also known as persistence-ignorant objects) support most of the same LINQ queries as Entity Object derived entities. These classes (POCO classes) implements only the domain business logic of the Application.
+Some developers use Data Transfer Objects (DTOs) with the classes to pass the data between the layers because POCOs are also used to pass the data between the layers, but they become heavy. Hence they use DTOs, which are also the classes
+The main difference between DTO and POCO is that DTOs do not contain any methods. They only contain public members. Thus, sending the data, using a DTO is easy because they are lightweight objects.
+
+The code given below defines a POCO class.
+
+ 
+
+If you want to create POCO classes instead of the entity classes or a default entity object, then you can create POCO entity classes.
+To create POCO classes, we first need to disable auto create classes or auto-create code generation, which generates Context classes entity code in Model1.designer.cs. To disable this code generation, right-click on model1.edmx (ADO.NET data modal) and click property Now, you will see the value of "Custom Tool" as EntityModelCodeGenerator and you need to remove this value. 
+ 
+ 
+After removing the value Custom tool, you will see that in modal1.edmx, there is no Model1.designer class. Now, we must create properties (Context and Entities), so for this, we need to create POCOs classes.
+Now, double-click on Modal1.edmx and right-click on the designer surface and click on the code generation Items. A screen will open from where you need to select ADO.NET POCO Entity Generator and click Add.
+
+After clicking Add button, you will see 2 classes, where one is modal1.context.tt and another is modal1.tt
+ 
+Model1.Context.tt is a context file and Model1.tt is an entity file. You can modify this file if you want to generate your template. The Model1.Context.cs file has a context class and .cs files under Model1.tt are the entity classes.
+Entity classes have all the properties as Virtual. In other words, these entities fulfill the requirements of POCO Proxy entities. These entities can be used as POCO entities or POCO Proxy entities. By default, it will behave as POCO Proxy entities, but you can disable proxy creation by setting a property "ObjectContext.ContextOptions.ProxyCreationEnabled = false".
+Note
+•	If you want to write a unit test for the context, then replace ObjectSet<> to IObjectSet<>.
+•	If you are not able to see ADO.NET POCO Entity Generator, then you must install NuGet Package Library.
+-
+-
+-
+-
+
 
 
 

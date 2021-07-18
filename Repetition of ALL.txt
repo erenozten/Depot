@@ -2409,10 +2409,198 @@ If you’re ready to try learning a scripting language, check out our list of th
 A programming bootcamp is great in that it not only teaches you how to code but also prepares you for a career in tech. Most programming bootcamps last less than a year and they provide career services and different payment methods that allow all types of people to start a career in the tech industry.
 Conclusion
 Learning a scripting language is the easiest way to get your feet wet in the coding world. There are bountiful resources out there to help you try each one until you find one that makes sense to you. Just remember to take it slow, be patient with yourself, and aim to start with small projects, instead of a large one. You’ll find your niche in no time.
+-
+-
+-
+Scheduling and monitoring background tasks is challenging work. Every big application needs to implement background tasks to accomplish background work such as data processing, email reminders, and processing SMS queues and email queues. Windows Service is the most typical approach to meet the necessity.
+ 
+Today, we are going to setup Hangfire and write some code to schedule an initial job in the ASP.NET Core project.
+ 
+Hangfire is an open source library to schedule and execute background jobs in .NET applications. You'll be able to create a simple background process inside the same application pool or thread without creating separate applications. Hangfire creates background jobs in persistence storage, like MS SQL Server, Redis, MongoDb, and others, that may prevent you from from losing the job on recycling IIS pools or exception prevalence.
+ 
+ASP.NET Core is now a common platform for MVC and Web API with no separate project creation needed. Let's create a new ASP.NET Core MVC project. After the project is created, install Hangfire from NuGet. You can install Hangfire either from Package Management Console or NuGet Package Manager.
+ 
+Install via nuget
+1.	PM> Install-Package HangFire  
+We are going to install Hangfire using NuGet Package Manager. Search the Hangfire stable version(current 1.6.7) and install in the project.
 
+ 
+Image 1: Nuget package manager
 
+After successful installation, let's configure Hangfire.
 
-About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers. Learn about the CK publication.
+Configuration
+
+Open Startup.cs class and locate a ConfigureServices method to register Hangfire as a service.
+1.	public void ConfigureServices(IServiceCollection services)  
+2.	{  
+3.	    // Add Hangfire services.  
+4.	    services.AddHangfire(x => x.UseSqlServerStorage(Configuration.GetConnectionString("DefaultConnection")));  
+5.	      
+6.	    // Add framework services.  
+7.	    services.AddMvc();  
+8.	}  
+Here, we are registering Hangfire with SQL Server. We must provide a connection string to locate SQL Server database named HangFireDb. DefaultConnection is a connection string name, added to appsettings.json file.
+1.	"ConnectionStrings": {  
+2.	    "DefaultConnection": "Data Source=.\\SQLEXPRESS2014;Initial Catalog=HangFireDb;Integrated Security=True;"  
+3.	  }  
+Once the service is configured, navigate to Configure method to add below codes. Here, app.UseHangfireDashboard() will set up the dashboard. While http://<website-url>/hangfire, and app.UseHangfireServer() will register a new instance for BackgroundJobServer.
+1.	public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)  
+2.	{  
+3.	    loggerFactory.AddConsole(Configuration.GetSection("Logging"));  
+4.	    loggerFactory.AddDebug();  
+5.	  
+6.	    app.UseHangfireDashboard();  
+7.	    app.UseHangfireServer();  
+8.	      
+9.	    app.UseDeveloperExceptionPage();  
+10.	    app.UseBrowserLink();  
+11.	      
+12.	    app.UseStaticFiles();  
+13.	    app.UseMvc(routes =>  
+14.	    {  
+15.	        routes.MapRoute(  
+16.	            name: "default",  
+17.	            template: "{controller=Home}/{action=Index}/{id?}");  
+18.	    });  
+19.	}  
+Now, let's run the application. Hangfire dashboard is available in browser by hitting http://<website-url>/hangfire url.
+
+  
+Image 2: Hangfire Dashboard.
+ 
+Hangfire offers integrated web monitoring UI, which is used to control any aspect of background job processing, as well as statistics, exceptions, and background job history.
+ 
+When the Hangfire Server starts, it'll look for a configured database and check for the required database schema. If the schema doesn't exist, it creates a schema. The below image shows a list of schemas created when running the application.
+
+ 
+Image 3: Hangfire database schema 
+How does it work?
+Hangfire handles different types of background jobs, and all of them are invoked in a separate execution context.
+ 
+With Hangfire, you can create the following-
+ 
+Fire and forget
+
+Fire and forget jobs are executed once on an immediate basis after creation. Once you create a fire-and-forget job, it is saved to its queue ("default" by default, but multiple queues supported). The queue is listened to by a couple of dedicated workers that fetch a job and perform it.
+1.	BackgroundJob.Enqueue(() => Console.WriteLine("Fire-and-forget Job Executed"));  
+Delayed
+
+After the given delay, the job will be put in its queue and invoked as a regular fire-and-forget job.
+1.	BackgroundJob.Schedule(() => Console.WriteLine("Delayed job executed"), TimeSpan.FromMinutes(1));  
+Recurring
+
+Recurring jobs will recur on every defined interval.You can define intervals from milliseconds to years.
+1.	RecurringJob.AddOrUpdate(() => Console.WriteLine("Minutely Job executed"), Cron.Minutely);  
+Continuations
+
+Continuations allow you to define complex workflows by chaining multiple background jobs together. Here, the second job is queued with the first job.
+1.	var id = BackgroundJob.Enqueue(() => Console.WriteLine("Hello, "));  
+2.	BackgroundJob.ContinueWith(id, () => Console.WriteLine("world!"));  
+After running the application, we have interesting results in a dashboard.
+
+ 
+Image 4: A list of succeeded jobs
+ 
+As you can see, dashboard gives meaningful information like a list of successive jobs with Id, name, executed time, and duration. Re-queuing jobs feature has been provided to re-fire selected job from the list.
+ 
+Following are the screenshots for various kinds of background jobs.
+
+  
+Image 5: Fire and forget job example 
+ 
+  
+Image 6: Delayed job example 
+ 
+ 
+Image 7: Continuations job example 
+ 
+ 
+Image 8: Continuations dependent job example 
+ 
+  
+Image 9: Recurring job example
+ 
+Change the Dashboard URL
+
+By default, Hangfire is set on http://<website-url>/hangfire to access the dashboard. It's easy to configure your custom URL.
+1.	app.UseHangfireDashboard("/dashboard");  
+Access Remotely
+
+Default Hangfire configuration sets up for local environment only. To make Hangfire work on production environment, we need to implement custom IAuthorizationFilter. So, our code is now changed to this.
+1.	app.UseHangfireDashboard("/dashboard", new DashboardOptions    
+2.	{   
+3.	    Authorization = new [] { new HangireAuthorizationFilter() }  
+4.	});  
+Everything will work fine now.
+ 
+That's all. You can find the detailed documentation from the official Hangfire website. You can fork the Hangfire project and make contributions on GitHub.
+ 
+Download source code or fork on github
+Summary
+In this article, we've learned how to configure Hangfire in ASP.NET Core. We composed some code to queue the background jobs using Hangfire in ASP.NET Core. I emphatically favor Hangfire, as it is very easy to implement and the dashboard allows you to monitor and control any aspect of background job processing, as well as statistics, exceptions, and background job history.
+-
+-
+-
+Hangfire,background processing işlemlerini yürütmemiz de ve yönetmemiz de bizlere kolaylık sağlayan open source bir kütüphanedir.
+Geliştirdiğimiz projelerde bazı işlemlerin günlük çalışması gerekmektedir.Mesela her sabah farklı bir ortamdan veri senkronizasyonu yapmamız gerekebilir yada farklı servislere veri paylaşımı yapıp bilgi alıp verme işlemlerini temel process den farklı bir process de işlemek isteyebiliriz.Bu gibi durumlarda Hangfire bizim için bir çok kolaylık sağlamaktadır.
+Hangfire harici bu işlemleri başka türlü geliştiremez miyiz ?
+Tabi ki yapabiliriz.İşletim sistemi üzerinde bulunan “Windows Service” leri ile bazı servislerin açılıp kapanması ve “Windows Task Scheduler” ile zamanlanmış görevlerimizi oluşturup script çalıştırma işlemlerini gerçekleştirebiliriz.Ayrıca Hangfire gibi .Net ortamında popüler olan Quartz da incelemenizi öneririm.
+Hangfire Bizlere Neler Sunuyor ?
+Sadelik : Hangfire bizlere kolay bir şekilde “Windows Task Scheduler” ve “Windows Service” lere ihtiyaç duymadan arka planda işleri ilerletmeyi sağlar.
+Kalıcılık : Arka plan işlemlerinizi veri tabanında (SQL,Redis,PostreSQL,Mongo ..) tutarak kalıcılık sağlar.
+Saydamlık : Background işlemlerini monitoring edebileceğimiz ekranlar sunar.
+Güvenilirlik : Arka plan uygulamaları çalıştırma sorumluluğu alır.Hata olması durumunda tekrar deneme işlemini yapar.
+ve en önemlisi Açık Kaynak olarak sunulmasıdır.
+Hangfire Job Çeşitleri
+Hangfire Job işlemlerini temelde 2 başlık altında toplayabiliriz.Yalnızca 1 kez çalışacak işlemler ve bir rutin halinde devam edecek işlemler şeklinde.
+Yalnızca 1 kez gerçekleşecek işlemler
+var jobId = BackgroundJob.Enqueue(
+    () => Console.WriteLine("Fire-and-forget!"));
+İleri tarihli kullanımı.
+var jobId = BackgroundJob.Schedule(
+    () => Console.WriteLine("Delayed!"),
+    TimeSpan.FromDays(7));
+Tekrarlanan işlemler
+RecurringJob.AddOrUpdate(
+    () => Console.WriteLine("Recurring!"),
+    Cron.Daily);
+İşlem bitişlerin de kullanımı.Ör: bir işlem bitiminde farklı bir process in tetiklenmesi.
+BackgroundJob.ContinueWith(
+    jobId,
+    () => Console.WriteLine("Continuation!"));
+Bu işlemler haricinde “Batches” ve “Batch Continuations” işlemleri de mevcut.Bu işlemler PRO versiyonunda olup toplu işlem gerçekleştirmemizi sağlamaktadır.Hadi şimdi Hangfire nasıl konfigüre ediliyor ve kullanılıyor onu inceleyelim.
+Hangfire Proje Uygulama
+ilk olarak Nuget üzerinden Hangfire paketini projemize ekliyoruz.
+ 
+ 
+Daha sonra Owin Startup Class ekliyoruz ve adını Startup.cs olarak belirtiyoruz.
+ 
+ 
+Daha sonra eklediğimiz nesne içinde Hangfire configuration işlemlerimizi yapıyoruz.
+ 
+ 
+Bu kısımda ilk olarak SQL Server adresimizi belirtiyoruz.Bunu yapmamızdaki amaç daha öncede bahsettiğimiz gibi,Hangfire arka plan işlemlerini veri tabanında saklamasıdır.Sistemi ayağa kaldırdığımızda veritabanı kısmında aşağıdaki tabloların oluştuğunu görebiliriz.
+ 
+ 
+UseHangfireDashbord ile dashboard kullanacağımızı UseHangfireServer ile sunucu kullan deyip tanımlamamızı tamamlıyoruz.Hadi şimdi projemizi çalıştıralım ve Hangfire bize neler sunuyor onları inceleyelim.
+Projemizi çalıştırdığımızda karşımıza eğer konfigürasyonlar tam ise ilk bu ekran gelmelidir..
+ 
+ 
+Bu kısımda bulunan bölümlere bakacak olursak ;
+Jobs : Tanımlı işlerimizin bulunduğu kısım.
+•	Enqueued : Sırada olup bekleyen işler;
+•	Scheduled : İleri tarihe ayarlanmış işler;
+•	Processing : Şu anda işlemde olan işlemler;
+•	Succeeded : Başarılı şekilde tamamlanan işler;
+•	Failed : Başarısız işlemler;
+•	Deleted : Silinen işler;
+•	Awaiting : Bekleyen işlemler;
+Retries : Oluşturduğumuz işlemlerde hata olması durumunda,hata oluşan işlem bu kısma düşer.Ayrıca bu kısımda kaç kere denendiği bilgisi de bulunur.
+Recurring Jobs : Oluşturulan işlemlerin bilgisinin tutulduğu kısımdır.Ne zaman oluşturulduğu,ne zaman çalışacağı bilgileri yer alır.
+Servers : Kullanılan sunucuların bilgilerinin bulunduğu kısım.
+Hangfire kurulumu ve kullanımı görüldüğü gibi gayet kolay ve pratik.Bu kısımın daha fazla uzamaması adına Güvenlik,Loglama ve Error Management kısımlarını farklı makaleler altında ele almaya çalışacağım şimdilik bu kadar :) Sevgiyle kalın.
+
 
 
 
